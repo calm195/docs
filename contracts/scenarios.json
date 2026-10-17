@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "task": "T002",
+    "version": "0.1.0",
+    "mode": "synthetic-contract-only"
+  },
+  "delivery": {
+    "req": "REQ-007",
+    "task": "T021",
+    "submit_A": {
+      "status": 202,
+      "data": {
+        "message_id": "A",
+        "status": "pending_scan",
+        "delivery_seq": null
+      }
+    },
+    "read_after_0": {
+      "items": [
+        {
+          "message_id": "B",
+          "delivery_seq": 1,
+          "body": "合成消息B",
+          "submitted_at": "2026-10-17T00:00:01Z",
+          "delivered_at": "2026-10-17T00:00:02Z"
+        }
+      ],
+      "next_after_seq": 1
+    },
+    "read_after_1": {
+      "items": [
+        {
+          "message_id": "A",
+          "delivery_seq": 2,
+          "body": "合成消息A",
+          "submitted_at": "2026-10-17T00:00:00Z",
+          "delivered_at": "2026-10-17T00:01:00Z"
+        }
+      ],
+      "next_after_seq": 2
+    },
+    "empty_after_2": {
+      "items": [],
+      "next_after_seq": 2
+    }
+  },
+  "warning": {
+    "task": "T026",
+    "req": "REQ-016",
+    "at_29": {
+      "status": 409,
+      "error_code": "WARNING_WAIT_REQUIRED",
+      "remaining_seconds": 1
+    },
+    "at_30": {
+      "status": 200,
+      "acknowledged_at": "2026-10-17T00:00:30Z"
+    },
+    "reenter": "same first_displayed_at"
+  },
+  "moderation": {
+    "task": "T016",
+    "req": "REQ-015",
+    "data": {
+      "content_decision": "approved",
+      "business_outcome": "cancelled",
+      "version": 2
+    }
+  },
+  "school": {
+    "task": "T016",
+    "req": "REQ-015",
+    "fields": {
+      "content_version": 2,
+      "school_related": true,
+      "notice_codes": [
+        "UNVERIFIED_SCHOOL"
+      ],
+      "notice_text": "未经证实"
+    }
+  },
+  "rejection": {
+    "task": "T016",
+    "req": "REQ-015",
+    "review_result": {
+      "decision": "rejected",
+      "content_version": 2,
+      "reason": "合成样例：含可定位信息",
+      "revision_suggestion": "删除可定位信息后重新提交"
+    }
+  },
+  "privacy": {
+    "task": "T031",
+    "req": "REQ-018",
+    "after_deletion_commit_before_cleanup": {
+      "public_detail_status": 404,
+      "public_list_items": [],
+      "author_status": {
+        "privacy_review_required": true,
+        "current_version": 3,
+        "allowed_actions": [
+          "submit_privacy_review"
+        ]
+      }
+    }
+  },
+  "quota": {
+    "task": "T014/T019",
+    "req": "REQ-005",
+    "publish_at_full": {
+      "status": 200,
+      "current_state": "ready"
+    },
+    "rollback_B01_at_full": {
+      "status": 409,
+      "error_code": "ACTIVE_WISH_LIMIT"
+    }
+  }
+}
