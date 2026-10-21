@@ -62,6 +62,7 @@ model('Session',{'token':string(description='仅本次会话返回；仅存摘�
 model('WechatLogin',{'code':string(minLength=1),'client_request_id':string(minLength=1)},['code','client_request_id'])
 model('ProfileUpdate',{'nickname':string(minLength=1),'hide_identity_tags':BOOL,'expected_version':V},['nickname','hide_identity_tags','expected_version'])
 model('AssetInput',{'file':string(format='binary')},['file'])
+S['AssetInput']['description']='仅一个file multipart部分；声明image/png或image/jpeg并匹配真实格式；字节/像素及解码并发由服务端显式限制，不支持JSON、附加字段或多个文件。'
 model('Asset',{'asset_id':ID,'scan_status':enum('pending','approved','rejected')},['asset_id','scan_status'])
 model('VerificationInput',{'student_number':string(minLength=1),'name':string(minLength=1),'asset_id':ID,'expected_version':V},['student_number','name','asset_id'])
 S['VerificationInput']['description']='服务端以当前账号的identity_reviews为目标；首次无审核记录时省略expected_version，重提已有记录必须传GET /me/verification-request返回的version，缺失400、过期409。不能使用Me.version或asset版本。首次并发创建由账号锁/唯一约束和幂等处理，不用固定1冒充旧版本。'
@@ -256,6 +257,11 @@ for line in DATA.strip().splitlines():
   op['x-implementation-status']='implemented-injected'
   op['x-resource-mode']='postgres-redis-synthetic-external-validation'
   op['x-backend-evidence']='../../liyuanci-backend-go/docs/milestones/phase-05.md'
+ # 学生卡仅为显式注入的上传/扫描状态实现，不授予人工认证资格。
+ if (method,path) in {('POST','/me/student-card-assets'),('GET','/me/student-card-assets/{id}')}:
+  op['x-implementation-status']='implemented-injected'
+  op['x-resource-mode']='postgres-redis-synthetic-external-validation'
+  op['x-backend-evidence']='../../liyuanci-backend-go/docs/milestones/phase-06.md'
  op['security']=[] if auth in ['public','code','admin_login'] else security['AdminSession' if path.startswith('/admin') else 'StudentSession']
  import re
  for name in re.findall(r'{([^}]+)}',path):op['parameters'].append({'name':name,'in':'path','required':True,'schema':ID})
@@ -304,7 +310,7 @@ for line in DATA.strip().splitlines():
  examples[opid]={'task_id':task,'req_ids':op['x-req-ids'],'mode':'synthetic-contract-example','request':{'headers':({'Idempotency-Key':'synthetic-command-key'} if method!='GET' and path not in ['/auth/wechat-sessions','/admin/sessions'] else {}),'method':method,'path':'/api/v1'+path,'body':None if req in ['-','AdminLoginInput','AccountInput','AdminPasswordInput'] else sample(ref(req))},'response':{'status':int(status),'body':None if res in ['-','Binary'] else response}}
  if req=='VerificationInput':examples[opid]['request']['body'].pop('expected_version',None)
  mapping.append((opid,method,path,task,','.join(op['x-req-ids'])))
-api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；后台六个操作已有显式启用实现，学生身份四个操作提供依赖注入库及隔离验证但尚未装配到server，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；默认启动仅/healthz与/readyz；后台六操作须显式配置，学生四操作仅注入式库且未装配server'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
+api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；后台六个操作已有显式启用实现，学生身份四个操作和学生卡上传/状态两个操作提供依赖注入库及隔离验证但尚未装配到server，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；默认启动仅/healthz与/readyz；后台六操作须显式配置，学生身份/学生卡六操作仅注入式库且未装配server'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
 api['x-decision-amendment']='decisions.v0.2.0.md（2026-10-21用户确认）'
 (OUT/f'openapi.v{VERSION}.json').write_text(json.dumps(api,ensure_ascii=False,indent=2)+'\n')
 (OUT/f'examples.v{VERSION}.json').write_text(json.dumps(examples,ensure_ascii=False,indent=2)+'\n')

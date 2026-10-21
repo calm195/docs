@@ -1,6 +1,6 @@
 {
   "base_contract": "0.2.0",
-  "revision": 3,
+  "revision": 4,
   "mode": "static-protocol-index-not-authorization",
   "action_identifier": "OpenAPI operationId（区分大小写，无事件名别名）",
   "missing_or_unknown": "deny",
@@ -61,7 +61,7 @@
     "postMeStudentCardAssets": {
       "method": "POST",
       "path": "/api/v1/me/student-card-assets",
-      "implementation": "not-implemented",
+      "implementation": "implemented-injected",
       "projection": "Me",
       "path_targets": [],
       "version_fields": [],
@@ -74,7 +74,7 @@
     "getMeStudentCardAssetsId": {
       "method": "GET",
       "path": "/api/v1/me/student-card-assets/{id}",
-      "implementation": "not-implemented",
+      "implementation": "implemented-injected",
       "projection": null,
       "path_targets": [
         "id"
