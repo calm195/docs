@@ -15,7 +15,9 @@ for path,item in api['paths'].items():
   assert op['operationId'] not in ids
   ids.add(op['operationId']);ops+=1
   assert op['x-task-id'].startswith('T') and op['x-req-ids']
-  assert op['x-implementation-status']=='not-implemented'
+  expected_implemented=(method,path) in {('post','/admin/accounts'),('post','/admin/sessions'),('post','/admin/password'),('delete','/admin/session')}
+  assert op['x-implementation-status']==('implemented-opt-in' if expected_implemented else 'not-implemented')
+  if expected_implemented:assert op['x-resource-mode']=='postgres-redis-opt-in' and op['x-backend-evidence'].endswith('/phase-05.md')
   if method!='get' and path not in ['/auth/wechat-sessions','/admin/sessions']:
    assert any(p.get('$ref','').endswith('/IdempotencyKey') for p in op['parameters'])
   if 'requestBody' in op:

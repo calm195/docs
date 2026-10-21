@@ -3,7 +3,7 @@
   "info": {
     "title": "鲤源池首发共享接口契约",
     "version": "0.2.0",
-    "description": "T002，批准api.md v0.2细化；所有业务端点尚未实现，不代表真实或模拟服务已启动。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。"
+    "description": "T002，批准api.md v0.2细化；后台四个操作已有显式启用实现，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。"
   },
   "servers": [
     {
@@ -15915,8 +15915,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-opt-in",
+        "x-resource-mode": "postgres-redis-opt-in",
         "parameters": [],
         "responses": {
           "200": {
@@ -16199,6 +16199,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [],
         "requestBody": {
           "required": true,
@@ -16226,8 +16227,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-opt-in",
+        "x-resource-mode": "postgres-redis-opt-in",
         "parameters": [
           {
             "$ref": "#/components/parameters/IdempotencyKey"
@@ -16492,6 +16493,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [
           {
             "AdminSession": []
@@ -16512,8 +16514,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-opt-in",
+        "x-resource-mode": "postgres-redis-opt-in",
         "parameters": [
           {
             "$ref": "#/components/parameters/IdempotencyKey"
@@ -16778,6 +16780,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [
           {
             "AdminSession": []
@@ -25082,8 +25085,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-opt-in",
+        "x-resource-mode": "postgres-redis-opt-in",
         "parameters": [
           {
             "$ref": "#/components/parameters/IdempotencyKey"
@@ -25367,6 +25370,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [
           {
             "AdminSession": []

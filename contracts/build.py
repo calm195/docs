@@ -246,6 +246,11 @@ for line in DATA.strip().splitlines():
  if res.endswith('Page'):page(res[:-4])
  opid=method.lower()+''.join(x.title() for x in path.replace('{','').replace('}','').replace('-','/').split('/'))
  op={'operationId':opid,'summary':desc,'description':desc+'。权限：'+ROLE[auth]+'。参见语义约束与验收映射。','tags':['admin' if path.startswith('/admin') else path.split('/')[1]],'x-task-id':task,'x-req-ids':['REQ-'+r for r in reqs.split(',')],'x-implementation-status':'not-implemented','x-resource-mode':'contract-only','parameters':[], 'responses':{}}
+ # 仅登记已有本端真实验证的显式装配范围，其余端点仍不可用；不表示部署或三端验收。
+ if (method,path) in {('POST','/admin/accounts'),('POST','/admin/sessions'),('POST','/admin/password'),('DELETE','/admin/session')}:
+  op['x-implementation-status']='implemented-opt-in'
+  op['x-resource-mode']='postgres-redis-opt-in'
+  op['x-backend-evidence']='../../liyuanci-backend-go/docs/milestones/phase-05.md'
  op['security']=[] if auth in ['public','code','admin_login'] else security['AdminSession' if path.startswith('/admin') else 'StudentSession']
  import re
  for name in re.findall(r'{([^}]+)}',path):op['parameters'].append({'name':name,'in':'path','required':True,'schema':ID})
@@ -294,10 +299,10 @@ for line in DATA.strip().splitlines():
  examples[opid]={'task_id':task,'req_ids':op['x-req-ids'],'mode':'synthetic-contract-example','request':{'headers':({'Idempotency-Key':'synthetic-command-key'} if method!='GET' and path not in ['/auth/wechat-sessions','/admin/sessions'] else {}),'method':method,'path':'/api/v1'+path,'body':None if req in ['-','AdminLoginInput','AccountInput','AdminPasswordInput'] else sample(ref(req))},'response':{'status':int(status),'body':None if res in ['-','Binary'] else response}}
  if req=='VerificationInput':examples[opid]['request']['body'].pop('expected_version',None)
  mapping.append((opid,method,path,task,','.join(op['x-req-ids'])))
-api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；所有业务端点尚未实现，不代表真实或模拟服务已启动。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；当前后端仅/healthz与/readyz，不可将此地址当业务可用'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
+api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；后台四个操作已有显式启用实现，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；当前后端仅/healthz与/readyz，不可将此地址当业务可用'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
 api['x-decision-amendment']='decisions.v0.2.0.md（2026-10-21用户确认）'
 (OUT/f'openapi.v{VERSION}.json').write_text(json.dumps(api,ensure_ascii=False,indent=2)+'\n')
 (OUT/f'examples.v{VERSION}.json').write_text(json.dumps(examples,ensure_ascii=False,indent=2)+'\n')
-(OUT/'operations.md').write_text('# T002 接口→任务→REQ 索引\n\n版本0.2.0；所有行仅契约，功能未实现。验收用例见acceptance.md。\n\n| operationId | 方法及相对路径 | 实现任务 | REQ |\n| --- | --- | --- | --- |\n'+''.join(f'| {o} | {m} `{p}` | {t} | {r} |\n' for o,m,p,t,r in mapping))
+(OUT/'operations.md').write_text('# T002 接口→任务→REQ 索引\n\n版本0.2.0；后台创建/登录/改密/退出已有本端验证的显式启用实现，其余操作未实现；不表示部署或三端联调。验收用例见acceptance.md。\n\n| operationId | 方法及相对路径 | 实现任务 | REQ |\n| --- | --- | --- | --- |\n'+''.join(f'| {o} | {m} `{p}` | {t} | {r} |\n' for o,m,p,t,r in mapping))
 (OUT/'errors.md').write_text('# T002 错误码 v0.2.0\n\n所有错误有非零code、message、稳定error_code与request_id；不含底层异常、凭据、身份或正文。\n\n| HTTP | error_code |\n| --- | --- |\n'+''.join(f'| {c} | {", ".join(v)} |\n' for c,v in ERRORS.items())+'\nIDEMPOTENCY_CONFLICT是同键异摘要的技术命名补全；WARNING_WAIT_REQUIRED返回remaining_seconds，提前失败不阻止之后同键重试。INTERNAL_ERROR为异常恢复兜底，不是业务错误。503不允许安全能力失败时直通；404用于不可读对象避免枚举。ready为成功处理业务结果，不用ACTIVE_WISH_LIMIT；后者用于B01满额回退。\n')
 print(f'{len(mapping)} operations, {len(S)} schemas generated')
