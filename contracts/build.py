@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 OUT = Path(__file__).parent
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 S = {}
 def ref(n): return {'$ref': '#/components/schemas/' + n}
 def string(**kw): return dict(type='string', **kw)
@@ -13,7 +13,10 @@ def array(item): return dict(type='array', items=item)
 def obj(props, required=(), **kw): return dict(type='object',properties=props,required=list(required),additionalProperties=False,**kw)
 def model(name,props,required=()): S[name]=obj(props,required); return ref(name)
 def sample(schema):
- if '$ref' in schema:return sample(S[schema['$ref'].split('/')[-1]])
+ if '$ref' in schema:
+  name=schema['$ref'].split('/')[-1]
+  if name=='WordlistPage':return {'items':[],'next_cursor':None,'heads':[{'kind':kind,'version':1,'effective_id':None} for kind in ['crisis','school','ordinary_violation']]}
+  return sample(S[name])
  if 'const' in schema:return schema['const']
  if 'example' in schema:return schema['example']
  if 'enum' in schema:return schema['enum'][0]
@@ -45,7 +48,8 @@ model('ReviewDecision',{'decision':enum('approved','rejected'),'reason':string()
 S['ReviewDecision']['allOf']=[{'if':{'properties':{'decision':{'const':'rejected'}}},'then':{'required':['reason','revision_suggestion'],'properties':{'reason':string(minLength=1),'revision_suggestion':string(minLength=1)}}}]
 model('VersionCommand',{'expected_version':V},['expected_version'])
 model('ReasonCommand',{'expected_version':V,'reason':string(minLength=1)},['expected_version','reason'])
-model('IdentityTags',{'campus':CAMPUS,'grade':string(),'gender':string()})
+model('IdentityTags',{'campus':CAMPUS,'grade':string(minLength=1,description='在读年级，使用资料方确认字典；不从入学年份推算，字典未交付前不编造枚举'),'gender':enum('male','female','undisclosed')})
+S['IdentityTags']['description']='身份标签可选且受隐藏设置约束；gender传输值male=男、female=女、undisclosed=保密；省略表示未填写，不能推断。'
 model('PublicProfile',{'id':ID,'nickname':string(),'identity_tags':ref('IdentityTags')},['id','nickname'])
 model('PublicContent',{'id':ID,'body':BODY,'content_version':CV,'school_related':BOOL,'notice_codes':array(enum('UNVERIFIED_SCHOOL')),'notice_text':string(example=''),'category':CATEGORY,'campus':CAMPUS,'reward_method':REWARD,'expires_at':TIME,'author':ref('PublicProfile')},['id','body','content_version','school_related','notice_codes','notice_text','author'])
 S['PublicContent']['description']='所有公开入口同一投影；涉校true必须含UNVERIFIED_SCHOOL及“未经证实”；false空提示；检测pending或privacy_hold有效时不得返回本投影。'
@@ -59,7 +63,8 @@ model('WechatLogin',{'code':string(minLength=1),'client_request_id':string(minLe
 model('ProfileUpdate',{'nickname':string(minLength=1),'hide_identity_tags':BOOL,'expected_version':V},['nickname','hide_identity_tags','expected_version'])
 model('AssetInput',{'file':string(format='binary')},['file'])
 model('Asset',{'asset_id':ID,'scan_status':enum('pending','approved','rejected')},['asset_id','scan_status'])
-model('VerificationInput',{'student_number':string(minLength=1),'name':string(minLength=1),'asset_id':ID,'expected_version':V},['student_number','name','asset_id','expected_version'])
+model('VerificationInput',{'student_number':string(minLength=1),'name':string(minLength=1),'asset_id':ID,'expected_version':V},['student_number','name','asset_id'])
+S['VerificationInput']['description']='服务端以当前账号的identity_reviews为目标；首次无审核记录时省略expected_version，重提已有记录必须传GET /me/verification-request返回的version，缺失400、过期409。不能使用Me.version或asset版本。首次并发创建由账号锁/唯一约束和幂等处理，不用固定1冒充旧版本。'
 model('Verification',{'request_id':ID,'version':V,'status':enum('pending','approved','rejected'),'reason':string(),'revision_suggestion':string()},['request_id','version','status'])
 model('DeletionInput',{'confirmation':enum('delete_account'),'expected_version':V},['confirmation','expected_version'])
 model('DeletionAccepted',{'deletion_receipt':string(description='专用高熵随机句柄；无身份和正文'),'status':enum('processing')},['deletion_receipt','status'])
@@ -99,18 +104,32 @@ model('ModerationCase',{'id':ID,'version':V,'content_version':CV,'body':BODY,'sc
 model('PenaltyInput',{'violation_ref':ID,'content_ref':ID,'content_version':CV,'level':enum('minor','general','severe'),'reason':string(minLength=1),'expected_version':V},['violation_ref','content_ref','content_version','level','reason','expected_version'])
 model('AppealDecision',{'decision':enum('uphold','revoke'),'reason':string(minLength=1),'expected_version':V},['decision','reason','expected_version'])
 model('ReportDecision',{'decision':enum('confirmed','dismissed'),'reason':string(minLength=1),'expected_version':V},['decision','reason','expected_version'])
-model('WordlistInput',{'kind':enum('crisis','school','ordinary_violation'),'entries':array(string(minLength=1)),'expected_version':V},['kind','entries'])
-S['WordlistInput']['description']='创建独立新词库无expected_version，已有词库创建版本带当前版本；真实词条由D03交付。'
-model('Wordlist',{'id':ID,'version':V,'kind':enum('crisis','school','ordinary_violation'),'status':string()},['id','version','kind','status'])
+WORDKIND=enum('crisis','school','ordinary_violation')
+model('WordlistHead',{'kind':WORDKIND,'version':V,'effective_id':{'type':['string','null'],'example':None}},['kind','version','effective_id'])
+S['WordlistHead']['description']='每类词库的并发基准；首次无生效版时effective_id=null，version从1开始。创建草案/发布均推进基准；不是词库资源自身version。'
+model('WordlistInput',{'kind':WORDKIND,'entries':array(string(minLength=1)),'expected_version':V},['kind','entries','expected_version'])
+S['WordlistInput']['description']='entries是完整不可变新快照，不是增量；expected_version取列表heads中对应kind的version，首次创建也读取基准。创建草案推进基准，不改变生效版本；记录创建时base_effective_id。'
+model('Wordlist',{'id':ID,'version':V,'kind':WORDKIND,'status':enum('draft','published','archived'),'base_effective_id':{'type':['string','null'],'example':None}},['id','version','kind','status','base_effective_id'])
+S['Wordlist']['description']='id为不可变词条快照标识，version为该资源状态乐观版本；发布后替代旧版，旧版archived授权只读、不可直接再发布。遵守隐私清理，不承诺无限期保留。'
+model('WordlistDetail',{**S['Wordlist']['properties'],'entries':array(string(minLength=1))},[*S['Wordlist']['required'],'entries'])
+model('WordlistPage',{'items':array(ref('Wordlist')),'next_cursor':{'type':['string','null']},'heads':{'type':'array','items':ref('WordlistHead'),'minItems':3,'maxItems':3,'allOf':[{'contains':{'type':'object','properties':{'kind':{'const':kind}},'required':['kind']},'minContains':1,'maxContains':1} for kind in ['crisis','school','ordinary_violation']]}},['items','next_cursor','heads'])
+S['WordlistPage']['description']='每页heads固定包含三类当前基准（不随分页消失），每类恰好一项；同次读取一致快照，冲突后重新读取。'
+model('WordlistPublish',{'expected_version':V,'expected_head_version':V},['expected_version','expected_head_version'])
+S['WordlistPublish']['description']='expected_version为草案资源version；expected_head_version为对应kind基准。锁后同时核验且base_effective_id须等于当前生效id，否则409；发布及旧版归档同事务，仅作用于后续新扫描/正常重提，不触发历史全量重扫。'
 model('CrisisCase',{'id':ID,'version':V,'student_number':string(),'body':BODY,'status':string(),'timeline':array(ref('CaseSummary'))},['id','version','status'])
 model('CrisisAction',{'action':string(minLength=1),'reason':string(minLength=1),'expected_version':V},['action','reason','expected_version'])
 model('Evidence',{'id':ID,'version':V,'case_id':ID,'body':BODY,'student_number':string(),'status':string()},['id','version','case_id','status'])
-model('Account',{'id':ID,'version':V,'roles':array(enum('review_operator','crisis_operator','super_admin')),'active':BOOL},['id','version','roles','active'])
+model('Account',{'id':ID,'version':V,'login_name':string(minLength=1),'roles':array(enum('review_operator','crisis_operator','super_admin')),'active':BOOL},['id','version','login_name','roles','active'])
 model('RolesInput',{'roles':array(enum('review_operator','crisis_operator','super_admin')),'reason':string(minLength=1),'expected_version':V},['roles','reason','expected_version'])
+PASSWORD=string(minLength=1,writeOnly=True,description='仅输入，禁止日志、URL、账号查询或错误回显；实际初始值通过仓库外配置注入')
 model('AdminSessionResult',{'token':string(),'account':ref('Account')},['token','account'])
-# D02身份提供方未交付，不能将候选密码/SSO形式冻结为业务事实。
-S['AdminLoginInput']={'type':'object','description':'D02待提供后台身份方案，凭据交换形状未冻结；禁止使用模板演示密码。受影响的真实登录集成阻塞。','additionalProperties':True}
-S['AccountInput']={'type':'object','description':'D02身份提供方账号绑定参数待交付；仅超管，必须有reason；不得自建默认口令。','properties':{'reason':string(minLength=1)},'required':['reason'],'additionalProperties':True}
+S['AdminSessionResult']['description']='后台本地口令账号；服务端绝对到期后重新登录，不提供自动续期；token仅内存，TTL作为仓库外部署参数另行锁定验证。'
+model('AdminLoginInput',{'login_name':string(minLength=1),'password':PASSWORD},['login_name','password'])
+S['AdminLoginInput']['description']='仅超管预先添加的本地后台账号可登录，首个超管线下初始化；初始口令按2026-10-21用户确认策略配置，登录后可修改，不增加强制首登改密门槛。'
+model('AccountInput',{'login_name':string(minLength=1),'roles':array(enum('review_operator','crisis_operator','super_admin')),'reason':string(minLength=1)},['login_name','roles','reason'])
+S['AccountInput']['description']='仅超管创建；login_name唯一且创建后不可通过角色接口修改，初始密码由服务端仓库外策略注入，响应不含密码。不得接受客户端选择初始口令或公开注册。'
+model('AdminPasswordInput',{'current_password':PASSWORD,'new_password':PASSWORD},['current_password','new_password'])
+S['AdminPasswordInput']['description']='当前后台账号本人修改密码，核验当前口令；成功原子替换口令摘要并撤销该账号全部旧会话（含当前），204后重新登录。错误不回显口令；不新增未确认的复杂度/长度产品门槛，安全部署边界另行验证。'
 model('WorkItem',{'id':ID,'version':V,'status':enum('pending','leased','retry_wait','completed','cancelled','attention'),'kind':string()},['id','version','status','kind'])
 
 def page(n):
@@ -125,6 +144,7 @@ DELETE /auth/session - - 204 student T008 002,018 撤销当前会话
 GET /me - Me 200 student T008 002,014,018 当前资格和允许动作；受罚会话仅受限资料
 PUT /me/profile ProfileUpdate Me 200 student T008 002,014,018 资料展示设置，不允许改学号或角色
 POST /me/student-card-assets AssetInput Asset 202 student T011 002,015,018 图片边界检查加密存储与扫描，不返回下载URL
+GET /me/student-card-assets/{id} - Asset 200 student T011 002,015,018 本人扫描状态读取，未知或非本人404；approved仅图片安全通过
 POST /me/verification-requests VerificationInput Verification 202 student T011 002,018 人工认证申请；asset归本人且扫描通过
 GET /me/verification-request - Verification 200 student T011 002,018 本人待审或驳回状态和建议，不回显完整身份
 POST /me/deletion-requests DeletionInput DeletionAccepted 202 student T031 014,018 含受罚身份；事务生效立即屏障并撤销会话
@@ -169,8 +189,9 @@ GET /me/appeals - AppealPage 200 student T026 014,016 本人申诉处理状态�
 GET /me/warnings - WarningPage 200 student T026 016 未确认warning，含受限会话，不等于禁言
 POST /me/warnings/{id}/display VersionCommand Warning 200 student T026 016 首次服务端display+30秒；重进不重置
 POST /me/warnings/{id}/ack VersionCommand Warning 200 student T026 016 未展示或29秒返回409，30秒成功；提前失败不锁死幂等键
-POST /admin/sessions AdminLoginInput AdminSessionResult 200 admin_login T008 018,019 D02后台独立身份方案未冻结，禁止模板密码
+POST /admin/sessions AdminLoginInput AdminSessionResult 200 admin_login T008 018,019 超管预建本地账号口令登录，绝对到期重新登录
 DELETE /admin/session - - 204 admin T008 018,019 撤销独立后台会话
+POST /admin/password AdminPasswordInput - 204 admin T008 018,019 本人核验旧口令后改密，撤销全部旧会话并重新登录
 GET /admin/identity-reviews - CaseSummaryPage 200 review T011 002,018,019 脱敏列表，无完整姓名学号或学生卡
 GET /admin/identity-reviews/{id} - IdentityCase 200 review T011 002,018,019 身份案件授权后完整字段，访问留迹
 GET /admin/identity-reviews/{id}/student-card - Binary 200 review T011 002,018,019 案件鉴权代理解密流，No-Store，无公开URL
@@ -185,9 +206,10 @@ POST /admin/reports/{id}/decision ReportDecision CaseSummary 200 cases T026 014,
 POST /admin/users/{id}/penalties PenaltyInput CaseSummary 200 cases T026 014,016,019 minor=warning/general=mute七天/severe=ban永久；同违规幂等，无任意时长
 GET /admin/appeals - AppealPage 200 cases T026 014,016,019 角色与案件授权
 POST /admin/appeals/{id}/decision AppealDecision Appeal 200 cases T026 016,019 解罚必填理由，不复活旧匹配申请
-GET /admin/wordlists - WordlistPage 200 review T016 015,019 版本化词库，真实样例D03
-POST /admin/wordlists/versions WordlistInput Wordlist 201 review T016 015,019 创建版本，已存在词库需当前版本
-POST /admin/wordlists/{id}/publish VersionCommand Wordlist 200 review T016 015,019 显式版本发布
+GET /admin/wordlists - WordlistPage 200 review T016 015,019 版本列表及三类当前基准，真实词条D03
+GET /admin/wordlists/{id} - WordlistDetail 200 review T016 015,019 授权读取完整快照，旧版归档只读
+POST /admin/wordlists/versions WordlistInput Wordlist 201 review T016 015,019 创建完整新快照，使用该kind当前基准版本
+POST /admin/wordlists/{id}/publish WordlistPublish Wordlist 200 review T016 015,019 草案和基准双版本复核，原子发布与旧版归档，不全量重扫历史
 GET /admin/crisis-cases - CaseSummaryPage 200 crisis T029 017,018,019 仅危机与超管，普通运营403
 GET /admin/crisis-cases/{id} - CrisisCase 200 crisis T029 017,018,019 案件级完整学号及危机正文访问留迹
 POST /admin/crisis-cases/{id}/actions CrisisAction CaseSummary 200 crisis T029 017,019 时间线动作，无人工首次响应SLA
@@ -196,7 +218,7 @@ GET /admin/evidence/{id} - Evidence 200 evidence T029 017,018,019 案件限定�
 GET /admin/evidence/{id}/asset - Binary 200 evidence T029 017,018,019 学生卡仅本身涉案时可保留，访问留迹
 DELETE /admin/evidence/{id} ReasonCommand Accepted 202 super T031 018,019 超管删全副本并持久恢复标记；不是立即已删完
 GET /admin/accounts - AccountPage 200 super T008 018,019 后台账号列表
-POST /admin/accounts AccountInput Account 201 super T008 018,019 D02账号绑定参数待交付，仅超管
+POST /admin/accounts AccountInput Account 201 super T008 018,019 超管添加本地后台账号，初始口令仓库外注入且响应不返回
 PUT /admin/accounts/{id}/roles RolesInput Account 200 super T008 018,019 角色修改理由及版本，不允许运营自提权
 GET /admin/work-items - WorkItemPage 200 work T007 006,017,018,019 超管；运营限所属普通任务脱敏技术视图
 POST /admin/work-items/{id}/retry VersionCommand WorkItem 200 work T007 006,017,018,019 重驱动再次复核，cancelled不可强制重放
@@ -217,7 +239,7 @@ parameters={
  'Limit':{'name':'limit','in':'query','schema':integer(minimum=1,maximum=50,default=20),'description':'聊天默认50，其余20；最大50。'},
 }
 security={a:[{a:[]}] for a in ['StudentSession','AdminSession']}
-ROLE={'public':'公开投影或随机回执句柄','code':'微信code交换，仅获得身份','student':'本人会话；受限动作按账号状态复核','verified':'已认证且当前允许交互；对象关系逐次核验','admin_login':'D02后台身份提供方独立登录','admin':'活跃后台会话','review':'review_operator或super_admin，限定案件','cases':'review_operator/crisis_operator/super_admin，限定案件','crisis':'crisis_operator或super_admin，限定案件','evidence':'按案件字段授权：完整身份限危机/超管，普通运营仅脱敏违规证据','super':'仅super_admin','work':'super_admin；运营仅所属普通任务脱敏视图'}
+ROLE={'public':'公开投影或随机回执句柄','code':'微信code交换，仅获得身份','student':'本人会话；受限动作按账号状态复核','verified':'已认证且当前允许交互；对象关系逐次核验','admin_login':'超管预建本地后台口令账号登录','admin':'活跃后台会话','review':'review_operator或super_admin，限定案件','cases':'review_operator/crisis_operator/super_admin，限定案件','crisis':'crisis_operator或super_admin，限定案件','evidence':'按案件字段授权：完整身份限危机/超管，普通运营仅脱敏违规证据','super':'仅super_admin','work':'super_admin；运营仅所属普通任务脱敏视图'}
 paths={};examples={};mapping=[]
 for line in DATA.strip().splitlines():
  method,path,req,res,status,auth,task,reqs,desc=line.split(' ',8)
@@ -238,7 +260,9 @@ for line in DATA.strip().splitlines():
  if req!='-':
   mime='multipart/form-data' if req=='AssetInput' else 'application/json'
   op['requestBody']={'required':True,'content':{mime:{'schema':ref(req)}}}
-  if req not in ['AdminLoginInput','AccountInput']:op['requestBody']['content'][mime]['example']=sample(ref(req))
+  if req not in ['AdminLoginInput','AccountInput','AdminPasswordInput']:
+   op['requestBody']['content'][mime]['example']=sample(ref(req))
+   if req=='VerificationInput':op['requestBody']['content'][mime]['example'].pop('expected_version',None)
  headers={'X-Request-ID':{'schema':string(),'description':'技术请求关联标识'},'Cache-Control':{'schema':string(),'description':'no-store：本人、案件、身份、会话、回执等敏感响应'}}
  if res=='-':op['responses'][status]={'description':'成功，无响应体','headers':headers}
  elif res=='Binary':op['responses'][status]={'description':'授权代理解密流；No-Store','headers':headers,'content':{'application/octet-stream':{'schema':string(format='binary')}}}
@@ -265,13 +289,15 @@ for line in DATA.strip().splitlines():
   op['responses'][status]={'description':'已持久接收，未完成公开/送达/删除' if status=='202' else '成功，按返回状态展示','headers':headers,'content':{'application/json':{'schema':ref(envelope_name),'example':response}}}
  for code,errors in ERRORS.items():
   op['responses'][code]={'description':' / '.join(errors),'content':{'application/json':{'schema':ref('Error'),'example':{'code':int(code),'message':'请求未完成','error_code':errors[0],'request_id':'synthetic-request-id'}}},'headers':headers}
- if req in ['AdminLoginInput','AccountInput']:op['x-blocked-by']='D02'
+ if req in ['AdminLoginInput','AccountInput','AdminPasswordInput']:op['x-sensitive-input']=True
  paths.setdefault(path,{})[method.lower()]=op
- examples[opid]={'task_id':task,'req_ids':op['x-req-ids'],'mode':'synthetic-contract-example','request':{'headers':({'Idempotency-Key':'synthetic-command-key'} if method!='GET' and path not in ['/auth/wechat-sessions','/admin/sessions'] else {}),'method':method,'path':'/api/v1'+path,'body':None if req=='-' else sample(ref(req))},'response':{'status':int(status),'body':None if res in ['-','Binary'] else response}}
+ examples[opid]={'task_id':task,'req_ids':op['x-req-ids'],'mode':'synthetic-contract-example','request':{'headers':({'Idempotency-Key':'synthetic-command-key'} if method!='GET' and path not in ['/auth/wechat-sessions','/admin/sessions'] else {}),'method':method,'path':'/api/v1'+path,'body':None if req in ['-','AdminLoginInput','AccountInput','AdminPasswordInput'] else sample(ref(req))},'response':{'status':int(status),'body':None if res in ['-','Binary'] else response}}
+ if req=='VerificationInput':examples[opid]['request']['body'].pop('expected_version',None)
  mapping.append((opid,method,path,task,','.join(op['x-req-ids'])))
-api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；所有业务端点尚未实现，不代表真实或模拟服务已启动。D02登录供应商参数不冻结。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；当前后端仅/healthz与/readyz，不可将此地址当业务可用'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
-(OUT/'openapi.v0.1.0.json').write_text(json.dumps(api,ensure_ascii=False,indent=2)+'\n')
-(OUT/'examples.v0.1.0.json').write_text(json.dumps(examples,ensure_ascii=False,indent=2)+'\n')
-(OUT/'operations.md').write_text('# T002 接口→任务→REQ 索引\n\n版本0.1.0；所有行仅契约，功能未实现。验收用例见acceptance.md。\n\n| operationId | 方法及相对路径 | 实现任务 | REQ |\n| --- | --- | --- | --- |\n'+''.join(f'| {o} | {m} `{p}` | {t} | {r} |\n' for o,m,p,t,r in mapping))
-(OUT/'errors.md').write_text('# T002 错误码 v0.1.0\n\n所有错误有非零code、message、稳定error_code与request_id；不含底层异常、凭据、身份或正文。\n\n| HTTP | error_code |\n| --- | --- |\n'+''.join(f'| {c} | {", ".join(v)} |\n' for c,v in ERRORS.items())+'\nIDEMPOTENCY_CONFLICT是同键异摘要的技术命名补全；WARNING_WAIT_REQUIRED返回remaining_seconds，提前失败不阻止之后同键重试。INTERNAL_ERROR为异常恢复兜底，不是业务错误。503不允许安全能力失败时直通；404用于不可读对象避免枚举。ready为成功处理业务结果，不用ACTIVE_WISH_LIMIT；后者用于B01满额回退。\n')
+api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；所有业务端点尚未实现，不代表真实或模拟服务已启动。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；当前后端仅/healthz与/readyz，不可将此地址当业务可用'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
+api['x-decision-amendment']='decisions.v0.2.0.md（2026-10-21用户确认）'
+(OUT/f'openapi.v{VERSION}.json').write_text(json.dumps(api,ensure_ascii=False,indent=2)+'\n')
+(OUT/f'examples.v{VERSION}.json').write_text(json.dumps(examples,ensure_ascii=False,indent=2)+'\n')
+(OUT/'operations.md').write_text('# T002 接口→任务→REQ 索引\n\n版本0.2.0；所有行仅契约，功能未实现。验收用例见acceptance.md。\n\n| operationId | 方法及相对路径 | 实现任务 | REQ |\n| --- | --- | --- | --- |\n'+''.join(f'| {o} | {m} `{p}` | {t} | {r} |\n' for o,m,p,t,r in mapping))
+(OUT/'errors.md').write_text('# T002 错误码 v0.2.0\n\n所有错误有非零code、message、稳定error_code与request_id；不含底层异常、凭据、身份或正文。\n\n| HTTP | error_code |\n| --- | --- |\n'+''.join(f'| {c} | {", ".join(v)} |\n' for c,v in ERRORS.items())+'\nIDEMPOTENCY_CONFLICT是同键异摘要的技术命名补全；WARNING_WAIT_REQUIRED返回remaining_seconds，提前失败不阻止之后同键重试。INTERNAL_ERROR为异常恢复兜底，不是业务错误。503不允许安全能力失败时直通；404用于不可读对象避免枚举。ready为成功处理业务结果，不用ACTIVE_WISH_LIMIT；后者用于B01满额回退。\n')
 print(f'{len(mapping)} operations, {len(S)} schemas generated')

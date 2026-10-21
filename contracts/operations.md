@@ -1,6 +1,6 @@
 # T002 接口→任务→REQ 索引
 
-版本0.1.0；所有行仅契约，功能未实现。验收用例见acceptance.md。
+版本0.2.0；所有行仅契约，功能未实现。验收用例见acceptance.md。
 
 | operationId | 方法及相对路径 | 实现任务 | REQ |
 | --- | --- | --- | --- |
@@ -9,6 +9,7 @@
 | getMe | GET `/me` | T008 | REQ-002,REQ-014,REQ-018 |
 | putMeProfile | PUT `/me/profile` | T008 | REQ-002,REQ-014,REQ-018 |
 | postMeStudentCardAssets | POST `/me/student-card-assets` | T011 | REQ-002,REQ-015,REQ-018 |
+| getMeStudentCardAssetsId | GET `/me/student-card-assets/{id}` | T011 | REQ-002,REQ-015,REQ-018 |
 | postMeVerificationRequests | POST `/me/verification-requests` | T011 | REQ-002,REQ-018 |
 | getMeVerificationRequest | GET `/me/verification-request` | T011 | REQ-002,REQ-018 |
 | postMeDeletionRequests | POST `/me/deletion-requests` | T031 | REQ-014,REQ-018 |
@@ -55,6 +56,7 @@
 | postMeWarningsIdAck | POST `/me/warnings/{id}/ack` | T026 | REQ-016 |
 | postAdminSessions | POST `/admin/sessions` | T008 | REQ-018,REQ-019 |
 | deleteAdminSession | DELETE `/admin/session` | T008 | REQ-018,REQ-019 |
+| postAdminPassword | POST `/admin/password` | T008 | REQ-018,REQ-019 |
 | getAdminIdentityReviews | GET `/admin/identity-reviews` | T011 | REQ-002,REQ-018,REQ-019 |
 | getAdminIdentityReviewsId | GET `/admin/identity-reviews/{id}` | T011 | REQ-002,REQ-018,REQ-019 |
 | getAdminIdentityReviewsIdStudentCard | GET `/admin/identity-reviews/{id}/student-card` | T011 | REQ-002,REQ-018,REQ-019 |
@@ -70,6 +72,7 @@
 | getAdminAppeals | GET `/admin/appeals` | T026 | REQ-014,REQ-016,REQ-019 |
 | postAdminAppealsIdDecision | POST `/admin/appeals/{id}/decision` | T026 | REQ-016,REQ-019 |
 | getAdminWordlists | GET `/admin/wordlists` | T016 | REQ-015,REQ-019 |
+| getAdminWordlistsId | GET `/admin/wordlists/{id}` | T016 | REQ-015,REQ-019 |
 | postAdminWordlistsVersions | POST `/admin/wordlists/versions` | T016 | REQ-015,REQ-019 |
 | postAdminWordlistsIdPublish | POST `/admin/wordlists/{id}/publish` | T016 | REQ-015,REQ-019 |
 | getAdminCrisisCases | GET `/admin/crisis-cases` | T029 | REQ-017,REQ-018,REQ-019 |

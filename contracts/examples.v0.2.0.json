@@ -1,0 +1,2522 @@
+{
+  "postAuthWechatSessions": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "POST",
+      "path": "/api/v1/auth/wechat-sessions",
+      "body": {
+        "code": "synthetic-example",
+        "client_request_id": "synthetic-example"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "token": "synthetic-example",
+          "me": {
+            "id": "6c500000-0000-4000-8000-000000000001",
+            "version": 1,
+            "verification": "unverified",
+            "allowed_actions": []
+          }
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "deleteAuthSession": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "DELETE",
+      "path": "/api/v1/auth/session",
+      "body": null
+    },
+    "response": {
+      "status": 204,
+      "body": null
+    }
+  },
+  "getMe": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-002",
+      "REQ-014",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "verification": "unverified",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "putMeProfile": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-002",
+      "REQ-014",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "PUT",
+      "path": "/api/v1/me/profile",
+      "body": {
+        "nickname": "synthetic-example",
+        "hide_identity_tags": false,
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "verification": "unverified",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeStudentCardAssets": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-015",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/student-card-assets",
+      "body": {
+        "file": "<synthetic JPEG bytes>"
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "asset_id": "6c500000-0000-4000-8000-000000000001",
+          "scan_status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeStudentCardAssetsId": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-015",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/student-card-assets/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "asset_id": "6c500000-0000-4000-8000-000000000001",
+          "scan_status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeVerificationRequests": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/verification-requests",
+      "body": {
+        "student_number": "synthetic-example",
+        "name": "synthetic-example",
+        "asset_id": "6c500000-0000-4000-8000-000000000001"
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "request_id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeVerificationRequest": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/verification-request",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "request_id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeDeletionRequests": {
+    "task_id": "T031",
+    "req_ids": [
+      "REQ-014",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/deletion-requests",
+      "body": {
+        "confirmation": "delete_account",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "deletion_receipt": "synthetic-example",
+          "status": "processing"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getDeletionReceiptsReceipt": {
+    "task_id": "T031",
+    "req_ids": [
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/deletion-receipts/{receipt}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "status": "processing"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getWishes": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-003",
+      "REQ-004",
+      "REQ-005",
+      "REQ-008",
+      "REQ-018",
+      "REQ-021"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/wishes",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getWishesId": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-004",
+      "REQ-008",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/wishes/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "draft",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getUsersIdPublicProfile": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-008",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/users/{id}/public-profile",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "profile": {
+            "id": "6c500000-0000-4000-8000-000000000001",
+            "nickname": "synthetic-example"
+          },
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeWishes": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-004",
+      "REQ-008",
+      "REQ-018",
+      "REQ-021"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/wishes",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeApplications": {
+    "task_id": "T019",
+    "req_ids": [
+      "REQ-006",
+      "REQ-008",
+      "REQ-015",
+      "REQ-018",
+      "REQ-021"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/applications",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishes": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-003",
+      "REQ-004",
+      "REQ-005"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes",
+      "body": {
+        "category": "help",
+        "body": "synthetic-example",
+        "campus": "wushan"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "draft",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "putWishesIdContent": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-003",
+      "REQ-004",
+      "REQ-015"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "PUT",
+      "path": "/api/v1/wishes/{id}/content",
+      "body": {
+        "category": "help",
+        "body": "synthetic-example",
+        "campus": "wushan",
+        "refresh_expiry": false,
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "draft",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "deleteWishesIdDraft": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-004",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "DELETE",
+      "path": "/api/v1/wishes/{id}/draft",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 204,
+      "body": null
+    }
+  },
+  "postWishesIdSubmitReview": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-004",
+      "REQ-015"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/submit-review",
+      "body": {
+        "expected_version": 1,
+        "content_version": 1
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "pending_review",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdPublish": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-004",
+      "REQ-005"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/publish",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "ready",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdWithdraw": {
+    "task_id": "T014",
+    "req_ids": [
+      "REQ-004",
+      "REQ-006"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/withdraw",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "withdrawn",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdRollback": {
+    "task_id": "T019",
+    "req_ids": [
+      "REQ-004",
+      "REQ-005"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/rollback",
+      "body": {
+        "expected_version": 1,
+        "target": "matching",
+        "refresh_expiry": false
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "matching",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdComplete": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-004",
+      "REQ-007"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/complete",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "realized",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdExceptionExit": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-004",
+      "REQ-014",
+      "REQ-016"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/exception-exit",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "withdrawn",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdApplications": {
+    "task_id": "T019",
+    "req_ids": [
+      "REQ-005",
+      "REQ-006",
+      "REQ-015"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/applications",
+      "body": {
+        "message": "synthetic-example",
+        "wish_content_version": 1
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "wish_id": "6c500000-0000-4000-8000-000000000001",
+          "status": "pending_scan"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getWishesIdApplications": {
+    "task_id": "T019",
+    "req_ids": [
+      "REQ-006",
+      "REQ-015"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/wishes/{id}/applications",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postApplicationsIdWithdraw": {
+    "task_id": "T019",
+    "req_ids": [
+      "REQ-006"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/applications/{id}/withdraw",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "wish_id": "6c500000-0000-4000-8000-000000000001",
+          "status": "pending_scan"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postApplicationsIdAccept": {
+    "task_id": "T019",
+    "req_ids": [
+      "REQ-004",
+      "REQ-005",
+      "REQ-006"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/applications/{id}/accept",
+      "body": {
+        "expected_version": 1,
+        "wish_expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "match_id": "6c500000-0000-4000-8000-000000000001",
+          "conversation_id": "6c500000-0000-4000-8000-000000000001",
+          "wish_id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeConversations": {
+    "task_id": "T021",
+    "req_ids": [
+      "REQ-007",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/conversations",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getConversationsIdMessages": {
+    "task_id": "T021",
+    "req_ids": [
+      "REQ-007",
+      "REQ-015",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/conversations/{id}/messages",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_after_seq": 0
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postConversationsIdMessages": {
+    "task_id": "T021",
+    "req_ids": [
+      "REQ-007",
+      "REQ-015"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/conversations/{id}/messages",
+      "body": {
+        "client_message_id": "synthetic-example",
+        "body": "synthetic-example",
+        "expected_write_epoch": 0
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "message_id": "6c500000-0000-4000-8000-000000000001",
+          "status": "pending_scan",
+          "delivery_seq": null
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeMessagesIdStatus": {
+    "task_id": "T021",
+    "req_ids": [
+      "REQ-007",
+      "REQ-015",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/messages/{id}/status",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "message_id": "6c500000-0000-4000-8000-000000000001",
+          "status": "pending",
+          "delivery_seq": null
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeNotifications": {
+    "task_id": "T021",
+    "req_ids": [
+      "REQ-006",
+      "REQ-017",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/notifications",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeNotificationsIdRead": {
+    "task_id": "T021",
+    "req_ids": [
+      "REQ-006",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/notifications/{id}/read",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "kind": "synthetic-example",
+          "read": true
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdStories": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-004",
+      "REQ-008",
+      "REQ-015"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/stories",
+      "body": {
+        "body": "synthetic-example",
+        "wish_expected_version": 1
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "status": "pending_review",
+          "wish_state": "fulfilled"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "putWishesIdStory": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-008",
+      "REQ-015"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "PUT",
+      "path": "/api/v1/wishes/{id}/story",
+      "body": {
+        "body": "synthetic-example",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "status": "pending_review",
+          "wish_state": "fulfilled"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postWishesIdStoryWithdraw": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-008"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/story/withdraw",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "current_state": "withdrawn",
+          "allowed_actions": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getStories": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-008",
+      "REQ-015",
+      "REQ-018",
+      "REQ-021"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/stories",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getStoriesId": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-008",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/stories/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "body": "synthetic-example",
+          "content_version": 1,
+          "school_related": false,
+          "notice_codes": [],
+          "notice_text": "",
+          "author": {
+            "id": "6c500000-0000-4000-8000-000000000001",
+            "nickname": "synthetic-example"
+          }
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postShareLinks": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-008"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/share-links",
+      "body": {
+        "target_kind": "wish",
+        "id": "6c500000-0000-4000-8000-000000000001"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "ref": "synthetic-example",
+          "miniapp_route": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getShareLinksRef": {
+    "task_id": "T023",
+    "req_ids": [
+      "REQ-008",
+      "REQ-018"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/share-links/{ref}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "target_kind": "wish",
+          "target": {
+            "id": "6c500000-0000-4000-8000-000000000001",
+            "body": "synthetic-example",
+            "content_version": 1,
+            "school_related": false,
+            "notice_codes": [],
+            "notice_text": "",
+            "author": {
+              "id": "6c500000-0000-4000-8000-000000000001",
+              "nickname": "synthetic-example"
+            }
+          }
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeBlocks": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-016"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/blocks",
+      "body": {
+        "target_user_id": "6c500000-0000-4000-8000-000000000001"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "target_user_id": "6c500000-0000-4000-8000-000000000001",
+          "blocked": true
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "deleteMeBlocksTarget_Id": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "DELETE",
+      "path": "/api/v1/me/blocks/{target_id}",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 204,
+      "body": null
+    }
+  },
+  "getReportTypes": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/report-types",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postReports": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-015",
+      "REQ-017"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/reports",
+      "body": {
+        "target_kind": "wish",
+        "id": "6c500000-0000-4000-8000-000000000001",
+        "type_code": "synthetic-example"
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeAppeals": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-016"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/appeals",
+      "body": {
+        "penalty_id": "6c500000-0000-4000-8000-000000000001",
+        "body": "synthetic-example"
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeAppeals": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-016"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/appeals",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getMeWarnings": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-016"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/me/warnings",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeWarningsIdDisplay": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-016"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/warnings/{id}/display",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "notice": "synthetic-example",
+          "first_displayed_at": "2026-10-17T00:00:00Z",
+          "confirmable_at": "2026-10-17T00:00:30Z",
+          "server_now": "2026-10-17T00:00:00Z",
+          "remaining_seconds": 30
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postMeWarningsIdAck": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-016"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/me/warnings/{id}/ack",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "notice": "synthetic-example",
+          "first_displayed_at": "2026-10-17T00:00:00Z",
+          "confirmable_at": "2026-10-17T00:00:30Z",
+          "server_now": "2026-10-17T00:00:30Z",
+          "remaining_seconds": 0,
+          "acknowledged_at": "2026-10-17T00:00:30Z"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminSessions": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "token": "synthetic-example",
+          "account": {
+            "id": "6c500000-0000-4000-8000-000000000001",
+            "version": 1,
+            "login_name": "synthetic-example",
+            "roles": [],
+            "active": false
+          }
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "deleteAdminSession": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "DELETE",
+      "path": "/api/v1/admin/session",
+      "body": null
+    },
+    "response": {
+      "status": 204,
+      "body": null
+    }
+  },
+  "postAdminPassword": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/password",
+      "body": null
+    },
+    "response": {
+      "status": 204,
+      "body": null
+    }
+  },
+  "getAdminIdentityReviews": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/identity-reviews",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminIdentityReviewsId": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/identity-reviews/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example",
+          "name": "synthetic-example",
+          "student_number": "synthetic-example",
+          "asset_id": "6c500000-0000-4000-8000-000000000001"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminIdentityReviewsIdStudentCard": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/identity-reviews/{id}/student-card",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": null
+    }
+  },
+  "postAdminIdentityReviewsIdDecision": {
+    "task_id": "T011",
+    "req_ids": [
+      "REQ-002",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/identity-reviews/{id}/decision",
+      "body": {
+        "decision": "approved",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "request_id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminModerationTasks": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminModerationTasksId": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "content_version": 1,
+          "body": "synthetic-example",
+          "status": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminModerationTasksIdDecision": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/moderation-tasks/{id}/decision",
+      "body": {
+        "decision": "approved",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "content_decision": "approved",
+          "business_outcome": "cancelled",
+          "version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminContentsKindIdOffline": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/contents/{kind}/{id}/offline",
+      "body": {
+        "expected_version": 1,
+        "reason": "synthetic-example"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example",
+          "content_version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminContentsKindIdReleaseRestriction": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/contents/{kind}/{id}/release-restriction",
+      "body": {
+        "expected_version": 1,
+        "reason": "synthetic-example"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example",
+          "content_version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminReports": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/reports",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminReportsIdDecision": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/reports/{id}/decision",
+      "body": {
+        "decision": "confirmed",
+        "reason": "synthetic-example",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example",
+          "content_version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminUsersIdPenalties": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-016",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/users/{id}/penalties",
+      "body": {
+        "violation_ref": "6c500000-0000-4000-8000-000000000001",
+        "content_ref": "6c500000-0000-4000-8000-000000000001",
+        "content_version": 1,
+        "level": "minor",
+        "reason": "synthetic-example",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example",
+          "content_version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminAppeals": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-014",
+      "REQ-016",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/appeals",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminAppealsIdDecision": {
+    "task_id": "T026",
+    "req_ids": [
+      "REQ-016",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/appeals/{id}/decision",
+      "body": {
+        "decision": "uphold",
+        "reason": "synthetic-example",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminWordlists": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/wordlists",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": null,
+          "heads": [
+            {
+              "kind": "crisis",
+              "version": 1,
+              "effective_id": null
+            },
+            {
+              "kind": "school",
+              "version": 1,
+              "effective_id": null
+            },
+            {
+              "kind": "ordinary_violation",
+              "version": 1,
+              "effective_id": null
+            }
+          ]
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminWordlistsId": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/wordlists/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "kind": "crisis",
+          "status": "draft",
+          "base_effective_id": null,
+          "entries": []
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminWordlistsVersions": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/wordlists/versions",
+      "body": {
+        "kind": "crisis",
+        "entries": [],
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "kind": "crisis",
+          "status": "draft",
+          "base_effective_id": null
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminWordlistsIdPublish": {
+    "task_id": "T016",
+    "req_ids": [
+      "REQ-015",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/wordlists/{id}/publish",
+      "body": {
+        "expected_version": 1,
+        "expected_head_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "kind": "crisis",
+          "status": "draft",
+          "base_effective_id": null
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminCrisisCases": {
+    "task_id": "T029",
+    "req_ids": [
+      "REQ-017",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/crisis-cases",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminCrisisCasesId": {
+    "task_id": "T029",
+    "req_ids": [
+      "REQ-017",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/crisis-cases/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminCrisisCasesIdActions": {
+    "task_id": "T029",
+    "req_ids": [
+      "REQ-017",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/crisis-cases/{id}/actions",
+      "body": {
+        "action": "synthetic-example",
+        "reason": "synthetic-example",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example",
+          "content_version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminCrisisCasesIdResolveFalsePositive": {
+    "task_id": "T029",
+    "req_ids": [
+      "REQ-015",
+      "REQ-017",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/crisis-cases/{id}/resolve-false-positive",
+      "body": {
+        "expected_version": 1,
+        "reason": "synthetic-example"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "synthetic-example",
+          "content_version": 1
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminEvidenceId": {
+    "task_id": "T029",
+    "req_ids": [
+      "REQ-017",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/evidence/{id}",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "case_id": "6c500000-0000-4000-8000-000000000001",
+          "status": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminEvidenceIdAsset": {
+    "task_id": "T029",
+    "req_ids": [
+      "REQ-017",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/evidence/{id}/asset",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": null
+    }
+  },
+  "deleteAdminEvidenceId": {
+    "task_id": "T031",
+    "req_ids": [
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/{id}",
+      "body": {
+        "expected_version": 1,
+        "reason": "synthetic-example"
+      }
+    },
+    "response": {
+      "status": 202,
+      "body": {
+        "code": 0,
+        "message": "已持久接收",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "pending"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminAccounts": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/accounts",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminAccounts": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/accounts",
+      "body": null
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "login_name": "synthetic-example",
+          "roles": [],
+          "active": false
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "putAdminAccountsIdRoles": {
+    "task_id": "T008",
+    "req_ids": [
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "PUT",
+      "path": "/api/v1/admin/accounts/{id}/roles",
+      "body": {
+        "roles": [],
+        "reason": "synthetic-example",
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "login_name": "synthetic-example",
+          "roles": [],
+          "active": false
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "getAdminWorkItems": {
+    "task_id": "T007",
+    "req_ids": [
+      "REQ-006",
+      "REQ-017",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {},
+      "method": "GET",
+      "path": "/api/v1/admin/work-items",
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "items": [],
+          "next_cursor": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  },
+  "postAdminWorkItemsIdRetry": {
+    "task_id": "T007",
+    "req_ids": [
+      "REQ-006",
+      "REQ-017",
+      "REQ-018",
+      "REQ-019"
+    ],
+    "mode": "synthetic-contract-example",
+    "request": {
+      "headers": {
+        "Idempotency-Key": "synthetic-command-key"
+      },
+      "method": "POST",
+      "path": "/api/v1/admin/work-items/{id}/retry",
+      "body": {
+        "expected_version": 1
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "code": 0,
+        "message": "成功",
+        "data": {
+          "id": "6c500000-0000-4000-8000-000000000001",
+          "version": 1,
+          "status": "pending",
+          "kind": "synthetic-example"
+        },
+        "request_id": "synthetic-request-id"
+      }
+    }
+  }
+}

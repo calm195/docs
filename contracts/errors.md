@@ -1,4 +1,4 @@
-# T002 错误码 v0.1.0
+# T002 错误码 v0.2.0
 
 所有错误有非零code、message、稳定error_code与request_id；不含底层异常、凭据、身份或正文。
 
