@@ -262,6 +262,11 @@ for line in DATA.strip().splitlines():
   op['x-implementation-status']='implemented-injected'
   op['x-resource-mode']='postgres-redis-synthetic-external-validation'
   op['x-backend-evidence']='../../liyuanci-backend-go/docs/milestones/phase-06.md'
+ # 人工认证申请、重提、审核与敏感读取已提供注入式实现；真实外部接入另行验收。
+ if (method,path) in {('POST','/me/verification-requests'),('GET','/me/verification-request'),('GET','/admin/identity-reviews'),('GET','/admin/identity-reviews/{id}'),('GET','/admin/identity-reviews/{id}/student-card'),('POST','/admin/identity-reviews/{id}/decision')}:
+  op['x-implementation-status']='implemented-injected'
+  op['x-resource-mode']='postgres-redis-synthetic-external-validation'
+  op['x-backend-evidence']='../../liyuanci-backend-go/docs/milestones/phase-07.md'
  op['security']=[] if auth in ['public','code','admin_login'] else security['AdminSession' if path.startswith('/admin') else 'StudentSession']
  import re
  for name in re.findall(r'{([^}]+)}',path):op['parameters'].append({'name':name,'in':'path','required':True,'schema':ID})
@@ -281,7 +286,7 @@ for line in DATA.strip().splitlines():
    if req=='VerificationInput':op['requestBody']['content'][mime]['example'].pop('expected_version',None)
  headers={'X-Request-ID':{'schema':string(),'description':'技术请求关联标识'},'Cache-Control':{'schema':string(),'description':'no-store：本人、案件、身份、会话、回执等敏感响应'}}
  if res=='-':op['responses'][status]={'description':'成功，无响应体','headers':headers}
- elif res=='Binary':op['responses'][status]={'description':'授权代理解密流；No-Store','headers':headers,'content':{'application/octet-stream':{'schema':string(format='binary')}}}
+ elif res=='Binary':op['responses'][status]={'description':'授权代理在整图认证及审计提交后返回；No-Store','headers':headers,'content':{'image/png' if path=='/admin/identity-reviews/{id}/student-card' else 'application/octet-stream':{'schema':string(format='binary')}}}
  else:
   envelope_name=res+'Envelope'
   if envelope_name not in S:model(envelope_name,{'code':{'type':'integer','const':0},'message':string(),'data':ref(res),'request_id':string()},['code','message','data','request_id'])

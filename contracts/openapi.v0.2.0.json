@@ -1877,8 +1877,8 @@
           "REQ-002",
           "REQ-018"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [
           {
             "$ref": "#/components/parameters/IdempotencyKey"
@@ -2160,6 +2160,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-07.md",
         "security": [
           {
             "StudentSession": []
@@ -2195,8 +2196,8 @@
           "REQ-002",
           "REQ-018"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [],
         "responses": {
           "200": {
@@ -2474,6 +2475,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-07.md",
         "security": [
           {
             "StudentSession": []
@@ -16819,8 +16821,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [
           {
             "$ref": "#/components/parameters/Cursor"
@@ -17104,6 +17106,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-07.md",
         "security": [
           {
             "AdminSession": []
@@ -17125,8 +17128,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [
           {
             "name": "id",
@@ -17418,6 +17421,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-07.md",
         "security": [
           {
             "AdminSession": []
@@ -17439,8 +17443,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [
           {
             "name": "id",
@@ -17455,7 +17459,7 @@
         ],
         "responses": {
           "200": {
-            "description": "授权代理解密流；No-Store",
+            "description": "授权代理在整图认证及审计提交后返回；No-Store",
             "headers": {
               "X-Request-ID": {
                 "schema": {
@@ -17471,7 +17475,7 @@
               }
             },
             "content": {
-              "application/octet-stream": {
+              "image/png": {
                 "schema": {
                   "type": "string",
                   "format": "binary"
@@ -17720,6 +17724,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-07.md",
         "security": [
           {
             "AdminSession": []
@@ -17741,8 +17746,8 @@
           "REQ-018",
           "REQ-019"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [
           {
             "name": "id",
@@ -18034,6 +18039,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-07.md",
         "security": [
           {
             "AdminSession": []
@@ -24503,7 +24509,7 @@
         ],
         "responses": {
           "200": {
-            "description": "授权代理解密流；No-Store",
+            "description": "授权代理在整图认证及审计提交后返回；No-Store",
             "headers": {
               "X-Request-ID": {
                 "schema": {

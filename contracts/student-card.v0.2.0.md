@@ -14,7 +14,7 @@
 
 `GET /api/v1/me/student-card-assets/{id}`，学生Bearer，200返回同Asset投影；pending为排队、重试或异常待办未终结，approved为图片安全扫描通过，rejected为扫描明确拒绝。未知与非本人均404；不返回外部对象key、密文、图片内容或下载URL。API不承诺扫描时限；页面按既有生命周期查询，离开停止请求，重入后从服务端读取，不用本地定时器伪造完成。
 
-**approved不代表学生认证通过。** 当前Verification人工申请、本人审核状态、后台案件/原卡/decision等接口仍not-implemented，不能因为上传成功自行开放发布、应愿或聊天，也不能把Asset状态当Verification版本。后续仍须资产归属/扫描、账号/处罚与审核版本的服务端复核。
+**approved不代表学生认证通过。** Verification人工申请、本人审核状态、后台案件/原卡/decision已提供implemented-injected模块，详见[人工认证](verification.v0.2.0.md)。不能因为图片扫描成功自行开放发布、应愿或聊天，也不能把Asset状态当Verification版本；服务端逐次复核资产归属/扫描、账号/处罚与审核版本。
 
 ## 动作与装配
 

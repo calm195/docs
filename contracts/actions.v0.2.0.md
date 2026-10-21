@@ -1,4 +1,8 @@
-# 静态动作索引 revision 4
+# 静态动作索引 revision 5
+
+2026-10-21；T002/T011，REQ-002、015、018、019、020。revision 5登记人工认证六接口的注入式实现：6项后台opt-in、12项身份/学生卡/人工认证注入库、65项未实现。接入见verification.v0.2.0.md；默认server与业务worker尚未装配，真实外部供应商、跨端联调及生产验收均未完成。不新增Wire字段；原卡返回规范化PNG，静态索引不代替当前权限。当前指纹actions-review.v0.2.0-r5.json，r1–r4清单保留历史。
+
+## 历史 revision 4
 
 2026-10-21；T002/T008/T011，REQ-002、015、018、019、020。revision 4仅登记学生卡上传/状态的注入式实现，6项后台opt-in、6项学生身份/学生卡注入库、71项未实现；人工认证、真实供应商及server/业务worker装配仍缺。既有Wire字段不变，补文件媒体/大小边界说明；当前指纹actions-review.v0.2.0-r4.json，r1–r3历史保留。接入见student-card.v0.2.0.md。
 

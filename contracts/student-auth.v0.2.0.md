@@ -25,4 +25,4 @@ DELETE /api/v1/auth/session携带Bearer/Idempotency-Key，204后清理本地toke
 
 后端需显式九版迁移/permissions、配置openid检索代次，注入微信/KMS/共享Redis及专用身份维护池，调用studentauth.New和RegisterStudent。当前server装配、真实小程序资源、KMS/HMAC供应商和最小执行身份仍未交付；不会自动启用合成适配器。代码/验证说明见[后端学生会话](../../liyuanci-backend-go/docs/student-auth.md)和[第五阶段](../../liyuanci-backend-go/docs/milestones/phase-05.md)。无跨端联调或生产验收。
 
-学生卡上传/状态的可注入模块已交付，详见student-card.v0.2.0.md；人工认证仍未交付。
+学生卡上传/状态的可注入模块已交付，详见student-card.v0.2.0.md；人工认证六操作已提供注入式库，见verification.v0.2.0.md，尚未装配server。

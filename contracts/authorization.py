@@ -34,7 +34,7 @@ def operation_index(api):
 def artifacts(api):
     actions = operation_index(api)
     registry = {
-        'base_contract': '0.2.0', 'revision': 4,
+        'base_contract': '0.2.0', 'revision': 5,
         'mode': 'static-protocol-index-not-authorization',
         'action_identifier': 'OpenAPI operationId（区分大小写，无事件名别名）',
         'missing_or_unknown': 'deny',

@@ -16,7 +16,7 @@ for path,item in api['paths'].items():
   ids.add(op['operationId']);ops+=1
   assert op['x-task-id'].startswith('T') and op['x-req-ids']
   expected_implemented=(method,path) in {('post','/admin/accounts'),('post','/admin/sessions'),('post','/admin/password'),('delete','/admin/session'),('get','/admin/accounts'),('put','/admin/accounts/{id}/roles')}
-  expected_injected=(method,path) in {('post','/auth/wechat-sessions'),('get','/me'),('put','/me/profile'),('delete','/auth/session'),('post','/me/student-card-assets'),('get','/me/student-card-assets/{id}')}
+  expected_injected=(method,path) in {('post','/auth/wechat-sessions'),('get','/me'),('put','/me/profile'),('delete','/auth/session'),('post','/me/student-card-assets'),('get','/me/student-card-assets/{id}'),('post','/me/verification-requests'),('get','/me/verification-request'),('get','/admin/identity-reviews'),('get','/admin/identity-reviews/{id}'),('get','/admin/identity-reviews/{id}/student-card'),('post','/admin/identity-reviews/{id}/decision')}
   assert op['x-implementation-status']==('implemented-opt-in' if expected_implemented else 'implemented-injected' if expected_injected else 'not-implemented')
   if expected_injected:assert op['x-resource-mode']=='postgres-redis-synthetic-external-validation'
   if expected_implemented:assert op['x-resource-mode']=='postgres-redis-opt-in' and op['x-backend-evidence'].endswith('/phase-05.md')
@@ -38,8 +38,8 @@ for name,value in negative:
 card=api['paths']['/admin/identity-reviews/{id}/student-card']['get']
 assert card['security']==[{'AdminSession':[]}]
 card_response=card['responses']['200']
-assert set(card_response['content'])=={'application/octet-stream'}
-assert card_response['content']['application/octet-stream']['schema']=={'type':'string','format':'binary'}
+assert set(card_response['content'])=={'image/png'}
+assert card_response['content']['image/png']['schema']=={'type':'string','format':'binary'}
 assert 'no-store' in card_response['headers']['Cache-Control']['description'].lower()
 summary=api['components']['schemas']['CaseSummary']
 assert not {'name','student_number','asset_id','body'} & set(summary['properties'])
@@ -84,3 +84,11 @@ print(f'PASS T002/REQ-001,003,020: {ops} operations; {samples} request/response 
 
 import authorization
 authorization.validate(api)
+
+# T011/REQ-002、018：认证接口的二进制媒体、版本、驳回意见与脱敏边界保持一致。
+assert 'image/png' in api['paths']['/admin/identity-reviews/{id}/student-card']['get']['responses']['200']['content']
+assert set(schemas['CaseSummary']['required'])=={'id','version','status'}
+assert not ({'name','student_number','asset_id'} & set(schemas['CaseSummary']['properties']))
+for bad in [{'decision':'rejected','expected_version':1}, {'decision':'rejected','expected_version':1,'reason':'x','revision_suggestion':''}]:
+ assert list(Draft202012Validator({'$ref':'#/components/schemas/ReviewDecision'},resolver=resolver).iter_errors(bad))
+assert list(Draft202012Validator({'$ref':'#/components/schemas/VerificationInput'},resolver=resolver).iter_errors({'student_number':'合成','name':'合成','asset_id':'synthetic','expected_version':None}))
