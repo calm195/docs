@@ -247,7 +247,7 @@ for line in DATA.strip().splitlines():
  opid=method.lower()+''.join(x.title() for x in path.replace('{','').replace('}','').replace('-','/').split('/'))
  op={'operationId':opid,'summary':desc,'description':desc+'。权限：'+ROLE[auth]+'。参见语义约束与验收映射。','tags':['admin' if path.startswith('/admin') else path.split('/')[1]],'x-task-id':task,'x-req-ids':['REQ-'+r for r in reqs.split(',')],'x-implementation-status':'not-implemented','x-resource-mode':'contract-only','parameters':[], 'responses':{}}
  # 仅登记已有本端真实验证的显式装配范围，其余端点仍不可用；不表示部署或三端验收。
- if (method,path) in {('POST','/admin/accounts'),('POST','/admin/sessions'),('POST','/admin/password'),('DELETE','/admin/session')}:
+ if (method,path) in {('POST','/admin/accounts'),('POST','/admin/sessions'),('POST','/admin/password'),('DELETE','/admin/session'),('GET','/admin/accounts'),('PUT','/admin/accounts/{id}/roles')}:
   op['x-implementation-status']='implemented-opt-in'
   op['x-resource-mode']='postgres-redis-opt-in'
   op['x-backend-evidence']='../../liyuanci-backend-go/docs/milestones/phase-05.md'
@@ -299,7 +299,7 @@ for line in DATA.strip().splitlines():
  examples[opid]={'task_id':task,'req_ids':op['x-req-ids'],'mode':'synthetic-contract-example','request':{'headers':({'Idempotency-Key':'synthetic-command-key'} if method!='GET' and path not in ['/auth/wechat-sessions','/admin/sessions'] else {}),'method':method,'path':'/api/v1'+path,'body':None if req in ['-','AdminLoginInput','AccountInput','AdminPasswordInput'] else sample(ref(req))},'response':{'status':int(status),'body':None if res in ['-','Binary'] else response}}
  if req=='VerificationInput':examples[opid]['request']['body'].pop('expected_version',None)
  mapping.append((opid,method,path,task,','.join(op['x-req-ids'])))
-api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；后台四个操作已有显式启用实现，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；当前后端仅/healthz与/readyz，不可将此地址当业务可用'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
+api={'openapi':'3.1.0','info':{'title':'鲤源池首发共享接口契约','version':VERSION,'description':'T002，批准api.md v0.2细化；后台六个操作已有显式启用实现，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。'},'servers':[{'url':'/api/v1','description':'两端共同前缀；当前后端仅/healthz与/readyz，不可将此地址当业务可用'}],'paths':paths,'components':{'schemas':S,'parameters':parameters,'securitySchemes':{'StudentSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque student session'},'AdminSession':{'type':'http','scheme':'bearer','bearerFormat':'opaque independent admin session'}}},'x-task-id':'T002','x-contract-mode':'definition-only','x-design-version':'G3 ff882ab0c8bdb59d3509e0782c7b13ec77e5c7e4'}
 api['x-decision-amendment']='decisions.v0.2.0.md（2026-10-21用户确认）'
 (OUT/f'openapi.v{VERSION}.json').write_text(json.dumps(api,ensure_ascii=False,indent=2)+'\n')
 (OUT/f'examples.v{VERSION}.json').write_text(json.dumps(examples,ensure_ascii=False,indent=2)+'\n')

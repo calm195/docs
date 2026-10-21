@@ -1,4 +1,9 @@
-# B07 静态动作索引 revision 1
+# 静态动作索引 revision 2
+
+2026-10-21；T002/T008，REQ-018、019。当前revision 2仅登记账号列表与角色修改的本端实现状态，6项implemented-opt-in、77项not-implemented；不更改Wire，不新增运行授权。当前指纹见actions-review.v0.2.0-r2.json，revision 1清单作为历史保留，不能核验本轮输入。后台接入细节见admin-accounts.v0.2.0.md。审核目标用户已明确采用registry.id精确正文版本，扩展仍未激活。
+
+## revision 1 历史说明
+
 
 2026-10-21；T002，REQ-002–008、018、019；协调基准c927db0fa2a1b12b1ded49bc77e23991cc80325d。正式交付限静态索引及生成/校验，不变更0.2.0 Wire，OpenAPI/examples保持原指纹。提交完整SHA由后端阶段记录及会话最终回报提供，指纹见actions-review.v0.2.0-r1.json。
 
