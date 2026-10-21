@@ -16,7 +16,9 @@ for path,item in api['paths'].items():
   ids.add(op['operationId']);ops+=1
   assert op['x-task-id'].startswith('T') and op['x-req-ids']
   expected_implemented=(method,path) in {('post','/admin/accounts'),('post','/admin/sessions'),('post','/admin/password'),('delete','/admin/session'),('get','/admin/accounts'),('put','/admin/accounts/{id}/roles')}
-  assert op['x-implementation-status']==('implemented-opt-in' if expected_implemented else 'not-implemented')
+  expected_injected=(method,path) in {('post','/auth/wechat-sessions'),('get','/me'),('put','/me/profile'),('delete','/auth/session')}
+  assert op['x-implementation-status']==('implemented-opt-in' if expected_implemented else 'implemented-injected' if expected_injected else 'not-implemented')
+  if expected_injected:assert op['x-resource-mode']=='postgres-redis-synthetic-external-validation'
   if expected_implemented:assert op['x-resource-mode']=='postgres-redis-opt-in' and op['x-backend-evidence'].endswith('/phase-05.md')
   if method!='get' and path not in ['/auth/wechat-sessions','/admin/sessions']:
    assert any(p.get('$ref','').endswith('/IdempotencyKey') for p in op['parameters'])

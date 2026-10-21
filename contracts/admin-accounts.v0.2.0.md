@@ -18,7 +18,7 @@
 
 ## 实现与验证
 
-后端accounts.go负责服务流程和签名游标、repository.go负责SQL，HTTP严格校验/状态映射；前七版迁移不变，第八版扩展角色修改留迹，非空角色留迹阻止破坏性回退。真实隔离Docker PG/Redis覆盖分页/签名/授权/版本/幂等/并发/留迹回滚；证据见[后端第五阶段](../../liyuanci-backend-go/docs/milestones/phase-05.md)。学生会话与审核等其他端点仍未实现。
+后端accounts.go负责服务流程和签名游标、repository.go负责SQL，HTTP严格校验/状态映射；前七版迁移不变，第八版扩展角色修改留迹，非空角色留迹阻止破坏性回退。真实隔离Docker PG/Redis覆盖分页/签名/授权/版本/幂等/并发/留迹回滚；证据见[后端第五阶段](../../liyuanci-backend-go/docs/milestones/phase-05.md)。学生身份四操作已有注入库和隔离验证，但未装配server；学生卡/审核等业务仍未实现。
 
 ## 后续审核决策
 

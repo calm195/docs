@@ -1,4 +1,9 @@
-# 静态动作索引 revision 2
+# 静态动作索引 revision 3
+
+2026-10-21；T002/T008、REQ-002、014、018、019。revision 3登记学生身份四操作的implemented-injected状态，6项后台opt-in、4项学生注入库、73项未实现；学生server装配及实际供应商仍缺。Wire不变；当前指纹actions-review.v0.2.0-r3.json，r1/r2清单保留历史。接入见student-auth.v0.2.0.md。
+
+## revision 2 历史说明
+
 
 2026-10-21；T002/T008，REQ-018、019。当前revision 2仅登记账号列表与角色修改的本端实现状态，6项implemented-opt-in、77项not-implemented；不更改Wire，不新增运行授权。当前指纹见actions-review.v0.2.0-r2.json，revision 1清单作为历史保留，不能核验本轮输入。后台接入细节见admin-accounts.v0.2.0.md。审核目标用户已明确采用registry.id精确正文版本，扩展仍未激活。
 

@@ -3,12 +3,12 @@
   "info": {
     "title": "鲤源池首发共享接口契约",
     "version": "0.2.0",
-    "description": "T002，批准api.md v0.2细化；后台六个操作已有显式启用实现，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。"
+    "description": "T002，批准api.md v0.2细化；后台六个操作已有显式启用实现，学生身份四个操作提供依赖注入库及隔离验证但尚未装配到server，其余业务端点未实现，不表示部署或三端联调。后台账号/词库/标签/会话按2026-10-21用户确认；年级字典与部署参数待交付。"
   },
   "servers": [
     {
       "url": "/api/v1",
-      "description": "两端共同前缀；当前后端仅/healthz与/readyz，不可将此地址当业务可用"
+      "description": "两端共同前缀；默认启动仅/healthz与/readyz；后台六操作须显式配置，学生四操作仅注入式库且未装配server"
     }
   ],
   "paths": {
@@ -25,8 +25,8 @@
           "REQ-002",
           "REQ-018"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [],
         "responses": {
           "200": {
@@ -308,6 +308,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [],
         "requestBody": {
           "required": true,
@@ -338,8 +339,8 @@
           "REQ-002",
           "REQ-018"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [
           {
             "$ref": "#/components/parameters/IdempotencyKey"
@@ -604,6 +605,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [
           {
             "StudentSession": []
@@ -625,8 +627,8 @@
           "REQ-014",
           "REQ-018"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [],
         "responses": {
           "200": {
@@ -905,6 +907,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [
           {
             "StudentSession": []
@@ -926,8 +929,8 @@
           "REQ-014",
           "REQ-018"
         ],
-        "x-implementation-status": "not-implemented",
-        "x-resource-mode": "contract-only",
+        "x-implementation-status": "implemented-injected",
+        "x-resource-mode": "postgres-redis-synthetic-external-validation",
         "parameters": [
           {
             "$ref": "#/components/parameters/IdempotencyKey"
@@ -1210,6 +1213,7 @@
             }
           }
         },
+        "x-backend-evidence": "../../liyuanci-backend-go/docs/milestones/phase-05.md",
         "security": [
           {
             "StudentSession": []

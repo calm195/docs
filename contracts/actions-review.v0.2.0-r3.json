@@ -1,0 +1,19 @@
+{
+  "base_commit": "d529a3a184a81ebd2cd72e744d00e68306e39e91",
+  "contract": "0.2.0",
+  "index_revision": 3,
+  "scope": "static-operation-index-not-runtime-authorization",
+  "moderation_extension": "draft-not-active-not-a-dependency",
+  "hashes": {
+    "openapi.v0.2.0.json": "0d38b900a7b3dd69b47cbee6a65443931f0a439490d4320c41b72db9e0308248",
+    "examples.v0.2.0.json": "0d3560fcb0e634d4e0e65a48e448bcb9e605fe3253f65aa976d31bd30bf2df1e",
+    "decisions.v0.2.0.md": "188043aa722f3a40d74644bb77c2f6f462cb6b04fe46e8ff7399a03ccf294a07",
+    "actions.v0.2.0.json": "7cf34d4a36d58fd25d1e917b58880ae8086f130ab0cb0189df265d49c81d6b36",
+    "authorization.py": "3d9aa443b288174b535216335c499d01ba38e9566cd643f2b45d5f29ec40e8a6",
+    "build.py": "d70c0b70c3ee59394ebac1810bf70466da63638cec6ed60cd49414dace9de488",
+    "validate.py": "18bae880790c34145a57c8ba3e9754860e9bfe0f0081184ff79c56bb617cb242",
+    "actions.v0.2.0.md": "c938d41762ce2004794ce482d55f2919612a0b99dd021a32b5e73f74955cd2d6",
+    "admin-accounts.v0.2.0.md": "6ea275102d78a67a013563d58594ac73caffbbe1893804a639b067b37bc229cd",
+    "student-auth.v0.2.0.md": "def51606204461286dcfa8990b87bd02affc0f4d7faa0c4712fb888c6fbe619d"
+  }
+}
