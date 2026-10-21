@@ -79,3 +79,6 @@ bad_heads={'items':[],'next_cursor':None,'heads':[{'kind':'school','version':1,'
 assert list(Draft202012Validator({'$ref':'#/components/schemas/WordlistPage'},resolver=resolver).iter_errors(bad_heads))
 assert ops==83
 print(f'PASS T002/REQ-001,003,020: {ops} operations; {samples} request/response examples; 5 negative boundaries; refs and OpenAPI 3.1; B02/B03/B04/B05/B06/B07 static boundaries; 8 new negative cases')
+
+import authorization
+authorization.validate(api)

@@ -306,3 +306,7 @@ api['x-decision-amendment']='decisions.v0.2.0.md（2026-10-21用户确认）'
 (OUT/'operations.md').write_text('# T002 接口→任务→REQ 索引\n\n版本0.2.0；后台创建/登录/改密/退出已有本端验证的显式启用实现，其余操作未实现；不表示部署或三端联调。验收用例见acceptance.md。\n\n| operationId | 方法及相对路径 | 实现任务 | REQ |\n| --- | --- | --- | --- |\n'+''.join(f'| {o} | {m} `{p}` | {t} | {r} |\n' for o,m,p,t,r in mapping))
 (OUT/'errors.md').write_text('# T002 错误码 v0.2.0\n\n所有错误有非零code、message、稳定error_code与request_id；不含底层异常、凭据、身份或正文。\n\n| HTTP | error_code |\n| --- | --- |\n'+''.join(f'| {c} | {", ".join(v)} |\n' for c,v in ERRORS.items())+'\nIDEMPOTENCY_CONFLICT是同键异摘要的技术命名补全；WARNING_WAIT_REQUIRED返回remaining_seconds，提前失败不阻止之后同键重试。INTERNAL_ERROR为异常恢复兜底，不是业务错误。503不允许安全能力失败时直通；404用于不可读对象避免枚举。ready为成功处理业务结果，不用ACTIVE_WISH_LIMIT；后者用于B01满额回退。\n')
 print(f'{len(mapping)} operations, {len(S)} schemas generated')
+
+# 静态动作词表独立生成，不依赖审核草案，不向冻结协议注入字段或端点。
+import authorization
+authorization.build(api)

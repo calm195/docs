@@ -1,0 +1,1221 @@
+{
+  "base_contract": "0.2.0",
+  "revision": 1,
+  "mode": "static-protocol-index-not-authorization",
+  "action_identifier": "OpenAPI operationId（区分大小写，无事件名别名）",
+  "missing_or_unknown": "deny",
+  "resource_binding": "动作必须属于当前投影/当前目标；不跨账号、案件或内容复用",
+  "actions": {
+    "postAuthWechatSessions": {
+      "method": "POST",
+      "path": "/api/v1/auth/wechat-sessions",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018"
+      ]
+    },
+    "deleteAuthSession": {
+      "method": "DELETE",
+      "path": "/api/v1/auth/session",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018"
+      ]
+    },
+    "getMe": {
+      "method": "GET",
+      "path": "/api/v1/me",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-014",
+        "REQ-018"
+      ]
+    },
+    "putMeProfile": {
+      "method": "PUT",
+      "path": "/api/v1/me/profile",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-002",
+        "REQ-014",
+        "REQ-018"
+      ]
+    },
+    "postMeStudentCardAssets": {
+      "method": "POST",
+      "path": "/api/v1/me/student-card-assets",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-015",
+        "REQ-018"
+      ]
+    },
+    "getMeStudentCardAssetsId": {
+      "method": "GET",
+      "path": "/api/v1/me/student-card-assets/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-015",
+        "REQ-018"
+      ]
+    },
+    "postMeVerificationRequests": {
+      "method": "POST",
+      "path": "/api/v1/me/verification-requests",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018"
+      ]
+    },
+    "getMeVerificationRequest": {
+      "method": "GET",
+      "path": "/api/v1/me/verification-request",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018"
+      ]
+    },
+    "postMeDeletionRequests": {
+      "method": "POST",
+      "path": "/api/v1/me/deletion-requests",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-014",
+        "REQ-018"
+      ]
+    },
+    "getDeletionReceiptsReceipt": {
+      "method": "GET",
+      "path": "/api/v1/deletion-receipts/{receipt}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "receipt"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-018"
+      ]
+    },
+    "getWishes": {
+      "method": "GET",
+      "path": "/api/v1/wishes",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-003",
+        "REQ-004",
+        "REQ-005",
+        "REQ-008",
+        "REQ-018",
+        "REQ-021"
+      ]
+    },
+    "postWishes": {
+      "method": "POST",
+      "path": "/api/v1/wishes",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-003",
+        "REQ-004",
+        "REQ-005"
+      ]
+    },
+    "getWishesId": {
+      "method": "GET",
+      "path": "/api/v1/wishes/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-004",
+        "REQ-008",
+        "REQ-018"
+      ]
+    },
+    "getUsersIdPublicProfile": {
+      "method": "GET",
+      "path": "/api/v1/users/{id}/public-profile",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-008",
+        "REQ-018"
+      ]
+    },
+    "getMeWishes": {
+      "method": "GET",
+      "path": "/api/v1/me/wishes",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-004",
+        "REQ-008",
+        "REQ-018",
+        "REQ-021"
+      ]
+    },
+    "getMeApplications": {
+      "method": "GET",
+      "path": "/api/v1/me/applications",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-006",
+        "REQ-008",
+        "REQ-015",
+        "REQ-018",
+        "REQ-021"
+      ]
+    },
+    "putWishesIdContent": {
+      "method": "PUT",
+      "path": "/api/v1/wishes/{id}/content",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-003",
+        "REQ-004",
+        "REQ-015"
+      ]
+    },
+    "deleteWishesIdDraft": {
+      "method": "DELETE",
+      "path": "/api/v1/wishes/{id}/draft",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-018"
+      ]
+    },
+    "postWishesIdSubmitReview": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/submit-review",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version",
+        "content_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-015"
+      ]
+    },
+    "postWishesIdPublish": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/publish",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-005"
+      ]
+    },
+    "postWishesIdWithdraw": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/withdraw",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-006"
+      ]
+    },
+    "postWishesIdRollback": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/rollback",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-005"
+      ]
+    },
+    "postWishesIdComplete": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/complete",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-007"
+      ]
+    },
+    "postWishesIdExceptionExit": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/exception-exit",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-014",
+        "REQ-016"
+      ]
+    },
+    "postWishesIdApplications": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/applications",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-005",
+        "REQ-006",
+        "REQ-015"
+      ]
+    },
+    "getWishesIdApplications": {
+      "method": "GET",
+      "path": "/api/v1/wishes/{id}/applications",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-006",
+        "REQ-015"
+      ]
+    },
+    "postApplicationsIdWithdraw": {
+      "method": "POST",
+      "path": "/api/v1/applications/{id}/withdraw",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-006"
+      ]
+    },
+    "postApplicationsIdAccept": {
+      "method": "POST",
+      "path": "/api/v1/applications/{id}/accept",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version",
+        "wish_expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-005",
+        "REQ-006"
+      ]
+    },
+    "getMeConversations": {
+      "method": "GET",
+      "path": "/api/v1/me/conversations",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-007",
+        "REQ-018"
+      ]
+    },
+    "getConversationsIdMessages": {
+      "method": "GET",
+      "path": "/api/v1/conversations/{id}/messages",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-007",
+        "REQ-015",
+        "REQ-018"
+      ]
+    },
+    "postConversationsIdMessages": {
+      "method": "POST",
+      "path": "/api/v1/conversations/{id}/messages",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_write_epoch"
+      ],
+      "req_ids": [
+        "REQ-007",
+        "REQ-015"
+      ]
+    },
+    "getMeMessagesIdStatus": {
+      "method": "GET",
+      "path": "/api/v1/me/messages/{id}/status",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-007",
+        "REQ-015",
+        "REQ-018"
+      ]
+    },
+    "getMeNotifications": {
+      "method": "GET",
+      "path": "/api/v1/me/notifications",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-006",
+        "REQ-017",
+        "REQ-018"
+      ]
+    },
+    "postMeNotificationsIdRead": {
+      "method": "POST",
+      "path": "/api/v1/me/notifications/{id}/read",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-006",
+        "REQ-018"
+      ]
+    },
+    "postWishesIdStories": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/stories",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "wish_expected_version"
+      ],
+      "req_ids": [
+        "REQ-004",
+        "REQ-008",
+        "REQ-015"
+      ]
+    },
+    "putWishesIdStory": {
+      "method": "PUT",
+      "path": "/api/v1/wishes/{id}/story",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-008",
+        "REQ-015"
+      ]
+    },
+    "postWishesIdStoryWithdraw": {
+      "method": "POST",
+      "path": "/api/v1/wishes/{id}/story/withdraw",
+      "implementation": "not-implemented",
+      "projection": "WishResult",
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-008"
+      ]
+    },
+    "getStories": {
+      "method": "GET",
+      "path": "/api/v1/stories",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-008",
+        "REQ-015",
+        "REQ-018",
+        "REQ-021"
+      ]
+    },
+    "getStoriesId": {
+      "method": "GET",
+      "path": "/api/v1/stories/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-008",
+        "REQ-018"
+      ]
+    },
+    "postShareLinks": {
+      "method": "POST",
+      "path": "/api/v1/share-links",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-008"
+      ]
+    },
+    "getShareLinksRef": {
+      "method": "GET",
+      "path": "/api/v1/share-links/{ref}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "ref"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-008",
+        "REQ-018"
+      ]
+    },
+    "postMeBlocks": {
+      "method": "POST",
+      "path": "/api/v1/me/blocks",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-014",
+        "REQ-016"
+      ]
+    },
+    "deleteMeBlocksTarget_Id": {
+      "method": "DELETE",
+      "path": "/api/v1/me/blocks/{target_id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "target_id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-014"
+      ]
+    },
+    "getReportTypes": {
+      "method": "GET",
+      "path": "/api/v1/report-types",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-014",
+        "REQ-019"
+      ]
+    },
+    "postReports": {
+      "method": "POST",
+      "path": "/api/v1/reports",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-017"
+      ]
+    },
+    "postMeAppeals": {
+      "method": "POST",
+      "path": "/api/v1/me/appeals",
+      "implementation": "not-implemented",
+      "projection": "Me",
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-014",
+        "REQ-016"
+      ]
+    },
+    "getMeAppeals": {
+      "method": "GET",
+      "path": "/api/v1/me/appeals",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-014",
+        "REQ-016"
+      ]
+    },
+    "getMeWarnings": {
+      "method": "GET",
+      "path": "/api/v1/me/warnings",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-016"
+      ]
+    },
+    "postMeWarningsIdDisplay": {
+      "method": "POST",
+      "path": "/api/v1/me/warnings/{id}/display",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-016"
+      ]
+    },
+    "postMeWarningsIdAck": {
+      "method": "POST",
+      "path": "/api/v1/me/warnings/{id}/ack",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-016"
+      ]
+    },
+    "postAdminSessions": {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "implementation": "implemented-opt-in",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "deleteAdminSession": {
+      "method": "DELETE",
+      "path": "/api/v1/admin/session",
+      "implementation": "implemented-opt-in",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "postAdminPassword": {
+      "method": "POST",
+      "path": "/api/v1/admin/password",
+      "implementation": "implemented-opt-in",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminIdentityReviews": {
+      "method": "GET",
+      "path": "/api/v1/admin/identity-reviews",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminIdentityReviewsId": {
+      "method": "GET",
+      "path": "/api/v1/admin/identity-reviews/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminIdentityReviewsIdStudentCard": {
+      "method": "GET",
+      "path": "/api/v1/admin/identity-reviews/{id}/student-card",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "postAdminIdentityReviewsIdDecision": {
+      "method": "POST",
+      "path": "/api/v1/admin/identity-reviews/{id}/decision",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-002",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminModerationTasks": {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "getAdminModerationTasksId": {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "postAdminModerationTasksIdDecision": {
+      "method": "POST",
+      "path": "/api/v1/admin/moderation-tasks/{id}/decision",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-015",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "postAdminContentsKindIdOffline": {
+      "method": "POST",
+      "path": "/api/v1/admin/contents/{kind}/{id}/offline",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "kind",
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "postAdminContentsKindIdReleaseRestriction": {
+      "method": "POST",
+      "path": "/api/v1/admin/contents/{kind}/{id}/release-restriction",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "kind",
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "getAdminReports": {
+      "method": "GET",
+      "path": "/api/v1/admin/reports",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-014",
+        "REQ-019"
+      ]
+    },
+    "postAdminReportsIdDecision": {
+      "method": "POST",
+      "path": "/api/v1/admin/reports/{id}/decision",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-014",
+        "REQ-019"
+      ]
+    },
+    "postAdminUsersIdPenalties": {
+      "method": "POST",
+      "path": "/api/v1/admin/users/{id}/penalties",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "content_version",
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-014",
+        "REQ-016",
+        "REQ-019"
+      ]
+    },
+    "getAdminAppeals": {
+      "method": "GET",
+      "path": "/api/v1/admin/appeals",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-014",
+        "REQ-016",
+        "REQ-019"
+      ]
+    },
+    "postAdminAppealsIdDecision": {
+      "method": "POST",
+      "path": "/api/v1/admin/appeals/{id}/decision",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-016",
+        "REQ-019"
+      ]
+    },
+    "getAdminWordlists": {
+      "method": "GET",
+      "path": "/api/v1/admin/wordlists",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "getAdminWordlistsId": {
+      "method": "GET",
+      "path": "/api/v1/admin/wordlists/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "postAdminWordlistsVersions": {
+      "method": "POST",
+      "path": "/api/v1/admin/wordlists/versions",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "postAdminWordlistsIdPublish": {
+      "method": "POST",
+      "path": "/api/v1/admin/wordlists/{id}/publish",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version",
+        "expected_head_version"
+      ],
+      "req_ids": [
+        "REQ-015",
+        "REQ-019"
+      ]
+    },
+    "getAdminCrisisCases": {
+      "method": "GET",
+      "path": "/api/v1/admin/crisis-cases",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminCrisisCasesId": {
+      "method": "GET",
+      "path": "/api/v1/admin/crisis-cases/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "postAdminCrisisCasesIdActions": {
+      "method": "POST",
+      "path": "/api/v1/admin/crisis-cases/{id}/actions",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-017",
+        "REQ-019"
+      ]
+    },
+    "postAdminCrisisCasesIdResolveFalsePositive": {
+      "method": "POST",
+      "path": "/api/v1/admin/crisis-cases/{id}/resolve-false-positive",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-015",
+        "REQ-017",
+        "REQ-019"
+      ]
+    },
+    "getAdminEvidenceId": {
+      "method": "GET",
+      "path": "/api/v1/admin/evidence/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "deleteAdminEvidenceId": {
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/{id}",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminEvidenceIdAsset": {
+      "method": "GET",
+      "path": "/api/v1/admin/evidence/{id}/asset",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminAccounts": {
+      "method": "GET",
+      "path": "/api/v1/admin/accounts",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "postAdminAccounts": {
+      "method": "POST",
+      "path": "/api/v1/admin/accounts",
+      "implementation": "implemented-opt-in",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "putAdminAccountsIdRoles": {
+      "method": "PUT",
+      "path": "/api/v1/admin/accounts/{id}/roles",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "getAdminWorkItems": {
+      "method": "GET",
+      "path": "/api/v1/admin/work-items",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [],
+      "version_fields": [],
+      "req_ids": [
+        "REQ-006",
+        "REQ-017",
+        "REQ-018",
+        "REQ-019"
+      ]
+    },
+    "postAdminWorkItemsIdRetry": {
+      "method": "POST",
+      "path": "/api/v1/admin/work-items/{id}/retry",
+      "implementation": "not-implemented",
+      "projection": null,
+      "path_targets": [
+        "id"
+      ],
+      "version_fields": [
+        "expected_version"
+      ],
+      "req_ids": [
+        "REQ-006",
+        "REQ-017",
+        "REQ-018",
+        "REQ-019"
+      ]
+    }
+  },
+  "role_refresh": {
+    "bootstrap": "postAdminSessions.data.account.roles",
+    "refresh": "显式重新登录postAdminSessions；不增加GET或refresh端点",
+    "401": "清除会话及角色快照，重新登录",
+    "403": "拒绝当前操作，不重试；不能从403推导新角色或认定会话失效",
+    "role_change": "服务端逐次查当前角色；前端不乐观提权，需更新菜单时显式重登",
+    "password_change_204": "清除当前会话，重新登录",
+    "ttl": null
+  }
+}

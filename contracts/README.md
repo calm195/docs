@@ -23,3 +23,7 @@
 兼容性：0.2.0包含后台输入收紧、标签枚举、词库基准/发布及认证版本语义变化；两端须显式适配并验证，不能直接替换生产契约。HTTP主版本仍v1；契约独立SemVer。未提交、推送、部署，未修改两端仓库或发送跨会话消息。共享台账由docs协调会话汇总，B02–B07整体阻塞不因静态定义自动关闭。
 
 后台实现状态与真实/合成边界见[后端第五阶段](../../liyuanci-backend-go/docs/milestones/phase-05.md)。本轮只更新实现状态元数据，不改变0.2.0字段；年级字典、TTL仍待明确。共享plans由协调会话汇总。
+
+## B07正式静态动作索引 revision 1
+
+T002，REQ-002–008、018、019：新增[动作索引](actions.v0.2.0.json)、[指纹清单](actions-review.v0.2.0-r1.json)和[消费边界](actions.v0.2.0.md)。动作名为既有operationId，不新增Wire字段。build.py/validate.py生成与校验索引，不读取或生成moderation-extension.draft.json；该文件继续是未激活、未纳入本次提交的B05草案。静态索引提交不关闭B07/B14，不代表前端已消费或业务联调通过。
