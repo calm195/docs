@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-22",
+  "task": "T023",
+  "requirements": [
+    "REQ-004",
+    "REQ-007",
+    "REQ-008",
+    "REQ-015",
+    "REQ-018"
+  ],
+  "source_branch": "develop",
+  "source_base": "8eb950751c87059f0cf3153ce3608128e7dcbe6e",
+  "source_commit": "43836de825c0c26d55c10b958c7f298e09996417",
+  "docs_branch": "backend-develop",
+  "docs_base": "6df0d0df926ecd728495a2c0234bf58c95c9de07",
+  "main_policy": "development branches only; no merge or push to main",
+  "main_heads_unchanged": {
+    "backend": "99a887ca84f2f6d79cb092fd97da6819ed325a57",
+    "docs": "2ec198269f9ec772789e62e144954187c77cbd24"
+  },
+  "contract": {
+    "version": "0.2.0",
+    "actions_revision": 5,
+    "inputs_sha256": {
+      "contracts/openapi.v0.2.0.json": "741b7639160c489b33d777378c881c27e62221b3eb25cab696bb87115e762d7b",
+      "contracts/actions.v0.2.0.json": "3f5b64f1dd6d04b0a7d306cfdca0f4f216a35d13928046509eff0e3b86d4302e",
+      "contracts/actions-review.v0.2.0-r5.json": "717745a61f2c145239a77649a47ed5a13e4404b50a3c3df21572d964e59cac6a",
+      "requirements/baseline.md": "fed56e2811cd21c5c5d461a35d9ace525b6f9bc142a01a6a1f2048303da54810",
+      "design/api.md": "9a725420318d402ad1cea3229ed4b09edbe55c9376055e4d4cc280203ab7f142",
+      "design/database.md": "29d3497d2ec9ebe7d1bda7097dee937e71c5495b400890b1336c4b54636063cf"
+    },
+    "wire_changes": false
+  },
+  "source_files_sha256": {
+    "README.md": "c3148d34b2dc4f4fc8506fd72ff156316a2fdc510c7b2f8deda79e61446e5f7a",
+    "deploy/compose/integration.yaml": "b65d66e4dfaa139fd39913df4f67ba4838943961bc275b2c044e6876a2585692",
+    "internal/devapp/application.go": "b994c936065b0b7d01be6c304a7faf71def214c69967389f237e6f5e9bba7c42",
+    "internal/entity/interaction.go": "5a4c523fe3bd650b50c5c8bd3b27faced123f07cf816f26434c460601f9c492f",
+    "internal/entity/registry.go": "ea62812e28d34b6c32d52402eb67070dcac1acc8c41311643917a5db912faef2",
+    "internal/entity/share.go": "3c4e0b692570b21a9bdbdd3ec8cb03ed02a41da9d1fac8195e4939f908c7465e",
+    "internal/httpapi/stories.go": "136d313472210a62c12ff071821e83ba485e68b5ae4baab8e8ebe0573abc4bad",
+    "internal/migration/migration.go": "34518fc46af95eeffff012d7245c55d3af5df7cf19dd2246b3a29e8e3497e41e",
+    "internal/migration/migration_test.go": "6548e80c30af696bc390b43f6bac1b759a510710389304da1c4448cd01dc175e",
+    "internal/migration/sql/0016_story_sharing.down.sql": "41ba8ecf71282a2244c624a4cd7d20cc02259f5ee064703551e3f1cea1dd57e1",
+    "internal/migration/sql/0016_story_sharing.up.sql": "c1bc214bffd7962d3790b83254bf610dcf6e78f5af692d7dede8e4641303bbdb",
+    "internal/migration/sql/bootstrap_roles.sql": "943434fc20e874779c044510274f0ee18bd40ba49f884f1926c8b4870c2e639e",
+    "internal/moderation/repository.go": "ee6695ae0955b7122a1b3949f5f28a56a6b8de19aeee8e1aa119b52097458796",
+    "internal/moderation/review.go": "a06d24d1222bfd66d6835a7ffa16c1466dbb268c93f08fe13d9df47d12f4abd7",
+    "internal/moderation/story_integration_test.go": "31346334fca5ba9c52a494b47ba4752c0cfbe29ea72ef232b7472e2b88c19081",
+    "internal/moderation/worker.go": "8b7b3acddb411cdac5ad1ad2837e5bd388ee9e399f9bc556dd41fa511e49f9b9",
+    "internal/studentapi/application.go": "22664671798e88c1f174707eee51c0092994fdade7ba295d7ebf4614646cb4e2",
+    "internal/studentapi/application_test.go": "96c9f06c037ec8fe015e854f135d9d33317d0f4df70d4eb0dc871e88e09492b7",
+    "internal/wish/query.go": "d0ce2a7480b7c23c23257746994b165bdfda807b7230cb66a7cb3e66166a2c5f",
+    "internal/wish/service.go": "47b2c636dbdf67d8a22f8739d68ddd9d5210c477a24e37696b727ae2409b34e7",
+    "internal/wish/stories.go": "4d387664f2b149bb958103844e126c3cec1cb10dbe1cae88d913fffec50d9419",
+    "internal/wish/stories_test.go": "432f45c563c4bec43737cc899368a4e61c5d741e440c2d033ef8cc111d82d383",
+    "internal/wish/story_query.go": "3c7000f1c18fa18da753959ef1792a029a2eaf19151e9c71bae796905ab0c957",
+    "internal/wish/story_repository.go": "e3dba7b4988c63a4714d21e8c9cb77a24f014b69ece901e687ea8be641287f3d"
+  },
+  "validation": {
+    "make_fmt": "passed",
+    "make_check_fast": "passed initially and after final sorting change",
+    "make_check": "passed; read-only format, go vet, go test -race -cover ./...",
+    "make_build": "passed; eight processes",
+    "entry_tests": "32 passed",
+    "integration_attempts": [
+      {
+        "attempt": 1,
+        "exit_code": 2,
+        "result": "parent hold test incorrectly required Applied instead of Cancelled; fixed assertion; overall failed"
+      },
+      {
+        "attempt": 2,
+        "exit_code": 0,
+        "result": "all real PostgreSQL/HTTP/MQ and existing regressions passed"
+      },
+      {
+        "attempt": 3,
+        "exit_code": 0,
+        "result": "final time-and-ID sorting assertion plus full PostgreSQL/HTTP/MQ regressions passed"
+      }
+    ],
+    "docs_checks": "python3 scripts/check_documents.py and both git diff checks before docs commit",
+    "remote_ci": "not obtained"
+  },
+  "real": [
+    "PostgreSQL transactions and role permissions",
+    "explicit migration up/down and object comments",
+    "HTTP eight endpoints",
+    "RocketMQ send, post-commit NACK and receipt replay",
+    "real completion concurrent with private message analysis",
+    "matching/chat/moderation/durable/card-worker regressions"
+  ],
+  "synthetic": [
+    "identity/session fixtures and key provider",
+    "wordlists and text classification",
+    "future deletion lifecycle/hold transaction entry"
+  ],
+  "privacy": {
+    "old_visibility": "live helper lifecycle and captured epochs plus story/parent holds",
+    "release": "only matching new story version can release covered story holds; parent wish hold remains independent",
+    "ordinary_read": "no raw story endpoint; owner held view omits old content",
+    "remaining": "full deletion/physical cleanup and parent wish privacy resubmission belong to T031"
+  },
+  "versions": {
+    "aggregate": "Wish.version for completion, story create/update/withdraw and moderation result",
+    "content": "Wish.current_story_version independent and monotonically increasing",
+    "opaque_story_id": "same stable UUID as wish; distinguished by target_kind and route"
+  },
+  "deployment": {
+    "migration": "explicit 0016 and bootstrap roles; no startup DDL",
+    "body_byte_budget": 65536,
+    "dependencies_changed": false,
+    "miniapp_route": "/pages/share/index?ref=...; actual page T024 and real WeChat T033 not validated"
+  },
+  "isolation": {
+    "project": "liyuanci-story-ed82a492",
+    "cleanup": "docker compose down exit 0; volumes and credentials preserved",
+    "daily_infrastructure": "original PostgreSQL and Redis untouched"
+  },
+  "remaining": [
+    "T024 pages and T025 profile composition",
+    "T026 restriction entry APIs",
+    "T029 complete crisis handling",
+    "T031 deletion and parent privacy cleanup",
+    "T033 actual WeChat sharing and provider integration"
+  ],
+  "log_normalization": "before first frozen registration, removed trailing whitespace only; preserved all three full integration attempts and exit codes"
+}

@@ -75,3 +75,5 @@
 - [2026-10-22 应愿申请、唯一匹配与普通回退](milestones/2026-10-22-application-matching-r1.md)
 
 - [2026-10-22 聊天、站内通知及最终送达序号](milestones/2026-10-22-chat-delivery-r1.md)
+
+- [2026-10-22 确认实现、还愿故事与分享重验](milestones/2026-10-22-story-sharing-r1.md)
