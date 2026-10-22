@@ -10,10 +10,10 @@
 
 | 模块 | 可核对的现状 | 排期中仍保留的工作 | 依据及REQ |
 | --- | --- | --- | --- |
-| 契约/依赖 | T002契约0.1.0材料与T003依赖清单已形成，真实资源未齐 | 契约缺口收敛、三端证据汇总、依赖交付跟进 | [契约入口](../contracts/README.md)、[后端交接](../../liyuanci-backend-go/docs/implementation.md)；REQ-001、002、018–021 |
-| Go后端 | T004工程基础及真实PG/Redis/MQ最小往返有通过记录；T005后领域实现未开始 | 数据/加密、事务、可靠任务及全部业务API；MQ探针不抵扣T007 | [后端续验](../../liyuanci-backend-go/docs/t004-followup.md)；REQ-001–008、014–021 |
-| 小程序 | T004构建检查有通过记录，T009会话适配及合成展示已有实现 | 真实微信会话验收、T013认证及后续业务页面 | [小程序交接](../../liyuanci-miniprogram-uniapp/docs/implementation-T004-T009.md)；REQ-001–008、014–018、020 |
-| Web后台 | T004工程和T010会话/权限壳有本地通过记录，真实登录禁用 | 真实会话验收、T012及后续审核/处置/危机/隐私页面 | [Web交接](../../liyuanci-admin-vue/docs/delivery-T004-T010.md)；REQ-002、014–020 |
+| 契约/依赖 | T002契约0.1.0材料与T003依赖清单已形成，真实资源未齐 | 契约缺口收敛、三端证据汇总、依赖交付跟进 | [契约入口](../contracts/README.md)、[后端交接](../development/backend/implementation.md)；REQ-001、002、018–021 |
+| Go后端 | T004工程基础及真实PG/Redis/MQ最小往返有通过记录；T005后领域实现未开始 | 数据/加密、事务、可靠任务及全部业务API；MQ探针不抵扣T007 | [后端续验](../development/backend/t004-followup.md)；REQ-001–008、014–021 |
+| 小程序 | T004构建检查有通过记录，T009会话适配及合成展示已有实现 | 真实微信会话验收、T013认证及后续业务页面 | [小程序交接](../development/miniprogram/milestones/01-T004-T009-foundation-session.md)；REQ-001–008、014–018、020 |
+| Web后台 | T004工程和T010会话/权限壳有本地通过记录，真实登录禁用 | 真实会话验收、T012及后续审核/处置/危机/隐私页面 | [Web交接](../development/admin/delivery-T004-T010.md)；REQ-002、014–020 |
 
 【假设】一名熟悉Go、PostgreSQL、Redis、RocketMQ、Vue3和uni-app的全栈工程师全职投入，独立承担开发、自测、联调和交付材料；每周5个工作日，每人日约6小时有效工作，其余时间用于日常沟通和管理。沿用已有模板与通用组件，不安排独立视觉设计或新增需求。AI辅助可使用，但不预先折算成固定提速。
 

@@ -80,10 +80,10 @@ INT-002覆盖草稿/待审不公开、驳回修改后重审、通过不自动上
 
 | 项目 | 完整HEAD / 现场版本 | 记录的验证与范围 | R1结论 |
 | --- | --- | --- | --- |
-| 后端 | `550be1e4f340008113c44e9b3c1273d49e7ac84f`，feat/backend-foundation；MQ及契约协调记录等未提交 | [MQ快照](../../liyuanci-backend-go/docs/milestones/t007-mq-validation-2026-10-21.md)：make fmt/check/build、真实MQ两轮、真实PG及原integration脚本记录通过；本次7项源码/脚本/CI/README指纹一致 | 运输子范围本端验证有记录；同一真实PG+MQ领域闭环、提交后ACK前崩溃及业务worker未通过，不关闭B13 |
-| 管理端 | `63dcd361c70d9eba1fc33bba8059e7fbce8843e6`，codex/content-moderation-wordlists；观察时干净 | [T017快照](../../liyuanci-admin-vue/docs/validation/T017-2026-10-21.md)：e4eb1fa内容审核79业务/58规范，63dcd36词库93业务/58规范及构建记录通过 | 合成页面本端验证通过（引用开发记录），无真实HTTP/扫描/浏览器人工验收；契约仍0.1.0 |
-| 小程序 | `20f6f781db163794afe088e650e9568a996b7f95`，codex/integration-readiness；阶段二/三修改，接入准备未跟踪 | [接入准备](../../liyuanci-miniprogram-uniapp/docs/integration-readiness.md)：check复跑15项通过；仅文档变更未构建；INT-001/002各5个用例未执行 | 接入准备已形成工作区材料，业务代码未变；真实上传已接线但未验证、申请与心愿写入口关闭；契约仍0.1.0 |
-| 共享契约 | 0.2.0工作区，未提交；后端[协调记录](../../liyuanci-backend-go/docs/contract-coordination-2026-10-21.md)及[决策说明](../contracts/decisions.v0.2.0.md) | 后端记录build/validate通过83操作、130 schema、783示例及负例；本次只解析JSON确认83操作，不重跑生成/校验以免干扰编辑 | 静态协议进展，全部not-implemented；B14迁移未验，不属于HTTP联调通过 |
+| 后端 | `550be1e4f340008113c44e9b3c1273d49e7ac84f`，feat/backend-foundation；MQ及契约协调记录等未提交 | [MQ快照](../development/backend/milestones/t007-mq-validation-2026-10-21.md)：make fmt/check/build、真实MQ两轮、真实PG及原integration脚本记录通过；本次7项源码/脚本/CI/README指纹一致 | 运输子范围本端验证有记录；同一真实PG+MQ领域闭环、提交后ACK前崩溃及业务worker未通过，不关闭B13 |
+| 管理端 | `63dcd361c70d9eba1fc33bba8059e7fbce8843e6`，codex/content-moderation-wordlists；观察时干净 | [T017快照](../development/admin/validation/T017-2026-10-21.md)：e4eb1fa内容审核79业务/58规范，63dcd36词库93业务/58规范及构建记录通过 | 合成页面本端验证通过（引用开发记录），无真实HTTP/扫描/浏览器人工验收；契约仍0.1.0 |
+| 小程序 | `20f6f781db163794afe088e650e9568a996b7f95`，codex/integration-readiness；阶段二/三修改，接入准备未跟踪 | [接入准备](../development/miniprogram/integration-readiness.md)：check复跑15项通过；仅文档变更未构建；INT-001/002各5个用例未执行 | 接入准备已形成工作区材料，业务代码未变；真实上传已接线但未验证、申请与心愿写入口关闭；契约仍0.1.0 |
+| 共享契约 | 0.2.0工作区，未提交；后端[协调记录](../development/backend/contract-coordination-2026-10-21.md)及[决策说明](../contracts/decisions.v0.2.0.md) | 后端记录build/validate通过83操作、130 schema、783示例及负例；本次只解析JSON确认83操作，不重跑生成/校验以免干扰编辑 | 静态协议进展，全部not-implemented；B14迁移未验，不属于HTTP联调通过 |
 
 0.2.0 OpenAPI SHA256：`acf31b515538e1bf3b3f85fcecee9a210bb83e6b0408e2dbcde6643a736d9dd9`；示例SHA256：`0d3560fcb0e634d4e0e65a48e448bcb9e605fe3253f65aa976d31bd30bf2df1e`。这是R1观察时指纹，后续编辑/提交须复核。MQ快照记录“当时docs干净0.1.0”属于此前运行时间边界，不覆盖本轮新契约。
 
@@ -91,9 +91,9 @@ INT-002覆盖草稿/待审不公开、驳回修改后重审、通过不自动上
 
 | 子范围 | 来源与版本 | 结果和限制 |
 | --- | --- | --- |
-| 后端工程/API/探针worker/PG/Redis/MQ最小往返 | [t004-followup](../../liyuanci-backend-go/docs/t004-followup.md)、t004-integration-evidence.json；R1另有550be1e+MQ工作区快照integration脚本记录 | 后端基础历史通过，RocketMQ5.3.2；探针非领域消费，远端CI/生产未验 |
-| Web工程 | [T004](../../liyuanci-admin-vue/docs/milestones/T004.md)及83dbdff验收记录；当前63dcd36的后续合成检查 | 用户确认本仓库基础通过记录存在；真实登录未验 |
-| 小程序工程 | [阶段一T004验收节](../../liyuanci-miniprogram-uniapp/docs/milestones/01-T004-T009-foundation-session.md)，代码f8e2258、记录fd7a984 | 本仓库基础通过记录存在；AppID/微信工具/实机未验 |
+| 后端工程/API/探针worker/PG/Redis/MQ最小往返 | [t004-followup](../development/backend/t004-followup.md)、t004-integration-evidence.json；R1另有550be1e+MQ工作区快照integration脚本记录 | 后端基础历史通过，RocketMQ5.3.2；探针非领域消费，远端CI/生产未验 |
+| Web工程 | [T004](../development/admin/milestones/T004.md)及83dbdff验收记录；当前63dcd36的后续合成检查 | 用户确认本仓库基础通过记录存在；真实登录未验 |
+| 小程序工程 | [阶段一T004验收节](../development/miniprogram/milestones/01-T004-T009-foundation-session.md)，代码f8e2258、记录fd7a984 | 本仓库基础通过记录存在；AppID/微信工具/实机未验 |
 
 R1只完成证据汇总，消除“两端无验收记录”的历史信息差。以上运行时间、源码版本与环境不同，不伪造统一制品或重测结果；B01进入待验证。下一步集成按原T004验收项复核共同契约/环境输入、缺项和例外，再形成整体范围结论。
 
@@ -110,9 +110,9 @@ R1只完成证据汇总，消除“两端无验收记录”的历史信息差。
 | 仓库 / 完整快照 | 新交付与验证记录 | 本次核对 / 尚未执行 |
 | --- | --- | --- |
 | docs main / `9db9d71125097e25d02c2e5ca28153160fe85de1` | 9b77590冻结0.2.0，9db9d71登记后台实现；当前工作区build.py、validate.py修改，actions/authorization/扩展draft未跟踪 | 冻结OpenAPI83操作，4 implemented-opt-in、79 not-implemented；未运行生成器避免干扰契约编辑，未提交扩展不激活 |
-| 后端 feat/backend-foundation / `8ba233f7a3c4edab32de8331f775aefd14b2dcad` | [phase-05](../../liyuanci-backend-go/docs/milestones/phase-05.md)：32fb4c6 MQ已提交；后台创建/登录/改密/退出本端真实PG/Redis/HTTP、七版本迁移镜像、make检查/构建有通过记录；用户T005/T006验收确认记载于此 | 工作区观察干净；本次9项phase-05源码指纹全部一致。默认后台关闭，readyz仍503；未部署，学生身份/角色管理等未交付，无三端联调 |
-| 管理端 codex/admin-contract-0-2 / `e1ceb027a19cef4abb5329d16e1da025a7be87d7` | b316aaf词库迁移，e1ceb02账号/改密/会话投影；[验证快照](../../liyuanci-admin-vue/docs/validation/admin-contract-v0.2.0.md)记录122业务/58规范、format/check/build通过 | 工作区观察干净；16项最新源码指纹一致。旧词库记录5项中1项测试已变，diff核实仅补login_name夹具，且在新快照/全量回归中覆盖；不能沿用旧hash称全部一致。真实适配器仅替代fetch测试、运行时未启用 |
-| 小程序 codex/contract-020-adapters / `d3a3790854a25b8a50b8c5d8c400b494f2a30680` | [接入清单](../../liyuanci-miniprogram-uniapp/docs/integration-readiness.md)及阶段二/三：9文件独立适配和文档已提交，check17项通过；页面/样式/依赖未变，未构建 | 工作区观察干净；单次GET、条件版本与gender类型/API适配完成；查询节奏/恢复、首次重提页面编排、正式动作消费、标签表单等未接。无微信工具/实机/真实服务证据 |
+| 后端 feat/backend-foundation / `8ba233f7a3c4edab32de8331f775aefd14b2dcad` | [phase-05](../development/backend/milestones/phase-05.md)：32fb4c6 MQ已提交；后台创建/登录/改密/退出本端真实PG/Redis/HTTP、七版本迁移镜像、make检查/构建有通过记录；用户T005/T006验收确认记载于此 | 工作区观察干净；本次9项phase-05源码指纹全部一致。默认后台关闭，readyz仍503；未部署，学生身份/角色管理等未交付，无三端联调 |
+| 管理端 codex/admin-contract-0-2 / `e1ceb027a19cef4abb5329d16e1da025a7be87d7` | b316aaf词库迁移，e1ceb02账号/改密/会话投影；[验证快照](../development/admin/validation/admin-contract-v0.2.0.md)记录122业务/58规范、format/check/build通过 | 工作区观察干净；16项最新源码指纹一致。旧词库记录5项中1项测试已变，diff核实仅补login_name夹具，且在新快照/全量回归中覆盖；不能沿用旧hash称全部一致。真实适配器仅替代fetch测试、运行时未启用 |
+| 小程序 codex/contract-020-adapters / `d3a3790854a25b8a50b8c5d8c400b494f2a30680` | [接入清单](../development/miniprogram/integration-readiness.md)及阶段二/三：9文件独立适配和文档已提交，check17项通过；页面/样式/依赖未变，未构建 | 工作区观察干净；单次GET、条件版本与gender类型/API适配完成；查询节奏/恢复、首次重提页面编排、正式动作消费、标签表单等未接。无微信工具/实机/真实服务证据 |
 
 ### 冻结输入及兼容核对（B14）
 

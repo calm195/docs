@@ -50,9 +50,9 @@ B02后台局部联合验证子项解除，整体保留处理中；B07/B14及学�
 
 | 仓库 | 观察到的分支 / HEAD（短 SHA） | 工作区快照 | 来源 |
 | --- | --- | --- | --- |
-| 后端 | feat/backend-foundation / 8ba233f | 观察时干净；MQ 32fb4c6、后台身份8ba233f已提交 | [第五阶段](../../liyuanci-backend-go/docs/milestones/phase-05.md)、[阶段四](../../liyuanci-backend-go/docs/milestones/phase-04.md) |
-| 管理端 | codex/admin-contract-0-2 / e1ceb02 | 观察时干净；词库b316aaf、账号/改密e1ceb02迁移已提交 | [迁移阶段](../../liyuanci-admin-vue/docs/milestones/admin-contract-v0.2.0.md)、[词库迁移](../../liyuanci-admin-vue/docs/milestones/T017-wordlists-v0.2.0.md) |
-| 小程序 | codex/contract-020-adapters / d3a3790 | 观察时干净；独立类型/API/校验和接入文档已提交，页面编排未接线 | [接入准备](../../liyuanci-miniprogram-uniapp/docs/integration-readiness.md)、[认证阶段](../../liyuanci-miniprogram-uniapp/docs/milestones/02-T013-verification.md) |
+| 后端 | feat/backend-foundation / 8ba233f | 观察时干净；MQ 32fb4c6、后台身份8ba233f已提交 | [第五阶段](../development/backend/milestones/phase-05.md)、[阶段四](../development/backend/milestones/phase-04.md) |
+| 管理端 | codex/admin-contract-0-2 / e1ceb02 | 观察时干净；词库b316aaf、账号/改密e1ceb02迁移已提交 | [迁移阶段](../development/admin/milestones/admin-contract-v0.2.0.md)、[词库迁移](../development/admin/milestones/T017-wordlists-v0.2.0.md) |
+| 小程序 | codex/contract-020-adapters / d3a3790 | 观察时干净；独立类型/API/校验和接入文档已提交，页面编排未接线 | [接入准备](../development/miniprogram/integration-readiness.md)、[认证阶段](../development/miniprogram/milestones/02-T013-verification.md) |
 
 短SHA仅用于定位，完整快照见[联调记录R2](integration-log.md)。docs已从5686350前进到9db9d71：9b77590冻结0.2.0、9db9d71更新后台实现元数据。另有生成/校验器和动作索引/未激活扩展草案的未提交改动，本轮不修改。两端消费9b77590；9db9d71相对其只改说明和实现元数据，Wire结构经本轮比较一致，不能据新指纹误判消费协议不同；未提交草案不能作为正式协议。B14仍部分完成，详情见下文。
 

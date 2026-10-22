@@ -58,7 +58,7 @@
 
 ## 环境、资源与安全交接
 
-[后端后台准入包](../../liyuanci-backend-go/docs/int003-r2-readiness.md)为历史来源：隔离项目liyuanci-int003，后台loopback 18082、基础18080；原镜像ID `sha256:a1704279ff8a46ced681e539a5ba2c4ad6bc93b63dbcae5a076745b1a48a1273`、七版迁移、后台受限DB身份。该镜像不是本轮学生服务制品，未复验运行/迁移账本，也不推断与当前源码一致。两端学生认证可用制品及学生配置manifest尚缺。
+[后端后台准入包](../development/backend/int003-r2-readiness.md)为历史来源：隔离项目liyuanci-int003，后台loopback 18082、基础18080；原镜像ID `sha256:a1704279ff8a46ced681e539a5ba2c4ad6bc93b63dbcae5a076745b1a48a1273`、七版迁移、后台受限DB身份。该镜像不是本轮学生服务制品，未复验运行/迁移账本，也不推断与当前源码一致。两端学生认证可用制品及学生配置manifest尚缺。
 
 本轮仅确认以下仓库外引用存在：`/private/tmp/liyuanci-int003-secrets/environment-evidence.json`、`migration-evidence.txt`、`admin-runtime.env`、`admin-initial-password`、`admin-receipt-key`。未读凭据或公开其指纹，不复用后台维护身份执行学生业务，不重新bootstrap或重置账号。临时文件不保证持久；后台身份交接不能代替学生/扫描/对象身份交接。
 

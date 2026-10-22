@@ -1,0 +1,681 @@
+{
+  "date": "2026-10-22",
+  "branch": "codex/docs-governance",
+  "records": [
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/T012-integration.md",
+      "destination": "development/admin/T012-integration.md",
+      "action": "迁移",
+      "source_sha256": "33e9805f7066cc736f4d0bd32f54f0ab0e7ecda7acf4168366e6675de6cc6e75",
+      "destination_sha256": "33e9805f7066cc736f4d0bd32f54f0ab0e7ecda7acf4168366e6675de6cc6e75"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/contract-questions.md",
+      "destination": "development/admin/contract-questions.md",
+      "action": "迁移",
+      "source_sha256": "cd0a350ee2e8b8d3955bffc4e0761d904d53245f14c9b9634b36920a9175a6b4",
+      "destination_sha256": "cd0a350ee2e8b8d3955bffc4e0761d904d53245f14c9b9634b36920a9175a6b4"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/delivery-T004-T010.md",
+      "destination": "development/admin/delivery-T004-T010.md",
+      "action": "迁移",
+      "source_sha256": "b44f990c2ef75dfb0bbc005a09026f569b59cdc96abb4f4e0e854018f64d52a2",
+      "destination_sha256": "b44f990c2ef75dfb0bbc005a09026f569b59cdc96abb4f4e0e854018f64d52a2"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T004.en.md",
+      "destination": "development/admin/milestones/T004.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "a85b19af7dea5f05e64af77404e226c1369aa6cdc0cc3f7d6f2aa3d6463fa83f",
+      "destination_sha256": "321a1d91419a32cfa7d8287e6f1d10648fbcacdb871acca80da29e9b55f254d3"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T004.md",
+      "destination": "development/admin/milestones/T004.md",
+      "action": "迁移",
+      "source_sha256": "321a1d91419a32cfa7d8287e6f1d10648fbcacdb871acca80da29e9b55f254d3",
+      "destination_sha256": "321a1d91419a32cfa7d8287e6f1d10648fbcacdb871acca80da29e9b55f254d3"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T010.en.md",
+      "destination": "development/admin/milestones/T010.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "c40a6e2db50d34fd91bf80f440eb198cacdd00f29892adf164adc25ba0ecce3f",
+      "destination_sha256": "4da2c9877689bac5419159a71960ed258a243e678a1e7d616135d6ad0afbcc86"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T010.md",
+      "destination": "development/admin/milestones/T010.md",
+      "action": "迁移",
+      "source_sha256": "4da2c9877689bac5419159a71960ed258a243e678a1e7d616135d6ad0afbcc86",
+      "destination_sha256": "4da2c9877689bac5419159a71960ed258a243e678a1e7d616135d6ad0afbcc86"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T012.en.md",
+      "destination": "development/admin/milestones/T012.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "f28d206f3dba8f64ffc7fd75d7ff8adfe65f46c6683b8aed07913e653c2a678e",
+      "destination_sha256": "dbef3624d6412bdfceea0ffb07fa585849a1127df9d75e48e368eed9c54e4cf8"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T012.md",
+      "destination": "development/admin/milestones/T012.md",
+      "action": "迁移",
+      "source_sha256": "dbef3624d6412bdfceea0ffb07fa585849a1127df9d75e48e368eed9c54e4cf8",
+      "destination_sha256": "dbef3624d6412bdfceea0ffb07fa585849a1127df9d75e48e368eed9c54e4cf8"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T017-wordlists-v0.2.0.en.md",
+      "destination": "development/admin/milestones/T017-wordlists-v0.2.0.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "25b998a5fd85699cca7ea57358f7520e617faf21d8204f9c995df4bf1e2e1b48",
+      "destination_sha256": "b4bea939c0a4348e70ecc88554e7f43555640ba076a1b9d02889290eb4ad7cd8"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T017-wordlists-v0.2.0.md",
+      "destination": "development/admin/milestones/T017-wordlists-v0.2.0.md",
+      "action": "迁移",
+      "source_sha256": "b4bea939c0a4348e70ecc88554e7f43555640ba076a1b9d02889290eb4ad7cd8",
+      "destination_sha256": "b4bea939c0a4348e70ecc88554e7f43555640ba076a1b9d02889290eb4ad7cd8"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T017.en.md",
+      "destination": "development/admin/milestones/T017.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "4ee3578cb29f371da37f7ee272194e2af76df5a82f3423c1aa83b784362e4a81",
+      "destination_sha256": "b7f0794dbecaa71ef44f702b1addce7303577c221c8ba599060c80f006bd054e"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/T017.md",
+      "destination": "development/admin/milestones/T017.md",
+      "action": "迁移",
+      "source_sha256": "b7f0794dbecaa71ef44f702b1addce7303577c221c8ba599060c80f006bd054e",
+      "destination_sha256": "b7f0794dbecaa71ef44f702b1addce7303577c221c8ba599060c80f006bd054e"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-accounts.en.md",
+      "destination": "development/admin/milestones/admin-accounts.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "8f9833182cfcdb3302a8ad326de9a3007d60bc4d6fc786e1f1b9ec8f7cb67c58",
+      "destination_sha256": "ff7446886fc92ad0ab047895760502890ee36d30fe7612d2ddce032d2d553e31"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-accounts.md",
+      "destination": "development/admin/milestones/admin-accounts.md",
+      "action": "迁移",
+      "source_sha256": "ff7446886fc92ad0ab047895760502890ee36d30fe7612d2ddce032d2d553e31",
+      "destination_sha256": "ff7446886fc92ad0ab047895760502890ee36d30fe7612d2ddce032d2d553e31"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-actions-r1.en.md",
+      "destination": "development/admin/milestones/admin-actions-r1.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "c1a8db9849f8080c69d155bb46f0cae2f6a80101c804d9a7faba7418b914dfd1",
+      "destination_sha256": "9a8cd78789d0aa85a28364295e8a9fb24827ec71a442786dd267a5fda6ff00c1"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-actions-r1.md",
+      "destination": "development/admin/milestones/admin-actions-r1.md",
+      "action": "迁移",
+      "source_sha256": "9a8cd78789d0aa85a28364295e8a9fb24827ec71a442786dd267a5fda6ff00c1",
+      "destination_sha256": "9a8cd78789d0aa85a28364295e8a9fb24827ec71a442786dd267a5fda6ff00c1"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-contract-v0.2.0.en.md",
+      "destination": "development/admin/milestones/admin-contract-v0.2.0.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "f5f28bd4b069f031c4328d559e42ac418e2cccc866f8092cd46e0f83539bba33",
+      "destination_sha256": "19b4a4c1fff3356cc37f86f8599f96a5a82bcbbdb9c1bf008e35e34e43d4bdb5"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-contract-v0.2.0.md",
+      "destination": "development/admin/milestones/admin-contract-v0.2.0.md",
+      "action": "迁移",
+      "source_sha256": "19b4a4c1fff3356cc37f86f8599f96a5a82bcbbdb9c1bf008e35e34e43d4bdb5",
+      "destination_sha256": "19b4a4c1fff3356cc37f86f8599f96a5a82bcbbdb9c1bf008e35e34e43d4bdb5"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-int003.en.md",
+      "destination": "development/admin/milestones/admin-int003.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "9bdbd367c95a17dd476508a12275b270b8b22009af3b2502ef12266b390e2ea1",
+      "destination_sha256": "4b8699f9e4f92132dd3eb964b19b5b8af41006c060c570cc9a1da461ed24b8e9"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/admin-int003.md",
+      "destination": "development/admin/milestones/admin-int003.md",
+      "action": "迁移",
+      "source_sha256": "4b8699f9e4f92132dd3eb964b19b5b8af41006c060c570cc9a1da461ed24b8e9",
+      "destination_sha256": "4b8699f9e4f92132dd3eb964b19b5b8af41006c060c570cc9a1da461ed24b8e9"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/api-audit-r5.en.md",
+      "destination": "development/admin/milestones/api-audit-r5.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "2859da381416703c1c65642dc4e7e8ebd3790f1503211a7d71beb1f8962ffe06",
+      "destination_sha256": "735671d5d578ba996849900e408bf07f7206b1849ea117d8aea8095ad244972b"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/api-audit-r5.md",
+      "destination": "development/admin/milestones/api-audit-r5.md",
+      "action": "迁移",
+      "source_sha256": "735671d5d578ba996849900e408bf07f7206b1849ea117d8aea8095ad244972b",
+      "destination_sha256": "735671d5d578ba996849900e408bf07f7206b1849ea117d8aea8095ad244972b"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/development-standards.en.md",
+      "destination": "development/admin/milestones/development-standards.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "3769b7f8d358c8d57e16a55989da65868daf1907f804e358f3e3d13e208e8bc7",
+      "destination_sha256": "377c51367b27f7f1371508cf9bc6406b856e36dd4818c8cc048c457a6112936b"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/development-standards.md",
+      "destination": "development/admin/milestones/development-standards.md",
+      "action": "迁移",
+      "source_sha256": "377c51367b27f7f1371508cf9bc6406b856e36dd4818c8cc048c457a6112936b",
+      "destination_sha256": "377c51367b27f7f1371508cf9bc6406b856e36dd4818c8cc048c457a6112936b"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/real-admin-api.en.md",
+      "destination": "development/admin/milestones/real-admin-api.md",
+      "action": "删除重复英文译本，保留中文版本",
+      "source_sha256": "d89b55b0cf78e836265dd567c5f613525548e08614a6139a50812dde31e26daa",
+      "destination_sha256": "47874658dc0ac65d19bb46a69f3298c5d94649e1fd1035ff0624243f656fd9e9"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/milestones/real-admin-api.md",
+      "destination": "development/admin/milestones/real-admin-api.md",
+      "action": "迁移",
+      "source_sha256": "47874658dc0ac65d19bb46a69f3298c5d94649e1fd1035ff0624243f656fd9e9",
+      "destination_sha256": "47874658dc0ac65d19bb46a69f3298c5d94649e1fd1035ff0624243f656fd9e9"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/validation/T017-2026-10-21.md",
+      "destination": "development/admin/validation/T017-2026-10-21.md",
+      "action": "迁移",
+      "source_sha256": "91b21f48e0820cc4a323eb088955de2c55e230fc107c49fd2b29e9c97ad2fbcb",
+      "destination_sha256": "91b21f48e0820cc4a323eb088955de2c55e230fc107c49fd2b29e9c97ad2fbcb"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/validation/T017-wordlists-v0.2.0.md",
+      "destination": "development/admin/validation/T017-wordlists-v0.2.0.md",
+      "action": "迁移",
+      "source_sha256": "1c9a38498d7c8f652f3c1a57e7fbba09230e8377a3b6c0b82b746cd0c23b036a",
+      "destination_sha256": "0682d68c317d7068081d34595788ec5617111f4d9c5f4cf2cc89ae810964a62a"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/validation/admin-contract-v0.2.0.md",
+      "destination": "development/admin/validation/admin-contract-v0.2.0.md",
+      "action": "迁移",
+      "source_sha256": "43c5f35560a06be64eb7d9d0c6798dc619cd9fbd7febf8515978a08e348b76b2",
+      "destination_sha256": "43c5f35560a06be64eb7d9d0c6798dc619cd9fbd7febf8515978a08e348b76b2"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source_commit": "29639f6ebd19794d0b82b8e729844cbbc35b6106",
+      "source": "docs/validation/admin-int003.md",
+      "destination": "development/admin/validation/admin-int003.md",
+      "action": "迁移",
+      "source_sha256": "2ca0d6fe67e30aea335c20f1f25739faaf4ac782d98c3e290a18e629ecc2849a",
+      "destination_sha256": "de3dc2ec0080d9bde566432f65ea4c97d47d00a261c59de8f0126522ea477b6a"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/admin-auth.md",
+      "destination": "development/backend/admin-auth.md",
+      "action": "迁移",
+      "source_sha256": "0713f75b7a07a635a69cb456e81f9e52e60b2af5d1f592e8e2b4acbee2b1d958",
+      "destination_sha256": "0713f75b7a07a635a69cb456e81f9e52e60b2af5d1f592e8e2b4acbee2b1d958"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/application-assembly.md",
+      "destination": "development/backend/application-assembly.md",
+      "action": "迁移",
+      "source_sha256": "cbe4cf665a962ee7dc937e814f7b4f2a96bb08394c4bb05afddcf46e76ef4c9c",
+      "destination_sha256": "cbe4cf665a962ee7dc937e814f7b4f2a96bb08394c4bb05afddcf46e76ef4c9c"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/business-schema.md",
+      "destination": "development/backend/business-schema.md",
+      "action": "迁移",
+      "source_sha256": "53646c21840713165ceaba839f6464258b3c15b45840ccd3e02be578a05fd325",
+      "destination_sha256": "53646c21840713165ceaba839f6464258b3c15b45840ccd3e02be578a05fd325"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/change-files.md",
+      "destination": "development/backend/change-files.md",
+      "action": "迁移",
+      "source_sha256": "4763774d7827e29fa2e4f8312a611e14a6d8691abbb82624027ba37b2adcdb98",
+      "destination_sha256": "4763774d7827e29fa2e4f8312a611e14a6d8691abbb82624027ba37b2adcdb98"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/command-framework.md",
+      "destination": "development/backend/command-framework.md",
+      "action": "迁移",
+      "source_sha256": "9ab59f510897bfdb8578eae6436a870046a7eee774115094f581f1bb350f168c",
+      "destination_sha256": "9ab59f510897bfdb8578eae6436a870046a7eee774115094f581f1bb350f168c"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/contract-coordination-2026-10-21.md",
+      "destination": "development/backend/contract-coordination-2026-10-21.md",
+      "action": "迁移",
+      "source_sha256": "61988b2dbb5500a5d2add26b589ce67ada962bcd54e11fefd5cee23c574b2551",
+      "destination_sha256": "61988b2dbb5500a5d2add26b589ce67ada962bcd54e11fefd5cee23c574b2551"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/contract-int003-handoff-2026-10-21.md",
+      "destination": "development/backend/contract-int003-handoff-2026-10-21.md",
+      "action": "迁移",
+      "source_sha256": "df977c45a183a3245bb3e66548bb2710e5130f37cffe2234e5d4020489ff4a92",
+      "destination_sha256": "df977c45a183a3245bb3e66548bb2710e5130f37cffe2234e5d4020489ff4a92"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/data-foundation.md",
+      "destination": "development/backend/data-foundation.md",
+      "action": "迁移",
+      "source_sha256": "bb5aa415b9a90728d971b4beb2f80c5057683e469e6eb7e78d38f2425bbbffe6",
+      "destination_sha256": "bb5aa415b9a90728d971b4beb2f80c5057683e469e6eb7e78d38f2425bbbffe6"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/dependency-deliverables.md",
+      "destination": "development/backend/dependency-deliverables.md",
+      "action": "迁移",
+      "source_sha256": "a1cb8bc457bff752c1a199260ec2caa083c4363668540f73cbe2468d07124da2",
+      "destination_sha256": "a1cb8bc457bff752c1a199260ec2caa083c4363668540f73cbe2468d07124da2"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/development-business.md",
+      "destination": "development/backend/development-business.md",
+      "action": "迁移",
+      "source_sha256": "8e64fcb2ac21a55d4b2c6cb7746e5455ad1001330998fe000d834087d3399971",
+      "destination_sha256": "8e64fcb2ac21a55d4b2c6cb7746e5455ad1001330998fe000d834087d3399971"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/docker-middleware.md",
+      "destination": "development/backend/docker-middleware.md",
+      "action": "迁移",
+      "source_sha256": "e9cb08af3eb6c07a1cd023f7cab6a998bf96775022168e4c475a06a7ffdb3914",
+      "destination_sha256": "e9cb08af3eb6c07a1cd023f7cab6a998bf96775022168e4c475a06a7ffdb3914"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/environment.md",
+      "destination": "development/backend/environment.md",
+      "action": "迁移",
+      "source_sha256": "1c46a2e048b34858e706dceacd8ce17716d66a5cd843c2a0b2a80875798b39f8",
+      "destination_sha256": "1c46a2e048b34858e706dceacd8ce17716d66a5cd843c2a0b2a80875798b39f8"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/foundation-manifest.json",
+      "destination": "development/backend/foundation-manifest.json",
+      "action": "迁移",
+      "source_sha256": "90293438a19b7e27ff47b7a88fe728213080546623d1b953cb29389db927b1e3",
+      "destination_sha256": "90293438a19b7e27ff47b7a88fe728213080546623d1b953cb29389db927b1e3"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/implementation.md",
+      "destination": "development/backend/implementation.md",
+      "action": "迁移",
+      "source_sha256": "c6361ca0432d197bc831ba5b4a0a9a76f22cc5a79a7e810e97133f998d2b4d7c",
+      "destination_sha256": "c6361ca0432d197bc831ba5b4a0a9a76f22cc5a79a7e810e97133f998d2b4d7c"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/input-verification.json",
+      "destination": "development/backend/input-verification.json",
+      "action": "迁移",
+      "source_sha256": "d832ee207b375857bd4dd9dac6ce0a2e9e39a72ee6b9a9e4a4bde3e6778023d6",
+      "destination_sha256": "d832ee207b375857bd4dd9dac6ce0a2e9e39a72ee6b9a9e4a4bde3e6778023d6"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/int003-r2-readiness.md",
+      "destination": "development/backend/int003-r2-readiness.md",
+      "action": "迁移",
+      "source_sha256": "c4dbdf7bb74f3b7d9c2e1d6318753d3afbb5e6deba2be80682777058edfc6d85",
+      "destination_sha256": "c4dbdf7bb74f3b7d9c2e1d6318753d3afbb5e6deba2be80682777058edfc6d85"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/middleware-decision.md",
+      "destination": "development/backend/middleware-decision.md",
+      "action": "迁移",
+      "source_sha256": "00c9bdd75f2d76c59c3a2f95e93c4794df2c53194359c482b4b607a1c77013a1",
+      "destination_sha256": "00c9bdd75f2d76c59c3a2f95e93c4794df2c53194359c482b4b607a1c77013a1"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/README.md",
+      "destination": "development/backend/milestones/README.md",
+      "action": "迁移",
+      "source_sha256": "2c0aa39c7a151c074a41cc8e7148ee0f8d3707e785335d900f532eebc4b8b5cd",
+      "destination_sha256": "2c0aa39c7a151c074a41cc8e7148ee0f8d3707e785335d900f532eebc4b8b5cd"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/orm-refactor-2026-10-21.md",
+      "destination": "development/backend/milestones/orm-refactor-2026-10-21.md",
+      "action": "迁移",
+      "source_sha256": "29fb010f6c8148c9460948100fbed408e178e3253cc0018958c379498141bc12",
+      "destination_sha256": "29fb010f6c8148c9460948100fbed408e178e3253cc0018958c379498141bc12"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-01.md",
+      "destination": "development/backend/milestones/phase-01.md",
+      "action": "迁移",
+      "source_sha256": "ba04ff7a0f876c1501100bdc47dcc02c6fe69ac11acc932b3d50e8339d2cde6d",
+      "destination_sha256": "ba77aa95fb9d959c1255677f850a324949d91112bb6592a1acd38650444b5838"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-02.md",
+      "destination": "development/backend/milestones/phase-02.md",
+      "action": "迁移",
+      "source_sha256": "1986d0d2acd57b26c595407ab78765f4b292051630ff846efcc635e0f1593c4f",
+      "destination_sha256": "1986d0d2acd57b26c595407ab78765f4b292051630ff846efcc635e0f1593c4f"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-03.md",
+      "destination": "development/backend/milestones/phase-03.md",
+      "action": "迁移",
+      "source_sha256": "61289916e8cc2b9265366afac0ed9a9778d7856228172dfbc09b78ddc6e03ec1",
+      "destination_sha256": "61289916e8cc2b9265366afac0ed9a9778d7856228172dfbc09b78ddc6e03ec1"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-04.md",
+      "destination": "development/backend/milestones/phase-04.md",
+      "action": "迁移",
+      "source_sha256": "bab02d5f91445d9c4a098ec0f2edda700583282d5506626ab82287e836dbcdf1",
+      "destination_sha256": "bab02d5f91445d9c4a098ec0f2edda700583282d5506626ab82287e836dbcdf1"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-05.md",
+      "destination": "development/backend/milestones/phase-05.md",
+      "action": "迁移",
+      "source_sha256": "1fa7944d6faed6be8759e7416c51488ef0693e70df02892571d6c10de54587f0",
+      "destination_sha256": "1fa7944d6faed6be8759e7416c51488ef0693e70df02892571d6c10de54587f0"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-06.md",
+      "destination": "development/backend/milestones/phase-06.md",
+      "action": "迁移",
+      "source_sha256": "ec966611180da591c3b2ff042c1b8dda25702817870c58222e55057021ad8322",
+      "destination_sha256": "ec966611180da591c3b2ff042c1b8dda25702817870c58222e55057021ad8322"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-07.md",
+      "destination": "development/backend/milestones/phase-07.md",
+      "action": "迁移",
+      "source_sha256": "d206e18ba7c6e1d3fddf0b805ec382183b37162c65a5b8230ed4508cd7ab275f",
+      "destination_sha256": "d206e18ba7c6e1d3fddf0b805ec382183b37162c65a5b8230ed4508cd7ab275f"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-08.md",
+      "destination": "development/backend/milestones/phase-08.md",
+      "action": "迁移",
+      "source_sha256": "9c1b4dd22e839c4d0d20d3ea5bfe0f20908bc4f6d96474689cf9a579667aa9e7",
+      "destination_sha256": "9c1b4dd22e839c4d0d20d3ea5bfe0f20908bc4f6d96474689cf9a579667aa9e7"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-09.md",
+      "destination": "development/backend/milestones/phase-09.md",
+      "action": "迁移",
+      "source_sha256": "acbf3c94d890cfb6afdd8968f21c9b6731abc7aaab137b0c777c2f52395659ca",
+      "destination_sha256": "acbf3c94d890cfb6afdd8968f21c9b6731abc7aaab137b0c777c2f52395659ca"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/phase-10.md",
+      "destination": "development/backend/milestones/phase-10.md",
+      "action": "迁移",
+      "source_sha256": "50f365d81168e98df4b42fd7d07e1ee60bf0f73bc9a134e3344a7a8c1d1a0708",
+      "destination_sha256": "50f365d81168e98df4b42fd7d07e1ee60bf0f73bc9a134e3344a7a8c1d1a0708"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/milestones/t007-mq-validation-2026-10-21.md",
+      "destination": "development/backend/milestones/t007-mq-validation-2026-10-21.md",
+      "action": "迁移",
+      "source_sha256": "8c6b579ed1d1052880d6e4c50b91394e1cf5543d219b0a28ef44ad0572a9ff41",
+      "destination_sha256": "8c6b579ed1d1052880d6e4c50b91394e1cf5543d219b0a28ef44ad0572a9ff41"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/observability.md",
+      "destination": "development/backend/observability.md",
+      "action": "迁移",
+      "source_sha256": "d5aaf0273695cab9d22d242ccbb7cf29ace59c073ae9beafea42976a3b045a9f",
+      "destination_sha256": "d5aaf0273695cab9d22d242ccbb7cf29ace59c073ae9beafea42976a3b045a9f"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/operations.md",
+      "destination": "development/backend/operations.md",
+      "action": "迁移",
+      "source_sha256": "9cd5ff861531dfd6fe37538a2579a3814f3ecbbcdaeade0c8dcd2030cebd2a95",
+      "destination_sha256": "9cd5ff861531dfd6fe37538a2579a3814f3ecbbcdaeade0c8dcd2030cebd2a95"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/student-auth.md",
+      "destination": "development/backend/student-auth.md",
+      "action": "迁移",
+      "source_sha256": "3d57244016a843a8c154a640e1ad6c8c0af78cbf7c530303d8a1237c9298bcdb",
+      "destination_sha256": "3d57244016a843a8c154a640e1ad6c8c0af78cbf7c530303d8a1237c9298bcdb"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/student-card.md",
+      "destination": "development/backend/student-card.md",
+      "action": "迁移",
+      "source_sha256": "7b31882ecef611068428dbae6691ea676d3674b88fc47235d020d5e4c35e2d81",
+      "destination_sha256": "7b31882ecef611068428dbae6691ea676d3674b88fc47235d020d5e4c35e2d81"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/t004-followup.md",
+      "destination": "development/backend/t004-followup.md",
+      "action": "迁移",
+      "source_sha256": "7501beae5658d0a9c21759a22ff916969056c1919ac6d4c6f7c02f6f619f0072",
+      "destination_sha256": "7501beae5658d0a9c21759a22ff916969056c1919ac6d4c6f7c02f6f619f0072"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/t004-integration-evidence.json",
+      "destination": "development/backend/t004-integration-evidence.json",
+      "action": "迁移",
+      "source_sha256": "f770b3237e3184bdd041be1d76918d99e6b212c2fac7ee6257b3d8df94fa0aa8",
+      "destination_sha256": "f770b3237e3184bdd041be1d76918d99e6b212c2fac7ee6257b3d8df94fa0aa8"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/validation.md",
+      "destination": "development/backend/validation.md",
+      "action": "迁移",
+      "source_sha256": "db97ea6ed2d39d164bf51a72e1a0058e4cfe4191430c343a03fd96ac7e636377",
+      "destination_sha256": "db97ea6ed2d39d164bf51a72e1a0058e4cfe4191430c343a03fd96ac7e636377"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/verification.md",
+      "destination": "development/backend/verification.md",
+      "action": "迁移",
+      "source_sha256": "4b38e8d28b38c762ed11c28707cff4840183992a810e8bc6c6a34b4aa5979ad1",
+      "destination_sha256": "ca873bc4cf0da562b4efe09f9c99429a3f5bcdda87e8278c7954d4f7ead889dc"
+    },
+    {
+      "repository": "liyuanci-backend-go",
+      "source_commit": "10a4fb67345185c9362990edb836ab4c0686b308",
+      "source": "docs/wish.md",
+      "destination": "development/backend/wish.md",
+      "action": "迁移",
+      "source_sha256": "75933bb4b1398c7a617535817c0592379bdd9de97367a3b0dd5b26d897142655",
+      "destination_sha256": "75933bb4b1398c7a617535817c0592379bdd9de97367a3b0dd5b26d897142655"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source_commit": "2887e66af14b9c46589cad9673fb6ef87ab55387",
+      "source": "docs/api-call-audit.md",
+      "destination": "development/miniprogram/api-call-audit.md",
+      "action": "迁移",
+      "source_sha256": "16de811e47721598d8c9638b596c3612859138bca6e6ab2c3d41591b5713a566",
+      "destination_sha256": "16de811e47721598d8c9638b596c3612859138bca6e6ab2c3d41591b5713a566"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source_commit": "2887e66af14b9c46589cad9673fb6ef87ab55387",
+      "source": "docs/integration-readiness.md",
+      "destination": "development/miniprogram/integration-readiness.md",
+      "action": "迁移",
+      "source_sha256": "26278f08fe5d5926df72bed916752f906373fbd7e105883c3dc9dcf8c020f6bd",
+      "destination_sha256": "26278f08fe5d5926df72bed916752f906373fbd7e105883c3dc9dcf8c020f6bd"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source_commit": "2887e66af14b9c46589cad9673fb6ef87ab55387",
+      "source": "docs/milestones/01-T004-T009-foundation-session.md",
+      "destination": "development/miniprogram/milestones/01-T004-T009-foundation-session.md",
+      "action": "迁移",
+      "source_sha256": "bc48fc682ed010ae7f067dd82d2aee7065caf3df71d2a7239a975b85bcffab49",
+      "destination_sha256": "bc48fc682ed010ae7f067dd82d2aee7065caf3df71d2a7239a975b85bcffab49"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source_commit": "2887e66af14b9c46589cad9673fb6ef87ab55387",
+      "source": "docs/milestones/02-T013-verification.md",
+      "destination": "development/miniprogram/milestones/02-T013-verification.md",
+      "action": "迁移",
+      "source_sha256": "ac7621326f988570638b9e38ad21ec877ab8a77bfb89c4d0424f197b57b5fae5",
+      "destination_sha256": "ac7621326f988570638b9e38ad21ec877ab8a77bfb89c4d0424f197b57b5fae5"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source_commit": "2887e66af14b9c46589cad9673fb6ef87ab55387",
+      "source": "docs/milestones/03-T015-wishes.md",
+      "destination": "development/miniprogram/milestones/03-T015-wishes.md",
+      "action": "迁移",
+      "source_sha256": "6528184571992f53c3d6572d1f723ad9848c345bbf9ecbea3d5f78763a8bd7a7",
+      "destination_sha256": "6528184571992f53c3d6572d1f723ad9848c345bbf9ecbea3d5f78763a8bd7a7"
+    }
+  ]
+}

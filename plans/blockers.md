@@ -82,7 +82,7 @@ B02：后端实际后台范围与管理端协议消费均已补，下一步是�
 
 【建议】下一优先级：后端收敛B05/B07和固定0.2.0；两端完成B14迁移准备/已授权适配；用户指定资料方补B08–B12资源。具体任务和验收见[进度表](progress.md)。
 
-来源：[Web契约疑问](../../liyuanci-admin-vue/docs/contract-questions.md)、[小程序认证](../../liyuanci-miniprogram-uniapp/docs/milestones/02-T013-verification.md)、[心愿](../../liyuanci-miniprogram-uniapp/docs/milestones/03-T015-wishes.md)、[后端依赖交付](../../liyuanci-backend-go/docs/dependency-deliverables.md)、[阶段四](../../liyuanci-backend-go/docs/milestones/phase-04.md)。
+来源：[Web契约疑问](../development/admin/contract-questions.md)、[小程序认证](../development/miniprogram/milestones/02-T013-verification.md)、[心愿](../development/miniprogram/milestones/03-T015-wishes.md)、[后端依赖交付](../development/backend/dependency-deliverables.md)、[阶段四](../development/backend/milestones/phase-04.md)。
 
 ## 处理记录模板
 

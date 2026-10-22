@@ -29,7 +29,7 @@ B02后台局部联合验证子项解除，整体保留处理中；B07/B14及学�
 | 管理端 | 2fe23c611c7f56a85cc977753679bf69e129d805 | 显式隔离身份接线及正式索引适用核对已提交；记录130业务/58规范及构建通过；替代fetch验证，未跨端执行 |
 | 小程序 | 25849771863deb84e748a6dfeabbb9f24859fce5 | 首次/重提页面、Me/WishResult动作、心愿命令编排与创建标签表单已提交；记录29测试及微信构建通过；认证/心愿写入准入仍关闭，无微信实机或真实学生API证据 |
 
-【来源／本轮未复跑】[后端准入包](../../liyuanci-backend-go/docs/int003-r2-readiness.md)、[后台适用消费](../../liyuanci-admin-vue/docs/milestones/admin-actions-r1.md)、[后台联调准备](../../liyuanci-admin-vue/docs/milestones/admin-int003.md)、[小程序接入清单末尾续轮与归并记录](../../liyuanci-miniprogram-uniapp/docs/integration-readiness.md)。材料内旧分支/未提交描述保留为历史，以本表Git快照定位当前交付。
+【来源／本轮未复跑】[后端准入包](../development/backend/int003-r2-readiness.md)、[后台适用消费](../development/admin/milestones/admin-actions-r1.md)、[后台联调准备](../development/admin/milestones/admin-int003.md)、[小程序接入清单末尾续轮与归并记录](../development/miniprogram/integration-readiness.md)。材料内旧分支/未提交描述保留为历史，以本表Git快照定位当前交付。
 
 ## 最近一轮应如何推进
 
