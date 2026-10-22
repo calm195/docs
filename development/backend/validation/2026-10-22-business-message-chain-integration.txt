@@ -1,0 +1,182 @@
+最终完整make integration
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.71s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.01s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.01s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.74s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.01s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.02s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.01s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.02s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.01s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.84s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.01s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.04s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.01s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.01s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:409: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志14条
+--- PASS: TestBusinessMessageChain (4.02s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.12s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.04s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.08s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.06s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭 (0.03s)
+PASS
+同一数据库重复业务验证
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.58s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.01s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.01s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.57s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.00s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.01s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.69s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.01s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:409: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志26条
+--- PASS: TestBusinessMessageChain (3.85s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.09s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.04s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.11s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.08s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭 (0.04s)
+PASS

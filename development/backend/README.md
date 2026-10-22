@@ -61,3 +61,7 @@
 - [2026-10-22 开发目录、配置与资源清理](milestones/2026-10-22-dev-layout-r1.md)
 
 - [2026-10-22 宿主开发与配置整理精确源码提交补充](milestones/2026-10-22-host-development-commit-r1.md)
+
+- [2026-10-22 业务消息链路收口与真实领域验证](milestones/2026-10-22-business-message-chain-r1.md)
+
+- [2026-10-22 业务消息链路精确源码提交补充](milestones/2026-10-22-business-message-chain-commit-r1.md)

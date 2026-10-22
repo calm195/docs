@@ -40,6 +40,19 @@ infra只检查本地端口；doctor验证实际数据库身份、关键结构、
 
 完整Docker入口仍为scripts/init-dev.sh、start.sh、stop.sh，共用services.py，默认配置改为`.local/dev/operations.env`；显式业务初始化为scripts/init-business-dev.py。停止和普通启动仍不迁移、不重置账号、不删除卷。生产必须使用独立`.local/production/`或显式secret文件，模板见[生产配置示例](../../../liyuanci-backend-go/configs/examples/production.env)，本次未部署生产。
 
+## 学生卡消息模式
+
+默认数据库轮询保持可用，无MQ时不构造消息客户端。显式启用步骤：
+
+1. 用对应模式的`make dev-mq`或`make dev-native-mq`启动所选隔离项目的NameServer/Broker。
+2. 在所选项目Broker中显式建立`liyuanci_student_card_scan_v1`主题。例如默认Docker宿主项目：`docker exec liyuanci-local-broker-1 sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1`；其他项目须改为实际归属容器，不能操作其他环境。
+3. 将[学生卡消息配置模板](../../../liyuanci-backend-go/configs/examples/card-worker-mq.yaml)复制到对应`.local/<模式>/card-worker-mq.yaml`，核对NameServer地址、独立主题/生产组/消费组/实例及预算。该模板仅限隔离开发；不复用探针主题，不自动建主题，不提供生产凭据。
+4. 在所选`operations.env`设置`LIYUANCI_LOCAL_CARD_MQ_FILE=/绝对路径/card-worker-mq.yaml`。也可使用相对该环境文件的路径；脚本按字面解析并转换为绝对私有路径。随后运行对应`dev-worker`或`dev-native-worker`。
+
+消息模式由同一业务worker负责发件箱转发、真实订阅和数据库到期补偿。MQ只携带六个技术字段，数据库工作/资格/版本及领域回执是最终依据；收到Deferred的唤醒可确认，但工作须由数据库补偿或异常待办继续处理，不等于扫描完成。扫描和学校规则仍是开发模拟，不冒充真实供应商。
+
+取消时先停止订阅和调度，等待在途处理，再关闭消息生产者，最后释放数据库。普通启动不迁移、不重置账号/工作或生成新口令。配置无效时拒绝启动，不回退到看似成功的数据库模式；去掉该显式配置才恢复默认轮询。doctor仍只检查数据库、身份与目录，不证明MQ主题/权限可用。完整Docker日常开发入口未增加此文件挂载；本次日常消息配置面向宿主/直接二进制，容器真实接线由隔离集成测试验证。
+
 ## 旧配置导入与资源归属
 
 首次初始化目标尚不存在时，从`~/.config/liyuanci/<模式>/`复制配置、密钥、口令和对象，重写文件引用，原目录保留。`make dev-import`或`dev-native-import`只执行导入，不连接业务库或重置账号；已有目标绝不覆盖。运行中的旧应用先停止，避免对象目录并发写入；缺失原引用时不发布半成品目标。旧卷或旧库缺原密钥时仍拒绝生成替代值。
@@ -52,8 +65,8 @@ infra只检查本地端口；doctor验证实际数据库身份、关键结构、
 
 ## IDE与验证
 
-`make dev-config`或`dev-native-config`刷新派生文件。IDE调试cmd/server设置APP_ENVIRONMENT=integration、APP_DEVAPPFILE为实际business.host.json、APP_DATABASE_DRIVER=postgres、APP_DATABASE_DSN=devapp、APP_REDIS_ENABLED=true、APP_REDIS_ADDRESS为实际地址、APP_ROCKETMQ_ENABLED=false、APP_SERVER_ADDRESS为实际loopback地址，参数`-config ""`。需要Redis口令时显式设置APP_REDIS_PASSWORD。cmd/card-worker只需APP_ENVIRONMENT、APP_DEVAPPFILE。IDE进程由IDE管理，入口只停止自己记录且可执行路径匹配的PID。
+`make dev-config`或`dev-native-config`刷新派生文件。IDE调试cmd/server设置APP_ENVIRONMENT=integration、APP_DEVAPPFILE为实际business.host.json、APP_DATABASE_DRIVER=postgres、APP_DATABASE_DSN=devapp、APP_REDIS_ENABLED=true、APP_REDIS_ADDRESS为实际地址、APP_ROCKETMQ_ENABLED=false、APP_SERVER_ADDRESS为实际loopback地址，参数`-config ""`。需要Redis口令时显式设置APP_REDIS_PASSWORD。cmd/card-worker默认只需APP_ENVIRONMENT、APP_DEVAPPFILE；显式消息模式另设APP_CARD_MQFILE。IDE进程由IDE管理，入口只停止自己记录且可执行路径匹配的PID。
 
-日常相关包检查用`make check-fast PACKAGES=./internal/模块/...`；交付前`make fmt`、`make check`，Go变更另`make build`；离线脚本测试用`python3 -m unittest discover -s scripts -p 'test_*.py' -v`。`make integration`直接声明真实PG/Redis/MQ、显式探针迁移和重复回执往返，调用者提供隔离项目和测试口令并负责清理。额外专项验证临时执行，只将实际结果登记docs，不再把专项脚本留在源码工程。
+日常相关包检查用`make check-fast PACKAGES=./internal/模块/...`；交付前`make fmt`、`make check`，Go变更另`make build`；离线脚本测试用`python3 -m unittest discover -s scripts -p 'test_*.py' -v`。`make integration`直接声明真实PG/Redis/MQ、显式探针迁移和重复回执往返，并在同一隔离项目执行持久工作/重驱动审计及学生卡消息领域链。该入口会迁移并清理业务测试夹具，只能指向独立测试项目，不使用日常业务库。调用者提供隔离项目和测试口令并负责停止容器/网络，始终保留卷。额外专项验证临时执行，只将实际结果登记docs，不再把专项脚本留在源码工程。
 
 基础模式仅健康端点，业务模式匿名wishes可查询、未登录me为401；微信缺配置时503，扫描/学校规则仍为开发适配，整体readyz仍503。诊断/探针通过不是领域消费者齐备、外部供应商或生产验收通过。实际结果见最新交付记录；历史记录及旧路径仅代表当时快照。
