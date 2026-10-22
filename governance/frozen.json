@@ -133,6 +133,10 @@
     "development/backend/milestones/2026-10-22-story-sharing-r1.md": "01009e667a6c69ef6f7782376fb8dfac639a9fb12da22497026ce7dfb9ab6476",
     "development/backend/validation/2026-10-22-story-sharing-r1.json": "0077a7990b606dc893ed33038b32ef62cdd7954f0cb1da61fe0c95b665fdb0c7",
     "development/backend/validation/2026-10-22-story-sharing-integration.txt": "6d5e228e564131aba7e3e190fdee5df74a5368d4fe19861af1d836dde85f8ec0",
-    "development/backend/validation/2026-10-22-story-sharing-quality.txt": "f891781737f53ef27735e459c27f00c0453fd0d3f9be43a279bee3461680d937"
+    "development/backend/validation/2026-10-22-story-sharing-quality.txt": "f891781737f53ef27735e459c27f00c0453fd0d3f9be43a279bee3461680d937",
+    "development/backend/milestones/2026-10-22-safety-governance-r1.md": "1397392dc5e5d9bb45223f8c579a9a9374e418cabdaba5fe259ca8c098ee437d",
+    "development/backend/validation/2026-10-22-safety-governance-r1.json": "a930c076e3b4a3ab1d7d59f21b03ec35e34f6afa9fecf5b332987aa0b477f742",
+    "development/backend/validation/2026-10-22-safety-governance-integration.txt": "4539956d9a0db36f2f63af0eb16ed0c4877e7a4a746196c855a00ea9eb997282",
+    "development/backend/validation/2026-10-22-safety-governance-quality.txt": "ffc2cd989edcd6edf59c68b82f2ea0659be7a61d3c1b5800efc519ae8b8fc317"
   }
 }

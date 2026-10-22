@@ -1,0 +1,2492 @@
+
+===== make integration 轮次1 =====
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Volume liyuanci-safety-a2e0d30a_mq-data Creating
+ Volume liyuanci-safety-a2e0d30a_mq-data Creating
+ Volume liyuanci-safety-a2e0d30a_redis-data Creating
+ Volume liyuanci-safety-a2e0d30a_redis-data Creating
+ Volume liyuanci-safety-a2e0d30a_pg-data Creating
+ Volume liyuanci-safety-a2e0d30a_pg-data Creating
+ Network liyuanci-safety-a2e0d30a_foundation Creating
+ Network liyuanci-safety-a2e0d30a_foundation Creating
+ Volume liyuanci-safety-a2e0d30a_mq-data Created
+ Volume liyuanci-safety-a2e0d30a_mq-data Created
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Creating
+ Volume liyuanci-safety-a2e0d30a_redis-data Created
+ Volume liyuanci-safety-a2e0d30a_redis-data Created
+ Volume liyuanci-safety-a2e0d30a_pg-data Created
+ Volume liyuanci-safety-a2e0d30a_pg-data Created
+ Network liyuanci-safety-a2e0d30a_foundation Created
+ Network liyuanci-safety-a2e0d30a_foundation Created
+ Container liyuanci-safety-a2e0d30a-redis-1 Creating
+ Container liyuanci-safety-a2e0d30a-postgres-1 Creating
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Creating
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Created
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Created
+ Container liyuanci-safety-a2e0d30a-broker-1 Creating
+ Container liyuanci-safety-a2e0d30a-redis-1 Created
+ Container liyuanci-safety-a2e0d30a-postgres-1 Created
+ Container liyuanci-safety-a2e0d30a-broker-1 Created
+ Container liyuanci-safety-a2e0d30a-postgres-1 Starting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-redis-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-postgres-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Started
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Starting
+ Container liyuanci-safety-a2e0d30a-broker-1 Started
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-safety-a2e0d30a-migrate-run-c09063b99b8e Creating
+ Container liyuanci-safety-a2e0d30a-migrate-run-c09063b99b8e Created
+CREATE TABLE
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-safety-a2e0d30a-api Building
+ Image liyuanci-safety-a2e0d30a-worker Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.21kB done
+#1 DONE 0.0s
+
+#2 [worker internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [api internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.2s
+
+#4 [worker internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.2s
+
+#5 [api internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [worker internal] load build context
+#6 transferring context: 243.14kB 0.0s done
+#6 DONE 0.0s
+
+#7 [api builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [api builder 3/7] COPY go.mod go.sum ./
+#8 CACHED
+
+#9 [api builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [api builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#10 CACHED
+
+#11 [api builder 5/7] COPY cmd ./cmd
+#11 CACHED
+
+#12 [worker stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#12 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#12 DONE 0.0s
+
+#13 [api builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [api builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 13.0s
+
+#15 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [worker stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#15 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [api stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#18 [api stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#19 [api stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [api] exporting to image
+#20 exporting layers
+#20 exporting layers 4.1s done
+#20 exporting manifest sha256:b227d6db5989d406865a1e52df2f4be098c9611f3795a9770fecf0a3fcf7f848
+#20 exporting manifest sha256:b227d6db5989d406865a1e52df2f4be098c9611f3795a9770fecf0a3fcf7f848 done
+#20 exporting config sha256:65541e4a60fd6f8e53f6fb90e6259c343b56e318503810b5a3f3fc42fe7036aa done
+#20 exporting attestation manifest sha256:d917e6f178b69c2b1e329c11b0e7c09051cae2e4eb7b798dbb80a6c0728fa018 0.0s done
+#20 exporting manifest list sha256:83d750332fd9c59d39b6b0f4f7854b6cd4d2bce65d95c4c0cb93e52cce9d6eba done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-api:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-api:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-api:latest 0.7s done
+#20 DONE 4.8s
+
+#21 [worker] exporting to image
+#21 exporting layers 4.1s done
+#21 exporting manifest sha256:65ec7b90cae34356cf16a6950209ea473bc78119989acb312ee6b60c6f24d29b done
+#21 exporting config sha256:72784416572e36523adaadf8b3a67dfe859fb180d3b4bc10679da3314899d842 done
+#21 exporting attestation manifest sha256:7d9ac3210bc0ee457ae19818f0ec546262fa115e54b8adb5d2817f475ce73c00 0.0s done
+#21 exporting manifest list sha256:8dbe9c9e0f37c54ab703495b8e8b2009aaf68cc1359b9737a72de55894aa1438 done
+#21 naming to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest done
+#21 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest 0.7s done
+#21 DONE 4.8s
+
+#22 [worker] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [api] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-api Built
+ Image liyuanci-safety-a2e0d30a-worker Built
+ Container liyuanci-safety-a2e0d30a-postgres-1 Running
+ Container liyuanci-safety-a2e0d30a-redis-1 Running
+ Container liyuanci-safety-a2e0d30a-broker-1 Running
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Running
+ Container liyuanci-safety-a2e0d30a-worker-1 Creating
+ Network liyuanci-safety-a2e0d30a_ingress Creating
+ Network liyuanci-safety-a2e0d30a_ingress Creating
+ Network liyuanci-safety-a2e0d30a_ingress Created
+ Network liyuanci-safety-a2e0d30a_ingress Created
+ Container liyuanci-safety-a2e0d30a-api-1 Creating
+ Container liyuanci-safety-a2e0d30a-worker-1 Created
+ Container liyuanci-safety-a2e0d30a-api-1 Created
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Starting
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-worker-1 Starting
+ Container liyuanci-safety-a2e0d30a-worker-1 Started
+ Container liyuanci-safety-a2e0d30a-api-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-worker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-api-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-worker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Image liyuanci-safety-a2e0d30a-probe Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 648B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 12.82kB done
+#6 DONE 0.0s
+
+#7 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#8 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#8 DONE 0.0s
+
+#9 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#9 CACHED
+
+#10 [builder 3/7] COPY go.mod go.sum ./
+#10 CACHED
+
+#11 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#11 CACHED
+
+#12 [stage-3 5/6] COPY --from=builder /artifacts/ ./
+#12 CACHED
+
+#13 [stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#13 CACHED
+
+#14 [stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#14 CACHED
+
+#15 [stage-3 4/6] WORKDIR /app
+#15 CACHED
+
+#16 [builder 2/7] WORKDIR /src
+#16 CACHED
+
+#17 [builder 5/7] COPY cmd ./cmd
+#17 CACHED
+
+#18 [builder 6/7] COPY internal ./internal
+#18 CACHED
+
+#19 [stage-3 6/6] COPY configs/app ./configs/app
+#19 CACHED
+
+#20 exporting to image
+#20 exporting layers done
+#20 exporting manifest sha256:0e8f21db46e896dd86d3057c95a5e8e81e4d62be250dbee452565b66c4019699 done
+#20 exporting config sha256:941c36f6af4c456f1f1097caf4ee86f99f6550f66d4031209676146e0ee8c6f7 done
+#20 exporting attestation manifest sha256:2fb2b77a52be21899bce11f6b19b8865530efeffe0d806e22bfa6ee72f55104c done
+#20 exporting manifest list sha256:e4d37882f7fcf8227faa6b39bc7bc7b882ba4afd6e89394ad3cec32c161f0bf1
+#20 exporting manifest list sha256:e4d37882f7fcf8227faa6b39bc7bc7b882ba4afd6e89394ad3cec32c161f0bf1 done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-probe:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-probe:latest done
+#20 DONE 0.0s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-probe Built
+ Container liyuanci-safety-a2e0d30a-probe-run-b5cdce34609b Creating
+ Container liyuanci-safety-a2e0d30a-probe-run-b5cdce34609b Created
+time="2026-10-22T16:19:25Z" level=info msg="change the route for clients"
+time="2026-10-22T16:19:25Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T16:19:25.276Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"ef7323b8f3fce9e10c54b2c210bec36f"}
+{"level":"info","time":"2026-10-22T16:19:26.280Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"ef7323b8f3fce9e10c54b2c210bec36f","delivery_count":2}
+{"level":"info","time":"2026-10-22T16:19:26.280Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T16:19:26.280Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.027207037}
+time="2026-10-22T16:19:26Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-safety-a2e0d30a-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 713B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.1s
+
+#4 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#6 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.1s done
+#6 DONE 0.1s
+
+#7 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.1s done
+#7 DONE 0.1s
+
+#8 [internal] load build context
+#8 transferring context: 49.77kB 0.0s done
+#8 DONE 0.0s
+
+#9 [builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [builder 3/7] COPY go.mod go.sum ./
+#10 CACHED
+
+#11 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#11 CACHED
+
+#12 [builder 5/7] COPY cmd ./cmd
+#12 CACHED
+
+#13 [builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 14.6s
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation &&     CGO_ENABLED=0 go test -c -o /artifacts/wish.test ./internal/wish
+#15 DONE 12.8s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /artifacts/wish.test /
+#17 DONE 0.2s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 2.2s done
+#20 exporting manifest sha256:5a4ca503641dcad5302299decb04f5e1ff6e1542b13db8d7fad280aabca23588
+#20 exporting manifest sha256:5a4ca503641dcad5302299decb04f5e1ff6e1542b13db8d7fad280aabca23588 done
+#20 exporting config sha256:8b69eee231dcd58b31c704fba440c0f54ead8153af12aaf96bce26f03940fb90 done
+#20 exporting attestation manifest sha256:d5319bad936b97401f720431a30bc3926870be77742be64fa26ca38729c3b397 done
+#20 exporting manifest list sha256:0e8db7a01850704e6a32ce587312fdce22e4a91c2051a4a01f6555d9861d7560 done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest 0.5s done
+#20 DONE 2.8s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-business-test Built
+ Container liyuanci-safety-a2e0d30a-business-test-run-1428a72ef039 Creating
+ Container liyuanci-safety-a2e0d30a-business-test-run-1428a72ef039 Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (1.02s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.00s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.01s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.00s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.80s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.02s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.00s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.01s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.95s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.02s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.01s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.02s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.02s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志14条
+--- PASS: TestBusinessMessageChain (4.07s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.07s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.04s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.09s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.08s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.03s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.01s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.02s)
+PASS
+=== RUN   TestPostgresLifecycle
+--- PASS: TestPostgresLifecycle (1.78s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/block
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/expired
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/content
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/hold
+=== RUN   TestApplicationMatching/并发申请同意与匹配隔离
+=== RUN   TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审
+=== RUN   TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话
+=== RUN   TestApplicationMatching/同人并发申请与跨主体游标拒绝
+=== RUN   TestApplicationMatching/回退与上架并发不超过三条
+=== RUN   TestApplicationMatching/拉黑事务与同意并发及解除后不复活
+=== RUN   TestApplicationMatching/通知失败回滚整个同意事务
+=== RUN   TestApplicationMatching/真实HTTP六路由及严格输入
+=== RUN   TestApplicationMatching/真实MQ应愿扫描重复回执
+=== NAME  TestApplicationMatching
+    application_integration_test.go:790: T019真实PG/HTTP/MQ应愿审核、唯一匹配、回退与B01通过；供应商、身份及已实现起点均合成
+--- PASS: TestApplicationMatching (4.17s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.06s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.07s)
+    --- PASS: TestApplicationMatching/人工驳回建议与批准通知 (0.08s)
+    --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到 (0.24s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/block (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/expired (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/content (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/hold (0.04s)
+    --- PASS: TestApplicationMatching/并发申请同意与匹配隔离 (0.10s)
+    --- PASS: TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝 (0.07s)
+    --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话 (0.16s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限 (0.06s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审 (0.10s)
+    --- PASS: TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话 (0.14s)
+    --- PASS: TestApplicationMatching/同人并发申请与跨主体游标拒绝 (0.07s)
+    --- PASS: TestApplicationMatching/回退与上架并发不超过三条 (0.12s)
+    --- PASS: TestApplicationMatching/拉黑事务与同意并发及解除后不复活 (0.13s)
+    --- PASS: TestApplicationMatching/通知失败回滚整个同意事务 (0.07s)
+    --- PASS: TestApplicationMatching/真实HTTP六路由及严格输入 (0.08s)
+    --- PASS: TestApplicationMatching/真实MQ应愿扫描重复回执 (1.11s)
+=== RUN   TestChatDelivery
+=== RUN   TestChatDelivery/AR001慢审后达与私聊联系方式
+=== RUN   TestChatDelivery/客户端不透明标识与同请求幂等
+=== RUN   TestChatDelivery/送达回滚不占号重试同号
+=== RUN   TestChatDelivery/并发送达连续唯一
+=== RUN   TestChatDelivery/普通驳回危机隔离与无命中不可枚举
+=== RUN   TestChatDelivery/实现只读与回退不复活
+=== RUN   TestChatDelivery/新匹配隔离旧会话
+=== RUN   TestChatDelivery/已还愿只读
+=== RUN   TestChatDelivery/注销意图立即阻断历史
+=== RUN   TestChatDelivery/限制解除旧消息永久取消
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/block
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/penalty
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/hold
+=== RUN   TestChatDelivery/扫描期间对方权限变化
+=== RUN   TestChatDelivery/缺私聊分析器失败关闭
+=== RUN   TestChatDelivery/通知归属已读版本与游标
+=== RUN   TestChatDelivery/HTTP六接口与严格输入
+=== RUN   TestChatDelivery/真实MQ私聊提交后NACK重投同号
+=== NAME  TestChatDelivery
+    chat_integration_test.go:708: T021真实PG/HTTP/MQ聊天、通知与最终送达序号通过；身份、密钥、分类器及后续状态入口为合成
+--- PASS: TestChatDelivery (23.00s)
+    --- PASS: TestChatDelivery/AR001慢审后达与私聊联系方式 (0.10s)
+    --- PASS: TestChatDelivery/客户端不透明标识与同请求幂等 (0.08s)
+    --- PASS: TestChatDelivery/送达回滚不占号重试同号 (0.07s)
+    --- PASS: TestChatDelivery/并发送达连续唯一 (0.07s)
+    --- PASS: TestChatDelivery/普通驳回危机隔离与无命中不可枚举 (0.11s)
+    --- PASS: TestChatDelivery/实现只读与回退不复活 (0.09s)
+    --- PASS: TestChatDelivery/新匹配隔离旧会话 (0.11s)
+    --- PASS: TestChatDelivery/已还愿只读 (0.10s)
+    --- PASS: TestChatDelivery/注销意图立即阻断历史 (0.07s)
+    --- PASS: TestChatDelivery/限制解除旧消息永久取消 (0.23s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/block (0.07s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/penalty (0.08s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/hold (0.08s)
+    --- PASS: TestChatDelivery/扫描期间对方权限变化 (0.06s)
+    --- PASS: TestChatDelivery/缺私聊分析器失败关闭 (0.06s)
+    --- PASS: TestChatDelivery/通知归属已读版本与游标 (0.06s)
+    --- PASS: TestChatDelivery/HTTP六接口与严格输入 (0.06s)
+    --- PASS: TestChatDelivery/真实MQ私聊提交后NACK重投同号 (20.07s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (4.20s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.02s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.04s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.03s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.02s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.02s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.04s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.04s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.05s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.02s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.72s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.09s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (1.07s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.19s)
+=== RUN   TestSafetyGovernance
+=== RUN   TestSafetyGovernance/拉黑双向旧申请永久失效及幂等
+=== RUN   TestSafetyGovernance/警告首次展示及提前同键重试
+=== RUN   TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活
+=== RUN   TestSafetyGovernance/永久封禁仍可申诉且无普通写入
+=== RUN   TestSafetyGovernance/拉黑例外退出及已还愿拒绝
+=== RUN   TestSafetyGovernance/举报鉴权类型版本及角色重验
+=== RUN   TestSafetyGovernance/内容普通限制解除不自动公开
+=== RUN   TestSafetyGovernance/拉黑与同意并发依统一账号锁串行
+--- PASS: TestSafetyGovernance (2.27s)
+    --- PASS: TestSafetyGovernance/拉黑双向旧申请永久失效及幂等 (0.10s)
+    --- PASS: TestSafetyGovernance/警告首次展示及提前同键重试 (0.09s)
+    --- PASS: TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活 (0.11s)
+    --- PASS: TestSafetyGovernance/永久封禁仍可申诉且无普通写入 (0.05s)
+    --- PASS: TestSafetyGovernance/拉黑例外退出及已还愿拒绝 (0.06s)
+    --- PASS: TestSafetyGovernance/举报鉴权类型版本及角色重验 (0.05s)
+    --- PASS: TestSafetyGovernance/内容普通限制解除不自动公开 (0.03s)
+    --- PASS: TestSafetyGovernance/拉黑与同意并发依统一账号锁串行 (0.15s)
+=== RUN   TestStorySharing
+=== RUN   TestStorySharing/确认实现原子取消与普通回退保留原人
+=== RUN   TestStorySharing/确认实现与事务外消息分析并发
+=== RUN   TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿
+=== RUN   TestStorySharing/完整还愿审核改稿分享与撤回
+=== RUN   TestStorySharing/故事驳回状态与建议
+=== RUN   TestStorySharing/空故事越权版本与非法状态
+=== RUN   TestStorySharing/并发还愿与幂等异请求
+=== RUN   TestStorySharing/故事工作失败整单回滚
+=== RUN   TestStorySharing/旧审核改稿与撤回后不复活
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/withdraw
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/expired
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/deleting
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/matching
+=== RUN   TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复
+=== RUN   TestStorySharing/新屏障打断事务外分析与旧审不能释放
+=== RUN   TestStorySharing/危机隔离与父屏障不被故事释放
+=== RUN   TestStorySharing/公开故事分页与游标用途隔离
+=== RUN   TestStorySharing/真实HTTP八接口严格输入
+=== RUN   TestStorySharing/真实MQ故事重投不重复审核版本
+=== NAME  TestStorySharing
+    story_integration_test.go:784: T023真实PG/HTTP/MQ完成、还愿与分享通过；身份、密钥、分析器及注销入口为合成
+--- PASS: TestStorySharing (4.46s)
+    --- PASS: TestStorySharing/确认实现原子取消与普通回退保留原人 (0.10s)
+    --- PASS: TestStorySharing/确认实现与事务外消息分析并发 (0.07s)
+    --- PASS: TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿 (0.13s)
+    --- PASS: TestStorySharing/完整还愿审核改稿分享与撤回 (0.13s)
+    --- PASS: TestStorySharing/故事驳回状态与建议 (0.10s)
+    --- PASS: TestStorySharing/空故事越权版本与非法状态 (0.08s)
+    --- PASS: TestStorySharing/并发还愿与幂等异请求 (0.09s)
+    --- PASS: TestStorySharing/故事工作失败整单回滚 (0.05s)
+    --- PASS: TestStorySharing/旧审核改稿与撤回后不复活 (0.13s)
+    --- PASS: TestStorySharing/心愿分享状态过期与注销重验 (0.13s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/withdraw (0.02s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/expired (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/deleting (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/matching (0.04s)
+    --- PASS: TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复 (0.09s)
+    --- PASS: TestStorySharing/新屏障打断事务外分析与旧审不能释放 (0.07s)
+    --- PASS: TestStorySharing/危机隔离与父屏障不被故事释放 (0.14s)
+    --- PASS: TestStorySharing/公开故事分页与游标用途隔离 (0.14s)
+    --- PASS: TestStorySharing/真实HTTP八接口严格输入 (0.11s)
+    --- PASS: TestStorySharing/真实MQ故事重投不重复审核版本 (1.21s)
+PASS
+
+===== make integration 轮次2 =====
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Container liyuanci-safety-a2e0d30a-broker-1 Running
+ Container liyuanci-safety-a2e0d30a-postgres-1 Running
+ Container liyuanci-safety-a2e0d30a-redis-1 Running
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Running
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-safety-a2e0d30a-migrate-run-a7a95e87261b Creating
+ Container liyuanci-safety-a2e0d30a-migrate-run-a7a95e87261b Created
+psql:CREATE TABLE
+/migrations/0001_probe.up.sql:6: NOTICE:  relation "foundation_probe_receipts" already exists, skipping
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-safety-a2e0d30a-worker Building
+ Image liyuanci-safety-a2e0d30a-api Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.21kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [worker internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.2s
+
+#4 [worker internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.2s
+
+#5 [worker internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [api internal] load build context
+#6 transferring context: 72.92kB done
+#6 DONE 0.0s
+
+#7 [api builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [api stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#8 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#8 DONE 0.0s
+
+#9 [api builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [api builder 3/7] COPY go.mod go.sum ./
+#10 CACHED
+
+#11 [api builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#11 CACHED
+
+#12 [api builder 5/7] COPY cmd ./cmd
+#12 CACHED
+
+#13 [api builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [worker builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 13.0s
+
+#15 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [api stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#15 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#18 [worker stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#19 [worker stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [api] exporting to image
+#20 exporting layers
+#20 exporting layers 4.0s done
+#20 exporting manifest sha256:c63d91d3951e07a31182c5203d516e37a1c067a6579b20c03e5d8cdcb5ccfd4a
+#20 exporting manifest sha256:c63d91d3951e07a31182c5203d516e37a1c067a6579b20c03e5d8cdcb5ccfd4a done
+#20 exporting config sha256:a4464704804f55ec2140206247b70221ab9fa76c9373a7eda7974d363bcd10f6 done
+#20 exporting attestation manifest sha256:2f1ca8ad11510550658b1f40a05d23b19e0077f33bbc293fb7f229034fdc632c 0.0s done
+#20 exporting manifest list sha256:58798edfcb3a74c211b899e09148e50c98da1314088dbe965a7b0617fa23cc8d done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-api:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-api:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-api:latest 0.7s done
+#20 DONE 4.8s
+
+#21 [worker] exporting to image
+#21 exporting layers 4.0s done
+#21 exporting manifest sha256:9b66c7e24e297691e4917e8a7d6350c355cbad7274f3eb6e11375539083cc9bd done
+#21 exporting config sha256:02e808a7d62156b085c81df5f06f073c40a551cd1bb51e468b1ca30d87eaae29 done
+#21 exporting attestation manifest sha256:4e3d31279cfc9655a06ff69514e81eca4dfae1fe2a30224aa13a01d2d062a416 0.0s done
+#21 exporting manifest list sha256:8c0dec14c099f1a27ed9d20e4c1d3c5e179810ae5a6418a859d78f9ab887e2d3 done
+#21 naming to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest done
+#21 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest 0.7s done
+#21 DONE 4.7s
+
+#22 [worker] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [api] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-worker Built
+ Image liyuanci-safety-a2e0d30a-api Built
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Running
+ Container liyuanci-safety-a2e0d30a-broker-1 Running
+ Container liyuanci-safety-a2e0d30a-postgres-1 Running
+ Container liyuanci-safety-a2e0d30a-redis-1 Running
+ Container liyuanci-safety-a2e0d30a-api-1 Recreate
+ Container liyuanci-safety-a2e0d30a-worker-1 Recreate
+ Container liyuanci-safety-a2e0d30a-worker-1 Recreated
+ Container liyuanci-safety-a2e0d30a-api-1 Recreated
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-worker-1 Starting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Starting
+ Container liyuanci-safety-a2e0d30a-worker-1 Started
+ Container liyuanci-safety-a2e0d30a-api-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-api-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-worker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-worker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Container liyuanci-safety-a2e0d30a-probe-run-32afd058ea2c Creating
+ Container liyuanci-safety-a2e0d30a-probe-run-32afd058ea2c Created
+time="2026-10-22T16:23:48Z" level=info msg="change the route for clients"
+time="2026-10-22T16:23:48Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T16:23:48.261Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"07a2b3123c44acb31b380443785b0333"}
+{"level":"info","time":"2026-10-22T16:23:49.262Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"07a2b3123c44acb31b380443785b0333","delivery_count":2}
+time="2026-10-22T16:23:49Z" level=info msg="The RMQClient stopping update topic route info." clientID=192.168.107.8@6
+time="2026-10-22T16:23:49Z" level=info msg="The RMQClient stopping do rebalance" clientID=192.168.107.8@6
+time="2026-10-22T16:23:49Z" level=info msg="The RMQClient stopping clean off line broker and heart beat" clientID=192.168.107.8@6
+time="2026-10-22T16:23:49Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+{"level":"info","time":"2026-10-22T16:23:49.265Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T16:23:49.265Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.011788731}
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-safety-a2e0d30a-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 713B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#6 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#6 DONE 0.0s
+
+#7 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 39.87kB done
+#8 DONE 0.0s
+
+#9 [builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [builder 3/7] COPY go.mod go.sum ./
+#10 CACHED
+
+#11 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#11 CACHED
+
+#12 [builder 5/7] COPY cmd ./cmd
+#12 CACHED
+
+#13 [builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 12.8s
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation &&     CGO_ENABLED=0 go test -c -o /artifacts/wish.test ./internal/wish
+#15 DONE 11.9s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /artifacts/wish.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.1s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 2.2s done
+#20 exporting manifest sha256:6c28a72502744dec9df0c186943492a94661e01fe7eee2615ce7aa5a52dc5d90 done
+#20 exporting config sha256:26001933a1d792673cb3d02815f5745aa59b437dd2f26b1435da5c6a23dbc3cd done
+#20 exporting attestation manifest sha256:304bd59bc69eeca5355eb9e740396d7e0874acede7fded9fb4d20a406b25cc4f done
+#20 exporting manifest list sha256:5962d0ded9506a8bba832f35d562e43891b3a852299731fcb0540f147ce4377e done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest 0.5s done
+#20 DONE 2.8s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-business-test Built
+ Container liyuanci-safety-a2e0d30a-business-test-run-65eaabde4b96 Creating
+ Container liyuanci-safety-a2e0d30a-business-test-run-65eaabde4b96 Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.65s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.01s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.01s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.60s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.01s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.01s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.01s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.75s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.02s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.01s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.02s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志26条
+--- PASS: TestBusinessMessageChain (3.98s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.10s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.03s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.19s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.05s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.02s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.01s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.02s)
+PASS
+=== RUN   TestPostgresLifecycle
+--- PASS: TestPostgresLifecycle (1.37s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/block
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/expired
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/content
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/hold
+=== RUN   TestApplicationMatching/并发申请同意与匹配隔离
+=== RUN   TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审
+=== RUN   TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话
+=== RUN   TestApplicationMatching/同人并发申请与跨主体游标拒绝
+=== RUN   TestApplicationMatching/回退与上架并发不超过三条
+=== RUN   TestApplicationMatching/拉黑事务与同意并发及解除后不复活
+=== RUN   TestApplicationMatching/通知失败回滚整个同意事务
+=== RUN   TestApplicationMatching/真实HTTP六路由及严格输入
+=== RUN   TestApplicationMatching/真实MQ应愿扫描重复回执
+=== NAME  TestApplicationMatching
+    application_integration_test.go:790: T019真实PG/HTTP/MQ应愿审核、唯一匹配、回退与B01通过；供应商、身份及已实现起点均合成
+--- PASS: TestApplicationMatching (22.89s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.06s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.07s)
+    --- PASS: TestApplicationMatching/人工驳回建议与批准通知 (0.07s)
+    --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到 (0.21s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/block (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/expired (0.03s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/content (0.03s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting (0.03s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/hold (0.04s)
+    --- PASS: TestApplicationMatching/并发申请同意与匹配隔离 (0.09s)
+    --- PASS: TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝 (0.06s)
+    --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话 (0.13s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限 (0.05s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审 (0.08s)
+    --- PASS: TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话 (0.12s)
+    --- PASS: TestApplicationMatching/同人并发申请与跨主体游标拒绝 (0.07s)
+    --- PASS: TestApplicationMatching/回退与上架并发不超过三条 (0.11s)
+    --- PASS: TestApplicationMatching/拉黑事务与同意并发及解除后不复活 (0.06s)
+    --- PASS: TestApplicationMatching/通知失败回滚整个同意事务 (0.05s)
+    --- PASS: TestApplicationMatching/真实HTTP六路由及严格输入 (0.06s)
+    --- PASS: TestApplicationMatching/真实MQ应愿扫描重复回执 (20.07s)
+=== RUN   TestChatDelivery
+=== RUN   TestChatDelivery/AR001慢审后达与私聊联系方式
+=== RUN   TestChatDelivery/客户端不透明标识与同请求幂等
+=== RUN   TestChatDelivery/送达回滚不占号重试同号
+=== RUN   TestChatDelivery/并发送达连续唯一
+=== RUN   TestChatDelivery/普通驳回危机隔离与无命中不可枚举
+=== RUN   TestChatDelivery/实现只读与回退不复活
+=== RUN   TestChatDelivery/新匹配隔离旧会话
+=== RUN   TestChatDelivery/已还愿只读
+=== RUN   TestChatDelivery/注销意图立即阻断历史
+=== RUN   TestChatDelivery/限制解除旧消息永久取消
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/block
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/penalty
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/hold
+=== RUN   TestChatDelivery/扫描期间对方权限变化
+=== RUN   TestChatDelivery/缺私聊分析器失败关闭
+=== RUN   TestChatDelivery/通知归属已读版本与游标
+=== RUN   TestChatDelivery/HTTP六接口与严格输入
+=== RUN   TestChatDelivery/真实MQ私聊提交后NACK重投同号
+=== NAME  TestChatDelivery
+    chat_integration_test.go:708: T021真实PG/HTTP/MQ聊天、通知与最终送达序号通过；身份、密钥、分类器及后续状态入口为合成
+--- PASS: TestChatDelivery (22.93s)
+    --- PASS: TestChatDelivery/AR001慢审后达与私聊联系方式 (0.12s)
+    --- PASS: TestChatDelivery/客户端不透明标识与同请求幂等 (0.08s)
+    --- PASS: TestChatDelivery/送达回滚不占号重试同号 (0.07s)
+    --- PASS: TestChatDelivery/并发送达连续唯一 (0.07s)
+    --- PASS: TestChatDelivery/普通驳回危机隔离与无命中不可枚举 (0.11s)
+    --- PASS: TestChatDelivery/实现只读与回退不复活 (0.08s)
+    --- PASS: TestChatDelivery/新匹配隔离旧会话 (0.09s)
+    --- PASS: TestChatDelivery/已还愿只读 (0.07s)
+    --- PASS: TestChatDelivery/注销意图立即阻断历史 (0.06s)
+    --- PASS: TestChatDelivery/限制解除旧消息永久取消 (0.19s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/block (0.06s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/penalty (0.07s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/hold (0.06s)
+    --- PASS: TestChatDelivery/扫描期间对方权限变化 (0.05s)
+    --- PASS: TestChatDelivery/缺私聊分析器失败关闭 (0.06s)
+    --- PASS: TestChatDelivery/通知归属已读版本与游标 (0.07s)
+    --- PASS: TestChatDelivery/HTTP六接口与严格输入 (0.05s)
+    --- PASS: TestChatDelivery/真实MQ私聊提交后NACK重投同号 (20.07s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (4.04s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.02s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.03s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.03s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.02s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.02s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.04s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.03s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.05s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.02s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.72s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.08s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (1.08s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.19s)
+=== RUN   TestSafetyGovernance
+=== RUN   TestSafetyGovernance/拉黑双向旧申请永久失效及幂等
+=== RUN   TestSafetyGovernance/警告首次展示及提前同键重试
+=== RUN   TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活
+=== RUN   TestSafetyGovernance/永久封禁仍可申诉且无普通写入
+=== RUN   TestSafetyGovernance/拉黑例外退出及已还愿拒绝
+=== RUN   TestSafetyGovernance/举报鉴权类型版本及角色重验
+=== RUN   TestSafetyGovernance/内容普通限制解除不自动公开
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper
+=== RUN   TestSafetyGovernance/已还愿拒绝例外退出
+=== RUN   TestSafetyGovernance/处罚通知失败整单回滚
+=== RUN   TestSafetyGovernance/处罚与同意并发原子暂停
+=== RUN   TestSafetyGovernance/拉黑与同意并发依统一账号锁串行
+--- PASS: TestSafetyGovernance (3.31s)
+    --- PASS: TestSafetyGovernance/拉黑双向旧申请永久失效及幂等 (0.08s)
+    --- PASS: TestSafetyGovernance/警告首次展示及提前同键重试 (0.08s)
+    --- PASS: TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活 (0.09s)
+    --- PASS: TestSafetyGovernance/永久封禁仍可申诉且无普通写入 (0.04s)
+    --- PASS: TestSafetyGovernance/拉黑例外退出及已还愿拒绝 (0.05s)
+    --- PASS: TestSafetyGovernance/举报鉴权类型版本及角色重验 (0.05s)
+    --- PASS: TestSafetyGovernance/内容普通限制解除不自动公开 (0.02s)
+    --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵 (0.87s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner (0.08s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper (0.08s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner (0.11s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper (0.09s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner (0.12s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper (0.12s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner (0.15s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper (0.12s)
+    --- PASS: TestSafetyGovernance/已还愿拒绝例外退出 (0.06s)
+    --- PASS: TestSafetyGovernance/处罚通知失败整单回滚 (0.04s)
+    --- PASS: TestSafetyGovernance/处罚与同意并发原子暂停 (0.20s)
+    --- PASS: TestSafetyGovernance/拉黑与同意并发依统一账号锁串行 (0.12s)
+=== RUN   TestStorySharing
+=== RUN   TestStorySharing/确认实现原子取消与普通回退保留原人
+=== RUN   TestStorySharing/确认实现与事务外消息分析并发
+=== RUN   TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿
+=== RUN   TestStorySharing/完整还愿审核改稿分享与撤回
+=== RUN   TestStorySharing/故事驳回状态与建议
+=== RUN   TestStorySharing/空故事越权版本与非法状态
+=== RUN   TestStorySharing/并发还愿与幂等异请求
+=== RUN   TestStorySharing/故事工作失败整单回滚
+=== RUN   TestStorySharing/旧审核改稿与撤回后不复活
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/withdraw
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/expired
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/deleting
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/matching
+=== RUN   TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复
+=== RUN   TestStorySharing/新屏障打断事务外分析与旧审不能释放
+=== RUN   TestStorySharing/危机隔离与父屏障不被故事释放
+=== RUN   TestStorySharing/公开故事分页与游标用途隔离
+=== RUN   TestStorySharing/真实HTTP八接口严格输入
+=== RUN   TestStorySharing/真实MQ故事重投不重复审核版本
+=== NAME  TestStorySharing
+    story_integration_test.go:784: T023真实PG/HTTP/MQ完成、还愿与分享通过；身份、密钥、分析器及注销入口为合成
+--- PASS: TestStorySharing (23.20s)
+    --- PASS: TestStorySharing/确认实现原子取消与普通回退保留原人 (0.11s)
+    --- PASS: TestStorySharing/确认实现与事务外消息分析并发 (0.05s)
+    --- PASS: TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿 (0.09s)
+    --- PASS: TestStorySharing/完整还愿审核改稿分享与撤回 (0.14s)
+    --- PASS: TestStorySharing/故事驳回状态与建议 (0.11s)
+    --- PASS: TestStorySharing/空故事越权版本与非法状态 (0.08s)
+    --- PASS: TestStorySharing/并发还愿与幂等异请求 (0.09s)
+    --- PASS: TestStorySharing/故事工作失败整单回滚 (0.06s)
+    --- PASS: TestStorySharing/旧审核改稿与撤回后不复活 (0.12s)
+    --- PASS: TestStorySharing/心愿分享状态过期与注销重验 (0.13s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/withdraw (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/expired (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/deleting (0.02s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/matching (0.05s)
+    --- PASS: TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复 (0.09s)
+    --- PASS: TestStorySharing/新屏障打断事务外分析与旧审不能释放 (0.06s)
+    --- PASS: TestStorySharing/危机隔离与父屏障不被故事释放 (0.13s)
+    --- PASS: TestStorySharing/公开故事分页与游标用途隔离 (0.13s)
+    --- PASS: TestStorySharing/真实HTTP八接口严格输入 (0.09s)
+    --- PASS: TestStorySharing/真实MQ故事重投不重复审核版本 (20.08s)
+PASS
+
+===== make integration 轮次3 =====
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Container liyuanci-safety-a2e0d30a-redis-1 Running
+ Container liyuanci-safety-a2e0d30a-broker-1 Running
+ Container liyuanci-safety-a2e0d30a-postgres-1 Running
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Running
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-safety-a2e0d30a-migrate-run-6e2eb08075a3 Creating
+ Container liyuanci-safety-a2e0d30a-migrate-run-6e2eb08075a3 Created
+psql:/migrations/0001_probe.up.sql:6: NOTICE:  relation "foundation_probe_receipts" already exists, skipping
+CREATE TABLE
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-safety-a2e0d30a-worker Building
+ Image liyuanci-safety-a2e0d30a-api Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.21kB done
+#1 DONE 0.0s
+
+#2 [worker internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [worker internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.2s
+
+#4 [worker internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.2s
+
+#5 [worker internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [worker internal] load build context
+#6 transferring context: 91.29kB 0.0s done
+#6 DONE 0.0s
+
+#7 [worker builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.1s
+
+#8 [worker builder 3/7] COPY go.mod go.sum ./
+#8 CACHED
+
+#9 [worker builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [worker builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#10 CACHED
+
+#11 [worker builder 5/7] COPY cmd ./cmd
+#11 CACHED
+
+#12 [worker stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#12 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#12 DONE 0.1s
+
+#13 [worker builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [worker builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 13.6s
+
+#15 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [worker stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#16 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#15 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#17 [api stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#18 [worker stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#19 [api stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [worker] exporting to image
+#20 exporting layers
+#20 exporting layers 3.8s done
+#20 exporting manifest sha256:a49b6bde5b236863dffc5cb839bdf881dedca1dc6dc37e0d29784c7e1dc29b12 0.0s done
+#20 exporting config sha256:2c9c7f589ee71389482cbde611d72c9a737b6b09ce7963b8368bc498f9aa4c64 done
+#20 exporting attestation manifest sha256:18a0ce341437dee5423fde11b17e54415ac4af4a0903be9adcfbf789bb781f9e 0.0s done
+#20 exporting manifest list sha256:4079f1fd381926a56a9c5923dfd0f69d54a05c28407b58cc8025871cca651996 done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest 0.7s done
+#20 DONE 4.6s
+
+#21 [api] exporting to image
+#21 exporting layers 3.8s done
+#21 exporting manifest sha256:35316fa092aaff4462f8be1b08958c897703522801c71a97f3d86e7a4ec49aa9 done
+#21 exporting config sha256:ec9c3eb17d4a448f8fc1bc3a93456fc9651a5860da66bfda1e4e7e65a05abf0c done
+#21 exporting attestation manifest sha256:7027b6b4ce7fb2eafb73c82fd87021cc89b4db046a17922c56b9574c70128df1 0.0s done
+#21 exporting manifest list sha256:db0e62d5a14a1cd110b51b720a3734c2915316bda38f642f09d845f2352a6aef done
+#21 naming to docker.io/library/liyuanci-safety-a2e0d30a-api:latest done
+#21 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-api:latest 0.7s done
+#21 DONE 4.6s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [worker] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-api Built
+ Image liyuanci-safety-a2e0d30a-worker Built
+ Container liyuanci-safety-a2e0d30a-redis-1 Running
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Running
+ Container liyuanci-safety-a2e0d30a-postgres-1 Running
+ Container liyuanci-safety-a2e0d30a-broker-1 Running
+ Container liyuanci-safety-a2e0d30a-api-1 Recreate
+ Container liyuanci-safety-a2e0d30a-worker-1 Recreate
+ Container liyuanci-safety-a2e0d30a-worker-1 Recreated
+ Container liyuanci-safety-a2e0d30a-api-1 Recreated
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-worker-1 Starting
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Starting
+ Container liyuanci-safety-a2e0d30a-worker-1 Started
+ Container liyuanci-safety-a2e0d30a-api-1 Started
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-worker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-api-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-worker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Container liyuanci-safety-a2e0d30a-probe-run-eed705a5c6b0 Creating
+ Container liyuanci-safety-a2e0d30a-probe-run-eed705a5c6b0 Created
+time="2026-10-22T16:27:52Z" level=info msg="change the route for clients"
+time="2026-10-22T16:27:52Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T16:27:52.282Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"0702f439ef10021597c5a84b446dd5d8"}
+{"level":"info","time":"2026-10-22T16:27:53.287Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"0702f439ef10021597c5a84b446dd5d8","delivery_count":2}
+{"level":"info","time":"2026-10-22T16:27:53.287Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T16:27:53.287Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.012612803}
+time="2026-10-22T16:27:53Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-safety-a2e0d30a-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 713B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#6 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#6 DONE 0.0s
+
+#7 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 12.80kB done
+#8 DONE 0.0s
+
+#9 [builder 6/7] COPY internal ./internal
+#9 CACHED
+
+#10 [builder 5/7] COPY cmd ./cmd
+#10 CACHED
+
+#11 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#11 CACHED
+
+#12 [builder 2/7] WORKDIR /src
+#12 CACHED
+
+#13 [builder 3/7] COPY go.mod go.sum ./
+#13 CACHED
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 CACHED
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation &&     CGO_ENABLED=0 go test -c -o /artifacts/wish.test ./internal/wish
+#15 DONE 11.5s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /artifacts/wish.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 2.1s done
+#20 exporting manifest sha256:7a6e272a1bcca0b5c0474114a836ce32e50cefd68ead8c2f709005a49d5d9461
+#20 exporting manifest sha256:7a6e272a1bcca0b5c0474114a836ce32e50cefd68ead8c2f709005a49d5d9461 done
+#20 exporting config sha256:a890c3d89b063e00301cceaf3fa8fae6ce7dbc66d2ebfba23f447652a5dd1266 done
+#20 exporting attestation manifest sha256:af69682dea350bb765acfa4eef9696c672728e80eb08a5b7c407f4f7303fbc69 done
+#20 exporting manifest list sha256:9b86ca46d5f45e0f05322b643738e5aa2dd04376e649fefcd22965b1b65dd95b done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest 0.5s done
+#20 DONE 2.7s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-business-test Built
+ Container liyuanci-safety-a2e0d30a-business-test-run-863111e7b21a Creating
+ Container liyuanci-safety-a2e0d30a-business-test-run-863111e7b21a Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.64s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.01s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.01s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.62s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.00s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.00s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.76s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.02s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.02s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.04s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.01s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.01s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.02s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志38条
+--- PASS: TestBusinessMessageChain (22.82s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (20.01s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.03s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.09s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.07s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.03s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.02s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.02s)
+PASS
+=== RUN   TestPostgresLifecycle
+--- PASS: TestPostgresLifecycle (1.37s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/block
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/expired
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/content
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/hold
+=== RUN   TestApplicationMatching/并发申请同意与匹配隔离
+=== RUN   TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审
+=== RUN   TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话
+=== RUN   TestApplicationMatching/同人并发申请与跨主体游标拒绝
+=== RUN   TestApplicationMatching/回退与上架并发不超过三条
+=== RUN   TestApplicationMatching/拉黑事务与同意并发及解除后不复活
+=== RUN   TestApplicationMatching/通知失败回滚整个同意事务
+=== RUN   TestApplicationMatching/真实HTTP六路由及严格输入
+=== RUN   TestApplicationMatching/真实MQ应愿扫描重复回执
+=== NAME  TestApplicationMatching
+    application_integration_test.go:790: T019真实PG/HTTP/MQ应愿审核、唯一匹配、回退与B01通过；供应商、身份及已实现起点均合成
+--- PASS: TestApplicationMatching (22.99s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.09s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.07s)
+    --- PASS: TestApplicationMatching/人工驳回建议与批准通知 (0.07s)
+    --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到 (0.23s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/block (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/expired (0.03s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/content (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/hold (0.04s)
+    --- PASS: TestApplicationMatching/并发申请同意与匹配隔离 (0.09s)
+    --- PASS: TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝 (0.07s)
+    --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话 (0.13s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限 (0.06s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审 (0.08s)
+    --- PASS: TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话 (0.12s)
+    --- PASS: TestApplicationMatching/同人并发申请与跨主体游标拒绝 (0.06s)
+    --- PASS: TestApplicationMatching/回退与上架并发不超过三条 (0.10s)
+    --- PASS: TestApplicationMatching/拉黑事务与同意并发及解除后不复活 (0.07s)
+    --- PASS: TestApplicationMatching/通知失败回滚整个同意事务 (0.05s)
+    --- PASS: TestApplicationMatching/真实HTTP六路由及严格输入 (0.08s)
+    --- PASS: TestApplicationMatching/真实MQ应愿扫描重复回执 (20.05s)
+=== RUN   TestChatDelivery
+=== RUN   TestChatDelivery/AR001慢审后达与私聊联系方式
+=== RUN   TestChatDelivery/客户端不透明标识与同请求幂等
+=== RUN   TestChatDelivery/送达回滚不占号重试同号
+=== RUN   TestChatDelivery/并发送达连续唯一
+=== RUN   TestChatDelivery/普通驳回危机隔离与无命中不可枚举
+=== RUN   TestChatDelivery/实现只读与回退不复活
+=== RUN   TestChatDelivery/新匹配隔离旧会话
+=== RUN   TestChatDelivery/已还愿只读
+=== RUN   TestChatDelivery/注销意图立即阻断历史
+=== RUN   TestChatDelivery/限制解除旧消息永久取消
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/block
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/penalty
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/hold
+=== RUN   TestChatDelivery/扫描期间对方权限变化
+=== RUN   TestChatDelivery/缺私聊分析器失败关闭
+=== RUN   TestChatDelivery/通知归属已读版本与游标
+=== RUN   TestChatDelivery/HTTP六接口与严格输入
+=== RUN   TestChatDelivery/真实MQ私聊提交后NACK重投同号
+=== NAME  TestChatDelivery
+    chat_integration_test.go:708: T021真实PG/HTTP/MQ聊天、通知与最终送达序号通过；身份、密钥、分类器及后续状态入口为合成
+--- PASS: TestChatDelivery (4.00s)
+    --- PASS: TestChatDelivery/AR001慢审后达与私聊联系方式 (0.10s)
+    --- PASS: TestChatDelivery/客户端不透明标识与同请求幂等 (0.07s)
+    --- PASS: TestChatDelivery/送达回滚不占号重试同号 (0.07s)
+    --- PASS: TestChatDelivery/并发送达连续唯一 (0.08s)
+    --- PASS: TestChatDelivery/普通驳回危机隔离与无命中不可枚举 (0.11s)
+    --- PASS: TestChatDelivery/实现只读与回退不复活 (0.09s)
+    --- PASS: TestChatDelivery/新匹配隔离旧会话 (0.10s)
+    --- PASS: TestChatDelivery/已还愿只读 (0.06s)
+    --- PASS: TestChatDelivery/注销意图立即阻断历史 (0.06s)
+    --- PASS: TestChatDelivery/限制解除旧消息永久取消 (0.22s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/block (0.08s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/penalty (0.07s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/hold (0.08s)
+    --- PASS: TestChatDelivery/扫描期间对方权限变化 (0.06s)
+    --- PASS: TestChatDelivery/缺私聊分析器失败关闭 (0.06s)
+    --- PASS: TestChatDelivery/通知归属已读版本与游标 (0.08s)
+    --- PASS: TestChatDelivery/HTTP六接口与严格输入 (0.05s)
+    --- PASS: TestChatDelivery/真实MQ私聊提交后NACK重投同号 (1.19s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (4.18s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.02s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.04s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.04s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.02s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.03s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.01s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.04s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.03s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.05s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.02s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.73s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.11s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (1.14s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.18s)
+=== RUN   TestSafetyGovernance
+=== RUN   TestSafetyGovernance/拉黑双向旧申请永久失效及幂等
+=== RUN   TestSafetyGovernance/警告首次展示及提前同键重试
+=== RUN   TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活
+=== RUN   TestSafetyGovernance/永久封禁仍可申诉且无普通写入
+=== RUN   TestSafetyGovernance/拉黑例外退出及已还愿拒绝
+=== RUN   TestSafetyGovernance/举报鉴权类型版本及角色重验
+=== RUN   TestSafetyGovernance/内容普通限制解除不自动公开
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper
+=== RUN   TestSafetyGovernance/已还愿拒绝例外退出
+=== RUN   TestSafetyGovernance/处罚通知失败整单回滚
+=== RUN   TestSafetyGovernance/处罚与同意并发原子暂停
+=== RUN   TestSafetyGovernance/拉黑与同意并发依统一账号锁串行
+--- PASS: TestSafetyGovernance (3.43s)
+    --- PASS: TestSafetyGovernance/拉黑双向旧申请永久失效及幂等 (0.08s)
+    --- PASS: TestSafetyGovernance/警告首次展示及提前同键重试 (0.08s)
+    --- PASS: TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活 (0.12s)
+    --- PASS: TestSafetyGovernance/永久封禁仍可申诉且无普通写入 (0.05s)
+    --- PASS: TestSafetyGovernance/拉黑例外退出及已还愿拒绝 (0.06s)
+    --- PASS: TestSafetyGovernance/举报鉴权类型版本及角色重验 (0.07s)
+    --- PASS: TestSafetyGovernance/内容普通限制解除不自动公开 (0.03s)
+    --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵 (0.92s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner (0.09s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper (0.09s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner (0.12s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper (0.11s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner (0.11s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper (0.11s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner (0.15s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper (0.13s)
+    --- PASS: TestSafetyGovernance/已还愿拒绝例外退出 (0.05s)
+    --- PASS: TestSafetyGovernance/处罚通知失败整单回滚 (0.04s)
+    --- PASS: TestSafetyGovernance/处罚与同意并发原子暂停 (0.17s)
+    --- PASS: TestSafetyGovernance/拉黑与同意并发依统一账号锁串行 (0.13s)
+=== RUN   TestStorySharing
+=== RUN   TestStorySharing/确认实现原子取消与普通回退保留原人
+=== RUN   TestStorySharing/确认实现与事务外消息分析并发
+=== RUN   TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿
+=== RUN   TestStorySharing/完整还愿审核改稿分享与撤回
+=== RUN   TestStorySharing/故事驳回状态与建议
+=== RUN   TestStorySharing/空故事越权版本与非法状态
+=== RUN   TestStorySharing/并发还愿与幂等异请求
+=== RUN   TestStorySharing/故事工作失败整单回滚
+=== RUN   TestStorySharing/旧审核改稿与撤回后不复活
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/withdraw
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/expired
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/deleting
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/matching
+=== RUN   TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复
+=== RUN   TestStorySharing/新屏障打断事务外分析与旧审不能释放
+=== RUN   TestStorySharing/危机隔离与父屏障不被故事释放
+=== RUN   TestStorySharing/公开故事分页与游标用途隔离
+=== RUN   TestStorySharing/真实HTTP八接口严格输入
+=== RUN   TestStorySharing/真实MQ故事重投不重复审核版本
+=== NAME  TestStorySharing
+    story_integration_test.go:784: T023真实PG/HTTP/MQ完成、还愿与分享通过；身份、密钥、分析器及注销入口为合成
+--- PASS: TestStorySharing (23.26s)
+    --- PASS: TestStorySharing/确认实现原子取消与普通回退保留原人 (0.09s)
+    --- PASS: TestStorySharing/确认实现与事务外消息分析并发 (0.05s)
+    --- PASS: TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿 (0.12s)
+    --- PASS: TestStorySharing/完整还愿审核改稿分享与撤回 (0.13s)
+    --- PASS: TestStorySharing/故事驳回状态与建议 (0.09s)
+    --- PASS: TestStorySharing/空故事越权版本与非法状态 (0.08s)
+    --- PASS: TestStorySharing/并发还愿与幂等异请求 (0.08s)
+    --- PASS: TestStorySharing/故事工作失败整单回滚 (0.06s)
+    --- PASS: TestStorySharing/旧审核改稿与撤回后不复活 (0.14s)
+    --- PASS: TestStorySharing/心愿分享状态过期与注销重验 (0.14s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/withdraw (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/expired (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/deleting (0.02s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/matching (0.05s)
+    --- PASS: TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复 (0.10s)
+    --- PASS: TestStorySharing/新屏障打断事务外分析与旧审不能释放 (0.06s)
+    --- PASS: TestStorySharing/危机隔离与父屏障不被故事释放 (0.13s)
+    --- PASS: TestStorySharing/公开故事分页与游标用途隔离 (0.13s)
+    --- PASS: TestStorySharing/真实HTTP八接口严格输入 (0.09s)
+    --- PASS: TestStorySharing/真实MQ故事重投不重复审核版本 (20.08s)
+PASS
+
+===== make integration 轮次4 =====
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Container liyuanci-safety-a2e0d30a-redis-1 Running
+ Container liyuanci-safety-a2e0d30a-broker-1 Running
+ Container liyuanci-safety-a2e0d30a-postgres-1 Running
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Running
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-safety-a2e0d30a-migrate-run-b1207b8a1c8e Creating
+ Container liyuanci-safety-a2e0d30a-migrate-run-b1207b8a1c8e Created
+CREATE TABLE
+psql:/migrations/0001_probe.up.sql:6: NOTICE:  relation "foundation_probe_receipts" already exists, skipping
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-safety-a2e0d30a-worker Building
+ Image liyuanci-safety-a2e0d30a-api Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.21kB done
+#1 DONE 0.0s
+
+#2 [worker internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.1s
+
+#3 [worker internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [worker internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [worker internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [worker internal] load build context
+#6 transferring context: 59.38kB done
+#6 DONE 0.0s
+
+#7 [api builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [worker stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#8 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#8 DONE 0.0s
+
+#9 [worker builder 3/7] COPY go.mod go.sum ./
+#9 CACHED
+
+#10 [worker builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#10 CACHED
+
+#11 [worker builder 2/7] WORKDIR /src
+#11 CACHED
+
+#12 [worker builder 5/7] COPY cmd ./cmd
+#12 CACHED
+
+#13 [worker builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [api builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 13.7s
+
+#15 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [api stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#18 [api stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#15 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [worker stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#19 [api stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [worker] exporting to image
+#20 exporting layers
+#20 exporting layers 3.9s done
+#20 exporting manifest sha256:af697e60f229b92942c3e38640037a1692a8cdb5402743aeedb67023bab3f723 done
+#20 exporting config sha256:be48730e24dd7214e7763549731320297482c1ce68606782846ad0213d080bf0 0.0s done
+#20 exporting attestation manifest sha256:3e03119569d3a203d1e5388bcb34eebe8c8809e5aac1e4239b40966a32e97c0e 0.0s done
+#20 exporting manifest list sha256:c70fd6829626c2a87eedd7a988a1969c705a0c638a80f5b267c65939ce64553d done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-worker:latest 0.7s done
+#20 DONE 4.6s
+
+#21 [api] exporting to image
+#21 exporting layers 3.9s done
+#21 exporting manifest sha256:75c218b2fb835a560ce782ee0a1d5d010b177ba366ff57b94ca59f7864f4a300 done
+#21 exporting config sha256:3e31f19d88770caf0fa867a7aa8768d27bb397c17e05639dda79b922478f3507 done
+#21 exporting attestation manifest sha256:92b01e9d27bfc743b1bac8c80f03acab7cf28102d7007c03e609908c09c47721 0.0s done
+#21 exporting manifest list sha256:7d4cd089124358426db6b7b1f1cf5f7dfee905e3da847e9196c2404d20e1192b done
+#21 naming to docker.io/library/liyuanci-safety-a2e0d30a-api:latest done
+#21 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-api:latest 0.7s done
+#21 DONE 4.6s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [worker] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-worker Built
+ Image liyuanci-safety-a2e0d30a-api Built
+ Container liyuanci-safety-a2e0d30a-broker-1 Running
+ Container liyuanci-safety-a2e0d30a-postgres-1 Running
+ Container liyuanci-safety-a2e0d30a-redis-1 Running
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Running
+ Container liyuanci-safety-a2e0d30a-api-1 Recreate
+ Container liyuanci-safety-a2e0d30a-worker-1 Recreate
+ Container liyuanci-safety-a2e0d30a-worker-1 Recreated
+ Container liyuanci-safety-a2e0d30a-api-1 Recreated
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Starting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Started
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Starting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-worker-1 Starting
+ Container liyuanci-safety-a2e0d30a-worker-1 Started
+ Container liyuanci-safety-a2e0d30a-api-1 Started
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Waiting
+ Container liyuanci-safety-a2e0d30a-broker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-worker-1 Waiting
+ Container liyuanci-safety-a2e0d30a-postgres-1 Waiting
+ Container liyuanci-safety-a2e0d30a-redis-1 Waiting
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Waiting
+ Container liyuanci-safety-a2e0d30a-api-1 Waiting
+ Container liyuanci-safety-a2e0d30a-worker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-redis-1 Healthy
+ Container liyuanci-safety-a2e0d30a-mq-init-1 Exited
+ Container liyuanci-safety-a2e0d30a-broker-1 Healthy
+ Container liyuanci-safety-a2e0d30a-namesrv-1 Healthy
+ Container liyuanci-safety-a2e0d30a-postgres-1 Healthy
+ Container liyuanci-safety-a2e0d30a-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Container liyuanci-safety-a2e0d30a-probe-run-699e080eee70 Creating
+ Container liyuanci-safety-a2e0d30a-probe-run-699e080eee70 Created
+time="2026-10-22T16:30:56Z" level=info msg="change the route for clients"
+time="2026-10-22T16:30:56Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T16:30:56.143Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"0d8c5024aa6466e1747b0246c280810b"}
+time="2026-10-22T16:30:57Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+{"level":"info","time":"2026-10-22T16:30:57.147Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"0d8c5024aa6466e1747b0246c280810b","delivery_count":2}
+time="2026-10-22T16:30:57Z" level=info msg="The RMQClient stopping clean off line broker and heart beat" clientID=192.168.107.8@6
+time="2026-10-22T16:30:57Z" level=info msg="The RMQClient stopping update topic route info." clientID=192.168.107.8@6
+time="2026-10-22T16:30:57Z" level=info msg="The RMQClient stopping do rebalance" clientID=192.168.107.8@6
+{"level":"info","time":"2026-10-22T16:30:57.148Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T16:30:57.148Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.013866963}
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-safety-a2e0d30a-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 713B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.2s
+
+#4 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.2s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#6 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#6 DONE 0.0s
+
+#7 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 12.80kB 0.0s done
+#8 DONE 0.0s
+
+#9 [builder 3/7] COPY go.mod go.sum ./
+#9 CACHED
+
+#10 [builder 5/7] COPY cmd ./cmd
+#10 CACHED
+
+#11 [builder 6/7] COPY internal ./internal
+#11 CACHED
+
+#12 [builder 2/7] WORKDIR /src
+#12 CACHED
+
+#13 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#13 CACHED
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 CACHED
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation &&     CGO_ENABLED=0 go test -c -o /artifacts/wish.test ./internal/wish
+#15 DONE 11.9s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /artifacts/wish.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 2.2s done
+#20 exporting manifest sha256:3df40913bb506c483955daad07beca39ccadadb493931a1975f926a6452425a7
+#20 exporting manifest sha256:3df40913bb506c483955daad07beca39ccadadb493931a1975f926a6452425a7 done
+#20 exporting config sha256:2a4204894076d2ee05f5692fde00899ad4a86e6fe31bb63d14d5678062373684 done
+#20 exporting attestation manifest sha256:e2a32a0c4f3f9a28055fd4c3b53ff62297d4133efd424f2088e7e77d8fad2e1e done
+#20 exporting manifest list sha256:7f25ee29accf32a68154c73b5e71b4b882ba058ae3040c0ec0d8bb31f2f88b0e done
+#20 naming to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-safety-a2e0d30a-business-test:latest 0.5s done
+#20 DONE 2.7s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-safety-a2e0d30a-business-test Built
+ Container liyuanci-safety-a2e0d30a-business-test-run-259352f576da Creating
+ Container liyuanci-safety-a2e0d30a-business-test-run-259352f576da Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.63s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.04s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.00s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.01s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.00s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.60s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.01s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.00s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.78s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.02s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志50条
+--- PASS: TestBusinessMessageChain (3.89s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.07s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.05s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.12s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.05s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.02s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.01s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.03s)
+PASS
+=== RUN   TestPostgresLifecycle
+--- PASS: TestPostgresLifecycle (1.39s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/block
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/expired
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/content
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/hold
+=== RUN   TestApplicationMatching/并发申请同意与匹配隔离
+=== RUN   TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审
+=== RUN   TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话
+=== RUN   TestApplicationMatching/同人并发申请与跨主体游标拒绝
+=== RUN   TestApplicationMatching/回退与上架并发不超过三条
+=== RUN   TestApplicationMatching/拉黑事务与同意并发及解除后不复活
+=== RUN   TestApplicationMatching/通知失败回滚整个同意事务
+=== RUN   TestApplicationMatching/真实HTTP六路由及严格输入
+=== RUN   TestApplicationMatching/真实MQ应愿扫描重复回执
+=== NAME  TestApplicationMatching
+    application_integration_test.go:790: T019真实PG/HTTP/MQ应愿审核、唯一匹配、回退与B01通过；供应商、身份及已实现起点均合成
+--- PASS: TestApplicationMatching (4.15s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.06s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.07s)
+    --- PASS: TestApplicationMatching/人工驳回建议与批准通知 (0.08s)
+    --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到 (0.27s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/block (0.05s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty (0.05s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/expired (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/content (0.05s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/hold (0.04s)
+    --- PASS: TestApplicationMatching/并发申请同意与匹配隔离 (0.10s)
+    --- PASS: TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝 (0.07s)
+    --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话 (0.16s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限 (0.06s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审 (0.09s)
+    --- PASS: TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话 (0.15s)
+    --- PASS: TestApplicationMatching/同人并发申请与跨主体游标拒绝 (0.06s)
+    --- PASS: TestApplicationMatching/回退与上架并发不超过三条 (0.12s)
+    --- PASS: TestApplicationMatching/拉黑事务与同意并发及解除后不复活 (0.08s)
+    --- PASS: TestApplicationMatching/通知失败回滚整个同意事务 (0.05s)
+    --- PASS: TestApplicationMatching/真实HTTP六路由及严格输入 (0.06s)
+    --- PASS: TestApplicationMatching/真实MQ应愿扫描重复回执 (1.15s)
+=== RUN   TestChatDelivery
+=== RUN   TestChatDelivery/AR001慢审后达与私聊联系方式
+=== RUN   TestChatDelivery/客户端不透明标识与同请求幂等
+=== RUN   TestChatDelivery/送达回滚不占号重试同号
+=== RUN   TestChatDelivery/并发送达连续唯一
+=== RUN   TestChatDelivery/普通驳回危机隔离与无命中不可枚举
+=== RUN   TestChatDelivery/实现只读与回退不复活
+=== RUN   TestChatDelivery/新匹配隔离旧会话
+=== RUN   TestChatDelivery/已还愿只读
+=== RUN   TestChatDelivery/注销意图立即阻断历史
+=== RUN   TestChatDelivery/限制解除旧消息永久取消
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/block
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/penalty
+=== RUN   TestChatDelivery/限制解除旧消息永久取消/hold
+=== RUN   TestChatDelivery/扫描期间对方权限变化
+=== RUN   TestChatDelivery/缺私聊分析器失败关闭
+=== RUN   TestChatDelivery/通知归属已读版本与游标
+=== RUN   TestChatDelivery/HTTP六接口与严格输入
+=== RUN   TestChatDelivery/真实MQ私聊提交后NACK重投同号
+=== NAME  TestChatDelivery
+    chat_integration_test.go:708: T021真实PG/HTTP/MQ聊天、通知与最终送达序号通过；身份、密钥、分类器及后续状态入口为合成
+--- PASS: TestChatDelivery (23.06s)
+    --- PASS: TestChatDelivery/AR001慢审后达与私聊联系方式 (0.10s)
+    --- PASS: TestChatDelivery/客户端不透明标识与同请求幂等 (0.08s)
+    --- PASS: TestChatDelivery/送达回滚不占号重试同号 (0.07s)
+    --- PASS: TestChatDelivery/并发送达连续唯一 (0.08s)
+    --- PASS: TestChatDelivery/普通驳回危机隔离与无命中不可枚举 (0.10s)
+    --- PASS: TestChatDelivery/实现只读与回退不复活 (0.09s)
+    --- PASS: TestChatDelivery/新匹配隔离旧会话 (0.09s)
+    --- PASS: TestChatDelivery/已还愿只读 (0.06s)
+    --- PASS: TestChatDelivery/注销意图立即阻断历史 (0.06s)
+    --- PASS: TestChatDelivery/限制解除旧消息永久取消 (0.23s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/block (0.07s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/penalty (0.07s)
+        --- PASS: TestChatDelivery/限制解除旧消息永久取消/hold (0.09s)
+    --- PASS: TestChatDelivery/扫描期间对方权限变化 (0.08s)
+    --- PASS: TestChatDelivery/缺私聊分析器失败关闭 (0.07s)
+    --- PASS: TestChatDelivery/通知归属已读版本与游标 (0.08s)
+    --- PASS: TestChatDelivery/HTTP六接口与严格输入 (0.08s)
+    --- PASS: TestChatDelivery/真实MQ私聊提交后NACK重投同号 (20.07s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (23.00s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.01s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.04s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.04s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.02s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.01s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.03s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.03s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.04s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.03s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.74s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.11s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (20.04s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.15s)
+=== RUN   TestSafetyGovernance
+=== RUN   TestSafetyGovernance/拉黑双向旧申请永久失效及幂等
+=== RUN   TestSafetyGovernance/警告首次展示及提前同键重试
+=== RUN   TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活
+=== RUN   TestSafetyGovernance/永久封禁仍可申诉且无普通写入
+=== RUN   TestSafetyGovernance/拉黑例外退出及已还愿拒绝
+=== RUN   TestSafetyGovernance/举报鉴权类型版本及角色重验
+=== RUN   TestSafetyGovernance/内容普通限制解除不自动公开
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper
+=== RUN   TestSafetyGovernance/已还愿拒绝例外退出
+=== RUN   TestSafetyGovernance/处罚通知失败整单回滚
+=== RUN   TestSafetyGovernance/处罚与同意并发原子暂停
+=== RUN   TestSafetyGovernance/拉黑与同意并发依统一账号锁串行
+--- PASS: TestSafetyGovernance (3.50s)
+    --- PASS: TestSafetyGovernance/拉黑双向旧申请永久失效及幂等 (0.10s)
+    --- PASS: TestSafetyGovernance/警告首次展示及提前同键重试 (0.11s)
+    --- PASS: TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活 (0.12s)
+    --- PASS: TestSafetyGovernance/永久封禁仍可申诉且无普通写入 (0.05s)
+    --- PASS: TestSafetyGovernance/拉黑例外退出及已还愿拒绝 (0.06s)
+    --- PASS: TestSafetyGovernance/举报鉴权类型版本及角色重验 (0.06s)
+    --- PASS: TestSafetyGovernance/内容普通限制解除不自动公开 (0.04s)
+    --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵 (0.93s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner (0.10s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper (0.11s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner (0.14s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper (0.10s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner (0.11s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper (0.10s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner (0.14s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper (0.13s)
+    --- PASS: TestSafetyGovernance/已还愿拒绝例外退出 (0.06s)
+    --- PASS: TestSafetyGovernance/处罚通知失败整单回滚 (0.04s)
+    --- PASS: TestSafetyGovernance/处罚与同意并发原子暂停 (0.20s)
+    --- PASS: TestSafetyGovernance/拉黑与同意并发依统一账号锁串行 (0.15s)
+=== RUN   TestStorySharing
+=== RUN   TestStorySharing/确认实现原子取消与普通回退保留原人
+=== RUN   TestStorySharing/确认实现与事务外消息分析并发
+=== RUN   TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿
+=== RUN   TestStorySharing/完整还愿审核改稿分享与撤回
+=== RUN   TestStorySharing/故事驳回状态与建议
+=== RUN   TestStorySharing/空故事越权版本与非法状态
+=== RUN   TestStorySharing/并发还愿与幂等异请求
+=== RUN   TestStorySharing/故事工作失败整单回滚
+=== RUN   TestStorySharing/旧审核改稿与撤回后不复活
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/withdraw
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/expired
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/deleting
+=== RUN   TestStorySharing/心愿分享状态过期与注销重验/matching
+=== RUN   TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复
+=== RUN   TestStorySharing/新屏障打断事务外分析与旧审不能释放
+=== RUN   TestStorySharing/危机隔离与父屏障不被故事释放
+=== RUN   TestStorySharing/公开故事分页与游标用途隔离
+=== RUN   TestStorySharing/真实HTTP八接口严格输入
+=== RUN   TestStorySharing/真实MQ故事重投不重复审核版本
+=== NAME  TestStorySharing
+    story_integration_test.go:784: T023真实PG/HTTP/MQ完成、还愿与分享通过；身份、密钥、分析器及注销入口为合成
+--- PASS: TestStorySharing (23.11s)
+    --- PASS: TestStorySharing/确认实现原子取消与普通回退保留原人 (0.09s)
+    --- PASS: TestStorySharing/确认实现与事务外消息分析并发 (0.05s)
+    --- PASS: TestStorySharing/实际完成释放额度与B01拒绝不阻止还愿 (0.11s)
+    --- PASS: TestStorySharing/完整还愿审核改稿分享与撤回 (0.13s)
+    --- PASS: TestStorySharing/故事驳回状态与建议 (0.09s)
+    --- PASS: TestStorySharing/空故事越权版本与非法状态 (0.07s)
+    --- PASS: TestStorySharing/并发还愿与幂等异请求 (0.09s)
+    --- PASS: TestStorySharing/故事工作失败整单回滚 (0.06s)
+    --- PASS: TestStorySharing/旧审核改稿与撤回后不复活 (0.13s)
+    --- PASS: TestStorySharing/心愿分享状态过期与注销重验 (0.13s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/withdraw (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/expired (0.02s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/deleting (0.03s)
+        --- PASS: TestStorySharing/心愿分享状态过期与注销重验/matching (0.05s)
+    --- PASS: TestStorySharing/隐私屏障暂停清理隐藏新脱敏版本才恢复 (0.09s)
+    --- PASS: TestStorySharing/新屏障打断事务外分析与旧审不能释放 (0.06s)
+    --- PASS: TestStorySharing/危机隔离与父屏障不被故事释放 (0.12s)
+    --- PASS: TestStorySharing/公开故事分页与游标用途隔离 (0.12s)
+    --- PASS: TestStorySharing/真实HTTP八接口严格输入 (0.09s)
+    --- PASS: TestStorySharing/真实MQ故事重投不重复审核版本 (20.08s)
+PASS

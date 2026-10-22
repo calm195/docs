@@ -77,3 +77,5 @@
 - [2026-10-22 聊天、站内通知及最终送达序号](milestones/2026-10-22-chat-delivery-r1.md)
 
 - [2026-10-22 确认实现、还愿故事与分享重验](milestones/2026-10-22-story-sharing-r1.md)
+
+- [2026-10-22 拉黑、举报、处罚、警告与申诉服务](milestones/2026-10-22-safety-governance-r1.md)
