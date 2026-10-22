@@ -101,6 +101,14 @@
     "contracts/README.md": "bbda06160c1d3db4fa49c1717c34a0fcd8a7bff391f8c54ef638bc113bd9a53b",
     "development/admin/milestones/2026-10-22-docs-governance-r1.md": "d5bee9646fa1116b93bed7cbe5ea8ab864a916b5aa0dda80b321e8d9181b5a0d",
     "development/backend/milestones/2026-10-22-docs-governance-r1.md": "33548f726784f1f72f159f16b11704e227574d5165600ad0c5d3e8e3946d452d",
-    "development/miniprogram/milestones/2026-10-22-docs-governance-r1.md": "702b3f814f835056a25e12c4d8b417cd5568a9eaabfaf35c4089baa144bdfa3b"
+    "development/miniprogram/milestones/2026-10-22-docs-governance-r1.md": "702b3f814f835056a25e12c4d8b417cd5568a9eaabfaf35c4089baa144bdfa3b",
+    "development/backend/milestones/2026-10-22-host-development-r1.md": "52e01ed20fb6f902f3ac4802c2d78d88e435e0f56f3ddb3b120b283f1d322e54",
+    "development/backend/validation/2026-10-22-host-development-r1.json": "e8026112473efff3b1f5137efd6b85f9623706130289995db5dc1ba7439f83c1",
+    "development/backend/milestones/2026-10-22-native-middleware-r1.md": "0cd37b6fa5cc5f79b3d6220bdd99aa82a36ab1f6f401f5815d6a1d29a80f05b5",
+    "development/backend/validation/2026-10-22-native-middleware-r1.json": "bfb51bb88dd16bd1d082608bbfe53658594d4c416c094fe15656d9a081d6232c",
+    "development/backend/milestones/2026-10-22-dev-layout-r1.md": "3099345bbb9631eafc1ea9b2dfd09d7943090b206657f5e6861633b35292facb",
+    "development/backend/validation/2026-10-22-dev-layout-r1.json": "aeb78fa66a1f6ae8389e643cf2e1af61514ea4e50fc7cc44b0fb1758aa1e6f0a",
+    "development/backend/milestones/2026-10-22-host-development-commit-r1.md": "bf0d9657fb848c99fa4a33a9e2be2e88f3897e7ff020a1448af8b0ab6c192b08",
+    "development/backend/validation/2026-10-22-host-development-commit-r1.json": "17a64b5a2a1933236ec17b0451ee7348e52c68e4793eaf4906fa6f0c38d5a1eb"
   }
 }

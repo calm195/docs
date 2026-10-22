@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "task": "增加本地原生PostgreSQL与Redis开发方式，最多按需启动Docker MQ",
+  "requirements": [
+    "REQ-018",
+    "REQ-020"
+  ],
+  "contract": "0.2.0 / B07 revision 5，未修改",
+  "branch": "codex/host-development",
+  "source_head": "c21c727dfc8750dcc878a95084a4dcb3b2e47eb1",
+  "docs_base": "45e6344dd09f36b4301a9ddd6ef829c11052f6bc",
+  "state": "同一任务分支未提交工作区；未授权提交、推送或部署。HEAD为基点，不代表本次源码提交。",
+  "previous_evidence": {
+    "path": "development/backend/validation/2026-10-22-host-development-r1.json",
+    "sha256": "e8026112473efff3b1f5137efd6b85f9623706130289995db5dc1ba7439f83c1"
+  },
+  "changed_since_previous_sha256": {
+    "AGENTS.md": "25b47c4ca6a73f59e2f10be2699d8d2892042ea4c1200c1e1102a92eff3a9c63",
+    "Makefile": "34d8fea1ea48f89b776fda083514ae0d871d92f2b29336eeff279af93eaf3acb",
+    "README.md": "f48d58fe9f0cde1d29be7d6ce37c7b7018e27cf55b4c10acd1074baf5219a376",
+    "compose.native-mq.yaml": "cb31e4107f1b89e02c363f95a78a4d4c779b6aed48cc997a029f6913d85c4ee8",
+    "configs/native.env.example": "88fc851caad9c10b824ecbd5a093cbaefb5403dd36a1c923f5b0d042339be6dc",
+    "scripts/check-native-dev.py": "1a4aa59b2b7859f5ececf4250d692ddde8f9c146e5c05f5456b1e9a58d05c92a",
+    "scripts/dev.py": "b1001a2cfcbbcedeeb2e0aabbc2b38ed3d8ddb27cd9fcae7eb2b9cc00dd29726",
+    "scripts/init-business-dev.py": "2da7257168aefaf389bb13e21664db965940284d531fc44161c7f6d90cddcfbc",
+    "scripts/localdev.py": "96a46ae1ca04d9ecd9cf33a9a6a2537b9ad5d95c9cbb65b4b7320054535b9cfb",
+    "scripts/test_localdev.py": "3d4a59f6464bcaa3fa055eae3998a9a86d007f00fab175c44bbacb61aae86ad4"
+  },
+  "source_worktree_files_sha256": {
+    ".github/workflows/ci.yml": "4eae7c5d9068ed66464e854867812180000bbdf20e86b4304e9301bf28b5b448",
+    "AGENTS.md": "25b47c4ca6a73f59e2f10be2699d8d2892042ea4c1200c1e1102a92eff3a9c63",
+    "Makefile": "34d8fea1ea48f89b776fda083514ae0d871d92f2b29336eeff279af93eaf3acb",
+    "README.md": "f48d58fe9f0cde1d29be7d6ce37c7b7018e27cf55b4c10acd1074baf5219a376",
+    "cmd/server/main.go": "638e2135b8014e555c10cb9817d11d46104872fbdbb4361649bfe06dbcb456d0",
+    "compose.host-dev.yaml": "d225e4ac1e1aa800c0152684ad11797d3f86cd93b72d0dce2a92e51fd1950263",
+    "compose.host-management.yaml": "0397e2408fc6cf4896885f54b1502eeb4a657d4f5c05987edce06106aac3d65d",
+    "compose.native-mq.yaml": "cb31e4107f1b89e02c363f95a78a4d4c779b6aed48cc997a029f6913d85c4ee8",
+    "configs/broker.local.conf": "42c26536d3f8dc5f95be30074f24a61762201ca0c0f84c3575f9f716be9bb621",
+    "configs/native.env.example": "88fc851caad9c10b824ecbd5a093cbaefb5403dd36a1c923f5b0d042339be6dc",
+    "internal/config/config.go": "b26f5d3baa1de9ddc9fd62a60316dbf5161b65d74a1a11d68edd6af27e374ab8",
+    "internal/config/config_test.go": "7e147b089c175de1b78c568dc92d28b7ac355dea1ff977eafa2d3b8bb78366bb",
+    "internal/devapp/card_worker.go": "be6cd8f72f388bd772d49d0dbb75166b48f148a11fb06f505de9d0a85bccbe0b",
+    "scripts/check-local-dev.py": "3652d3c647b414fd5a696562f8cf0c2d61ab43164f8d8564556beab3f3aeb4b6",
+    "scripts/check-local-mq.py": "38d21dfca8566e69fa9dea99296ab11d4c01ca01726d14393f1ed443eec88c28",
+    "scripts/check-native-dev.py": "1a4aa59b2b7859f5ececf4250d692ddde8f9c146e5c05f5456b1e9a58d05c92a",
+    "scripts/dev.py": "b1001a2cfcbbcedeeb2e0aabbc2b38ed3d8ddb27cd9fcae7eb2b9cc00dd29726",
+    "scripts/init-business-dev.py": "2da7257168aefaf389bb13e21664db965940284d531fc44161c7f6d90cddcfbc",
+    "scripts/localdev.py": "96a46ae1ca04d9ecd9cf33a9a6a2537b9ad5d95c9cbb65b4b7320054535b9cfb",
+    "scripts/test_localdev.py": "3d4a59f6464bcaa3fa055eae3998a9a86d007f00fab175c44bbacb61aae86ad4"
+  },
+  "environment": {
+    "native_postgresql": "18.6 Homebrew",
+    "native_redis": "8.10.2",
+    "host": "macOS arm64",
+    "go": "1.27.2",
+    "go_files_match_previous_validation": true
+  },
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s scripts -p 'test_*.py' -v",
+      "result": "passed",
+      "detail": "24项，新增原生默认端口、Redis口令文件、管理员环境隔离、无Docker基础设施/停止、仅MQ启动及模式混用拒绝"
+    },
+    {
+      "command": "python3 scripts/check-native-dev.py",
+      "result": "passed",
+      "evidence_directory": "/private/var/folders/x5/69f7yv_17cz5y_39dq67h41r0000gn/T/liyuanci-native-check-5pu55379",
+      "detail": "临时原生PG/Redis带口令连接、显式初始化、幂等、API/业务worker、后台真实登录授权、会话重启及停止保留本地服务；Docker哨兵未触发"
+    },
+    {
+      "command": "python3 scripts/check-native-dev.py --mq",
+      "result": "passed",
+      "evidence_directory": "/private/var/folders/x5/69f7yv_17cz5y_39dq67h41r0000gn/T/liyuanci-native-check-j3gg7477",
+      "detail": "无MQ阶段零Docker调用；可选阶段运行中的Docker服务仅NameServer/Broker，原生PG/Redis+宿主探针真实发送/独立消费/重复回执通过"
+    },
+    {
+      "command": "python3 scripts/check-local-dev.py",
+      "result": "passed",
+      "project": "liyuanci-local-check-d1a498666d",
+      "detail": "共享初始化/配置逻辑回归，原Docker PG/Redis宿主业务流程通过"
+    },
+    {
+      "command": "make fmt && make check",
+      "result": "passed",
+      "detail": "本轮实际执行，格式/vet/race覆盖率通过"
+    },
+    {
+      "command": "make build",
+      "result": "reused_previous_pass",
+      "detail": "本轮只改Python、编排、配置示例和文档；全部Go文件及依赖未变，指纹与上一阶段一致，复用其实际构建通过证据"
+    },
+    {
+      "command": "python3 scripts/check_documents.py；两仓库git diff --check",
+      "result": "passed",
+      "detail": "交付前实际检查文档链接、固定指纹和只追加固定清单"
+    }
+  ],
+  "boundaries": [
+    "不改用户正在运行的原生实例；实际集成仅使用脚本创建的临时原生实例和随机MQ项目",
+    "测试实例、应用和MQ已停止，数据与凭据保留",
+    "本地PG管理员只用于显式初始化，API/worker使用受限业务身份；Redis当前支持默认ACL用户的可选口令",
+    "只验证本机PG18.6/Redis8.10.2，不宣称所有原生版本兼容",
+    "不搬迁旧数据库或对象目录，不重置账号、密钥或原生服务",
+    "未增加业务接口、微信模拟登录或生产供应商；完整readyz仍503",
+    "原Docker编排与Broker配置字节未变，本轮未重复旧完整Docker启停/监控/往返检查，不把旧结果描述为本轮重跑"
+  ]
+}

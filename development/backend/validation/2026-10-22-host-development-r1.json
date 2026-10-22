@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "task": "宿主开发体验优化（用户授权实施）",
+  "requirements": [
+    "REQ-018",
+    "REQ-020"
+  ],
+  "contract": "0.2.0 / B07 revision 5，未修改",
+  "source_branch": "codex/host-development",
+  "source_head": "c21c727dfc8750dcc878a95084a4dcb3b2e47eb1",
+  "source_state": "未提交工作区；HEAD是开发基点，不包含本次修改；用户未授权提交或推送",
+  "docs_base": "45e6344dd09f36b4301a9ddd6ef829c11052f6bc",
+  "source_files_sha256": {
+    ".github/workflows/ci.yml": "4eae7c5d9068ed66464e854867812180000bbdf20e86b4304e9301bf28b5b448",
+    "AGENTS.md": "13e640f0a113a92cf56488b77d663ef4a4c54f8dd52eddbdf2fa29086f96aa8a",
+    "Makefile": "01a9a99fd9e3f5adb32c3aefbedca1a9928318f71239f8fe1c898562e7f91d8e",
+    "README.md": "99813f6ae016852ebbc24b7f96d2dbea89f6956cea9bb094b1b18e02776d83fa",
+    "cmd/server/main.go": "638e2135b8014e555c10cb9817d11d46104872fbdbb4361649bfe06dbcb456d0",
+    "compose.host-dev.yaml": "d225e4ac1e1aa800c0152684ad11797d3f86cd93b72d0dce2a92e51fd1950263",
+    "compose.host-management.yaml": "0397e2408fc6cf4896885f54b1502eeb4a657d4f5c05987edce06106aac3d65d",
+    "configs/broker.local.conf": "42c26536d3f8dc5f95be30074f24a61762201ca0c0f84c3575f9f716be9bb621",
+    "internal/config/config.go": "b26f5d3baa1de9ddc9fd62a60316dbf5161b65d74a1a11d68edd6af27e374ab8",
+    "internal/config/config_test.go": "7e147b089c175de1b78c568dc92d28b7ac355dea1ff977eafa2d3b8bb78366bb",
+    "internal/devapp/card_worker.go": "be6cd8f72f388bd772d49d0dbb75166b48f148a11fb06f505de9d0a85bccbe0b",
+    "scripts/check-local-dev.py": "3652d3c647b414fd5a696562f8cf0c2d61ab43164f8d8564556beab3f3aeb4b6",
+    "scripts/check-local-mq.py": "38d21dfca8566e69fa9dea99296ab11d4c01ca01726d14393f1ed443eec88c28",
+    "scripts/dev.py": "a93ae1d208511967a3318efb0d2948760a1454d34ff05d868eddcdb47db879cf",
+    "scripts/init-business-dev.py": "e410f6339a6d3f3bbfe44916ad03232c659194244b841c363afa5dd74a54985a",
+    "scripts/localdev.py": "18cd2a7cec115315c47ae21c3d99701909f733b7c322530799fd4fa86e623712",
+    "scripts/test_localdev.py": "abdd186ad3da23cd73984d7a491dbfa47c578b34750f6439b39af0506c9cd879"
+  },
+  "environment": {
+    "host": "macOS arm64",
+    "go": "go1.27.2 darwin/arm64",
+    "docker_engine": "29.8.2",
+    "middleware": "仓库固定digest的PG18.6/Redis7.2.12/RocketMQ5.3.2"
+  },
+  "checks": [
+    {
+      "command": "make fmt && make check && make build",
+      "result": "passed",
+      "detail": "gofmt、只读格式检查、go vet ./...、go test -race -cover ./...及全部既有进程构建通过"
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p 'test_*.py' -v",
+      "result": "passed",
+      "detail": "20项；含最小依赖、配置派生、项目绑定、旧启停边界及PID归属保护"
+    },
+    {
+      "command": "python3 scripts/check-local-dev.py",
+      "result": "passed",
+      "project": "liyuanci-local-check-3b2ec6b2b8",
+      "detail": "真实PG/Redis、宿主API/card-worker启动、诊断及错误worker凭据失败关闭、重复初始化、真实后台登录授权、重复启动拒绝、停止保留设施、重启保留会话、SIGHUP优雅转发"
+    },
+    {
+      "command": "python3 scripts/check-local-mq.py",
+      "result": "passed",
+      "project": "liyuanci-local-mq-c21b2df9e4",
+      "detail": "真实宿主NameServer发现、Broker发送、独立探针消费与重复回执；按需PG/Redis/MQ管理工具；Dashboard集群查询成功"
+    },
+    {
+      "command": "python3 scripts/check-services.py",
+      "result": "passed",
+      "project": "liyuanci-dev-ops-1e2fea31d0",
+      "detail": "旧完整Docker启停、管理页面、监控采集请求日志、重启及清理保留卷"
+    },
+    {
+      "command": "sh scripts/integration.sh",
+      "result": "passed",
+      "detail": "原完整Docker往返delivery_count=2及容器API健康/就绪/404边界通过；原始技术日志在/private/tmp/liyuanci-host-integration.log"
+    },
+    {
+      "command": "scripts/dev.py infra --monitoring，随后infra-stop（随机隔离项目）",
+      "result": "passed",
+      "project": "liyuanci-local-check-8f11aa69ac",
+      "detail": "新宿主入口显式启动既有监控项目；停止保留卷；采集/告警规则未改变"
+    },
+    {
+      "command": "python3 scripts/check_documents.py；两仓库git diff --check",
+      "result": "passed",
+      "detail": "交付末尾再次执行；包含固定指纹、本地链接和既有固定条目不可变校验"
+    }
+  ],
+  "boundaries": [
+    "全部真实检查使用隔离随机Docker项目，不操作生产",
+    "测试卷及原凭据保留，测试应用与设施已停止",
+    "扫描与学校规则仍为已有开发适配，未增加模拟微信登录",
+    "未验证真实外部供应商、生产部署、Linux宿主指标或真实通知",
+    "可选监控仅采集Docker日志，宿主进程日志在终端",
+    "未做冷/热启动对比基准，不给出耗时或Token节省比例"
+  ]
+}

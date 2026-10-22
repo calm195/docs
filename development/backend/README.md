@@ -6,6 +6,8 @@
 
 ## 实施与接入说明
 
+- [宿主API/业务worker、原生或Docker中间件及诊断（当前入口）](host-development.md)
+
 - [后台账号与会话操作](admin-auth.md)
 - [学生应用与学生卡 worker 显式装配](application-assembly.md)
 - [业务结构、迁移与权限边界](business-schema.md)
@@ -51,3 +53,11 @@
 ## 后续记录
 
 - [2026-10-22 文档归属与规则治理](milestones/2026-10-22-docs-governance-r1.md)
+
+- [2026-10-22 宿主开发体验优化](milestones/2026-10-22-host-development-r1.md)
+
+- [2026-10-22 原生PostgreSQL与Redis开发方式](milestones/2026-10-22-native-middleware-r1.md)
+
+- [2026-10-22 开发目录、配置与资源清理](milestones/2026-10-22-dev-layout-r1.md)
+
+- [2026-10-22 宿主开发与配置整理精确源码提交补充](milestones/2026-10-22-host-development-commit-r1.md)
