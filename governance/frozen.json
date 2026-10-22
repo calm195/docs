@@ -122,6 +122,9 @@
     "development/backend/validation/2026-10-22-content-moderation-commit-r1.json": "54e4994bb365cd44fa1fc42923823dc19d8c03d609768b6c45a799336f5b0bbe",
     "development/backend/milestones/2026-10-22-content-worker-r1.md": "4539d1ab61e5272c9b17636386a4651a587b942cb0a88b626e96dba88c1b5d10",
     "development/backend/validation/2026-10-22-content-worker-r1.json": "2c8c488c7bdd814d81cd1529f2d0a8a4082d8e261f2d86fe3d5c878c221ce563",
-    "development/backend/validation/2026-10-22-content-worker-integration.txt": "1bbe617640aa356033fcc758444e9dfbacab0b309dcf1e3d17c820b922e67cc8"
+    "development/backend/validation/2026-10-22-content-worker-integration.txt": "1bbe617640aa356033fcc758444e9dfbacab0b309dcf1e3d17c820b922e67cc8",
+    "development/backend/milestones/2026-10-22-application-matching-r1.md": "c5883f3462a990bc5d6b5e927f58f74b37034ef2b438847335c31329a767d276",
+    "development/backend/validation/2026-10-22-application-matching-r1.json": "0683c74d07009d320732b6d86580ed4b1fbc17cce18b3273023310f5dd1fe7f8",
+    "development/backend/validation/2026-10-22-application-matching-integration.txt": "9eb6a9dacba50f1be0f2824659692db19f14913fa2eff5527f301d20eefbd5d4"
   }
 }

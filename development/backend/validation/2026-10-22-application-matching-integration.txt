@@ -1,0 +1,2354 @@
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Network liyuanci-applications-c682f009_foundation Creating
+ Network liyuanci-applications-c682f009_foundation Creating
+ Volume liyuanci-applications-c682f009_pg-data Creating
+ Volume liyuanci-applications-c682f009_pg-data Creating
+ Volume liyuanci-applications-c682f009_redis-data Creating
+ Volume liyuanci-applications-c682f009_redis-data Creating
+ Volume liyuanci-applications-c682f009_mq-data Creating
+ Volume liyuanci-applications-c682f009_mq-data Creating
+ Volume liyuanci-applications-c682f009_pg-data Created
+ Volume liyuanci-applications-c682f009_pg-data Created
+ Volume liyuanci-applications-c682f009_redis-data Created
+ Volume liyuanci-applications-c682f009_redis-data Created
+ Network liyuanci-applications-c682f009_foundation Created
+ Network liyuanci-applications-c682f009_foundation Created
+ Container liyuanci-applications-c682f009-redis-1 Creating
+ Container liyuanci-applications-c682f009-postgres-1 Creating
+ Container liyuanci-applications-c682f009-namesrv-1 Creating
+ Volume liyuanci-applications-c682f009_mq-data Created
+ Volume liyuanci-applications-c682f009_mq-data Created
+ Container liyuanci-applications-c682f009-mq-init-1 Creating
+ Container liyuanci-applications-c682f009-namesrv-1 Created
+ Container liyuanci-applications-c682f009-mq-init-1 Created
+ Container liyuanci-applications-c682f009-broker-1 Creating
+ Container liyuanci-applications-c682f009-postgres-1 Created
+ Container liyuanci-applications-c682f009-redis-1 Created
+ Container liyuanci-applications-c682f009-broker-1 Created
+ Container liyuanci-applications-c682f009-postgres-1 Starting
+ Container liyuanci-applications-c682f009-namesrv-1 Starting
+ Container liyuanci-applications-c682f009-redis-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-namesrv-1 Started
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Started
+ Container liyuanci-applications-c682f009-redis-1 Started
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Starting
+ Container liyuanci-applications-c682f009-broker-1 Started
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-applications-c682f009-migrate-run-5f843951f058 Creating
+ Container liyuanci-applications-c682f009-migrate-run-5f843951f058 Created
+CREATE TABLE
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-applications-c682f009-api Building
+ Image liyuanci-applications-c682f009-worker Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [worker internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.2s
+
+#4 [api internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.2s
+
+#5 [worker internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [api internal] load build context
+#6 transferring context: 336.51kB done
+#6 DONE 0.0s
+
+#7 [api builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [worker builder 3/7] COPY go.mod go.sum ./
+#8 CACHED
+
+#9 [worker builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#9 CACHED
+
+#10 [worker builder 2/7] WORKDIR /src
+#10 CACHED
+
+#11 [worker builder 5/7] COPY cmd ./cmd
+#11 CACHED
+
+#12 [api stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#12 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#12 DONE 0.0s
+
+#13 [api builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [worker builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 12.8s
+
+#15 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [api stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#15 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [worker stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#18 [api stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#19 [worker stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [api] exporting to image
+#20 exporting layers
+#20 exporting layers 3.9s done
+#20 exporting manifest sha256:1c66847b99fc9485bb32ea341c5c0c6ae597e24e57d070206a9d37e0a1e4896a done
+#20 exporting config sha256:932cdad01947eb4bf4ad9e4a04b83f8ee638cced71352ffcaa44f7a22828c613 done
+#20 exporting attestation manifest sha256:020cc41f730c5c440acab1890768e1a313ca5dfdf327232dbe0b932256fc9406 0.0s done
+#20 exporting manifest list sha256:4ba57fcefb0283e2b845aa7e492133d6eb0b60c03e49ac4ba807ecfaad2f8daa done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-api:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest 0.7s done
+#20 DONE 4.6s
+
+#21 [worker] exporting to image
+#21 exporting layers 3.9s done
+#21 exporting manifest sha256:698fca17bc434d49d688ceeb43e9504b69c6f5d603f119d49b7f76c4534b8206 done
+#21 exporting config sha256:ef76b8508e4dabb5090a602e305fb50ccb4f938d82795dbd43b12b72d46405b6 done
+#21 exporting attestation manifest sha256:b16c933ed2610e5cf772a84a710e69ccd7ef67e2578deb6c865e409709053ba6 0.0s done
+#21 exporting manifest list sha256:f0e25104714266092f4287c4161c551ec5ddb402e642db34336d49c8e7bd1f20 done
+#21 naming to docker.io/library/liyuanci-applications-c682f009-worker:latest done
+#21 unpacking to docker.io/library/liyuanci-applications-c682f009-worker:latest 0.7s done
+#21 DONE 4.7s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [worker] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-applications-c682f009-worker Built
+ Image liyuanci-applications-c682f009-api Built
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-worker-1 Creating
+ Network liyuanci-applications-c682f009_ingress Creating
+ Network liyuanci-applications-c682f009_ingress Creating
+ Network liyuanci-applications-c682f009_ingress Created
+ Network liyuanci-applications-c682f009_ingress Created
+ Container liyuanci-applications-c682f009-api-1 Creating
+ Container liyuanci-applications-c682f009-worker-1 Created
+ Container liyuanci-applications-c682f009-api-1 Created
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Starting
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-worker-1 Starting
+ Container liyuanci-applications-c682f009-worker-1 Started
+ Container liyuanci-applications-c682f009-api-1 Started
+ Container liyuanci-applications-c682f009-api-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-worker-1 Waiting
+ Container liyuanci-applications-c682f009-worker-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Image liyuanci-applications-c682f009-probe Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 660B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 44.84kB done
+#6 DONE 0.0s
+
+#7 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#8 CACHED
+
+#9 [builder 3/7] COPY go.mod go.sum ./
+#9 CACHED
+
+#10 [builder 2/7] WORKDIR /src
+#10 CACHED
+
+#11 [builder 5/7] COPY cmd ./cmd
+#11 CACHED
+
+#12 [stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#12 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#12 DONE 0.0s
+
+#13 [builder 6/7] COPY internal ./internal
+#13 DONE 0.0s
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 12.7s
+
+#15 [stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#15 CACHED
+
+#16 [stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#18 [stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#19 [stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 4.0s done
+#20 exporting manifest sha256:d75726d66c08ffc3bfb80681e6542563a91d3907851c52f22d959bd273246b36 done
+#20 exporting config sha256:4533a3fbc4d482a7993f2aff878d1a0a668a756093acecef476a086d429f0fed done
+#20 exporting attestation manifest sha256:239e513eba1c35a47be3e0e027e6dd4f0d1933fe2d097371c2a990176677aa2b done
+#20 exporting manifest list sha256:16c99d82256c7f48d2e6af13f7e0adbb72b501acb49825779dd336e70c70be3c done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-probe:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-probe:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-probe:latest 0.6s done
+#20 DONE 4.7s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-applications-c682f009-probe Built
+ Container liyuanci-applications-c682f009-probe-run-6c4a4c15bb61 Creating
+ Container liyuanci-applications-c682f009-probe-run-6c4a4c15bb61 Created
+time="2026-10-22T13:48:03Z" level=info msg="change the route for clients"
+time="2026-10-22T13:48:03Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T13:48:03.657Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"30e8caccd66525b8a15270c260e6f61e"}
+{"level":"info","time":"2026-10-22T13:48:04.658Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"30e8caccd66525b8a15270c260e6f61e","delivery_count":2}
+time="2026-10-22T13:48:04Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+time="2026-10-22T13:48:04Z" level=info msg="The RMQClient stopping clean off line broker and heart beat" clientID=192.168.107.8@6
+time="2026-10-22T13:48:04Z" level=info msg="The RMQClient stopping do rebalance" clientID=192.168.107.8@6
+time="2026-10-22T13:48:04Z" level=info msg="The RMQClient stopping update topic route info." clientID=192.168.107.8@6
+{"level":"info","time":"2026-10-22T13:48:04.658Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T13:48:04.658Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.030188438}
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-applications-c682f009-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 725B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#6 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#6 DONE 0.0s
+
+#7 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 11.10kB done
+#8 DONE 0.0s
+
+#9 [builder 3/7] COPY go.mod go.sum ./
+#9 CACHED
+
+#10 [builder 5/7] COPY cmd ./cmd
+#10 CACHED
+
+#11 [builder 6/7] COPY internal ./internal
+#11 CACHED
+
+#12 [builder 2/7] WORKDIR /src
+#12 CACHED
+
+#13 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#13 CACHED
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 CACHED
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation
+#15 DONE 11.8s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 1.8s done
+#20 exporting manifest sha256:8cf5e75878ff0a0a4296f3d4d967defa548417c372ed420c1147c9cc5ddd1f97
+#20 exporting manifest sha256:8cf5e75878ff0a0a4296f3d4d967defa548417c372ed420c1147c9cc5ddd1f97 done
+#20 exporting config sha256:2cb81069a1e9dd41f28104411867029ef681a50ca90c7927f2d7c069473a1461 done
+#20 exporting attestation manifest sha256:564173bf95ac71e18f74278848969a3a6a6e51e6e5cb3d4d4bddf6fb4e5fd292 done
+#20 exporting manifest list sha256:afc4af40aac45c0b4a543f44a5aba943735d24efe2b7d2df97812dd38eedd777 0.0s done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest 0.5s done
+#20 DONE 2.4s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-applications-c682f009-business-test Built
+ Container liyuanci-applications-c682f009-business-test-run-fca87b02f3de Creating
+ Container liyuanci-applications-c682f009-business-test-run-fca87b02f3de Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.78s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.01s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.01s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.70s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.01s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.01s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.00s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.01s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.77s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.02s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.01s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.01s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.01s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志14条
+--- PASS: TestBusinessMessageChain (4.13s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.06s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.04s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.19s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.08s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.03s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.01s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.02s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== NAME  TestApplicationMatching
+    application_integration_test.go:281: 命令存储不可用
+=== NAME  TestApplicationMatching/人工驳回建议与批准通知
+    testing.go:1811: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
+--- FAIL: TestApplicationMatching (1.44s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.06s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.07s)
+    --- FAIL: TestApplicationMatching/人工驳回建议与批准通知 (0.06s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (3.76s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.03s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.03s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.01s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.03s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.04s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.02s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.01s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.03s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.04s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.03s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.05s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.03s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.02s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.73s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.10s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (1.09s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.18s)
+FAIL
+
+make: *** [integration] Error 1
+
+Verification after minimum read permission and timestamp fixture fixes
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-applications-c682f009-migrate-run-234353cb09ea Creating
+ Container liyuanci-applications-c682f009-migrate-run-234353cb09ea Created
+psql:/migrations/0001_probe.up.sql:6: NOTICE:  relation "foundation_probe_receipts" already exists, skipping
+CREATE TABLE
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-applications-c682f009-api Building
+ Image liyuanci-applications-c682f009-worker Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [worker internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.0s
+
+#4 [worker internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.0s
+
+#5 [api internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [api internal] load build context
+#6 transferring context: 42.69kB done
+#6 DONE 0.0s
+
+#7 [worker stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#7 DONE 0.0s
+
+#8 [api builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#8 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#8 DONE 0.0s
+
+#9 [worker builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#9 CACHED
+
+#10 [worker builder 3/7] COPY go.mod go.sum ./
+#10 CACHED
+
+#11 [worker builder 2/7] WORKDIR /src
+#11 CACHED
+
+#12 [worker builder 5/7] COPY cmd ./cmd
+#12 CACHED
+
+#13 [worker builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [worker builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 12.3s
+
+#15 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [worker stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#15 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#18 [api stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#19 [worker stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [worker] exporting to image
+#20 exporting layers
+#20 exporting layers 3.9s done
+#20 exporting manifest sha256:5184d3c4cd862e4a19631991542af312a8989ec08d044bfa5de6b30206c79c8b done
+#20 exporting config sha256:21d09b9b33ae7c5a2f16b0ebeb20550189c3aec68ca625f63949204ccbd84e16 done
+#20 exporting attestation manifest sha256:4e87312f9845bc336864b14ce54c1b2046d27b43dc6cbdcf50c43627048173e7 0.0s done
+#20 exporting manifest list sha256:3c501ed943e44fbbbe3f582a26838152769900ed0e60706c63f1434b8b54643b done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-worker:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-worker:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-worker:latest 0.7s done
+#20 DONE 4.7s
+
+#21 [api] exporting to image
+#21 exporting layers 3.9s done
+#21 exporting manifest sha256:ffee71711683622e43e79a6a4a3821e6a42571f3c8f09b12a4a1f3d3e0fc4ce9 done
+#21 exporting config sha256:b2d93fd248cc98623ef2031fd1ff3621fed099d370a086c1bce55a6a6fe484d6 done
+#21 exporting attestation manifest sha256:2e47e6e4fff44c0f38037c59bdd6dc09efd328711e128a76549ea314ea4847cb 0.0s done
+#21 exporting manifest list sha256:3fb64023fc4c904b60f9f4d8bc44c9a33e525a60ee0081d1538d3be828b118e2 done
+#21 naming to docker.io/library/liyuanci-applications-c682f009-api:latest done
+#21 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest 0.7s done
+#21 DONE 4.7s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [worker] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-applications-c682f009-worker Built
+ Image liyuanci-applications-c682f009-api Built
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-api-1 Recreate
+ Container liyuanci-applications-c682f009-worker-1 Recreate
+ Container liyuanci-applications-c682f009-worker-1 Recreated
+ Container liyuanci-applications-c682f009-api-1 Recreated
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-worker-1 Starting
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Starting
+ Container liyuanci-applications-c682f009-worker-1 Started
+ Container liyuanci-applications-c682f009-api-1 Started
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-worker-1 Waiting
+ Container liyuanci-applications-c682f009-api-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-worker-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Container liyuanci-applications-c682f009-probe-run-b97091371c44 Creating
+ Container liyuanci-applications-c682f009-probe-run-b97091371c44 Created
+time="2026-10-22T13:50:11Z" level=info msg="change the route for clients"
+time="2026-10-22T13:50:11Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T13:50:11.443Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"7be19c9c56308c7900ef300f04bd0f69"}
+{"level":"info","time":"2026-10-22T13:50:12.446Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"7be19c9c56308c7900ef300f04bd0f69","delivery_count":2}
+time="2026-10-22T13:50:12Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+time="2026-10-22T13:50:12Z" level=info msg="The RMQClient stopping clean off line broker and heart beat" clientID=192.168.107.8@6
+time="2026-10-22T13:50:12Z" level=info msg="The RMQClient stopping update topic route info." clientID=192.168.107.8@6
+{"level":"info","time":"2026-10-22T13:50:12.447Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T13:50:12.447Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.012131345}
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-applications-c682f009-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 725B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#6 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#6 DONE 0.0s
+
+#7 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 11.10kB done
+#8 DONE 0.0s
+
+#9 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#9 CACHED
+
+#10 [builder 5/7] COPY cmd ./cmd
+#10 CACHED
+
+#11 [builder 6/7] COPY internal ./internal
+#11 CACHED
+
+#12 [builder 2/7] WORKDIR /src
+#12 CACHED
+
+#13 [builder 3/7] COPY go.mod go.sum ./
+#13 CACHED
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 CACHED
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation
+#15 DONE 11.0s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 1.8s done
+#20 exporting manifest sha256:a2696115165b6e52957cbe6949475b01d11324dda0ee23d1b1bac223b92a29dd done
+#20 exporting config sha256:e3bae5e7a825830155f96daa531f7798c16ab6ea990102b9139d87fd55a0e76b done
+#20 exporting attestation manifest sha256:38da3445905f612db4fa6e4b99d7c50b91ad66379ef4c01371619d1d192575a6 done
+#20 exporting manifest list sha256:dd6a2173c91748abe7b62cc7b9c3a74a8e3ad47802729299d55e05f8c5d8758a done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest 0.5s done
+#20 DONE 2.3s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-applications-c682f009-business-test Built
+ Container liyuanci-applications-c682f009-business-test-run-e1ff03d26d36 Creating
+ Container liyuanci-applications-c682f009-business-test-run-e1ff03d26d36 Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.62s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.04s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.00s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.00s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.57s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.01s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.00s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.01s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.00s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.74s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.02s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.04s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.02s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.01s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.02s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.02s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志26条
+--- PASS: TestBusinessMessageChain (3.91s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.13s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.05s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.09s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.07s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.03s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.01s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.02s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/block
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+=== NAME  TestApplicationMatching
+    application_integration_test.go:316: ERROR: new row for relation "penalties" violates check constraint "penalties_check" (SQLSTATE 23514)
+=== NAME  TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+    testing.go:1811: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
+=== NAME  TestApplicationMatching/资格拉黑到期及改版取消晚到
+    testing.go:1811: test executed panic(nil) or runtime.Goexit: subtest may have called FailNow on a parent test
+--- FAIL: TestApplicationMatching (1.46s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.06s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.06s)
+    --- PASS: TestApplicationMatching/人工驳回建议与批准通知 (0.07s)
+    --- FAIL: TestApplicationMatching/资格拉黑到期及改版取消晚到 (0.07s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/block (0.04s)
+        --- FAIL: TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty (0.03s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (3.72s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.03s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.05s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.05s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.02s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.01s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.03s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.04s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.04s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.02s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.74s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.09s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (1.12s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.14s)
+FAIL
+
+make: *** [integration] Error 1
+
+Verification after seven-day penalty fixture correction
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-applications-c682f009-migrate-run-b363f42e2405 Creating
+ Container liyuanci-applications-c682f009-migrate-run-b363f42e2405 Created
+CREATE TABLE
+psql:/migrations/0001_probe.up.sql:6: NOTICE:  relation "foundation_probe_receipts" already exists, skipping
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-applications-c682f009-worker Building
+ Image liyuanci-applications-c682f009-api Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [worker internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.2s
+
+#4 [worker internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.2s
+
+#5 [api internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [api internal] load build context
+#6 transferring context: 67.40kB 0.0s done
+#6 DONE 0.0s
+
+#7 [api builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [worker builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#8 CACHED
+
+#9 [worker builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [worker builder 3/7] COPY go.mod go.sum ./
+#10 CACHED
+
+#11 [worker builder 5/7] COPY cmd ./cmd
+#11 CACHED
+
+#12 [api stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#12 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#12 DONE 0.0s
+
+#13 [api builder 6/7] COPY internal ./internal
+#13 DONE 0.0s
+
+#14 [api builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 12.5s
+
+#15 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#15 CACHED
+
+#16 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [api stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#16 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#15 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#15 CACHED
+
+#18 [api stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#19 [worker stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [api] exporting to image
+#20 exporting layers
+#20 exporting layers 4.0s done
+#20 exporting manifest sha256:494e1e5694109902ef9aeeacca716c069bc2495dcb509dd944e7af8e0bfb1924
+#20 exporting manifest sha256:494e1e5694109902ef9aeeacca716c069bc2495dcb509dd944e7af8e0bfb1924 done
+#20 exporting config sha256:c897a2c8b43b21571c9de849c6a8772f92781190d1f57e09da51f748aee0954f done
+#20 exporting attestation manifest sha256:fbf7db69bdcd6b88d12dc58782693eabee4b15b66f38ee510fde5a91e90b9c54 0.0s done
+#20 exporting manifest list sha256:17d0d67ec7b4bac3ec6aa07428a991b1e5b1097dfb156bf8c04793724129e04d done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-api:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest 0.7s done
+#20 DONE 4.8s
+
+#21 [worker] exporting to image
+#21 exporting layers 4.0s done
+#21 exporting manifest sha256:661f911dcae045f0c6aa1a93414e276c929c9e2a9f016c6187dc0365b6aa88b6 done
+#21 exporting config sha256:d42fda44d1199fab1f8b455627669e9517901e3f6132c547c7770ebe537eb96b done
+#21 exporting attestation manifest sha256:17d6247e46a39d4c9b318e0dc07a940d7d152df0ba47a787f5f60d41b054348a 0.0s done
+#21 exporting manifest list sha256:da69cd41118e4e5fabd3e5b904389c8544dc732a2e5343d8a0733c811b87a375 done
+#21 naming to docker.io/library/liyuanci-applications-c682f009-worker:latest done
+#21 unpacking to docker.io/library/liyuanci-applications-c682f009-worker:latest 0.7s done
+#21 DONE 4.8s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [worker] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-applications-c682f009-worker Built
+ Image liyuanci-applications-c682f009-api Built
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-api-1 Recreate
+ Container liyuanci-applications-c682f009-worker-1 Recreate
+ Container liyuanci-applications-c682f009-worker-1 Recreated
+ Container liyuanci-applications-c682f009-api-1 Recreated
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Starting
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-worker-1 Starting
+ Container liyuanci-applications-c682f009-worker-1 Started
+ Container liyuanci-applications-c682f009-api-1 Started
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-worker-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-api-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-worker-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Container liyuanci-applications-c682f009-probe-run-82b10cd42246 Creating
+ Container liyuanci-applications-c682f009-probe-run-82b10cd42246 Created
+time="2026-10-22T13:52:29Z" level=info msg="change the route for clients"
+time="2026-10-22T13:52:29Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T13:52:29.792Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"f4097b1f95a98ecd59c02f66a0a528d7"}
+{"level":"info","time":"2026-10-22T13:52:30.794Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"f4097b1f95a98ecd59c02f66a0a528d7","delivery_count":2}
+time="2026-10-22T13:52:30Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+time="2026-10-22T13:52:30Z" level=info msg="The RMQClient stopping clean off line broker and heart beat" clientID=192.168.107.8@6
+time="2026-10-22T13:52:30Z" level=info msg="The RMQClient stopping update topic route info." clientID=192.168.107.8@6
+time="2026-10-22T13:52:30Z" level=info msg="The RMQClient stopping do rebalance" clientID=192.168.107.8@6
+{"level":"info","time":"2026-10-22T13:52:30.798Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T13:52:30.798Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.01493749}
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-applications-c682f009-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 725B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#6 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#6 DONE 0.0s
+
+#7 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 11.10kB done
+#8 DONE 0.0s
+
+#9 [builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#10 CACHED
+
+#11 [builder 6/7] COPY internal ./internal
+#11 CACHED
+
+#12 [builder 3/7] COPY go.mod go.sum ./
+#12 CACHED
+
+#13 [builder 5/7] COPY cmd ./cmd
+#13 CACHED
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 CACHED
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation
+#15 DONE 11.0s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 1.9s done
+#20 exporting manifest sha256:89f79030e734d9e4b34085830b82b11cb7349d46e7f6b0ce4b0c6f5527dea267
+#20 exporting manifest sha256:89f79030e734d9e4b34085830b82b11cb7349d46e7f6b0ce4b0c6f5527dea267 done
+#20 exporting config sha256:75d545adecab8c164ce4b8efcd139b08a7da9c64526014fb52a587a2071341ad done
+#20 exporting attestation manifest sha256:5f735cf82c76dc7d01e9b4613ff47bea7da8c964cb5d3134dcdbeea5f7a732f3 done
+#20 exporting manifest list sha256:aa2eed21c77aa753b4c52fa16746810deea0bfee8f09583abdbf796ea07f597f done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest 0.5s done
+#20 DONE 2.4s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-applications-c682f009-business-test Built
+ Container liyuanci-applications-c682f009-business-test-run-1d57648bf877 Creating
+ Container liyuanci-applications-c682f009-business-test-run-1d57648bf877 Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.59s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.00s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.00s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.01s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.00s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.57s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.02s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.00s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.00s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.71s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.01s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志38条
+--- PASS: TestBusinessMessageChain (4.02s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.14s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.04s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.19s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.07s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.03s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.01s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.03s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/block
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/expired
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/content
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/hold
+=== RUN   TestApplicationMatching/并发申请同意与匹配隔离
+=== RUN   TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审
+=== RUN   TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话
+=== RUN   TestApplicationMatching/通知失败回滚整个同意事务
+=== RUN   TestApplicationMatching/真实HTTP六路由及严格输入
+=== RUN   TestApplicationMatching/真实MQ应愿扫描重复回执
+=== NAME  TestApplicationMatching
+    application_integration_test.go:622: T019真实PG/HTTP/MQ应愿审核、唯一匹配、回退与B01通过；供应商、身份及已实现起点均合成
+--- PASS: TestApplicationMatching (22.30s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.06s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.07s)
+    --- PASS: TestApplicationMatching/人工驳回建议与批准通知 (0.08s)
+    --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到 (0.22s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/block (0.05s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/expired (0.03s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/content (0.03s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting (0.03s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/hold (0.04s)
+    --- PASS: TestApplicationMatching/并发申请同意与匹配隔离 (0.09s)
+    --- PASS: TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝 (0.08s)
+    --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话 (0.14s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限 (0.05s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审 (0.09s)
+    --- PASS: TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话 (0.11s)
+    --- PASS: TestApplicationMatching/通知失败回滚整个同意事务 (0.06s)
+    --- PASS: TestApplicationMatching/真实HTTP六路由及严格输入 (0.08s)
+    --- PASS: TestApplicationMatching/真实MQ应愿扫描重复回执 (20.05s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (3.68s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.02s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.04s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.04s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.01s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.01s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.03s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.03s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.04s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.01s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.01s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.73s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.11s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (1.10s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.16s)
+PASS
+
+Final verification including wish lifecycle and interaction cancellation/concurrency regression
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-applications-c682f009-migrate-run-4fc58f9cde73 Creating
+ Container liyuanci-applications-c682f009-migrate-run-4fc58f9cde73 Created
+CREATE TABLE
+psql:/migrations/0001_probe.up.sql:6: NOTICE:  relation "foundation_probe_receipts" already exists, skipping
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-applications-c682f009-worker Building
+ Image liyuanci-applications-c682f009-api Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [api internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [api internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [api internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [worker internal] load build context
+#6 transferring context: 42.69kB done
+#6 DONE 0.0s
+
+#7 [worker stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#7 DONE 0.0s
+
+#8 [worker builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#8 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#8 DONE 0.0s
+
+#9 [api builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#9 CACHED
+
+#10 [api builder 2/7] WORKDIR /src
+#10 CACHED
+
+#11 [api builder 3/7] COPY go.mod go.sum ./
+#11 CACHED
+
+#12 [api builder 5/7] COPY cmd ./cmd
+#12 CACHED
+
+#13 [worker builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [worker builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 13.8s
+
+#15 [api stage-3 4/6] WORKDIR /app
+#15 CACHED
+
+#16 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#17 CACHED
+
+#18 [api stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 CACHED
+
+#19 [api stage-3 6/6] COPY configs/app ./configs/app
+#19 CACHED
+
+#17 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#17 CACHED
+
+#18 [worker stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 CACHED
+
+#16 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#15 [worker stage-3 4/6] WORKDIR /app
+#15 CACHED
+
+#19 [worker stage-3 6/6] COPY configs/app ./configs/app
+#19 CACHED
+
+#20 [api] exporting to image
+#20 exporting layers done
+#20 exporting manifest sha256:494e1e5694109902ef9aeeacca716c069bc2495dcb509dd944e7af8e0bfb1924 done
+#20 exporting config sha256:c897a2c8b43b21571c9de849c6a8772f92781190d1f57e09da51f748aee0954f done
+#20 exporting attestation manifest sha256:e9b207160061467e5fc30a120e4e2faeef794020185b3915eb47a57038bafe4e 0.0s done
+#20 exporting manifest list sha256:54a61337b878d47663d0b8f96f98b7eb69007f41109ab60cc81c8954e6f92ba8 done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-api:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest done
+#20 DONE 0.1s
+
+#21 [worker] exporting to image
+#21 exporting layers done
+#21 exporting manifest sha256:661f911dcae045f0c6aa1a93414e276c929c9e2a9f016c6187dc0365b6aa88b6 done
+#21 exporting config sha256:d42fda44d1199fab1f8b455627669e9517901e3f6132c547c7770ebe537eb96b done
+#21 exporting attestation manifest sha256:956a883fc54acfaa46457a8229991e7d39841c48d48e5dddfed9f6d7aaf4c6a7 0.0s done
+#21 exporting manifest list sha256:7f7854408049818808c29974ae54fd0b754bbc5ed3ba89f79b39fdcfb46d3b53 done
+#21 naming to docker.io/library/liyuanci-applications-c682f009-worker:latest done
+#21 unpacking to docker.io/library/liyuanci-applications-c682f009-worker:latest done
+#21 DONE 0.1s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [worker] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-applications-c682f009-worker Built
+ Image liyuanci-applications-c682f009-api Built
+ Container liyuanci-applications-c682f009-worker-1 Running
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-api-1 Running
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-worker-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-worker-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Container liyuanci-applications-c682f009-probe-run-3cf8d6be1ad3 Creating
+ Container liyuanci-applications-c682f009-probe-run-3cf8d6be1ad3 Created
+time="2026-10-22T13:55:47Z" level=info msg="change the route for clients"
+time="2026-10-22T13:55:47Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T13:55:47.480Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"af9d5948c9bd14231606b8b2b7ae081f"}
+{"level":"info","time":"2026-10-22T13:55:48.482Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"af9d5948c9bd14231606b8b2b7ae081f","delivery_count":2}
+{"level":"info","time":"2026-10-22T13:55:48.483Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T13:55:48.483Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.014994833}
+time="2026-10-22T13:55:48Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-applications-c682f009-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 725B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#6 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#6 DONE 0.0s
+
+#7 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#7 CACHED
+
+#8 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#8 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 transferring context: 11.10kB done
+#9 DONE 0.0s
+
+#10 [builder 6/7] COPY internal ./internal
+#10 CACHED
+
+#11 [builder 3/7] COPY go.mod go.sum ./
+#11 CACHED
+
+#12 [builder 2/7] WORKDIR /src
+#12 CACHED
+
+#13 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#13 CACHED
+
+#14 [builder 5/7] COPY cmd ./cmd
+#14 CACHED
+
+#15 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#15 CACHED
+
+#16 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation &&     CGO_ENABLED=0 go test -c -o /artifacts/wish.test ./internal/wish
+#16 DONE 11.8s
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /artifacts/wish.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 2.1s done
+#20 exporting manifest sha256:bbe13595cf3f16faf923e6e4e75972780f5c9c18bcb06813cfa5d0ef0244b033
+#20 exporting manifest sha256:bbe13595cf3f16faf923e6e4e75972780f5c9c18bcb06813cfa5d0ef0244b033 done
+#20 exporting config sha256:cd64bf41d81f2193a71459d9c8ed21d06ca5c41a411b85206dea26a992ec3874 done
+#20 exporting attestation manifest sha256:3606d45363838bbd5b2d89e634f3786464bb60280095919b9fb7180b78e22cec done
+#20 exporting manifest list sha256:5d6549605efdd1226fa0c431b8a5f1b3e124e1ede8c5a9ad3df7c3914cee4f7e done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest 0.5s done
+#20 DONE 2.7s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-applications-c682f009-business-test Built
+ Container liyuanci-applications-c682f009-business-test-run-178a962d627d Creating
+ Container liyuanci-applications-c682f009-business-test-run-178a962d627d Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.58s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.01s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.01s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.00s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.57s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.00s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.01s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.73s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.02s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.02s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.04s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.02s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.02s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志50条
+--- PASS: TestBusinessMessageChain (4.05s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.06s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.03s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.10s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.20s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.07s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.02s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.05s)
+PASS
+=== RUN   TestPostgresLifecycle
+    lifecycle_integration_test.go:308: {95f79ff7-ee14-4e5e-bc75-be2c871d1d3e application_scan application 9efb9dd9-2694-4ccc-88e1-1bfb823f6adc 1 6ec86bcb-b6a0-4626-9733-abeb4537e412 pending <nil> 0 2026-10-22 13:56:18.191436 +0000 UTC 2026-10-22 13:56:18.191436 +0000 UTC} <nil>
+--- FAIL: TestPostgresLifecycle (0.84s)
+FAIL
+
+make: *** [integration] Error 1
+
+Final verification after preserving cancellation of legacy application-target work
+docker compose -f deploy/compose/integration.yaml up -d --wait postgres redis namesrv broker
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm migrate
+ Container liyuanci-applications-c682f009-migrate-run-0e8a00534c81 Creating
+ Container liyuanci-applications-c682f009-migrate-run-0e8a00534c81 Created
+CREATE TABLE
+psql:/migrations/0001_probe.up.sql:6: NOTICE:  relation "foundation_probe_receipts" already exists, skipping
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+# 订阅前显式建立探针主题，不能依赖首次生产才自动创建。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_foundation_probe_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_foundation_probe_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml up -d --build --wait api worker
+ Image liyuanci-applications-c682f009-api Building
+ Image liyuanci-applications-c682f009-worker Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [worker internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#3 DONE 0.2s
+
+#4 [api internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#4 DONE 0.2s
+
+#5 [api internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [api internal] load build context
+#6 transferring context: 72.74kB done
+#6 DONE 0.0s
+
+#7 [api builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#7 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#7 DONE 0.0s
+
+#8 [api builder 3/7] COPY go.mod go.sum ./
+#8 CACHED
+
+#9 [api builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [api builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#10 CACHED
+
+#11 [api builder 5/7] COPY cmd ./cmd
+#11 CACHED
+
+#12 [worker stage-3 1/6] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#12 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#12 DONE 0.0s
+
+#13 [worker builder 6/7] COPY internal ./internal
+#13 DONE 0.1s
+
+#14 [worker builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 DONE 12.8s
+
+#15 [worker stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [worker stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [worker stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#18 [worker stage-3 5/6] COPY --from=builder /artifacts/ ./
+#18 DONE 0.0s
+
+#15 [api stage-3 2/6] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#15 CACHED
+
+#16 [api stage-3 3/6] RUN mkdir -p /var/lib/liyuanci/objects && chown app:app /var/lib/liyuanci/objects && chmod 700 /var/lib/liyuanci/objects
+#16 CACHED
+
+#17 [api stage-3 4/6] WORKDIR /app
+#17 CACHED
+
+#19 [api stage-3 6/6] COPY configs/app ./configs/app
+#19 DONE 0.0s
+
+#20 [api] exporting to image
+#20 exporting layers
+#20 exporting layers 3.9s done
+#20 exporting manifest sha256:d792b9a586aaac0e7e82f39b12dded54e4b016ad490016bf57122ee4a0f447e9 0.0s done
+#20 exporting config sha256:153286d499e3ab1d88622acc97c6fad32aabe533def3b2654f7c701ab90ec21d 0.0s done
+#20 exporting attestation manifest sha256:8161117242cda2807a2727a2bdd7e4624c5378a8b61a38efe76c65449c87f89e 0.0s done
+#20 exporting manifest list sha256:29b39d1440c8300ed3fbb2087c3478f0cc0ba405d3925ced1f5022af49fa910e 0.0s done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-api:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-api:latest 0.7s done
+#20 DONE 4.7s
+
+#21 [worker] exporting to image
+#21 exporting layers 3.9s done
+#21 exporting manifest sha256:1f6bce4816f883b223e6ca53019ec48aa568a6b70c794139b8cdfb401f7c2aab done
+#21 exporting config sha256:f90c259a00f266bb04b97cd3549182995a72ea26b764034aae5c1b7f023b6f07 0.0s done
+#21 exporting attestation manifest sha256:06e4ebbd8339095cbc9a864960b28dcd8fa5019936084e02754686aa0f768ddd 0.0s done
+#21 exporting manifest list sha256:0ee0805ca7f1f77086b91526fde5eb44654718f4ef51ccab6af5a88b7c745ffe done
+#21 naming to docker.io/library/liyuanci-applications-c682f009-worker:latest done
+#21 unpacking to docker.io/library/liyuanci-applications-c682f009-worker:latest 0.7s done
+#21 DONE 4.7s
+
+#22 [worker] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [api] resolving provenance for metadata file
+#23 DONE 0.0s
+ Image liyuanci-applications-c682f009-worker Built
+ Image liyuanci-applications-c682f009-api Built
+ Container liyuanci-applications-c682f009-redis-1 Running
+ Container liyuanci-applications-c682f009-postgres-1 Running
+ Container liyuanci-applications-c682f009-namesrv-1 Running
+ Container liyuanci-applications-c682f009-broker-1 Running
+ Container liyuanci-applications-c682f009-api-1 Recreate
+ Container liyuanci-applications-c682f009-worker-1 Recreate
+ Container liyuanci-applications-c682f009-worker-1 Recreated
+ Container liyuanci-applications-c682f009-api-1 Recreated
+ Container liyuanci-applications-c682f009-mq-init-1 Starting
+ Container liyuanci-applications-c682f009-mq-init-1 Started
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-worker-1 Starting
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Starting
+ Container liyuanci-applications-c682f009-worker-1 Started
+ Container liyuanci-applications-c682f009-api-1 Started
+ Container liyuanci-applications-c682f009-api-1 Waiting
+ Container liyuanci-applications-c682f009-redis-1 Waiting
+ Container liyuanci-applications-c682f009-postgres-1 Waiting
+ Container liyuanci-applications-c682f009-namesrv-1 Waiting
+ Container liyuanci-applications-c682f009-broker-1 Waiting
+ Container liyuanci-applications-c682f009-worker-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Waiting
+ Container liyuanci-applications-c682f009-mq-init-1 Exited
+ Container liyuanci-applications-c682f009-broker-1 Healthy
+ Container liyuanci-applications-c682f009-postgres-1 Healthy
+ Container liyuanci-applications-c682f009-worker-1 Healthy
+ Container liyuanci-applications-c682f009-namesrv-1 Healthy
+ Container liyuanci-applications-c682f009-redis-1 Healthy
+ Container liyuanci-applications-c682f009-api-1 Healthy
+docker compose -f deploy/compose/integration.yaml run --rm probe
+ Container liyuanci-applications-c682f009-probe-run-009a92305ca9 Creating
+ Container liyuanci-applications-c682f009-probe-run-009a92305ca9 Created
+time="2026-10-22T13:59:05Z" level=info msg="change the route for clients"
+time="2026-10-22T13:59:05Z" level=info msg="the topic route info changed" changeTo="{\"OrderTopicConf\":\"\",\"queueDatas\":[{\"brokerName\":\"broker-a\",\"readQueueNums\":8,\"writeQueueNums\":8,\"perm\":6,\"topicSynFlag\":0}],\"brokerDatas\":[{\"cluster\":\"DefaultCluster\",\"brokerName\":\"broker-a\",\"brokerAddrs\":{\"0\":\"broker:10911\"}}]}" changedFrom="<nil>" topic=liyuanci_foundation_probe_v1
+{"level":"info","time":"2026-10-22T13:59:05.544Z","caller":"probe/main.go:92","msg":"探针消息发送完成","probe_id":"18ba29a03b4763f725c4ddac45d67e97"}
+{"level":"info","time":"2026-10-22T13:59:06.548Z","caller":"probe/main.go:102","msg":"探针回执验证成功","probe_id":"18ba29a03b4763f725c4ddac45d67e97","delivery_count":2}
+{"level":"info","time":"2026-10-22T13:59:06.548Z","caller":"probe/main.go:66","msg":"探针资源清理完成"}
+{"level":"info","time":"2026-10-22T13:59:06.548Z","caller":"probe/main.go:50","msg":"中间件探针检查完成","result":"passed","duration":1.011484857}
+time="2026-10-22T13:59:06Z" level=info msg="The RMQClient stopping clean off line broker and heart beat" clientID=192.168.107.8@6
+time="2026-10-22T13:59:06Z" level=info msg="will remove client from clientMap" clientID=192.168.107.8@6
+time="2026-10-22T13:59:06Z" level=info msg="The RMQClient stopping do rebalance" clientID=192.168.107.8@6
+time="2026-10-22T13:59:06Z" level=info msg="The RMQClient stopping update topic route info." clientID=192.168.107.8@6
+# 领域主题独立于探针；真实数据库、MQ和业务回执必须在同一隔离项目验证。
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_student_card_scan_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_student_card_scan_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml exec -T broker sh mqadmin updateTopic -n namesrv:9876 -c DefaultCluster -t liyuanci_content_review_v1
+create topic to broker:10911 success.
+TopicConfig [topicName=liyuanci_content_review_v1, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+docker compose -f deploy/compose/integration.yaml run --rm --build business-test
+ Image liyuanci-applications-c682f009-business-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 725B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.52kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 322B done
+#5 DONE 0.0s
+
+#6 [builder 1/7] FROM docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440
+#6 resolve docker.io/library/golang:1.25.0-alpine@sha256:f18a072054848d87a8077455f0ac8a25886f2397f88bfdd222d6fafbb5bba440 0.0s done
+#6 DONE 0.0s
+
+#7 [business-test 1/5] FROM docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8
+#7 resolve docker.io/library/alpine:3.22@sha256:5291449c3df73caf6ed85e649dec1b9e818b39a5d8c871e97afc13e9cd5e8fa8 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 11.10kB done
+#8 DONE 0.0s
+
+#9 [builder 2/7] WORKDIR /src
+#9 CACHED
+
+#10 [builder 5/7] COPY cmd ./cmd
+#10 CACHED
+
+#11 [builder 3/7] COPY go.mod go.sum ./
+#11 CACHED
+
+#12 [builder 4/7] RUN GOPROXY="https://goproxy.cn,direct" go mod download
+#12 CACHED
+
+#13 [builder 6/7] COPY internal ./internal
+#13 CACHED
+
+#14 [builder 7/7] RUN CGO_ENABLED=0 go build -trimpath -o /artifacts/content-worker ./cmd/content-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/card-worker ./cmd/card-worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/server ./cmd/server &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/worker ./cmd/worker &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/probe ./cmd/probe &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/migrate ./cmd/migrate &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/admin-init ./cmd/admin-init &&     CGO_ENABLED=0 go build -trimpath -o /artifacts/dev-init ./cmd/dev-init
+#14 CACHED
+
+#15 [business-test-build 1/1] RUN CGO_ENABLED=0 go test -c -o /artifacts/business.test ./internal/studentcard &&     CGO_ENABLED=0 go test -c -o /artifacts/durable.test ./internal/durable &&     CGO_ENABLED=0 go test -c -o /artifacts/moderation.test ./internal/moderation &&     CGO_ENABLED=0 go test -c -o /artifacts/wish.test ./internal/wish
+#15 DONE 11.5s
+
+#16 [business-test 2/5] RUN apk add --no-cache ca-certificates tzdata && adduser -D -u 10001 app
+#16 CACHED
+
+#17 [business-test 3/5] COPY --from=business-test-build /artifacts/business.test /artifacts/durable.test /artifacts/moderation.test /artifacts/wish.test /
+#17 DONE 0.0s
+
+#18 [business-test 4/5] COPY --from=builder /artifacts/card-worker /card-worker
+#18 DONE 0.0s
+
+#19 [business-test 5/5] COPY --from=builder /artifacts/content-worker /content-worker
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 2.2s done
+#20 exporting manifest sha256:b8a3db6946f4583206ab0fa65c33058157a0b4ba807f97555ac0e31c6d474997
+#20 exporting manifest sha256:b8a3db6946f4583206ab0fa65c33058157a0b4ba807f97555ac0e31c6d474997 done
+#20 exporting config sha256:00d1f2e198d098ba1dc16292dde9166c13eb2d27ac858298c4f4883c90a13c5f done
+#20 exporting attestation manifest sha256:f479dd0db746e2b231ca32759076394d9b95dbd6e0dc700114b8c322376f0230 done
+#20 exporting manifest list sha256:caf1286cc59a78a436ae6722341f78fb1a6108af87a69866b6a11289ac73f1da done
+#20 naming to docker.io/library/liyuanci-applications-c682f009-business-test:latest done
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest
+#20 unpacking to docker.io/library/liyuanci-applications-c682f009-business-test:latest 0.5s done
+#20 DONE 2.7s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image liyuanci-applications-c682f009-business-test Built
+ Container liyuanci-applications-c682f009-business-test-run-d1ab91dcd98f Creating
+ Container liyuanci-applications-c682f009-business-test-run-d1ab91dcd98f Created
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.62s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.04s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.01s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.01s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.00s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.00s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.55s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.01s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.00s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.00s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.00s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.71s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.02s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.01s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.02s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.02s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息
+=== NAME  TestBusinessMessageChain
+    message_chain_test.go:424: 真实PG/Redis/MQ学生卡链完成，提交后NACK重投、重复、取消晚到、外部失败和过期租约恢复通过；消息确认日志62条
+--- PASS: TestBusinessMessageChain (3.87s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.11s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.06s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.07s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.06s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/学生卡消息 (0.03s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容数据库 (0.01s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭/内容消息 (0.02s)
+PASS
+=== RUN   TestPostgresLifecycle
+--- PASS: TestPostgresLifecycle (1.32s)
+PASS
+=== RUN   TestApplicationMatching
+=== RUN   TestApplicationMatching/留言码点与本人资格状态
+=== RUN   TestApplicationMatching/待审隐藏及幂等重放撤销重申
+=== RUN   TestApplicationMatching/人工驳回建议与批准通知
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/block
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/expired
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/content
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting
+=== RUN   TestApplicationMatching/资格拉黑到期及改版取消晚到/hold
+=== RUN   TestApplicationMatching/并发申请同意与匹配隔离
+=== RUN   TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限
+=== RUN   TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审
+=== RUN   TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话
+=== RUN   TestApplicationMatching/同人并发申请与跨主体游标拒绝
+=== RUN   TestApplicationMatching/回退与上架并发不超过三条
+=== RUN   TestApplicationMatching/拉黑事务与同意并发及解除后不复活
+=== RUN   TestApplicationMatching/通知失败回滚整个同意事务
+=== RUN   TestApplicationMatching/真实HTTP六路由及严格输入
+=== RUN   TestApplicationMatching/真实MQ应愿扫描重复回执
+=== NAME  TestApplicationMatching
+    application_integration_test.go:790: T019真实PG/HTTP/MQ应愿审核、唯一匹配、回退与B01通过；供应商、身份及已实现起点均合成
+--- PASS: TestApplicationMatching (3.78s)
+    --- PASS: TestApplicationMatching/留言码点与本人资格状态 (0.08s)
+    --- PASS: TestApplicationMatching/待审隐藏及幂等重放撤销重申 (0.08s)
+    --- PASS: TestApplicationMatching/人工驳回建议与批准通知 (0.08s)
+    --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到 (0.27s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/block (0.06s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/penalty (0.05s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/expired (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/content (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/deleting (0.04s)
+        --- PASS: TestApplicationMatching/资格拉黑到期及改版取消晚到/hold (0.05s)
+    --- PASS: TestApplicationMatching/并发申请同意与匹配隔离 (0.12s)
+    --- PASS: TestApplicationMatching/匹配重放不重复会话通知及结束后拒绝 (0.07s)
+    --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话 (0.15s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/保留期限 (0.06s)
+        --- PASS: TestApplicationMatching/回退过期刷新与重匹配新会话/刷新重审 (0.09s)
+    --- PASS: TestApplicationMatching/满三条已实现回退拒绝释放后恢复原会话 (0.13s)
+    --- PASS: TestApplicationMatching/同人并发申请与跨主体游标拒绝 (0.06s)
+    --- PASS: TestApplicationMatching/回退与上架并发不超过三条 (0.11s)
+    --- PASS: TestApplicationMatching/拉黑事务与同意并发及解除后不复活 (0.08s)
+    --- PASS: TestApplicationMatching/通知失败回滚整个同意事务 (0.06s)
+    --- PASS: TestApplicationMatching/真实HTTP六路由及严格输入 (0.07s)
+    --- PASS: TestApplicationMatching/真实MQ应愿扫描重复回执 (1.12s)
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/数据库补偿分析预算独立
+=== RUN   TestModerationCore/常驻补偿关闭与重启恢复
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== RUN   TestModerationCore/常驻消息转发与内容订阅
+=== NAME  TestModerationCore
+    integration_test.go:724: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (22.61s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.02s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.04s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.04s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.02s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.02s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.03s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.03s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.04s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.02s)
+    --- PASS: TestModerationCore/数据库补偿分析预算独立 (0.72s)
+    --- PASS: TestModerationCore/常驻补偿关闭与重启恢复 (0.07s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (20.03s)
+    --- PASS: TestModerationCore/常驻消息转发与内容订阅 (0.18s)
+PASS
+
+Stop this isolated verification project and preserve all volumes
+ Container liyuanci-applications-c682f009-worker-1 Stopping
+ Container liyuanci-applications-c682f009-api-1 Stopping
+ Container liyuanci-applications-c682f009-worker-1 Stopped
+ Container liyuanci-applications-c682f009-worker-1 Removing
+ Container liyuanci-applications-c682f009-worker-1 Removed
+ Container liyuanci-applications-c682f009-api-1 Stopped
+ Container liyuanci-applications-c682f009-api-1 Removing
+ Container liyuanci-applications-c682f009-api-1 Removed
+ Container liyuanci-applications-c682f009-broker-1 Stopping
+ Container liyuanci-applications-c682f009-redis-1 Stopping
+ Container liyuanci-applications-c682f009-postgres-1 Stopping
+ Container liyuanci-applications-c682f009-redis-1 Stopped
+ Container liyuanci-applications-c682f009-redis-1 Removing
+ Container liyuanci-applications-c682f009-redis-1 Removed
+ Container liyuanci-applications-c682f009-postgres-1 Stopped
+ Container liyuanci-applications-c682f009-postgres-1 Removing
+ Container liyuanci-applications-c682f009-postgres-1 Removed
+ Container liyuanci-applications-c682f009-broker-1 Stopped
+ Container liyuanci-applications-c682f009-broker-1 Removing
+ Container liyuanci-applications-c682f009-broker-1 Removed
+ Container liyuanci-applications-c682f009-mq-init-1 Stopping
+ Container liyuanci-applications-c682f009-namesrv-1 Stopping
+ Container liyuanci-applications-c682f009-mq-init-1 Stopped
+ Container liyuanci-applications-c682f009-mq-init-1 Removing
+ Container liyuanci-applications-c682f009-mq-init-1 Removed
+ Container liyuanci-applications-c682f009-namesrv-1 Stopped
+ Container liyuanci-applications-c682f009-namesrv-1 Removing
+ Container liyuanci-applications-c682f009-namesrv-1 Removed
+ Network liyuanci-applications-c682f009_foundation Removing
+ Network liyuanci-applications-c682f009_ingress Removing
+ Network liyuanci-applications-c682f009_foundation Removed
+ Network liyuanci-applications-c682f009_ingress Removed
