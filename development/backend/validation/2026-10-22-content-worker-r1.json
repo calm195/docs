@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-22",
+  "task": "T016 runtime assembly",
+  "requirements": [
+    "REQ-008",
+    "REQ-015",
+    "REQ-017",
+    "REQ-018",
+    "REQ-019",
+    "REQ-020"
+  ],
+  "source_branch": "develop",
+  "source_base": "a953d17e4d21c9d72836ddffdba8f3e2b70c93a6",
+  "source_commit": "99a887ca84f2f6d79cb092fd97da6819ed325a57",
+  "docs_branch": "backend-develop",
+  "docs_base": "8d89c273afe462a8a589557724af3ae1f988678a",
+  "contract": {
+    "version": "0.2.0",
+    "actions_revision": 5,
+    "changes": false
+  },
+  "previous_record": {
+    "path": "development/backend/milestones/2026-10-22-content-moderation-r1.md",
+    "sha256": "69bcf2aa811745fa5925719300bdd92225749198d4d8f9bd0bb8115670d4476f"
+  },
+  "source_files": {
+    "Dockerfile": "d59825a22571969be279872fac1a3896ac0034c395e7c85220a419962dd420ef",
+    "Makefile": "ee3174c2c3297f96773e1cf5d58237dab65b44fce8c55ab3df48848191f72d13",
+    "README.md": "6597abfa3629431471f5e89994f9da08a09efed154e6a45b50c0b70adeffaacf",
+    "cmd/content-worker/main.go": "2d1fcc7f185e5e72df45dbc312726243df7bf782c741dcf953d1f1f1feeded92",
+    "configs/examples/content-worker-mq.yaml": "7ae3b21387e94160d14145aebf91acd605e98ad892cb20b24da35425cd0a085f",
+    "deploy/compose/integration.yaml": "c20663c0339bb4c7092d1620282469888bddd701e1ee47270aea932aa026778c",
+    "internal/cardworker/worker.go": "6734d143e94a247c6d587ed5a2ee1e1758e3874195bd12fc9986108bff2d0bda",
+    "internal/cardworker/worker_test.go": "369bc74f10421a33305beab0221a165ddccdf0697842e689c968ba37d65f8981",
+    "internal/config/card_worker_test.go": "2d5a7be73c324bbb7227e08127e5c18cd9b07dcc08fcb62fb586f49e20749f57",
+    "internal/devapp/content_worker.go": "16fecbd163ca144962a2524d57f4af96dcd978fed80d1c0aa346f2635a0c1e03",
+    "internal/devapp/content_worker_test.go": "b4d69f2f30822e3d1bda130e7d0297d5b4fa3c07cd9d107b796580ff1e9fe8de",
+    "internal/moderation/integration_test.go": "c4455dd7cde624ca9f18492d9bec0e581431896d56ebdcbc8e8fcab9d0e5f97d",
+    "internal/moderation/worker.go": "f38859005184f2997b84c606267ce5f6378d9678e0a832bde583d0148c15c550",
+    "internal/studentcard/message_chain_test.go": "55947a844d2f789b210ca1e7e47ea7e5183a226cf1ec3c00ab4c355e117d8e95",
+    "internal/workrunner/worker.go": "be138c7e827fb84467dc76830defc72702ae686deaa95f5bd6f9182effa2e83e",
+    "internal/workrunner/worker_test.go": "eef998c2fe241f048e76dcb79f3a63f6bba4f2403088af871948147df06edf0a",
+    "scripts/dev.py": "6570a678d79063aec2d0ab1347bb5b4799d6f6ab297c6c0719b54ab3620c6da6",
+    "scripts/localdev.py": "dce92fb83e7d87c11263828b40543dd1b7979feac5b563f44f043bd27935e8dd",
+    "scripts/tests/test_localdev.py": "7b8d2fa7037a8ecfd4fd81c4b9543b2a32b5b12b19fceef5827a96fe5db0e045"
+  },
+  "checks": [
+    {
+      "command": "make fmt",
+      "result": "passed"
+    },
+    {
+      "command": "make check-fast PACKAGES='./internal/workrunner/... ./internal/cardworker/... ./internal/devapp/... ./internal/moderation/... ./internal/config/...'",
+      "result": "passed",
+      "note": "first sandbox attempt could not access Go cache; escalated execution passed"
+    },
+    {
+      "command": "make check",
+      "result": "passed",
+      "includes": [
+        "read-only gofmt check",
+        "go vet ./...",
+        "go test -race -cover ./..."
+      ],
+      "final_repeat": "passed after executable lifecycle test added"
+    },
+    {
+      "command": "make build",
+      "result": "passed",
+      "processes": 8
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p 'test_*.py' -v",
+      "result": "passed",
+      "tests": 32
+    },
+    {
+      "command": "make integration",
+      "result": "passed",
+      "runs": 2,
+      "project": "liyuanci-content-worker-cc09466d",
+      "services": [
+        "PostgreSQL 18.6",
+        "Redis 7.2.12",
+        "RocketMQ 5.3.2"
+      ],
+      "new_cases": [
+        "query and analysis budgets independent",
+        "resident compensation close and restart",
+        "resident real MQ relay and subscription",
+        "content executable database startup/TERM",
+        "content executable MQ startup/TERM"
+      ]
+    },
+    {
+      "command": "git diff --check (both repositories)",
+      "result": "passed"
+    },
+    {
+      "command": "python3 scripts/check_documents.py",
+      "result": "passed",
+      "scope": "links, frozen fingerprints, migration mappings; final registration checked before docs commit"
+    },
+    {
+      "command": "git diff --cached --check",
+      "result": "passed after normalizing newly added Docker output; no historical evidence changed"
+    }
+  ],
+  "integration_log": {
+    "path": "development/backend/validation/2026-10-22-content-worker-integration.txt",
+    "sha256": "1bbe617640aa356033fcc758444e9dfbacab0b309dcf1e3d17c820b922e67cc8",
+    "normalization": "trailing whitespace removed from Docker progress lines before first delivery; all substantive output retained"
+  },
+  "boundaries": {
+    "real": [
+      "restricted PostgreSQL runtime roles and transactions",
+      "Redis",
+      "RocketMQ",
+      "content process startup/TERM"
+    ],
+    "synthetic": [
+      "test identities",
+      "key source",
+      "text and privacy analyzer",
+      "wordlist samples"
+    ],
+    "not_verified": [
+      "production suppliers",
+      "formal wordlists and privacy samples",
+      "cross-client integration",
+      "performance",
+      "production acceptance"
+    ]
+  },
+  "resources": {
+    "project": "liyuanci-content-worker-cc09466d",
+    "cleanup": "own containers and networks removed; all volumes and private credential file preserved",
+    "daily_project": "liyuanci-local unchanged"
+  },
+  "next_task": "T019 application, matching and fallback API; not implemented by this delivery"
+}

@@ -63,7 +63,11 @@ infra只检查本地端口；doctor验证实际数据库身份、关键结构、
 
 `moderation.NewWorker`要求显式注入真实文本安全/个人及组合信息处理器，无默认放行实现。它提供MQ Handler和有界`ProcessNext`数据库补偿；分析在事务外执行且允许纯分类重复调用，最终在统一锁序下复核账号/处罚、任务绑定、内容/限制/屏障代次，原子写结果与稳定操作回执。正常通过只到ready，涉校/普通命中人工复核，危机命中持久隔离；作者仍须主动上架。分析失败保持不公开并按预算重试/待办。
 
-日常card-worker仍只处理学生卡，本次没有新增内容扫描常驻进程或生产供应商装配，也没有在开发环境合成扫描成功。缺实际分析器时可维护词库与已扫描案件，但不能宣称送审会自动完成；需后续在明确资源与配置下装配内容worker。危机完整案件/关怀由后续危机领域接入，当前隔离不等于危机处置闭环。`target/allowed_actions`扩展继续未激活，下线/解除限制接口未在本轮开放。
+日常card-worker仍只处理学生卡。独立内容进程通过`make dev-content-worker`或`make dev-native-content-worker`前台启动，沿用所选配置的受限WorkerDSN和历史密钥，不要求对象目录或Redis，不执行DDL或初始化词库。`dev-stop`同时等待三个宿主进程退出，始终保留中间件及卷。
+
+内容进程默认没有分析供应商，分析失败保持待审，按持久任务预算重试后转异常待办。仅在隔离开发中，可在operations.env显式设置`LIYUANCI_LOCAL_CONTENT_ANALYZER=synthetic`，将结果正文替换为固定合成文本并清空标签；原文三类词库命中仍有效，合成模式不代表实际隐私检测。生产拒绝该开发进程。后续供应商到位后，attention任务须经既有显式恢复流程处理，普通重启不重置尝试次数。
+
+默认无MQ，仅有界轮询数据库。消息模式先显式创建`liyuanci_content_review_v1`主题，复制源码`configs/examples/content-worker-mq.yaml`到所选.local目录，设置`LIYUANCI_LOCAL_CONTENT_MQ_FILE`。直接运行对应`APP_CONTENT_MQFILE`和`APP_CONTENT_ANALYZER`。事件为`wish.review_requested`，与学生卡通道隔离；同时运行发件箱转发、订阅及数据库补偿。调度和消息处理预算至少20秒，覆盖查询、分析及最终事务，关闭等待在途操作后才释放池。实际生产供应商仍未交付。危机完整案件/关怀由后续危机领域接入，当前隔离不等于危机处置闭环。`target/allowed_actions`扩展继续未激活，下线/解除限制接口未开放。
 
 ## 旧配置导入与资源归属
 

@@ -69,3 +69,5 @@
 - [2026-10-22 内容扫描、词库与人工复核核心](milestones/2026-10-22-content-moderation-r1.md)
 
 - [2026-10-22 内容扫描与人工复核核心精确源码提交补充](milestones/2026-10-22-content-moderation-commit-r1.md)
+
+- [2026-10-22 内容常驻工作进程、生命周期与补偿预算修复](milestones/2026-10-22-content-worker-r1.md)
