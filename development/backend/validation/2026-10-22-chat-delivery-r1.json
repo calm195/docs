@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-22",
+  "task": "T021",
+  "requirements": [
+    "REQ-006",
+    "REQ-007",
+    "REQ-015",
+    "REQ-018"
+  ],
+  "source_branch": "develop",
+  "source_base": "6e92177cf53121aea879258d3085eed7c011db1f",
+  "source_commit": "8eb950751c87059f0cf3153ce3608128e7dcbe6e",
+  "docs_branch": "backend-develop",
+  "docs_base": "68da6d993984ca664470d97d63ef0480b705facf",
+  "main_policy": "只推送develop/backend-develop，不合入main",
+  "main_heads_unchanged": {
+    "backend": "99a887ca84f2f6d79cb092fd97da6819ed325a57",
+    "docs": "2ec198269f9ec772789e62e144954187c77cbd24"
+  },
+  "contract": {
+    "version": "0.2.0",
+    "actions_revision": 5,
+    "inputs_sha256": {
+      "contracts/openapi.v0.2.0.json": "741b7639160c489b33d777378c881c27e62221b3eb25cab696bb87115e762d7b",
+      "contracts/actions.v0.2.0.json": "3f5b64f1dd6d04b0a7d306cfdca0f4f216a35d13928046509eff0e3b86d4302e",
+      "contracts/actions-review.v0.2.0-r5.json": "717745a61f2c145239a77649a47ed5a13e4404b50a3c3df21572d964e59cac6a",
+      "requirements/baseline.md": "fed56e2811cd21c5c5d461a35d9ace525b6f9bc142a01a6a1f2048303da54810",
+      "design/api.md": "9a725420318d402ad1cea3229ed4b09edbe55c9376055e4d4cc280203ab7f142",
+      "design/database.md": "29d3497d2ec9ebe7d1bda7097dee937e71c5495b400890b1336c4b54636063cf"
+    },
+    "wire_changes": false
+  },
+  "source_files_sha256": {
+    "README.md": "2227eda77d4e6aba781ec3adbbe735db3948c9095f54aa74efd3cb2618d78943",
+    "deploy/compose/integration.yaml": "17d07dd2991bcf9653f4f250015995d9bcc5f950c1c3b701e5b1ee2ff913c5ce",
+    "internal/chat/query.go": "42049223f3e94acc38e0bb5009bf6e4c4054ee9811100136912d49eb2a02a351",
+    "internal/chat/query_test.go": "833b9f0aab3763961a0579eeedeba9463a1fabf98b7c3739d8623f389b9eb80f",
+    "internal/chat/repository.go": "afeaaa9e4240448c278eced5708bc0a06434ebefc17c33143d04d1adc0e51945",
+    "internal/chat/service.go": "ce036ff29c63e6993e5cfd6754bf4a8d4f86106240b7a810fa2b7a55bcda4967",
+    "internal/command/engine.go": "78513279de4ad74f11a51b4c2cf84b4dfeed48d0d514f0aa59444a2a0da11050",
+    "internal/command/locks.go": "f69ac1813eb2bd0d6a682315591b2e3a0cf4688a903f185826834fe32ed1ad6b",
+    "internal/command/types.go": "552d118b04e72bbe8f98f0fe00b99041deda892df2181d5019e73fdae7426035",
+    "internal/devapp/application.go": "6f9944654d6c89c1f6e22a1a1fe08e4ec83698ea8aec10dd1cf8fb2cf29e0301",
+    "internal/devapp/content_worker.go": "dd88a05cc7cfe491106f55e13b3e5ad23449260e46c3d1c33909d016c47e1ace",
+    "internal/entity/durable.go": "2dd88580348372ea388c8ceeed704f808b1af665c4be9e35ea973d236b1d65b2",
+    "internal/entity/interaction.go": "e50b1a6051c0a565f926559135a2fa5c8fb80ff72ab5a24ba1334cd8f12dc7a5",
+    "internal/httpapi/chat.go": "b0de3c4cea9c4e888b7a3b4713f45f2127ebec402fb4ea62b21d1beb193c218a",
+    "internal/migration/migration.go": "a837c3877dde3dcf918c8e3486517fccadd3926d7e8bf98152cc41d9a0c17fbd",
+    "internal/migration/migration_test.go": "fc8154e4c9d428d2f67ca1153d211d4055fcc7493e2cdb9c357339553f0eca16",
+    "internal/migration/sql/0015_chat_notifications.down.sql": "2f90b22608710f9d5954a61400e508e8a699d52fc21ae099e3d6933f8f8317a0",
+    "internal/migration/sql/0015_chat_notifications.up.sql": "bfbb351ca14d62c439e360499dfc5481bcb2e99ca278485d506578812a4571b7",
+    "internal/migration/sql/bootstrap_roles.sql": "e735482052e9db56e2e14136ab0de94339ba6948486805d7d2355ba4527a04fc",
+    "internal/moderation/chat_integration_test.go": "e5f92af4dd60725fc583e2abe19c55d31afc8131a79014ad086d6c8a18fb7316",
+    "internal/moderation/repository.go": "97738f59950a35c4e02dfb1c417a87fc4f753b99ea33cf8d6b4165c3a3c88956",
+    "internal/moderation/review.go": "e149eef8be44960810423a5ea7bfb571b69ad0b731d5fa65fafa81089efd0a3c",
+    "internal/moderation/worker.go": "061ffc6745ae8f48ba67bd1fb47f6ea807565c7dabdf7f647cbbd21d75fe2ad8",
+    "internal/studentapi/application.go": "29957c945250cb6ce3c4134528ff4412973f75fea12070f4c03fec36334c975c",
+    "internal/studentapi/application_test.go": "540f1b922e41bb2a4a1dcb298c29c75e812123013705f1755336db07d0bd3ee6",
+    "internal/wish/application_repository.go": "64ab8c5ce5aca987059d28139277499faf687c7d0f3a11171a71b0ec11f9246a",
+    "internal/wish/rollback.go": "14f85469663afc7e68bf895a7b5c313ee37d5220211576e3b9a32bdb27cffd93"
+  },
+  "validation": {
+    "make_fmt": "passed",
+    "make_check_fast": "passed after SQL alias and test declaration repair",
+    "make_check": "passed; format read-only, go vet ./..., go test -race -cover ./...",
+    "make_build": "passed; eight processes",
+    "python_entry_tests": "32 passed",
+    "make_integration_attempts": [
+      {
+        "attempt": 1,
+        "exit_code": 2,
+        "result": "会话列表GORM表别名丢失；此前慢审/回滚/并发用例已通过，但整体失败"
+      },
+      {
+        "attempt": 2,
+        "exit_code": 0,
+        "result": "全部真实PG/HTTP/MQ及原有业务回归通过"
+      }
+    ],
+    "local_repair": "扩展测试时局部变量声明编译错误，修正后相关及完整检查通过",
+    "docs_checks": "python3 scripts/check_documents.py 与两仓库diff检查，交付前执行",
+    "remote_ci": "未获取结果"
+  },
+  "real": [
+    "PostgreSQL transactions permissions and migration up/down",
+    "HTTP handlers",
+    "RocketMQ send and NACK redelivery",
+    "existing card/content worker subprocess regression"
+  ],
+  "synthetic": [
+    "student identities and credentials",
+    "test encryption key provider",
+    "wordlists and private/public analyzer",
+    "future completion restrictions deletion lifecycle entry fixtures"
+  ],
+  "remaining": [
+    "T022 frontend polling",
+    "T023 completion/story APIs",
+    "T026 restriction entry transactions",
+    "T029 full crisis handling",
+    "T031 deletion cleanup",
+    "T033 actual WeChat sending and provider integration"
+  ],
+  "migration": "显式0015及bootstrap权限；启动不执行DDL；存在新版业务数据时拒绝有损down",
+  "technical_budgets": {
+    "development_body_bytes": 65536,
+    "client_message_id_bytes": 256,
+    "http_request_bytes": 1048576
+  },
+  "isolation": {
+    "project": "liyuanci-chat-4144e57e",
+    "cleanup": "docker compose down exit 0; volumes and credentials retained",
+    "daily_infrastructure": "original PostgreSQL and Redis untouched"
+  },
+  "log_normalization": "首次固定前仅移除Docker输出行尾空白；保留两次完整集成输出及退出码"
+}
