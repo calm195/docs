@@ -65,3 +65,7 @@
 - [2026-10-22 业务消息链路收口与真实领域验证](milestones/2026-10-22-business-message-chain-r1.md)
 
 - [2026-10-22 业务消息链路精确源码提交补充](milestones/2026-10-22-business-message-chain-commit-r1.md)
+
+- [2026-10-22 内容扫描、词库与人工复核核心](milestones/2026-10-22-content-moderation-r1.md)
+
+- [2026-10-22 内容扫描与人工复核核心精确源码提交补充](milestones/2026-10-22-content-moderation-commit-r1.md)

@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-22",
+  "task": "T016",
+  "requirements": [
+    "REQ-008",
+    "REQ-015",
+    "REQ-017",
+    "REQ-018",
+    "REQ-019"
+  ],
+  "source_branch": "codex/content-moderation",
+  "source_head_base": "61d39d388592ec23ac80acf1248f7f55c30598a2",
+  "source_state": "uncommitted-worktree",
+  "docs_head_base": "8cb04420a3960862595edab3fcf91dabc410e178",
+  "user_decisions": {
+    "target": "content_registry.id; exact registered content version",
+    "compatibility": "keep formal 0.2.0 existing review interfaces; new target/allowed_actions projections deferred to a new contract version"
+  },
+  "contract": {
+    "version": "0.2.0",
+    "index_revision": 5,
+    "review_sha256": "717745a61f2c145239a77649a47ed5a13e4404b50a3c3df21572d964e59cac6a",
+    "formal_input_hashes_verified": 13,
+    "wire_changed": false,
+    "extension_active": false
+  },
+  "files_sha256": {
+    "Dockerfile": "4d9a6213edab27868b5ab0b3be22f41595f30f147aec5399d5df4a0aa8133d17",
+    "Makefile": "3401d3145b8e3b15483a005377f62d239c294dd4e76a2620a70b4244ebe5faf5",
+    "README.md": "bdac6d11260675bb1b6cf3e54355edaf75d33588d43e093d4620fc2fd404df4f",
+    "deploy/compose/integration.yaml": "65efd0b734f7896c110855795c74ed7fb43c96f17cad1c22606f8437031bcee3",
+    "internal/command/engine.go": "a7feb2d2bc2c0f8260af585a0360824a7164381371d987bd5536614788649906",
+    "internal/command/engine_test.go": "cefc799215e7fa2c9eeb793a3a3cc57147fb82cfb3a51620a1b595bf74146d01",
+    "internal/command/locks.go": "09abf2aadfc326411d15c686d415dffc21592b6e14cc112c55e6f262f3165c3a",
+    "internal/command/types.go": "5e5f7f78ae39d8709aecafbb8d3ff9c4af9e8df521d1122133659362c333fb86",
+    "internal/devapp/application.go": "899f6553210f1d4b01f68963f27a28766391ad149c30365ecf6e301dc983812a",
+    "internal/durable/durable.go": "4e997e188e9e45bc551a1eb51e61b9ca1252ee4d0a97a40857598289d1663c42",
+    "internal/durable/durable_test.go": "168a53f6897fb247b153fbc8d9f76bc192644584a8b7a17354a03f86cadb24ce",
+    "internal/entity/moderation.go": "07841e1cd39943668a7690393c0eee13af6cdaef81c16e8eba2118721efccdf8",
+    "internal/entity/moderation_scan.go": "bf5bc3c2175ad8d5f112efdbb2a24c9e6a5adc5409ad87ab216fc04a19ce0f4d",
+    "internal/entity/registry.go": "ac083c48029fc23e344711756c8a18bb761a1ea44c38b3d4db4b3d296fc8eb4b",
+    "internal/entity/wordlist_head.go": "0ece595b0050b7c79e7de10cac3930811a2c101003def21f57e98fd1dc50ba19",
+    "internal/httpapi/moderation.go": "b2ceda656aea49a04ffe0f703f98bb81c52079eb758c31477c6d346d3ffb1ffd",
+    "internal/httpapi/moderation_test.go": "5960b88788242fcac666e226bd93777d58de51d86a30956b9adaf60361d3810f",
+    "internal/migration/migration.go": "9d62b473de82cdaa599a4795318c50ad251782871403eddf4b62e151316a694c",
+    "internal/migration/migration_test.go": "3f8222bf162c21d257855209305e24ec3f6108fcc00e176b3d0b3297dfbd4f1e",
+    "internal/migration/sql/0013_content_moderation.down.sql": "ff48f313bfc57e8c15e96e20dc9d0cfe7d5540647897c7068fa4a24c7039d59e",
+    "internal/migration/sql/0013_content_moderation.up.sql": "0c1593c7a56a15f4d09418ede670cff52c5bb3d2f11640c089405a13626dd95e",
+    "internal/migration/sql/bootstrap_roles.sql": "b5fe5f92eb3069e3f5f0930b1d83e93e41df6239cded390466afba4ced44502a",
+    "internal/moderation/integration_test.go": "6515630e2a2f7297200ad56907c05613bc3165a93bf7bf0a507a5ccc2b6732e9",
+    "internal/moderation/repository.go": "6d8b0bf8879b1707dbb6dca477273c684f8ad49541cf2294d9815ca571e425cb",
+    "internal/moderation/review.go": "258ce981b0ba3d809fba9361e0b4060914a1a29db0cc24c70029263e6133ed12",
+    "internal/moderation/service.go": "3377daf160b846e9fae2737cdbc191a04ebb25fe837983e20d60237a4f9fac33",
+    "internal/moderation/service_test.go": "7ed52b7dd913d9aa146974f443f02de6e98a268d6f39bd426f7991f6599af0ca",
+    "internal/moderation/wordlists.go": "ffeaac06c5e92c15de8068052062fb3de000b6df6112b5c48d6c91a9d70ec94d",
+    "internal/moderation/worker.go": "7cb50aafde9ae37208cc19cc59acb83e8f2f2f54ed3ca2d728377b9a8c920564",
+    "internal/studentapi/application.go": "3449a14d23a153aca128ceeeec3a20abaef9f06e0d1587b71e2d6a4a0020f86b",
+    "internal/wish/lifecycle_repository.go": "40417f815a3500d806c8a9de84b3b05fbabf1296c633c87fb35655ad9d9bc263",
+    "scripts/init-business-dev.py": "4ed72fb7b844a021e9d709c422c31d27b90532c26d4f92c09a2e8c699ffe5f73",
+    "scripts/tests/test_business_initialization.py": "ffdf59d6a1849b383851d0d41d43fc6a8a55f869a495d2838e235693f60c2966"
+  },
+  "historical_references_sha256": {
+    "development/backend/milestones/phase-09.md": "acbf3c94d890cfb6afdd8968f21c9b6731abc7aaab137b0c777c2f52395659ca",
+    "development/backend/milestones/2026-10-22-business-message-chain-r1.md": "3398a25b3f14bcbc1b24a44909c3f035882344ebaafd55f0568a78bfa30cf9f2",
+    "contracts/actions.v0.2.0.md": "e4d1f5528f54a068d840627b2494f72a91fce5fd94eb52d6c8fd39b88e654475",
+    "contracts/decisions.v0.2.0.md": "188043aa722f3a40d74644bb77c2f6f462cb6b04fe46e8ff7399a03ccf294a07",
+    "contracts/moderation-extension.draft.json": "1bdda358942abf6392efeac2975d636334a60bf448e4ca5d7a31846656d4eb12"
+  },
+  "migration": {
+    "version": 13,
+    "checksum": "632b2af2f3898798e30cf39757e4218b481295c5fbbb2b360c1f0e95d8125428",
+    "prior_numbered_migrations_changed": false,
+    "requires_explicit_permissions": true,
+    "new_tables": [
+      "wordlist_heads",
+      "moderation_scans"
+    ],
+    "down_with_business_data": "refused"
+  },
+  "checks": [
+    {
+      "command": "make fmt",
+      "result": "passed"
+    },
+    {
+      "command": "make check",
+      "result": "passed",
+      "scope": "read-only fmt, go vet ./..., go test -race -cover ./...; middleware tests skip without explicit DSN"
+    },
+    {
+      "command": "make build",
+      "result": "passed",
+      "processes": 7
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p 'test_*.py' -v",
+      "result": "passed",
+      "tests": 31
+    },
+    {
+      "command": "make integration",
+      "result": "passed",
+      "project": "liyuanci-moderation-f86b4ae8db",
+      "groups": [
+        "foundation probe",
+        "TestPostgresConsumer",
+        "TestPostgresDurable",
+        "TestPostgresRecovery",
+        "TestBusinessMessageChain",
+        "TestModerationCore"
+      ],
+      "moderation_subtests": [
+        "无正式发布规则失败关闭",
+        "双版本完整快照及旧基准拒绝",
+        "正常扫描只进入待上架并脱敏",
+        "涉校人工审批与主动上架提示",
+        "驳回原因建议及旧案件拒绝",
+        "危机隔离且普通运营不可读取",
+        "外部失败重试与扫描期间改文",
+        "外部分析不持有业务行锁",
+        "审计失败回滚决定和业务结果",
+        "学生与撤销角色不能访问后台",
+        "并发快照基准和案件决定",
+        "规则更新只作用后续扫描",
+        "隐私屏障代次和当前资格复核",
+        "数据库补偿已确认丢失的唤醒",
+        "真实HTTP授权和正式响应",
+        "真实MQ提交后NACK重投"
+      ],
+      "moderation_summary": "--- PASS: TestModerationCore (21.64s)"
+    },
+    {
+      "command": "docker compose run --rm --entrypoint /moderation.test business-test -test.v -test.run ^TestModerationCore$ -test.timeout 180s",
+      "result": "passed",
+      "scope": "focused real PostgreSQL/MQ, synthetic external analyzer"
+    },
+    {
+      "command": "docker compose run --rm --entrypoint /durable.test business-test -test.v -test.run ^TestPostgresDurable$/(并发领取与提交后发送|发送不持有领取事务) -test.count 20 -test.timeout 90s",
+      "result": "passed",
+      "each_subtest_rounds": 20
+    },
+    {
+      "command": "git diff --check",
+      "repository": "backend",
+      "result": "passed"
+    },
+    {
+      "command": "python3 scripts/check_documents.py",
+      "repository": "docs",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "repository": "docs",
+      "result": "passed"
+    }
+  ],
+  "failure_fixes": [
+    "existing expected_version whitelist extended for independent ModerationTask resources",
+    "GORM schema table aliases require explicit AS",
+    "worker current penalties metadata required SELECT permission",
+    "content_registry has no independent version; only task invalidation advances case version",
+    "GORM reused test destination retained old primary key",
+    "relay stale candidate claim miss treated idle before any lease ownership",
+    "concurrent claim and transaction-outside-send tests split to exclude legitimate competing row locks"
+  ],
+  "migration_iteration": "undelivered migration changed before first acceptance; earlier isolated database checksum mismatch correctly refused; original ledger and volumes retained, fresh project used",
+  "boundary": {
+    "real": [
+      "PostgreSQL transactions, run-role permissions, empty migration down/up and comments",
+      "Redis and original student-card chain",
+      "RocketMQ content send/subscribe/NACK redelivery",
+      "formal review HTTP handling via real service"
+    ],
+    "synthetic": [
+      "WeChat, KMS, private object adapter in reused card tests",
+      "text safety, privacy/combination analyzer and wordlist samples",
+      "lifecycle, epoch and supplier fault fixtures"
+    ],
+    "not_completed": [
+      "production analyzer and official D03 rules/sample acceptance",
+      "resident content worker/process deployment",
+      "application/message/story domain adapters",
+      "crisis incident/care/evidence workflow",
+      "privacy barrier release and physical deletion",
+      "cross-client integration, performance, production acceptance",
+      "new target/allowed_actions projection or content offline/release APIs"
+    ],
+    "deployed_or_committed": false
+  },
+  "evidence_log": {
+    "path": "development/backend/validation/2026-10-22-content-moderation-integration.txt",
+    "sha256": "968a799f4585ced6f228150ae3f3595955aafecff27f1037cbd05067e173b33b"
+  },
+  "cleanup": {
+    "project": "liyuanci-moderation-f86b4ae8db",
+    "previous_project": "liyuanci-moderation-650a8e1e17",
+    "previous_project_containers_networks_removed": true,
+    "credentials_retained": true,
+    "containers_before": [
+      "liyuanci-moderation-f86b4ae8db-worker-1",
+      "liyuanci-moderation-f86b4ae8db-api-1",
+      "liyuanci-moderation-f86b4ae8db-broker-1",
+      "liyuanci-moderation-f86b4ae8db-postgres-1",
+      "liyuanci-moderation-f86b4ae8db-redis-1",
+      "liyuanci-moderation-f86b4ae8db-namesrv-1",
+      "liyuanci-moderation-f86b4ae8db-mq-init-1"
+    ],
+    "test_image": "sha256:114f9faf67ac7cde77acdb66614bdb7200ade49587343ce43941ea94dd35f212",
+    "containers_after": [],
+    "retained_volumes": [
+      "liyuanci-moderation-f86b4ae8db_mq-data",
+      "liyuanci-moderation-f86b4ae8db_pg-data",
+      "liyuanci-moderation-f86b4ae8db_redis-data"
+    ]
+  }
+}

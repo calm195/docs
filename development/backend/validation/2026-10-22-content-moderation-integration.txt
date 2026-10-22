@@ -1,0 +1,289 @@
+最终完整make integration
+=== RUN   TestPostgresConsumer
+=== RUN   TestPostgresConsumer/同工作并发只提交一次
+=== RUN   TestPostgresConsumer/拒绝伪造与缺失事件
+=== RUN   TestPostgresConsumer/取消晚到不依赖已删目标
+=== RUN   TestPostgresConsumer/当前资格变更取消旧工作
+=== RUN   TestPostgresConsumer/目标版本与工作版本独立
+=== RUN   TestPostgresConsumer/失败回滚与持久重试预算
+=== RUN   TestPostgresConsumer/panic回滚后才记录待办
+=== RUN   TestPostgresConsumer/调度失败不得覆盖并发取消
+=== RUN   TestPostgresConsumer/未到执行时间不提交回执
+=== RUN   TestPostgresConsumer/实际领域组权限与丢失确认重放
+--- PASS: TestPostgresConsumer (0.59s)
+    --- PASS: TestPostgresConsumer/同工作并发只提交一次 (0.03s)
+    --- PASS: TestPostgresConsumer/拒绝伪造与缺失事件 (0.01s)
+    --- PASS: TestPostgresConsumer/取消晚到不依赖已删目标 (0.00s)
+    --- PASS: TestPostgresConsumer/当前资格变更取消旧工作 (0.01s)
+    --- PASS: TestPostgresConsumer/目标版本与工作版本独立 (0.00s)
+    --- PASS: TestPostgresConsumer/失败回滚与持久重试预算 (0.01s)
+    --- PASS: TestPostgresConsumer/panic回滚后才记录待办 (0.00s)
+    --- PASS: TestPostgresConsumer/调度失败不得覆盖并发取消 (0.00s)
+    --- PASS: TestPostgresConsumer/未到执行时间不提交回执 (0.01s)
+    --- PASS: TestPostgresConsumer/实际领域组权限与丢失确认重放 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/业务工作事件同事务
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+=== RUN   TestPostgresDurable/临时重试与异常待办
+=== RUN   TestPostgresDurable/配置故障与发送恢复
+=== RUN   TestPostgresDurable/失效租约与稳定重复事件
+=== RUN   TestPostgresDurable/旧转发者不得覆盖新租约
+=== RUN   TestPostgresDurable/取消与完成不复活
+=== RUN   TestPostgresDurable/确认前中断耗尽预算
+=== RUN   TestPostgresDurable/领域工作组实际权限
+--- PASS: TestPostgresDurable (0.56s)
+    --- PASS: TestPostgresDurable/业务工作事件同事务 (0.00s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+    --- PASS: TestPostgresDurable/临时重试与异常待办 (0.01s)
+    --- PASS: TestPostgresDurable/配置故障与发送恢复 (0.02s)
+    --- PASS: TestPostgresDurable/失效租约与稳定重复事件 (0.01s)
+    --- PASS: TestPostgresDurable/旧转发者不得覆盖新租约 (0.01s)
+    --- PASS: TestPostgresDurable/取消与完成不复活 (0.01s)
+    --- PASS: TestPostgresDurable/确认前中断耗尽预算 (0.00s)
+    --- PASS: TestPostgresDurable/领域工作组实际权限 (0.01s)
+=== RUN   TestPostgresRecovery
+=== RUN   TestPostgresRecovery/已确认丢唤醒由数据库补偿
+=== RUN   TestPostgresRecovery/到期与终态及上限
+=== RUN   TestPostgresRecovery/缺失版本关联不猜测重建
+=== RUN   TestPostgresRecovery/并发补偿不重复提交
+=== RUN   TestPostgresRecovery/重驱动保持操作并替代旧事件
+=== RUN   TestPostgresRecovery/并发重驱动只创建一条新唤醒
+=== RUN   TestPostgresRecovery/重放仍复核当前授权
+=== RUN   TestPostgresRecovery/旧版本与终态拒绝重驱动
+=== RUN   TestPostgresRecovery/当前资格和回执禁止复活
+=== RUN   TestPostgresRecovery/角色与拒绝及原子回滚
+=== RUN   TestPostgresRecovery/审计失败回滚工作和唤醒
+=== RUN   TestPostgresRecovery/旧转发者不能覆盖新周期
+=== RUN   TestPostgresRecovery/实际后台命令与领域补偿权限
+=== RUN   TestPostgresRecovery/实际后台失效终结及回执窄权限
+=== RUN   TestPostgresRecovery/显式补偿调度取消后停止
+--- PASS: TestPostgresRecovery (0.69s)
+    --- PASS: TestPostgresRecovery/已确认丢唤醒由数据库补偿 (0.01s)
+    --- PASS: TestPostgresRecovery/到期与终态及上限 (0.03s)
+    --- PASS: TestPostgresRecovery/缺失版本关联不猜测重建 (0.01s)
+    --- PASS: TestPostgresRecovery/并发补偿不重复提交 (0.01s)
+    --- PASS: TestPostgresRecovery/重驱动保持操作并替代旧事件 (0.01s)
+    --- PASS: TestPostgresRecovery/并发重驱动只创建一条新唤醒 (0.03s)
+    --- PASS: TestPostgresRecovery/重放仍复核当前授权 (0.02s)
+    --- PASS: TestPostgresRecovery/旧版本与终态拒绝重驱动 (0.01s)
+    --- PASS: TestPostgresRecovery/当前资格和回执禁止复活 (0.02s)
+    --- PASS: TestPostgresRecovery/角色与拒绝及原子回滚 (0.01s)
+    --- PASS: TestPostgresRecovery/审计失败回滚工作和唤醒 (0.01s)
+    --- PASS: TestPostgresRecovery/旧转发者不能覆盖新周期 (0.01s)
+    --- PASS: TestPostgresRecovery/实际后台命令与领域补偿权限 (0.02s)
+    --- PASS: TestPostgresRecovery/实际后台失效终结及回执窄权限 (0.01s)
+    --- PASS: TestPostgresRecovery/显式补偿调度取消后停止 (0.01s)
+PASS
+=== RUN   TestBusinessMessageChain
+=== RUN   TestBusinessMessageChain/提交后ACK丢失及重复投递
+=== RUN   TestBusinessMessageChain/外部扫描期间撤销资格和晚到
+=== RUN   TestBusinessMessageChain/供应商失败持久重试
+=== RUN   TestBusinessMessageChain/过期租约和独立调度恢复
+=== RUN   TestBusinessMessageChain/真实工作进程启动和TERM关闭
+=== NAME  TestBusinessMessageChain
+--- PASS: TestBusinessMessageChain (3.83s)
+    --- PASS: TestBusinessMessageChain/提交后ACK丢失及重复投递 (1.13s)
+    --- PASS: TestBusinessMessageChain/外部扫描期间撤销资格和晚到 (0.05s)
+    --- PASS: TestBusinessMessageChain/供应商失败持久重试 (2.08s)
+    --- PASS: TestBusinessMessageChain/过期租约和独立调度恢复 (0.05s)
+    --- PASS: TestBusinessMessageChain/真实工作进程启动和TERM关闭 (0.04s)
+PASS
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== NAME  TestModerationCore
+    integration_test.go:643: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (21.64s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.01s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.03s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.04s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.03s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.02s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.04s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.04s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.05s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.03s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (20.03s)
+PASS
+审核核心针对性验证
+=== RUN   TestModerationCore
+=== RUN   TestModerationCore/无正式发布规则失败关闭
+=== RUN   TestModerationCore/双版本完整快照及旧基准拒绝
+=== RUN   TestModerationCore/正常扫描只进入待上架并脱敏
+=== RUN   TestModerationCore/涉校人工审批与主动上架提示
+=== RUN   TestModerationCore/驳回原因建议及旧案件拒绝
+=== RUN   TestModerationCore/危机隔离且普通运营不可读取
+=== RUN   TestModerationCore/外部失败重试与扫描期间改文
+=== RUN   TestModerationCore/外部分析不持有业务行锁
+=== RUN   TestModerationCore/审计失败回滚决定和业务结果
+=== RUN   TestModerationCore/学生与撤销角色不能访问后台
+=== RUN   TestModerationCore/并发快照基准和案件决定
+=== RUN   TestModerationCore/规则更新只作用后续扫描
+=== RUN   TestModerationCore/隐私屏障代次和当前资格复核
+=== RUN   TestModerationCore/数据库补偿已确认丢失的唤醒
+=== RUN   TestModerationCore/真实HTTP授权和正式响应
+=== RUN   TestModerationCore/真实MQ提交后NACK重投
+=== NAME  TestModerationCore
+    integration_test.go:643: 真实PG权限/事务/增量迁移、完整词库双版本、心愿扫描/人工复核及实际MQ往返通过；安全分析供应商为合成夹具
+--- PASS: TestModerationCore (21.62s)
+    --- PASS: TestModerationCore/无正式发布规则失败关闭 (0.02s)
+    --- PASS: TestModerationCore/双版本完整快照及旧基准拒绝 (0.02s)
+    --- PASS: TestModerationCore/正常扫描只进入待上架并脱敏 (0.02s)
+    --- PASS: TestModerationCore/涉校人工审批与主动上架提示 (0.03s)
+    --- PASS: TestModerationCore/驳回原因建议及旧案件拒绝 (0.04s)
+    --- PASS: TestModerationCore/危机隔离且普通运营不可读取 (0.03s)
+    --- PASS: TestModerationCore/外部失败重试与扫描期间改文 (0.02s)
+    --- PASS: TestModerationCore/外部分析不持有业务行锁 (0.02s)
+    --- PASS: TestModerationCore/审计失败回滚决定和业务结果 (0.02s)
+    --- PASS: TestModerationCore/学生与撤销角色不能访问后台 (0.00s)
+    --- PASS: TestModerationCore/并发快照基准和案件决定 (0.03s)
+    --- PASS: TestModerationCore/规则更新只作用后续扫描 (0.04s)
+    --- PASS: TestModerationCore/隐私屏障代次和当前资格复核 (0.04s)
+    --- PASS: TestModerationCore/数据库补偿已确认丢失的唤醒 (0.02s)
+    --- PASS: TestModerationCore/真实HTTP授权和正式响应 (0.03s)
+    --- PASS: TestModerationCore/真实MQ提交后NACK重投 (20.04s)
+PASS
+并发领取和事务外发送各20轮
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.51s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.49s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.51s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.53s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.02s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.50s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.51s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.48s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.49s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.49s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.50s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.50s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.49s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.49s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.49s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.49s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.48s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.48s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.53s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.50s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.02s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+=== RUN   TestPostgresDurable
+=== RUN   TestPostgresDurable/并发领取与提交后发送
+=== RUN   TestPostgresDurable/发送不持有领取事务
+--- PASS: TestPostgresDurable (0.48s)
+    --- PASS: TestPostgresDurable/并发领取与提交后发送 (0.01s)
+    --- PASS: TestPostgresDurable/发送不持有领取事务 (0.01s)
+PASS

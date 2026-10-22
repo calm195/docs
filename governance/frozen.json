@@ -114,6 +114,11 @@
     "development/backend/validation/2026-10-22-business-message-chain-r1.json": "b46d6facb90f0f457a74c2194f7f995c16cadfaa79da1620b176952169aedd30",
     "development/backend/validation/2026-10-22-business-message-chain-integration.txt": "1de2130b676e02d6a75ecb32949909c8c7ad8b4df339ecdde53f4c03cbe15535",
     "development/backend/milestones/2026-10-22-business-message-chain-commit-r1.md": "46976ed9b598068560d6dd50e0ea973ef219b945105013f4d452a23284d175c8",
-    "development/backend/validation/2026-10-22-business-message-chain-commit-r1.json": "3cbffecb3e19f650e125df944048da9ae0f6f6b9d47cdb2067f06b51a479761c"
+    "development/backend/validation/2026-10-22-business-message-chain-commit-r1.json": "3cbffecb3e19f650e125df944048da9ae0f6f6b9d47cdb2067f06b51a479761c",
+    "development/backend/milestones/2026-10-22-content-moderation-r1.md": "69bcf2aa811745fa5925719300bdd92225749198d4d8f9bd0bb8115670d4476f",
+    "development/backend/validation/2026-10-22-content-moderation-r1.json": "54b86d9f937495b004078d1e8394fd83fbaad4f32dd6ef0c12eb7236acb4e711",
+    "development/backend/validation/2026-10-22-content-moderation-integration.txt": "968a799f4585ced6f228150ae3f3595955aafecff27f1037cbd05067e173b33b",
+    "development/backend/milestones/2026-10-22-content-moderation-commit-r1.md": "ce51262f817aa1218567e3784deb7a089ba8ed373a1e002f0fa312665e52526a",
+    "development/backend/validation/2026-10-22-content-moderation-commit-r1.json": "54e4994bb365cd44fa1fc42923823dc19d8c03d609768b6c45a799336f5b0bbe"
   }
 }
