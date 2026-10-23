@@ -148,6 +148,10 @@
     "development/backend/validation/2026-10-23-privacy-deletion-integration.txt": "f3b8d3ea22cb84686054a5f6d341f0aea83293ef2579002ac536fd18f082e520",
     "development/backend/validation/2026-10-23-privacy-deletion-migration.txt": "451ea70b892bccaeb8c7dd07bf73e777d7a5ea558c140cc242805c041f74bafc",
     "development/backend/validation/2026-10-23-privacy-deletion-quality.txt": "77de724ff263d0beeffd12f6d779b6f325cabfed2bc841e3df90dc3abd1811af",
-    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c"
+    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c",
+    "development/backend/milestones/2026-10-23-manual-review-startup-r1.md": "fb965ce270c525da6bb4c37be2247c6866b51e56c59a556d80650aa7f0cf2e04",
+    "development/backend/validation/2026-10-23-manual-review-startup-r1.json": "c3e2dde9611a56e463fe573e6069a2c993edc5d899209f22e3e309c7f4ec4673",
+    "development/backend/validation/2026-10-23-manual-review-pg-r1.txt": "b6cf1d1cbd35a94ea463c96603d0e9e36eec44a322f5120c2b0f984350969ad4",
+    "development/backend/milestones/2026-10-23-manual-review-commit-r1.md": "8b9f5eacddf4ebf05663b21daa6ef5e2317d5d4527b6757f3f6298ccf330a24a"
   }
 }
