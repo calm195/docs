@@ -213,6 +213,11 @@
     "development/admin/validation/2026-10-23-privacy-pages-evidence-dark-r1.png": "ae5b53df66e88ad66e2bc3b7f622052266dfb6869af894f3d3236a1619b11af9",
     "development/admin/validation/2026-10-23-privacy-pages-evidence-light-r1.png": "a62758df47209ae9064f31fb96bf0038da75ed9c9bb8529cd5c14427ffcedeb0",
     "development/admin/validation/2026-10-23-privacy-pages-receipts-dark-r1.png": "f20e022da1b223270732ff284774bf5f2704d4313cae57e8edf0f0d241a8bed7",
-    "development/admin/validation/2026-10-23-privacy-pages-receipts-light-r1.png": "8342a16be062e025feb21b4556c4b264a75c94eba9d646eaf8b532224a836ed2"
+    "development/admin/validation/2026-10-23-privacy-pages-receipts-light-r1.png": "8342a16be062e025feb21b4556c4b264a75c94eba9d646eaf8b532224a836ed2",
+    "development/admin/milestones/2026-10-23-site-regression-r1.md": "e841ecda587cb58c976e37a63f9b728612fbf175f1187117e22a66fcc789b720",
+    "development/admin/validation/2026-10-23-site-regression-r1.json": "035c65540c8a1475c922ddab95fafc9aafc78e82f6f9fe74a473fae82668f978",
+    "development/admin/validation/2026-10-23-site-regression-quality-r1.txt": "a019ef2fd3cdf6847c78ac0cc366ea2d09bdb8c6f8424f9964f4eb9148ac862e",
+    "development/admin/validation/2026-10-23-site-regression-drawer-dark-r1.png": "abe3b210aa7dd830aeefc9f71d658fb9471a3372008bf8b9c78aeb533d0b9174",
+    "development/admin/validation/2026-10-23-site-regression-drawer-light-r1.png": "8a76f4a2d1e1fa8cd7c6a44c7569a0eb50db57e92926b72f7253b284b0f0d5a7"
   }
 }
