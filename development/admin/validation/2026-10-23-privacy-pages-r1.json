@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-23",
+  "branch": "codex/admin-navigation-theme",
+  "source_base": "cb0331380fd943ab8f919a2269b16342279aff05",
+  "source_commit": "e624ba174dc81548534c59ae94b7c829d97cd7c0",
+  "docs_base": "909e5b59a911c9efc7bdb526fd69e8319b1b839d",
+  "contract": "0.2.0 revision 5（未修改）",
+  "files": {
+    "README.en.md": "5f1d8aa6d91410fb2df76cf53733d2d87733a9cb45f7b5f0a30c00421ba294da",
+    "README.md": "3d3e0676caf3b5a1c58b8d16c59704e11276fe8a53860dedb17410f998f4aaa8",
+    "src/composables/useDeletionReceipts.ts": "239ea67e56abb60a960378ff9e7fdf3afbb51ae56f3d965af89d020d1be2f402",
+    "src/composables/useEvidenceDeletion.ts": "01106e218d81cbe32ac5a7b206837cfe7d33a3ba2bed81f81f2a0c622fb196f4",
+    "src/router/index.spec.ts": "482d107f7151f93d4ecccac4577dfbc03922ea77bb1fce51030a7e2f28ed8888",
+    "src/router/index.ts": "4cb2e9e2f68b1f30de74cb837f863c5ae08a62ca628caf5fede0c829aa29f04a",
+    "src/views/DeletionReceiptsView.vue": "77fb11be1252981c0281751f6f272af49e75a6620b7bc766b150d13a6f8b7a5f",
+    "src/views/EvidenceDeletionView.spec.ts": "449b61c63f5de4a543e2c8da29926f019a4c336e9cd67586bd2bc4d000add6d8",
+    "src/views/EvidenceDeletionView.vue": "741452cf5476e80d171c23f48df04019c87a928e66a699f0f2c8889987c23af9"
+  },
+  "checks": {
+    "format": "通过",
+    "check": "27个文件，336项业务测试，58项规范测试；格式、lint零警告、严格类型通过",
+    "build": "通过",
+    "source_diff_check": "通过"
+  },
+  "browser": "复用5173/18080与用户手动填写的登录会话，核对“证据删除”“回执查询”独立菜单、面包屑和深浅主题并各保存两张空输入截图。使用合成 UUID 11111111-1111-4111-8111-111111111111 执行只读证据元信息、待办查询，分别得到不存在/不可访问与不能认定清理完成提示；输入非完整回执字符串验证禁用查询，随后清空所有测试输入。没有使用真实匿名回执，没有读取正文/学号，没有打开真实删除操作或发送 DELETE。未读取口令或保存令牌。真实证据详情、真实受理及清理闭环仍未验证。\n",
+  "screenshots": {
+    "development/admin/validation/2026-10-23-privacy-pages-evidence-dark-r1.png": "ae5b53df66e88ad66e2bc3b7f622052266dfb6869af894f3d3236a1619b11af9",
+    "development/admin/validation/2026-10-23-privacy-pages-evidence-light-r1.png": "a62758df47209ae9064f31fb96bf0038da75ed9c9bb8529cd5c14427ffcedeb0",
+    "development/admin/validation/2026-10-23-privacy-pages-receipts-dark-r1.png": "f20e022da1b223270732ff284774bf5f2704d4313cae57e8edf0f0d241a8bed7",
+    "development/admin/validation/2026-10-23-privacy-pages-receipts-light-r1.png": "8342a16be062e025feb21b4556c4b264a75c94eba9d646eaf8b532224a836ed2"
+  }
+}

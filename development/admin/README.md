@@ -66,3 +66,5 @@
 - [内容审核查询详情与处理分离](milestones/2026-10-23-moderation-separation-r1.md)
 
 - [危机查询详情与处理抽屉分离](milestones/2026-10-23-crisis-separation-r1.md)
+
+- [证据删除处理与回执查询独立页面](milestones/2026-10-23-privacy-pages-r1.md)
