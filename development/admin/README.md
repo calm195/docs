@@ -52,3 +52,5 @@
 - [T032 后台证据删除、回执管理及危机服务启用补证据](milestones/2026-10-23-evidence-deletion-r1.md)
 
 - [T032 隐私路由启用后真实接口联调及查询反馈修复](milestones/2026-10-23-evidence-deletion-r2.md)
+
+- [2026-10-23 统一布局、面包屑及深浅色主题基础](milestones/2026-10-23-navigation-theme-r1.md)

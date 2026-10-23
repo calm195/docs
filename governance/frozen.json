@@ -170,6 +170,11 @@
     "development/admin/validation/2026-10-23-evidence-deletion-browser-r2.png": "7fd9d584f481bebca7b2878d627c2edeb8a59a51c6643b03d1d119f895574f64",
     "development/admin/validation/2026-10-23-evidence-deletion-r2.json": "5a7c677eafe616d9eb76b1d8d9347068a9f5c75d201f2990b9f22c736acf6664",
     "development/admin/validation/2026-10-23-evidence-deletion-quality-r2.txt": "28c6930198f7c21f420c54fabba00711a0919147a0d38f919a535df9f34250c2",
-    "development/admin/milestones/2026-10-23-evidence-deletion-r2.md": "9188baf2cb05f28e12cf27ec441b2a21d545c700441eb3e16d75e7e6408e5558"
+    "development/admin/milestones/2026-10-23-evidence-deletion-r2.md": "9188baf2cb05f28e12cf27ec441b2a21d545c700441eb3e16d75e7e6408e5558",
+    "development/admin/milestones/2026-10-23-navigation-theme-r1.md": "87e592d7f857e83efc79b7bc2315cea7a3bb0e5f1c746404f49d172b83886700",
+    "development/admin/validation/2026-10-23-navigation-theme-dark-r1.png": "a65cc1539023b959861bed416fff879c0dc2e81c5dbb0c8d3f44001bb377076f",
+    "development/admin/validation/2026-10-23-navigation-theme-light-r1.png": "d6c3f13109dc54071fa19a8b7316dfda766acb0015029197a2a798f74c07b594",
+    "development/admin/validation/2026-10-23-navigation-theme-quality-r1.txt": "28adc52c1c48c026d0e5a1dc3b84a39bd48a6bfcc8162b73e18bb11b6a42be16",
+    "development/admin/validation/2026-10-23-navigation-theme-r1.json": "e0c5be644abb3895f0586fd19d0afe912c8f855049114f67851df4a0ccb15385"
   }
 }
