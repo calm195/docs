@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-23",
+  "task": "T017，关联T010/T012与已实现账号管理",
+  "requirements": [
+    "REQ-002",
+    "REQ-015",
+    "REQ-018",
+    "REQ-019"
+  ],
+  "source_branch": "develop",
+  "source_head_base": "cc0193bba6de30d1a8be0c08c8852a94ea62b3fd",
+  "source_state": "本次未提交工作区，包含前序T012修改和后续纯真实接口改动",
+  "docs_branch": "admin-develop",
+  "docs_head_base": "3d1d1f395128d8bb0d1a1bc692b04095eea3f12e",
+  "contract_version": "0.2.0",
+  "contract_sources": {
+    "contracts/openapi.v0.2.0.json": "741b7639160c489b33d777378c881c27e62221b3eb25cab696bb87115e762d7b",
+    "contracts/actions.v0.2.0.json": "3f5b64f1dd6d04b0a7d306cfdca0f4f216a35d13928046509eff0e3b86d4302e"
+  },
+  "source_files": {
+    ".env.example": "702cbf997763e4b0e548e6606f137cf17cf8dd6a08fa0727e97c500d2e45315e",
+    "AGENTS.md": "361a673ea251617f71c07901dcf07366bec1f04fcba9b000b924c58727f61192",
+    "README.en.md": "083f9667336398ff0d6ccab9444f9c567183311f52e2c53d736beb6d93e9ecd4",
+    "README.md": "53e074a46fe6c6806197c3bda9a1ede91fa4f44f1935ba9239ebbf68f3bf480b",
+    "src/App.vue": "8f37ff1c3d3a243e32e946af59cabd69ec750ea53667becf437c9109baff7bbc",
+    "src/env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+    "src/services/admin-auth-transport.spec.ts": "fbbba14c1131062d7328ac01c4f09dd8c336106615ddb5c31c0c0209b4bd1f71",
+    "src/services/admin-integration.spec.ts": "d68338168255f06ca048812a439b9b862a908628a872f28ed189f4aec43e4bec",
+    "src/services/admin.ts": "616759750166c8da3ad8de04b6fd65146c3e28473e903f408f1eb2d25c6c43ea",
+    "src/services/content-transport.spec.ts": "846ed47450cd89b2cc69cfd383331a2bacd4d76ef1b47b5100299c3df998e399",
+    "src/services/content-transport.ts": "0a36e3355722355d4c0c374b0d1545c3f746fb8b66a02a260c4d05f12e1dd89e",
+    "src/services/identity-transport.spec.ts": "50a1ca703e271923af5e26128bd632abfc2747f0781ca426880d30aabf2673e1",
+    "src/services/identity-transport.ts": "26beb3477bf23b9ade10e73722224f468065597428e99d7bcd6571a297b4b6b6",
+    "src/services/identity.spec.ts": "850f817cf6aab18146cbbaa51ea01d5cdd1379591850a84d46b2ff8ddfc32cae",
+    "src/services/identity.ts": "efad8cfcffc5e85d56acb144f7f979e7a2011495b5f213a145aede076ba5ea1f",
+    "src/services/moderation.spec.ts": "830d00ab2bed64de547048997c043880544c1112f2ed59a01cd868984daf3ce9",
+    "src/services/moderation.ts": "2c6a0660556279de41237d022474b3026d176ef35093f1886ac7ec3e7c872836",
+    "src/services/review-boundary.ts": "c4b992ec8068584d45e0a8f93d4ad51341b572c12c51eb7233c144519ccc565f",
+    "src/services/wordlists.spec.ts": "1d069c20a42d048d2d2041798fdd6e8d879cd3ec69cb790216ca57cd8549c592",
+    "src/services/wordlists.ts": "5af590d932f47cda275b2f156e3fdfb3a8ddf1c12e02ec4133046bd84350a111",
+    "src/types/moderation.ts": "6c3fc986a3ce252310ee1ae7bf3b52cb0e0c4651ddaea9e0c67e7917c854eaee",
+    "src/types/wordlists.ts": "b559b9b8b04a16231c30ca7fb143b090b196b4948f9d5c148376088b05a67a87",
+    "src/views/AccountsView.spec.ts": "bc45baaddd581840f3ecac32093342b9ba98f2d2f16a80eeb3853c66a83d5b82",
+    "src/views/AccountsView.vue": "a1cc082a73b285f681a4de2a7a3693b0052631c1b9bfd14ab8f84eef26a3393a",
+    "src/views/DashboardView.vue": "c2135c21e1dcaa3ab7b3144359eb9c0639819ebd4b2c2faad274c7b75f42a367",
+    "src/views/IdentityView.real.spec.ts": "9d21b325d1470eff38b1d612f1a42c4df95d11ae30130911ba54907cb2ec8552",
+    "src/views/IdentityView.spec.ts": "880485a8686392240e912f58430a97ab7a22e17259605183447f8cc7e3151f51",
+    "src/views/IdentityView.vue": "e0398ced048f157c71e92d06eb4e370cf290d2c5a5d2f7532348312057f0d33b",
+    "src/views/LoginView.spec.ts": "35f9864cb7d822d346c1f5acb688f938b4f860fcd8af61c3f6089538b36dd58f",
+    "src/views/LoginView.vue": "621b416f09ed55914d0b507234528bc387aa56c92c2d18dd645dbc53904b87f2",
+    "src/views/ModerationView.spec.ts": "29c737139475c43c232a4f4f6724283ae7ce027c04b9d8474bf4ce5959e98905",
+    "src/views/ModerationView.vue": "a2a2d1fb2c9c71654e887941d2fbfc56fdb5195f4eae3044433c87406adc8c15",
+    "src/views/PasswordView.spec.ts": "579ba0a420f6b160c83d05ad00dfc9c316d1530ad4720cc7389bef5fa2e0f5fc",
+    "src/views/PasswordView.vue": "bfc2fd23b3994410e4eeb1ac1980456402ebeaf49260ca22dbaa6aa73d247f7c",
+    "src/views/WordlistsView.spec.ts": "fb0285d6acd76455dcad8391a92ceefcc971821f562e98cd6eaa313e7d593e1b",
+    "src/views/WordlistsView.vue": "148d535ed5ec3c5a0ed1380bddf836d4a167d3320abe8ad3e3e7eb2d17e751cb"
+  },
+  "commands_executed": [
+    "pnpm format（成功，仅格式化）"
+  ],
+  "commands_not_executed": [
+    "pnpm check",
+    "pnpm build",
+    "python3 scripts/check_documents.py",
+    "git diff --check",
+    "实际后端HTTP或浏览器联调"
+  ],
+  "reason": "用户明确要求无需验证、继续开发，并要求不保留Mock演示，直接使用后端服务；未执行本轮验证，不沿用前序T012测试结果。"
+}

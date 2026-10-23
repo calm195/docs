@@ -148,6 +148,14 @@
     "development/backend/validation/2026-10-23-privacy-deletion-integration.txt": "f3b8d3ea22cb84686054a5f6d341f0aea83293ef2579002ac536fd18f082e520",
     "development/backend/validation/2026-10-23-privacy-deletion-migration.txt": "451ea70b892bccaeb8c7dd07bf73e777d7a5ea558c140cc242805c041f74bafc",
     "development/backend/validation/2026-10-23-privacy-deletion-quality.txt": "77de724ff263d0beeffd12f6d779b6f325cabfed2bc841e3df90dc3abd1811af",
-    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c"
+    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c",
+    "development/admin/milestones/2026-10-23-identity-integration-r1.md": "c41c03e514484d74e8213d0c4e5ab13be2758d48e5f7576063fff705d1b95646",
+    "development/admin/validation/2026-10-23-identity-integration-r1.json": "9dd3429c80516ffd552f71d9c3def2fc9104e02da11179bbea3fe49f79f4434a",
+    "development/admin/milestones/2026-10-23-content-api-only-r1.md": "af3d98d2fb11bcd447ef50ae06c52814aa7c3071d48ee0d0040d1f64e94a75cd",
+    "development/admin/validation/2026-10-23-content-api-only-source-r1.json": "0e71e58ad39a342127eee394a1a31c07be00b8a5ddbbba6641af1783c355efcb",
+    "development/admin/milestones/2026-10-23-moderation-outcome-gap-r1.md": "f8544376c3311b332db446f54b057b960299f2ee38d904dafc04404993f58bc1",
+    "development/admin/milestones/2026-10-23-safety-management-r1.md": "7cb94ce66181e8513238ce1c957f1f58ea2c0b29cb37e1e0ac75c54aee6daaf9",
+    "development/admin/validation/2026-10-23-safety-management-source-r1.json": "21dc896e80a70669e520ce8ec8e6422ed703b18e662eb499ec5a21ca54c8e8e1",
+    "development/admin/milestones/2026-10-23-module-commits-r1.md": "55cf0ca78c077b23a35be42a7d61cc4b85099ec67b134895dabb03ae167ee97e"
   }
 }

@@ -4,6 +4,8 @@
 
 本目录迁入文件是 2026-10-22 整理时的固定快照，保留历史状态及测试结论；不因归档宣称当前功能验收通过。后续按日期/主题/revision 新增记录，补充与勘误引用原文；只更新本索引入口。参见[统一规范](../../governance/README.md)。
 
+当前开发：管理端源码使用 `develop`，本端文档使用 `admin-develop`；后端在途工作保留于其独立工作区。
+
 ## 实施与接入说明
 
 - [T012 身份审核页接入清单](T012-integration.md)
@@ -35,3 +37,12 @@
 ## 后续记录
 
 - [2026-10-22 文档归属与规则治理](milestones/2026-10-22-docs-governance-r1.md)
+
+- [2026-10-23 身份审核真实接口核对与功能验证](milestones/2026-10-23-identity-integration-r1.md)
+
+- [2026-10-23 内容审核及词库真实接线、移除运行时演示（未验证）](milestones/2026-10-23-content-api-only-r1.md)
+
+- [2026-10-23 审核结果枚举差异（待后端契约协调）](milestones/2026-10-23-moderation-outcome-gap-r1.md)
+
+- [2026-10-23 举报、处罚与申诉管理真实接入（未验证）](milestones/2026-10-23-safety-management-r1.md)
+- [2026-10-23 管理端按模块提交精确关联补充](milestones/2026-10-23-module-commits-r1.md)
