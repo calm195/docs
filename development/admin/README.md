@@ -48,3 +48,5 @@
 - [2026-10-23 管理端按模块提交精确关联补充](milestones/2026-10-23-module-commits-r1.md)
 
 - [2026-10-23 危机工作台真实接入与测试交付](milestones/2026-10-23-crisis-workspace-r1.md)
+
+- [T032 后台证据删除、回执管理及危机服务启用补证据](milestones/2026-10-23-evidence-deletion-r1.md)

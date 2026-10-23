@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-23",
+  "base_url": "http://localhost:5173",
+  "configured_crisis_connection": true,
+  "configured_evidence_deletion_connection": false,
+  "checks": [
+    {
+      "case": "已有Vite实例",
+      "path": "/",
+      "status": 200,
+      "cache_control": "no-cache",
+      "request_id": null
+    },
+    {
+      "case": "未登录删除待办",
+      "path": "/api/v1/admin/evidence-deletion-jobs/4e30021a-f34d-4cd3-9976-d11c497625c9",
+      "status": 404,
+      "cache_control": null,
+      "request_id": "e0d27e46e3ccd04bb8b24057984babf6"
+    },
+    {
+      "case": "未登录危机列表",
+      "path": "/api/v1/admin/crisis-cases?limit=20",
+      "status": 401,
+      "cache_control": "no-store",
+      "request_id": "570357ecd6ac030af0d51c374ca4541e"
+    },
+    {
+      "case": "本地后台登录",
+      "path": "/api/v1/admin/sessions",
+      "status": 200,
+      "cache_control": "no-store",
+      "request_id": "0c8bddb357a51b6604cab537dda538be"
+    },
+    {
+      "case": "危机列表真实同源代理",
+      "path": "/api/v1/admin/crisis-cases?limit=20",
+      "status": 200,
+      "cache_control": "no-store",
+      "request_id": "8bc8f8e03dcfca45aa090bd9e0e5bcb6",
+      "item_count": 0,
+      "has_next_cursor": false,
+      "minimal_fields": true
+    },
+    {
+      "case": "未知案件",
+      "path": "/api/v1/admin/crisis-cases/343104ce-3b4e-4d01-b3b3-583a5b99e71c",
+      "status": 404,
+      "cache_control": "no-store",
+      "request_id": "b28a8d7b5df70a1ada3c7bd000c232e5"
+    },
+    {
+      "case": "未知案件/timeline",
+      "path": "/api/v1/admin/crisis-cases/343104ce-3b4e-4d01-b3b3-583a5b99e71c/timeline",
+      "status": 404,
+      "cache_control": "no-store",
+      "request_id": "d8a33372889b5e4c16633886df00e531"
+    },
+    {
+      "case": "未知案件/work",
+      "path": "/api/v1/admin/crisis-cases/343104ce-3b4e-4d01-b3b3-583a5b99e71c/work",
+      "status": 404,
+      "cache_control": "no-store",
+      "request_id": "366a3ac8cf52eda1764869bbbedf403f"
+    },
+    {
+      "case": "未知证据",
+      "path": "/api/v1/admin/evidence/343104ce-3b4e-4d01-b3b3-583a5b99e71c",
+      "status": 404,
+      "cache_control": "no-store",
+      "request_id": "da746da07d60aacee92c2de0b63e8ad3"
+    },
+    {
+      "case": "未知证据删除待办",
+      "path": "/api/v1/admin/evidence-deletion-jobs/343104ce-3b4e-4d01-b3b3-583a5b99e71c",
+      "status": 404,
+      "cache_control": null,
+      "request_id": "a327fab5bd1d21a48116e59a3ef22b4e"
+    },
+    {
+      "case": "无效匿名回执",
+      "path": "/api/v1/deletion-receipts/343104ce-3b4e-4d01-b3b3-583a5b99e71c.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "status": 404,
+      "cache_control": null,
+      "request_id": "aa78d2f56481d93591179536241419a6"
+    },
+    {
+      "case": "禁止带查询参数的回执",
+      "path": "/api/v1/deletion-receipts/343104ce-3b4e-4d01-b3b3-583a5b99e71c.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?x=1",
+      "status": 404,
+      "cache_control": null,
+      "request_id": "153b6f3460c871be6e6cc6a19350036c"
+    },
+    {
+      "case": "退出本次会话",
+      "path": "/api/v1/admin/session",
+      "status": 204,
+      "cache_control": "no-store",
+      "request_id": "4a9b6b59edd0b1a5971b84137b49668c"
+    }
+  ],
+  "boundary": "真实已有5173同源代理与18080服务；不读实际案件材料、不修改实际案件；口令和令牌仅内存使用；仅记录非敏感状态和请求关联标识",
+  "task": "T032（管理端范围）及T030运行态补证据",
+  "requirements": [
+    "REQ-008",
+    "REQ-014",
+    "REQ-018",
+    "REQ-019"
+  ],
+  "source_branch": "develop",
+  "source_base": "b2e053429c8a68ebf290f56c9b30ca7d1935279e",
+  "source_head": "871b9341c57f41fdd9d179af556bdf3e04120bf5",
+  "source_modules": [
+    "2074dd824454b31b5cfc19383d49f09f6c643931",
+    "871b9341c57f41fdd9d179af556bdf3e04120bf5"
+  ],
+  "docs_branch": "admin-develop",
+  "docs_base": "ec9104d782387d51a4008ae0882d0e74a2ef5c65",
+  "backend_branch": "develop",
+  "backend_head": "aaacbaf9c18006e5ae7128b1d915558b5dab999c",
+  "contract": "0.2.0 revision 5；待办查询使用后端已实现辅助端点，不修改共享契约",
+  "source_files": {
+    "README.en.md": "a3f4d3d15f312d4e69ecd3d882f177b4ca3d8ba9d4f38c96ef80ab5d5ccc7bbb",
+    "README.md": "1f99a0d56b480c26fcc806cfcd41984da30780f89dea73e38224fb27fd59fd49",
+    "src/router/index.spec.ts": "9d631c8353498959a0a59b4c9da2b411dfc82c108b1b92531d0a16b488cd110d",
+    "src/router/index.ts": "a316c584e3f27e62207061efe402666dcede6e15fefb0447e17aed1366bfb1c1",
+    "src/services/privacy.spec.ts": "8e1d2965339f238c956822e4f7dee0ad806999822d71aa9ecdc87b0adf64c7fd",
+    "src/services/privacy.ts": "7ec3cf05c49b8cca8bb4720ab81cad4fe8a0ccbf191c7dc3bc650d3dc29ab93c",
+    "src/types/privacy.ts": "350bf23ccf3fb3af7c3131dbadd8feed79bd26e64885531976c4da0510e95d89",
+    "src/views/EvidenceDeletionView.spec.ts": "5daa4a4d7325d92eacf944ceecd8d316f9203f6d7e350332874850fccf0db19c",
+    "src/views/EvidenceDeletionView.vue": "9d471f6946806a66a3c8be8dcbf6160727ab54ccd3271c6ff1f8d6d89a93319c"
+  },
+  "quality": {
+    "pnpm format": "通过",
+    "pnpm check": "通过：25测试文件，277业务测试，58规范检查器测试",
+    "pnpm build": "通过：类型检查及Vite生产构建",
+    "git diff --check": "通过"
+  },
+  "browser": [
+    "已有5173实例本地后台真实登录成功",
+    "超管菜单及证据删除与回执页面可访问，空输入禁用提交",
+    "未知待办真实404显示不能据此认定清理完成",
+    "危机列表真实200且暂无案件",
+    "已退出本次测试会话"
+  ],
+  "unverified": [
+    "隐私删除接口未启用：EvidenceDeletionDSN未配置；后台待办及匿名回执404且无no-store头，不能当作有效路由业务404",
+    "没有指定可删除测试案件，未执行真实DELETE或验证物理清理完成",
+    "当前GET证据只支持危机证据条目；其他证据范围缺少可读取的范围版本入口",
+    "不涵盖小程序本人注销、存活方六行界面矩阵或三端联调验收"
+  ]
+}
