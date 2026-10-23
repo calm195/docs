@@ -46,3 +46,5 @@
 
 - [2026-10-23 举报、处罚与申诉管理真实接入（未验证）](milestones/2026-10-23-safety-management-r1.md)
 - [2026-10-23 管理端按模块提交精确关联补充](milestones/2026-10-23-module-commits-r1.md)
+
+- [2026-10-23 危机工作台真实接入与测试交付](milestones/2026-10-23-crisis-workspace-r1.md)

@@ -156,6 +156,10 @@
     "development/admin/milestones/2026-10-23-moderation-outcome-gap-r1.md": "f8544376c3311b332db446f54b057b960299f2ee38d904dafc04404993f58bc1",
     "development/admin/milestones/2026-10-23-safety-management-r1.md": "7cb94ce66181e8513238ce1c957f1f58ea2c0b29cb37e1e0ac75c54aee6daaf9",
     "development/admin/validation/2026-10-23-safety-management-source-r1.json": "21dc896e80a70669e520ce8ec8e6422ed703b18e662eb499ec5a21ca54c8e8e1",
-    "development/admin/milestones/2026-10-23-module-commits-r1.md": "55cf0ca78c077b23a35be42a7d61cc4b85099ec67b134895dabb03ae167ee97e"
+    "development/admin/milestones/2026-10-23-module-commits-r1.md": "55cf0ca78c077b23a35be42a7d61cc4b85099ec67b134895dabb03ae167ee97e",
+    "development/admin/milestones/2026-10-23-crisis-workspace-r1.md": "6fbdbeea25c5a6886b5b5adc06bb62194c2aaf87c387925a35fae62d1738d01b",
+    "development/admin/validation/2026-10-23-crisis-workspace-r1.json": "d5dcd472dfde6ec16460bf97a7ae4cafcc020a3cbc408c89cadf7df7b1a4a3f2",
+    "development/admin/validation/2026-10-23-crisis-workspace-quality-r1.txt": "8d215e4f01904f8444802e9678fe9e0ea1d4476c28285403f006f730d12bf15a",
+    "development/admin/validation/2026-10-23-crisis-workspace-browser-r1.png": "1ec84daccdf6feb61066a9e7ade3ce308adc2a163e33552150fe2adcf8ca1523"
   }
 }
