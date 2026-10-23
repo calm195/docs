@@ -114,3 +114,12 @@ infra只检查本地端口；doctor验证实际数据库身份、关键结构、
 ## 安全治理接口
 
 开发装配显式启用`studentapi.Config.Safety`，使用从原根密钥独立派生的用途密钥及64KiB说明/申诉技术预算。升级需先在受控迁移入口应用0017并重放权限，普通启动不会迁移。举报类型须由运营交付后显式发布；没有默认业务类型时清单为空。接口、版本、受限会话及当前验证边界见[安全治理阶段记录](milestones/2026-10-22-safety-governance-r1.md)。
+
+
+## 危机案件与关怀
+
+显式应用0018并重放bootstrap权限后，内容worker会将四类正文的危机命中原子写入限定证据和双投递待办。未提供正式援助资料及通知适配时保留可重试待办，不自动恢复公开。
+
+开发API只有在私有凭据文件显式配置`CrisisDSN`后注册危机后台路由；该连接使用仅属于`liyuanci_crisis_api`的独立受限登录，不复用ReviewDSN或StudentDSN。初始化不会生成此账号或替换旧密钥，登录须由管理员显式交付。可选`Care`对象字段为`version/source/verified_at/hotline_24_hours/appointment/notice`，核验日期使用YYYY-MM-DD；必须来自已交付资料，不能把隔离合成资源用于真实用户。普通关怀通知引用本人卡片，由GET /api/v1/me/care-cards/{id}读取。
+
+生产宿主通过`WorkerConfig.CrisisNotifier`显式注入授权人员通知适配器，按投递ID去重，消息只含技术引用；开发默认没有真实通知发送方。接口、角色、迁移和验证边界见[危机服务阶段记录](milestones/2026-10-23-crisis-care-r1.md)。

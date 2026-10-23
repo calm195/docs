@@ -137,6 +137,11 @@
     "development/backend/milestones/2026-10-22-safety-governance-r1.md": "1397392dc5e5d9bb45223f8c579a9a9374e418cabdaba5fe259ca8c098ee437d",
     "development/backend/validation/2026-10-22-safety-governance-r1.json": "a930c076e3b4a3ab1d7d59f21b03ec35e34f6afa9fecf5b332987aa0b477f742",
     "development/backend/validation/2026-10-22-safety-governance-integration.txt": "4539956d9a0db36f2f63af0eb16ed0c4877e7a4a746196c855a00ea9eb997282",
-    "development/backend/validation/2026-10-22-safety-governance-quality.txt": "ffc2cd989edcd6edf59c68b82f2ea0659be7a61d3c1b5800efc519ae8b8fc317"
+    "development/backend/validation/2026-10-22-safety-governance-quality.txt": "ffc2cd989edcd6edf59c68b82f2ea0659be7a61d3c1b5800efc519ae8b8fc317",
+    "development/backend/milestones/2026-10-23-crisis-care-r1.md": "b2a30f6f5eec5c06b82a2a67c1b55b441fb6d24fee3f76646f4411d86129916d",
+    "development/backend/validation/2026-10-23-crisis-care-r1.json": "9156f63e71eb1b09d8bf5edf8e56710e83f2c8a587941d242e74f7158fff4ee9",
+    "development/backend/validation/2026-10-23-crisis-care-integration.txt": "1ff55efbc49a18c60fa02fbb9d748ca34d1ac1a3ee96bb6c3643e23626deaff5",
+    "development/backend/validation/2026-10-23-crisis-care-quality.txt": "f685bdba1e0a05428afd410ba51bbdeb5e1ae8c61aed39be34038050b4b362c3",
+    "development/backend/validation/2026-10-23-crisis-care-cleanup.json": "362851d8d98cd2849667e512c2312e94c8502a3c1af70177a99ad46b15c3aa44"
   }
 }

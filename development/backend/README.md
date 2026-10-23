@@ -79,3 +79,5 @@
 - [2026-10-22 确认实现、还愿故事与分享重验](milestones/2026-10-22-story-sharing-r1.md)
 
 - [2026-10-22 拉黑、举报、处罚、警告与申诉服务](milestones/2026-10-22-safety-governance-r1.md)
+
+- [2026-10-23 危机案件、限定证据与关怀服务](milestones/2026-10-23-crisis-care-r1.md)
