@@ -29,3 +29,5 @@
 - [2026-10-23 应愿申请、唯一匹配与公开主页接入](milestones/2026-10-23-applications-matching-r1.md)
 
 - [2026-10-23 聊天、站内通知与微信AppID配置](milestones/2026-10-23-chat-notifications-r1.md)
+
+- [2026-10-23 还愿故事、还愿墙与微信分享回流](milestones/2026-10-23-stories-sharing-r1.md)
