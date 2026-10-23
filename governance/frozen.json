@@ -191,6 +191,11 @@
     "development/admin/validation/2026-10-23-safety-pages-quality-r1.txt": "fa901f7600615e7dd700b248956495a8d7860f1482328b4e4222d6771f5c3c41",
     "development/admin/validation/2026-10-23-safety-pages-appeals-dark-r1.png": "cb8bc845bb4eecda28c71f4490f063f3bc372eb7e6139906a9f926909334442f",
     "development/admin/validation/2026-10-23-safety-pages-penalties-light-r1.png": "2f5591d949eb5f1893ceaa8c6ed0d23903f32f3ab99d46b95d65f476f035d652",
-    "development/admin/validation/2026-10-23-safety-pages-reports-light-r1.png": "62c6dfa4da7f6ada48b53f64e3d3cbb12d01e883264885cede0a7b6e0b3934dd"
+    "development/admin/validation/2026-10-23-safety-pages-reports-light-r1.png": "62c6dfa4da7f6ada48b53f64e3d3cbb12d01e883264885cede0a7b6e0b3934dd",
+    "development/admin/milestones/2026-10-23-identity-separation-r1.md": "663183627ac7cdc4b7b9e4e233c0e2bc0e13cd8db314815a4808679606cc3a43",
+    "development/admin/validation/2026-10-23-identity-separation-r1.json": "3aba9a570c59ffa5c3fc35f19255f83f00ba51ceac6f252bee1a43163524cd6d",
+    "development/admin/validation/2026-10-23-identity-separation-quality-r1.txt": "d13cd805f6165e44f2022606c90d041dfef7e50fc54a8119348d0f8d0d1d54d9",
+    "development/admin/validation/2026-10-23-identity-separation-dark-r1.png": "65f301d170e2d884aa998a3f1a36d94ae4d3d5469d6869840df98b6d10369fde",
+    "development/admin/validation/2026-10-23-identity-separation-light-r1.png": "a04c9c2b83cbd3bfd2676b0f4802eddd869cc3cb6c7ec59ef3b668bac743006e"
   }
 }
