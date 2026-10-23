@@ -4,8 +4,11 @@
 
 本目录迁入文件是 2026-10-22 整理时的固定快照，保留历史状态及测试结论；不因归档宣称当前功能验收通过。后续按日期/主题/revision 新增记录，补充与勘误引用原文；只更新本索引入口。参见[统一规范](../../governance/README.md)。
 
+后续源码使用 `develop`，文档使用 `mini-deveop`（用户于2026-10-23指定）。
+
 ## 实施与接入说明
 
+- [后续开发顺序与当前实现范围](development-plan.md)
 - [小程序接口核对与已实现功能](api-call-audit.md)
 - [小程序认证与发布接入准备](integration-readiness.md)
 
@@ -18,3 +21,7 @@
 ## 后续记录
 
 - [2026-10-22 文档归属与规则治理](milestones/2026-10-22-docs-governance-r1.md)
+
+- [2026-10-23 心愿详情与生命周期接入（未验证、未提交）](milestones/2026-10-23-wish-detail-lifecycle-r1.md)
+
+- [2026-10-23 心愿详情检查修复与提交补充](milestones/2026-10-23-wish-detail-lifecycle-r2.md)

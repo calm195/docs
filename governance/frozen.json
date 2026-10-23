@@ -148,6 +148,11 @@
     "development/backend/validation/2026-10-23-privacy-deletion-integration.txt": "f3b8d3ea22cb84686054a5f6d341f0aea83293ef2579002ac536fd18f082e520",
     "development/backend/validation/2026-10-23-privacy-deletion-migration.txt": "451ea70b892bccaeb8c7dd07bf73e777d7a5ea558c140cc242805c041f74bafc",
     "development/backend/validation/2026-10-23-privacy-deletion-quality.txt": "77de724ff263d0beeffd12f6d779b6f325cabfed2bc841e3df90dc3abd1811af",
-    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c"
+    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c",
+    "development/miniprogram/milestones/2026-10-23-wish-detail-lifecycle-r1.md": "50c099378c7f9ac4d5bf51e05119a4cc5247f1b9ad47d9dffddca1d515e89d3a",
+    "development/miniprogram/validation/2026-10-23-wish-detail-lifecycle-r1.json": "d59a7c7342282ce22cd407012b1858e9d396c7555ddc0f2394db6458fd2ccff2",
+    "development/miniprogram/milestones/2026-10-23-wish-detail-lifecycle-r2.md": "30c5a5805112bbb5f878317e80d1fb1afca61b43affa9c8e2cebe115d5cf4156",
+    "development/miniprogram/validation/2026-10-23-wish-detail-check-r2.txt": "cbe49f9958c32aee369208d16b6544c180dd5e31d6c8e62cf97272ab8fd752db",
+    "development/miniprogram/validation/2026-10-23-wish-detail-build-r2.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f"
   }
 }

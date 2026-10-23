@@ -22,6 +22,10 @@ def git(repo, *args):
     return subprocess.check_output(["git", "-C", str(repo), *args], text=True).strip()
 
 
+# 文档可位于独立工作树；开发仓库仍从主检出的同级目录定位。
+WORKSPACE = Path(git(ROOT, "rev-parse", "--path-format=absolute", "--git-common-dir")).parent.parent
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", default="HEAD", help="核对固定清单仅追加时的 Git 基点")
@@ -45,7 +49,7 @@ def main():
             errors.append(f"固定文件缺失或指纹变化：{name}")
     migrated = json.loads((ROOT / "governance/migration-2026-10-22.json").read_text())["records"]
     for item in migrated:
-        repo = ROOT.parent / item["repository"]
+        repo = WORKSPACE / item["repository"]
         original = subprocess.check_output([
             "git", "-C", str(repo), "show", f"{item['source_commit']}:{item['source']}"
         ])
@@ -57,7 +61,7 @@ def main():
         if item["destination"] not in frozen:
             errors.append(f"迁移目标未固定：{item['destination']}")
     for repo_name in REPOS.values():
-        repo = ROOT.parent / repo_name
+        repo = WORKSPACE / repo_name
         items = [item for item in migrated if item["repository"] == repo_name]
         if len({item["source_commit"] for item in items}) != 1:
             errors.append(f"迁移来源提交不唯一：{repo_name}")
@@ -70,7 +74,7 @@ def main():
     branch = git(ROOT, "branch", "--show-current")
     markdown = list(ROOT.rglob("*.md"))
     for end, repo_name in REPOS.items():
-        repo = ROOT.parent / repo_name
+        repo = WORKSPACE / repo_name
         if (repo / "docs").exists():
             errors.append(f"开发仓库仍保留 docs/：{repo_name}")
         if args.same_branch and git(repo, "branch", "--show-current") != branch:
@@ -81,8 +85,9 @@ def main():
                 errors.append(f"缺少本端文档入口：{repo_name}/{name}")
         markdown += list(repo.glob("README*.md")) + [repo / "AGENTS.md"]
     historical = {
-        (ROOT.parent / item["repository"] / item["source"]).resolve(): ROOT / item["destination"]
+        (base / item["repository"] / item["source"]).resolve(): ROOT / item["destination"]
         for item in migrated
+        for base in (ROOT.parent, WORKSPACE)
     }
     historical_links = 0
     for path in markdown:
@@ -94,6 +99,13 @@ def main():
             if parsed.scheme or not parsed.path:
                 continue
             target = path.parent / unquote(parsed.path)
+            # 独立工作树中的跨仓库链接仍指向实际开发仓库，保留完整链接校验。
+            if not target.exists() and path.is_relative_to(ROOT):
+                resolved = target.resolve()
+                if resolved.is_relative_to(ROOT.parent):
+                    relative = resolved.relative_to(ROOT.parent)
+                    if relative.parts and relative.parts[0] in REPOS.values():
+                        target = WORKSPACE / relative
             fixed = path.is_relative_to(ROOT) and str(path.relative_to(ROOT)) in frozen
             if not target.exists() and fixed:
                 mapped = historical.get(target.resolve())
@@ -101,7 +113,7 @@ def main():
                     historical_links += 1
                     continue
             if not target.exists():
-                errors.append(f"本地链接失效：{path.relative_to(ROOT.parent)} -> {href}")
+                errors.append(f"本地链接失效：{path} -> {href}")
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
