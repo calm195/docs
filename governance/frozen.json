@@ -142,6 +142,12 @@
     "development/backend/validation/2026-10-23-crisis-care-r1.json": "9156f63e71eb1b09d8bf5edf8e56710e83f2c8a587941d242e74f7158fff4ee9",
     "development/backend/validation/2026-10-23-crisis-care-integration.txt": "1ff55efbc49a18c60fa02fbb9d748ca34d1ac1a3ee96bb6c3643e23626deaff5",
     "development/backend/validation/2026-10-23-crisis-care-quality.txt": "f685bdba1e0a05428afd410ba51bbdeb5e1ae8c61aed39be34038050b4b362c3",
-    "development/backend/validation/2026-10-23-crisis-care-cleanup.json": "362851d8d98cd2849667e512c2312e94c8502a3c1af70177a99ad46b15c3aa44"
+    "development/backend/validation/2026-10-23-crisis-care-cleanup.json": "362851d8d98cd2849667e512c2312e94c8502a3c1af70177a99ad46b15c3aa44",
+    "development/backend/milestones/2026-10-23-privacy-deletion-r1.md": "bd22511e1567eec214acdd0ffed8946e17b294e905aade108f269c239c1a9e64",
+    "development/backend/validation/2026-10-23-privacy-deletion-cleanup.json": "9e03810bc27d88caad257a80ef52549044c9b82a712a05e4d26c84daf91f9b3a",
+    "development/backend/validation/2026-10-23-privacy-deletion-integration.txt": "f3b8d3ea22cb84686054a5f6d341f0aea83293ef2579002ac536fd18f082e520",
+    "development/backend/validation/2026-10-23-privacy-deletion-migration.txt": "451ea70b892bccaeb8c7dd07bf73e777d7a5ea558c140cc242805c041f74bafc",
+    "development/backend/validation/2026-10-23-privacy-deletion-quality.txt": "77de724ff263d0beeffd12f6d779b6f325cabfed2bc841e3df90dc3abd1811af",
+    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c"
   }
 }

@@ -81,3 +81,5 @@
 - [2026-10-22 拉黑、举报、处罚、警告与申诉服务](milestones/2026-10-22-safety-governance-r1.md)
 
 - [2026-10-23 危机案件、限定证据与关怀服务](milestones/2026-10-23-crisis-care-r1.md)
+
+- [2026-10-23 注销、隐私屏障、普通清理与证据删除](milestones/2026-10-23-privacy-deletion-r1.md)

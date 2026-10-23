@@ -1,0 +1,14 @@
+{
+  "project": "liyuanci-privacy-dfb0fb4c",
+  "containers": [],
+  "networks": [],
+  "retained_volumes": [
+    "liyuanci-privacy-dfb0fb4c_mq-data",
+    "liyuanci-privacy-dfb0fb4c_pg-data",
+    "liyuanci-privacy-dfb0fb4c_recovery-data",
+    "liyuanci-privacy-dfb0fb4c_redis-data"
+  ],
+  "credentials_retained": true,
+  "volume_deletion": false,
+  "other_projects_operated": false
+}

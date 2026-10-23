@@ -123,3 +123,13 @@ infra只检查本地端口；doctor验证实际数据库身份、关键结构、
 开发API只有在私有凭据文件显式配置`CrisisDSN`后注册危机后台路由；该连接使用仅属于`liyuanci_crisis_api`的独立受限登录，不复用ReviewDSN或StudentDSN。初始化不会生成此账号或替换旧密钥，登录须由管理员显式交付。可选`Care`对象字段为`version/source/verified_at/hotline_24_hours/appointment/notice`，核验日期使用YYYY-MM-DD；必须来自已交付资料，不能把隔离合成资源用于真实用户。普通关怀通知引用本人卡片，由GET /api/v1/me/care-cards/{id}读取。
 
 生产宿主通过`WorkerConfig.CrisisNotifier`显式注入授权人员通知适配器，按投递ID去重，消息只含技术引用；开发默认没有真实通知发送方。接口、角色、迁移和验证边界见[危机服务阶段记录](milestones/2026-10-23-crisis-care-r1.md)。
+
+## 注销及证据删除
+
+先显式应用0019并重放权限，再为私有凭据文件交付可选`PrivacyDSN`（仅属于liyuanci_privacy_maintenance）、`EvidenceDeletionDSN`（仅属于liyuanci_evidence_delete_api）及独立日志`RecoveryWriterDSN/RecoveryReaderDSN/RecoveryWrapKey`，才注册对应删除入口。恢复日志必须由单独迁移身份在独立资源执行journal-up/journal-permissions；开发初始化不自动创建资源或生成替代密钥。日志读写池必须定位同一当前权威实例与数据库，不能误接另一份副本。正式物理故障域、备份隔离及真实身份仍需交付验收。
+
+`make build`新增`bin/privacy-worker`。以`APP_ENVIRONMENT=integration`、`APP_DEVAPPFILE=/绝对路径/business.json`、`APP_PRIVACY_SCOPE=account`或`evidence`显式启动；账号工作使用PrivacyDSN，证据清理使用另行交付、仅属于liyuanci_evidence_purger的EvidencePurgerDSN。它不随dev-api/card-worker隐式启动，不迁移、不修改已有凭据或启停其他资源。取消后等待在途请求完成再释放池。
+
+本地开发入口没有外部全版本清理/缓存屏障或组合信息脱敏适配器，任务保持processing并保留安全错误码，不模拟全部删除成功。正式宿主通过privacy.New显式注入Eraser、Config.Redactor及独立Journal，再调用Service.Run；缺少适配器不作为真实用户删除验收。幸存心愿生成脱敏新稿但不自动送审，作者显式提交后走强制人工审核；已还愿始终不重新招募。恢复入口Recover扫描含已确认记录的全部意图，不自动开放网络或签发恢复放行。
+
+接口、回执及六行矩阵、迁移/权限、实际验证和未完成依赖见[隐私清理阶段记录](milestones/2026-10-23-privacy-deletion-r1.md)。
