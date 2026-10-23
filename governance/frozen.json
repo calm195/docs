@@ -201,6 +201,11 @@
     "development/admin/validation/2026-10-23-moderation-separation-r1.json": "8e1325f3d426c5e2d7b8a9084893639a1e906feae76cb8e47510f1f742f0d346",
     "development/admin/validation/2026-10-23-moderation-separation-quality-r1.txt": "3020b7a3707868c9e904b11279ef42336df659ac95b242eae575489fee17f7b9",
     "development/admin/validation/2026-10-23-moderation-separation-dark-r1.png": "c15a47153a672651b2aa7ed7f6a4a034f692a17d1d6558282e1005fcabb66026",
-    "development/admin/validation/2026-10-23-moderation-separation-light-r1.png": "11c0e851f453798fea5a4a6c52e606bd1a4bca4f28ab86f8dd0a43639a234302"
+    "development/admin/validation/2026-10-23-moderation-separation-light-r1.png": "11c0e851f453798fea5a4a6c52e606bd1a4bca4f28ab86f8dd0a43639a234302",
+    "development/admin/milestones/2026-10-23-crisis-separation-r1.md": "47814be7ca193ba79e5ca01fede618d8fba25113f1eaeb0d5058c8b8cb361a03",
+    "development/admin/validation/2026-10-23-crisis-separation-r1.json": "ed76687f9a41877160414d936cf3b5373c1e61635fc1f78a097f71a69d173d50",
+    "development/admin/validation/2026-10-23-crisis-separation-quality-r1.txt": "747a91f55279826fecf0df3ff795afb9b5d01dcd24f44b0063900e7920df8725",
+    "development/admin/validation/2026-10-23-crisis-separation-dark-r1.png": "cb5cda763ab3f892f4bf506f9f3b28875b53e6026739f6f81e121ef00d7da173",
+    "development/admin/validation/2026-10-23-crisis-separation-light-r1.png": "a04522ea70742a89a9e3fd42744d2ca3244957f1a6450ab7ee9d6ff81fea66b5"
   }
 }
