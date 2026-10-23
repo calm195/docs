@@ -27,3 +27,5 @@
 - [2026-10-23 心愿详情检查修复与提交补充](milestones/2026-10-23-wish-detail-lifecycle-r2.md)
 
 - [2026-10-23 应愿申请、唯一匹配与公开主页接入](milestones/2026-10-23-applications-matching-r1.md)
+
+- [2026-10-23 聊天、站内通知与微信AppID配置](milestones/2026-10-23-chat-notifications-r1.md)

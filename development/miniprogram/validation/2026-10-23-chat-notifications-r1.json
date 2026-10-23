@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-23",
+  "source_branch": "develop",
+  "source_commit": "4743d1c764f45b54a91e8776b30e1899552356d4",
+  "source_base": "40fb2248081c2dfc950c92529f7a5f95d76c318c",
+  "docs_branch": "mini-deveop",
+  "docs_base": "e859c43917d3ef32a6c443879c7cbb0da465ebea",
+  "contract": "0.2.0 / actions revision 5",
+  "checks": {
+    "npm run check": "通过，62项测试，0失败；ESLint、Prettier、TypeScript通过",
+    "npm run build:mp-weixin": "通过；DCloud统计应用ID提示保留，微信AppID产物已确认",
+    "git diff --check": "通过",
+    "python3 scripts/check_documents.py": "文档追加固定条目后执行，结果以最终命令输出为准"
+  },
+  "wechat_appid": "wxbc34f14cf9bbdc8d",
+  "artifact_checks": {
+    "dist/build/mp-weixin/project.config.json": "appid与用户提供值一致",
+    "dist/build/mp-weixin/app.json": "包含pages/inbox/index与pages/chat/index"
+  },
+  "http_readonly": [
+    {
+      "path": "/healthz",
+      "status": 200,
+      "request_id": "b4c33d561de81a404135d70bb40d3c45"
+    },
+    {
+      "path": "/api/v1/me/conversations",
+      "status": 401,
+      "request_id": "1fd43e8dd42ed8944b8ff5c7e6323302"
+    },
+    {
+      "path": "/api/v1/me/notifications",
+      "status": 401,
+      "request_id": "c8e4640dbdfe9604f0bb11e56317eec3"
+    }
+  ],
+  "boundaries": "页面脚本、API、真实Vue与Pinia回归替代平台、登录与request；轮询调度器可控替代。真实HTTP仅只读未登录GET，不生成真实消息或通知，不计双账号、审核与微信外发联调通过。",
+  "files": {
+    "README.md": "f0da6b945d5b8ba1b03729c1578dcd7573112400bbe2a4f2a4492face91c5521",
+    "src/api/chat.ts": "824a0d3b34b846ba16600c69a9cbaf67fb388835ad033d366548e81b1766a785",
+    "src/manifest.json": "3b896212913a93150c51253afbbdd6c7df4ac6caa2dbc42f6b257b7a198adb97",
+    "src/pages.json": "945c79de8041a658971467f4e7245abc1f448b233d0f272a914ad91f7c1cdffa",
+    "src/pages/applications/index.vue": "67c5bb59b77207d5cf7293471f76954df165e62ee0325bb82cfd65293f2eef06",
+    "src/pages/chat/index.vue": "da3efede411320959f9f3858cb4b3d7ed31d70289dd8e37215bed3a34c85663d",
+    "src/pages/inbox/index.vue": "176dd44c083cf48c20f20dacf1803656e598079b6f3df585145aa3ffbbcc2acf",
+    "src/pages/index/index.vue": "df180985cd4e001130a8ed4935e0cc9828408d55e2d187f6500ac30328ca0b3c",
+    "src/pages/wish-detail/index.vue": "5954155103d25e84f97cde0e0a12ff5e216f0be5d6a6d8ddc6072db43c663241",
+    "src/stores/chat.ts": "ab166a885f31df7c033148181083b3cd8a346f53009a5cb32c5321e45df3b7f4",
+    "src/types/chat.ts": "d9255e5379d231241d9182313f436abcc8cebe0cafb0ad28546a143b4f9b95d2",
+    "src/utils/chat.ts": "2331253f45051b5b4592119696111050d1b662bf7a37faa056ed83a4cf7b1434",
+    "src/utils/visible-poller.ts": "603fc620e6f120685582705ba2fb3a29ab515df17afedd7046637ca537c4d101",
+    "tests/chat.test.ts": "a1cce5e3d4791d27b2cf7bdc434f1cfce4cd3dd69ae34a612ad4defef2e400ec"
+  },
+  "build_artifact_sha256": {
+    "dist/build/mp-weixin/project.config.json": "33ece7b91b90a271cad208bb64a008671e69a1a50c74941dec11d28858e27344",
+    "dist/build/mp-weixin/app.json": "f9d0b1768c66df10de6ee146549256bc6f482cfc95c847c3e047944f00b971a4"
+  }
+}

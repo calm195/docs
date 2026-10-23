@@ -157,6 +157,10 @@
     "development/miniprogram/milestones/2026-10-23-applications-matching-r1.md": "20a21cfeceb63125c75f6c47e5ec51e49984f08933e689bdfbaeb4cba4d676e2",
     "development/miniprogram/validation/2026-10-23-applications-r1.json": "db69c60ee3531654cbf2fd646c591378c64a2f63acc4acb5b3db25e68f68bdd0",
     "development/miniprogram/validation/2026-10-23-applications-check-r1.txt": "6f227fef745c08cf23e50a86a2aebf5f5e0825e9691e2e8993efe73e80f012a5",
-    "development/miniprogram/validation/2026-10-23-applications-build-r1.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f"
+    "development/miniprogram/validation/2026-10-23-applications-build-r1.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+    "development/miniprogram/milestones/2026-10-23-chat-notifications-r1.md": "e84ff56fcf11424c91f0864e04b0f1e0bd298b7174df6e5b438312bdcb52ee63",
+    "development/miniprogram/validation/2026-10-23-chat-notifications-r1.json": "0f0afdf5c4451e928465f0852a4c5cfc3bce3b9aa2b7a9fb95e54f3b6129621f",
+    "development/miniprogram/validation/2026-10-23-chat-notifications-check-r1.txt": "4ed073bd0b2204398924db5be6564058a654931e1bfc4ca93cdc91704e9f8dff",
+    "development/miniprogram/validation/2026-10-23-chat-notifications-build-r1.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f"
   }
 }
