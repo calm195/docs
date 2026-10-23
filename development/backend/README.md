@@ -91,3 +91,7 @@
 - [2026-10-23 本地危机后台身份与管理端联调接入](milestones/2026-10-23-local-crisis-api-r1.md)
 
 - [2026-10-23 本地危机后台精确源码提交补充](milestones/2026-10-23-local-crisis-commit-r1.md)
+
+- [2026-10-23 本地隐私后台与全模块联调启动](milestones/2026-10-23-local-privacy-startup-r1.md)
+
+- [2026-10-23 本地隐私删除与联调启动精确源码提交补充](milestones/2026-10-23-local-privacy-commit-r1.md)

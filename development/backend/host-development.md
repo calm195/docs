@@ -150,3 +150,41 @@ infra只检查本地端口；doctor验证实际数据库身份、关键结构、
 本地开发入口没有外部全版本清理/缓存屏障或组合信息脱敏适配器，任务保持processing并保留安全错误码，不模拟全部删除成功。正式宿主通过privacy.New显式注入Eraser、Config.Redactor及独立Journal，再调用Service.Run；缺少适配器不作为真实用户删除验收。幸存心愿生成脱敏新稿但不自动送审，作者显式提交后走强制人工审核；已还愿始终不重新招募。恢复入口Recover扫描含已确认记录的全部意图，不自动开放网络或签发恢复放行。
 
 接口、回执及六行矩阵、迁移/权限、实际验证和未完成依赖见[隐私清理阶段记录](milestones/2026-10-23-privacy-deletion-r1.md)。
+
+
+## 隐私注销、证据删除与全模块联调
+
+Docker宿主模式新增显式初始化入口，运行前先停止所选项目的Go进程：
+
+```sh
+make dev-stop
+make dev-privacy-init
+make dev-infra DEV_ARGS="--mq --management --monitoring"
+make dev-doctor
+# 以下各自独立终端常驻
+make dev-api
+make dev-worker
+make dev-content-worker
+make dev-privacy-worker
+make dev-evidence-worker
+```
+
+`privacy-init`复用普通业务显式迁移与权限入口，另创建独立`recovery-postgres`容器/卷和`liyuanci_recovery`数据库。业务库使用`dev_privacy_maintenance`、`dev_evidence_delete_api`、`dev_evidence_purger`三个登录身份，恢复库使用`dev_recovery_writer/reader`，每个身份仅属于对应同名`liyuanci_*`运行组；恢复迁移身份只保存在`.local/local/recovery-migration.json`。新的`RecoveryWrapKey`与历史用途密钥隔离，不替换历史账号、口令或微信配置。已有恢复数据库缺少历史配置时拒绝生成替代密钥。重复初始化保留全部已有凭据。
+
+恢复库默认仅绑定`127.0.0.1:15433`，通过`LIYUANCI_LOCAL_RECOVERY_PG_PORT`覆盖；业务库仍为15432。初始化成功后在operations.env登记`LIYUANCI_LOCAL_PRIVACY_ENABLED=true`，后续`dev-infra`启动该恢复服务；普通API/worker启动不执行迁移。`dev-stop`记录并停止五个Go进程；`dev-infra-stop`再停止本项目基础设施，始终保留数据卷。账号/证据两个清理进程复用privacy-worker二进制，但使用独立scope、锁和PID文件。当前privacy-init不支持原生模式；原生部署需另行显式交付独立恢复集群和凭据。
+
+联调接口为`POST /api/v1/me/deletion-requests`、`GET /api/v1/deletion-receipts/{receipt}`、`DELETE /api/v1/admin/evidence/{id}`与`GET /api/v1/admin/evidence-deletion-jobs/{id}`。注销需要本人令牌、幂等键、confirmation=delete_account及账号expected_version；证据删除需要当前超管、幂等键、reason及证据范围expected_version。202只表示受理；匿名回执不可使用裸UUID。受理后会立即撤销相关会话或阻断目标读取，测试请使用专用测试账号和证据。
+
+本地开发入口没有全版本对象/回收站/缓存清理器，也没有幸存内容脱敏器。worker会运行并重试，但任务保持processing，不能显示已经物理清除。当前内容manual模式保留原文、强制人工复核；危机识别供应商、正式词库资料、已核验援助资料与实际通知均未接入。学生卡扫描和学校规则继续使用既有开发模拟实现；微信配置保留，未做实机登录验证。
+
+2026-10-23本机联调已启动API、学生卡MQ worker、内容MQ worker、账号与证据两个隐私worker，PostgreSQL、独立恢复PG、Redis、NameServer/Broker、pgAdmin、Redis Insight、RocketMQ Dashboard及Alloy/Loki/Grafana/Prometheus。MQ主题显式创建，两个MQ配置使用仓库模板的本地独立组/实例，文件置于.local并通过`LIYUANCI_LOCAL_CARD_MQ_FILE/CONTENT_MQ_FILE`选择。API已装配认证、心愿、应愿、聊天、故事、审核/词库、安全治理、危机和隐私路由。辅助工具地址如下：
+
+| 工具 | 本机入口 |
+| --- | --- |
+| 后端 | http://127.0.0.1:18080 |
+| pgAdmin | http://127.0.0.1:15050 |
+| Redis Insight | http://127.0.0.1:15540 |
+| MQ Dashboard | http://127.0.0.1:18081 |
+| Grafana | http://127.0.0.1:13000 |
+
+pgAdmin已追加“鲤源池本地恢复日志（只读）”连接，未保存数据库口令；口令来源为私有business.json的RecoveryReaderDSN。恢复日志中目标引用为加密信封，不能把数据库查询当成明文导出接口。监控此次启动基础采集栈，只采集Docker日志；未启用中间件exporter、Linux宿主指标及真实通知，宿主Go进程日志仍见`.local/local/logs/`。独立恢复容器不等同生产故障域/备份隔离。实际检查与限制见[本地全模块启动记录](milestones/2026-10-23-local-privacy-startup-r1.md)。

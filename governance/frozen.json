@@ -156,6 +156,10 @@
     "development/backend/milestones/2026-10-23-local-crisis-api-r1.md": "d5680952e6bb6345f8d311b220a37d972bca48167020e0011cc114f8521e5cdc",
     "development/backend/validation/2026-10-23-local-crisis-api-r1.json": "e1cd23faa42e11032b8e536a80d12519cf88e408ebd8ed07502be52ef582eb32",
     "development/backend/validation/2026-10-23-local-crisis-pg-r1.txt": "fc3cd7fcf30e73153de8279256f34e54ac7442e7063904f34eba5fd4b10de0ca",
-    "development/backend/milestones/2026-10-23-local-crisis-commit-r1.md": "9e3fce45c4c4a74d368fec69ba3690b24d41e87566a14b41c8ed1176368774f9"
+    "development/backend/milestones/2026-10-23-local-crisis-commit-r1.md": "9e3fce45c4c4a74d368fec69ba3690b24d41e87566a14b41c8ed1176368774f9",
+    "development/backend/milestones/2026-10-23-local-privacy-startup-r1.md": "f9d43684204adacfd00b5e6178d2cd6648b236fffd98d31187c6a204a42c2fb5",
+    "development/backend/validation/2026-10-23-local-privacy-startup-r1.json": "e47ec1c9a60d586c91cc8107cc6524cfe45514adaea4a7f4e9936647c4fa7b4a",
+    "development/backend/validation/2026-10-23-local-privacy-startup-r1.txt": "1a8b2e044079624279868fa4655b252c85d979bf69a3b273ba3f09a7eab21e38",
+    "development/backend/milestones/2026-10-23-local-privacy-commit-r1.md": "9b32c32e9573d05c15f42ede528e2ad69a26fa7a42f796a1a85a81493fc3c614"
   }
 }
