@@ -1,0 +1,60 @@
+{
+  "source_branch": "codex/admin-navigation-theme",
+  "source_base": "ca66172efd10c13449eedecbc3246218634d39b1",
+  "source_commits": [
+    "1f67ea3e49c5be8ab2c070477ef31409f37fd982",
+    "6a32b8105eb534606edd8d46df417f9b10690d98"
+  ],
+  "docs_base": "525479b017af0d49326cd96a39613f87f7a13bd6",
+  "files": {
+    "README.en.md": "ba501578503399a06117a6d55f35d0bbcf33e9f56a77017bb5a0f495c599b6e6",
+    "README.md": "c55e29584b191ae8139e503ff00e81a390d9b82b1d5138ad85a34894c76b65a3",
+    "src/components/AdminLayout.spec.ts": "b9ee121521575a1fa6fb700e6cefe45fda5c923baca40542093ebe3908f91383",
+    "src/components/CrisisEscalation.spec.ts": "aebe24d822986def85878b781f491da5871a874b403c11fb753740e64b0628fa",
+    "src/components/CrisisEscalation.vue": "b077c83fe91bdab8ffe866a46b3cf077c50b072518adc9a3e2943897df481d32",
+    "src/components/SafetyWorkspace.vue": "3a4a876121679ac98ec138b1115f7e88daeb32f93a321400783e0accc5b098bc",
+    "src/composables/useSafety.ts": "ad8634969e090dee04f1165183af945c206ca8bfb54c6ec0b98d36547ef8bb52",
+    "src/router/index.spec.ts": "16a41dfb978449765b9ee4bd3b1cf487f13dce5bb0de335c104d532430c15bb2",
+    "src/router/index.ts": "d361d39016e730d1c8bdb5d04082d7328f18c7b72a6afe1d3c7e50a9cf56af5d",
+    "src/views/AppealsView.vue": "f1d239a869f2ba820f6b8ab3135a6ad2c48cc146eb2af8d4e67d7bf314836a1b",
+    "src/views/PenaltiesView.vue": "f5ece0b279f8fcf45703e0214ec7aa7b1af2b2b57cb6ed0a1b7faab1a719232b",
+    "src/views/ReportsView.vue": "b12c0bac001ab64990e90abbb3aa44d1d1ae7b8462a214220bdd16df88ac8e40",
+    "src/views/SafetyView.spec.ts": "955823741a789ed6fd6e7b662e1e0b0a3272c34e5d24e8bc81f684cce4af65cd",
+    "src/views/SafetyView.vue": "4c8abc01a40c5d35a584040b667e40ad428debe2053c7c7953643ed0589f08a2"
+  },
+  "browser_screenshots": {
+    "development/admin/validation/2026-10-23-safety-pages-appeals-dark-r1.png": "cb8bc845bb4eecda28c71f4490f063f3bc372eb7e6139906a9f926909334442f",
+    "development/admin/validation/2026-10-23-safety-pages-penalties-light-r1.png": "2f5591d949eb5f1893ceaa8c6ed0d23903f32f3ab99d46b95d65f476f035d652",
+    "development/admin/validation/2026-10-23-safety-pages-reports-light-r1.png": "62c6dfa4da7f6ada48b53f64e3d3cbb12d01e883264885cede0a7b6e0b3934dd"
+  },
+  "historical_record": "development/admin/milestones/2026-10-23-safety-management-r1.md",
+  "historical_record_sha256": "7cb94ce66181e8513238ce1c957f1f58ea2c0b29cb37e1e0ac75c54aee6daaf9",
+  "checks": {
+    "pnpm format": "通过",
+    "pnpm check": "27文件320项业务测试、58项规范测试通过；格式、零警告ESLint、严格类型通过",
+    "pnpm build": "通过",
+    "git diff --check": "通过"
+  },
+  "real_browser": [
+    "用户手动登录",
+    "三个安全治理入口及标题、面包屑",
+    "真实举报/处罚依据/申诉列表均为空",
+    "处罚页当前分页与接口边界提示",
+    "浅色举报和处罚页、深色申诉页，结束恢复浅色举报页"
+  ],
+  "simulated": [
+    "详情按需读取与抽屉显式开启",
+    "案件/正文/账号/内容版本独立",
+    "举报/处罚/申诉分别确认并提交",
+    "处罚当前页筛选与不透明游标",
+    "幂等重试、409重读与404/401/403",
+    "切页和换会话取消在途请求、丢弃旧正文回执",
+    "危机升级期间锁定关闭，冲突前先释放锁定"
+  ],
+  "not_verified": [
+    "真实业务写入闭环",
+    "真实非超管角色会话",
+    "真实窄屏焦点和滚动",
+    "处罚历史查询（未提供接入接口）"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-23",
+  "branch": "codex/admin-navigation-theme",
+  "source_base": "6a32b8105eb534606edd8d46df417f9b10690d98",
+  "source_commit": "b1f3fcfe23cc7feb31ea93de8633cae59162d13b",
+  "docs_base": "9e919589a322b7412f671386e47e2c7d344fe63b",
+  "contract": "0.2.0 revision 5（未变更）",
+  "files": {
+    "README.en.md": "373a233e4ff531cbac56f355e31ea996288fe07680662563455035552aae7d1f",
+    "README.md": "77f616301071375d90b37a112d2bca63472830c9ad5e49ebdb5ef01e061fec60",
+    "src/components/IdentityCaseDetail.vue": "0fa2b977125210d1ad08b92078b01acf024dbe2bb7ccf352ee8e1f2412c84890",
+    "src/composables/useIdentityReview.ts": "cbf58f12e62b423c708c6ff19ca274f722df47c94bd356f2e9a43a0b6db080c6",
+    "src/views/IdentityView.spec.ts": "71fb4c24c62779446be418a2be6852e50b985d5c9c62098c44f7cccd8d9dac9b",
+    "src/views/IdentityView.vue": "116c95e19726c07c009ad88ccd20cc47e531941e7d4d232749f4af37966e00b3"
+  },
+  "checks": {
+    "pnpm format": "通过",
+    "pnpm check": "通过，322项业务测试、58项规范检查器测试",
+    "pnpm build": "通过",
+    "git diff --check": "通过"
+  },
+  "browser": {
+    "real": "复用5173和18080，用户登录会话；列表为空，验证查询刷新、菜单/面包屑、深浅主题",
+    "simulated": "合成案件验证按需详情、显式抽屉、取消/锁定、版本冲突、幂等和离页清理",
+    "unverified": "真实案件处理、窄屏人工焦点/滚动、低权限真实账号未验证；没有发送业务写入"
+  },
+  "screenshots": {
+    "development/admin/validation/2026-10-23-identity-separation-dark-r1.png": "65f301d170e2d884aa998a3f1a36d94ae4d3d5469d6869840df98b6d10369fde",
+    "development/admin/validation/2026-10-23-identity-separation-light-r1.png": "a04c9c2b83cbd3bfd2676b0f4802eddd869cc3cb6c7ec59ef3b668bac743006e"
+  }
+}

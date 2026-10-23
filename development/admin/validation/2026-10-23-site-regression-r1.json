@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-23",
+  "branch": "codex/admin-navigation-theme",
+  "source_base": "e624ba174dc81548534c59ae94b7c829d97cd7c0",
+  "source_commit": "05dcd004830571a6c2c25d85ba7fd3dd271de346",
+  "source_commits_in_dependency_order": [
+    "382ff459f4b645e308b10353b70135c872a958f6 fix(admin): 卸载页面后撤销旧工作区授权",
+    "63bda1d76e2ca4010349fe040e9e8bda260a753c fix(admin): 保留抽屉关闭按钮的组件样式",
+    "05dcd004830571a6c2c25d85ba7fd3dd271de346 fix(admin): 登录后由应用层完成工作台跳转"
+  ],
+  "docs_base": "3e572b33db865fb872d4927cd748c33eba2d7818",
+  "contract": "0.2.0 revision 5（不变）",
+  "files": {
+    "src/App.vue": "fd0d5b2ffbd11ade1b4cb8fb0ce88ed4d5b502aacb679871e473feb52862c801",
+    "src/assets/styles/main.css": "be18e2eb36215c827c1861ee0fdd8d53220230a0eb44a109dc3a0922ec820c23",
+    "src/components/AdminLayout.spec.ts": "18c84b2242604b001dc2922ef241eebf8610c9f8a704ea23463046baace60ab7",
+    "src/composables/useAdminWorkspace.ts": "0542787090b792d58043c85125134d9415ed8a3055423a4dba5a277a6f17f0d2",
+    "src/views/AccountsView.spec.ts": "d05aa95c00ff69aeb6f10c7c72073d690d591afd6bc5de6b3b965997441de826"
+  },
+  "checks": {
+    "baseline": "pnpm check：27 文件 / 336 业务测试 / 58 规范测试通过",
+    "common": "pnpm format、check、build：27 文件 / 337 业务测试 / 58 规范测试通过",
+    "login_final": "pnpm format、check、build：27 文件 / 338 业务测试 / 58 规范测试通过",
+    "source_diff_check": "通过"
+  },
+  "mock_policy": "仅临时 Node/Vite 进程内存，独立 127.0.0.1:5174，无真实后端转发；模拟数据、启动脚本、响应原文与含模拟数据截图未保存或加入 Git；临时标签已关闭，进程停止，端口已释放",
+  "browser_summary": {
+    "real_service": "5173/18080 复用既有服务；全部业务入口可打开、双主题无横向溢出；身份/内容/举报/处罚/申诉/危机队列为空；未提交真实写入",
+    "simulated_processing": "账号/身份/内容/举报/处罚/申诉/危机七模块，两种主题下详情默认无处理表单，显式抽屉内有处理表单，抽屉外无处理表单；取消可关闭；证据删除理由在抽屉内，最终确认可取消；回执进度/清理依赖提示/完成状态已核对",
+    "wordlists": "列表/详情/草稿独立，详情与草稿面包屑可返回列表，离页清空未提交词条",
+    "roles": "super_admin/review_operator/crisis_operator/空角色模拟登录；审核角色无超管或危机菜单且无危机升级按钮，历史账号地址拒绝；危机角色历史内容审核地址拒绝；空角色历史危机地址拒绝，仅工作台与改密菜单",
+    "themes": "工作台、本人改密、账号、身份、内容、词单三页、举报、处罚、申诉、危机、证据删除、回执、403 均核对浅深色、面包屑和桌面宽度"
+  },
+  "screenshots": {
+    "development/admin/validation/2026-10-23-site-regression-drawer-dark-r1.png": "abe3b210aa7dd830aeefc9f71d658fb9471a3372008bf8b9c78aeb533d0b9174",
+    "development/admin/validation/2026-10-23-site-regression-drawer-light-r1.png": "8a76f4a2d1e1fa8cd7c6a44c7569a0eb50db57e92926b72f7253b284b0f0d5a7"
+  }
+}

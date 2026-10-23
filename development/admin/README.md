@@ -52,3 +52,21 @@
 - [T032 后台证据删除、回执管理及危机服务启用补证据](milestones/2026-10-23-evidence-deletion-r1.md)
 
 - [T032 隐私路由启用后真实接口联调及查询反馈修复](milestones/2026-10-23-evidence-deletion-r2.md)
+
+- [2026-10-23 统一布局、面包屑及深浅色主题基础](milestones/2026-10-23-navigation-theme-r1.md)
+
+- [账号查询与抽屉编辑分离 r1](milestones/2026-10-23-accounts-editor-r1.md)
+
+- [词单列表、详情与草稿拆页 r1](milestones/2026-10-23-wordlists-pages-r1.md)
+
+- [举报、处罚与申诉独立页面及处理抽屉](milestones/2026-10-23-safety-pages-r1.md)
+
+- [身份审核查询详情与处理分离](milestones/2026-10-23-identity-separation-r1.md)
+
+- [内容审核查询详情与处理分离](milestones/2026-10-23-moderation-separation-r1.md)
+
+- [危机查询详情与处理抽屉分离](milestones/2026-10-23-crisis-separation-r1.md)
+
+- [证据删除处理与回执查询独立页面](milestones/2026-10-23-privacy-pages-r1.md)
+
+- [全站回归与公共边界修复](milestones/2026-10-23-site-regression-r1.md)

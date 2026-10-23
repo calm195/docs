@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-23",
+  "source_branch": "codex/admin-navigation-theme",
+  "source_base": "9c8d358727bd73b88df06522a45e2e2bf7385ba4",
+  "source_commits": [
+    "2262347aeb01fbd7bcc96a0687222f487fda946d",
+    "f07d92f66cf8b97351294a7c4addad82a327a426"
+  ],
+  "docs_base": "c2acba5588375f2ccec7d0993626b656a550cdc9",
+  "contract": "0.2.0 revision 5（未修改）",
+  "source_files": {
+    "README.en.md": "5809e29c90854f64bffc4bf88da7092be81f4d5f6937571a429fe2c9dccad3a2",
+    "README.md": "0394ce92fb61ffcf2c0102393f337e8e4ed1e5f477cae8e945217f57c05a57b7",
+    "index.html": "8f0476c8325601108b82f287d5f8a13a16bf2b73c05d078e627e3c945168c1fd",
+    "package.json": "86b41b570759bcf9ab7cec4218587aa891262d310d2e4dc34f84247ec0a7dd73",
+    "patches/@vue__runtime-core@3.5.44.patch": "1715c1f389273f819810a1b566f22b176ec27af7f02b5008239e3c90fb1792d1",
+    "pnpm-lock.yaml": "2275fc8b060ed378c28a328e8f78e138adb276dac81fba00885faf68b98002d1",
+    "pnpm-workspace.yaml": "214de880d492a6bd6d0084afdd632af2b03ab6ebad9db8c0196e93dd731b4912",
+    "src/App.vue": "bd493503256a458019b00c46e5242f6777ce9a77c74e792acdf0436d93bab228",
+    "src/assets/styles/layout.css": "de65753616f70e7a0b501c140ad21718563a2301328e393d83a1c5da66bad92a",
+    "src/assets/styles/main.css": "066be41ec1a15355c0d69d3e60d560afa416cbedbed5e6f58539c6adf08e82fa",
+    "src/components/AdminLayout.spec.ts": "21323de7ede0028e5973888ecdd60a0766b8befdfac05794d8d584eb61672f3a",
+    "src/components/AdminLayout.vue": "826829d2599e3988b0a382dddcc3c1948f27d2b3401966c5094c73ed3f2f1d2f",
+    "src/components/AppBreadcrumb.vue": "6127fb93571d0c02f9c2332ac7b9945b6ce957160629e6482b6f1929b2941e9b",
+    "src/components/ThemeSwitcher.vue": "395a648d9bc454efc71c398470c3a0a51f325d25f050c04f62aae77e98c4be81",
+    "src/main.ts": "551d6bf38a42638aedc2e17669ec419ade4284145cd01fa6fdd909c0ef7dc19b",
+    "src/router/index.ts": "48b8e62d1f27b0f5e3c5c8e16dd1929a14880539e0c1635b01764130648e1713",
+    "src/services/theme.ts": "8e2d9fed02fe8a1ec982b5e52623f7ffc3014474657225bd5666c61bb4c75654",
+    "src/stores/theme.spec.ts": "5d6232e4b6d190417ba3d708ddac5573d9b8279b39a85eb4e306af1ef0974054",
+    "src/stores/theme.ts": "55649cd612e88940f4ee8f6a81cb4012e386dfab1ded347a42d6aef8818f822b",
+    "src/views/AccountsView.vue": "928b79ef2fde520ba2f876ba8172bd29457f17595225b1dc78338e3858a75a6e",
+    "src/views/IdentityView.vue": "6009cd7bead8b40b932ed9f1f4e7c071eb9cd242aa65f5cd81a8c981693e7c62",
+    "src/views/SafetyView.vue": "8860b6d5d52b1cd46402697b06fe183801c06d957c7a161507137ac26ee1bbc1"
+  },
+  "browser": {
+    "frontend": "http://localhost:5173",
+    "backend_proxy_port": 18080,
+    "login": "用户手动登录测试账号，未读取或记录口令与令牌",
+    "verified": [
+      "登录页深色切换与刷新保留",
+      "已登录工作台布局",
+      "业务页浅色与深色背景、表单及提示",
+      "面包屑返回工作台"
+    ],
+    "not_verified": [
+      "窄屏真实浏览器布局",
+      "操作弹窗与业务拆页",
+      "业务写入与后端完整业务闭环"
+    ]
+  },
+  "quality": {
+    "business_tests": 301,
+    "convention_tests": 58,
+    "test_files": 27,
+    "format": "通过",
+    "check": "通过",
+    "build": "通过"
+  }
+}
