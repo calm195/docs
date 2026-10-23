@@ -54,3 +54,5 @@
 - [T032 隐私路由启用后真实接口联调及查询反馈修复](milestones/2026-10-23-evidence-deletion-r2.md)
 
 - [2026-10-23 统一布局、面包屑及深浅色主题基础](milestones/2026-10-23-navigation-theme-r1.md)
+
+- [账号查询与抽屉编辑分离 r1](milestones/2026-10-23-accounts-editor-r1.md)
