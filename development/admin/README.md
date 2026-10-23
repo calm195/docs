@@ -62,3 +62,5 @@
 - [举报、处罚与申诉独立页面及处理抽屉](milestones/2026-10-23-safety-pages-r1.md)
 
 - [身份审核查询详情与处理分离](milestones/2026-10-23-identity-separation-r1.md)
+
+- [内容审核查询详情与处理分离](milestones/2026-10-23-moderation-separation-r1.md)

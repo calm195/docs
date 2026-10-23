@@ -196,6 +196,11 @@
     "development/admin/validation/2026-10-23-identity-separation-r1.json": "3aba9a570c59ffa5c3fc35f19255f83f00ba51ceac6f252bee1a43163524cd6d",
     "development/admin/validation/2026-10-23-identity-separation-quality-r1.txt": "d13cd805f6165e44f2022606c90d041dfef7e50fc54a8119348d0f8d0d1d54d9",
     "development/admin/validation/2026-10-23-identity-separation-dark-r1.png": "65f301d170e2d884aa998a3f1a36d94ae4d3d5469d6869840df98b6d10369fde",
-    "development/admin/validation/2026-10-23-identity-separation-light-r1.png": "a04c9c2b83cbd3bfd2676b0f4802eddd869cc3cb6c7ec59ef3b668bac743006e"
+    "development/admin/validation/2026-10-23-identity-separation-light-r1.png": "a04c9c2b83cbd3bfd2676b0f4802eddd869cc3cb6c7ec59ef3b668bac743006e",
+    "development/admin/milestones/2026-10-23-moderation-separation-r1.md": "3631a70af192b5425dfd928b14690b3791c25df95ce7ceef8a1927123886badf",
+    "development/admin/validation/2026-10-23-moderation-separation-r1.json": "8e1325f3d426c5e2d7b8a9084893639a1e906feae76cb8e47510f1f742f0d346",
+    "development/admin/validation/2026-10-23-moderation-separation-quality-r1.txt": "3020b7a3707868c9e904b11279ef42336df659ac95b242eae575489fee17f7b9",
+    "development/admin/validation/2026-10-23-moderation-separation-dark-r1.png": "c15a47153a672651b2aa7ed7f6a4a034f692a17d1d6558282e1005fcabb66026",
+    "development/admin/validation/2026-10-23-moderation-separation-light-r1.png": "11c0e851f453798fea5a4a6c52e606bd1a4bca4f28ab86f8dd0a43639a234302"
   }
 }
