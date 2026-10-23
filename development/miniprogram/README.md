@@ -33,3 +33,5 @@
 - [2026-10-23 还愿故事、还愿墙与微信分享回流](milestones/2026-10-23-stories-sharing-r1.md)
 
 - [2026-10-23 个人资料、身份标签隐藏与黑名单管理](milestones/2026-10-23-profile-privacy-r1.md)
+
+- [2026-10-23 内容举报、警告阅读确认与处罚申诉](milestones/2026-10-23-reports-warnings-appeals-r1.md)
