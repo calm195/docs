@@ -83,3 +83,17 @@
 - [2026-10-23 危机案件、限定证据与关怀服务](milestones/2026-10-23-crisis-care-r1.md)
 
 - [2026-10-23 注销、隐私屏障、普通清理与证据删除](milestones/2026-10-23-privacy-deletion-r1.md)
+
+- [2026-10-23 原文人工审核与本地开发服务启动](milestones/2026-10-23-manual-review-startup-r1.md)
+
+- [2026-10-23 原文人工审核精确源码提交补充](milestones/2026-10-23-manual-review-commit-r1.md)
+
+- [2026-10-23 本地危机后台身份与管理端联调接入](milestones/2026-10-23-local-crisis-api-r1.md)
+
+- [2026-10-23 本地危机后台精确源码提交补充](milestones/2026-10-23-local-crisis-commit-r1.md)
+
+- [2026-10-23 本地隐私后台与全模块联调启动](milestones/2026-10-23-local-privacy-startup-r1.md)
+
+- [2026-10-23 本地隐私删除与联调启动精确源码提交补充](milestones/2026-10-23-local-privacy-commit-r1.md)
+
+- [2026-10-23 后端联调启动交付合入 main](milestones/2026-10-23-main-merge-r1.md)

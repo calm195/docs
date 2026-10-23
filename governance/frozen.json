@@ -170,6 +170,19 @@
     "development/admin/validation/2026-10-23-evidence-deletion-browser-r2.png": "7fd9d584f481bebca7b2878d627c2edeb8a59a51c6643b03d1d119f895574f64",
     "development/admin/validation/2026-10-23-evidence-deletion-r2.json": "5a7c677eafe616d9eb76b1d8d9347068a9f5c75d201f2990b9f22c736acf6664",
     "development/admin/validation/2026-10-23-evidence-deletion-quality-r2.txt": "28c6930198f7c21f420c54fabba00711a0919147a0d38f919a535df9f34250c2",
-    "development/admin/milestones/2026-10-23-evidence-deletion-r2.md": "9188baf2cb05f28e12cf27ec441b2a21d545c700441eb3e16d75e7e6408e5558"
+    "development/admin/milestones/2026-10-23-evidence-deletion-r2.md": "9188baf2cb05f28e12cf27ec441b2a21d545c700441eb3e16d75e7e6408e5558",
+    "development/backend/milestones/2026-10-23-manual-review-startup-r1.md": "fb965ce270c525da6bb4c37be2247c6866b51e56c59a556d80650aa7f0cf2e04",
+    "development/backend/validation/2026-10-23-manual-review-startup-r1.json": "c3e2dde9611a56e463fe573e6069a2c993edc5d899209f22e3e309c7f4ec4673",
+    "development/backend/validation/2026-10-23-manual-review-pg-r1.txt": "b6cf1d1cbd35a94ea463c96603d0e9e36eec44a322f5120c2b0f984350969ad4",
+    "development/backend/milestones/2026-10-23-manual-review-commit-r1.md": "8b9f5eacddf4ebf05663b21daa6ef5e2317d5d4527b6757f3f6298ccf330a24a",
+    "development/backend/milestones/2026-10-23-local-crisis-api-r1.md": "d5680952e6bb6345f8d311b220a37d972bca48167020e0011cc114f8521e5cdc",
+    "development/backend/validation/2026-10-23-local-crisis-api-r1.json": "e1cd23faa42e11032b8e536a80d12519cf88e408ebd8ed07502be52ef582eb32",
+    "development/backend/validation/2026-10-23-local-crisis-pg-r1.txt": "fc3cd7fcf30e73153de8279256f34e54ac7442e7063904f34eba5fd4b10de0ca",
+    "development/backend/milestones/2026-10-23-local-crisis-commit-r1.md": "9e3fce45c4c4a74d368fec69ba3690b24d41e87566a14b41c8ed1176368774f9",
+    "development/backend/milestones/2026-10-23-local-privacy-startup-r1.md": "f9d43684204adacfd00b5e6178d2cd6648b236fffd98d31187c6a204a42c2fb5",
+    "development/backend/validation/2026-10-23-local-privacy-startup-r1.json": "e47ec1c9a60d586c91cc8107cc6524cfe45514adaea4a7f4e9936647c4fa7b4a",
+    "development/backend/validation/2026-10-23-local-privacy-startup-r1.txt": "1a8b2e044079624279868fa4655b252c85d979bf69a3b273ba3f09a7eab21e38",
+    "development/backend/milestones/2026-10-23-local-privacy-commit-r1.md": "9b32c32e9573d05c15f42ede528e2ad69a26fa7a42f796a1a85a81493fc3c614",
+    "development/backend/milestones/2026-10-23-main-merge-r1.md": "c8fefc0b1d12a0c21b2e92bd31cf58b7d0ba113820cea2e5dbeb0f8d7d13da8a"
   }
 }

@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-23",
+  "project": "liyuanci-local",
+  "analyzer": "manual",
+  "http": {
+    "pgadmin": 200,
+    "redisinsight": 200,
+    "/healthz": 200,
+    "/api/v1/wishes": 200,
+    "/api/v1/me": 401,
+    "/readyz": 503
+  },
+  "processes": {
+    "server": {
+      "running": true,
+      "executable": "server"
+    },
+    "card-worker": {
+      "running": true,
+      "executable": "card-worker"
+    },
+    "content-worker": {
+      "running": true,
+      "executable": "content-worker"
+    }
+  },
+  "wechat_configured": true,
+  "manual_worker_started": true,
+  "source_branch": "develop",
+  "source_head": "3aa2ecf2480386a94552efe6abbc3479da91e479",
+  "source_state": "uncommitted",
+  "docs_base": "3d1d1f395128d8bb0d1a1bc692b04095eea3f12e",
+  "checks": {
+    "make_fmt": "passed",
+    "make_check": "passed after permissions fix",
+    "make_build": "passed",
+    "devapp_real_runtime_pool": "passed with APP_DEVAPP_TEST_FILE: four restricted identities",
+    "script_unittests": "32 passed",
+    "dev_doctor": "passed after permissions fix",
+    "admin_login": 200,
+    "admin_moderation_queue": 200,
+    "pgadmin_login": "authenticated browser 200",
+    "pgadmin_server_import": "1 group and 1 server added; no password imported",
+    "moderation_core_real_pg": "passed; 17 subtests; synthetic provider; MQ not enabled",
+    "make_integration": "not run"
+  },
+  "isolated_validation_project": "liyuanci-manual-check-7a06ed11",
+  "isolated_validation_cleanup": "stopped postgres; retained volume and private credentials",
+  "wordlists": "three missing snapshots explicitly published empty for manual-only development",
+  "fingerprints": {
+    "README.md": "fd34ceb71346a4124f97479caf740f37953b54271ab4cac1e1913431ce5451a3",
+    "cmd/content-worker/main.go": "6ed4cab567d015019d34ac4e2ba793868eade664b51e1b1d3c467e192aab8f68",
+    "internal/devapp/application.go": "37c8ec754b00126415c7ca56a8f45f707d5875e14a7725e6671210cefd10e6b6",
+    "internal/devapp/content_worker.go": "bf48f24c3a8da86fbfb85f018b93a8614cdda52abfec103bb32d03fb5a7b6d1f",
+    "internal/devapp/content_worker_test.go": "a60cf68ffd40a72fdc639650177ed90fb5f1485e5dcb83a4f3f776510fccd379"
+  }
+}
