@@ -1,0 +1,33 @@
+本次为隔离PostgreSQL与HTTP处理器验证；供应商和测试资料合成，未接真实识别、关怀或通知，无MQ往返。
+=== RUN   TestCrisisCare
+=== RUN   TestCrisisCare/隔离证据原子持久与消费重放
+=== RUN   TestCrisisCare/具体案件角色权限及访问留迹
+=== RUN   TestCrisisCare/缺依赖及失败不丢待办和隔离
+=== RUN   TestCrisisCare/重启及租约过期补偿与关怀本人投影
+=== RUN   TestCrisisCare/幂等版本及误报新任务不直接公开
+=== RUN   TestCrisisCare/已公开巡查与举报升级立即隐藏
+=== RUN   TestCrisisCare/HTTP人工升级处置与误报回退
+=== RUN   TestCrisisCare/HTTP严格校验角色与无涉案资产
+=== RUN   TestCrisisCare/证据落库失败整单回滚再重试
+=== RUN   TestCrisisCare/并发接手唯一版本与撤销角色重放拒绝
+=== RUN   TestCrisisCare/通知在途误报取消拒绝晚到恢复待办
+=== RUN   TestCrisisCare/注销状态不重建普通内容但限定证据仍可读
+=== RUN   TestCrisisCare/应愿私聊故事危机与已送达重审保留序号
+=== RUN   TestCrisisCare/尚存匹配中的留言和心愿重审不重配或上架
+--- PASS: TestCrisisCare (3.55s)
+    --- PASS: TestCrisisCare/隔离证据原子持久与消费重放 (0.01s)
+    --- PASS: TestCrisisCare/具体案件角色权限及访问留迹 (0.01s)
+    --- PASS: TestCrisisCare/缺依赖及失败不丢待办和隔离 (0.01s)
+    --- PASS: TestCrisisCare/重启及租约过期补偿与关怀本人投影 (0.01s)
+    --- PASS: TestCrisisCare/幂等版本及误报新任务不直接公开 (0.06s)
+    --- PASS: TestCrisisCare/已公开巡查与举报升级立即隐藏 (0.08s)
+    --- PASS: TestCrisisCare/HTTP人工升级处置与误报回退 (0.24s)
+    --- PASS: TestCrisisCare/HTTP严格校验角色与无涉案资产 (0.00s)
+    --- PASS: TestCrisisCare/证据落库失败整单回滚再重试 (0.06s)
+    --- PASS: TestCrisisCare/并发接手唯一版本与撤销角色重放拒绝 (0.14s)
+    --- PASS: TestCrisisCare/通知在途误报取消拒绝晚到恢复待办 (0.03s)
+    --- PASS: TestCrisisCare/注销状态不重建普通内容但限定证据仍可读 (0.03s)
+    --- PASS: TestCrisisCare/应愿私聊故事危机与已送达重审保留序号 (0.33s)
+    --- PASS: TestCrisisCare/尚存匹配中的留言和心愿重审不重配或上架 (0.11s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/moderation	4.329s

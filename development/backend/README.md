@@ -87,3 +87,7 @@
 - [2026-10-23 原文人工审核与本地开发服务启动](milestones/2026-10-23-manual-review-startup-r1.md)
 
 - [2026-10-23 原文人工审核精确源码提交补充](milestones/2026-10-23-manual-review-commit-r1.md)
+
+- [2026-10-23 本地危机后台身份与管理端联调接入](milestones/2026-10-23-local-crisis-api-r1.md)
+
+- [2026-10-23 本地危机后台精确源码提交补充](milestones/2026-10-23-local-crisis-commit-r1.md)

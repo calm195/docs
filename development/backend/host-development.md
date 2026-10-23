@@ -124,9 +124,22 @@ infra只检查本地端口；doctor验证实际数据库身份、关键结构、
 
 显式应用0018并重放bootstrap权限后，内容worker会将四类正文的危机命中原子写入限定证据和双投递待办。未提供正式援助资料及通知适配时保留可重试待办，不自动恢复公开。
 
-开发API只有在私有凭据文件显式配置`CrisisDSN`后注册危机后台路由；该连接使用仅属于`liyuanci_crisis_api`的独立受限登录，不复用ReviewDSN或StudentDSN。初始化不会生成此账号或替换旧密钥，登录须由管理员显式交付。可选`Care`对象字段为`version/source/verified_at/hotline_24_hours/appointment/notice`，核验日期使用YYYY-MM-DD；必须来自已交付资料，不能把隔离合成资源用于真实用户。普通关怀通知引用本人卡片，由GET /api/v1/me/care-cards/{id}读取。
+开发API只有在私有凭据文件显式配置`CrisisDSN`后注册危机后台路由；该连接使用仅属于`liyuanci_crisis_api`的独立受限登录，不复用ReviewDSN或StudentDSN。当前`make dev-init`或`make dev-native-init`会显式为新配置及已有配置补齐`dev_crisis_api`登录与`CrisisDSN`，随机口令只生成一次，重复初始化保留已有DSN、密钥与后台账号。身份不具备超级用户、绕过RLS、建库、建角色或DDL权限；既有bootstrap权限矩阵提供危机证据访问，普通后台仍无证据模式USAGE。普通API/worker启动不初始化身份、不迁移；旧配置未补字段时仍可启动普通业务。宿主派生配置将该DSN转换为所选Docker或原生PG端口。
+
+本地升级步骤：先用`make dev-stop`停止本模式应用，显式执行`make dev-init`、`make dev-doctor`，再在各自终端运行`make dev-api`、`make dev-worker`、`make dev-content-worker`。原生模式使用对应`dev-native-*`入口。管理端仍连接`http://127.0.0.1:18080`；本次默认Docker本地实例已启用危机路由，既有`developer`账号保留`super_admin`角色，口令保持原值，不写入文档。其他后台账号须由超管通过正式账号角色接口授予`crisis_operator`，普通审核角色没有危机证据权限。
+
+管理端联调顺序如下，所有路径前缀为`/api/v1/admin`，使用Bearer会话；POST均带新的`Idempotency-Key`，重复同一请求复用原键。接口返回`data.version`，每次新动作须使用当前版本。
+
+1. 原文人工审核任务经`POST /moderation-tasks/{id}/escalate-crisis`升级，提交`reason`与该审核任务的`expected_version`。举报升级使用`POST /reports/{id}/escalate-crisis`，版本绑定举报。返回新危机案件，状态为`pending_handling`；精确内容被隔离，已公开内容即时隐藏。
+2. 用`GET /crisis-cases`、`GET /crisis-cases/{id}`、`GET /crisis-cases/{id}/work`和`GET /crisis-cases/{id}/timeline`查询；证据使用返回的证据标识调用`GET /evidence/{id}`。不存在的案件/证据返回404，未登录401，普通审核角色403，敏感响应禁止缓存。
+3. `POST /crisis-cases/{id}/actions`提交`action`、`reason`、`expected_version`。`take_over`进入`handling`，`follow_up`记录跟进，`resolve`进入`resolved`。每步采用上一步返回的案件版本；旧版本409，同键异请求冲突。结案不等于自动解除内容隔离。
+4. 对尚未结案的误报，调用`POST /crisis-cases/{id}/resolve-false-positive`，提交理由与当前案件版本。案件变为`false_positive`，危机限制解除、未完成投递取消；仍具资格的内容生成新的普通复核任务，**不自动公开**。管理端重读普通队列和任务版本，按普通流程审核。心愿审核批准后为`ready`，仍需作者显式上架；注销、删除、失效版本等内容不保证重建任务。
+
+可选`Care`对象字段为`version/source/verified_at/hotline_24_hours/appointment/notice`，核验日期使用YYYY-MM-DD；必须来自已交付资料，不能把隔离合成资源用于真实用户。普通关怀通知引用本人卡片，由GET /api/v1/me/care-cards/{id}读取。当前本地未设置`Care`，未注入真实`CrisisNotifier`，人员通知和关怀待办由持久任务保留并按既有逻辑重试；`retry_notification`只调整待办重试时间，不代表已通知。管理端不应显示为真实通知成功。
 
 生产宿主通过`WorkerConfig.CrisisNotifier`显式注入授权人员通知适配器，按投递ID去重，消息只含技术引用；开发默认没有真实通知发送方。接口、角色、迁移和验证边界见[危机服务阶段记录](milestones/2026-10-23-crisis-care-r1.md)。
+
+本次真实本地配置、独立身份及接口检查，以及隔离PG的人工升级/处置/误报HTTP回归，见[本地危机后台接入记录](milestones/2026-10-23-local-crisis-api-r1.md)。`manual`分析器不提供危机识别，当前本地空开发词库也无有效自动危机识别；人工升级可独立于识别与通知服务使用。
 
 ## 注销及证据删除
 

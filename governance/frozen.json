@@ -152,6 +152,10 @@
     "development/backend/milestones/2026-10-23-manual-review-startup-r1.md": "fb965ce270c525da6bb4c37be2247c6866b51e56c59a556d80650aa7f0cf2e04",
     "development/backend/validation/2026-10-23-manual-review-startup-r1.json": "c3e2dde9611a56e463fe573e6069a2c993edc5d899209f22e3e309c7f4ec4673",
     "development/backend/validation/2026-10-23-manual-review-pg-r1.txt": "b6cf1d1cbd35a94ea463c96603d0e9e36eec44a322f5120c2b0f984350969ad4",
-    "development/backend/milestones/2026-10-23-manual-review-commit-r1.md": "8b9f5eacddf4ebf05663b21daa6ef5e2317d5d4527b6757f3f6298ccf330a24a"
+    "development/backend/milestones/2026-10-23-manual-review-commit-r1.md": "8b9f5eacddf4ebf05663b21daa6ef5e2317d5d4527b6757f3f6298ccf330a24a",
+    "development/backend/milestones/2026-10-23-local-crisis-api-r1.md": "d5680952e6bb6345f8d311b220a37d972bca48167020e0011cc114f8521e5cdc",
+    "development/backend/validation/2026-10-23-local-crisis-api-r1.json": "e1cd23faa42e11032b8e536a80d12519cf88e408ebd8ed07502be52ef582eb32",
+    "development/backend/validation/2026-10-23-local-crisis-pg-r1.txt": "fc3cd7fcf30e73153de8279256f34e54ac7442e7063904f34eba5fd4b10de0ca",
+    "development/backend/milestones/2026-10-23-local-crisis-commit-r1.md": "9e3fce45c4c4a74d368fec69ba3690b24d41e87566a14b41c8ed1176368774f9"
   }
 }

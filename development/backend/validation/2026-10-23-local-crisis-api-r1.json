@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-23",
+  "source_branch": "develop",
+  "source_head_base": "d4b70f906818a83f13609f305a78480241bf3355",
+  "source_state": "未提交工作区修改",
+  "docs_branch": "backend-develop",
+  "docs_head_base": "0a3b52c565ff91cdac69456e2149d893c136dbe2",
+  "contract": "0.2.0；既有危机辅助端点沿用本端记录，未发布共享契约新版本",
+  "source_sha256": {
+    "README.md": "df7b91507a4a91bfd48289cf9ae534f33cb48e14b91ee3f11c8e353554d99d62",
+    "internal/devapp/content_worker_test.go": "70ce32f265aeb0a452e691e1d307614abd06f7725b798d8854ab0e4fdf7f49d4",
+    "internal/moderation/crisis_integration_test.go": "ee83b47c3739c5600df1efde4dcf1397e1c713b06bc0ca03519ca21c4ce7490b",
+    "scripts/init-business-dev.py": "771f9705213e944796ac7b1112fbf8fe0d01c4a0a71f8ec5498b22fb1a741b6b",
+    "scripts/localdev.py": "8bb37aee979c95ec9c29dd1d221ea4267c5ff2100bac92c909af3b089583e59f",
+    "scripts/tests/test_business_initialization.py": "803ff1c2aefe71fef3ef125ed77bf289310ee2af057900623bc5f257bafe1af2",
+    "scripts/tests/test_localdev.py": "1e808ae58e0e771d0d716f2f599c340d0355bbefbdb393faba4e8ccc29b22ef3"
+  },
+  "checks": {
+    "python3 -m unittest discover -s scripts -p test_*.py -v": "通过，32项",
+    "make fmt": "通过",
+    "make check-fast PACKAGES=./internal/moderation/...": "通过；无测试DSN时集成用例跳过",
+    "APP_DEVAPP_TEST_FILE=<local private host config> make check-fast PACKAGES=./internal/devapp/...": "通过；实际验证危机独立身份、普通池隔离与身份替代拒绝",
+    "make dev-init": "通过；补齐CrisisDSN及dev_crisis_api，复用既有0019迁移和bootstrap权限",
+    "make dev-doctor": "通过",
+    "go test ./internal/moderation -run ^TestCrisisCare$ -v -count=1 -timeout 240s": "通过；独立真实PG，14项子用例，包括新增HTTP人工升级及处置回退",
+    "make check": "通过：只读格式校验、go vet ./...、go test -race -cover ./...",
+    "make build": "通过",
+    "python3 scripts/check_documents.py": "通过，登记固定文件前152项；登记后复查",
+    "git diff --check (both repositories)": "通过"
+  },
+  "local": {
+    "project": "liyuanci-local",
+    "api": "http://127.0.0.1:18080",
+    "crisis_login": "dev_crisis_api",
+    "database_group": "liyuanci_crisis_api",
+    "previous_configuration_fields_unchanged": true,
+    "developer_existing_roles": [
+      "super_admin"
+    ],
+    "real_detection": false,
+    "care_resources_configured": false,
+    "real_notifier_configured": false,
+    "http_results": [
+      {
+        "method": "GET",
+        "path": "/healthz",
+        "status": 200,
+        "no_store": false
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/crisis-cases",
+        "status": 401,
+        "no_store": true
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/admin/sessions",
+        "status": 200,
+        "no_store": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/crisis-cases?limit=20",
+        "status": 200,
+        "no_store": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/accounts?limit=20",
+        "status": 200,
+        "no_store": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/crisis-cases/51b125ad-df43-4696-b092-60330d474bec",
+        "status": 404,
+        "no_store": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/crisis-cases/c7b119f4-f594-4ef2-8488-3359ea41680e/timeline",
+        "status": 404,
+        "no_store": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/crisis-cases/11e7f0f2-8cac-419c-9afb-7f3658c3d1d7/work",
+        "status": 404,
+        "no_store": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/evidence/194936c2-f458-4a22-b9fc-acfa9b6a9e03",
+        "status": 404,
+        "no_store": true
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/v1/admin/session",
+        "status": 204,
+        "no_store": true
+      }
+    ],
+    "applications_running": [
+      "server",
+      "card-worker",
+      "content-worker"
+    ]
+  },
+  "isolation": {
+    "postgres_project": "liyuanci-manual-check-7a06ed11",
+    "temporary_database": "测试内生成crisis_<随机标识>，不操作liyuanci_business",
+    "postgres_stopped_after_check": true,
+    "volumes_preserved": true,
+    "fixtures": "合成账号、正文、身份、规则、关怀与通知适配；无真实识别或外发"
+  },
+  "not_run": [
+    "完整make integration及RocketMQ往返",
+    "管理端浏览器交互/真机",
+    "实际本地业务数据上的写操作链路；写流程在独立PG+正式HTTP处理器验证",
+    "原生PG真实初始化（离线派生配置测试通过）",
+    "完整Docker应用镜像启动"
+  ]
+}
