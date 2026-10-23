@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-23",
+  "source_branch": "develop",
+  "source_commit": "40fb2248081c2dfc950c92529f7a5f95d76c318c",
+  "source_base": "d45fb90a7ad1ee77003718949bf90a22e0e4d69b",
+  "docs_branch": "mini-deveop",
+  "docs_base": "71ba303944cc49453651fa40c3167fa07cced230",
+  "contract": "0.2.0 / actions revision 5",
+  "checks": {
+    "npm run check": "通过，50项测试，0失败",
+    "npm run build:mp-weixin": "通过；AppID未配置提示保留",
+    "git diff --check": "通过",
+    "python3 scripts/check_documents.py": "本次文档固定后执行，结果以交付命令输出为准"
+  },
+  "http_readonly": [
+    {
+      "path": "/api/v1/me/applications",
+      "status": 401,
+      "request_id": "5103db7acf30f824089618e6a9a1db54"
+    },
+    {
+      "path": "/api/v1/wishes/650572a3-3786-4209-bf53-c63b7d004e6e/applications",
+      "status": 401,
+      "request_id": "7eb7f4c4581af1a85ed6975f4526db29"
+    },
+    {
+      "path": "/api/v1/users/650572a3-3786-4209-bf53-c63b7d004e6e/public-profile",
+      "status": 404,
+      "request_id": "989c45fa214352ad329847f4eea28a79"
+    }
+  ],
+  "boundaries": "页面和API回归替代平台、会话与传输；真实HTTP仅未登录GET，不建立真实申请/匹配。公开主页未取得成功响应，后端internal中未找到该路由实现，保留接入依赖。无微信实机或双账号联调结论。",
+  "files": {
+    "README.md": "f0e53f9d9a3735fb6db004a531e9786bc3f2d984772f3968af3159f02267dd4b",
+    "src/api/applications.ts": "59538408a3cd18af98afd5aa316b351c4349acbbab8c237e9f28220fe8fa39bb",
+    "src/pages.json": "650616334e667512d2ea9a57cb069f510bee3e890fa81354bdded4e8bc5dcfa2",
+    "src/pages/applications/index.vue": "8587c27423a2dac89cd76ddc4f38a159fa594ddb9e4d43d15fe56ba0f45b3b0e",
+    "src/pages/index/index.vue": "aca0e9ddbb3ff34646b55b189f077c284a89ad024d1b5896c0bd3cf944e0795a",
+    "src/pages/public-profile/index.vue": "8d81749abcf907107d1f865c92362235fb3535dccbace4d9be136acb835ba115",
+    "src/pages/wish-detail/index.vue": "965f22dd45044da8fe66d7b248b1a9f876d4718d6562f72ee35e740a10befee2",
+    "src/types/application.ts": "1c5c5bec188edb45e1b1918f5c119f9c03847b140b7347fb1bf767a7b7b20910",
+    "src/types/wish.ts": "accdd0a17698ea1c74a0091681d2419623b3983dc7b2f0d81d9ea16cd519a041",
+    "src/utils/actions.ts": "460b5f7a80abc020ce11ae6d7a770c2507acf91431ce3f9703e674dce224f511",
+    "src/utils/application.ts": "a7b59db443918655f2ed555bf5ab3ab2e091dbcae601e3b1caa8780231d6618c",
+    "tests/applications.test.ts": "78b47d9b83bac02219e6ba850838830dacbec9c2aa4b1fff02d93cf9d3872566",
+    "tests/support/page-runtime.ts": "6c45b90cc4ed2f7d3edbd65a6b8b77ef993ab6c107a4a64e3f1a1f3cd28b35c6"
+  }
+}
