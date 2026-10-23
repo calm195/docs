@@ -1,0 +1,34 @@
+{
+  "source_branch": "codex/admin-navigation-theme",
+  "source_commit": "ca66172efd10c13449eedecbc3246218634d39b1",
+  "docs_base": "a55e5355f21a376ee79646e947379364d9da3340",
+  "files": {
+    "README.en.md": "06fafa3ea922d567191211c5848d40b04134c5c319dd041d0dd970a1059c0a42",
+    "README.md": "df984163fc93cd7bd40a50c7737832465814c657ebd4d8ae5c4ba5a0cc9ce8df",
+    "src/assets/styles/layout.css": "0b283ca18bd1d073d20dd6b6d2f69ebece7b92d0cc866f214107a783b720e6a2",
+    "src/components/AdminLayout.spec.ts": "c15d0b9a626b7a29f7ea9d8acaab77c3104454499c53da806b48f16df4adeea4",
+    "src/components/AppBreadcrumb.vue": "ee34590a4c56c6b6eb3a107a41c2df55d5c717c272294ff0720728d3c950f89d",
+    "src/components/WordlistConfirmation.vue": "fe419f3dcf257ab72adc2779961ba76c680d9ecfded65847cb9c064219dae1df",
+    "src/composables/useWordlists.ts": "57d6d22c6e9e77c52fb4a65ae4dd9d7773cb3f18e273adfc5699f98fc0f42f47",
+    "src/router/index.ts": "fd519f8ed3988745c109e4fa257ba480a3a8ad4fe367d7d0cbeb8bbc19a8d0c2",
+    "src/views/WordlistDetailView.vue": "e553f7f83fec8bff060e99bdc291e1fc539d234fedb9fc0b68a03e1a2838a015",
+    "src/views/WordlistDraftView.vue": "e5c5794967c11bb06f90bf75161ca6f73756dd88385fe3502ad4246eee0b5a31",
+    "src/views/WordlistLayout.vue": "32543ce5b0cc02607ea567b43e885e904fbabed84bd4f51fff4e153df6c9a24a",
+    "src/views/WordlistsView.spec.ts": "06133ce60d166fec82f43bd820ab94a71cac3bd9f654ed45d699c62b9b1f9374",
+    "src/views/WordlistsView.vue": "a1d258d13e807a8726ffe9c2835675df1b238a0fac0495c4fb70bd8041549f28"
+  },
+  "checks": [
+    "pnpm format",
+    "pnpm check",
+    "pnpm build",
+    "git diff --check"
+  ],
+  "boundary": "浏览器读取真实测试服务；未执行创建、权限变更或发布；写入及低权限边界由合成测试覆盖，未验证真实窄屏。",
+  "original_accounts_record_sha256": "70b800f479b56cda4f120f2ca1960d9532be24a3c798e91550a848c0d7143042",
+  "browser_checks": [
+    "真实账号列表与创建抽屉打开/取消",
+    "真实词单列表、详情与面包屑返回",
+    "独立草稿页核对/返回修改，未提交创建",
+    "浅色/深色切换，最终恢复浅色"
+  ]
+}

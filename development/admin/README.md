@@ -56,3 +56,5 @@
 - [2026-10-23 统一布局、面包屑及深浅色主题基础](milestones/2026-10-23-navigation-theme-r1.md)
 
 - [账号查询与抽屉编辑分离 r1](milestones/2026-10-23-accounts-editor-r1.md)
+
+- [词单列表、详情与草稿拆页 r1](milestones/2026-10-23-wordlists-pages-r1.md)
