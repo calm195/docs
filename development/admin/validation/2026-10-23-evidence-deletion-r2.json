@@ -1,0 +1,283 @@
+{
+  "date": "2026-10-23",
+  "base_url": "http://localhost:5173",
+  "configured_crisis": true,
+  "configured_evidence_deletion": true,
+  "configured_privacy": true,
+  "checks": [
+    {
+      "case": "已有Vite实例",
+      "method": "GET",
+      "path": "/",
+      "expected_status": 200,
+      "status": 200,
+      "cache_control": "no-cache",
+      "pragma": null,
+      "referrer_policy": null,
+      "request_id": null,
+      "passed": true
+    },
+    {
+      "case": "未登录待办拒绝",
+      "method": "GET",
+      "path": "/api/v1/admin/evidence-deletion-jobs/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 401,
+      "status": 401,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "e6aa75dbf504532c6ffc374ec841dfed",
+      "passed": true
+    },
+    {
+      "case": "无效令牌待办拒绝",
+      "method": "GET",
+      "path": "/api/v1/admin/evidence-deletion-jobs/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 401,
+      "status": 401,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "2be3c7dd2be3a6f321828e32ad0da8fd",
+      "passed": true
+    },
+    {
+      "case": "未登录删除拒绝",
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 401,
+      "status": 401,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "a2955bdede3c1dca5514d7201c23a6e3",
+      "passed": true
+    },
+    {
+      "case": "本地后台登录",
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "expected_status": 200,
+      "status": 200,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": null,
+      "request_id": "a94ea1e65a3d9de6180324dedffc1473",
+      "passed": true
+    },
+    {
+      "case": "危机列表",
+      "method": "GET",
+      "path": "/api/v1/admin/crisis-cases?limit=20",
+      "expected_status": 200,
+      "status": 200,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": null,
+      "request_id": "20ce2529a2b2de61f78b838b4890bd9f",
+      "passed": true,
+      "item_count": 0,
+      "has_next_cursor": false
+    },
+    {
+      "case": "超管未知证据",
+      "method": "GET",
+      "path": "/api/v1/admin/evidence/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 404,
+      "status": 404,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": null,
+      "request_id": "38bca8414ae0994e46d37d700fbdd4be",
+      "passed": true
+    },
+    {
+      "case": "超管未知待办",
+      "method": "GET",
+      "path": "/api/v1/admin/evidence-deletion-jobs/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 404,
+      "status": 404,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "ecb2143b0c3440a4ce02cc4ff5611e9f",
+      "passed": true
+    },
+    {
+      "case": "待办拒绝查询参数",
+      "method": "GET",
+      "path": "/api/v1/admin/evidence-deletion-jobs/778f2256-c11e-4952-bd45-2198502bedc6?x=1",
+      "expected_status": 400,
+      "status": 400,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "07e6499c3028f19a78e9a288741b24cc",
+      "passed": true
+    },
+    {
+      "case": "待办拒绝非法标识",
+      "method": "GET",
+      "path": "/api/v1/admin/evidence-deletion-jobs/not-a-uuid",
+      "expected_status": 400,
+      "status": 400,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "f13a113843c925f54f18461579ba9cd8",
+      "passed": true
+    },
+    {
+      "case": "超管未知证据删除",
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 404,
+      "status": 404,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "837bba1aaf2586af4a51851bfcc46788",
+      "passed": true
+    },
+    {
+      "case": "删除缺少幂等键",
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 400,
+      "status": 400,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "a0187a1fc32ed66ca4f17cbaba5f2297",
+      "passed": true
+    },
+    {
+      "case": "删除拒绝错误范围版本",
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 400,
+      "status": 400,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "c15518c7b5ae4eb6d2b093fff362b7e9",
+      "passed": true
+    },
+    {
+      "case": "删除拒绝多余字段",
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 400,
+      "status": 400,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "e2eb6e572accdc984de49af2fa667dae",
+      "passed": true
+    },
+    {
+      "case": "删除理由中文字节超限",
+      "method": "DELETE",
+      "path": "/api/v1/admin/evidence/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 400,
+      "status": 400,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "6988ea9eeb039804e9bd4b23a5343f46",
+      "passed": true
+    },
+    {
+      "case": "匿名无效回执",
+      "method": "GET",
+      "path": "/api/v1/deletion-receipts/778f2256-c11e-4952-bd45-2198502bedc6.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_status": 404,
+      "status": 404,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "b1de26c8d2ce363171bac15b042815c5",
+      "passed": true
+    },
+    {
+      "case": "匿名回执拒绝查询参数",
+      "method": "GET",
+      "path": "/api/v1/deletion-receipts/778f2256-c11e-4952-bd45-2198502bedc6.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?x=1",
+      "expected_status": 400,
+      "status": 400,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "8e9632730e01efa1ad9e0fb6c685194f",
+      "passed": true
+    },
+    {
+      "case": "匿名回执拒绝裸UUID",
+      "method": "GET",
+      "path": "/api/v1/deletion-receipts/778f2256-c11e-4952-bd45-2198502bedc6",
+      "expected_status": 404,
+      "status": 404,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": "no-referrer",
+      "request_id": "1586f6e4aeb49fb6a6549e9b6ceb01f1",
+      "passed": true
+    },
+    {
+      "case": "退出测试会话",
+      "method": "DELETE",
+      "path": "/api/v1/admin/session",
+      "expected_status": 204,
+      "status": 204,
+      "cache_control": "no-store",
+      "pragma": "no-cache",
+      "referrer_policy": null,
+      "request_id": "98845189537bebd0e703f43159d308d6",
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "boundary": "用户确认暂无可处置测试证据或回执。本次DELETE仅指向本脚本生成且GET证实不存在的随机UUID，无实际证据删除；无真实202/processing/completed闭环。凭据与令牌不输出。",
+  "task": "T032 管理端现有接口与页面联调",
+  "requirements": [
+    "REQ-018",
+    "REQ-019"
+  ],
+  "source_branch": "develop",
+  "source_base": "871b9341c57f41fdd9d179af556bdf3e04120bf5",
+  "source_head": "9c8d358727bd73b88df06522a45e2e2bf7385ba4",
+  "source_modules": [
+    "2ee144f592c2401d8a956efc6705018859a08468",
+    "9c8d358727bd73b88df06522a45e2e2bf7385ba4"
+  ],
+  "docs_branch": "admin-develop",
+  "docs_base": "24967695b0afa789e091116feb3ef605eec3c2e9",
+  "backend_branch": "develop",
+  "backend_head": "0b2a71a5857ae47971e0ff1215033002d3f6eddf",
+  "contract": "0.2.0 revision 5；后台删除待办查询为当前后端辅助接口",
+  "source_files": {
+    "src/services/privacy.spec.ts": "a30dacea6f11886ead973d60533c1cabd53e4b41dd0fa09c04b6d97bf1a07cc4",
+    "src/services/privacy.ts": "8e981c2e9366583163112b913e39dc0fe001675dd323dcf4f023393c91ce5839",
+    "src/views/EvidenceDeletionView.spec.ts": "428e24e15d2ef330c087040099ccdb57a0b6f48cc8c008429a5a734bd3729c47",
+    "src/views/EvidenceDeletionView.vue": "0ac68ce01bea20683c65567b2cec8b5f98115c4f4dd6c9fbc6fb15bc75fd5fbc"
+  },
+  "quality": {
+    "pnpm format": "通过",
+    "pnpm check": "通过：25文件、291业务测试、58规范测试",
+    "pnpm build": "通过",
+    "git diff HEAD --check": "通过"
+  },
+  "browser": [
+    "真实登录后超管菜单可访问",
+    "修复前错误格式回执显示写入结果不明确；修复后禁用查询并显示完整回执格式提示",
+    "正确格式的合成无效回执与不存在待办经真实后端404，页面提示不能认定清理完成",
+    "不存在证据404且不出现删除理由和确认",
+    "清空移除输入，退出回到登录页"
+  ],
+  "unverified": [
+    "用户确认暂无可处置的合成证据或有效回执，本轮不删除真实证据、不发起账号注销",
+    "未验证真实202、重复幂等成功回放、409并发冲突、有效回执200、processing/completed转换或物理清理",
+    "没有低权限测试账号，403角色限制仅由本端测试及后端实现核对支持，未冒充真实角色越权联调",
+    "开发隐私worker未注入真实外部全版本清理及脱敏适配器，不能宣称清理完成"
+  ]
+}

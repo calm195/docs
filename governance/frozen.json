@@ -165,6 +165,11 @@
     "development/admin/validation/2026-10-23-evidence-deletion-r1.json": "f3488222f0a02d25fbdb224a980f663d50dfb28203c40fcc0313e0112eb360bf",
     "development/admin/validation/2026-10-23-evidence-deletion-quality-r1.txt": "3a70236f9af1390310bdf5b53a6c4d00037f1eba64120da47c7b818f326c3ece",
     "development/admin/validation/2026-10-23-evidence-deletion-browser-r1.png": "bcf7086b6ea4136b38b900d228bebf6d7481806a22368bcec84e840fca580880",
-    "development/admin/validation/2026-10-23-crisis-enabled-browser-r1.png": "58c2098ae37f79e13ffd7ae07a69c0892be27d0dbef1267f523d30461a2cc482"
+    "development/admin/validation/2026-10-23-crisis-enabled-browser-r1.png": "58c2098ae37f79e13ffd7ae07a69c0892be27d0dbef1267f523d30461a2cc482",
+    "development/admin/validation/2026-10-23-evidence-deletion-receipt-validation-r2.png": "3f4746ded017bf46bf77a91ee23ab1d278f8a510579b7ea2d91ba3405cef1828",
+    "development/admin/validation/2026-10-23-evidence-deletion-browser-r2.png": "7fd9d584f481bebca7b2878d627c2edeb8a59a51c6643b03d1d119f895574f64",
+    "development/admin/validation/2026-10-23-evidence-deletion-r2.json": "5a7c677eafe616d9eb76b1d8d9347068a9f5c75d201f2990b9f22c736acf6664",
+    "development/admin/validation/2026-10-23-evidence-deletion-quality-r2.txt": "28c6930198f7c21f420c54fabba00711a0919147a0d38f919a535df9f34250c2",
+    "development/admin/milestones/2026-10-23-evidence-deletion-r2.md": "9188baf2cb05f28e12cf27ec441b2a21d545c700441eb3e16d75e7e6408e5558"
   }
 }
