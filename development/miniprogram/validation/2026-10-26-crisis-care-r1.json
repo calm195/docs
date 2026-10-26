@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-26",
+  "source_branch": "develop",
+  "source_commit": "21e0f51277149a55001013c2fdf5b3f903312684",
+  "docs_branch": "mini-deveop",
+  "docs_base": "7e9d32bca42b95585e3c7a09551dca310f0e2d7b",
+  "backend_read_commit": "0b2a71a5857ae47971e0ff1215033002d3f6eddf",
+  "files": {
+    "src/api/care.ts": "02912048c242def1769cd2e19a3446f4065981f1812b8cf52e3d2b08ad14b3c0",
+    "src/types/care.ts": "c5981a18479d1bb6e509b35998349dc856de32f2313fc15aee1e3cbe0bfef759",
+    "src/utils/care.ts": "f851680615719b9919f4a38c318e6298c1f325957cadb95a22062a1175023a8f",
+    "src/pages/care/index.vue": "72d60096a85c81f341d033c6c993ad96a4a62927ef398720340b53dca8132a3f",
+    "src/pages.json": "5c208d50b12e34f2529c19c692530d5a47f3c8d15d632ab8f4b64adc109d9b04",
+    "src/pages/index/index.vue": "78480ae14ee8cdcbe04123ddfca26599d02e1619bb61cb431ef298d5d923554b",
+    "src/pages/inbox/index.vue": "1fe7e2bd296921c1835d054df1c45ba6ed23dfc535ca9481c2d9492895313b89",
+    "tests/care.test.ts": "8f77c31d1a99a9a2b439def9e75a7d6dfb43967dc96806013f9cab1f2035a003"
+  },
+  "verification": {
+    "check": "passed; 109 tests, 0 failures",
+    "build_mp_weixin": "passed; care page registered and script exists",
+    "host_read_only": [
+      {
+        "path": "/healthz",
+        "status": 200,
+        "request_id": "052db6e7e89f665f725c3be84d2bfbfc"
+      },
+      {
+        "path": "/api/v1/me/care-cards/00000000-0000-4000-8000-000000000001",
+        "status": 401,
+        "error_code": "UNAUTHENTICATED",
+        "cache_control": "no-store",
+        "request_id": "c26e1f12081068e2eb913878e51239fd"
+      }
+    ]
+  },
+  "limits": [
+    "匿名请求不证明本人卡片与越权隔离真实联调通过",
+    "未执行真实危机触发、运营资料有效性核验、人员通知、预约或微信真机验证"
+  ]
+}
