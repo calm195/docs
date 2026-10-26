@@ -39,3 +39,9 @@
 - [2026-10-26 本人关怀卡与援助资料接入](milestones/2026-10-26-crisis-care-r1.md)
 
 - [2026-10-26 账号注销、处理中与匿名删除回执](milestones/2026-10-26-account-deletion-r1.md)
+
+- [2026-10-26 Tailwind样式统一与亮暗主题（工作区实现）](milestones/2026-10-26-tailwind-theme-r1.md)
+
+- [2026-10-26 页面逻辑回归、问题修复与主题提交](milestones/2026-10-26-page-logic-theme-r1.md)
+
+- [2026-10-26 原始测试日志空白检查说明](milestones/2026-10-26-page-logic-evidence-r1.md)

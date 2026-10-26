@@ -1,0 +1,241 @@
+TAP version 13
+# (node:80837) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/login-page.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: REQ-002/018：登录重复点击不能在登录完成前跳转
+not ok 1 - REQ-002/018：登录重复点击不能在登录完成前跳转
+  ---
+  duration_ms: 22.733834
+  type: 'test'
+  location: '/Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/login-page.test.ts:40:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/login-page.test.ts:45:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: REQ-002/018：登录中离开再返回，旧响应不能导航或恢复旧错误
+not ok 2 - REQ-002/018：登录中离开再返回，旧响应不能导航或恢复旧错误
+  ---
+  duration_ms: 2.872166
+  type: 'test'
+  location: '/Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/login-page.test.ts:51:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/login-page.test.ts:58:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# (node:80838) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/page-interaction.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: REQ-018：前后台页面同时收到点击时仅栈顶执行，返回后恢复交互
+ok 3 - REQ-018：前后台页面同时收到点击时仅栈顶执行，返回后恢复交互
+  ---
+  duration_ms: 0.454625
+  type: 'test'
+  ...
+# Subtest: REQ-018：子组件归属于最近页面，H5共享应用根也能正确交互
+not ok 4 - REQ-018：子组件归属于最近页面，H5共享应用根也能正确交互
+  ---
+  duration_ms: 0.440375
+  type: 'test'
+  location: '/Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/page-interaction.test.ts:56:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - '当前页面动作'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '当前页面动作'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/page-interaction.test.ts:65:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# (node:80839) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/user-store.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: T009 / REQ-002：登录失败重试重新取 code，成功后刷新本人状态
+ok 5 - T009 / REQ-002：登录失败重试重新取 code，成功后刷新本人状态
+  ---
+  duration_ms: 2.707333
+  type: 'test'
+  ...
+# Subtest: T009 / REQ-018：重复点击登录只交换一次 code
+ok 6 - T009 / REQ-018：重复点击登录只交换一次 code
+  ---
+  duration_ms: 0.40075
+  type: 'test'
+  ...
+# Subtest: T009 / REQ-002：驳回展示建议，刷新失败关闭资格
+ok 7 - T009 / REQ-002：驳回展示建议，刷新失败关闭资格
+  ---
+  duration_ms: 0.205333
+  type: 'test'
+  ...
+# Subtest: T009 / REQ-018：撤销失败仍清理本地，迟到刷新不恢复身份
+ok 8 - T009 / REQ-018：撤销失败仍清理本地，迟到刷新不恢复身份
+  ---
+  duration_ms: 0.191208
+  type: 'test'
+  ...
+# Subtest: T009 / REQ-018：过期事件清理身份并丢弃迟到的登录结果
+ok 9 - T009 / REQ-018：过期事件清理身份并丢弃迟到的登录结果
+  ---
+  duration_ms: 0.240792
+  type: 'test'
+  ...
+# Subtest: REQ-002：认证页可只刷新本人资格，由页面独立读取审核记录
+ok 10 - REQ-002：认证页可只刷新本人资格，由页面独立读取审核记录
+  ---
+  duration_ms: 0.191167
+  type: 'test'
+  ...
+# Subtest: REQ-018：并发资格刷新乱序返回时，旧权限不能覆盖新结果
+not ok 11 - REQ-018：并发资格刷新乱序返回时，旧权限不能覆盖新结果
+  ---
+  duration_ms: 0.477708
+  type: 'test'
+  location: '/Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/user-store.test.ts:174:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 3
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 3
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/user-store.test.ts:184:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: REQ-018：最新资格刷新失败后，旧成功响应不能重新开放权限
+not ok 12 - REQ-018：最新资格刷新失败后，旧成功响应不能重新开放权限
+  ---
+  duration_ms: 0.245125
+  type: 'test'
+  location: '/Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/user-store.test.ts:188:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/user-store.test.ts:198:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# (node:80840) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/wishes-page.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: B14 / I2-A01：默认入口关闭，缺失/错误投影/跨目标和会话变化不写入
+ok 13 - B14 / I2-A01：默认入口关闭，缺失/错误投影/跨目标和会话变化不写入
+  ---
+  duration_ms: 43.130083
+  type: 'test'
+  ...
+# Subtest: B14 / I2-01：实际页面和API构造可选性别创建，无标签省略、保密显式传值
+ok 14 - B14 / I2-01：实际页面和API构造可选性别创建，无标签省略、保密显式传值
+  ---
+  duration_ms: 16.666084
+  type: 'test'
+  ...
+# Subtest: B14 / I2-01/02：实际API绑定资源及正文版本，标签更新语义未知时拦截
+ok 15 - B14 / I2-01/02：实际API绑定资源及正文版本，标签更新语义未知时拦截
+  ---
+  duration_ms: 11.459916
+  type: 'test'
+  ...
+# Subtest: B14 / I2-02–05：送审/上架/删草稿使用正式动作和目标版本
+ok 16 - B14 / I2-02–05：送审/上架/删草稿使用正式动作和目标版本
+  ---
+  duration_ms: 34.814125
+  type: 'test'
+  ...
+# Subtest: B14 / REQ-018：409只重读，403停止且不自动重试；离开隔离迟到写结果
+ok 17 - B14 / REQ-018：409只重读，403停止且不自动重试；离开隔离迟到写结果
+  ---
+  duration_ms: 6.45575
+  type: 'test'
+  ...
+# Subtest: REQ-003：编辑服务端省略可选默认字段的草稿时补全默认报答和期限
+ok 18 - REQ-003：编辑服务端省略可选默认字段的草稿时补全默认报答和期限
+  ---
+  duration_ms: 6.173959
+  type: 'test'
+  ...
+# Subtest: REQ-018：账号变化立即清除我的心愿和未保存正文
+not ok 19 - REQ-018：账号变化立即清除我的心愿和未保存正文
+  ---
+  duration_ms: 6.652
+  type: 'test'
+  location: '/Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/wishes-page.test.ts:269:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/wishes-page.test.ts:275:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 13
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 439.923708
