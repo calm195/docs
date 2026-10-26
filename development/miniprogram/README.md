@@ -37,3 +37,5 @@
 - [2026-10-23 内容举报、警告阅读确认与处罚申诉](milestones/2026-10-23-reports-warnings-appeals-r1.md)
 
 - [2026-10-26 本人关怀卡与援助资料接入](milestones/2026-10-26-crisis-care-r1.md)
+
+- [2026-10-26 账号注销、处理中与匿名删除回执](milestones/2026-10-26-account-deletion-r1.md)

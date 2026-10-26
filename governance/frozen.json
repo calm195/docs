@@ -177,6 +177,10 @@
     "development/miniprogram/milestones/2026-10-26-crisis-care-r1.md": "b63605c99643dbc46b0bd4de89b267c23b41cee4f6bc1c57ecb2a5b4263702f4",
     "development/miniprogram/validation/2026-10-26-crisis-care-build-r1.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
     "development/miniprogram/validation/2026-10-26-crisis-care-check-r1.txt": "8ededa8697ace9a714d0c08b68a0b0eed54722f79581780e3c0ebf6204695e9c",
-    "development/miniprogram/validation/2026-10-26-crisis-care-r1.json": "9c19c573cdcff94dcd19c10e1001e3f3d39d78bf1e132d949572000ce170350c"
+    "development/miniprogram/validation/2026-10-26-crisis-care-r1.json": "9c19c573cdcff94dcd19c10e1001e3f3d39d78bf1e132d949572000ce170350c",
+    "development/miniprogram/milestones/2026-10-26-account-deletion-r1.md": "9681dbf4875abe8b774e3e6f9172861996ec977aeaf7bdec833f8a4740747dec",
+    "development/miniprogram/validation/2026-10-26-account-deletion-build-r1.txt": "a0970c9f23be0a8471d1348ff4654b9ab7febf51ab01a92693d239c48dfd6ac4",
+    "development/miniprogram/validation/2026-10-26-account-deletion-check-r1.txt": "18e2ff924c0b351941d96fe26a2ccc28634d1446ff7b929c13a30c78297a892b",
+    "development/miniprogram/validation/2026-10-26-account-deletion-r1.json": "8fc9691b0f45fd59946fe947625f091a7d15edd11623468659053b6699621b31"
   }
 }
