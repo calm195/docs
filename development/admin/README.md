@@ -70,3 +70,13 @@
 - [证据删除处理与回执查询独立页面](milestones/2026-10-23-privacy-pages-r1.md)
 
 - [全站回归与公共边界修复](milestones/2026-10-23-site-regression-r1.md)
+
+## 悄悄话首期开发
+
+- [管理端开发计划](whispers-development-plan.md)
+
+- [2026-10-27 悄悄话 WA-01 类型、服务与验证](milestones/2026-10-27-whispers-wa01-r1.md)
+
+- [WA-01 类型数量勘误](milestones/2026-10-27-whispers-wa01-errata-r1.md)
+
+- [WA-01 源码提交精确关联](milestones/2026-10-27-whispers-wa01-commit-r1.md)

@@ -322,6 +322,10 @@
     "design/whispers-v1/delivery.md": "5d9d59fd893cb2ba28db466b490b7e5270d1923ce2fb400eb0985f4ce060afa0",
     "design/whispers-v1/domain.md": "1eb5a7a309f80d8115525a44abe4375f58ac55c81faa1b36a40cc6bea8d0efa4",
     "plans/whispers-development-plan-v0.1.md": "9448356593f04fc0133b333dea1ca3d8185bfa53aa80520194bf3fbf8f0aeec5",
-    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04"
+    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04",
+    "development/admin/milestones/2026-10-27-whispers-wa01-r1.md": "74240a3c15ae8a9a16d2095e1070d67e54deeb608393cf82e27b29ee8920ef3d",
+    "development/admin/validation/2026-10-27-whispers-wa01-r1.json": "985fd8085f4dbc31502e8eab5cac73ddd6b42883fc577da0e317b04b300ae77a",
+    "development/admin/milestones/2026-10-27-whispers-wa01-errata-r1.md": "4e18c6044d0e0239ad3ae381bbf39a01d1b69883e521fdb3bc7480ba453de01e",
+    "development/admin/milestones/2026-10-27-whispers-wa01-commit-r1.md": "7e72c83372d5511582fb53160defb413ebf91242dbb5ac7c68246eebff76cf24"
   }
 }
