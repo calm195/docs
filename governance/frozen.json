@@ -335,6 +335,11 @@
     "development/miniprogram/validation/2026-10-28-whispers-text-r1-build.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
     "development/miniprogram/validation/2026-10-28-whispers-text-r1-check.txt": "cd3f6681015b094a64704dda59abde8c9ffb20ac4465b3a4c7007f09186b1258",
     "development/miniprogram/validation/2026-10-28-whispers-text-r1-docs.txt": "65ddb80cde6cad3540e6e8a6641024a89a70680a0dd75494681b07768a7ef91f",
-    "development/miniprogram/validation/2026-10-28-whispers-text-r1.json": "542c40472ea5c5559b1213c14251b434e5cff70745d66385209c9640b9a73495"
+    "development/miniprogram/validation/2026-10-28-whispers-text-r1.json": "542c40472ea5c5559b1213c14251b434e5cff70745d66385209c9640b9a73495",
+    "development/miniprogram/milestones/2026-10-28-whispers-interactions-r1.md": "adc4ac66cd87a4d48239e99ddd0cdc73e567a7179d515d183c7162862ed6de51",
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-build.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-check.txt": "538e9bb4e974639362c4cc357e9f82bd26fb91fd6e350ac382eefc366cec8329",
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-docs.txt": "e7affec6e664b6f4639df051ed1efcf0ab1c87af323990b5eb824bc35af87aec",
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1.json": "25dce11ceb6e415fda53106cf684aac64be711b77c03450cfdd6953c79d33446"
   }
 }

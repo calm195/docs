@@ -1,0 +1,8 @@
+文档检查通过：335 个固定文件，75 个来源映射，当前本地链接可解析，6 个固定契约旧链接可按迁移映射定位。
+命令：python3 scripts/check_documents.py --base c578b4a56ddd3bf30be7dfb4645a05b1a09fb4e0；退出码0。
+git diff --check：退出码0。
+新增文件 development/miniprogram/milestones/2026-10-28-whispers-interactions-r1.md 空白检查：退出码1，无空白错误输出（--no-index新文件差异返回1）。
+新增文件 development/miniprogram/validation/2026-10-28-whispers-interactions-r1-build.txt 空白检查：退出码1，无空白错误输出（--no-index新文件差异返回1）。
+新增文件 development/miniprogram/validation/2026-10-28-whispers-interactions-r1-check.txt 空白检查：退出码1，无空白错误输出（--no-index新文件差异返回1）。
+新增文件 development/miniprogram/validation/2026-10-28-whispers-interactions-r1.json 空白检查：退出码1，无空白错误输出（--no-index新文件差异返回1）。
+OpenAPI、actions、examples SHA-256只读复核与固定契约一致，具体值见本次验证元数据。
