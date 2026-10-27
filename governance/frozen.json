@@ -192,6 +192,8 @@
     "development/miniprogram/validation/2026-10-26-page-logic-check-r1.txt": "e8462fba4a9162c0755fe301831c64d5284d990ffe829c1d419136c24a7579d5",
     "development/miniprogram/validation/2026-10-26-page-logic-build-r1.txt": "a0970c9f23be0a8471d1348ff4654b9ab7febf51ab01a92693d239c48dfd6ac4",
     "development/miniprogram/milestones/2026-10-26-page-logic-theme-r1.md": "65fed8503826c097d5dfc2dbbfb62efc74940037d0184bee2a622a8df40f5aac",
-    "development/miniprogram/milestones/2026-10-26-page-logic-evidence-r1.md": "7e60d5fa3dd6fb55d65295f7549597d829779a622817d20f27d6c630d70ff162"
+    "development/miniprogram/milestones/2026-10-26-page-logic-evidence-r1.md": "7e60d5fa3dd6fb55d65295f7549597d829779a622817d20f27d6c630d70ff162",
+    "development/miniprogram/milestones/2026-10-27-backend-coordination-r1.md": "af327eec9841990a26e1c4de4d6012e1bca9045db1b5440afc31522f585006d7",
+    "development/miniprogram/validation/2026-10-27-backend-coordination-r1.json": "93f77bc7a1f6557d7e16d563ac25b9f6fe3e079217bb9e8a48a917293c3609dd"
   }
 }

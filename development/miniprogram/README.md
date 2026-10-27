@@ -45,3 +45,5 @@
 - [2026-10-26 页面逻辑回归、问题修复与主题提交](milestones/2026-10-26-page-logic-theme-r1.md)
 
 - [2026-10-26 原始测试日志空白检查说明](milestones/2026-10-26-page-logic-evidence-r1.md)
+
+- [2026-10-27 待后端协调与实现同步清单](milestones/2026-10-27-backend-coordination-r1.md)
