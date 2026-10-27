@@ -117,3 +117,5 @@
 - [2026-10-27 树洞基础源码提交补证](milestones/2026-10-27-whispers-foundation-commit-r1.md)
 
 - [2026-10-28 悄悄鲤文字、身份与昵称领域](milestones/2026-10-28-whispers-text-r1.md)（[文档检查补证](validation/2026-10-28-whispers-text-doc-check-r1.txt)）
+
+- [2026-10-28 悄悄鲤审核、危机与治理](milestones/2026-10-28-whispers-governance-r1.md)（[验证清单](validation/2026-10-28-whispers-governance-r1.json)）
