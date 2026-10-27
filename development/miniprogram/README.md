@@ -47,3 +47,7 @@
 - [2026-10-26 原始测试日志空白检查说明](milestones/2026-10-26-page-logic-evidence-r1.md)
 
 - [2026-10-27 待后端协调与实现同步清单](milestones/2026-10-27-backend-coordination-r1.md)
+
+- [2026-10-27 独立前端收口：聊天会话、分页与轮询](milestones/2026-10-27-frontend-independent-r1.md)
+
+- [2026-10-27 独立前端收口精确源码提交补充](milestones/2026-10-27-frontend-independent-commit-r1.md)
