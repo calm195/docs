@@ -1,0 +1,195 @@
+{
+  "boundary": "本地页面与真实服务适配器，全部业务响应仅由浏览器测试拦截合成；不连接真实后端",
+  "browser_version": "156.0.8078.48",
+  "results": [
+    {
+      "page": "reviews",
+      "theme": "light",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "page": "reports",
+      "theme": "light",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "page": "crises",
+      "theme": "light",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "page": "evidence",
+      "theme": "light",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "page": "reviews",
+      "theme": "dark",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "page": "reports",
+      "theme": "dark",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "page": "crises",
+      "theme": "dark",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "page": "evidence",
+      "theme": "dark",
+      "desktop": "1440×1100",
+      "mobile": "390×844",
+      "actual_transport_adapter": true
+    },
+    {
+      "reload_session_cleanup": "通过",
+      "storage_theme_only": "通过",
+      "page_errors": 0,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/sessions",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reviews",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reviews/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/whispers/reviews/6c500000-0000-4000-8000-000000000001/decision",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reports",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reports/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/contents/whisper_post/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/whispers/reports/6c500000-0000-4000-8000-000000000001/decision",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/crises",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/crises/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/whispers/crises/6c500000-0000-4000-8000-000000000001/actions",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/evidence/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/whispers/evidence/6c500000-0000-4000-8000-000000000001/deletion-requests",
+          "status": 202
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/deletions/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/deletions/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reviews",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reviews/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reports",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/reports/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/contents/whisper_post/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/crises",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/crises/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/whispers/evidence/6c500000-0000-4000-8000-000000000001",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "role": "review_operator",
+      "menu": "通过",
+      "logout_cleanup": "通过"
+    },
+    {
+      "role": "crisis_operator",
+      "menu": "通过",
+      "logout_cleanup": "通过"
+    }
+  ],
+  "failures": []
+}

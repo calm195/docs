@@ -86,3 +86,5 @@
 - [2026-10-27 树洞举报治理与申诉适配](milestones/2026-10-27-whispers-wa03-r1.md)
 
 - [2026-10-27 树洞危机与限定证据治理](milestones/2026-10-27-whispers-wa04-r1.md)
+
+- [2026-10-28 树洞回归与交接准备（真实联调阻塞）](milestones/2026-10-28-whispers-wa05-r1.md)
