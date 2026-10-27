@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-28",
+  "source_branch": "develop",
+  "source_base": "6281f8a652ba964845a6df09b62677a877b63dbf",
+  "source_head": "84aa0a6f9167226fafd38df55a371b6980abb7e0",
+  "source_commits": [
+    "3819eeb17221934f4577b7a2176f8846e07329e0",
+    "2486dc34c39381d4282eed3f47382ebbfbac5095",
+    "84aa0a6f9167226fafd38df55a371b6980abb7e0"
+  ],
+  "docs_branch": "mini-deveop",
+  "docs_base": "c816edcf8b55179662df5185fb38870ed436774a",
+  "contract": "whispers/1.0.0",
+  "files": {
+    "src/components/WhisperContent.vue": "c6035767b3628c3227a59d61d24ae6d9883300a0527f3ef3f980acfd1e439294",
+    "src/components/WhisperIdentity.vue": "0dce71c9d0d205b085e4e0d0f3607f2bf6392870c5889a3cb237364afe332fbc",
+    "src/composables/use-whisper-feed.ts": "ff883504853be78468bedb63bd7a0738d977e92953a428bb358b67f51a22a812",
+    "src/composables/use-whisper-page.ts": "ee2d39ac72346ebe49fe7d4d65d27f43308dc0178b93a5a6194e79696edc57c5",
+    "src/pages.json": "022c7e21f2ec49c89ee40c734d4e78c5cb2952e3e9bca3595335559fe965f1bd",
+    "src/pages/index/index.vue": "4cc540f1f35d6dfff2ad5a50655849c0c244f3cc60c567a872d7ffa1aa10efd6",
+    "src/pages/whispers/detail.vue": "f25ae1ccf3fa465d961e6713d92602bc23980c693930086c6f3ab741053cde76",
+    "src/pages/whispers/editor.vue": "c15542d2e905ad7e8d6a1eb5968e1135514f184af2b17c584b1a1a0426178eb6",
+    "src/pages/whispers/help.vue": "1791532eb17ee9a58defafb06bea4713a0cbd1b08312c8ebc85af646f6514352",
+    "src/pages/whispers/index.vue": "021947c9b6c7aa701ca498af821763809e4dd8f1bcb727777aa08dfb9b7efa3c",
+    "src/pages/whispers/mine.vue": "3a0b1aae66636d6fd0adb880c5e95227d9dba3282ab43a463fe96c17068ab84a",
+    "src/pages/whispers/nickname.vue": "d4360b82be8ffe40873aaa41315312f1c814f2250a6e32b332889ddd2fa246c5",
+    "src/pages/whispers/report.vue": "9cd90bb08eddb539469edebfcdc18e0f9b6cde467206750a2e6945f567a4ee12",
+    "src/stores/whispers.ts": "9e51259d64750bcf6306fd046d98e8fe705f1666fc6495706580af1c6eec10a4",
+    "src/utils/whisper-content.ts": "5cfb054ad6c31d0d6e3365a03b7e1a06c5075b603bc8adef255868e2f2addb0a",
+    "tests/whisper-pages.test.ts": "457accce7762f32b6794319300a5e69fe9149c92c14e45de75435657dc44fbb0"
+  },
+  "checks": {
+    "npm run check": {
+      "exit_code": 0,
+      "tests": 160,
+      "passed": 160
+    },
+    "npm run build:mp-weixin": {
+      "exit_code": 0,
+      "warning": "未配置 AppID，uni统计不可用"
+    }
+  },
+  "boundary": "正式合成样例派生数据与替代传输，未执行真实HTTP、微信工具或真机验证"
+}

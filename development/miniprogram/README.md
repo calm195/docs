@@ -55,3 +55,5 @@
 - [2026-10-27 悄悄鲤小程序端开发计划（规划，未实现）](milestones/2026-10-27-whispers-development-plan-r1.md)
 
 - [2026-10-27 悄悄鲤第一批：契约、会话与黑名单迁移（本端完成，真实联调待交接）](milestones/2026-10-27-whispers-foundation-r1.md)
+
+- [2026-10-28 悄悄鲤第二批：文字树洞、匿名身份、发帖与我的记录（本端完成，真实联调待交接）](milestones/2026-10-28-whispers-text-r1.md)

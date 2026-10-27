@@ -1,0 +1,7 @@
+文档检查通过：330 个固定文件，75 个来源映射，当前本地链接可解析，6 个固定契约旧链接可按迁移映射定位。
+命令：python3 scripts/check_documents.py --base c816edcf8b55179662df5185fb38870ed436774a；恢复后退出码0。
+git diff --check：退出码0。
+新增文件空白检查 development/miniprogram/milestones/2026-10-28-whispers-text-r1.md：退出码1，无空白错误输出（--no-index的新文件差异返回1）。
+新增文件空白检查 development/miniprogram/validation/2026-10-28-whispers-text-r1-build.txt：退出码1，无空白错误输出（--no-index的新文件差异返回1）。
+新增文件空白检查 development/miniprogram/validation/2026-10-28-whispers-text-r1-check.txt：退出码1，无空白错误输出（--no-index的新文件差异返回1）。
+新增文件空白检查 development/miniprogram/validation/2026-10-28-whispers-text-r1.json：退出码1，无空白错误输出（--no-index的新文件差异返回1）。
