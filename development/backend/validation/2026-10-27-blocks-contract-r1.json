@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-27",
+  "timezone": "Asia/Shanghai",
+  "backend_branch": "develop",
+  "backend_head_base": "cf09310a4f1c19c7eb02e7a2dabcddd2804866c9",
+  "docs_branch": "backend-develop",
+  "docs_head_base": "2ce12b1105b7acac8f50b002ac6d418eabe3f2ff",
+  "delivery_status": "本轮P1未提交工作区实现，上轮P0已分别提交",
+  "source_sha256": {
+    "README.md": "946ec80b7e7dd47955d8eddf0590668232aabd59823d3f4affbe9b2f6a9dd964",
+    "internal/httpapi/blocks_test.go": "bf2590599d0c6c6a9a96b667a03fbad24b1b473696b7ede7fba254f8d3525be8",
+    "internal/moderation/safety_integration_test.go": "c738eea6b331858c7677da888af53c2351f27f1c36c194f7f19a8395e4838a9f",
+    "internal/safety/read.go": "062eebfdb827e8512ce08cea5cb1b0c824a715368edf55a7099be565dea2234d",
+    "internal/safety/service.go": "27b222ea256cb127f4f1f45670a79030077535272341719852d1b0e79c02f8a4",
+    "internal/studentauth/integration_test.go": "ae408e2141af77ca85eaa7a5ebebb9c11bed8c809463ed4bf3debe8c0ae83095",
+    "internal/studentauth/service.go": "e6c6f4f1c0b79c3237fd99a2a1a7ae3508cb1d52acfcb399190fd4f5e3798ddb"
+  },
+  "contract": "OpenAPI 0.2.1 / actions revision 6",
+  "contract_sha256": {
+    "contracts/blocks.v0.2.1.md": "01c812654e00f7bbd2efccdcd68740cd0befcbedff622decd40ffec111bcbc7b",
+    "contracts/blocks_v0_2_1.py": "29bebae50e2bd7888da5b3960b314f159f0fb1a36e034c8f352ee816b58bfe2e",
+    "contracts/openapi.v0.2.1.json": "9161119936e897133e3de1a9d1b28b0b338ee347672fdb568db246477c785bbc",
+    "contracts/examples.v0.2.1.json": "334b546337cab6a915a04395c09ecb920ab7f5e0fb0552cecb352ade49b16186",
+    "contracts/actions.v0.2.1.json": "aef2546129f523955bf57ad6887bf0232ffca449d02b1e3130d3b8acf24f0c73",
+    "contracts/actions-review.v0.2.1-r6.json": "7d546588f472b4a6178315ce9cc27aec846da3cc207bc5f7a7a740c1d24f9041"
+  },
+  "checks": {
+    "make fmt": "通过",
+    "make check-fast related packages": "通过",
+    "make check": "通过，GOCACHE使用隔离可写目录；包含只读格式、go vet、全量race/cover；依赖用例另显式运行",
+    "make build": "通过",
+    "make integration": "通过，独立Docker PG/Redis/RocketMQ，身份、密钥及供应商合成",
+    "TestPostgresStudent": "新增正式动作及受罚不提示断言在真实PG/Redis通过",
+    "TestSafetyGovernance": "真实PG/HTTP分页、归属、游标、版本和处罚拒绝通过；补充断言后定向复跑通过",
+    "contracts/blocks_v0_2_1.py": "新版本生成、只读校验通过；84操作792媒体示例及边界负例",
+    "contracts/validate.py": "旧0.2.0只读校验通过，83操作",
+    "documents": "python3 scripts/check_documents.py（含既有及本轮固定指纹）和两仓库git diff --check通过；新增未跟踪文件另以git diff --no-index --check逐一验证",
+    "whitespace": "所有新增产物在固定前逐文件检查，工具输出仅脱敏及去行尾空白"
+  },
+  "resources": {
+    "project": "liyuanci-p1-blocks-20261027",
+    "probe_port": "127.0.0.1:18130",
+    "secret_reference": ".local/p1-blocks/test-password（忽略文件，仅安全引用）",
+    "domain_resources": "无需新增外部资源、数据库迁移或环境变量",
+    "pending": "微信code、供应商及正式规则、域名和双账号联合操作仍按P0记录；标签/会话/资产恢复/注销恢复另需正式语义协调",
+    "final_state": "独立项目已按API/worker、Broker/NameServer、Redis/PostgreSQL顺序停止；容器和卷保留；其他项目未操作"
+  }
+}

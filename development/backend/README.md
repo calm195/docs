@@ -101,3 +101,7 @@
 - [2026-10-27 公开主页精确源码提交补充](milestones/2026-10-27-public-profile-commit-r1.md)
 
 - [2026-10-27 公开主页提交检查补充说明](milestones/2026-10-27-public-profile-commit-r2.md)
+
+- [2026-10-27 黑名单契约与正式解除动作统一](milestones/2026-10-27-blocks-contract-r1.md)
+
+- [2026-10-27 黑名单契约精确提交与合流交接](milestones/2026-10-27-blocks-commit-r1.md)
