@@ -97,3 +97,15 @@
 - [2026-10-23 本地隐私删除与联调启动精确源码提交补充](milestones/2026-10-23-local-privacy-commit-r1.md)
 
 - [2026-10-23 后端联调启动交付合入 main](milestones/2026-10-23-main-merge-r1.md)
+
+- [2026-10-27 小程序公开主页实现与认证发布准入回报](milestones/2026-10-27-public-profile-p0-r1.md)
+
+- [2026-10-27 公开主页精确源码提交补充](milestones/2026-10-27-public-profile-commit-r1.md)
+
+- [2026-10-27 公开主页提交检查补充说明](milestones/2026-10-27-public-profile-commit-r2.md)
+
+- [2026-10-27 黑名单契约与正式解除动作统一](milestones/2026-10-27-blocks-contract-r1.md)
+
+- [2026-10-27 黑名单契约精确提交与合流交接](milestones/2026-10-27-blocks-commit-r1.md)
+
+- [2026-10-27 公开主页与黑名单交付合入main](milestones/2026-10-27-main-merge-r1.md)

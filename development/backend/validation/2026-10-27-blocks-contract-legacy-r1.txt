@@ -1,0 +1,6 @@
+/private/tmp/liyuanci-contract-021-venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/private/tmp/liyuanci-docs-backend-develop/contracts/validate.py:5: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+  from jsonschema import Draft202012Validator, RefResolver
+PASS T002/REQ-001,003,020: 83 operations; 783 request/response examples; 5 negative boundaries; refs and OpenAPI 3.1; B02/B03/B04/B05/B06/B07 static boundaries; 8 new negative cases
+PASS T002/B07: 83 actions; missing/unknown/wrong projection/cross-target deny; no moderation extension dependency

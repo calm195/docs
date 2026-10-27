@@ -1,0 +1,16 @@
+{
+  "base_commit": "2ce12b1105b7acac8f50b002ac6d418eabe3f2ff",
+  "contract": "0.2.1",
+  "index_revision": 6,
+  "scope": "既有黑名单读取、条目版本和正式解除动作；不扩展业务权限",
+  "hashes": {
+    "openapi.v0.2.1.json": "9161119936e897133e3de1a9d1b28b0b338ee347672fdb568db246477c785bbc",
+    "examples.v0.2.1.json": "334b546337cab6a915a04395c09ecb920ab7f5e0fb0552cecb352ade49b16186",
+    "actions.v0.2.1.json": "aef2546129f523955bf57ad6887bf0232ffca449d02b1e3130d3b8acf24f0c73",
+    "blocks_v0_2_1.py": "29bebae50e2bd7888da5b3960b314f159f0fb1a36e034c8f352ee816b58bfe2e",
+    "blocks.v0.2.1.md": "01c812654e00f7bbd2efccdcd68740cd0befcbedff622decd40ffec111bcbc7b",
+    "openapi.v0.2.0.json": "741b7639160c489b33d777378c881c27e62221b3eb25cab696bb87115e762d7b",
+    "actions.v0.2.0.json": "3f5b64f1dd6d04b0a7d306cfdca0f4f216a35d13928046509eff0e3b86d4302e",
+    "authorization.py": "42d32d547de6b143c56b7de5c843561419bcceed28c11c7ec4102b279428e9ec"
+  }
+}

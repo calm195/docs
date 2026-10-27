@@ -1,0 +1,45 @@
+CREATE DATABASE
+=== RUN   TestPostgresPublicProfile
+=== RUN   TestPostgresPublicProfile/目标绑定
+=== RUN   TestPostgresPublicProfile/读取账号绑定
+=== RUN   TestPostgresPublicProfile/篡改
+=== RUN   TestPostgresPublicProfile/坏会话不降级
+=== RUN   TestPostgresPublicProfile/不存在
+=== RUN   TestPostgresPublicProfile/上限
+--- PASS: TestPostgresPublicProfile (1.27s)
+    --- PASS: TestPostgresPublicProfile/目标绑定 (0.00s)
+    --- PASS: TestPostgresPublicProfile/读取账号绑定 (0.00s)
+    --- PASS: TestPostgresPublicProfile/篡改 (0.00s)
+    --- PASS: TestPostgresPublicProfile/坏会话不降级 (0.00s)
+    --- PASS: TestPostgresPublicProfile/不存在 (0.00s)
+    --- PASS: TestPostgresPublicProfile/上限 (0.00s)
+PASS
+CREATE DATABASE
+=== RUN   TestPostgresMigrations
+--- PASS: TestPostgresMigrations (5.63s)
+PASS
+CREATE DATABASE
+=== RUN   TestBusinessSchema
+--- PASS: TestBusinessSchema (2.04s)
+PASS
+CREATE DATABASE
+=== RUN   TestPostgresStudent
+    integration_test.go:437: 真实PG/Redis/HTTP与合成微信/KMS通过；未接入实际微信AppID/AppSecret或生产密钥服务
+--- PASS: TestPostgresStudent (1.16s)
+PASS
+CREATE DATABASE
+=== RUN   TestPostgresStudentCards
+=== RUN   TestPostgresStudentCards/并发领取与缺失源恢复
+=== NAME  TestPostgresStudentCards
+    integration_test.go:539: 学生卡真实PG/Redis/HTTP、加密暂存、租约/重试/取消/幂等通过；外部供应商为合成适配器，人工认证由独立模块测试
+--- PASS: TestPostgresStudentCards (1.96s)
+    --- PASS: TestPostgresStudentCards/并发领取与缺失源恢复 (0.06s)
+PASS
+CREATE DATABASE
+=== RUN   TestPostgresVerification
+--- PASS: TestPostgresVerification (1.48s)
+PASS
+CREATE DATABASE
+=== RUN   TestPostgresWishHTTP
+--- PASS: TestPostgresWishHTTP (1.28s)
+PASS

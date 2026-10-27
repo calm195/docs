@@ -1,0 +1,56 @@
+ Container liyuanci-p1-blocks-20261027-redis-1 Running
+ Container liyuanci-p1-blocks-20261027-postgres-1 Running
+ Container liyuanci-p1-blocks-20261027-redis-1 Waiting
+ Container liyuanci-p1-blocks-20261027-postgres-1 Waiting
+ Container liyuanci-p1-blocks-20261027-postgres-1 Healthy
+ Container liyuanci-p1-blocks-20261027-redis-1 Healthy
+CREATE DATABASE
+=== RUN   TestPostgresStudent
+    integration_test.go:456: 真实PG/Redis/HTTP与合成微信/KMS通过；未接入实际微信AppID/AppSecret或生产密钥服务
+--- PASS: TestPostgresStudent (1.25s)
+PASS
+=== RUN   TestSafetyGovernance
+=== RUN   TestSafetyGovernance/拉黑双向旧申请永久失效及幂等
+=== RUN   TestSafetyGovernance/本人黑名单分页版本与游标隔离
+=== RUN   TestSafetyGovernance/警告首次展示及提前同键重试
+=== RUN   TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活
+=== RUN   TestSafetyGovernance/永久封禁仍可申诉且无普通写入
+=== RUN   TestSafetyGovernance/拉黑例外退出及已还愿拒绝
+=== RUN   TestSafetyGovernance/举报鉴权类型版本及角色重验
+=== RUN   TestSafetyGovernance/内容普通限制解除不自动公开
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner
+=== RUN   TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper
+=== RUN   TestSafetyGovernance/已还愿拒绝例外退出
+=== RUN   TestSafetyGovernance/处罚通知失败整单回滚
+=== RUN   TestSafetyGovernance/处罚与同意并发原子暂停
+=== RUN   TestSafetyGovernance/拉黑与同意并发依统一账号锁串行
+--- PASS: TestSafetyGovernance (3.97s)
+    --- PASS: TestSafetyGovernance/拉黑双向旧申请永久失效及幂等 (0.09s)
+    --- PASS: TestSafetyGovernance/本人黑名单分页版本与游标隔离 (0.03s)
+    --- PASS: TestSafetyGovernance/警告首次展示及提前同键重试 (0.08s)
+    --- PASS: TestSafetyGovernance/禁言暂停待审取消申诉解罚不复活 (0.09s)
+    --- PASS: TestSafetyGovernance/永久封禁仍可申诉且无普通写入 (0.05s)
+    --- PASS: TestSafetyGovernance/拉黑例外退出及已还愿拒绝 (0.05s)
+    --- PASS: TestSafetyGovernance/举报鉴权类型版本及角色重验 (0.06s)
+    --- PASS: TestSafetyGovernance/内容普通限制解除不自动公开 (0.03s)
+    --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵 (0.87s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/owner (0.08s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/block/helper (0.08s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/owner (0.12s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/matching/penalty/helper (0.10s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/owner (0.10s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/block/helper (0.11s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/owner (0.15s)
+        --- PASS: TestSafetyGovernance/例外退出跨状态处罚主体满额与过期矩阵/realized/penalty/helper (0.12s)
+    --- PASS: TestSafetyGovernance/已还愿拒绝例外退出 (0.11s)
+    --- PASS: TestSafetyGovernance/处罚通知失败整单回滚 (0.06s)
+    --- PASS: TestSafetyGovernance/处罚与同意并发原子暂停 (0.28s)
+    --- PASS: TestSafetyGovernance/拉黑与同意并发依统一账号锁串行 (0.23s)
+PASS
