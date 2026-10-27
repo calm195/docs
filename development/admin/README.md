@@ -80,3 +80,5 @@
 - [WA-01 类型数量勘误](milestones/2026-10-27-whispers-wa01-errata-r1.md)
 
 - [WA-01 源码提交精确关联](milestones/2026-10-27-whispers-wa01-commit-r1.md)
+
+- [2026-10-27 树洞审核页面与提交记录](milestones/2026-10-27-whispers-wa02-r1.md)
