@@ -1,0 +1,8 @@
+src/types/whispers.ts 44ms
+src/utils/whispers-contract.ts 61ms
+已生成学生端契约类型及校验目录，共 32 项操作
+生成前后SHA-256相同；固定契约输入保持不变。
+{
+  "src/types/whispers.ts": "419fe03ccecebfe43f6d2f6e05a938fe95ba45d1de8861565f509fd17d78afb6",
+  "src/utils/whispers-contract.ts": "a2b0a8acd8eea8fa78d3fdbbdcc6d21cb59a0367c2278ea28bbb33524896ca75"
+}

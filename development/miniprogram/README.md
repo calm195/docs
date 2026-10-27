@@ -51,3 +51,7 @@
 - [2026-10-27 独立前端收口：聊天会话、分页与轮询](milestones/2026-10-27-frontend-independent-r1.md)
 
 - [2026-10-27 独立前端收口精确源码提交补充](milestones/2026-10-27-frontend-independent-commit-r1.md)
+
+- [2026-10-27 悄悄鲤小程序端开发计划（规划，未实现）](milestones/2026-10-27-whispers-development-plan-r1.md)
+
+- [2026-10-27 悄悄鲤第一批：契约、会话与黑名单迁移（本端完成，真实联调待交接）](milestones/2026-10-27-whispers-foundation-r1.md)

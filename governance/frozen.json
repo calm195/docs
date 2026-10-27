@@ -322,6 +322,14 @@
     "design/whispers-v1/delivery.md": "5d9d59fd893cb2ba28db466b490b7e5270d1923ce2fb400eb0985f4ce060afa0",
     "design/whispers-v1/domain.md": "1eb5a7a309f80d8115525a44abe4375f58ac55c81faa1b36a40cc6bea8d0efa4",
     "plans/whispers-development-plan-v0.1.md": "9448356593f04fc0133b333dea1ca3d8185bfa53aa80520194bf3fbf8f0aeec5",
-    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04"
+    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04",
+    "development/miniprogram/milestones/2026-10-27-whispers-development-plan-r1.md": "f53b7689ff93899b1077bfb66a2730731fb302449b35403374309f63e05e9824",
+    "development/miniprogram/validation/2026-10-27-whispers-development-plan-r1.txt": "db618e4ab9490cb0696bc145847cf27d7087c8f797bd694e5aa0a04c9683e8e9",
+    "development/miniprogram/milestones/2026-10-27-whispers-foundation-r1.md": "e01ada6253c704a076459d8d6ffa517b3083b3606871839cf987fee231a22720",
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1.json": "22b10fb405185f164cfd4efdf4358393f320355f5bc5c20694bedf3ff5633cf7",
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-check.txt": "3ac39b68b69bd755fd43290d5d4e6ec3aebb00111bdd4ce412cdb2da684b05fe",
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-build.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-contract.txt": "82e42b6a77677548df53c8149fec59c93d5752fc68ea7f1f15cce52b5b6049a9",
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-docs.txt": "143b60e20a9195c03ef26317006cca640c94b7614d987d0e80423bccbaca14ed"
   }
 }
