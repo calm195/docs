@@ -109,3 +109,9 @@
 - [2026-10-27 黑名单契约精确提交与合流交接](milestones/2026-10-27-blocks-commit-r1.md)
 
 - [2026-10-27 公开主页与黑名单交付合入main](milestones/2026-10-27-main-merge-r1.md)
+
+- [2026-10-27 悄悄鲤后端开发计划](milestones/2026-10-27-whispers-backend-plan-r1.md)
+
+- [2026-10-27 悄悄鲤输入对照与数据命令基础](milestones/2026-10-27-whispers-foundation-r1.md)
+
+- [2026-10-27 树洞基础源码提交补证](milestones/2026-10-27-whispers-foundation-commit-r1.md)

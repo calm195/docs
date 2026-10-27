@@ -322,6 +322,20 @@
     "design/whispers-v1/delivery.md": "5d9d59fd893cb2ba28db466b490b7e5270d1923ce2fb400eb0985f4ce060afa0",
     "design/whispers-v1/domain.md": "1eb5a7a309f80d8115525a44abe4375f58ac55c81faa1b36a40cc6bea8d0efa4",
     "plans/whispers-development-plan-v0.1.md": "9448356593f04fc0133b333dea1ca3d8185bfa53aa80520194bf3fbf8f0aeec5",
-    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04"
+    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04",
+    "development/backend/milestones/2026-10-27-whispers-backend-plan-r1.md": "9747da9604454af5e1bb828a741e16fa7afaf499efe60cfbe112425327a82eec",
+    "development/backend/validation/2026-10-27-whispers-backend-plan-r1.json": "1e4b39818f19fd224355d23f8d136922f107139397e1bd75ccd64c79552a5992",
+    "development/backend/milestones/2026-10-27-whispers-foundation-r1.md": "c5b7bd23ef8d6fb6ce38622d2a2133286a3a1c53522c173f64fa499bf84f2229",
+    "development/backend/validation/2026-10-27-whispers-foundation-r1.json": "11897fa2916b399229957263e447c73176ae6ca751046a6dca395eea12bd9e80",
+    "development/backend/validation/2026-10-27-whispers-foundation-contract-r1.json": "bb8846eaa05cf5929276087831ebce1df77f5cd0d8932e4def0e4185738fe83a",
+    "development/backend/validation/2026-10-27-whispers-foundation-check-fast-r1.txt": "d9341f3dc1e8e40ff811d91ddc0deea63e664564f80d030a32643c60be61f255",
+    "development/backend/validation/2026-10-27-whispers-foundation-fmt-r1.txt": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+    "development/backend/validation/2026-10-27-whispers-foundation-check-r1.txt": "282efbaec86b5f85aba0dfc91a47227aef07cd91133d5fb070c3fdead5a714b4",
+    "development/backend/validation/2026-10-27-whispers-foundation-build-r1.txt": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+    "development/backend/validation/2026-10-27-whispers-foundation-entry-tests-r1.txt": "ef2f60b694d3fcfd365e2c884d92205a08a9300e5862de71cf57e65dc7070652",
+    "development/backend/validation/2026-10-27-whispers-foundation-postgres-r1.txt": "846e12ebf29c13654a31975c6e250376876c1515f599eeef41cf15d971ed7882",
+    "development/backend/validation/2026-10-27-whispers-foundation-migration-regression-r1.txt": "3a7a5896263bd733cf307f1d2daf18dc758eec4c74f6140964a2c15982b50eab",
+    "development/backend/validation/2026-10-27-whispers-foundation-integration-r1.txt": "2dcaa7a34164b2ce22c602957fb2c3d45db620786647f791009740041d5d0c9e",
+    "development/backend/milestones/2026-10-27-whispers-foundation-commit-r1.md": "0458d51fce532cbfbb7f7949f715537d70281e8fab6030f91ebd62964a293182"
   }
 }

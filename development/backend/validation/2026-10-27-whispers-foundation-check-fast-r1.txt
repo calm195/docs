@@ -1,0 +1,4 @@
+go test ./internal/entity/... ./internal/command/... ./internal/migration/...
+ok  	github.com/calm195/liyuanci-backend-go/internal/entity	(cached)
+ok  	github.com/calm195/liyuanci-backend-go/internal/command	0.202s
+ok  	github.com/calm195/liyuanci-backend-go/internal/migration	(cached)
