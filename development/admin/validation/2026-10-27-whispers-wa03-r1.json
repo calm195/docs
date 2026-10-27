@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-27",
+  "task": "WA-03",
+  "requirements": [
+    "REQ-014",
+    "REQ-015",
+    "REQ-019",
+    "REQ-017",
+    "REQ-018"
+  ],
+  "source_branch": "develop",
+  "source_commit": "31aa0538286e50bef87e9ec65debabe48282e612",
+  "dependency_commit": "32973a703adbccdc58b74333ddbe41eb1e7c8d87",
+  "docs_branch": "admin-develop",
+  "docs_base": "f19233fb851c1af2f42359535b14719b6439fad1",
+  "contract": "whispers/1.0.0",
+  "contract_manifest_sha256": "4f2441de53d19aba24bdfeb54b74d01400cd14f3ce6c694d494047c377315b95",
+  "source_files_sha256": {
+    "README.en.md": "b67b281f81f54da6d7154c8319c74f4cf8de36012ea010c16d450c9856eaf3d6",
+    "README.md": "1110f8874ca87fd45099d1c72abba09a6922ae05a869ac7c7e0559d69abdb8c1",
+    "src/composables/useSafety.ts": "75f2fd492f6637418515600d5b4a7fffccf252275614e3ba5b1e005ef77951a9",
+    "src/composables/useWhisperReports.ts": "fd97bff514f39dd57742532e87e65ef49d386ea8940f6785640eb9c9f2949467",
+    "src/router/index.spec.ts": "1a85c3828857b217d12215c61455fbbea0fc2b5af267d85e6d75644475715432",
+    "src/router/index.ts": "9541386bc7a52e2748ee85ceec615e859063a4aaeed0b80fe134421d82dadcd5",
+    "src/services/safety.spec.ts": "d043b4873bf7daca9fdec73f39b7679f843fb245bb1cfbbde15533f3218acd6b",
+    "src/services/safety.ts": "0215952f243779f52609cf52ceb4377abee2e875a4525d7518dabe81732b5828",
+    "src/types/safety.ts": "246447b1fa60d5e1f4f01ce80f1800edda8d6480640acb036d91dd8962cdd424",
+    "src/views/SafetyView.spec.ts": "7acae709de7e64e9fd07abce59516223368a3cea8395349fab37a38cedead64c",
+    "src/views/WhisperReportsView.spec.ts": "37dd304458a8d5beddaf24076fb68a359965db88353a73b7d685385db98d6ad5",
+    "src/views/WhisperReportsView.vue": "1d05eb2416cc29470594ba1f3f8385983dec4a492df3abbfde92a6822066e9da"
+  },
+  "checks": [
+    {
+      "command": "pnpm format",
+      "result": "通过"
+    },
+    {
+      "command": "pnpm check",
+      "result": "通过：格式、零警告ESLint、严格类型；31文件445应用测试，58规则测试"
+    },
+    {
+      "command": "pnpm build",
+      "result": "通过：类型检查和Vite生产构建"
+    },
+    {
+      "command": "git diff --check / git diff --cached --check（源码）",
+      "result": "通过"
+    },
+    {
+      "command": "/private/tmp/liyuanci-contract-021-venv/bin/python contracts/whispers-v1/validate.py",
+      "result": "通过：50操作、98schema、75请求响应样例、104正例/12负例、26写动作；环境LibreSSL警告不影响离线校验"
+    },
+    {
+      "command": "python3 scripts/check_documents.py（本次归档前）",
+      "result": "通过：330固定文件、75来源映射"
+    }
+  ],
+  "log_sha256": {
+    "development/admin/validation/2026-10-27-whispers-wa03-check-r1.txt": "56ec4c23fa161c1491a57c96b769061e4b781f1a4d00856a5a81e1f182a16d8f",
+    "development/admin/validation/2026-10-27-whispers-wa03-build-r1.txt": "8bb11e799bd75674db255a9a7bcb864d16e29e3c84a1f9affc7bc5b534b709e6"
+  },
+  "validation_boundary": [
+    "组件测试使用合成数据与替代服务，服务边界测试使用合成fetch响应",
+    "未连接真实后端，未验证真实权限、访问留迹及业务联调",
+    "未执行真浏览器截图或双主题视觉验收",
+    "WA-04、WA-05及首期整体验收未完成；未推送、合并、部署或上线"
+  ]
+}

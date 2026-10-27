@@ -330,6 +330,10 @@
     "development/admin/milestones/2026-10-27-whispers-wa02-r1.md": "bd80f4b0f8ce3ebda23f7586d6703a39643b745900dbaa267a612b4015029e30",
     "development/admin/validation/2026-10-27-whispers-wa02-r1.json": "ba3628a9bb6c5c484100e09481bceef68e14967187d17f8bfae6875b2145d5f9",
     "development/admin/validation/2026-10-27-whispers-wa02-check-r1.txt": "25cc0075e75d239a1216f5671bdb8efe23e8e27717baf7422d7378ee2de2927f",
-    "development/admin/validation/2026-10-27-whispers-wa02-build-r1.txt": "7158795a5c6712dd030667c041910ea5e1d25729c66928ee7291a4056c8d32a7"
+    "development/admin/validation/2026-10-27-whispers-wa02-build-r1.txt": "7158795a5c6712dd030667c041910ea5e1d25729c66928ee7291a4056c8d32a7",
+    "development/admin/milestones/2026-10-27-whispers-wa03-r1.md": "f4e5f7a9f0118d5f0f43307b99f1d71abaa82392f1d938ac1cd860db23a2e837",
+    "development/admin/validation/2026-10-27-whispers-wa03-r1.json": "7c40913240c7de9ee3896cc55963fba504331df7fbaf9441d04e0a2a50452705",
+    "development/admin/validation/2026-10-27-whispers-wa03-check-r1.txt": "56ec4c23fa161c1491a57c96b769061e4b781f1a4d00856a5a81e1f182a16d8f",
+    "development/admin/validation/2026-10-27-whispers-wa03-build-r1.txt": "8bb11e799bd75674db255a9a7bcb864d16e29e3c84a1f9affc7bc5b534b709e6"
   }
 }

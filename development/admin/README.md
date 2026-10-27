@@ -82,3 +82,5 @@
 - [WA-01 源码提交精确关联](milestones/2026-10-27-whispers-wa01-commit-r1.md)
 
 - [2026-10-27 树洞审核页面与提交记录](milestones/2026-10-27-whispers-wa02-r1.md)
+
+- [2026-10-27 树洞举报治理与申诉适配](milestones/2026-10-27-whispers-wa03-r1.md)
