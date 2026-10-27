@@ -1,0 +1,6 @@
+go test ./internal/whisper/... ./internal/platform/whisperrate/... ./internal/httpapi/... ./internal/command/... ./internal/migration/...
+ok  	github.com/calm195/liyuanci-backend-go/internal/whisper	0.300s
+ok  	github.com/calm195/liyuanci-backend-go/internal/platform/whisperrate	(cached)
+ok  	github.com/calm195/liyuanci-backend-go/internal/httpapi	(cached)
+ok  	github.com/calm195/liyuanci-backend-go/internal/command	(cached)
+ok  	github.com/calm195/liyuanci-backend-go/internal/migration	(cached)

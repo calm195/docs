@@ -336,6 +336,20 @@
     "development/backend/validation/2026-10-27-whispers-foundation-postgres-r1.txt": "846e12ebf29c13654a31975c6e250376876c1515f599eeef41cf15d971ed7882",
     "development/backend/validation/2026-10-27-whispers-foundation-migration-regression-r1.txt": "3a7a5896263bd733cf307f1d2daf18dc758eec4c74f6140964a2c15982b50eab",
     "development/backend/validation/2026-10-27-whispers-foundation-integration-r1.txt": "2dcaa7a34164b2ce22c602957fb2c3d45db620786647f791009740041d5d0c9e",
-    "development/backend/milestones/2026-10-27-whispers-foundation-commit-r1.md": "0458d51fce532cbfbb7f7949f715537d70281e8fab6030f91ebd62964a293182"
+    "development/backend/milestones/2026-10-27-whispers-foundation-commit-r1.md": "0458d51fce532cbfbb7f7949f715537d70281e8fab6030f91ebd62964a293182",
+    "development/backend/milestones/2026-10-28-whispers-text-r1.md": "beeba3880b0ff05ddd300c8f1bdbff75f8d96b3f9e26d57f744b6d57809b77bc",
+    "development/backend/validation/2026-10-28-whispers-text-check-fast-r1.txt": "1120522249aa04f4e698b87e78be9e8ddc6268dee8399e7d92e314a022327f3d",
+    "development/backend/validation/2026-10-28-whispers-text-fmt-r1.txt": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+    "development/backend/validation/2026-10-28-whispers-text-check-r1.txt": "71063f9ab4ce4f84f43430dec74534ceeba1542e93ff88d9857655b29f961a15",
+    "development/backend/validation/2026-10-28-whispers-text-build-r1.txt": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+    "development/backend/validation/2026-10-28-whispers-text-entry-tests-r1.txt": "7698ea9a5fdb1b9cbb46a468bfb5743a5646f9eca7a433af77be88225cada1f4",
+    "development/backend/validation/2026-10-28-whispers-text-postgres-r1.txt": "f1846019737ee85c4beae3dbde43a5b5091788a8108bd5a422965012edbc5e6f",
+    "development/backend/validation/2026-10-28-whispers-text-integration-r1.txt": "5c5fbd0d66763c07fc4286b3efb47e3a37c2c0e0179090c008dd256ed2564554",
+    "development/backend/validation/2026-10-28-whispers-text-migration-regression-r1.txt": "021a31471579a5b442ada1067f50a99f04cbe933fcc043433bfac7e691448585",
+    "development/backend/validation/2026-10-28-whispers-text-wire-r1.json": "f8a60f114c7b29c226b3d3adbff95a0a9d1aedcb7ff491ed139ab5d1d24d91f8",
+    "development/backend/validation/2026-10-28-whispers-text-contract-r1.txt": "fc72c32ab9389b3bc36447bdd4991a1b5da62d1111dcb3e5886cab7acd2837f5",
+    "development/backend/validation/2026-10-28-whispers-text-operations-r1.json": "e17fef486b5138311ca3984edb50aea1bbaabedf1035bceb3c644c8b987dc0d7",
+    "development/backend/validation/2026-10-28-whispers-text-r1.json": "37d4194d35dc4c21706f7608eaf4f4240bba75a817c949738ad5aadbaff64090",
+    "development/backend/validation/2026-10-28-whispers-text-doc-check-r1.txt": "f5cc7d56f560d2406962cef5a2c8041d196643da80361d088002a62c0c798dc4"
   }
 }

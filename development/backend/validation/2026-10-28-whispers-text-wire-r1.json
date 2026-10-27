@@ -1,0 +1,406 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/v1/whispers/config",
+    "response": {
+      "code": 0,
+      "data": {
+        "block_api": "opaque-v1",
+        "contract_version": "whispers/1.0.0",
+        "enabled": true,
+        "grade_dictionary": {
+          "items": [],
+          "version": null
+        },
+        "limits": {
+          "capsule_active_limit": 20,
+          "capsule_max_delay_seconds": 31536000,
+          "capsule_min_delay_seconds": 60,
+          "nickname_max": 20,
+          "nickname_min": 2,
+          "text_codepoints": 500
+        },
+        "report_types": [],
+        "semi_available": false,
+        "server_now": "2026-10-27T15:11:44Z"
+      },
+      "message": "成功",
+      "request_id": "981cf4d9b8720acd64edf1f52ffde702"
+    },
+    "schema": "ModuleConfigResponse",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/whispers/help",
+    "response": {
+      "code": 0,
+      "data": {
+        "items": [],
+        "status": "unavailable",
+        "verified_at": null,
+        "version": null
+      },
+      "message": "成功",
+      "request_id": "dd375109bad8c3aef4b6f3354800a410"
+    },
+    "schema": "HelpDirectoryResponse",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/me/whispers",
+    "response": {
+      "code": 0,
+      "data": {
+        "allowed_actions": [
+          "whisperPostCreate"
+        ],
+        "server_now": "2026-10-27T15:11:44Z",
+        "verification": "verified",
+        "write_restricted": false
+      },
+      "message": "成功",
+      "request_id": "8d7e1ce001c65132f46257a97bd02bc4"
+    },
+    "schema": "WorkspaceResponse",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/me/whispers/posts",
+    "response": {
+      "code": 0,
+      "data": {
+        "allowed_actions": [
+          "whisperPostWithdraw",
+          "whisperPostUpdate",
+          "whisperPostSubmit"
+        ],
+        "body": "HTTP 合成草稿",
+        "comments_epoch": 1,
+        "comments_open": true,
+        "content_version": 1,
+        "created_at": "2026-10-27T15:11:44Z",
+        "id": "109966a8-08d3-47a4-b294-995c622852c5",
+        "identity_input": {
+          "mode": "anonymous"
+        },
+        "published_at": null,
+        "review_result": null,
+        "status": "draft",
+        "updated_at": "2026-10-27T15:11:44Z",
+        "version": 1
+      },
+      "message": "成功",
+      "request_id": "892371f44166f46f63f658a8c4b1e82b"
+    },
+    "schema": "OwnerPostResponse",
+    "status": 201
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/me/whispers/posts/109966a8-08d3-47a4-b294-995c622852c5",
+    "response": {
+      "code": 0,
+      "data": {
+        "allowed_actions": [
+          "whisperPostWithdraw",
+          "whisperPostUpdate",
+          "whisperPostSubmit"
+        ],
+        "body": "HTTP 合成草稿",
+        "comments_epoch": 1,
+        "comments_open": true,
+        "content_version": 1,
+        "created_at": "2026-10-27T15:11:44Z",
+        "id": "109966a8-08d3-47a4-b294-995c622852c5",
+        "identity_input": {
+          "mode": "anonymous"
+        },
+        "published_at": null,
+        "review_result": null,
+        "status": "draft",
+        "updated_at": "2026-10-27T15:11:44Z",
+        "version": 1
+      },
+      "message": "成功",
+      "request_id": "5830c059e094c6ea425a98b6aeb550de"
+    },
+    "schema": "OwnerPostResponse",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/me/whispers/posts?limit=1",
+    "response": {
+      "code": 0,
+      "data": {
+        "items": [
+          {
+            "allowed_actions": [
+              "whisperPostWithdraw",
+              "whisperPostUpdate",
+              "whisperPostSubmit"
+            ],
+            "body": "HTTP 合成草稿",
+            "comments_epoch": 1,
+            "comments_open": true,
+            "content_version": 1,
+            "created_at": "2026-10-27T15:11:44Z",
+            "id": "109966a8-08d3-47a4-b294-995c622852c5",
+            "identity_input": {
+              "mode": "anonymous"
+            },
+            "published_at": null,
+            "review_result": null,
+            "status": "draft",
+            "updated_at": "2026-10-27T15:11:44Z",
+            "version": 1
+          }
+        ],
+        "next_cursor": "eyJzY29wZSI6IjBiZDEyMzM3OTJlODA1ZTMxMWM5OWY4NDU1N2Y2NGEzOTdkNmJmMGM0NzJmMWIxN2Q0ZjE3ZjYyM2NjZmE4YjAiLCJpZCI6IjEwOTk2NmE4LTA4ZDMtNDdhNC1iMjk0LTk5NWM2MjI4NTJjNSIsImF0IjoiMjAyNi0xMC0yN1QxNToxMTo0NC45NDI0NzlaIn0.56014f36aad4858f81a01681a3a1850a580c93980a515a44845727db2eb03d54"
+      },
+      "message": "成功",
+      "request_id": "e396509015ac7044052a775299613766"
+    },
+    "schema": "OwnerPostPageResponse",
+    "status": 200
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/me/whispers/posts/109966a8-08d3-47a4-b294-995c622852c5",
+    "response": {
+      "code": 0,
+      "data": {
+        "allowed_actions": [
+          "whisperPostWithdraw",
+          "whisperPostUpdate",
+          "whisperPostSubmit"
+        ],
+        "body": "HTTP 合成新稿",
+        "comments_epoch": 2,
+        "comments_open": true,
+        "content_version": 2,
+        "created_at": "2026-10-27T15:11:44Z",
+        "id": "109966a8-08d3-47a4-b294-995c622852c5",
+        "identity_input": {
+          "mode": "anonymous"
+        },
+        "published_at": null,
+        "review_result": null,
+        "status": "draft",
+        "updated_at": "2026-10-27T15:11:44Z",
+        "version": 2
+      },
+      "message": "成功",
+      "request_id": "98e66dc47872ec982204f5c2721f25c6"
+    },
+    "schema": "OwnerPostResponse",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/me/whispers/posts/109966a8-08d3-47a4-b294-995c622852c5/submit",
+    "response": {
+      "code": 0,
+      "data": {
+        "allowed_actions": [
+          "whisperPostWithdraw",
+          "whisperPostUpdate"
+        ],
+        "body": "HTTP 合成新稿",
+        "comments_epoch": 2,
+        "comments_open": true,
+        "content_version": 2,
+        "created_at": "2026-10-27T15:11:44Z",
+        "id": "109966a8-08d3-47a4-b294-995c622852c5",
+        "identity_input": {
+          "mode": "anonymous"
+        },
+        "published_at": null,
+        "review_result": {
+          "content_version": 2,
+          "decision": "pending",
+          "reason": null,
+          "revision_suggestion": null
+        },
+        "status": "scanning",
+        "updated_at": "2026-10-27T15:11:45Z",
+        "version": 3
+      },
+      "message": "成功",
+      "request_id": "002c57dbc687990b3c192ff878481582"
+    },
+    "schema": "OwnerPostResponse",
+    "status": 202
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/me/whispers/posts/109966a8-08d3-47a4-b294-995c622852c5/withdraw",
+    "response": {
+      "code": 0,
+      "data": {
+        "allowed_actions": [
+          "whisperPostWithdraw",
+          "whisperPostUpdate",
+          "whisperPostSubmit"
+        ],
+        "body": "HTTP 合成新稿",
+        "comments_epoch": 3,
+        "comments_open": true,
+        "content_version": 2,
+        "created_at": "2026-10-27T15:11:44Z",
+        "id": "109966a8-08d3-47a4-b294-995c622852c5",
+        "identity_input": {
+          "mode": "anonymous"
+        },
+        "published_at": null,
+        "review_result": {
+          "content_version": 2,
+          "decision": "cancelled",
+          "reason": null,
+          "revision_suggestion": null
+        },
+        "status": "withdrawn",
+        "updated_at": "2026-10-27T15:11:45Z",
+        "version": 4
+      },
+      "message": "成功",
+      "request_id": "7e111bd93b771dbe122044e0aa7ffea3"
+    },
+    "schema": "OwnerPostResponse",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/me/whispers/nickname",
+    "response": {
+      "code": 0,
+      "data": {
+        "active": null,
+        "allowed_actions": [
+          "whisperNicknameSet"
+        ],
+        "candidate": null,
+        "version": 1
+      },
+      "message": "成功",
+      "request_id": "0289f99e708f4daa25f297a1e5025af7"
+    },
+    "schema": "NicknameStateResponse",
+    "status": 200
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/me/whispers/nickname",
+    "response": {
+      "code": 0,
+      "data": {
+        "active": null,
+        "allowed_actions": [
+          "whisperNicknameSet"
+        ],
+        "candidate": {
+          "label": "HTTP 合成昵称",
+          "nickname_version": 1,
+          "review_result": {
+            "content_version": 1,
+            "decision": "pending",
+            "reason": null,
+            "revision_suggestion": null
+          },
+          "status": "scanning"
+        },
+        "version": 2
+      },
+      "message": "成功",
+      "request_id": "2f91c42a6463e0b69b70b1d3ed0317c4"
+    },
+    "schema": "NicknameStateResponse",
+    "status": 202
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/whispers/posts",
+    "response": {
+      "code": 0,
+      "data": {
+        "items": [
+          {
+            "allowed_actions": [],
+            "body": "已审安全文字",
+            "comment_count": 0,
+            "comments_epoch": 1,
+            "comments_open": true,
+            "content_version": 1,
+            "hug_count": 0,
+            "id": "605ad5b9-9f45-46b7-9729-4fc732b87fef",
+            "identity": {
+              "is_author": true,
+              "label": "树洞旅人6501d8daea8bdc3589422510",
+              "mode": "anonymous",
+              "tags": null
+            },
+            "my_hug": {
+              "active": false,
+              "version": 0
+            },
+            "notice_codes": [
+              "UNVERIFIED_SCHOOL"
+            ],
+            "notice_text": "未经证实",
+            "published_at": "2026-10-27T15:11:44Z",
+            "school_related": true,
+            "version": 1,
+            "viewer_is_author": true
+          }
+        ],
+        "next_cursor": null
+      },
+      "message": "成功",
+      "request_id": "de9bbf978d36458d9d44b14b9d60b6c1"
+    },
+    "schema": "PublicPostPageResponse",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/whispers/posts/605ad5b9-9f45-46b7-9729-4fc732b87fef",
+    "response": {
+      "code": 0,
+      "data": {
+        "allowed_actions": [],
+        "body": "已审安全文字",
+        "comment_count": 0,
+        "comments_epoch": 1,
+        "comments_open": true,
+        "content_version": 1,
+        "hug_count": 0,
+        "id": "605ad5b9-9f45-46b7-9729-4fc732b87fef",
+        "identity": {
+          "is_author": true,
+          "label": "树洞旅人6501d8daea8bdc3589422510",
+          "mode": "anonymous",
+          "tags": null
+        },
+        "my_hug": {
+          "active": false,
+          "version": 0
+        },
+        "notice_codes": [
+          "UNVERIFIED_SCHOOL"
+        ],
+        "notice_text": "未经证实",
+        "published_at": "2026-10-27T15:11:44Z",
+        "school_related": true,
+        "version": 1,
+        "viewer_is_author": true
+      },
+      "message": "成功",
+      "request_id": "9c2b301dd46b4a19df7ce37b0e3f5dca"
+    },
+    "schema": "PublicPostResponse",
+    "status": 200
+  }
+]
