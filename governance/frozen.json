@@ -308,6 +308,20 @@
     "development/backend/validation/2026-10-27-blocks-integration-r1.txt": "3100e72ed55ad4df934e743a6c3ab181aa80687fe3ec8b954263d73c75637fb4",
     "development/backend/validation/2026-10-27-blocks-postgres-r1.txt": "8fc814270407d87006e8d41b868ed37bddd4f62451a6b3e0bb99af23d1b5bee8",
     "development/backend/milestones/2026-10-27-blocks-commit-r1.md": "2f664c44251af5ba1791799180455a3447e0384d47b5ca7d5b5e3f47d5608902",
-    "development/backend/milestones/2026-10-27-main-merge-r1.md": "7b651cbe2a080673e61a3479a94ceff3831cbcb55e18367056b2b78e79f570ca"
+    "development/backend/milestones/2026-10-27-main-merge-r1.md": "7b651cbe2a080673e61a3479a94ceff3831cbcb55e18367056b2b78e79f570ca",
+    "approvals/2026-10-27-whispers-scope.md": "c2d76dd6b24467504205464e15c2a8dd92c996c4dcbef83085c0afbbe90a2bbd",
+    "contracts/whispers-v1/README.md": "ddebb904ac7b6d862da6529ad89fbe439665c872842bf308915f74ceb3e7a187",
+    "contracts/whispers-v1/actions.json": "d28f5a8088e321081d2280ca5e8a80b44ea215ffb1e8f605b181d6a3f50d708b",
+    "contracts/whispers-v1/build.py": "023bcf525ffcdd4fc532acb18e2d549d7d0dc400e3d18ca6b7fa64409bb9e4d8",
+    "contracts/whispers-v1/examples.json": "cf29bcf6072e2d9fa07904f48b84a33c5f806bbb63ec4345e9a71d923d274683",
+    "contracts/whispers-v1/manifest.json": "4f2441de53d19aba24bdfeb54b74d01400cd14f3ce6c694d494047c377315b95",
+    "contracts/whispers-v1/openapi.json": "f4cc52d540dcc761a3d63a1ea47f8e371f3bd2ea87bb9caddf812153ee1101a0",
+    "contracts/whispers-v1/validate.py": "1d181dedc09284be5500190ae0a4812a461e1f062ce48c6e73801f9afb4e8328",
+    "design/whispers-v1/README.md": "6900c65276f3508db37ffcf530582d3ca287ac7bccb14d3a196faa748d6ca5d8",
+    "design/whispers-v1/api.md": "5d84ad7170b0cb4c5f3a319d2fb2fddfc830337f36a2c3705c35aada8788bca8",
+    "design/whispers-v1/delivery.md": "5d9d59fd893cb2ba28db466b490b7e5270d1923ce2fb400eb0985f4ce060afa0",
+    "design/whispers-v1/domain.md": "1eb5a7a309f80d8115525a44abe4375f58ac55c81faa1b36a40cc6bea8d0efa4",
+    "plans/whispers-development-plan-v0.1.md": "9448356593f04fc0133b333dea1ca3d8185bfa53aa80520194bf3fbf8f0aeec5",
+    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04"
   }
 }

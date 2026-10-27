@@ -1,0 +1,31 @@
+{
+  "contract_id": "whispers/1.0.0",
+  "date": "2026-10-27",
+  "status": "design-delivery-not-implemented",
+  "authorization": "用户明确采纳首期范围与推荐取舍；详细设计由授权落实，未声称独立评审或G3通过",
+  "docs_base": "7affc8ecd508f9ea789ff751c493942ad6155c8a",
+  "base_inputs": {
+    "requirements/original.md": "67aca275cf3e7398b145f39e9941459acc0fafa70d5f674b33aad970b4543d84",
+    "requirements/baseline.md": "fed56e2811cd21c5c5d461a35d9ace525b6f9bc142a01a6a1f2048303da54810",
+    "approvals/G1.md": "718f5357600eaa57a09ecaff7431cbe94e659e878c6ac281837f878493b1c116",
+    "approvals/G2.md": "f9dd22de4ec32852c6af98c47a953edc195728fa9e700ce0d7d4d63e25978c43",
+    "approvals/G3.md": "19e7ca6e7500cd051bb8045f0026cc039db6dc1d24f744291f2815e9b396a0fd",
+    "contracts/openapi.v0.2.1.json": "9161119936e897133e3de1a9d1b28b0b338ee347672fdb568db246477c785bbc",
+    "contracts/actions.v0.2.1.json": "aef2546129f523955bf57ad6887bf0232ffca449d02b1e3130d3b8acf24f0c73"
+  },
+  "files": {
+    "approvals/2026-10-27-whispers-scope.md": "c2d76dd6b24467504205464e15c2a8dd92c996c4dcbef83085c0afbbe90a2bbd",
+    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04",
+    "plans/whispers-development-plan-v0.1.md": "9448356593f04fc0133b333dea1ca3d8185bfa53aa80520194bf3fbf8f0aeec5",
+    "design/whispers-v1/README.md": "6900c65276f3508db37ffcf530582d3ca287ac7bccb14d3a196faa748d6ca5d8",
+    "design/whispers-v1/api.md": "5d84ad7170b0cb4c5f3a319d2fb2fddfc830337f36a2c3705c35aada8788bca8",
+    "design/whispers-v1/delivery.md": "5d9d59fd893cb2ba28db466b490b7e5270d1923ce2fb400eb0985f4ce060afa0",
+    "design/whispers-v1/domain.md": "1eb5a7a309f80d8115525a44abe4375f58ac55c81faa1b36a40cc6bea8d0efa4",
+    "contracts/whispers-v1/README.md": "ddebb904ac7b6d862da6529ad89fbe439665c872842bf308915f74ceb3e7a187",
+    "contracts/whispers-v1/build.py": "023bcf525ffcdd4fc532acb18e2d549d7d0dc400e3d18ca6b7fa64409bb9e4d8",
+    "contracts/whispers-v1/validate.py": "1d181dedc09284be5500190ae0a4812a461e1f062ce48c6e73801f9afb4e8328",
+    "contracts/whispers-v1/openapi.json": "f4cc52d540dcc761a3d63a1ea47f8e371f3bd2ea87bb9caddf812153ee1101a0",
+    "contracts/whispers-v1/examples.json": "cf29bcf6072e2d9fa07904f48b84a33c5f806bbb63ec4345e9a71d923d274683",
+    "contracts/whispers-v1/actions.json": "d28f5a8088e321081d2280ca5e8a80b44ea215ffb1e8f605b181d6a3f50d708b"
+  }
+}

@@ -19,6 +19,7 @@
 | 架构与设计 | [方案比较](design/options.md)、[架构](design/architecture.md)、[决策](design/decisions.md) |
 | 接口 | [契约导航](contracts/navigation.md) |
 | 实施与进度 | [固定实施计划](plans/implementation-plan.md)、[滚动计划](plans/next-development-integration-plan.md)、[进度](plans/progress.md)、[阻塞](plans/blockers.md)、[联调](plans/integration-log.md) |
+| 悄悄鲤首期 | [范围授权](approvals/2026-10-27-whispers-scope.md)、[需求增量](requirements/whispers-v1.md)、[开发计划](plans/whispers-development-plan.md)、[详细方案与三端工作包](design/whispers-v1/README.md)、[独立接口契约](contracts/whispers-v1/README.md) |
 | 协作与评审 | [协作指令](plans/collaboration-instructions.md)、[需求评审](reviews/requirements-review.md)、[架构评审](reviews/architecture-review.md) |
 
 ## 工作方式
