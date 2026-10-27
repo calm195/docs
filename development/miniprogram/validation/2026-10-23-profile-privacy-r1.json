@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-23",
+  "source_branch": "develop",
+  "source_commit": "0b57479a382cb6005836fe438d9d9b2dd30d3d2c",
+  "source_base": "84c6aa11cc8b0b4e311f4f9991dc08dfd024c888",
+  "docs_branch": "mini-deveop",
+  "docs_base": "6297e19833fcf6cb55344d9de4b475473d2974ba",
+  "contract": "OpenAPI 0.2.0 / actions revision 5",
+  "checks": {
+    "npm run check": {
+      "passed": true,
+      "tests": 85,
+      "failures": 0
+    },
+    "npm run build:mp-weixin": {
+      "passed": true,
+      "settings_page_registered": true,
+      "wechat_appid": "wxbc34f14cf9bbdc8d"
+    },
+    "git diff --check": {
+      "passed": true
+    }
+  },
+  "source_files_sha256": {
+    "README.md": "778d1996f5bd3eea31be7b2ff2d4731980a359306a6075a0736098c953b3bdc3",
+    "src/api/settings.ts": "1848bd2154771f6cee5e532ce88e80e3b387ce0b20a7581a7411717963e0d128",
+    "src/components/PublicContent.vue": "2e49d22743a1c5e5b62a88c036e6591d95d6468c041003b4f24756bab4308d15",
+    "src/pages.json": "43ba5789e47fb0be9439b09b6d6713b31d6bdfa4b2cb0d163cf058ed4f5cfddd",
+    "src/pages/index/index.vue": "8c7cc2f82b2240eff8c43c6d3268179e131bc37fdeb9b5e8333ad6afa13de698",
+    "src/pages/public-profile/index.vue": "9f6c9dc797cb1b4e73aeee1865d7474a23b377991683675e7bbfec14d8ee3420",
+    "src/pages/settings/index.vue": "d250a7652f1ef05fb58ab2460706efe402eaa390d2eaa7de4815e5c6414920ba",
+    "src/pages/share/index.vue": "f69d45f26f6d2918db71d11a5433a8a05bfeaef3fce867bba070743364c9b96e",
+    "src/pages/stories/index.vue": "d8091f0945839b1e206ba2bfcc156b9649a1cffcc4a3debcbd9ca07f8dc5b2e4",
+    "src/pages/wish-detail/index.vue": "e8ab7646f89cbc0dbfdc757115bfb44cbf2cdd4140e4d4988c05d5d099aa3421",
+    "src/types/settings.ts": "8ca19424ba0a49f2f427dbcf413bb922ce93b0e92c65dc70a94c7e24be652e56",
+    "tests/settings.test.ts": "c7a459f7ee0ba87dddb2dab410ec299e1b35c601f800c6f2ae52d6fd2c767b70"
+  },
+  "artifact_sha256": {
+    "app.json": "470a4d08f6bc2784c09f61590ce7d9f0a03615ca217db5022f2670261841603e",
+    "project.config.json": "33ece7b91b90a271cad208bb64a008671e69a1a50c74941dec11d28858e27344",
+    "pages/settings/index.js": "438a42f98cc61abdc619af25816fe1a940f85f993d1865e9377c10f96b943940"
+  },
+  "readonly_http": [
+    {
+      "path": "/healthz",
+      "status": 200,
+      "error_code": null,
+      "request_id": null,
+      "cache_control": null
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED",
+      "request_id": "faecd8f97c9ad06ee2bf4fff36015dc7",
+      "cache_control": "no-store"
+    },
+    {
+      "path": "/api/v1/me/blocks?limit=20",
+      "status": 401,
+      "error_code": "UNAUTHENTICATED",
+      "request_id": "44553f691fa90fd57e030bbe18fc37f0",
+      "cache_control": "no-store"
+    },
+    {
+      "path": "/api/v1/users/6c500000-0000-4000-8000-000000000099/public-profile",
+      "status": 404,
+      "error_code": "NOT_FOUND",
+      "request_id": "bddc90a514d7b5d5755837f6bbd47c36",
+      "cache_control": null
+    }
+  ],
+  "backend_observed_commit": "0b2a71a5857ae47971e0ff1215033002d3f6eddf",
+  "implementation_adapter": {
+    "GET /me/blocks": "当前契约未收录；按后端 internal/safety/read.go 返回 items[{target_user_id,version}],next_cursor 接入。",
+    "unblock_action": "正式 deleteMeBlocksTarget_Id 与后端 Me 当前 deleteMeBlocks 均须实际获得授权；DELETE 使用条目版本。"
+  },
+  "boundaries": [
+    "页面测试替换平台、Store、会话与传输边界，执行真实页面脚本和API适配器。",
+    "未使用真实学生令牌，不执行真实资料或拉黑写入；隐藏标签公开投影、双账号拉黑竞态及真机待联合验证。",
+    "未编辑后端、共享契约、需求、审批和既有固定文件；标签编辑/清除和年级字典仍待正式语义。"
+  ]
+}

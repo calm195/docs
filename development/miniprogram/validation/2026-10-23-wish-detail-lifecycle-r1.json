@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-23",
+  "source_branch": "develop",
+  "source_head_base": "739935a50f4c30492e93f9e04c7565387a5f0fc9",
+  "docs_branch": "mini-deveop",
+  "docs_head_base": "3d1d1f395128d8bb0d1a1bc692b04095eea3f12e",
+  "source_state": "未提交工作区实现",
+  "contract": "0.2.0 / actions revision 5",
+  "verification": "按用户要求未运行测试、质量检查、构建、文档检查、固定指纹校验及真实联调；仅格式化修改文件",
+  "files": {
+    "AGENTS.md": "4c6b135f7bf4731c36e47073a73d475af8ff86fd6b0b263186d61b9c4002e04a",
+    "README.md": "42655d9b69a6b0ecb4a391e5b06b74b06f78545db4acf59134f2afb723d75025",
+    "src/api/wishes.ts": "2e217b8990b9b895fee567b42d08a0965cc62fbe74f4b059c02b2b7ce9eaa74c",
+    "src/types/wish.ts": "df8188735dd1ff621cedb704a1cc6c49a94ae436b053c2c747c80f97f04d7c46",
+    "src/utils/actions.ts": "b5c63cb50cfe29eb39da79af5b18d69ec7f5a34fe3ed8d2e57dc58773c8e0174",
+    "src/pages.json": "59af76a8040e3543decb7903b1bb308629e29072a491427fdbd1caf1b0f0a826",
+    "src/pages/wishes/index.vue": "db72b0e7f91539847d95cf03968ea49bcd6d7a1fcd9e3cf2ca0b4b3cba5f09f3",
+    "src/pages/wish-detail/index.vue": "859abfe56788389d9d928fb77235bc2250b061681ef94c9a56609486b0cdc573"
+  }
+}
