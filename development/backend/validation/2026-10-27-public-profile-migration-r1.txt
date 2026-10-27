@@ -1,0 +1,8 @@
+CREATE DATABASE
+=== RUN   TestPostgresStoryPublication
+--- PASS: TestPostgresStoryPublication (2.37s)
+PASS
+CREATE DATABASE
+=== RUN   TestBusinessSchema
+--- PASS: TestBusinessSchema (1.96s)
+PASS

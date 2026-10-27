@@ -160,6 +160,16 @@
     "development/backend/milestones/2026-10-23-local-privacy-startup-r1.md": "f9d43684204adacfd00b5e6178d2cd6648b236fffd98d31187c6a204a42c2fb5",
     "development/backend/validation/2026-10-23-local-privacy-startup-r1.json": "e47ec1c9a60d586c91cc8107cc6524cfe45514adaea4a7f4e9936647c4fa7b4a",
     "development/backend/validation/2026-10-23-local-privacy-startup-r1.txt": "1a8b2e044079624279868fa4655b252c85d979bf69a3b273ba3f09a7eab21e38",
-    "development/backend/milestones/2026-10-23-local-privacy-commit-r1.md": "9b32c32e9573d05c15f42ede528e2ad69a26fa7a42f796a1a85a81493fc3c614"
+    "development/backend/milestones/2026-10-23-local-privacy-commit-r1.md": "9b32c32e9573d05c15f42ede528e2ad69a26fa7a42f796a1a85a81493fc3c614",
+    "development/backend/milestones/2026-10-27-public-profile-p0-r1.md": "b1fa365b3f6a9d02476ca2a082cd1b8a00e7641962b66d48589293be1d38af3b",
+    "development/backend/validation/2026-10-27-public-profile-build-r1.txt": "fea0d4623dd6ef2dbb0838b7fdd59f92bf0323668944062e0956f6cbbbf646dc",
+    "development/backend/validation/2026-10-27-public-profile-check-r1.txt": "29b9e945d321216578b23537f7286305d09fa34b8ba3a17207c155c92e712dcf",
+    "development/backend/validation/2026-10-27-public-profile-integration-r1.txt": "4c687904e5913682f05209f05f97cbabf8bc6e10182249d497ff474d00b3959c",
+    "development/backend/validation/2026-10-27-public-profile-migration-r1.txt": "705b2399103f1f8e8ec6abcb269ff6a048b78df90c5a5bc891a209730c36d470",
+    "development/backend/validation/2026-10-27-public-profile-postgres-r1.txt": "00b902a481255a8455920365fb929e7c4cb7787ca3ec1a0ce5e72408bcccc429",
+    "development/backend/validation/2026-10-27-public-profile-r1.json": "0caa9aab84ed207ab70749fd5a3b37f83862a57895307118775d2846833a389a",
+    "development/backend/validation/2026-10-27-public-profile-scripts-r1.txt": "e3c079be33318742a9721f3793bf3b40c6c7d55c696845aecfebe376d90e3a8c",
+    "development/backend/milestones/2026-10-27-public-profile-commit-r1.md": "7b1af9cd44bba9f69c05dc7b6930df2cd42b8e1d94c5907a12ac3aea3d4eaff8",
+    "development/backend/milestones/2026-10-27-public-profile-commit-r2.md": "b4c40a00ca005f107271eae48f90d091d2a68eda8ddd348bcab8abe80a4447fc"
   }
 }

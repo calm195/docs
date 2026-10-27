@@ -95,3 +95,9 @@
 - [2026-10-23 本地隐私后台与全模块联调启动](milestones/2026-10-23-local-privacy-startup-r1.md)
 
 - [2026-10-23 本地隐私删除与联调启动精确源码提交补充](milestones/2026-10-23-local-privacy-commit-r1.md)
+
+- [2026-10-27 小程序公开主页实现与认证发布准入回报](milestones/2026-10-27-public-profile-p0-r1.md)
+
+- [2026-10-27 公开主页精确源码提交补充](milestones/2026-10-27-public-profile-commit-r1.md)
+
+- [2026-10-27 公开主页提交检查补充说明](milestones/2026-10-27-public-profile-commit-r2.md)
