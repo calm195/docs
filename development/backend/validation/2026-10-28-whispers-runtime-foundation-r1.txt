@@ -1,0 +1,31 @@
+实际基础server，无任何APP业务配置或外部依赖：
+[
+  {
+    "path": "/healthz",
+    "status": 200
+  },
+  {
+    "path": "/readyz",
+    "status": 503
+  },
+  {
+    "path": "/api/v1/whispers/config",
+    "status": 404
+  },
+  {
+    "path": "/api/v1/me",
+    "status": 404
+  }
+]
+优雅退出：0
+{"level":"info","time":"2026-10-28T11:13:57.110+0800","caller":"server/main.go:82","msg":"资源初始化完成","database_enabled":false,"redis_enabled":false,"rocketmq_enabled":false}
+{"level":"info","time":"2026-10-28T11:13:57.113+0800","caller":"server/main.go:172","msg":"服务启动完成","address":"127.0.0.1:57084"}
+{"level":"info","time":"2026-10-28T11:13:57.113+0800","caller":"platform/heartbeat.go:30","msg":"进程心跳记录完成","event":"telemetry_heartbeat","service":"api","result":"alive"}
+{"level":"info","time":"2026-10-28T11:13:57.168+0800","caller":"httpapi/router.go:35","msg":"HTTP请求处理完成","event":"http_request_completed","request_id":"29db4d2fc46c7c11f910e20b8f60e6eb","method":"GET","path":"/healthz","status":200,"duration":0.000492958}
+{"level":"info","time":"2026-10-28T11:13:57.173+0800","caller":"httpapi/router.go:35","msg":"HTTP请求处理完成","event":"http_request_completed","request_id":"b05384b6316cdb18cfe4ae886c6ddf1b","method":"GET","path":"/healthz","status":200,"duration":0.001891875}
+{"level":"info","time":"2026-10-28T11:13:57.177+0800","caller":"httpapi/router.go:35","msg":"HTTP请求处理完成","event":"http_request_completed","request_id":"10934903d1a3493745834aaa4d64871a","method":"GET","path":"/readyz","status":503,"duration":0.000287334}
+{"level":"info","time":"2026-10-28T11:13:57.181+0800","caller":"httpapi/router.go:35","msg":"HTTP请求处理完成","event":"http_request_completed","request_id":"38508a47b8722cb426cc54926e515ed2","method":"GET","path":"","status":404,"duration":0.000412833}
+{"level":"info","time":"2026-10-28T11:13:57.183+0800","caller":"httpapi/router.go:35","msg":"HTTP请求处理完成","event":"http_request_completed","request_id":"60e472a589499aa92a7dc569849c2b15","method":"GET","path":"","status":404,"duration":0.000035833}
+{"level":"info","time":"2026-10-28T11:13:57.184+0800","caller":"server/main.go:186","msg":"开始关闭服务"}
+{"level":"info","time":"2026-10-28T11:13:57.184+0800","caller":"server/main.go:194","msg":"服务关闭完成"}
+{"level":"info","time":"2026-10-28T11:13:57.184+0800","caller":"server/main.go:92","msg":"资源清理完成"}
