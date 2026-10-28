@@ -340,6 +340,11 @@
     "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-build.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
     "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-check.txt": "538e9bb4e974639362c4cc357e9f82bd26fb91fd6e350ac382eefc366cec8329",
     "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-docs.txt": "e7affec6e664b6f4639df051ed1efcf0ab1c87af323990b5eb824bc35af87aec",
-    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1.json": "25dce11ceb6e415fda53106cf684aac64be711b77c03450cfdd6953c79d33446"
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1.json": "25dce11ceb6e415fda53106cf684aac64be711b77c03450cfdd6953c79d33446",
+    "development/miniprogram/milestones/2026-10-28-whispers-capsules-r1.md": "cc5dedda41a9c7caff8db7f3cb74ba0395186ff17a650c26591913ec05e174b2",
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1-build.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1-check.txt": "84f57452229aca158b18032a038d457a701a70351eb1dc45d3502e717b543c95",
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1-docs.txt": "c2d215c543604cb2712478b79e9d7e925f5d8c175542bef4cdab7b9551ac6f13",
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1.json": "caccceeecdf33c5ae9e1001636749e62a573c93be32d9adc674231b37d74fa4c"
   }
 }
