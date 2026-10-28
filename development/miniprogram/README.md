@@ -8,6 +8,9 @@
 
 ## 实施与接入说明
 
+- [真实登录、双账号与真机联调操作册](milestones/2026-10-28-real-integration-runbook-r1.md)；环境、阻塞与WI完整矩阵见[三端联调总册](../backend/milestones/2026-10-28-real-integration-runbook-r1.md)，配合[管理端页面步骤](../admin/milestones/2026-10-28-real-integration-runbook-r1.md)。
+- 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
+
 - [后续开发顺序与当前实现范围](development-plan.md)
 - [小程序接口核对与已实现功能](api-call-audit.md)
 - [小程序认证与发布接入准备](integration-readiness.md)

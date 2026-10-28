@@ -6,6 +6,9 @@
 
 ## 实施与接入说明
 
+- [三端真实联调操作手册：前置条件、阻塞、启动与WI逐项标准](milestones/2026-10-28-real-integration-runbook-r1.md)；配套[管理端页面步骤](../admin/milestones/2026-10-28-real-integration-runbook-r1.md)、[小程序登录与真机步骤](../miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md)。
+- 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
+
 - [宿主API/业务worker、原生或Docker中间件及诊断（当前入口）](host-development.md)
 
 - [后台账号与会话操作](admin-auth.md)

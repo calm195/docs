@@ -8,6 +8,9 @@
 
 ## 实施与接入说明
 
+- [真实页面联调操作册：账号、角色、页面步骤与通过标准](milestones/2026-10-28-real-integration-runbook-r1.md)；环境与WI完整矩阵见[三端联调总册](../backend/milestones/2026-10-28-real-integration-runbook-r1.md)，配合[小程序操作册](../miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md)。
+- 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
+
 - [T012 身份审核页接入清单](T012-integration.md)
 - [T010 契约接入疑问](contract-questions.md)
 - [T004 Web / T010 首批交付记录](delivery-T004-T010.md)
