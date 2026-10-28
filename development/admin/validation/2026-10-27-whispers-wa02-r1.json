@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-27",
+  "task": "WA-02",
+  "source_branch": "develop",
+  "source_commit": "32973a703adbccdc58b74333ddbe41eb1e7c8d87",
+  "dependency_commit": "0ad4f2e91c463af8fd010303ae75864df2240500",
+  "docs_branch": "admin-develop",
+  "docs_base": "61caa5ca3f384e2d4456677ddac5de7dd0cfdcd8",
+  "contract": "whispers/1.0.0",
+  "contract_manifest_sha256": "4f2441de53d19aba24bdfeb54b74d01400cd14f3ce6c694d494047c377315b95",
+  "source_files_sha256": {
+    "README.en.md": "afcc1b8bec26b0482095164019c9d23fc740d35b0d08eeef23ca4c08188afc5d",
+    "README.md": "5a5248b29c40521a08c426d056c586c9e452f81b82ffe7a33d1980000db6a6a0",
+    "src/components/WhisperReviewDetail.vue": "715330616f686743ac1a6c80738a5d725de9fad0717081893cabd4b77b08a510",
+    "src/composables/useWhisperReviews.ts": "ee7783f7c5bc0ed06c454da82b54d6d63c6ee347e34b508ddd82177e24cc123b",
+    "src/router/index.spec.ts": "80f0903d00fc258f936eda8b1c7f1d7dedc96c3b40c6f874563dfaa505e4ac01",
+    "src/router/index.ts": "36116a1d15c26d76671f180646f8551e73c6a1255d99001da0b4f7a0cbfd6c9e",
+    "src/views/WhisperReviewsView.spec.ts": "b03e766b099e7aa797a169341e0d721e8592ca93e0f91727f637b17693b4329a",
+    "src/views/WhisperReviewsView.vue": "2a5cb2e1f38de52e12fca57da92c7376336998c9801132436aa5a7b0014c6b73"
+  },
+  "checks": [
+    {
+      "command": "pnpm format",
+      "result": "通过"
+    },
+    {
+      "command": "pnpm check",
+      "result": "通过：格式、零警告ESLint、严格类型；30文件/413应用测试，58规则测试"
+    },
+    {
+      "command": "pnpm build",
+      "result": "通过：类型检查和Vite生产构建"
+    },
+    {
+      "command": "git diff --check / git diff --cached --check（源码）",
+      "result": "通过"
+    },
+    {
+      "command": "/private/tmp/liyuanci-contract-021-venv/bin/python contracts/whispers-v1/validate.py",
+      "result": "通过：50操作、98schema、75请求响应样例、104正例/12负例、26写动作；离线校验有环境LibreSSL警告"
+    },
+    {
+      "command": "python3 scripts/check_documents.py（本次归档前）",
+      "result": "通过：326固定文件、75来源映射"
+    }
+  ],
+  "log_sha256": {
+    "development/admin/validation/2026-10-27-whispers-wa02-check-r1.txt": "25cc0075e75d239a1216f5671bdb8efe23e8e27717baf7422d7378ee2de2927f",
+    "development/admin/validation/2026-10-27-whispers-wa02-build-r1.txt": "7158795a5c6712dd030667c041910ea5e1d25729c66928ee7291a4056c8d32a7"
+  },
+  "validation_boundary": [
+    "合成数据和替代服务测试，不连接真实后端",
+    "未运行浏览器截图、真浏览器视觉或真实权限/访问留迹联调",
+    "复用现有浅深色语义样式，本轮未单独宣称双主题视觉验收通过",
+    "未推送、合并、部署或上线"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-28",
+  "task": "WA-05",
+  "requirements": [
+    "REQ-018",
+    "REQ-019",
+    "REQ-020"
+  ],
+  "status": "本端回归与交接准备通过；真实联合验收阻塞，WA-05整体未关闭",
+  "source_branch": "develop",
+  "source_base": "3ed0df35599758d3d294af4c938ebb1db4f61ca9",
+  "source_commit": "69f07a2af4c84b4da8026c636c7a06463491f548",
+  "source_commits_in_dependency_order": [
+    "2734578dae6cecb89cba78513bb79a62d196019f",
+    "69f07a2af4c84b4da8026c636c7a06463491f548"
+  ],
+  "docs_branch": "admin-develop",
+  "docs_base": "e08c7cbb0a15d0f96d7c34c65f331acc1860aaf6",
+  "contract": "whispers/1.0.0",
+  "contract_manifest_sha256": "4f2441de53d19aba24bdfeb54b74d01400cd14f3ce6c694d494047c377315b95",
+  "source_files_sha256": {
+    "README.en.md": "2cfe2748269a761a64517083ae4713a8faec4a8d3575a84a0e5bc9a4edaac7a0",
+    "README.md": "7d555e6f59565a0e649745e5049b8c804610be8a3f41201adc1a4e4c1635b08d",
+    "package.json": "4ca3a36f54bd13d75f94c6a460c43870d2b05aa57192f214bdac9e531a5eadc3",
+    "scripts/whispers-browser.spec.js": "431415dbacb85a30c10f705329b73bad5b06e07b9d1c7d11f7609c830975a7b2",
+    "src/composables/useWhisperReports.ts": "507d4bb8df8b8348b91014e8ba780deaa32d667babc8bd67b1e28ffe5217b878",
+    "src/composables/useWhisperReviews.ts": "7aebe94baa352f73ee4131c6331ec5adcfd46aa6dbca6e6e740424213cf553ff",
+    "src/views/WhisperReportsView.spec.ts": "7083ea21ffd8ddfd63d29c0f08310f63ef9b1552b13eff18f68d5ba27983c614",
+    "src/views/WhisperReviewsView.spec.ts": "86bf61e9300d80835187159badbc6ae5ed56ed5ed104b75a12a13f27e2a4beaf"
+  },
+  "checks": [
+    {
+      "command": "pnpm format",
+      "result": "通过"
+    },
+    {
+      "command": "pnpm check",
+      "result": "通过：格式、零警告ESLint、严格类型；33文件502应用测试、58规则测试"
+    },
+    {
+      "command": "pnpm build",
+      "result": "通过：类型检查及Vite生产构建"
+    },
+    {
+      "command": "pnpm test:browser（PLAYWRIGHT_MODULE指向已有桌面运行时模块，ADMIN_TEST_OUTPUT指定临时证据目录）",
+      "result": "通过：Chrome 156.0.8078.48，4页×2主题、桌面1440×1100/窄屏390×844、8抽屉、三角色菜单、实际客户端提交、退出/刷新清理及仅主题持久化；24截图",
+      "boundary": "本机Vite页面，浏览器测试拦截全部业务API为合成响应，不连接真实后端"
+    },
+    {
+      "command": "git diff --check / git diff --cached --check（源码）",
+      "result": "通过"
+    },
+    {
+      "command": "/private/tmp/liyuanci-contract-021-venv/bin/python contracts/whispers-v1/validate.py",
+      "result": "通过：50操作、98schema、75请求响应样例、104正例/12负例、26写动作；LibreSSL环境警告不影响离线结果"
+    },
+    {
+      "command": "python3 scripts/check_documents.py（归档前）",
+      "result": "通过：338固定文件、75来源映射"
+    }
+  ],
+  "artifacts_sha256": {
+    "development/admin/validation/2026-10-28-whispers-wa05-check-r1.txt": "0542607c3e8415898cce795e26390f501172182f9c43bf0ccd63010461d66d30",
+    "development/admin/validation/2026-10-28-whispers-wa05-build-r1.txt": "a95f2620663fbd55b09ba0f8889c4e5b0b3f837cb02fb88b5fa5ea69c7643f1c",
+    "development/admin/validation/2026-10-28-whispers-wa05-browser-r1.txt": "5eaf994e13d489508ef0c4963cea43af0c01281d9a9d8d7a24de361d05092ee2",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-dark-desktop.png": "f0154dbf2df0cbd2c757e4449fd8e6b791f929b76af0efdcdd6eb81490ea3d55",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-dark-drawer.png": "98382a1f374d8c9948d1f08edd2c90a9fcdd8792c1a87301bdb7b45bd7f926c4",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-dark-mobile.png": "83d4bb48d6138e62880d26490a5ea7a46d0f391025fee728ffcf34bf6e4191f0",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-light-desktop.png": "dfdc3a15ea21c3759f7ff46ffc72a9120cefaa4fa759e65201a954d97bc9f908",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-light-drawer.png": "667f2f376474d00f5388a7016fd24aba7e35958ca586442b8154a0574b978612",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-light-mobile.png": "fc17a1e8401f8e00c60d9c36ffcbe95ec384b93e1c03e91a10179b7268ab646e",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-dark-desktop.png": "de2dedffa2d1639477e96725e255e9f5379af5546529dc146a6bbae4784bf3b1",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-dark-drawer.png": "23ae0d9e20a015ecb58ff7bfdb1ce7b992510c409e2067f64d5eae0a372ef160",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-dark-mobile.png": "3411d1362e3e122e76a75fe9d1befcc928921966861bd957760da36f719df02f",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-light-desktop.png": "3413f8617b4451c92e0107766b7c0d552a6c70b1230bc1e8a36c6c9b92a84b3e",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-light-drawer.png": "f8a1ddce3f81223229e95d45db09f42834d19e9d9f841201c7b7167187fadd20",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-light-mobile.png": "07771f718c20e6c10d52f470c0c6a5d1084ba8d5bf1f40bcb67313bf95bd5589",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-dark-desktop.png": "871017fb02f09ea757688febac59ea8a31a6c1695f581be8394aa65fd6b80327",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-dark-drawer.png": "4e3083075dfd862ea81ef2ed731577168a76aeadde2382efa4693a81240a1c1f",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-dark-mobile.png": "bbd4cfef9816fc7cc8c689871857f6c6bf6a7cad6c3921008fff3770fe229adf",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-light-desktop.png": "9e030ad1dd4fc8e69a36b30dbe39aaeb9a331eaee7e0f0395d8326338f21dad0",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-light-drawer.png": "9d455d361a463d592c2e42a60a3e1e679680920a821be86c5e7ce5c24e9ffe4d",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-light-mobile.png": "3447ffd027a398b5dd838fbee1cbbc11c21c6c4037648410ffddbd13c82ef74c",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-dark-desktop.png": "691a320352367a6c9bf6e76b67ad6d157785b37bb1314543a399bd98e5c26dc9",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-dark-drawer.png": "ef4d298e1353b7809e56baef44b7302fe45abd4147461aa48335bc84b99c6033",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-dark-mobile.png": "5a0ef79f16061e3f2463dfb3a4b0f4b6c6aea0ee52b9cdf04bce5ce4464af7c4",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-light-desktop.png": "be66c7185262754a12c3354d642226770f584dbec99e9609dc8e8f79e45acd10",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-light-drawer.png": "108a595aeddff4d558ce973c6a487fedf6261c4b78b7efc10a66d98441da5c55",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-light-mobile.png": "5f42db2274c07a9844d7fee4cc7e2316caf7d9ed2095999b1fd301dacd1c1e35",
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/browser-results.json": "7e440d67eca302088ae2980facc363ab95cd0504cc10993771164cf8324a2331"
+  },
+  "blockers": [
+    {
+      "id": "ADMIN-WA05-B01",
+      "status": "阻塞真实联调",
+      "fact": "用户确认隔离联调环境和安全获取入口暂未准备，未提供后端精确SHA、部署地址及18操作实现交接",
+      "impact": [
+        "WI-08",
+        "WI-09",
+        "WI-12",
+        "WI-16",
+        "WI-18"
+      ],
+      "required_evidence": "后端协调方提供隔离环境引用、精确源码与部署SHA、契约指纹、迁移版本、接口状态及安全访问入口"
+    },
+    {
+      "id": "ADMIN-WA05-B02",
+      "status": "阻塞真实授权与业务链",
+      "fact": "三类后台角色和隔离学生场景账号的安全获取入口暂未准备",
+      "impact": [
+        "WI-08",
+        "WI-12",
+        "WI-16"
+      ],
+      "required_evidence": "环境协调方准备超管、普通运营、危机岗位及未认证/认证学生隔离身份，按安全入口获取，不把凭据写入docs"
+    },
+    {
+      "id": "ADMIN-WA05-B03",
+      "status": "阻塞真实副作用验收",
+      "fact": "没有本轮可验证的数据库、队列、扫描/通知资源、隐私清理适配器、独立日志及恢复重删交接",
+      "impact": [
+        "WI-08",
+        "WI-09",
+        "WI-12",
+        "WI-15"
+      ],
+      "required_evidence": "后端及环境协调方交付资源引用、worker和适配器状态、授权访问留迹、真实通知及全副本清理/恢复重删证据；缺真实清理适配器保持processing"
+    },
+    {
+      "id": "ADMIN-WA05-B04",
+      "status": "阻塞三端联合收口",
+      "fact": "没有本轮小程序精确SHA、部署版本、opaque黑名单升级及跨端业务链交接",
+      "impact": [
+        "WI-09",
+        "WI-16",
+        "WI-17",
+        "WI-18"
+      ],
+      "required_evidence": "三端协调方交付精确版本、隔离合成场景和联合request_id关联；旧接口隔离、新旧模块兼容及容量证据分别验证"
+    }
+  ],
+  "validation_boundary": [
+    "组件测试替代服务；浏览器测试使用真实页面/路由/服务适配器，但全部业务API响应由测试拦截合成",
+    "浏览器运行于开发服务；生产构建通过不等于已对生产托管执行浏览器验收",
+    "截图仅含合成内容和账号，不含真实正文、令牌、学号或凭据",
+    "未验证真实后端授权/留迹、扫描与通知、全副本清理或备份恢复重删",
+    "真实跨端链路和容量未验证；未推送、合并、部署或上线"
+  ]
+}
