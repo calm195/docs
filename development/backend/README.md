@@ -127,3 +127,5 @@
 - [2026-10-28 匿名兼容与隐私恢复](milestones/2026-10-28-whispers-privacy-r1.md)（[验证清单](validation/2026-10-28-whispers-privacy-r1.json)）
 
 - [2026-10-28 正式进程与依赖装配](milestones/2026-10-28-whispers-runtime-r1.md)（[验证清单](validation/2026-10-28-whispers-runtime-r1.json)）
+
+- [2026-10-28 B09本地环境与客户端联合验证（部分完成）](milestones/2026-10-28-whispers-b09-integration-r1.md)
