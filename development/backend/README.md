@@ -121,3 +121,5 @@
 - [2026-10-28 悄悄鲤审核、危机与治理](milestones/2026-10-28-whispers-governance-r1.md)（[验证清单](validation/2026-10-28-whispers-governance-r1.json)）
 
 - [2026-10-28 悄悄鲤暖评、抱抱与通知](milestones/2026-10-28-whispers-interactions-r1.md)（[验证清单](validation/2026-10-28-whispers-interactions-r1.json)）
+
+- [2026-10-28 本人时空胶囊](milestones/2026-10-28-whispers-capsules-r1.md)（[验证清单](validation/2026-10-28-whispers-capsules-r1.json)）

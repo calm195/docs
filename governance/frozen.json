@@ -378,6 +378,20 @@
     "development/backend/validation/2026-10-28-whispers-interactions-postgres-r1.txt": "2c19587576c7b2d073f5250dd6f518586fa57f87914042ffb989c63e47a9356a",
     "development/backend/validation/2026-10-28-whispers-interactions-r1.json": "93030311bb9502027bde1faedc42eca33f7b9b6d8abdbe101c676d49e3e7348a",
     "development/backend/validation/2026-10-28-whispers-interactions-wire-r1.json": "806412b954fe1f98f68482121bed3330fae7bd40b6283e6f661d342d6f90e9f5",
-    "development/backend/validation/2026-10-28-whispers-interactions-doc-check-r1.txt": "676adc1d338e1329895616263d6ace10967fa1a2fb40aa57c2b75b5e519d81c0"
+    "development/backend/validation/2026-10-28-whispers-interactions-doc-check-r1.txt": "676adc1d338e1329895616263d6ace10967fa1a2fb40aa57c2b75b5e519d81c0",
+    "development/backend/milestones/2026-10-28-whispers-capsules-r1.md": "327022cd328e1d4807a4636ee0fdd7befdcd0b76f60196d4d650b9546bcadac4",
+    "development/backend/validation/2026-10-28-whispers-capsules-build-r1.txt": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+    "development/backend/validation/2026-10-28-whispers-capsules-check-fast-r1.txt": "ba4d3970e9eb44479c3abf31e676517b1f90eb3f29d2435a1502dbc5e8b092cd",
+    "development/backend/validation/2026-10-28-whispers-capsules-check-r1.txt": "7edc814bea1dc35bda10d4914f7f1cce08fd45122ca7ad39e5dca093158846a1",
+    "development/backend/validation/2026-10-28-whispers-capsules-contract-r1.txt": "d25b97034640b60e90df9043239ecf2361b570d29fac87df3f3e60177a4bf1a2",
+    "development/backend/validation/2026-10-28-whispers-capsules-entry-tests-r1.txt": "a30df3020be4947f1d26f8e60815cbc2c565a2946dee6a081f127a7593d2acd6",
+    "development/backend/validation/2026-10-28-whispers-capsules-fmt-r1.txt": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+    "development/backend/validation/2026-10-28-whispers-capsules-integration-r1.txt": "95a1a733066b5aa44fce3eb20111fa0e3fb69cb61c991f9644e22869631fe504",
+    "development/backend/validation/2026-10-28-whispers-capsules-migration-regression-r1.txt": "547f7f957a2acb371a94bdb5b2e4d4d14aff5593eb4202cac36d1faea5913f0a",
+    "development/backend/validation/2026-10-28-whispers-capsules-operations-r1.json": "42dd7595beb8edc10c42e4ad4f4d03d8aa7f40e2e8a33be4e134c20309a2bab3",
+    "development/backend/validation/2026-10-28-whispers-capsules-postgres-r1.txt": "7c4f7a7df3253deb40283e1dba555acf0fbce5697fc22c59f6ef861f1b1aae51",
+    "development/backend/validation/2026-10-28-whispers-capsules-r1.json": "b74083c6fb5a823e450740ae3a166037e29270cc50fad61995f59933f97697a0",
+    "development/backend/validation/2026-10-28-whispers-capsules-wire-r1.json": "b1172479d2af824a2b12103b704e1505a1513625d4f3149c5001021613f8d3f1",
+    "development/backend/validation/2026-10-28-whispers-capsules-doc-check-r1.txt": "fbb3adcfa045d431f9c286cc9f6ede4c50f764e2e6a6209844670de77fdbb294"
   }
 }
