@@ -61,3 +61,5 @@
 - [2026-10-28 悄悄鲤第三批：暖评新建与编辑、抱抱和模块通知（本端完成，真实联调待交接）](milestones/2026-10-28-whispers-interactions-r1.md)
 
 - [2026-10-28 悄悄鲤第四批：本人时光胶囊列表、封存、详情与取消删除（本端完成，真实联调待交接）](milestones/2026-10-28-whispers-capsules-r1.md)
+
+- [2026-10-28 E批本地真实客户端联调（真机与完整验收待补）](milestones/2026-10-28-whispers-e-integration-r1.md)

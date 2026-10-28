@@ -1,0 +1,319 @@
+
+> uniapp-template@1.0.0 check
+> npm run lint && npm run format:check && npm run typecheck && npm run test
+
+
+> uniapp-template@1.0.0 lint
+> eslint . --max-warnings=0
+
+
+> uniapp-template@1.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> uniapp-template@1.0.0 typecheck
+> vue-tsc --noEmit
+
+
+> uniapp-template@1.0.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+(node:28169) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/access.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T009 / REQ-002：认证与动作权限同时满足，所有未认证状态拒绝 (0.418291ms)
+✔ T009 / REQ-018：会话清理推进代次，不能复用旧响应 (0.252833ms)
+(node:28170) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/actions.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ B14 / REQ-018：正式动作投影、目标、未知与缺失均失败关闭 (0.455ms)
+✔ B14 / 002-A/B/C：首次省略版本，重提只取审核记录，扫描通过不代替认证授权 (0.23575ms)
+✔ REQ-002：认证材料原样传递，UTF-8 安全边界不截断输入 (0.180625ms)
+(node:28171) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/applications.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-006：留言100码点/空留言合法；本人、缺动作、错误状态及失效资格不能申请 (1.110458ms)
+✔ REQ-005/006：许愿人只看当前active，同意使用申请7和心愿19，不能套用列表外对象 (66.343833ms)
+✔ REQ-006：申请携当前正文版本，空留言也送审；101码点不发请求 (16.020209ms)
+✔ REQ-006/018：本人撤销只用本人列表，游标/状态透传，409重读不重复接受 (38.92025ms)
+✔ REQ-018：确认期间离开不能写入，换账号清空本人申请；迟到请求不能恢复旧投影 (33.952417ms)
+✔ REQ-018：403/404读取及写失败清空授权依据，失败后不能沿用旧列表 (7.599042ms)
+✔ REQ-008/018：公开主页按本人目标分页，404与离开清除正文及标签 (3.840792ms)
+✔ REQ-006/018：应愿分页拒绝跨页游标循环与畸形游标，刷新重置读取链 (129.1115ms)
+(node:28172) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/capsules-time.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-011：北京时间转换独立设备时区，秒精度、闰日及60秒/365天含边界 (5.731833ms)
+(node:28173) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/capsules.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-011：默认服务端次日同刻；显式告知、码点不裁剪，202仅受理且立即清稿防重复创建 (119.498291ms)
+✔ REQ-011：游客、无动作、模块关闭不创建；未认证但正常且允许动作可封存 (120.418084ms)
+✔ REQ-011：列表仅元数据，空页续翻、去重与循环拒绝；游客和私密正文泄漏清空 (46.035625ms)
+✔ REQ-011：详情依当前状态读取，到期仍审核不得解锁；未认证或受罚不额外阻断已有胶囊 (26.72675ms)
+✔ REQ-011：取消/删除取当前版本和动作，回执清正文，409只重读不重放，目标错配清除 (43.23175ms)
+✔ REQ-011：创建与命令双击串行，结果未知使用原键原体重试；额度与频率提示 (87.100709ms)
+✔ REQ-011/018：离页/同账号换会话清稿和正文，迟到创建或详情不回填，无私密持久化或本地解锁 (62.917709ms)
+(node:28174) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/care.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-017/018：关怀投影只保留允许字段，拒绝缺失资料、错误目标及畸形日期 (1.3525ms)
+✔ REQ-017：受限未认证本人无需业务写权限读取卡片，仅发本人读取接口 (95.221584ms)
+✔ REQ-018：403/404/网络失败和错误回执清除旧资料，不使用通知快照 (8.261875ms)
+✔ REQ-018：离页与同账号会话代次变化丢弃晚到卡片并释放忙碌状态 (59.37075ms)
+✔ REQ-017：Mock与未登录不请求、不伪造热线或预约 (16.366125ms)
+✔ REQ-017/018：通知逐页筛选与去重，固定本端路由，循环游标关闭列表 (3.467375ms)
+✔ REQ-017：无关通知和空页允许继续翻页，通知内容不作为援助资料 (0.078584ms)
+✔ REQ-017：页面注册、首页及通知入口齐全，资源仅用文本组件展示 (0.239208ms)
+(node:28175) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/chat.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-007 / AR-001：慢审后达按最终序号合并，空页不推进，错误游标与重复拒绝 (0.8655ms)
+✔ REQ-007：可见轮询在请求完成后等3秒，不重叠；停止丢弃旧任务的再次调度 (0.236958ms)
+✔ REQ-018：真实Pinia只保存回执与状态，换账号和同账号新会话均清空 (73.140917ms)
+✔ REQ-007：202仅进入待审回执，审核状态序号不推进聊天增量；慢审A后达不漏读 (61.239167ms)
+✔ REQ-007：503/弱网重试复用client_message_id、正文、写代次和幂等键 (40.5065ms)
+✔ REQ-007/018：409不自动重写，只读、失效资格和空白消息不能发送 (20.191125ms)
+✔ REQ-018：离开停止轮询、清正文与输入；迟到发送不写回执，新会话不读旧记录 (8.76725ms)
+✔ REQ-018：失去会话读取权或403时移除旧时间线和发送资格，账号变化清回执 (12.203459ms)
+✔ REQ-007：会话在分页后才能授权；游标循环拒绝，离开后不继续翻页 (3.250125ms)
+✔ REQ-006：仅送达通知可解析为会话，其他不透明引用不能当URL跳转 (0.160834ms)
+✔ REQ-006/018：通知已读绑定本人列表对象与通知6而非Me99，已读不代表普通写权限 (9.177958ms)
+✔ REQ-006：通知分页只传本人游标，409重读不重发，离开或账号变化清列表与跳转依据 (35.696084ms)
+✔ REQ-018：同账号更换令牌立即清输入与回执，从零重读消息且丢弃旧请求 (29.450291ms)
+✔ REQ-007/018：轮询重复启动和快速返回等待旧请求结束，已停止的回调不发请求 (0.130375ms)
+✔ REQ-006/018：通知游标循环时清投影并停止翻页，刷新后可重新读取 (25.939042ms)
+(node:28176) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/deletion.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-018：注销使用本人账号版本及受限动作，不要求学生认证；回执和状态严格投影 (1.011584ms)
+✔ REQ-018：受理只称processing，立即清理本地会话；回执查询无账号认证 (36.884084ms)
+✔ REQ-018：未知结果锁住新请求，人工重试保留同一版本、正文与幂等键 (69.914ms)
+✔ REQ-018：并发提交仅一次，版本/账号/会话变化及Mock拒绝发起 (5.661958ms)
+✔ REQ-018：409只要求重读不自动重发；401或畸形回执不能称受理成功 (85.240583ms)
+✔ REQ-018：换账号晚到受理不清新会话，旧回执不交给新账号 (4.007583ms)
+✔ REQ-018：401清理账号后保留结果不明，同账号代次变化不接受旧回执 (11.258667ms)
+✔ REQ-018：完成仅接受服务端终态，查询失败清旧状态且不解释为完成 (3.572333ms)
+✔ REQ-018：匿名查询不登录也可用，畸形句柄不请求，切账号丢弃晚到进度 (3.794792ms)
+✔ REQ-018：显式勾选加弹窗确认，取消和离页阻止写入，确认后版本复核 (19.898583ms)
+✔ REQ-018：离页不丢在途受理与回执，返回页可继续查询 (54.80675ms)
+✔ REQ-018：结果不明后会话过期仍保留提示，应用恢复不并发刷新注销会话 (4.027584ms)
+(node:28177) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/login-page.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-002/018：登录重复点击不能在登录完成前跳转 (26.164584ms)
+✔ REQ-002/018：登录中离开再返回，旧响应不能导航或恢复旧错误 (3.31825ms)
+(node:28178) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/page-interaction.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-018：前后台页面同时收到点击时仅栈顶执行，返回后恢复交互 (0.435459ms)
+✔ REQ-018：子组件归属于最近页面，H5共享应用根也能正确交互 (0.087708ms)
+(node:28179) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/request.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T009 / REQ-002、018：成功、错误标识、204、401与 Mock 隔离 (1.538125ms)
+✔ T009 / REQ-018：仅开发环境放行本机与私网 HTTP，生产强制 HTTPS (0.619125ms)
+✔ T013 / REQ-002、018：学生卡上传统一鉴权、幂等、202、401及会话失效隔离 (0.240416ms)
+✔ T013 / REQ-002、015、018：0.2.0扫描单次查询、首次省略及重提审核版本与错误分支 (0.234709ms)
+✔ REQ-003、018：真实列表适配透传不透明签名游标与分页，不把查询点号当路径穿越 (3.498ms)
+✔ REQ-002、018：实际会话API符合契约，微信code无效不撤销现有Bearer会话 (1.889375ms)
+✔ T013：二进制 multipart 实际请求层保留 boundary、学生 Bearer 与幂等键 (0.290459ms)
+✔ T009 / REQ-002、018：登录409不自动重发，调用方网络重发保持凭据对不变 (1.291334ms)
+(node:28180) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/safety.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-016：警告显示使用记录版本，29秒不确认，服务端30秒才解锁 (100.592042ms)
+✔ REQ-016：本地倒数不能提前解锁，重进使用服务端首次展示时间且离页停止计时 (22.8135ms)
+✔ REQ-016/018：畸形警告时间拒绝确认，重复游标拒绝保留旧列表 (32.25875ms)
+✔ REQ-016：提前确认冲突只重读，重复点击与晚到回执不跨账号 (45.075917ms)
+✔ REQ-014/016：受限账号仍可申诉与读状态，不获得举报权限；空白正文与伪造处罚拒绝 (20.110833ms)
+✔ REQ-014/016：本人警告切入申诉需重新核验处罚；不确定结果手动重试复用正文与幂等键 (16.022083ms)
+✔ REQ-014/018：举报使用服务端类型与202受理语义，未填写说明不传空字段 (48.874833ms)
+✔ REQ-014/018：举报取消、重复点击、离页确认与账号切换均不产生额外写入 (44.076708ms)
+✔ REQ-014/018：举报不确定结果复用请求，409重读且不自动重发 (11.694208ms)
+✔ REQ-018：无权限、目标失效、Mock、未登录、epoch变化都不写入 (5.7285ms)
+✔ REQ-014/018：心愿屏障和故事目标变更拒绝沿用来源快照 (4.109667ms)
+✔ REQ-014/018：申请举报只取许愿人当前有效申请，跨心愿或待审留言拒绝 (25.186958ms)
+✔ REQ-014/018：消息举报逐页核验本人会话和实际送达序号，不以路由证明权限 (4.070833ms)
+✔ REQ-016/018：处罚必须属于本人当前通知且类型与引用精确匹配 (4.899ms)
+✔ REQ-016/018：申诉确认期间权限撤回、取消与离页均不写入，正文不持久化 (21.742458ms)
+✔ REQ-018：同账号令牌epoch变化时忽略晚到回执并解除忙碌状态 (7.798458ms)
+(node:28181) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/settings.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-002/014：资料按本人版本提交，显式发送 false，成功从共享状态重新读取 (157.746625ms)
+✔ REQ-014/018：隐藏字段缺省不擅自填充，空白昵称拒绝，无本地持久化 (48.022583ms)
+✔ REQ-014：解除使用本人黑名单条目版本，204 后重读，旧申请消息不会自动恢复 (12.544041ms)
+✔ REQ-014：拉黑只取已重验公开主页的目标，不接受路由昵称，禁止拉黑自己 (30.994542ms)
+✔ REQ-014：公开主页失效或错目标时拒绝拉黑 (12.70475ms)
+✔ REQ-014：分页游标编码、按目标去重更新版本、循环或读取失败清空旧黑名单 (16.841709ms)
+✔ REQ-014/018：未校验时拒绝写入，解除只依赖当前条目动作，不使用旧Me动作 (8.904417ms)
+✔ REQ-014：取消、离页后的确认、重复点击均不产生额外写入 (103.472292ms)
+✔ REQ-014/018：409 和不确定结果只重读不重发，后续人工操作使用新幂等键 (17.093083ms)
+✔ REQ-018：账号变化及晚到响应清理旧昵称、目标、黑名单与写权限 (14.681375ms)
+✔ REQ-018：未登录、Mock、本人读取失败均不保留设置或发送写入 (55.822583ms)
+✔ REQ-014/018：公开心愿和故事可独立确认拉黑对象，隐私屏障或作者变化禁止沿用旧目标 (25.362667ms)
+✔ REQ-018：同账号令牌更换后已缓存的本人投影立即失效 (15.087792ms)
+✔ REQ-014：旧动作不启用新拉黑，条目不再提供账号主页或来源映射 (14.116833ms)
+✔ REQ-014/018：升级响应与账号字段泄漏均清掉黑名单，不回退旧接口 (20.777417ms)
+✔ REQ-014/018：解除超时禁止新写，原键原体重试，离页清掉待确认操作 (14.942375ms)
+(node:28182) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/stories.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-007/015：故事动作绑定本人、心愿状态、服务端提示与心愿版本，隐私屏障拒绝 (0.487209ms)
+✔ REQ-008/018：只接受匹配本地分享路由的引用，不透传外链或正文快照 (0.136042ms)
+✔ REQ-007/015：实际页面首次提交用wish_expected_version，202后重读fulfilled与待审结果 (50.273625ms)
+✔ REQ-007/015：实际页面新版本与撤回使用心愿聚合版本，撤回不回退fulfilled (10.615375ms)
+✔ REQ-007/018：409只重读不重发；空白、取消和失效弹窗无写入 (8.272667ms)
+✔ REQ-018：写入迟到、换账号与403不能恢复本人故事与输入 (13.878292ms)
+✔ REQ-015/018：还愿墙实际分页保留不透明游标、去重；出错或退出清空旧正文 (15.463667ms)
+✔ REQ-015/018：故事详情只请求当前公开投影，目标错配、屏障404与迟到响应不展示 (55.413625ms)
+✔ REQ-008/018：创建分享只有kind/id；微信卡固定标题和引用，回流每次onShow重验并404清空 (5.153792ms)
+✔ REQ-008/018：分享游客只解析ref；失败、换账号和迟到均无旧内容，不信任额外路由参数 (4.031041ms)
+✔ REQ-008：未认证不创建分享，伪造服务端路由与错配目标不展示 (5.035917ms)
+(node:28183) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/student-card.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T013：单个 file、显式图片 MIME、boundary 与二进制内容保持一致 (0.831167ms)
+✔ T013：拒绝伪装格式及 MIME 不匹配，大于 1 MiB 的文件不在客户端拦截 (0.473541ms)
+✔ T013：真实上传适配发送二进制 multipart、幂等键，兼容跨上下文二进制且准备期间会话变化拒绝发送 (82.129291ms)
+(node:28184) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/theme.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ 主题在跨页和重启后保持一致，坏缓存与存储失败可恢复 (78.532375ms)
+(node:28185) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/user-store.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T009 / REQ-002：登录失败重试重新取 code，成功后刷新本人状态 (2.06275ms)
+✔ T009 / REQ-018：重复点击登录只交换一次 code (0.23ms)
+✔ T009 / REQ-002：驳回展示建议，刷新失败关闭资格 (0.205292ms)
+✔ T009 / REQ-018：撤销失败仍清理本地，迟到刷新不恢复身份 (0.209167ms)
+✔ T009 / REQ-018：过期事件清理身份并丢弃迟到的登录结果 (0.152459ms)
+✔ REQ-002：认证页可只刷新本人资格，由页面独立读取审核记录 (0.149333ms)
+✔ REQ-018：并发资格刷新乱序返回时，旧权限不能覆盖新结果 (0.146916ms)
+✔ REQ-018：最新资格刷新失败后，旧成功响应不能重新开放权限 (0.151ms)
+(node:28186) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/utils.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T004 / REQ-020：模板工具边界校验（不作为业务登录） (0.428708ms)
+✔ T004 / REQ-018、020：模板缓存过期与命名空间隔离 (0.42525ms)
+(node:28187) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/verification-page.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T013 / 002-A/B/C：页面区分当前记录、404首次与读取失败，不使用Me.version (50.884167ms)
+✔ T013 / REQ-018：离开清理、重入重读，旧读取和会话变化不能恢复页面资料 (11.210417ms)
+✔ B14 / I1-V01/V02：实际页面构造首次和重提，服务准入关闭不发送 (12.659667ms)
+✔ B14 / I1-04：冲突只重读不自动重提，缺失授权拒绝提交 (6.442583ms)
+✔ B14 / I1-S01/S02：单次查询不自动认证，离开丢弃、重入不恢复资产、404清引用 (8.308917ms)
+✔ T013：选图临时隐藏保留表单，扫描通过且字段完整才可提交，正常离开仍清理 (7.622375ms)
+✔ REQ-018：账号变化清空认证姓名、学号、审核记录与学生卡资产 (8.123125ms)
+(node:28188) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/whisper-interactions.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-010：未认证正常账号新建暖评不取Workspace，使用当前父帖版本与epoch，202不冒充公开 (66.197833ms)
+✔ REQ-010：暖评500码点可提交，超长／全空白／孤立代理项拒绝；三档版本来自当前资料 (37.83825ms)
+✔ REQ-010：编辑先读本人暖评，不信路由父帖，跨正文重提使用独立本人版本与最新父上下文 (15.435208ms)
+✔ REQ-010/018：父帖关闭／删除、隐私屏障与缺动作不能提交，安全候选不复制为草稿或恢复旧父帖 (59.765917ms)
+✔ REQ-010：暖评冲突清未提交文字并重读关闭状态；关系错误保持通用，429不显示受理 (47.426167ms)
+✔ REQ-010/018：暖评结果未知只原键原体重试，离页、同账号换会话与晚到响应清稿 (16.990417ms)
+✔ REQ-010：抱抱使用目标状态、父帖版本和本人抱抱版本，采用权威总数而非本地加减 (17.364542ms)
+✔ REQ-010：自抱、游客与缺动作不发送；抱抱冲突只重读，不重新点亮取消意图 (41.94375ms)
+✔ REQ-010/014：抱抱连点互斥、未知结果原请求重试；暖评屏蔽只携来源内容版本 (22.649292ms)
+(node:28189) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/whisper-notifications.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-010：模块通知独立分页，空页游标继续，跨页ID去重，循环游标清列表 (89.753042ms)
+✔ REQ-010：通知已读取当前通知版本，失败未知不变已读且原键重试，冲突刷新不重放 (25.927542ms)
+✔ REQ-010：通知点击重读父帖与指定暖评，可跨空页；失效暖评或404不得跳转和回显旧正文 (18.521375ms)
+✔ REQ-010/011：胶囊通知只读取当前本人状态，锁定无正文，刷新解锁与撤销均以服务端为准 (22.458333ms)
+✔ REQ-010/018：通知错配／字段泄漏拒绝，离页或换会话停止晚到跳转与私密回填 (35.290875ms)
+✔ REQ-010/018：同账号换会话或切账号清通知与胶囊正文，晚到私有详情不得回填 (10.751458ms)
+✔ REQ-010：页面注册与原通知入口分离，正文和身份不持久化，不新增回复树、作者跳转或抱抱通知 (0.398416ms)
+✔ REQ-010/018：游客不加载私有通知，缺已读动作不写；目标404或401清列表且不跳转 (28.330166ms)
+(node:28190) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/whisper-pages.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-009：保存只创建草稿，提交单独授权，更新取本人版本，正文不隐式trim (103.681708ms)
+✔ REQ-009：500码点通过，501／全空白／孤立代理项不发送；游客与未授权不发帖 (55.938625ms)
+✔ REQ-009：三档身份只用受控版本，named使用active而非candidate，字典缺失禁止semi (17.698625ms)
+✔ REQ-009：隐私屏障清正文与编辑，撤回／开关使用最新资源版本，撤回不会自动重提 (17.946917ms)
+✔ REQ-009/018：结果未知原键原体重试，不确认成功；离页与同账号换会话清输入和晚到结果 (11.830541ms)
+✔ REQ-009：版本冲突刷新当前状态，受限后不能沿用旧正文重新保存 (11.851375ms)
+✔ REQ-009：昵称候选独立展示，提交使用NicknameState版本，旧active不被候选替换 (18.800167ms)
+✔ REQ-009：公开空页保留游标可继续、跨页去重，循环游标停止，停用不展示入口资料 (10.095333ms)
+✔ REQ-009/010：详情按父正文读取公开暖评，关闭保留只读；父版本变化或404清旧串 (13.172875ms)
+✔ REQ-014：匿名屏蔽只提交来源内容版本，成功清正文，不取得作者或block_id映射 (10.988292ms)
+✔ REQ-009/018：我的帖子和评论切页隔离，隐私记录不回显原文，仅显示安全候选 (13.854042ms)
+✔ REQ-011：公共解忧无需登录，资料缺失保持不可用，不把本人关怀卡当公共目录 (8.194917ms)
+✔ REQ-014：举报来源发送前重验，内容版本取当前投影，类型来自配置；失效不提交 (20.578042ms)
+✔ REQ-009：身份选择组件关闭未就绪档位，半匿名校区不包含不限，不推断年级或个人资料 (1.613875ms)
+✔ REQ-009/018：所有树洞页面注册并使用可见性边界，无正文持久化、主页跳转或语音分享入口 (0.370166ms)
+(node:28192) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/whispers.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-009/010/011/014/018：固定契约32个学生端操作与正式正反夹具严格消费 (229.092584ms)
+✔ REQ-009/011/018：500码点、不规范化、未知字段枚举、私密屏障和锁定泄漏拒绝 (0.245666ms)
+✔ REQ-014/018：写动作按资源投影收口，未知动作关闭；DELETE保留JSON版本与UUID键 (4.067417ms)
+✔ REQ-018：无会话私有请求不发送，公共读取可用，换会话晚到响应不返回 (7.802375ms)
+✔ REQ-018：页面作用域未知结果保留原键原体，仅内存重试；成功、离页、同账号换会话清稿 (3.443875ms)
+✔ REQ-018：共享配置与Workspace只接受最新读取，同账号换会话立即清理 (2.802875ms)
+✔ REQ-010/014：写版本分别取本人、父帖与抱抱记录，计数和账号版本不参与 (4.086375ms)
+(node:28193) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/wish-detail.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ REQ-004/005：回退绑定目标版本与幂等键，刷新期限由服务端决定，不本地伪造上架 (51.61525ms)
+✔ REQ-018：确认期间离开和会话变化不能提交旧动作，隐私屏障不回显正文 (10.318958ms)
+✔ REQ-004：409仅重读不自动重写；切换账号不保留原正文 (12.371917ms)
+(node:28194) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/wishes-page.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ B14 / I2-A01：默认入口关闭，缺失/错误投影/跨目标和会话变化不写入 (49.338375ms)
+✔ B14 / I2-01：实际页面和API构造可选性别创建，无标签省略、保密显式传值 (13.200417ms)
+✔ B14 / I2-01/02：实际API绑定资源及正文版本，标签更新语义未知时拦截 (10.689208ms)
+✔ B14 / I2-02–05：送审/上架/删草稿使用正式动作和目标版本 (30.0965ms)
+✔ B14 / REQ-018：409只重读，403停止且不自动重试；离开隔离迟到写结果 (9.158666ms)
+✔ REQ-003：编辑服务端省略可选默认字段的草稿时补全默认报答和期限 (7.447083ms)
+✔ REQ-018：账号变化立即清除我的心愿和未保存正文 (8.544083ms)
+(node:28195) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/tests/wishes.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/kurous/code/liyuanci/liyuanci-miniprogram-uniapp/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T015 / REQ-003：500 Unicode 码点、默认值、期限和枚举边界 (0.520375ms)
+✔ T015 / REQ-008、018：屏障隐藏本人正文，公开列表不从私有投影补位 (0.186709ms)
+✔ T015 / REQ-004、005、015：合成审核不直通，驳回改版重审，上架满额不误报 (1.349875ms)
+✔ T015 / REQ-003、018：可选标签省略与保密不同，性别映射及空年级边界 (0.419709ms)
+ℹ tests 185
+ℹ suites 0
+ℹ pass 185
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1293.6445

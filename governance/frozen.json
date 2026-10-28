@@ -490,6 +490,26 @@
     "development/backend/validation/2026-10-28-whispers-runtime-operations-r1.json": "1650e55ed936e92c1d27f4492c6c312fb484d3e2dfc30af9f176f26c031118da",
     "development/backend/validation/2026-10-28-whispers-runtime-postgres-processes-r1.txt": "d673cc244c124c1af5f7a949c6fa0b46228e54d3d7083347b2e83239a1d3386b",
     "development/backend/validation/2026-10-28-whispers-runtime-r1.json": "76baf2998d07373f49ce38ca01ba263dad147c426a0d0e3a80540b2a64913998",
-    "development/backend/validation/2026-10-28-whispers-runtime-doc-check-r1.txt": "7b95eda0e758ea0c1db160572bc310d9362a6ddbd5f626e87111d39120cd4830"
+    "development/backend/validation/2026-10-28-whispers-runtime-doc-check-r1.txt": "7b95eda0e758ea0c1db160572bc310d9362a6ddbd5f626e87111d39120cd4830",
+    "development/admin/milestones/2026-10-28-whispers-wa05-r2.md": "4e6523d42096ca5a0611741abf88e5edf27f6f6f41752d00b063227017f1ed69",
+    "development/admin/validation/2026-10-28-whispers-wa05-r2-build.txt": "12de88637e4c8f56406acc9cb82ea1e2f6e211fabf982b16560358f8b4c6dcca",
+    "development/admin/validation/2026-10-28-whispers-wa05-r2-check.txt": "fb57d5ad91d6928eb2ab31e24782a54622fad03421aa6be94bd543495a7bf35a",
+    "development/backend/milestones/2026-10-28-whispers-b09-integration-r1.md": "843a324a01a72918dbe0fb525b24d2e49b62c31c3f41fcc0cd30747d44385ff4",
+    "development/backend/validation/2026-10-28-whispers-b09-build-r1.txt": "bc9f309d432aa5a5b7b0ea41f4344d95934273a95dce6085cd1df402fc8cc7c6",
+    "development/backend/validation/2026-10-28-whispers-b09-check-r1.txt": "711300b11a13501f18122955606844aa713f37b142baa8f200eb75bb444a30b8",
+    "development/backend/validation/2026-10-28-whispers-b09-cleanup-r1.json": "70f6a9516ce99b366b44d6bcf7415f32686cfdfe1ba3eb2a8709e8817c902777",
+    "development/backend/validation/2026-10-28-whispers-b09-client-r1.json": "350359dfe359932ec6bcd7735d019f4197dc37f17c286ef57889d799a3d943f8",
+    "development/backend/validation/2026-10-28-whispers-b09-close-r1.txt": "a620472342edcac14c4176e5ff6db12f43342f8fc88fb0d16828927ebfb2886d",
+    "development/backend/validation/2026-10-28-whispers-b09-contract-r1.txt": "2ee3ad25363aa4ff5bcf2cc2fdebca856d7e54b114bd4abc03e78627675cc20b",
+    "development/backend/validation/2026-10-28-whispers-b09-entry-r1.txt": "ce3313d4ac2f39cfed863c1dc04e9cf0d74a4a070d6f0402d4607ca77f81a0b4",
+    "development/backend/validation/2026-10-28-whispers-b09-overlay-r1.txt": "6ada62d65bf7c2a982f5b8c08f75d290337c602d11235ebc0b04a00f614db8a4",
+    "development/backend/validation/2026-10-28-whispers-b09-postgres-r1.txt": "886a24f94701028be945ea376127223a65cb51531789c7a3b278eb5a00f7df37",
+    "development/backend/validation/2026-10-28-whispers-b09-probe-r1.mjs": "eaf263e8d42c922808264a0a0f8418e88d06d8a551f761ce33b2f00cfc01ecc0",
+    "development/backend/validation/2026-10-28-whispers-b09-readiness-r1.json": "58f1d91d97740a8138c042e62b2fdcae5c848ecb1fb9258a19d5f08e0cb6528f",
+    "development/backend/validation/2026-10-28-whispers-b09-runner-r1.py": "b63cabb69408ce80d830f04a9910363a58f50a87c2146e6d9e1625c7f335f43b",
+    "development/backend/validation/2026-10-28-whispers-b09-runtime-r1.txt": "5e33d31e33b06e99a22efa61a0a67f9b70d011d57337b449e8e173dd7b6a7d6b",
+    "development/miniprogram/milestones/2026-10-28-whispers-e-integration-r1.md": "f57bb1581adaba1af143c5da98750aba747808c2a468ca099459dfdd12d0bf56",
+    "development/miniprogram/validation/2026-10-28-whispers-e-r1-build.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+    "development/miniprogram/validation/2026-10-28-whispers-e-r1-check.txt": "fce935879caac2fa73103f1b14404a10fa5d16c56b06e4687ef1147571aadca1"
   }
 }

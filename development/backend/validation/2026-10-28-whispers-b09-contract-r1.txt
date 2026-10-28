@@ -1,0 +1,5 @@
+契约生成一致：50操作，98schema，26写动作
+/private/tmp/liyuanci-contract-021-venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+契约校验通过：50操作，98schema，75请求/响应样例，104正例/12负例，26写动作。
+范围：静态设计契约；业务接口和联合验收未执行。
