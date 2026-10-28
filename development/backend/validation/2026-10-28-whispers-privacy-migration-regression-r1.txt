@@ -1,0 +1,8 @@
+=== RUN   TestBusinessSchema
+--- PASS: TestBusinessSchema (3.55s)
+=== RUN   TestPostgresMigrations
+--- PASS: TestPostgresMigrations (8.59s)
+=== RUN   TestPostgresStoryPublication
+--- PASS: TestPostgresStoryPublication (3.29s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/migration	15.635s

@@ -1,2 +1,4 @@
 # Docker原始输出已固定，保留行尾空格；仅此日志免除blank-at-eol，其他空白检查照常。
 development/backend/validation/2026-10-27-public-profile-integration-r1.txt whitespace=-blank-at-eol
+development/backend/validation/2026-10-28-whispers-governance-integration-r1.txt whitespace=-blank-at-eol
+development/backend/validation/2026-10-28-whispers-text-integration-r1.txt whitespace=-blank-at-eol

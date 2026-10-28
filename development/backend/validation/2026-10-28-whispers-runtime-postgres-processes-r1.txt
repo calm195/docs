@@ -1,0 +1,5 @@
+=== RUN   TestPostgresWhisperRuntime
+    runtime_postgres_test.go:513: 正式server/content-worker/privacy-worker、受限登录、TLS、Redis、MQ=false、禁用/重启/恢复门禁通过；供应商/KMS/清理为合成
+--- PASS: TestPostgresWhisperRuntime (6.56s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/whisperapp	6.835s

@@ -1,0 +1,1046 @@
+{
+  "contract": "whispers/1.0.0",
+  "source_commit": "5579987f41830a6658b7b6c74bbb741aff14ce05",
+  "operation_count": 50,
+  "isolated_tested_count": 42,
+  "production_enabled": false,
+  "operations": [
+    {
+      "operation_id": "whisperConfigGet",
+      "method": "GET",
+      "path": "/api/v1/whispers/config",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "public",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "ModuleConfigResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperHelpGet",
+      "method": "GET",
+      "path": "/api/v1/whispers/help",
+      "req": [
+        "REQ-011",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "public",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "HelpDirectoryResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperPostsList",
+      "method": "GET",
+      "path": "/api/v1/whispers/posts",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "optional",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "PublicPostPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperPostGet",
+      "method": "GET",
+      "path": "/api/v1/whispers/posts/{post_id}",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "optional",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "PublicPostResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperCommentsList",
+      "method": "GET",
+      "path": "/api/v1/whispers/posts/{post_id}/comments",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "optional",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "PublicCommentPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperCommentCreate",
+      "method": "POST",
+      "path": "/api/v1/whispers/posts/{post_id}/comments",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/CommentCreate",
+      "success_response_schemas": {
+        "202": [
+          "OwnerCommentResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperWorkspaceGet",
+      "method": "GET",
+      "path": "/api/v1/me/whispers",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "WorkspaceResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperOwnPostsList",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/posts",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "OwnerPostPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperPostCreate",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/posts",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/PostCreate",
+      "success_response_schemas": {
+        "201": [
+          "OwnerPostResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperOwnPostGet",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/posts/{post_id}",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "OwnerPostResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperPostUpdate",
+      "method": "PUT",
+      "path": "/api/v1/me/whispers/posts/{post_id}",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/PostUpdate",
+      "success_response_schemas": {
+        "200": [
+          "OwnerPostResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperPostSubmit",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/posts/{post_id}/submit",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/VersionCommand",
+      "success_response_schemas": {
+        "202": [
+          "OwnerPostResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "dependency": "ReviewSink为同事务SQL边界，真实消费者与最终批准待B04；缺适配503"
+    },
+    {
+      "operation_id": "whisperPostWithdraw",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/posts/{post_id}/withdraw",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/VersionCommand",
+      "success_response_schemas": {
+        "200": [
+          "OwnerPostResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperCommentsSetting",
+      "method": "PUT",
+      "path": "/api/v1/me/whispers/posts/{post_id}/comments-setting",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/CommentsSetting",
+      "success_response_schemas": {
+        "200": [
+          "OwnerPostResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperOwnCommentsList",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/comments",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "OwnerCommentPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperOwnCommentGet",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/comments/{comment_id}",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "OwnerCommentResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperCommentUpdate",
+      "method": "PUT",
+      "path": "/api/v1/me/whispers/comments/{comment_id}",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/CommentUpdate",
+      "success_response_schemas": {
+        "202": [
+          "OwnerCommentResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperCommentWithdraw",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/comments/{comment_id}/withdraw",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/VersionCommand",
+      "success_response_schemas": {
+        "200": [
+          "OwnerCommentResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperHugSet",
+      "method": "PUT",
+      "path": "/api/v1/whispers/posts/{post_id}/hugs",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/HugCommand",
+      "success_response_schemas": {
+        "200": [
+          "HugResultResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperNicknameGet",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/nickname",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "NicknameStateResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperNicknameSet",
+      "method": "PUT",
+      "path": "/api/v1/me/whispers/nickname",
+      "req": [
+        "REQ-009",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/NicknameCommand",
+      "success_response_schemas": {
+        "202": [
+          "NicknameStateResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "dependency": "ReviewSink为同事务SQL边界，真实消费者与最终批准待B04；缺适配503"
+    },
+    {
+      "operation_id": "whisperCapsulesList",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/capsules",
+      "req": [
+        "REQ-011",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "CapsulePageResponse"
+        ]
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperCapsuleCreate",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/capsules",
+      "req": [
+        "REQ-011",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/CapsuleCreate",
+      "success_response_schemas": {
+        "202": [
+          "CapsuleSummaryResponse"
+        ]
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperCapsuleGet",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/capsules/{capsule_id}",
+      "req": [
+        "REQ-011",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "CapsuleResponse"
+        ]
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperCapsuleCancel",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/capsules/{capsule_id}/cancel",
+      "req": [
+        "REQ-011",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/VersionCommand",
+      "success_response_schemas": {
+        "200": [
+          "CapsuleSummaryResponse"
+        ]
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperCapsuleDelete",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/capsules/{capsule_id}/delete",
+      "req": [
+        "REQ-011",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/VersionCommand",
+      "success_response_schemas": {
+        "200": [
+          "CapsuleSummaryResponse"
+        ]
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "interactionBlocksList",
+      "method": "GET",
+      "path": "/api/v1/me/interaction-blocks",
+      "req": [
+        "REQ-009",
+        "REQ-014",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "BlockEntryPageResponse"
+        ]
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "interactionBlockCreate",
+      "method": "POST",
+      "path": "/api/v1/me/interaction-blocks",
+      "req": [
+        "REQ-009",
+        "REQ-014",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/BlockCreate",
+      "success_response_schemas": {
+        "200": [
+          "BlockAckResponse"
+        ]
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "interactionBlockDelete",
+      "method": "DELETE",
+      "path": "/api/v1/me/interaction-blocks/{block_id}",
+      "req": [
+        "REQ-009",
+        "REQ-014",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/VersionCommand",
+      "success_response_schemas": {
+        "204": []
+      },
+      "status": "pending",
+      "production_enabled": false
+    },
+    {
+      "operation_id": "whisperReportCreate",
+      "method": "POST",
+      "path": "/api/v1/whispers/reports",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/ReportCreate",
+      "success_response_schemas": {
+        "202": [
+          "ReportAckResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperNotificationsList",
+      "method": "GET",
+      "path": "/api/v1/me/whispers/notifications",
+      "req": [
+        "REQ-010",
+        "REQ-011",
+        "REQ-016",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "NotificationPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperNotificationRead",
+      "method": "POST",
+      "path": "/api/v1/me/whispers/notifications/{notification_id}/read",
+      "req": [
+        "REQ-010",
+        "REQ-011",
+        "REQ-016",
+        "REQ-018",
+        "REQ-020"
+      ],
+      "auth_scope": "student",
+      "request_schema": "#/components/schemas/VersionCommand",
+      "success_response_schemas": {
+        "200": [
+          "NotificationResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实学生角色、PG审核批准及HTTP响应；外部分析器合成"
+    },
+    {
+      "operation_id": "whisperAdminReviewsList",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-011",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-review",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "ReviewSummaryPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminReviewGet",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews/{review_id}",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-011",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-review",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "ReviewDetailResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminReviewDecide",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reviews/{review_id}/decision",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-011",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-review",
+      "request_schema": "#/components/schemas/ReviewCommand",
+      "success_response_schemas": {
+        "200": [
+          "ReviewOutcomeResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminReviewEscalate",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reviews/{review_id}/escalate",
+      "req": [
+        "REQ-009",
+        "REQ-010",
+        "REQ-011",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-review-and-crisis",
+      "request_schema": "#/components/schemas/ReasonCommand",
+      "success_response_schemas": {
+        "200": [
+          "CrisisSummaryResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminContentGet",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/contents/{kind}/{content_id}",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-safety",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "ContentControlResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminRestrictionSet",
+      "method": "PUT",
+      "path": "/api/v1/admin/whispers/contents/{kind}/{content_id}/restriction",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-safety",
+      "request_schema": "#/components/schemas/RestrictionCommand",
+      "success_response_schemas": {
+        "200": [
+          "ContentControlResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminPenaltyCreate",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/contents/{kind}/{content_id}/penalties",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-safety",
+      "request_schema": "#/components/schemas/PenaltyCommand",
+      "success_response_schemas": {
+        "200": [
+          "PenaltyResultResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminReportsList",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reports",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-safety",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "ReportSummaryPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminReportGet",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reports/{report_id}",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-safety",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "ReportDetailResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminReportDecide",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reports/{report_id}/decision",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-safety",
+      "request_schema": "#/components/schemas/ReportDecision",
+      "success_response_schemas": {
+        "200": [
+          "ReportSummaryResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminReportEscalate",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reports/{report_id}/escalate",
+      "req": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-crisis",
+      "request_schema": "#/components/schemas/ReasonCommand",
+      "success_response_schemas": {
+        "200": [
+          "CrisisSummaryResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminCrisesList",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/crises",
+      "req": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-crisis",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "CrisisSummaryPageResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminCrisisGet",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/crises/{crisis_id}",
+      "req": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-crisis",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "CrisisDetailResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminCrisisAct",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/crises/{crisis_id}/actions",
+      "req": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-crisis",
+      "request_schema": "#/components/schemas/CrisisCommand",
+      "success_response_schemas": {
+        "200": [
+          "CrisisDetailResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminCrisisFalsePositive",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/crises/{crisis_id}/false-positive",
+      "req": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-crisis",
+      "request_schema": "#/components/schemas/ReasonCommand",
+      "success_response_schemas": {
+        "200": [
+          "CrisisDetailResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminEvidenceGet",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/evidence/{evidence_id}",
+      "req": [
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-super",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "EvidenceScopeResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminEvidenceDelete",
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/evidence/{evidence_id}/deletion-requests",
+      "req": [
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-super",
+      "request_schema": "#/components/schemas/EvidenceDelete",
+      "success_response_schemas": {
+        "202": [
+          "DeletionJobResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    },
+    {
+      "operation_id": "whisperAdminDeletionGet",
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/deletions/{job_id}",
+      "req": [
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ],
+      "auth_scope": "admin-super",
+      "request_schema": null,
+      "success_response_schemas": {
+        "200": [
+          "DeletionJobResponse"
+        ]
+      },
+      "status": "isolated-tested",
+      "production_enabled": false,
+      "evidence": "真实受限SQL角色及HTTP；暖评本次接通真实写入，胶囊来源仍为适配夹具、用户写入口待后续"
+    }
+  ],
+  "source_commits": [
+    "823b5ae7478395186e0b5aa131c05f28257bb03e",
+    "5579987f41830a6658b7b6c74bbb741aff14ce05"
+  ],
+  "notes": [
+    "继承B03/B04的32个操作并通过完整集成回归；本次新增10个操作。",
+    "5个胶囊与3个opaque黑名单操作仍待后续；生产启用关闭。"
+  ]
+}

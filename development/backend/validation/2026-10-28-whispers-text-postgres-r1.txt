@@ -1,0 +1,43 @@
+=== RUN   TestPostgresWhisperFoundation
+=== RUN   TestPostgresWhisperFoundation/空库及迁移身份回退
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_api_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_domain_worker_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_admin_api_SELECT_id,version_FROM_public.whisper_capsules_LIMIT_0
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_admin_api_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_admin_api_SELECT_label_cipher_FROM_public.whisper_nickname_versions_LIMIT_0
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_crisis_api_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_worker_SELECT_*_FROM_public.whisper_posts_LIMIT_0
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_api_DELETE_FROM_public.whisper_posts_WHERE_false
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_domain_worker_UPDATE_public.whisper_capsules_SET_body_cipher='{}'_WHERE_false
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_api_CREATE_TABLE_public.whisper_runtime_ddl(id_integer)
+=== RUN   TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_privacy_maintenance_DELETE_FROM_public.whisper_aliases_WHERE_false
+--- PASS: TestPostgresWhisperFoundation (9.14s)
+    --- PASS: TestPostgresWhisperFoundation/空库及迁移身份回退 (5.46s)
+    --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限 (3.68s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_api_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0 (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_domain_worker_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0 (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_admin_api_SELECT_id,version_FROM_public.whisper_capsules_LIMIT_0 (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_admin_api_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0 (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_admin_api_SELECT_label_cipher_FROM_public.whisper_nickname_versions_LIMIT_0 (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_crisis_api_SELECT_body_cipher_FROM_public.whisper_capsules_LIMIT_0 (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_worker_SELECT_*_FROM_public.whisper_posts_LIMIT_0 (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_api_DELETE_FROM_public.whisper_posts_WHERE_false (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_domain_worker_UPDATE_public.whisper_capsules_SET_body_cipher='{}'_WHERE_false (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_api_CREATE_TABLE_public.whisper_runtime_ddl(id_integer) (0.00s)
+        --- PASS: TestPostgresWhisperFoundation/旧库关系原位升级及约束权限/权限_liyuanci_privacy_maintenance_DELETE_FROM_public.whisper_aliases_WHERE_false (0.00s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/migration	9.354s
+=== RUN   TestPostgresWhisperLocks
+=== RUN   TestPostgresWhisperLocks/liyuanci_domain_worker
+=== RUN   TestPostgresWhisperLocks/liyuanci_admin_api
+--- PASS: TestPostgresWhisperLocks (2.78s)
+    --- PASS: TestPostgresWhisperLocks/liyuanci_domain_worker (0.06s)
+    --- PASS: TestPostgresWhisperLocks/liyuanci_admin_api (0.03s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/command	3.149s
+=== RUN   TestPostgresWhisperText
+    postgres_test.go:456: 真实PostgreSQL与API运行角色验证通过；审核批准、资料和KMS为隔离合成夹具，未启用模块
+--- PASS: TestPostgresWhisperText (3.31s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/whisper	3.669s

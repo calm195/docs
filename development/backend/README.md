@@ -109,3 +109,21 @@
 - [2026-10-27 黑名单契约精确提交与合流交接](milestones/2026-10-27-blocks-commit-r1.md)
 
 - [2026-10-27 公开主页与黑名单交付合入main](milestones/2026-10-27-main-merge-r1.md)
+
+- [2026-10-27 悄悄鲤后端开发计划](milestones/2026-10-27-whispers-backend-plan-r1.md)
+
+- [2026-10-27 悄悄鲤输入对照与数据命令基础](milestones/2026-10-27-whispers-foundation-r1.md)
+
+- [2026-10-27 树洞基础源码提交补证](milestones/2026-10-27-whispers-foundation-commit-r1.md)
+
+- [2026-10-28 悄悄鲤文字、身份与昵称领域](milestones/2026-10-28-whispers-text-r1.md)（[文档检查补证](validation/2026-10-28-whispers-text-doc-check-r1.txt)）
+
+- [2026-10-28 悄悄鲤审核、危机与治理](milestones/2026-10-28-whispers-governance-r1.md)（[验证清单](validation/2026-10-28-whispers-governance-r1.json)）
+
+- [2026-10-28 悄悄鲤暖评、抱抱与通知](milestones/2026-10-28-whispers-interactions-r1.md)（[验证清单](validation/2026-10-28-whispers-interactions-r1.json)）
+
+- [2026-10-28 本人时空胶囊](milestones/2026-10-28-whispers-capsules-r1.md)（[验证清单](validation/2026-10-28-whispers-capsules-r1.json)）
+
+- [2026-10-28 匿名兼容与隐私恢复](milestones/2026-10-28-whispers-privacy-r1.md)（[验证清单](validation/2026-10-28-whispers-privacy-r1.json)）
+
+- [2026-10-28 正式进程与依赖装配](milestones/2026-10-28-whispers-runtime-r1.md)（[验证清单](validation/2026-10-28-whispers-runtime-r1.json)）
