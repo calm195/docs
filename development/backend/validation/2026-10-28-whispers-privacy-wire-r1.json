@@ -1,0 +1,41 @@
+[
+  {
+    "body": {
+      "code": 0,
+      "data": {
+        "items": [
+          {
+            "block_id": "2d822214-0887-4b01-b17f-e794f516971e",
+            "version": 1,
+            "label": "已屏蔽对象",
+            "allowed_actions": [
+              "interactionBlockDelete"
+            ]
+          }
+        ],
+        "next_cursor": null
+      },
+      "message": "成功",
+      "request_id": "6af56ebf303ee1b0bfec70d0ac7f78f0"
+    },
+    "operation": "interactionBlocksList",
+    "status": 200
+  },
+  {
+    "body": null,
+    "operation": "interactionBlockDelete",
+    "status": 204
+  },
+  {
+    "body": {
+      "code": 0,
+      "data": {
+        "accepted": true
+      },
+      "message": "成功",
+      "request_id": "b0948389489b9e07e4e819266ecf1168"
+    },
+    "operation": "interactionBlockCreate",
+    "status": 200
+  }
+]

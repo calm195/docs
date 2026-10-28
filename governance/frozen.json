@@ -392,6 +392,20 @@
     "development/backend/validation/2026-10-28-whispers-capsules-postgres-r1.txt": "7c4f7a7df3253deb40283e1dba555acf0fbce5697fc22c59f6ef861f1b1aae51",
     "development/backend/validation/2026-10-28-whispers-capsules-r1.json": "b74083c6fb5a823e450740ae3a166037e29270cc50fad61995f59933f97697a0",
     "development/backend/validation/2026-10-28-whispers-capsules-wire-r1.json": "b1172479d2af824a2b12103b704e1505a1513625d4f3149c5001021613f8d3f1",
-    "development/backend/validation/2026-10-28-whispers-capsules-doc-check-r1.txt": "fbb3adcfa045d431f9c286cc9f6ede4c50f764e2e6a6209844670de77fdbb294"
+    "development/backend/validation/2026-10-28-whispers-capsules-doc-check-r1.txt": "fbb3adcfa045d431f9c286cc9f6ede4c50f764e2e6a6209844670de77fdbb294",
+    "development/backend/milestones/2026-10-28-whispers-privacy-r1.md": "23715e5065b0039dd11147499d8396b4d83e165af50cfb00cc5f9ae63b2affd4",
+    "development/backend/validation/2026-10-28-whispers-privacy-build-r1.txt": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+    "development/backend/validation/2026-10-28-whispers-privacy-check-fast-r1.txt": "093107d48a8d2c4865bb1ddf60fae7053fc788e409662583a3cdcb22bcf6675e",
+    "development/backend/validation/2026-10-28-whispers-privacy-check-r1.txt": "8a340fb24ac4878207be12a86db5bb588784f270112dd9fde91ea56a85355ccd",
+    "development/backend/validation/2026-10-28-whispers-privacy-contract-r1.txt": "fb5ec74a9144122bfd511ba5ad488cfd85b184c01ab8717f783e5d227801b1a6",
+    "development/backend/validation/2026-10-28-whispers-privacy-entry-tests-r1.txt": "b8ee8d7091a854fa0aa23861cb79e2cb8eed6e96a8f903e34d90860266eb8b09",
+    "development/backend/validation/2026-10-28-whispers-privacy-fmt-r1.txt": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+    "development/backend/validation/2026-10-28-whispers-privacy-integration-r1.txt": "96ddec7e1310a08c594bb2d4e00b5bb10be804dc80a359a02bb9fad6e00ed627",
+    "development/backend/validation/2026-10-28-whispers-privacy-migration-regression-r1.txt": "cb982ab6c1449a5ca05e192586be7bd616bef2ed68d81ea07b977c7a1d24a2f7",
+    "development/backend/validation/2026-10-28-whispers-privacy-operations-r1.json": "3edf218f0160502fffdfb612c8e352b4d1169473a35202b3a3ddd521d01cde0e",
+    "development/backend/validation/2026-10-28-whispers-privacy-postgres-r1.txt": "33ffe620624dfcdbbbe664040b352874a98bdef94c5cca34dda75dff585e4f52",
+    "development/backend/validation/2026-10-28-whispers-privacy-r1.json": "957c2f059ebe2d3c0be89a9cfbf87a042a33969c3189b3d907f9bd7d7b2457be",
+    "development/backend/validation/2026-10-28-whispers-privacy-wire-r1.json": "e88a9893f01027f074caf5cb58096577e45403471e1480c494ce51d2907f1069",
+    "development/backend/validation/2026-10-28-whispers-privacy-doc-check-r1.txt": "1b918cdb275181446a40f1e3588561fb2c8c32ba1d724e0abe68d0596f8c45a1"
   }
 }
