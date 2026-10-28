@@ -510,6 +510,10 @@
     "development/backend/validation/2026-10-28-whispers-b09-runtime-r1.txt": "5e33d31e33b06e99a22efa61a0a67f9b70d011d57337b449e8e173dd7b6a7d6b",
     "development/miniprogram/milestones/2026-10-28-whispers-e-integration-r1.md": "f57bb1581adaba1af143c5da98750aba747808c2a468ca099459dfdd12d0bf56",
     "development/miniprogram/validation/2026-10-28-whispers-e-r1-build.txt": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
-    "development/miniprogram/validation/2026-10-28-whispers-e-r1-check.txt": "fce935879caac2fa73103f1b14404a10fa5d16c56b06e4687ef1147571aadca1"
+    "development/miniprogram/validation/2026-10-28-whispers-e-r1-check.txt": "fce935879caac2fa73103f1b14404a10fa5d16c56b06e4687ef1147571aadca1",
+    "development/backend/milestones/2026-10-28-real-integration-runbook-r1.md": "21b78d39599a7f9c4ae110559c5d2cbf263dd3b646be174f7afb6a904789317e",
+    "development/admin/milestones/2026-10-28-real-integration-runbook-r1.md": "bd19fbcf2de573a210193f25943e12efa6780357f6eff547950b513e8d7fd292",
+    "development/miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md": "158519deb99929c59ba932496970c31c1b1a75e817543829f2c93e793a7c76d1",
+    "development/backend/validation/2026-10-28-real-integration-preflight-r1.json": "ad630fb21fcaf229e1762e5ddc5b831ee20831d859681412694fadfe69b25bba"
   }
 }

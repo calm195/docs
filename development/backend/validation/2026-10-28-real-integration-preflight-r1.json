@@ -1,0 +1,135 @@
+{
+  "kind": "只读准备核对与操作文档交付，不是产品联调结果",
+  "observed_at": "2026-10-28T15:44:09.103037+08:00",
+  "tasks": [
+    "B09",
+    "WA-05",
+    "小程序E批"
+  ],
+  "source_repositories": {
+    "backend": {
+      "repository": "liyuanci-backend-go",
+      "branch": "develop",
+      "head": "281430b6b05aafd5db0f315285f5999f690a645d",
+      "status_porcelain": ""
+    },
+    "admin": {
+      "repository": "liyuanci-admin-vue",
+      "branch": "develop",
+      "head": "69f07a2af4c84b4da8026c636c7a06463491f548",
+      "status_porcelain": ""
+    },
+    "miniprogram": {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "branch": "develop",
+      "head": "3bcec888230a6cf3b096d2c51e3ea03ca15f9c7a",
+      "status_porcelain": ""
+    }
+  },
+  "docs": {
+    "branch": "backend-develop",
+    "base": "afe532e004be5ab602aa8d5821608117471fc743",
+    "worktree": "/private/tmp/liyuanci-docs-backend-develop",
+    "primary_main_head": "7a3578aa4136a029b5a60f62249d30fb6c7def80",
+    "primary_status_porcelain": "",
+    "base_tree_equal_to_main": true,
+    "delivery_state": "未提交；本跨端任务依据治理规范共用backend-develop独立工作树"
+  },
+  "configuration_presence_only": {
+    "checked_paths_exist": {
+      ".local/local/operations.env": true,
+      ".local/local/business.json": true,
+      ".local/local/business.host.json": true,
+      ".local/local/whispers-runtime.json": false
+    },
+    "scope": "只核对默认本地目录，不扫描其他私有目录；不输出值，不验证凭据或连接有效性",
+    "nonempty_fields": {
+      "WeChatAppID": true,
+      "WeChatSecret": true,
+      "CrisisDSN": true,
+      "PrivacyDSN": true,
+      "RecoveryWriterDSN": true,
+      "RecoveryReaderDSN": true
+    }
+  },
+  "listeners": {
+    "command": "lsof -nP -iTCP:18080 -iTCP:5173 -sTCP:LISTEN",
+    "exit_code": 1,
+    "observed_listener": false,
+    "stderr_present": false,
+    "scope": "当前主机可观察范围的瞬时快照，不代替之后的环境诊断"
+  },
+  "prior_fixed_records_sha256": {
+    "development/backend/milestones/2026-10-28-whispers-b09-integration-r1.md": "843a324a01a72918dbe0fb525b24d2e49b62c31c3f41fcc0cd30747d44385ff4",
+    "development/admin/milestones/2026-10-28-whispers-wa05-r2.md": "4e6523d42096ca5a0611741abf88e5edf27f6f6f41752d00b063227017f1ed69",
+    "development/miniprogram/milestones/2026-10-28-whispers-e-integration-r1.md": "f57bb1581adaba1af143c5da98750aba747808c2a468ca099459dfdd12d0bf56",
+    "development/backend/milestones/2026-10-28-whispers-runtime-r1.md": "5932471a9be7badd0fdfa708b0c379ae7873b6f67727df90f6f1663c544603e8"
+  },
+  "contract_version": "whispers/1.0.0",
+  "contract_inputs_sha256": {
+    "contracts/whispers-v1/manifest.json": "4f2441de53d19aba24bdfeb54b74d01400cd14f3ce6c694d494047c377315b95",
+    "contracts/whispers-v1/openapi.json": "f4cc52d540dcc761a3d63a1ea47f8e371f3bd2ea87bb9caddf812153ee1101a0",
+    "contracts/whispers-v1/actions.json": "d28f5a8088e321081d2280ca5e8a80b44ea215ffb1e8f605b181d6a3f50d708b",
+    "contracts/whispers-v1/examples.json": "cf29bcf6072e2d9fa07904f48b84a33c5f806bbb63ec4345e9a71d923d274683",
+    "design/whispers-v1/delivery.md": "5d9d59fd893cb2ba28db466b490b7e5270d1923ce2fb400eb0985f4ce060afa0",
+    "requirements/whispers-v1.md": "0651b04d97d821ea3c93a40831858197edb24678aeed122a2ab855a977e80e04"
+  },
+  "read_source_sha256": {
+    "liyuanci-backend-go": {
+      "scripts/localdev.py": "7cfe312c536fd6579a0517bf897edcd088851448823472a6dea2c09d3e8630d4",
+      "scripts/dev.py": "b98a5722b71be936d74830e77377c0ea7444b1b1c4a349523320e5549edcb377",
+      "cmd/server/main.go": "cb38286d6dca5a0c8b9342079671317e8d27e5c6577875dde5585e2641920001",
+      "cmd/content-worker/main.go": "0613ce9ed8be7b3307de5b20614ddbab5ca42be5de5fce19192101f3774d105c",
+      "cmd/privacy-worker/main.go": "d9ecd356d56206465ca5463a5af5016b2c9155130816929712e2ed18a9e29551",
+      "cmd/migrate/main.go": "fad8a648a2f9e34f5697df40d36422de00a281c6e9fed1f7b7e00583363f441f",
+      "internal/config/whispers.go": "8fe222bee883746425449f079eb8b80afaf11f47d273647c1154177c8ec73a67",
+      "internal/whisperapp/api.go": "e09b5a80cb680902ff27370327faa8d5c4dd5c7ce75af563c04f5dc4120129c8",
+      "configs/examples/whispers-runtime.json": "4570a3924dd5dc7e49ec2985347d8c5b553870a52086f3a444f4f4da23bb9863",
+      "README.md": "ca1616ac3c84c8cc85b64f3dc202436a4101d808fcaa6e9da96a6da955be791d"
+    },
+    "liyuanci-admin-vue": {
+      "README.md": "7d555e6f59565a0e649745e5049b8c804610be8a3f41201adc1a4e4c1635b08d",
+      "src/router/index.ts": "e3c04f907d7f9a32c64a64043f4498e2379716b53733facb1afa609e8f66cc8b",
+      "vite.config.ts": "1a8b18efa972f71c577468d44c15d97ea89131f98cf832a8649b08936a1f2a51"
+    },
+    "liyuanci-miniprogram-uniapp": {
+      "README.md": "9d6782335c8277c61a0b5d27b6ac44c9d6fda85844bc7a5fca86ce75e0d7d2f5",
+      "src/config/index.ts": "b4dda7543a2ec0a557fef13217c600ac31c438595a95bafb22c4fb57a00561ee"
+    }
+  },
+  "source_findings": [
+    "宿主开发入口清除APP_*覆盖，树洞用二进制显式装配",
+    "树洞与旧内容worker需要分别运行",
+    "production且Enabled=true被拒绝",
+    "已有安全和注销路由复用，联合配置和历史密钥兼容仍须实际核验",
+    "四个管理端树洞页面路径与router核对"
+  ],
+  "historical_evidence_boundary": "历史B09的14项真实HTTP及fixture边界不变；本轮没有重跑，不声明任何WI完整通过",
+  "not_performed": [
+    "业务源码修改",
+    "私有配置写入",
+    "服务启动或停止",
+    "数据库迁移或opaque切换",
+    "微信及后台登录",
+    "真实页面或真机操作",
+    "供应商或容量测试",
+    "提交、推送、合并、部署、上线",
+    "G1/G2/G3签发"
+  ],
+  "document_checks": {
+    "status": "通过（追加本次固定条目前）；追加后另行复跑完整检查",
+    "checked_at": "2026-10-28T15:46:11.604930+08:00",
+    "check_documents": {
+      "command": "python3 scripts/check_documents.py",
+      "exit_code": 0,
+      "output": "文档检查通过：510 个固定文件，75 个来源映射，当前本地链接可解析，6 个固定契约旧链接可按迁移映射定位。"
+    },
+    "tracked_diff_check": {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    "new_files_whitespace": "4个新增文件通过git diff --no-index --check及尾随空白检查；无输出的退出1表示新增文件存在差异，不作为空白错误",
+    "structure": "18个WI、7个RI完整且无重复；3端索引均有入口；Markdown代码块配对；JSON可解析",
+    "shell_examples": "sh -n语法检查通过，仅解析，未执行文档中的业务命令"
+  }
+}
