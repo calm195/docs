@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "tasks": [
+    "RP-M01",
+    "RP-Q01"
+  ],
+  "requirements": [
+    "REQ-023",
+    "REQ-002",
+    "REQ-018"
+  ],
+  "authorization": {
+    "user_text": "授权本次微信登录验证",
+    "received_via": "主代理转达本轮用户明确回复",
+    "login_attempt_only_after_authorization": true,
+    "prior_rejection_bypassed": false
+  },
+  "source": {
+    "branch": "develop",
+    "head_base": "3bcec888230a6cf3b096d2c51e3ea03ca15f9c7a",
+    "status": "uncommitted-worktree",
+    "files_sha256": {
+      "README.md": "1a5f823fc9078a6be1bdf99df1082e88c93b4bbf0cad8ecbb78942986e9869a9",
+      "src/api/resources.ts": "e197b8be415de08069c6ac764dade0d0f86ae3a59599007a98c9ee085b749f7b",
+      "src/components/ResourceContribution.vue": "286523e72dcfe8c693b09ca83c979fab5b41501026270a931393a4c2a5dad651",
+      "src/composables/use-resource-page.ts": "fec820e451b410a0d6f14aeb6bf03d6f24baeb1bac18d63fd9b707ed382760a1",
+      "src/config/resources.ts": "5d11275d9d8428cf92d10cb791ea324023e7d995a158e71b2258e76d32521841",
+      "src/pages.json": "ee93ec0a8dfe870f62b8b0e62ff59fa875e63ead92162c8ee8c3643d9fef57c3",
+      "src/pages/index/index.vue": "9719a118cac9d9029cfab943877b7b41273739e582ba8746198ffb1004d95e53",
+      "src/pages/resources/detail.vue": "a5e52930dfec72cc2fa677346faa294f59fc391ccb5f025c4ab0497f0a20d8e8",
+      "src/pages/resources/index.vue": "9466cd60833289fbade52a02db9a4858ee631a6e02a0ce25adcb51b5d2af5d34",
+      "src/types/resource.ts": "4be4c6621bd0b1a821764730d1288ae906fde42ac9298b033f8310481b55570f",
+      "src/utils/request.ts": "9407d01836f6ad9615e9ae5bc3ea5e991364d366da2a0ea141a0ec944a053a58",
+      "src/utils/resource-contract.ts": "c4b4d6a6a0a4878b6dfda14ec5789c2890c60100d0e6748e094f4d0bf20d0ea6",
+      "src/utils/resource-schema.ts": "458d0c98c9462fa1faf36c86694e969298d9aedd4d17c3e5e8e6dfdcde870d14",
+      "src/utils/resources.ts": "ab65fbeeeab146936bc0acdeba41da6c32b3eec780f691c7a7ca651b3e86ed22",
+      "tests/fixtures/resources.json": "c9c40ae1b3bd38e8d6f2735dc14fc795585f698d0db34b3e5bfd0d7ad81ee831",
+      "tests/resources.test.ts": "0b85799fc3f59759cd79374374cb68bfab78778a96b8d9801b374e04dd24f855",
+      "tests/support/resources-runtime.ts": "aa0e6f5d8a1f9917db6a3bf768d6dce50254d58af779ba5422db6c7a1bd0d24a"
+    }
+  },
+  "source_changed_this_turn": false,
+  "docs": {
+    "branch": "mini-deveop",
+    "head_base": "83945210cb5f9882f4ab3d142a6c004cfacf5fd9"
+  },
+  "contract": {
+    "effective": "resource-plaza/1.0.1",
+    "student_schemas_consumed": "resource-plaza/1.0.0",
+    "student_operations_unchanged_in_1_0_1": true
+  },
+  "prior_record": {
+    "path": "development/miniprogram/milestones/2026-10-29-resource-plaza-local-start-r1.md",
+    "sha256": "ad048851dd843d38ab0d1ee46a73a2e1398a53d5e5ac9ce81af3d04fd61d7c9f",
+    "preserved": true
+  },
+  "resource": {
+    "id": "624595a5-aab4-4349-90fe-d3f2e2000a90",
+    "title": "本地联调资料 20261029113754",
+    "category_id": "5bfdc302-e926-4312-b2c0-d88b072d9afd",
+    "category_name": "本地联调20261029113754",
+    "version_during_copy": 5,
+    "content_version_from_admin_handoff": 2,
+    "download_url": "https://example.com/liyuanci-local-integration/20261029113754",
+    "extraction_code": "test",
+    "synthetic_local_test_content": true,
+    "external_url_visited": false
+  },
+  "checks": [
+    {
+      "name": "authorized_wechat_login",
+      "result": "pass",
+      "observed": "授权后点击既有微信登录，首页返回账号状态：已认证；未修改认证或处罚状态。"
+    },
+    {
+      "name": "resource_list",
+      "result": "pass",
+      "http_status": 200,
+      "observed": "真实模拟器资源列表显示管理端本轮新建的联调资料。"
+    },
+    {
+      "name": "description_substring_search",
+      "result": "pass",
+      "query": "演示下载",
+      "http_status": 200,
+      "observed": "标题不包含该关键词；简介包含，列表命中。"
+    },
+    {
+      "name": "category_and_search",
+      "result": "pass",
+      "category_id": "5bfdc302-e926-4312-b2c0-d88b072d9afd",
+      "query": "演示下载",
+      "http_status": 200,
+      "observed": "界面分类切换为本地联调20261029113754，实际请求同时含q和category_id，命中同一资料。"
+    },
+    {
+      "name": "detail",
+      "result": "pass",
+      "observed": "显示联调标题、分类、已编辑简介、北京时间、合成下载链接及test提取码；客户端成功展示。"
+    },
+    {
+      "name": "copy_download_info",
+      "result": "pass",
+      "request": "download-info?expected_version=5",
+      "http_status": 200,
+      "observed": "应用显示已复制。",
+      "clipboard_contents_read": false
+    },
+    {
+      "name": "copy_link_only",
+      "result": "pass",
+      "request": "download-info?expected_version=5",
+      "http_status": 200,
+      "observed": "另发一次下载信息请求；系统显示内容已复制，应用显示已复制。",
+      "clipboard_contents_read": false
+    },
+    {
+      "name": "feedback_valid",
+      "result": "pass",
+      "http_status": 200,
+      "observed": "PUT feedback后显示反馈已记录及已保存：有效"
+    },
+    {
+      "name": "feedback_link_invalid",
+      "result": "pass",
+      "http_status": 200,
+      "observed": "PUT feedback后显示反馈已记录及已保存：链接失效"
+    },
+    {
+      "name": "feedback_outdated",
+      "result": "pass",
+      "http_status": 200,
+      "observed": "PUT feedback后显示反馈已记录及已保存：年代久远"
+    },
+    {
+      "name": "feedback_incomplete",
+      "result": "pass",
+      "http_status": 200,
+      "observed": "PUT feedback后显示反馈已记录及已保存：不全"
+    },
+    {
+      "name": "contribution_missing_image",
+      "result": "pass",
+      "observed": [
+        "资料投稿",
+        "添加资料负责人微信，备注“资料投稿”",
+        "投稿二维码暂未配置"
+      ],
+      "closed_successfully": true
+    }
+  ],
+  "feedback_sequence": [
+    "valid",
+    "link_invalid",
+    "outdated",
+    "incomplete"
+  ],
+  "final_feedback": "incomplete",
+  "real_boundaries": [
+    "实际微信开发者工具模拟器",
+    "既有微信主体真实登录",
+    "本地后端真实HTTP",
+    "未拦截或替换业务响应",
+    "本轮新建合成资料"
+  ],
+  "not_verified": [
+    "微信真机",
+    "正式投稿二维码展示和识别",
+    "真实网盘有效性或下载",
+    "其他用户资格/处罚状态",
+    "跨端同时编辑/下架后的页面响应",
+    "读取或逐字比对系统剪贴板内容"
+  ],
+  "retained": {
+    "watch_session": 95388,
+    "npm_pid": 84016,
+    "watcher_pid": 84088,
+    "watch_polled_alive": true,
+    "ide_page": "pages/resources/index",
+    "logged_in": true,
+    "stop": "确认仍为本项目进程后 kill -TERM 84088 84016"
+  },
+  "privacy": {
+    "tokens_recorded": false,
+    "wechat_identifiers_recorded": false,
+    "login_codes_recorded": false,
+    "private_clipboard_contents_recorded": false,
+    "full_unredacted_screenshots_saved": false
+  },
+  "verification": {
+    "source_diff_check": "passed",
+    "source_17_hashes_match_previous_delivery": true,
+    "full_unit_tests_rerun": false,
+    "production_build_rerun": false
+  },
+  "commit_push_merge_deploy": false
+}

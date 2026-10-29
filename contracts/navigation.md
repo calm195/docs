@@ -33,3 +33,5 @@
 ## 资料广场正式模块契约
 
 2026-10-29用户要求将资料广场提案正式化，当前独立输入为 [resource-plaza/1.0.0](resource-plaza-v1/README.md)，固定15操作（8查询、7写入）、规范语义、动作/版本映射、合成正反夹具及校验工具。资料以四类反馈替代举报，投稿仅为固定二维码联系入口。三端按[正式交接与独立工作包](../design/resource-plaza-contract-delivery-v1.md)消费同一manifest；接口全部not-implemented，静态检查不代表业务、联调或真机验收。旧资料设计与其他模块固定契约保持不变。
+
+资料广场实施中发现创建幂等重放遇privacy屏障的404声明遗漏，新增 [resource-plaza/1.0.1勘误](resource-plaza-v1-r2/README.md)。完整有效OpenAPI仅补创建资料的404及版本号，学生接口与原规范语义保持一致；固定1.0.0原文不改。

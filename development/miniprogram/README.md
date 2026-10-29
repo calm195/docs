@@ -8,6 +8,12 @@
 
 ## 实施与接入说明
 
+- [资料广场真实本地联调补充 r2](milestones/2026-10-29-resource-plaza-local-integration-r2.md)：用户明确授权后真实微信登录、分类/模糊搜索、详情、两类复制回调、四类反馈及投稿缺图提示通过；模拟器和真实HTTP，真机及正式二维码待完成。
+
+- [资料广场本地启动与模拟器门禁验证](milestones/2026-10-29-resource-plaza-local-start-r1.md)：开发watch和正确微信项目已启动，未登录门禁通过；记录授权前的审批阻塞，后续已授权联调见r2。
+
+- [资料广场小程序实现与独立验证](milestones/2026-10-29-resource-plaza-implementation-r1.md)：5学生接口、认证搜索/详情/复制、四类反馈与固定图投稿弹窗；工作区实现，194项测试和微信构建通过，真实HTTP/真机及正式二维码待完成。
+
 - [资料广场小程序独立工作包](milestones/2026-10-29-resource-plaza-development-r1.md)、[正式契约 resource-plaza/1.0.0](../../contracts/resource-plaza-v1/README.md)、[总交接](../../design/resource-plaza-contract-delivery-v1.md)；5个学生操作、认证查看/搜索/复制、四类反馈及固定二维码投稿，正式输入已固定，尚未实现，正式图待提供。
 
 - [真实登录、双账号与真机联调操作册](milestones/2026-10-28-real-integration-runbook-r1.md)；环境、阻塞与WI完整矩阵见[三端联调总册](../backend/milestones/2026-10-28-real-integration-runbook-r1.md)，配合[管理端页面步骤](../admin/milestones/2026-10-28-real-integration-runbook-r1.md)。
@@ -68,3 +74,5 @@
 - [2026-10-28 悄悄鲤第四批：本人时光胶囊列表、封存、详情与取消删除（本端完成，真实联调待交接）](milestones/2026-10-28-whispers-capsules-r1.md)
 
 - [2026-10-28 E批本地真实客户端联调（真机与完整验收待补）](milestones/2026-10-28-whispers-e-integration-r1.md)
+
+- [资料广场精确提交与服务关闭](milestones/2026-10-29-resource-plaza-commit-stop-r1.md)。
