@@ -1,0 +1,16 @@
+{
+  "contract_id": "resource-plaza/1.0.1",
+  "error_examples": [
+    {
+      "operation_id": "adminResourceCreate",
+      "http_status": 404,
+      "scenario": "原创建已成功，当前资料privacy屏障生效，同键重放只返回不可访问。",
+      "body": {
+        "code": 404,
+        "message": "资料不可访问",
+        "error_code": "NOT_FOUND",
+        "request_id": "synthetic-privacy-replay"
+      }
+    }
+  ]
+}

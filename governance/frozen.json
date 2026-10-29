@@ -689,6 +689,11 @@
     "development/admin/milestones/2026-10-29-resource-plaza-development-r1.md": "d7806b24046a7affe874379aedc82dfe0bbae88377f9e18126809c7970f5b4fa",
     "development/admin/validation/2026-10-29-resource-plaza-contract-r1.json": "91ee5b46b68e67f3bccedc22d9edbfe95ef252a9baf9f26f94f89509d9e9d4f8",
     "development/miniprogram/milestones/2026-10-29-resource-plaza-development-r1.md": "0ccd93245c983dfa07a42280cbaa66bc5cf659fba4d7ebd0faa7ac020af263fa",
-    "development/miniprogram/validation/2026-10-29-resource-plaza-contract-r1.json": "c7a6c8a11e28914f9f599525ec39651838a5ee1b1959ddc4f020541ccc8055af"
+    "development/miniprogram/validation/2026-10-29-resource-plaza-contract-r1.json": "c7a6c8a11e28914f9f599525ec39651838a5ee1b1959ddc4f020541ccc8055af",
+    "contracts/resource-plaza-v1-r2/README.md": "0fa010847fb7012e745dde2469cd4e5fa1ee945f0ff855485013b230ac4e9988",
+    "contracts/resource-plaza-v1-r2/examples.json": "fc8d849a82975b15cda0eedd94574dcdf5b0ddcac7b8a0ea1b032a8e7f4246af",
+    "contracts/resource-plaza-v1-r2/manifest.json": "e577c9706f2ab90f000ca26a556ffb0e6c9c5cf9c9ead0dfe2a086e1c6c2489f",
+    "contracts/resource-plaza-v1-r2/openapi.json": "635afb726d35d0bc6449fed6ae9a294999ffbd24139aafcf2ff7b7e9c6102197",
+    "contracts/resource-plaza-v1-r2/validate.py": "723f3ff238390d7ccfa71f78fd329d95ab1b4331bb57e343ef98f12a7af37c9a"
   }
 }
