@@ -539,6 +539,8 @@
     "development/backend/validation/2026-10-29-admin-users-scripts-r1.txt": "05baa4124e510ae693f96f948c8e8fb88179270b30c10f9bb1e2c46d8985080d",
     "development/backend/milestones/2026-10-29-admin-users-commit-start-r1.md": "fa1612a7e19b4f05b72af1b85fefba633324aba862d54204dba88b079fce3999",
     "development/backend/validation/2026-10-29-admin-users-commit-start-r1.json": "477cb694af5dbc390d203caf8457b4d85448270b098acad5ae800f23718ad0ea",
-    "development/backend/validation/2026-10-29-admin-users-commit-check-r1.md": "7849d3ce9a4da08e5936b6df8bb0891e92bff3996f5d98617500ca4750751cde"
+    "development/backend/validation/2026-10-29-admin-users-commit-check-r1.md": "7849d3ce9a4da08e5936b6df8bb0891e92bff3996f5d98617500ca4750751cde",
+    "development/backend/milestones/2026-10-29-admin-users-test-data-r1.md": "5db5fc3ea07d65d189f47ab7477ede3de7063cf2ef0c103d970635f8141af699",
+    "development/backend/validation/2026-10-29-admin-users-test-data-r1.json": "8074e97c9c9361a9e9e1f8e4b12928690abaf985c10b4e3878f5d55bdd0615f8"
   }
 }
