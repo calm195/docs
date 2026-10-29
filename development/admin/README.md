@@ -97,3 +97,13 @@
 - [2026-10-28 树洞回归与交接准备（真实联调阻塞）](milestones/2026-10-28-whispers-wa05-r1.md)
 
 - [2026-10-28 WA-05真实HTTP子范围及阻塞更新 r2（整体未关闭）](milestones/2026-10-28-whispers-wa05-r2.md)
+
+- [2026-10-29 平台用户管理 UM-A01–A06 本端实现与合成验证（未提交工作区，真实联调待执行）](milestones/2026-10-29-admin-users-implementation-r1.md)
+
+- [2026-10-29 用户页直接封禁/解封、禁言/取消禁言（未提交工作区，运行环境待升级）](milestones/2026-10-29-user-restrictions-r1.md)
+
+- [用户直接处置本地真实浏览器联调](milestones/2026-10-29-user-restrictions-live-r1.md)：本地四操作、权限及审计验证完成；合成用户已解除限制，非生产/真机验收。
+
+- [平台用户管理精确源码提交与关闭环境补充](milestones/2026-10-29-admin-users-commit-r1.md)：关联两端完整提交与已固定验证证据；本地管理端、API和worker已关闭。
+
+- [提交检查补充：保留固定原始日志尾空格](../backend/milestones/2026-10-29-user-restrictions-commit-r2.md)：全量暂存差异检查唯一例外，其余文件检查通过。

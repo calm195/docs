@@ -1,0 +1,6 @@
+=== RUN   TestAdminUsersQuery
+=== RUN   TestAdminUsersQuery/直接用户操作
+--- PASS: TestAdminUsersQuery (2.30s)
+    --- PASS: TestAdminUsersQuery/直接用户操作 (0.22s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/moderation	3.855s

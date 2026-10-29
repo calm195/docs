@@ -134,3 +134,11 @@
 - [2026-10-28 正式进程与依赖装配](milestones/2026-10-28-whispers-runtime-r1.md)（[验证清单](validation/2026-10-28-whispers-runtime-r1.json)）
 
 - [2026-10-28 B09本地环境与客户端联合验证（部分完成）](milestones/2026-10-28-whispers-b09-integration-r1.md)
+
+- [2026-10-29 用户页直接封禁/解封、禁言/取消禁言（未提交工作区，运行环境待升级）](milestones/2026-10-29-user-restrictions-r1.md)
+
+- [用户直接处置0028迁移、后端重启与真实数据核对](milestones/2026-10-29-user-restrictions-live-r1.md)：本地四操作、权限及审计验证完成；合成用户已解除限制，非生产/真机验收。
+
+- [用户直接处置精确源码提交与停机补充](milestones/2026-10-29-user-restrictions-commit-r1.md)：关联两端完整提交与已固定验证证据；本地管理端、API和worker已关闭。
+
+- [提交检查补充：保留固定原始日志尾空格](milestones/2026-10-29-user-restrictions-commit-r2.md)：全量暂存差异检查唯一例外，其余文件检查通过。

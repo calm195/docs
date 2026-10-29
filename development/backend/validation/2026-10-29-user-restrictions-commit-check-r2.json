@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-29",
+  "full_command": "git diff --cached --check",
+  "full_exit_code": 2,
+  "full_output": "development/backend/validation/2026-10-29-user-restrictions-live-r1/doctor.log:1: trailing whitespace.\n+python3 scripts/dev.py doctor \n",
+  "only_finding": {
+    "path": "development/backend/validation/2026-10-29-user-restrictions-live-r1/doctor.log",
+    "line": 1,
+    "kind": "原始make命令回显末尾空格",
+    "sha256": "f91a32ed32667f02646ca856339db438e1a5202e4d07e1c308789badc38d3d6f"
+  },
+  "remaining_files_command": "git diff --cached --check -- . :(exclude)development/backend/validation/2026-10-29-user-restrictions-live-r1/doctor.log",
+  "remaining_files_exit_code": 0,
+  "decision": "保留已固定原始日志字节，明确记录该单项差异检查例外；不修改固定文件、不调整Git全局规则或文件属性、不声称全量暂存差异检查通过",
+  "source_commits": {
+    "admin": "305b004ddd9a0d2c6fab16d6a8a23cd932320167",
+    "backend": "96f3754e02aa2c0c563ea2aa4385f0917e535ac4"
+  }
+}

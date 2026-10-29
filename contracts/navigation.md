@@ -25,3 +25,7 @@
 ## 平台用户管理独立设计契约
 
 2026-10-29用户采纳用户管理方案并增加昵称模糊搜索，当前两端输入为[admin-users/1.0.0](admin-users-v1/README.md)。新增三个只读GET，原处罚和申诉写接口复用原契约，明确目标Account.version来源及匿名/危机关联隔离；[两端工作包与联调矩阵](../design/admin-users-delivery-v1.md)。所有新增操作仍为not-implemented，未宣称独立评审、G3或真实验收。旧全站及树洞固定契约不变。
+
+## 平台用户直接处置增量契约
+
+2026-10-29用户明确选择用户页填写理由直接管理，新增[user-restrictions/1.0.0](user-restrictions-v1/README.md)，独立GET状态与四个显式POST，super_admin权限、账号版本、幂等及加密审计；[需求增量](../requirements/admin-users-v1.2.md)。原admin-users/1.0.0只读契约保持固定；[管理端交付](../development/admin/milestones/2026-10-29-user-restrictions-r1.md)与[后端交付](../development/backend/milestones/2026-10-29-user-restrictions-r1.md)记录工作区实现和验证，不代表已部署或生产验收。

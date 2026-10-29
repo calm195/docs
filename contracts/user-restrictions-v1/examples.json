@@ -1,0 +1,57 @@
+{
+  "synthetic_only": true,
+  "states": [
+    {
+      "user_id": "ac220000-0000-4000-8000-000000000001",
+      "account_version": 7,
+      "banned": false,
+      "muted": false,
+      "muted_until": null,
+      "as_of": "2026-10-29T04:00:00Z",
+      "allowed_actions": [
+        "ban",
+        "mute"
+      ]
+    },
+    {
+      "user_id": "ac220000-0000-4000-8000-000000000001",
+      "account_version": 7,
+      "banned": true,
+      "muted": false,
+      "muted_until": null,
+      "as_of": "2026-10-29T04:00:00Z",
+      "allowed_actions": [
+        "unban",
+        "mute"
+      ]
+    },
+    {
+      "user_id": "ac220000-0000-4000-8000-000000000001",
+      "account_version": 7,
+      "banned": false,
+      "muted": true,
+      "muted_until": "2026-11-05T04:00:00Z",
+      "as_of": "2026-10-29T04:00:00Z",
+      "allowed_actions": [
+        "ban",
+        "unmute"
+      ]
+    },
+    {
+      "user_id": "ac220000-0000-4000-8000-000000000001",
+      "account_version": 7,
+      "banned": true,
+      "muted": true,
+      "muted_until": "2026-11-05T04:00:00Z",
+      "as_of": "2026-10-29T04:00:00Z",
+      "allowed_actions": [
+        "unban",
+        "unmute"
+      ]
+    }
+  ],
+  "input": {
+    "reason": "合成管理理由",
+    "expected_version": 7
+  }
+}

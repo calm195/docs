@@ -1,0 +1,13 @@
+{
+  "contract_id": "user-restrictions/1.0.0",
+  "date": "2026-10-29",
+  "docs_base": "3412a7549e69bd38125e1a7dd401a743adcbe309",
+  "authorization": "本会话用户明确选择直接管理、填写理由后执行，新增后端接口与契约",
+  "files": {
+    "requirements/admin-users-v1.2.md": "b6d18c5a62525af8d5063db64291234fe9614e43ed05713fa75d9f0d7d17ae81",
+    "design/admin-user-restrictions-v1.md": "8e33c6609f5fb8d6aeb578712527d0046961fb0997a098b387238451e986b626",
+    "contracts/user-restrictions-v1/README.md": "b1480f3bdc6aa18303be7c45fb164a88f2dc4644153f7874140b51dd63515de4",
+    "contracts/user-restrictions-v1/openapi.json": "c92b63c4b957874ce919018a92e06a6651b442217fe3e3dfc13e1cf75d60a591",
+    "contracts/user-restrictions-v1/examples.json": "0bafb92abfbbd78fbeae20944058721153deec0a57a952e25a080b3af0ad0c3c"
+  }
+}
