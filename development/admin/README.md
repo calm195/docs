@@ -8,6 +8,8 @@
 
 ## 实施与接入说明
 
+- [用户管理独立开发工作包（含昵称搜索）](milestones/2026-10-29-admin-users-development-r1.md)、[共享契约 admin-users/1.0.0](../../contracts/admin-users-v1/README.md)、[两端交付与联调矩阵](../../design/admin-users-delivery-v1.md)；设计产物，不代表接口已实现。
+
 - 首期新增：[平台用户管理需求](../../requirements/admin-users-v1.1.md)与[已采纳方案及昵称搜索设计 v1.1](../../design/admin-users-v1.1.md)。范围与推荐方案已采纳，新增昵称模糊搜索；查询协议待评审及正式化，本次尚无实现或联调结论。
 
 - [真实页面联调操作册：账号、角色、页面步骤与通过标准](milestones/2026-10-28-real-integration-runbook-r1.md)；环境与WI完整矩阵见[三端联调总册](../backend/milestones/2026-10-28-real-integration-runbook-r1.md)，配合[小程序操作册](../miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md)。

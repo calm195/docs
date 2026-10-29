@@ -518,6 +518,17 @@
     "requirements/admin-users-v1.md": "05f0f5b89c1251d410ec1e83969bcc1f09013cfbacb5fe75996201443c0c4dc3",
     "design/admin-users-v1.md": "07d47ae2e65169974a4acb281bd6e95b9e9366fc81106cddb69930d1829639e2",
     "requirements/admin-users-v1.1.md": "4c42bd65d27a6ad6dd328850b6dadddd4d09e3f0a9df4fdfdc89b42cb39fe506",
-    "design/admin-users-v1.1.md": "eebd8ffc4232d3485a52c1b1a6f1807cda7930d0832b6c1cb86dadb8f4a1e361"
+    "design/admin-users-v1.1.md": "eebd8ffc4232d3485a52c1b1a6f1807cda7930d0832b6c1cb86dadb8f4a1e361",
+    "contracts/admin-users-v1/README.md": "06e0ab45df9fe4a3f0b73d846ea1c65230c818314e7c6af70a523c3703a13dae",
+    "contracts/admin-users-v1/actions.json": "c6c30a08121b2a2b087c06990ae7d1aa4e8f6ffa0cdad2d3d099d712a7a965f1",
+    "contracts/admin-users-v1/build.py": "4bb333b7473c2caf50d8c11bc327c6f579539690ebfa41f3c6968173f42ec653",
+    "contracts/admin-users-v1/examples.json": "16e45107af9ae0a33f1b1ea0c72fcc3d9005b51dd9f46d5c9a6eb2f9c3d55aea",
+    "contracts/admin-users-v1/openapi.json": "7f1b573c4adfc0f87079e9c5bba0568fe95f2a2b27f9b448026ed19161299ea4",
+    "contracts/admin-users-v1/semantics.md": "0d0e80e33ab200dd61b9d305d1aeb586c13a82b0a49f8c0266893b195e4609c9",
+    "contracts/admin-users-v1/validate.py": "6fca3a077ad6d3d331d2980d234200d73b07be772bf214c3879f98563ad8d33d",
+    "design/admin-users-delivery-v1.md": "ce62944f1a17dbbb35afafdf65500a6f2d03ecef17c8ce8cd03defbfa7f86521",
+    "development/backend/milestones/2026-10-29-admin-users-development-r1.md": "9bf345dfbac3a12f5a20b1134dbb90fd79968931fdb9bbe5de7cb0240bea432a",
+    "development/admin/milestones/2026-10-29-admin-users-development-r1.md": "92da0cb196459813da37f3f7844ac7a2037e2c652de95a2aa98f9cfc3e07121c",
+    "contracts/admin-users-v1/manifest.json": "c0ea73add47bedc8b934ccdc23500bbc4c63c704ecc974b4f5e75e864478b48f"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "contract_id": "admin-users/1.0.0",
+  "new_writes": [],
+  "navigation": [
+    {
+      "action": "view_penalties",
+      "target": "GET /admin/users/{id}/penalties"
+    },
+    {
+      "action": "open_case_workspace",
+      "target": "原有案件工作台选择当前目标的授权案件；不是命令"
+    },
+    {
+      "action": "open_appeal_workspace",
+      "target": "原有申诉工作台；不是命令"
+    }
+  ],
+  "reused_writes": [
+    {
+      "contract": "../openapi.v0.2.1.json",
+      "operation_id": "postAdminUsersIdPenalties",
+      "path": "/admin/users/{id}/penalties",
+      "method": "POST",
+      "version_source": "UserDetail.account_version（public.accounts.version）；提交前重读，409重新确认",
+      "idempotency": "Idempotency-Key",
+      "precondition": "普通授权违规案件、目标作者及内容版本匹配；不得以树洞/危机案件调用此入口"
+    },
+    {
+      "contract": "../openapi.v0.2.1.json",
+      "operation_id": "postAdminAppealsIdDecision",
+      "path": "/admin/appeals/{id}/decision",
+      "method": "POST",
+      "version_source": "原申诉详情version（public.appeals.version），禁止使用account_version",
+      "idempotency": "Idempotency-Key",
+      "precondition": "原申诉工作台当前授权与状态；revoke只撤关联处罚"
+    },
+    {
+      "contract": "../whispers-v1/openapi.json",
+      "operation_id": "whisperAdminPenaltyCreate",
+      "path": "/admin/whispers/contents/{kind}/{content_id}/penalties",
+      "method": "POST",
+      "version_source": "ContentControl.version + ReportDetail.version（expected_report_version）",
+      "idempotency": "Idempotency-Key",
+      "precondition": "只在原树洞举报/治理工作台使用，不带回用户页形成作者关联"
+    }
+  ],
+  "forbidden": [
+    "direct_revoke",
+    "delete_user",
+    "edit_profile",
+    "bulk_penalty",
+    "export",
+    "arbitrary_user_penalty"
+  ]
+}

@@ -6,6 +6,8 @@
 
 ## 实施与接入说明
 
+- [用户管理独立开发工作包（含昵称搜索）](milestones/2026-10-29-admin-users-development-r1.md)、[共享契约 admin-users/1.0.0](../../contracts/admin-users-v1/README.md)、[两端交付与联调矩阵](../../design/admin-users-delivery-v1.md)；设计产物，不代表接口已实现。
+
 - [三端真实联调操作手册：前置条件、阻塞、启动与WI逐项标准](milestones/2026-10-28-real-integration-runbook-r1.md)；配套[管理端页面步骤](../admin/milestones/2026-10-28-real-integration-runbook-r1.md)、[小程序登录与真机步骤](../miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md)。
 - 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
 
