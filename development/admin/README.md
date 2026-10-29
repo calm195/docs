@@ -8,6 +8,12 @@
 
 ## 实施与接入说明
 
+- [资料广场本地真实管理端联调与小程序反馈汇总](milestones/2026-10-29-resource-plaza-live-r1.md)：真实浏览器创建、上下架与分类占用约束通过，反馈总计1/不全1；本地服务保持运行，非真机/生产验收。
+
+- [资料广场管理端1.0.1接入与最终源码补证](milestones/2026-10-29-resource-plaza-implementation-r2.md)：创建隐私重放404清理、758项应用测试/58项规则回归及当前浏览器合成证据；未提交，真实后端联调待执行。
+
+- [资料广场管理端实现与独立验证](milestones/2026-10-29-resource-plaza-implementation-r1.md)：10个后台操作、资料与分类页面、四类反馈汇总、版本/幂等及权限边界；本端检查和合成浏览器回归通过，源码未提交，真实后端联调待执行。
+
 - [资料广场管理端独立工作包](milestones/2026-10-29-resource-plaza-development-r1.md)、[正式契约 resource-plaza/1.0.0](../../contracts/resource-plaza-v1/README.md)、[总交接](../../design/resource-plaza-contract-delivery-v1.md)；10个后台操作、资料/分类管理、先下架再编辑及四类反馈汇总，正式输入已固定，尚未实现。
 
 - [用户管理独立开发工作包（含昵称搜索）](milestones/2026-10-29-admin-users-development-r1.md)、[共享契约 admin-users/1.0.0](../../contracts/admin-users-v1/README.md)、[两端交付与联调矩阵](../../design/admin-users-delivery-v1.md)；设计产物，不代表接口已实现。
@@ -109,3 +115,5 @@
 - [平台用户管理精确源码提交与关闭环境补充](milestones/2026-10-29-admin-users-commit-r1.md)：关联两端完整提交与已固定验证证据；本地管理端、API和worker已关闭。
 
 - [提交检查补充：保留固定原始日志尾空格](../backend/milestones/2026-10-29-user-restrictions-commit-r2.md)：全量暂存差异检查唯一例外，其余文件检查通过。
+
+- [资料广场精确提交与服务关闭](milestones/2026-10-29-resource-plaza-commit-stop-r1.md)。

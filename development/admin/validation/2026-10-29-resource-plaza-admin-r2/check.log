@@ -1,0 +1,120 @@
+
+> vue3-template@0.1.0 check /Users/kurous/code/liyuanci/liyuanci-admin-vue
+> pnpm format:check && pnpm lint && pnpm typecheck && pnpm test
+
+
+> vue3-template@0.1.0 format:check /Users/kurous/code/liyuanci/liyuanci-admin-vue
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> vue3-template@0.1.0 lint /Users/kurous/code/liyuanci/liyuanci-admin-vue
+> eslint . --max-warnings=0
+
+
+> vue3-template@0.1.0 typecheck /Users/kurous/code/liyuanci/liyuanci-admin-vue
+> vue-tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json
+
+
+> vue3-template@0.1.0 test /Users/kurous/code/liyuanci/liyuanci-admin-vue
+> vitest run && node --test scripts/eslint/*.test.js
+
+
+ RUN  v5.0.4 /Users/kurous/code/liyuanci/liyuanci-admin-vue
+
+
+ Test Files  38 passed (38)
+      Tests  758 passed (758)
+   Start at  17:41:10
+   Duration  3.07s (import 36%, tests 33%, environment 30%, transform 1%)
+
+Environment  jsdom was created 38 times · 10.36s total, 30% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+▶ 中文业务规范
+  ▶ valid
+    ✔ const report = console.info as typeof console.info; report("登录成功") (43.970458ms)
+    ✔ const helper = { info() {} }; const { info: emit } = helper; emit("not a logger") (4.858042ms)
+    ✔ function run(window) { const sink = window.console; sink.info("not a logger") } (1.275333ms)
+    ✔ <template><button v-for="report in items" @click="report('data')">操作</button></template><script setup>const report = console.error</script> (5.340958ms)
+    ✔ const sink = console; const report = sink.info; report("登录成功") (0.859542ms)
+    ✔ const { warn: report } = logger; report(`请求失败：${reason}`) (0.875166ms)
+    ✔ const report = console.info.bind(console, "登录成功"); report(data) (0.63875ms)
+    ✔ const report = console.info; report.call(console, "登录成功"); report.apply(console, ["登录成功"]) (0.622208ms)
+    ✔ const sink = console; function view() { const sink = { info() {} }; sink.info("not a logger") } (0.661834ms)
+    ✔ function view(console) { console.info("not a logger") } (0.521ms)
+    ✔ <template><p>后台入口</p></template><style scoped>/* 页面样式 */ p { content: "/* not a comment */"; background: url(https://example.test/a); }</style> (0.916541ms)
+    ✔ // 后台请求使用 Bearer 令牌
+console.info("登录成功", account) (0.746709ms)
+    ✔ logger.error(`请求失败：${reason}`) (0.540291ms)
+    ✔ /// <reference types="vite/client" /> (0.433625ms)
+    ✔ /** @param value 后台响应 */
+function parse(value) { return value } (0.637125ms)
+    ✔ <template><!-- 身份审核 --><p>后台入口</p></template><script setup>console.info("页面加载")</script> (0.708375ms)
+  ✔ valid (64.320583ms)
+  ▶ invalid
+    ✔ const report = console.error as typeof console.error; report("Failed") (2.119125ms)
+    ✔ <template><p>后台入口</p></template>
+<style>/* 页面样式 */</style>
+<style scoped>/* English */</style> (1.392666ms)
+    ✔ const logger = createLogger(); logger.error("Failed") (0.55025ms)
+    ✔ const root = globalThis; const { console: sink } = root; sink.error("Failed") (0.540875ms)
+    ✔ const sink = console; const next = sink; next.warn("Failed") (0.443875ms)
+    ✔ const { error: report } = logger; const again = report; again("Failed") (0.445084ms)
+    ✔ let report; report = console.error; report("Failed") (0.53ms)
+    ✔ let report; ({ warn: report } = console); report("Failed") (0.493833ms)
+    ✔ const { info: log } = console; log("Failed") (0.367666ms)
+    ✔ const report = console.error.bind(console); report("Failed") (0.679625ms)
+    ✔ const report = console.error; report.call(console, "Failed") (0.531708ms)
+    ✔ const report = console.error; report.apply(console, ["Failed"]) (0.361166ms)
+    ✔ const report = console.error.bind(console, "Failed") (0.316375ms)
+    ✔ const sink = globalThis.console; sink?.["warn"]("Failed") (0.496584ms)
+    ✔ import { logger as audit } from "logging"; audit.error("Failed") (0.487583ms)
+    ✔ const report = enabled ? console.info : console.warn; report("Failed") (0.441084ms)
+    ✔ <template><button @click="report('Failed')">操作</button></template><script setup>const report = console.error</script> (0.811458ms)
+    ✔ <template><p>后台入口</p></template><style>/* English style */ p { color: red; }</style> (0.39375ms)
+    ✔ // T010 后台会话 (0.23ms)
+    ✔ const label = "REQ-018" (0.356541ms)
+    ✔ const label = "D02" (0.227292ms)
+    ✔ // English explanation (0.217958ms)
+    ✔ /* English explanation */ (0.200542ms)
+    ✔ console.error("Failed") (0.248333ms)
+    ✔ logger["warn"](`Failed ${reason}`) (0.307542ms)
+    ✔ console.info(message) (0.253542ms)
+    ✔ <template><!-- English explanation --><p>T012</p></template> (0.364666ms)
+  ✔ invalid (14.172792ms)
+✔ 中文业务规范 (78.680375ms)
+▶ 独立文本入口与原始位置
+  ✔ scripts/example.css：/* English */
+.panel { content: "T010"; } (66.6955ms)
+  ✔ scripts/example.css：/* 页面样式 */
+.panel { content: "/* data */"; background: url(https://example.test/a); } (1.772708ms)
+  ✔ scripts/example.css：.panel { background: url(https://example.test/a/*asset*/); } /* 页面样式 */ (1.226542ms)
+  ✔ scripts/example.css：.panel { content: "\"/* data */"; } /* English */ (1.22375ms)
+  ✔ scripts/example.html：<p>😀</p><script>console.info("Failed")</script> (38.095334ms)
+  ✔ scripts/example.html：<!doctype html>
+<!-- English -->
+<p>T010</p> (6.501459ms)
+  ✔ scripts/example.html：<!doctype html><p title="<!-- data -->">后台入口</p><style>/* 页面样式 */ p { content: "/* data */"; }</style> (15.428333ms)
+  ✔ scripts/example.html：<style>/* English */</style> (6.268583ms)
+  ✔ scripts/example.html：<template><!-- English --></template> (6.06ms)
+  ✔ scripts/example.html：<script type="application/json">{"description":"<!-- data -->"}</script> (5.391583ms)
+  ✔ scripts/example.html：<script>
+const report = console.error;
+report("Failed")
+</script> (8.572292ms)
+  ✔ scripts/example.html：<script>const report = console.error; report("请求失败")</script> (5.3305ms)
+  ✔ scripts/example.test.html：<!-- English --><script>console.error("Failed")</script> (13.372208ms)
+  ✔ scripts/example.spec.css：/* English T010 */ (6.755333ms)
+✔ 独立文本入口与原始位置 (183.091458ms)
+✔ 实际配置拦截源码并豁免测试文件 (10.302667ms)
+ℹ tests 58
+ℹ suites 4
+ℹ pass 58
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 938.959959
