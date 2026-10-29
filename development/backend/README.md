@@ -6,6 +6,8 @@
 
 ## 实施与接入说明
 
+- [2026-10-29 三端本地真实联调过程（进行中、未固定/未提交）](milestones/2026-10-29-local-three-client-integration-r1.md)：已启动本地环境并完成局部HTTP/管理端页面检查，真实多账号及完整业务链待补。
+
 - [资料广场后端独立工作包](milestones/2026-10-29-resource-plaza-development-r1.md)、[正式契约 resource-plaza/1.0.0](../../contracts/resource-plaza-v1/README.md)、[总交接](../../design/resource-plaza-contract-delivery-v1.md)；15接口、认证读取、资料/分类维护、四类反馈及隐私清理，正式输入已固定，尚未实现。
 
 - [管理端用户查询测试数据：32账号与40条合成处罚](milestones/2026-10-29-admin-users-test-data-r1.md)；在用户管理搜索“联调测试”使用。
@@ -149,3 +151,5 @@
 - [用户直接处置精确源码提交与停机补充](milestones/2026-10-29-user-restrictions-commit-r1.md)：关联两端完整提交与已固定验证证据；本地管理端、API和worker已关闭。
 
 - [提交检查补充：保留固定原始日志尾空格](milestones/2026-10-29-user-restrictions-commit-r2.md)：全量暂存差异检查唯一例外，其余文件检查通过。
+
+- [2026-10-29 本轮测试收尾、缺陷与待优化事项](validation/2026-10-29-local-three-client-closeout-r1.md)

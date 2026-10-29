@@ -1,0 +1,27 @@
+{
+  "source": "real admin HTTP read; no decision",
+  "school_reviews": [
+    {
+      "task_id": "504303f9-cd62-4505-8f86-a8cb4d1f9ac3",
+      "post_id": "a9b97874-7cd7-45ca-9ae8-29e34088e978",
+      "task_status": "pending",
+      "version": 2,
+      "content_version": 1,
+      "school_related": true,
+      "privacy_recheck": false,
+      "http_status": 200
+    }
+  ],
+  "db_technical_state": {
+    "post_id": "a9b97874-7cd7-45ca-9ae8-29e34088e978",
+    "crisis_hit": false,
+    "task_status": "human_required",
+    "ordinary_hit": true,
+    "published_at": null,
+    "review_state": "pending",
+    "school_related": true,
+    "detector_version": "local-manual-v1",
+    "no_human_reviewer": true,
+    "published_content_version": null
+  }
+}

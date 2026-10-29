@@ -1,0 +1,151 @@
+{
+  "source_branch": "develop",
+  "source_head": "72f926f96227c766047c4ea9251fef3736704634",
+  "source_state": "未提交工作区，未重启服务",
+  "changed_files": [
+    {
+      "path": "FUNCTIONALITY.md",
+      "sha256": "e26c2cb3387c243ccaa1a2483a7405c3e6a275e07ca6b5ba650d28fee6a178d1"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "9b4750e5168be5e63b92e9c312eb35c4dcc882d80da32ed0238c878b55d611c1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "559020f5fff3bd85ea7d1502c1c6a501d0ac96eab80c0434636a581ad1835058"
+    },
+    {
+      "path": "configs/examples/moderation-wordlists.json",
+      "sha256": "fdbb7b9aa8f6db8e9897ce007d4e8db22fdda120b21e448dedb6749e3d67bef8"
+    },
+    {
+      "path": "internal/chat/query.go",
+      "sha256": "efd1bf432917b88874577073de4b57c91a7f929b2b782f3078d3587c00803e64"
+    },
+    {
+      "path": "internal/devapp/content_worker.go",
+      "sha256": "44e91ce946ce74d7da5e23e53e08c76732d5c73f135ad1958c4364121a9885a8"
+    },
+    {
+      "path": "internal/moderation/chat_integration_test.go",
+      "sha256": "b70cfb2e9881555075189e17cb41e397991a746db08fe9c8e46066b723401f92"
+    },
+    {
+      "path": "internal/moderation/integration_test.go",
+      "sha256": "4a0ddc4dbcab2ac97ad423c0dc7b1d542aa545b58b85cea6d2fb6690293e7c94"
+    },
+    {
+      "path": "internal/moderation/screening.go",
+      "sha256": "3575bcf1374542e710a8570b08bfe2f411bb4675fe6344388e164d9119445cf3"
+    },
+    {
+      "path": "internal/moderation/screening_analysis.go",
+      "sha256": "7c957a50f3972dfe9e07803268860fbed9e6eb9a2113799a2b2fd4a3d310b906"
+    },
+    {
+      "path": "internal/moderation/screening_test.go",
+      "sha256": "078d75487565fea51a030ff93a68cf1dd0de154b6707eb3524296da4fa729a6b"
+    },
+    {
+      "path": "internal/moderation/story_integration_test.go",
+      "sha256": "38c9e238b169613b40a77ab64504e9faf678024b1d848e58e1850219374d3d28"
+    },
+    {
+      "path": "internal/moderation/whisper_worker.go",
+      "sha256": "a12289e1090baaf09558a9015304f140c836fd694f0b5e0859f487476cf263b6"
+    },
+    {
+      "path": "internal/moderation/worker.go",
+      "sha256": "a13fda3c50faa4cfa8f292ba8e4d69945d9546899b3969998f4ea9178dc9e755"
+    },
+    {
+      "path": "internal/whisper/capsules_postgres_test.go",
+      "sha256": "e3ee6553325a53176939f4c7ad62df5cc5a89792ab429da85431e8bb99060de1"
+    },
+    {
+      "path": "internal/whisper/interactions_postgres_test.go",
+      "sha256": "35b7262c9d54cf5241bdfdbf4aaceb49801da5861931c86393ba17589f1f14e7"
+    },
+    {
+      "path": "internal/whisper/moderation_postgres_test.go",
+      "sha256": "9c922c5d2148b14db7d743a084b1bff8e37a430b2f04bcc3c11a17e5136d139c"
+    },
+    {
+      "path": "internal/whisper/privacy_postgres_test.go",
+      "sha256": "9a5628a00bde2a0a17a9f2547adfc2f53276e5960945542a9fbf48d38ce18c8a"
+    },
+    {
+      "path": "internal/whisperapp/local.go",
+      "sha256": "eb22223a66191fb8ede71fa1a3779d5f605a34dac58892c10790eaf0c4e9b343"
+    },
+    {
+      "path": "scripts/init_wordlists.py",
+      "sha256": "8c338e84ae205f48203c589d74742cf0808039fb5f7c8745afc780d86a1bd331"
+    },
+    {
+      "path": "scripts/test_init_wordlists.py",
+      "sha256": "4771cca7665f5e6af9e6d22d08ea137be934e414d95afa5097472297c70f8420"
+    }
+  ],
+  "checks": {
+    "make_fmt": "passed",
+    "make_check": "passed (fmt-check, vet, race, cover)",
+    "make_build": "passed",
+    "scripts_unittest": {
+      "result": "passed",
+      "count": 38
+    },
+    "related_unit_matrix": "8 kinds x clean/crisis/school/ordinary/privacy-recheck/crisis-recheck plus provider-failure/cancel and category-preservation",
+    "real_pg_moderation_and_whisper": "passed, independent random databases, no MQ parameters",
+    "real_pg_privacy_recovery": "passed, separate random business/recovery DBs",
+    "git_diff_check": "passed"
+  },
+  "wordlists_initialization": {
+    "mode": "real admin login/create/publish via existing HTTP, no direct table writes",
+    "crisis": {
+      "entry_count": 8,
+      "added_count": 8
+    },
+    "school": {
+      "entry_count": 9,
+      "added_count": 8,
+      "preserved_existing": 1
+    },
+    "ordinary_violation": {
+      "entry_count": 12,
+      "added_count": 12
+    },
+    "repeat": "all changed=false, no new snapshots",
+    "source": "configs/examples/moderation-wordlists.json",
+    "old_versions": "preserved; previous published snapshot archived by normal publish operation"
+  },
+  "boundary": {
+    "content_kinds": [
+      "wish",
+      "application",
+      "message",
+      "story",
+      "whisper_post",
+      "whisper_comment",
+      "whisper_nickname",
+      "whisper_capsule"
+    ],
+    "unmatched": "original body/explicit tags autoapproved; capsule still private/time-locked",
+    "matched": "original analyzers, immutable snapshot hit flags cannot be cleared; crisis priority capture/care, ordinary/school manual as before",
+    "private_school_hit": "requires review via OrdinaryHit, no public school tag",
+    "privacy_crisis_recheck": "never bypass analyzers; holds/versions/cancel/replay unchanged",
+    "message_projection": "viewer_is_sender bool per current actor, no account id",
+    "runtime": "not restarted by backend agent; parent owns unified restart/UI regression",
+    "integration_limit": "real PG/transactions/HTTP, synthetic KMS/identities/providers; no fresh real supplier/MQ/device acceptance"
+  },
+  "test_fixture_changes": "Old tests expecting every clean text to call synthetic redactor updated to original-body expectation. Race/failure hooks now use matching test input, retain cancellation/lock/version assertions. Failed initial chat fixture owned DB cleaned without force.",
+  "logs": [
+    "/private/tmp/liyuanci-wordlist-first-check-20261029.log",
+    "/private/tmp/liyuanci-wordlist-first-build-20261029.log",
+    "/private/tmp/liyuanci-wordlist-first-scripts-20261029.log",
+    "/private/tmp/liyuanci-wordlist-first-integration-20261029-r3.log",
+    "/private/tmp/liyuanci-wordlist-first-privacy-20261029.log",
+    "/private/tmp/liyuanci-wordlist-init-repeat-20261029.json"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "2b6cba31-8a3b-4480-adaa-2491c5d49167",
+  "before_version": 2,
+  "resource_id": "245babb4-2bae-45b6-810a-64d253a96539",
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "capsule_locked",
+  "student_submit_boundary": "real WeChat page private capsule seal",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews/2b6cba31-8a3b-4480-adaa-2491c5d49167",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reviews/2b6cba31-8a3b-4480-adaa-2491c5d49167/decision",
+      "status": 200
+    }
+  ]
+}

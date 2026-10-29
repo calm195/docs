@@ -1,0 +1,79 @@
+{
+  "/api/v1/whispers/config": {
+    "http_status": 200,
+    "data_keys": [
+      "contract_version",
+      "enabled",
+      "server_now",
+      "semi_available",
+      "grade_dictionary",
+      "limits",
+      "report_types",
+      "block_api"
+    ],
+    "contract_version": "whispers/1.0.0",
+    "enabled": true,
+    "semi_available": false,
+    "grade_dictionary": {
+      "version": null,
+      "items": []
+    },
+    "report_types": [],
+    "block_api": "opaque-v1"
+  },
+  "/api/v1/whispers/help": {
+    "http_status": 200,
+    "data_keys": [
+      "status",
+      "version",
+      "verified_at",
+      "items"
+    ],
+    "status": "unavailable",
+    "item_count": 0
+  },
+  "/api/v1/report-types": {
+    "status": 401
+  },
+  "/api/v1/whispers/posts/5b5a525d-e6f1-42af-9713-afbe52597cc8": {
+    "http_status": 200,
+    "data_keys": [
+      "id",
+      "version",
+      "content_version",
+      "body",
+      "identity",
+      "published_at",
+      "school_related",
+      "notice_codes",
+      "notice_text",
+      "viewer_is_author",
+      "allowed_actions",
+      "comments_open",
+      "comments_epoch",
+      "comment_count",
+      "hug_count",
+      "my_hug"
+    ],
+    "allowed_actions": [],
+    "comment_count": 1,
+    "comments_open": false
+  },
+  "private_config_presence": {
+    "CatalogFileConfigured": false,
+    "ContactConfigured": false,
+    "legacyCareConfigured": false
+  },
+  "read_only_database_aggregates": {
+    "report_types_total": 0,
+    "report_types_published": 0,
+    "opaque_enabled": true
+  },
+  "source_findings": {
+    "local_catalog": "internal/whisperapp/local.go:80 LocalTest且CatalogFile为空时产生空Grades/Reports和unavailable Help；Contact为空不生成Care",
+    "report_write": "internal/moderation/whisper_reports.go:116 仍要求public.report_types存在published类型",
+    "legacy_report_read": "internal/safety/read.go:41 report_types从数据库published字典读取，非树洞Catalog",
+    "interaction_action": "internal/studentauth/service.go:402仅在本人AllowedActions追加interactionBlockCreate/Delete/List；PublicPost/query.go与PublicComment/comment_query.go不附interactionBlockCreate；前端detail.vue按这两个projection动作判断按钮",
+    "care": "树洞ResourcesFile.Care与Catalog是同资源文件的独立字段；旧业务devapp.Settings.Care另行配置，不能称全部来自同一catalog"
+  }
+}

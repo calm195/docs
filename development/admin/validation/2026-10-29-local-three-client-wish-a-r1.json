@@ -1,0 +1,38 @@
+{
+  "case_id": "23d9ff69-f3b5-4a10-97b3-0117aa14f795",
+  "before_version": 2,
+  "resource_id": "84fc4c57-c95a-4f1e-a81b-4352ff1545a0",
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "ready",
+  "student_submit_boundary": "diagnostic handler invocation in WeChat console, not pure click acceptance",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks/23d9ff69-f3b5-4a10-97b3-0117aa14f795",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/moderation-tasks/23d9ff69-f3b5-4a10-97b3-0117aa14f795/decision",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    }
+  ]
+}

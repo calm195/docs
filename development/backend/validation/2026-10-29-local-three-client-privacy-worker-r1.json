@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "authorization": "批准消费本地既有注销队列",
+  "command": "make dev-privacy-worker",
+  "started_at": "2026-10-29T20:48:36+08:00",
+  "scope": "account",
+  "recovery_only": false,
+  "session": 26095,
+  "observed_operations": {
+    "recovery.reapply": "success",
+    "intent.reconcile": "success",
+    "cleanup.next": "success (多轮)"
+  },
+  "boundary": "仅证明启动及轮询无错误；未证明特定账号回执completed或实际删除数量。",
+  "source_head": "72f926f96227c766047c4ea9251fef3736704634"
+}

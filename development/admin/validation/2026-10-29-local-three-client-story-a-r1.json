@@ -1,0 +1,37 @@
+{
+  "case_id": "737ef429-5037-4c76-8ac3-be6d585930fc",
+  "before_version": 2,
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "published",
+  "student_submit_boundary": "real WeChat page wish completion and story submission",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks/737ef429-5037-4c76-8ac3-be6d585930fc",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/moderation-tasks/737ef429-5037-4c76-8ac3-be6d585930fc/decision",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    }
+  ]
+}

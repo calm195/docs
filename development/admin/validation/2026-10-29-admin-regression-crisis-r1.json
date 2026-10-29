@@ -1,0 +1,36 @@
+{
+  "source": "real HTTP role-isolation reads; no action",
+  "crisis_list_status": 200,
+  "case_found": true,
+  "case": {
+    "id": "cfd5f8fa-282e-4a60-8b74-648de7d4837c",
+    "version": 1,
+    "status": "open",
+    "source": {
+      "kind": "whisper_post",
+      "id": "42f90cb2-070b-4b17-82a7-aaea6e624810",
+      "content_version": 2
+    },
+    "care_delivery": "pending",
+    "staff_delivery": "pending",
+    "synthetic_marker_matches": true
+  },
+  "crisis_detail_status": 200,
+  "review_role_crisis_status": 403,
+  "ordinary_queue_contains_current": false,
+  "db_technical_state": {
+    "post_id": "42f90cb2-070b-4b17-82a7-aaea6e624810",
+    "task_id": "c2989f2d-8bdf-44ac-8630-2f6859c89ed5",
+    "crisis_hit": true,
+    "task_status": "human_required",
+    "ordinary_hit": true,
+    "published_at": null,
+    "review_state": "pending",
+    "school_related": false,
+    "detector_version": "local-manual-v1",
+    "no_human_reviewer": true,
+    "active_crisis_isolation": true,
+    "current_content_version": 2,
+    "published_content_version": null
+  }
+}

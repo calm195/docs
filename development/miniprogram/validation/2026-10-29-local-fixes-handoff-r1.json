@@ -1,0 +1,65 @@
+{
+  "scope": "mini-program regression; synthetic transport, not real UI acceptance",
+  "branch": "develop",
+  "head": "c95feabb49041a6b0b456eeb0b9663fb0b86f6c5",
+  "files": [
+    "src/api/wishes.ts",
+    "src/pages/chat/index.vue",
+    "src/pages/whispers/detail.vue",
+    "src/stores/user.ts",
+    "src/types/chat.ts",
+    "src/utils/chat.ts",
+    "tests/chat.test.ts",
+    "tests/support/page-runtime.ts",
+    "tests/user-store.test.ts",
+    "tests/whisper-pages.test.ts",
+    "tests/wishes-page.test.ts"
+  ],
+  "checks": {
+    "check": {
+      "pass": true,
+      "tests": 205,
+      "log": "/private/tmp/mini-fixes-check.log"
+    },
+    "build": {
+      "pass": true,
+      "log": "/private/tmp/mini-fixes-build.log",
+      "note": "after final source edit; only tests edited afterward"
+    },
+    "diff_check": true
+  },
+  "new_coverage": [
+    "flat public projection read-only adapter",
+    "public category filter, encoded cursor and cross-page deduplication",
+    "50 history messages, empty poll reference stability, message 51 while reading history retains position and draft",
+    "silent identity refresh retains display, failure revokes permission",
+    "missing Workspace capability and own content prohibit block writes"
+  ],
+  "existing_coverage": {
+    "tests/chat.test.ts": [
+      "delivery sequence ordering and invalid cursor",
+      "read-only/409 permissions",
+      "leave clears data and late send is ignored",
+      "same-account token replacement drops late responses and restarts cursor",
+      "403 clears timeline; conversation pagination; polling cancellation"
+    ],
+    "tests/settings.test.ts": [
+      "BlockEntry version and action authority",
+      "unblock success rereads",
+      "pagination encoding and cycle detection",
+      "account switching and stale callbacks",
+      "unknown result retries same key/body",
+      "identity leak and old protocol rejection"
+    ],
+    "tests/whisper-pages.test.ts": [
+      "source content version only; accepted block clears content",
+      "parent version and 404 clears old content"
+    ]
+  },
+  "limitations": [
+    "actual page scripts with mocked platform/transport do not prove pixel layout or keyboard behavior",
+    "real dual-account UI acceptance owned by root",
+    "backend Workspace capability fix validated separately by backend agent",
+    "no commits, restart or shared docs edits"
+  ]
+}
