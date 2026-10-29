@@ -1,0 +1,5 @@
+
+> vue3-template@0.1.0 test:browser:users /Users/kurous/code/liyuanci/liyuanci-admin-vue
+> node scripts/users-browser.spec.js
+
+用户管理浏览器回归通过，证据目录： /tmp/user-controls-browser

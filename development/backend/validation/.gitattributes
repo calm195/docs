@@ -1,2 +1,5 @@
 # 固定的Docker原始日志保留逐字节证据，仅允许该文件的原始行尾空格。
 2026-10-29-admin-users-integration-r1.txt whitespace=-blank-at-eol
+
+# 固定的本地诊断原始日志保留行尾空格，仅此文件免除该项检查。
+2026-10-29-user-restrictions-live-r1/doctor.log whitespace=-blank-at-eol

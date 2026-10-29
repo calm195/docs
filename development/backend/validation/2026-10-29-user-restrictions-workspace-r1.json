@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-29",
+  "source_branch": "develop",
+  "source_base": "ca9f68ac51285dafee88431d7610d9856e394985",
+  "source_state": "uncommitted-workspace",
+  "docs_branch": "admin-develop",
+  "docs_base": "3412a7549e69bd38125e1a7dd401a743adcbe309",
+  "contract": "user-restrictions/1.0.0",
+  "contract_manifest_sha256": "aa18e375c5384db0031adb311a840971f74f9988779232d163bcd12de3159e0e",
+  "scope": "完整当前工作区差异；管理端包含此前尚未提交的UM-A01–A06及本次直接处置增量",
+  "files": {
+    "internal/entity/account.go": "21283df6abdbda4328e3b0406490bca83df1757c1a3afac437db594792364393",
+    "internal/httpapi/safety.go": "f59e6f8942ab02e7c0c40bf754cd18c940f1d257665c9d44a897e61ec2bea5fe",
+    "internal/httpapi/user_restrictions.go": "1519b63f747a0f64a0a6ad87790bcea0d315e7afa1166a3d0158e0d07b5878c7",
+    "internal/migration/migration.go": "2202ac7fc05484b2f3893a6d2a6e0d53c20bfd40b146c9fb0b5358373f43b184",
+    "internal/migration/migration_test.go": "7669f6fb7fe9163bb6a30b154ad14cb43dd354225483824cc8c21c77ab197489",
+    "internal/migration/sql/0028_user_restrictions.down.sql": "285b268566593c541b051f4bdef9974e27d67832cdfee503ade7a99c16d3a780",
+    "internal/migration/sql/0028_user_restrictions.up.sql": "69e5aa99c1fb567a75ad768cad24bc7cc84de88fd64c55fa05acf34b36d0320f",
+    "internal/migration/story_publication_test.go": "e89dd56f05635cf36c33387e643b1966f076bf066e3a16ff3b262c11091800fc",
+    "internal/migration/whisper_foundation_test.go": "48de23c0ead8e9c9d6a2a0f18bb3d6d4fd7e8b58dca6f695c1d3c18fa428e591",
+    "internal/moderation/admin_users_integration_test.go": "7325ff87762c9e290d300a907707579b358fa3877fc80dd4de6d11bcb76a0d8e",
+    "internal/safety/commands.go": "1cca49b7053c10f20ce220776c4ffc7bd131a96f8047724f4937f0a81d3bafee",
+    "internal/safety/read.go": "c9f0f67216ead084cb2b80a6de0b136af095b066198b50c3f24a75cef0d415c7",
+    "internal/safety/service_test.go": "f566a56f9ed370ef4a98630958aae507b861a51f40f9db534cfed0dde65e5a38",
+    "internal/safety/user_restrictions.go": "edddbdc60ae192da4da1391ebc3f2b119b1b4609536aaf649392d02ec6e5d844"
+  }
+}

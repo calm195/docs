@@ -1,0 +1,64 @@
+{
+  "versions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "migration": {
+    "version": 28,
+    "checksum": "63c888613b41b1463c2e1e8ac8ff1da62818e338a1b83e7e7ae7efb8e675aea4",
+    "applied_at": "2026-10-29T06:22:10.219669+00:00"
+  },
+  "columns": [
+    {
+      "name": "revoke_reason_cipher",
+      "comment": "直接解除的理由信封密文"
+    },
+    {
+      "name": "revoked_by",
+      "comment": "直接解除的后台操作者技术标识"
+    },
+    {
+      "name": "source_kind",
+      "comment": "处罚来源：case案件或direct管理员直接处置"
+    }
+  ],
+  "accounts": 33,
+  "penalties": 40,
+  "old_pid": 58167,
+  "build_sha256": {
+    "server": "4a28b3487fb23d9536ef81b77089356c9f1bee82ecade28c67ac0b2e150a1d38",
+    "migrate": "b8ba5080ceff4f13b74abdcc0aadb53816c83dbac2e1b45c933f3219e9316720"
+  },
+  "new_pid": 93670,
+  "launcher_pid": 93653,
+  "running_binary_sha256": "cb3771b536e495f8928816a9d45811bab5b90513420cb65ca94bb6ca6a054ce9",
+  "readyz": 200,
+  "workers_unchanged": true,
+  "configs_unchanged": true
+}
