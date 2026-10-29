@@ -514,6 +514,10 @@
     "development/backend/milestones/2026-10-28-real-integration-runbook-r1.md": "21b78d39599a7f9c4ae110559c5d2cbf263dd3b646be174f7afb6a904789317e",
     "development/admin/milestones/2026-10-28-real-integration-runbook-r1.md": "bd19fbcf2de573a210193f25943e12efa6780357f6eff547950b513e8d7fd292",
     "development/miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md": "158519deb99929c59ba932496970c31c1b1a75e817543829f2c93e793a7c76d1",
-    "development/backend/validation/2026-10-28-real-integration-preflight-r1.json": "ad630fb21fcaf229e1762e5ddc5b831ee20831d859681412694fadfe69b25bba"
+    "development/backend/validation/2026-10-28-real-integration-preflight-r1.json": "ad630fb21fcaf229e1762e5ddc5b831ee20831d859681412694fadfe69b25bba",
+    "requirements/admin-users-v1.md": "05f0f5b89c1251d410ec1e83969bcc1f09013cfbacb5fe75996201443c0c4dc3",
+    "design/admin-users-v1.md": "07d47ae2e65169974a4acb281bd6e95b9e9366fc81106cddb69930d1829639e2",
+    "requirements/admin-users-v1.1.md": "4c42bd65d27a6ad6dd328850b6dadddd4d09e3f0a9df4fdfdc89b42cb39fe506",
+    "design/admin-users-v1.1.md": "eebd8ffc4232d3485a52c1b1a6f1807cda7930d0832b6c1cb86dadb8f4a1e361"
   }
 }

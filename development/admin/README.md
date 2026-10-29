@@ -8,6 +8,8 @@
 
 ## 实施与接入说明
 
+- 首期新增：[平台用户管理需求](../../requirements/admin-users-v1.1.md)与[已采纳方案及昵称搜索设计 v1.1](../../design/admin-users-v1.1.md)。范围与推荐方案已采纳，新增昵称模糊搜索；查询协议待评审及正式化，本次尚无实现或联调结论。
+
 - [真实页面联调操作册：账号、角色、页面步骤与通过标准](milestones/2026-10-28-real-integration-runbook-r1.md)；环境与WI完整矩阵见[三端联调总册](../backend/milestones/2026-10-28-real-integration-runbook-r1.md)，配合[小程序操作册](../miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md)。
 - 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
 
