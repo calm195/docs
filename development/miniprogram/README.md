@@ -68,3 +68,7 @@
 - [2026-10-28 悄悄鲤第四批：本人时光胶囊列表、封存、详情与取消删除（本端完成，真实联调待交接）](milestones/2026-10-28-whispers-capsules-r1.md)
 
 - [2026-10-28 E批本地真实客户端联调（真机与完整验收待补）](milestones/2026-10-28-whispers-e-integration-r1.md)
+
+- [2026-10-29 原型风格重构与完整导航（新分支工作区交付）](milestones/2026-10-29-prototype-refresh-r1.md)
+
+- [2026-10-29 原型重构精确提交与 main 合并补充](milestones/2026-10-29-prototype-refresh-commit-r1.md)

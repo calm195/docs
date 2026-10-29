@@ -694,6 +694,21 @@
     "contracts/resource-plaza-v1-r2/examples.json": "fc8d849a82975b15cda0eedd94574dcdf5b0ddcac7b8a0ea1b032a8e7f4246af",
     "contracts/resource-plaza-v1-r2/manifest.json": "e577c9706f2ab90f000ca26a556ffb0e6c9c5cf9c9ead0dfe2a086e1c6c2489f",
     "contracts/resource-plaza-v1-r2/openapi.json": "635afb726d35d0bc6449fed6ae9a294999ffbd24139aafcf2ff7b7e9c6102197",
-    "contracts/resource-plaza-v1-r2/validate.py": "723f3ff238390d7ccfa71f78fd329d95ab1b4331bb57e343ef98f12a7af37c9a"
+    "contracts/resource-plaza-v1-r2/validate.py": "723f3ff238390d7ccfa71f78fd329d95ab1b4331bb57e343ef98f12a7af37c9a",
+    "development/miniprogram/milestones/2026-10-29-prototype-refresh-r1.md": "60b9d2ccf7aee17f7e726fe156fed1a2094a00b336c831065ce4dabdc262615e",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/assets.json": "3654730dfb81ec8e6ecef1095566147741a383f6b47449cf6ce020d7e767e60f",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/build-mp-weixin.log": "cc12574c42a9e38aebaa536fa2e1ef87d99ffcbab04e1aba2d794446860e21a7",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/check.log": "ce9da6c9184ff8777edf5fae469e0179db6ea953a4c1e1c89beff3a948482ce2",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/home-320.jpg": "ed5471d955d7c67b28452848806e382e6b31399460292fd802d3ee557e9b2afd",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/home-dark.jpg": "9901a96b94f1ae6fa767f37fa2b5f7b8be81f10f58a4c90e98a9098f71d1b3c1",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/home.jpg": "86717645718f30826a172769d2aaded34d856e6abe946863439d6f5d9c467423",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/pond.jpg": "0594b261fb5e1003632d8aadbd18e4165c4770dc2db470af82366820bba25cbd",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/profile.jpg": "d74a6642dcf21bd49c52836ff024d5469b5aa4aa01bb3603e7def7c3246663ba",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/resources-guest.jpg": "a8c93f284c3619a257d7168454fd71c1fe2880a71ae0282a7f56eca5424f65be",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/results.json": "b03dce07d6c625ce2cddfb3fb1b440486875586571cbe958b62e6bb1199816f5",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/source-files.json": "9f77699412452373de793d4836e2b53db707f9de5f88eee2a7e8edfeed78c8d4",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/whispers.jpg": "3a27d9cfc2ee6249b7e19b40fdef8f30ea19e138f1959ecf9892fc3868be08c2",
+    "development/miniprogram/milestones/2026-10-29-prototype-refresh-commit-r1.md": "6ee36bd3376d0aaa210555780e92311064a6502a20e3f72cbdbcfaa173e71c5a",
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-commit-r1.json": "8c219d791794b5218b619da383a4896bd3425e79ce2e13df7a4666190614717e"
   }
 }
