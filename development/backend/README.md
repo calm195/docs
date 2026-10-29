@@ -6,6 +6,8 @@
 
 ## 实施与接入说明
 
+- [资料广场后端独立工作包](milestones/2026-10-29-resource-plaza-development-r1.md)、[正式契约 resource-plaza/1.0.0](../../contracts/resource-plaza-v1/README.md)、[总交接](../../design/resource-plaza-contract-delivery-v1.md)；15接口、认证读取、资料/分类维护、四类反馈及隐私清理，正式输入已固定，尚未实现。
+
 - [管理端用户查询测试数据：32账号与40条合成处罚](milestones/2026-10-29-admin-users-test-data-r1.md)；在用户管理搜索“联调测试”使用。
 
 - [后台用户查询精确提交与本地启动](milestones/2026-10-29-admin-users-commit-start-r1.md)；源码 `develop` / `ca9f68ac51285dafee88431d7610d9856e394985`，本地 API 与配套 worker 已启动供管理端调试；[原始日志提交检查补证](validation/2026-10-29-admin-users-commit-check-r1.md)。

@@ -21,6 +21,7 @@
 | 实施与进度 | [固定实施计划](plans/implementation-plan.md)、[滚动计划](plans/next-development-integration-plan.md)、[进度](plans/progress.md)、[阻塞](plans/blockers.md)、[联调](plans/integration-log.md) |
 | 首期平台用户管理 | [需求增量 v1.1（范围已确认）](requirements/admin-users-v1.1.md)、[已采纳方案及昵称搜索设计 v1.1](design/admin-users-v1.1.md)；[独立开发交付](design/admin-users-delivery-v1.md)、[共享契约](contracts/admin-users-v1/README.md)；查询现存小程序用户、按昵称模糊搜索，复用案件处罚及申诉解罚 |
 | 悄悄鲤首期 | [范围授权](approvals/2026-10-27-whispers-scope.md)、[需求增量](requirements/whispers-v1.md)、[开发计划](plans/whispers-development-plan.md)、[详细方案与三端工作包](design/whispers-v1/README.md)、[独立接口契约](contracts/whispers-v1/README.md) |
+| 资料广场首期 | [已采纳需求 v1.1（REQ-023）](requirements/resource-plaza-v1.1.md)、[三端方案](design/resource-plaza-v1/README.md)、[正式契约 resource-plaza/1.0.0](contracts/resource-plaza-v1/README.md)、[三端独立工作包与交接](design/resource-plaza-contract-delivery-v1.md)；15接口固定为开发输入，全部尚未实现；四类反馈及固定二维码投稿 |
 | 协作与评审 | [协作指令](plans/collaboration-instructions.md)、[需求评审](reviews/requirements-review.md)、[架构评审](reviews/architecture-review.md) |
 
 ## 工作方式

@@ -1,0 +1,225 @@
+{
+  "contract_id": "resource-plaza/1.0.0",
+  "operations": [
+    {
+      "operation_id": "resourceCategoriesList",
+      "method": "GET",
+      "path": "/resource-categories",
+      "principal": "student_read",
+      "request_schema": null,
+      "success_schema": "PublicCategoryPageEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "resourcesList",
+      "method": "GET",
+      "path": "/resources",
+      "principal": "student_read",
+      "request_schema": null,
+      "success_schema": "ResourcePageEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "resourceDetail",
+      "method": "GET",
+      "path": "/resources/{id}",
+      "principal": "student_read",
+      "request_schema": null,
+      "success_schema": "ResourceDetailEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "resourceDownloadInfo",
+      "method": "GET",
+      "path": "/resources/{id}/download-info",
+      "principal": "student_read",
+      "request_schema": null,
+      "success_schema": "DownloadInfoEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "resourceFeedbackPut",
+      "method": "PUT",
+      "path": "/resources/{id}/feedback",
+      "principal": "student_write",
+      "request_schema": "PutFeedback",
+      "success_schema": "FeedbackEnvelope",
+      "idempotency": true,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourcesList",
+      "method": "GET",
+      "path": "/admin/resources",
+      "principal": "admin",
+      "request_schema": null,
+      "success_schema": "AdminResourcePageEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceDetail",
+      "method": "GET",
+      "path": "/admin/resources/{id}",
+      "principal": "admin",
+      "request_schema": null,
+      "success_schema": "AdminResourceDetailEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceCreate",
+      "method": "POST",
+      "path": "/admin/resources",
+      "principal": "admin",
+      "request_schema": "CreateResource",
+      "success_schema": "AdminResourceDetailEnvelope",
+      "idempotency": true,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceUpdate",
+      "method": "PUT",
+      "path": "/admin/resources/{id}/content",
+      "principal": "admin",
+      "request_schema": "UpdateResource",
+      "success_schema": "AdminResourceDetailEnvelope",
+      "idempotency": true,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourcePublish",
+      "method": "POST",
+      "path": "/admin/resources/{id}/publish",
+      "principal": "admin",
+      "request_schema": "PublishResource",
+      "success_schema": "AdminResourceDetailEnvelope",
+      "idempotency": true,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceOffline",
+      "method": "POST",
+      "path": "/admin/resources/{id}/offline",
+      "principal": "admin",
+      "request_schema": "OfflineResource",
+      "success_schema": "AdminResourceDetailEnvelope",
+      "idempotency": true,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceCategoriesList",
+      "method": "GET",
+      "path": "/admin/resource-categories",
+      "principal": "admin",
+      "request_schema": null,
+      "success_schema": "AdminCategoryPageEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceCategoryDetail",
+      "method": "GET",
+      "path": "/admin/resource-categories/{id}",
+      "principal": "admin",
+      "request_schema": null,
+      "success_schema": "AdminCategoryEnvelope",
+      "idempotency": false,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceCategoryCreate",
+      "method": "POST",
+      "path": "/admin/resource-categories",
+      "principal": "admin",
+      "request_schema": "CreateCategory",
+      "success_schema": "AdminCategoryEnvelope",
+      "idempotency": true,
+      "implementation": "not-implemented"
+    },
+    {
+      "operation_id": "adminResourceCategoryUpdate",
+      "method": "PUT",
+      "path": "/admin/resource-categories/{id}",
+      "principal": "admin",
+      "request_schema": "UpdateCategory",
+      "success_schema": "AdminCategoryEnvelope",
+      "idempotency": true,
+      "implementation": "not-implemented"
+    }
+  ],
+  "principals": {
+    "student_read": "active且verified且有效学生会话、无ban；mute允许",
+    "student_write": "student_read且无mute",
+    "admin": [
+      "review_operator",
+      "super_admin"
+    ]
+  },
+  "projections": {
+    "student_detail": [
+      {
+        "action": "copy_download",
+        "operation_id": "resourceDownloadInfo",
+        "versions": {
+          "expected_version": "ResourceDetail.version"
+        }
+      },
+      {
+        "action": "submit_feedback",
+        "operation_id": "resourceFeedbackPut",
+        "versions": {
+          "expected_content_version": "ResourceDetail.content_version",
+          "expected_feedback_version": "ResourceDetail.my_feedback.version或0"
+        }
+      }
+    ],
+    "admin_resource": [
+      {
+        "action": "update",
+        "operation_id": "adminResourceUpdate",
+        "versions": {
+          "expected_version": "AdminResourceDetail.version"
+        }
+      },
+      {
+        "action": "publish",
+        "operation_id": "adminResourcePublish",
+        "versions": {
+          "expected_version": "AdminResourceDetail.version"
+        }
+      },
+      {
+        "action": "offline",
+        "operation_id": "adminResourceOffline",
+        "versions": {
+          "expected_version": "AdminResourceDetail.version"
+        }
+      }
+    ]
+  },
+  "collection_writes": [
+    "adminResourceCreate",
+    "adminResourceCategoryCreate"
+  ],
+  "category_write": {
+    "operation_id": "adminResourceCategoryUpdate",
+    "versions": {
+      "expected_version": "AdminCategory.version"
+    }
+  },
+  "forbidden_capabilities": [
+    "report",
+    "delete_resource",
+    "delete_category",
+    "upload_resource",
+    "upload_qr",
+    "online_contribution",
+    "send_wechat",
+    "read_feedback_users"
+  ]
+}

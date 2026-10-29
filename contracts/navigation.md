@@ -29,3 +29,7 @@
 ## 平台用户直接处置增量契约
 
 2026-10-29用户明确选择用户页填写理由直接管理，新增[user-restrictions/1.0.0](user-restrictions-v1/README.md)，独立GET状态与四个显式POST，super_admin权限、账号版本、幂等及加密审计；[需求增量](../requirements/admin-users-v1.2.md)。原admin-users/1.0.0只读契约保持固定；[管理端交付](../development/admin/milestones/2026-10-29-user-restrictions-r1.md)与[后端交付](../development/backend/milestones/2026-10-29-user-restrictions-r1.md)记录工作区实现和验证，不代表已部署或生产验收。
+
+## 资料广场正式模块契约
+
+2026-10-29用户要求将资料广场提案正式化，当前独立输入为 [resource-plaza/1.0.0](resource-plaza-v1/README.md)，固定15操作（8查询、7写入）、规范语义、动作/版本映射、合成正反夹具及校验工具。资料以四类反馈替代举报，投稿仅为固定二维码联系入口。三端按[正式交接与独立工作包](../design/resource-plaza-contract-delivery-v1.md)消费同一manifest；接口全部not-implemented，静态检查不代表业务、联调或真机验收。旧资料设计与其他模块固定契约保持不变。

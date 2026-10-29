@@ -1,0 +1,70 @@
+{
+  "contract_id": "resource-plaza/1.0.0",
+  "date": "2026-10-29",
+  "status": "formal-development-contract-not-implemented",
+  "docs_base": "1140309e445f6467e0600018c7bd0e0724d0bd23",
+  "docs_branch": "main",
+  "docs_workspace": "延续需求/设计及索引的未提交修改，本轮未提交",
+  "authorization": "用户要求将接口提案整理为正式契约并补齐三端独立开发工作包；无业务实现/G3/运行验收声明",
+  "source_snapshots": {
+    "backend": {
+      "branch": "main",
+      "head": "7348433c171e882f3c78c51fc696af3fafb96bb5",
+      "develop_ref_observed": "96f3754e02aa2c0c563ea2aa4385f0917e535ac4",
+      "status": "clean-read-only"
+    },
+    "admin": {
+      "branch": "main",
+      "head": "9dea53857348bd3e7c91edce65e81bc5625e5b2a",
+      "develop_ref_observed": "305b004ddd9a0d2c6fab16d6a8a23cd932320167",
+      "status": "clean-read-only"
+    },
+    "miniprogram": {
+      "branch": "main",
+      "head": "3bcec888230a6cf3b096d2c51e3ea03ca15f9c7a",
+      "develop_ref_observed": "3bcec888230a6cf3b096d2c51e3ea03ca15f9c7a",
+      "status": "clean-read-only"
+    }
+  },
+  "inputs": {
+    "requirements/resource-plaza-v1.md": "255237bb8309b6d008ab12aa79aeb322368566f896efb155099a2b5834d1105c",
+    "requirements/resource-plaza-v1.1.md": "32438ce55015c5f756cc8891a39149d30199b69f87c1763dff37347b8a4b69fc",
+    "requirements/baseline.md": "fed56e2811cd21c5c5d461a35d9ace525b6f9bc142a01a6a1f2048303da54810",
+    "requirements/admin-users-v1.2.md": "b6d18c5a62525af8d5063db64291234fe9614e43ed05713fa75d9f0d7d17ae81",
+    "design/resource-plaza-v1/README.md": "f066767f3d950aeb590dd7406533d05340fbd44b4add1fc2bbbb600d5d3f7151",
+    "design/resource-plaza-v1/api.md": "9c91c19e7842a3cb246d57619d737c20b7c529fc5d60d881ab5193c0030f36f8",
+    "design/resource-plaza-v1/clients.md": "be6590256f9926a27ce92bf47aed73c73a8e64932058bd06876a5df995b4a3d1",
+    "design/resource-plaza-v1/delivery.md": "df72f6aed2b8079ed440b0d4ff5139c7802a20d285c92ba25d7f95fa245353e2",
+    "design/resource-plaza-v1/domain.md": "844f76a6441f5a194579e746eb8f6ce1090a11e65768ede544a65b2780f478ba"
+  },
+  "files": {
+    "contracts/resource-plaza-v1/README.md": "5176147d8f773b6d15dff55e7d2783c8656ed9c5750c686dd399b1d419d6897a",
+    "contracts/resource-plaza-v1/actions.json": "7898340b109f5b8e52044b2539e01640030d984cbad02c96aed6abf3310993dc",
+    "contracts/resource-plaza-v1/build.py": "0d8673ab10ee90811e6b73b214110b3de3130cc7c1c6bac49a053c9039ea231d",
+    "contracts/resource-plaza-v1/examples.json": "2d0bf2c904f141e5a5ebbb35ba4e4155917376ebc7ab1561ddc407e906d51363",
+    "contracts/resource-plaza-v1/openapi.json": "62b81f30cff80a89c2af5abfcd5c4218d501e1099f08a8e174663c264b2d6f96",
+    "contracts/resource-plaza-v1/requirements.txt": "4992b45ba48ca30542fed2b4f2e6457e691c0c5cc084c1193a74621140c355c3",
+    "contracts/resource-plaza-v1/rules.py": "d6d5fbd931c09a1389f754db5bc857220e56df4db7e89e4c83c67a4e57e86119",
+    "contracts/resource-plaza-v1/semantics.md": "bdb8e64d23c5153c397ea25f2ee4051ac3fddd8324d03001fceaad3944180213",
+    "contracts/resource-plaza-v1/validate.py": "7c8e040c7793222758185d3604da811154e72401981e9e75a08793e94b35759f",
+    "design/resource-plaza-contract-delivery-v1.md": "ad7e2f197e1e967029e16f5f778586d90b192487cabd4c9f10808f9fb6f43a1c",
+    "development/backend/milestones/2026-10-29-resource-plaza-development-r1.md": "ec7944df63543daf92f9ab7e921029a22e9811846dad6ab80e6cf5f17520d6ab",
+    "development/admin/milestones/2026-10-29-resource-plaza-development-r1.md": "d7806b24046a7affe874379aedc82dfe0bbae88377f9e18126809c7970f5b4fa",
+    "development/miniprogram/milestones/2026-10-29-resource-plaza-development-r1.md": "0ccd93245c983dfa07a42280cbaa66bc5cf659fba4d7ebd0faa7ac020af263fa"
+  },
+  "generated_files": [
+    "contracts/resource-plaza-v1/openapi.json",
+    "contracts/resource-plaza-v1/actions.json",
+    "contracts/resource-plaza-v1/examples.json"
+  ],
+  "validation_dependencies": {
+    "jsonschema": "4.25.1",
+    "openapi-spec-validator": "0.7.2"
+  },
+  "evidence_paths": [
+    "development/backend/validation/2026-10-29-resource-plaza-contract-r1.json",
+    "development/admin/validation/2026-10-29-resource-plaza-contract-r1.json",
+    "development/miniprogram/validation/2026-10-29-resource-plaza-contract-r1.json"
+  ],
+  "note": "manifest自身及静态证据由governance/frozen.json固定，不构造自引用指纹；源码快照只读，非实现结果。"
+}

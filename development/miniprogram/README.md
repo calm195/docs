@@ -8,6 +8,8 @@
 
 ## 实施与接入说明
 
+- [资料广场小程序独立工作包](milestones/2026-10-29-resource-plaza-development-r1.md)、[正式契约 resource-plaza/1.0.0](../../contracts/resource-plaza-v1/README.md)、[总交接](../../design/resource-plaza-contract-delivery-v1.md)；5个学生操作、认证查看/搜索/复制、四类反馈及固定二维码投稿，正式输入已固定，尚未实现，正式图待提供。
+
 - [真实登录、双账号与真机联调操作册](milestones/2026-10-28-real-integration-runbook-r1.md)；环境、阻塞与WI完整矩阵见[三端联调总册](../backend/milestones/2026-10-28-real-integration-runbook-r1.md)，配合[管理端页面步骤](../admin/milestones/2026-10-28-real-integration-runbook-r1.md)。
 - 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
 
