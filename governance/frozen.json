@@ -689,6 +689,22 @@
     "development/admin/milestones/2026-10-29-resource-plaza-development-r1.md": "d7806b24046a7affe874379aedc82dfe0bbae88377f9e18126809c7970f5b4fa",
     "development/admin/validation/2026-10-29-resource-plaza-contract-r1.json": "91ee5b46b68e67f3bccedc22d9edbfe95ef252a9baf9f26f94f89509d9e9d4f8",
     "development/miniprogram/milestones/2026-10-29-resource-plaza-development-r1.md": "0ccd93245c983dfa07a42280cbaa66bc5cf659fba4d7ebd0faa7ac020af263fa",
-    "development/miniprogram/validation/2026-10-29-resource-plaza-contract-r1.json": "c7a6c8a11e28914f9f599525ec39651838a5ee1b1959ddc4f020541ccc8055af"
+    "development/miniprogram/validation/2026-10-29-resource-plaza-contract-r1.json": "c7a6c8a11e28914f9f599525ec39651838a5ee1b1959ddc4f020541ccc8055af",
+    "contracts/resource-plaza-v1-r2/README.md": "0fa010847fb7012e745dde2469cd4e5fa1ee945f0ff855485013b230ac4e9988",
+    "contracts/resource-plaza-v1-r2/examples.json": "fc8d849a82975b15cda0eedd94574dcdf5b0ddcac7b8a0ea1b032a8e7f4246af",
+    "contracts/resource-plaza-v1-r2/manifest.json": "e577c9706f2ab90f000ca26a556ffb0e6c9c5cf9c9ead0dfe2a086e1c6c2489f",
+    "contracts/resource-plaza-v1-r2/openapi.json": "635afb726d35d0bc6449fed6ae9a294999ffbd24139aafcf2ff7b7e9c6102197",
+    "contracts/resource-plaza-v1-r2/validate.py": "723f3ff238390d7ccfa71f78fd329d95ab1b4331bb57e343ef98f12a7af37c9a",
+    "development/backend/milestones/2026-10-29-resource-plaza-implementation-r1.md": "7e263a3ceb07d3b861d691c794e4de88cca0941477c67c4d882df9f6c1ac1042",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/build.txt": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/check.txt": "33f6379ea84bfaf0220de47cf8a0ecf98b583b41e9dd76c1f1a47dff00ae1312",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/http-responses.json": "b641cfe23e1b016f6be067ac11f74dec4743bc0d8e4ebd70c209e89e19a56de7",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/integration.txt": "1f391f32bad5804f0c829b4840c02c0b90d71d64a522788ee53c020c475254be",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/privacy.txt": "38504455e90fd262e041fc718bfca6d2b1de13bd2baea683ffed0c25b8528ae8",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/result.json": "89f7082562dacc4b2c24a7cc2bad40d85ce9d09c57b508b76f6622f29b07d6d7",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/validate_http.py": "9979822ffb0c987c5b7c39f3e53f146ae02a3ca0f4bca3dda86f50fc76a5b038",
+    "development/backend/milestones/2026-10-29-resource-plaza-local-start-r1.md": "7ad7d866a2dd1d855103c037aba65669b60e259c339c2ed30d6744c5eb51f867",
+    "development/backend/validation/2026-10-29-resource-plaza-local-start-r1.json": "ec8ba2ccc832f8529d19852610b1dde48525fe8f1b49524a91ccb212e83357b8",
+    "development/backend/milestones/2026-10-29-resource-plaza-commit-stop-r1.md": "98a97d09f143fa70e5479410621d850c3de6ca4567b8d138287e2f39bd5589e1"
   }
 }

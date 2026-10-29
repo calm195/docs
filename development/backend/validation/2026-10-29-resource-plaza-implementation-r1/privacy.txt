@@ -1,0 +1,40 @@
+=== RUN   TestPrivacyDeletion
+=== RUN   TestPrivacyDeletion/资料反馈注销即退出统计且恢复备份重删
+=== RUN   TestPrivacyDeletion/日志失败和版本错误不推进注销
+=== RUN   TestPrivacyDeletion/独立意图确认丢失后重建屏障并重试
+=== RUN   TestPrivacyDeletion/外部删除失败及独立确认失败保留处理中
+=== RUN   TestPrivacyDeletion/requester_matching
+=== RUN   TestPrivacyDeletion/requester_realized
+=== RUN   TestPrivacyDeletion/requester_fulfilled
+=== RUN   TestPrivacyDeletion/helper_matching
+=== RUN   TestPrivacyDeletion/helper_realized
+=== RUN   TestPrivacyDeletion/helper_fulfilled
+=== RUN   TestPrivacyDeletion/历史应愿人注销不终结新的合法匹配
+=== RUN   TestPrivacyDeletion/超管删除证据保持普通隔离并支持独立恢复重删
+=== RUN   TestPrivacyDeletion/有效来源删证据不解除普通隔离及角色撤销拒绝重放
+=== RUN   TestPrivacyDeletion/受罚本人及普通资产审计通知完整清理
+=== RUN   TestPrivacyDeletion/缺少清理适配器不声称完成
+=== RUN   TestPrivacyDeletion/并发注销只持久一份有效意图
+=== RUN   TestPrivacyDeletion/HTTP严格字段匿名回执与禁止缓存
+=== RUN   TestPrivacyDeletion/独立意图超过百条仍可分页覆盖
+--- PASS: TestPrivacyDeletion (2.39s)
+    --- PASS: TestPrivacyDeletion/资料反馈注销即退出统计且恢复备份重删 (0.05s)
+    --- PASS: TestPrivacyDeletion/日志失败和版本错误不推进注销 (0.01s)
+    --- PASS: TestPrivacyDeletion/独立意图确认丢失后重建屏障并重试 (0.01s)
+    --- PASS: TestPrivacyDeletion/外部删除失败及独立确认失败保留处理中 (0.01s)
+    --- PASS: TestPrivacyDeletion/requester_matching (0.07s)
+    --- PASS: TestPrivacyDeletion/requester_realized (0.06s)
+    --- PASS: TestPrivacyDeletion/requester_fulfilled (0.08s)
+    --- PASS: TestPrivacyDeletion/helper_matching (0.07s)
+    --- PASS: TestPrivacyDeletion/helper_realized (0.07s)
+    --- PASS: TestPrivacyDeletion/helper_fulfilled (0.11s)
+    --- PASS: TestPrivacyDeletion/历史应愿人注销不终结新的合法匹配 (0.07s)
+    --- PASS: TestPrivacyDeletion/超管删除证据保持普通隔离并支持独立恢复重删 (0.04s)
+    --- PASS: TestPrivacyDeletion/有效来源删证据不解除普通隔离及角色撤销拒绝重放 (0.03s)
+    --- PASS: TestPrivacyDeletion/受罚本人及普通资产审计通知完整清理 (0.02s)
+    --- PASS: TestPrivacyDeletion/缺少清理适配器不声称完成 (0.01s)
+    --- PASS: TestPrivacyDeletion/并发注销只持久一份有效意图 (0.03s)
+    --- PASS: TestPrivacyDeletion/HTTP严格字段匿名回执与禁止缓存 (0.01s)
+    --- PASS: TestPrivacyDeletion/独立意图超过百条仍可分页覆盖 (0.03s)
+PASS
+ok  	github.com/calm195/liyuanci-backend-go/internal/moderation	2.749s
