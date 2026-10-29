@@ -1,0 +1,40 @@
+go vet ./...
+go test -race -cover ./...
+	github.com/calm195/liyuanci-backend-go/cmd/admin-init		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/card-worker		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/content-worker		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/dev-init		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/migrate		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/privacy-worker		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/probe		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/server		coverage: 0.0% of statements
+	github.com/calm195/liyuanci-backend-go/cmd/worker		coverage: 0.0% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/adminauth	(cached)	coverage: 14.1% of statements
+	github.com/calm195/liyuanci-backend-go/internal/blockpolicy		coverage: 0.0% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/cardworker	(cached)	coverage: 40.0% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/chat	(cached)	coverage: 3.9% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/command	(cached)	coverage: 23.9% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/config	(cached)	coverage: 50.0% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/devapp	(cached)	coverage: 27.4% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/durable	(cached)	coverage: 11.1% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/entity	(cached)	coverage: 100.0% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/httpapi	(cached)	coverage: 43.5% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/identity	(cached)	coverage: 0.7% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/localtest	(cached)	coverage: 76.4% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/migration	(cached)	coverage: 1.6% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/moderation	1.458s	coverage: 1.5% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/platform	(cached)	coverage: 43.2% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/platform/whisperrate	(cached)	coverage: 0.0% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/privacy	(cached)	coverage: 6.1% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/safety	(cached)	coverage: 9.6% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/securedata	(cached)	coverage: 87.2% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/studentapi	(cached)	coverage: 66.1% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/studentauth	(cached)	coverage: 18.6% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/studentcard	(cached)	coverage: 3.8% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/transportmq	(cached)	coverage: 63.3% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/verification	(cached)	coverage: 4.2% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/whisper	(cached)	coverage: 3.1% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/whisperapp	(cached)	coverage: 19.3% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/wish	(cached)	coverage: 14.8% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/worker	(cached)	coverage: 25.8% of statements
+ok  	github.com/calm195/liyuanci-backend-go/internal/workrunner	(cached)	coverage: 80.5% of statements

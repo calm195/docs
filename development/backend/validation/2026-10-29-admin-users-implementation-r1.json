@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-29",
+  "task": "UM-02",
+  "requirements": [
+    "REQ-022",
+    "REQ-016",
+    "REQ-018",
+    "REQ-019",
+    "REQ-021"
+  ],
+  "source_branch": "develop",
+  "source_base": "5d6fcd614edb8e048677d8bc9813a790b632f0ac",
+  "source_state": "uncommitted-working-tree",
+  "docs_branch": "backend-develop",
+  "docs_base": "3412a7549e69bd38125e1a7dd401a743adcbe309",
+  "contract": "admin-users/1.0.0",
+  "contract_manifest_sha256": "c0ea73add47bedc8b934ccdc23500bbc4c63c704ecc974b4f5e75e864478b48f",
+  "source_files_sha256": {
+    "README.md": "7cce50cfee835221df030323107b989c73d7cbe713433746142bd9888209b934",
+    "deploy/compose/integration.yaml": "73eaf802ba4a6c35a2836235252765ff8c7ff8fc562e34e1972305a73eb61fa3",
+    "internal/httpapi/admin_users.go": "98928a6c58a646626d8e89063c2fe543ae83c1ff605c72dac882ffc87b17fca5",
+    "internal/httpapi/admin_users_test.go": "fa30c06c8dc71ae3c1cc8bb45babab4db74f4d65774968149e7fcd1b1067a664",
+    "internal/httpapi/safety.go": "788ac05d56c9ff8aceae62e34b66de68e1bc5cff8633e1a5c8af466fb53aa47a",
+    "internal/migration/migration.go": "0584b61d3b7c57332902bdac6b2ad52e0ef5da18576938ed9b22ee9c8b714017",
+    "internal/migration/migration_test.go": "7f005676b19a160a087af6c2eadf0192020b06c890252d13481207e48266629e",
+    "internal/migration/sql/0027_admin_user_queries.down.sql": "82b85d065541003c89a3be07e8d9162ba4c1c2f127308a926079b43c97eb77ef",
+    "internal/migration/sql/0027_admin_user_queries.up.sql": "603edd7701f8048a56d9195a99e6223fa93bbfe7318b71f8b2545d9ef578fb30",
+    "internal/migration/sql/bootstrap_roles.sql": "ffe06ffe07a4b698186c584fd60b74d1e38fe1c4f9038b2440e2a7c62ca0ca0a",
+    "internal/migration/story_publication_test.go": "678fbf91142bb35cf0392eba731b57e48217f3d663ed4d67d8217c9c059bcd76",
+    "internal/migration/whisper_foundation_test.go": "31b909a2c30b1beb49a80e7b630a7059e43b147be992a5d0b8936b3b1a856b89",
+    "internal/moderation/admin_users_integration_test.go": "8227a79714ba7cc749730d7fde23320a1e5c10ba80f30f2cba1d71a4fdbe3be1",
+    "internal/moderation/privacy_integration_test.go": "e346b966e08040b456845d7dd00e6db20487b8a8b29dac64e27fd6df79ef3e99",
+    "internal/moderation/safety_integration_test.go": "c25dad1154c605f4e47ae174087a9f681465b8c90a88251ba4f2ab79d8a3d445",
+    "internal/safety/admin_users.go": "97f1ec78c6535cca6327b404c6883ee3f440355935a40682096552c419105742",
+    "internal/safety/admin_users_repository.go": "bb921b5ef672f8786b838391c32de140d3d33a60691448f712510a8afb5a0afb",
+    "internal/safety/admin_users_test.go": "fe56cae06d4da1aa8fcf1f3172c7a767bf780933f557e404284e0be4a62ec654",
+    "internal/whisperapp/runtime_postgres_test.go": "d3f1680eb9daa293ee4927d45560e1bb23b569c4da184804a906bc8ac842e931"
+  },
+  "checks": {
+    "make fmt": "passed",
+    "make check": "passed (go vet ./...; go test -race -cover ./...)",
+    "make build": "passed (all 9 processes)",
+    "python3 -m unittest discover -s scripts -p test_*.py -v": "passed (36 tests)",
+    "make integration": "passed (exit 0)",
+    "contract build.py": "passed (read-only)",
+    "contract validate.py": "passed (existing isolated Python; openapi-spec-validator 0.7.2)",
+    "python3 scripts/check_documents.py": "passed (links, frozen inputs, append-only manifest)",
+    "git diff --check (both repositories)": "passed"
+  },
+  "environment": {
+    "host_go": "go1.27.2 darwin/arm64",
+    "integration_go": "1.25.0-alpine (pinned image)",
+    "project": "liyuanci-admin-users-20261029",
+    "real": [
+      "PostgreSQL 18.6",
+      "separate recovery PostgreSQL",
+      "Redis 7.2.12",
+      "RocketMQ 5.3.2",
+      "HTTP over local TCP",
+      "restricted backend DB role",
+      "account guard lock wait"
+    ],
+    "synthetic": [
+      "accounts",
+      "admin/student sessions",
+      "cases and penalties",
+      "KMS/analysis/cleanup providers in original regression"
+    ],
+    "not_tested": [
+      "browser/WeChat device",
+      "production",
+      "confirmed concurrent performance load",
+      "deployed reverse proxy/APM/frontend logging"
+    ],
+    "cleanup": "Only isolated project containers/networks removed; all volumes and credentials preserved; existing liyuanci-local services remained healthy."
+  },
+  "performance_samples": [
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 无筛选 首页n=40 P95=7.802135ms（非并发负载验收）",
+    "admin_users_integration_test.go:413: 无筛选 后续页n=40 P95=8.461499ms",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 认证 首页n=40 P95=8.604658ms（非并发负载验收）",
+    "admin_users_integration_test.go:413: 认证 后续页n=40 P95=5.510552ms",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 禁言 首页n=40 P95=6.940307ms（非并发负载验收）",
+    "admin_users_integration_test.go:413: 禁言 后续页n=40 P95=6.389718ms",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 封禁 首页n=40 P95=7.163401ms（非并发负载验收）",
+    "admin_users_integration_test.go:413: 封禁 后续页n=40 P95=8.356058ms",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 高命中 首页n=40 P95=14.177933ms（非并发负载验收）",
+    "admin_users_integration_test.go:413: 高命中 后续页n=40 P95=12.441982ms",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 单字 首页n=40 P95=13.468016ms（非并发负载验收）",
+    "admin_users_integration_test.go:413: 单字 后续页n=40 P95=11.751068ms",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 组合 首页n=40 P95=8.826544ms（非并发负载验收）",
+    "admin_users_integration_test.go:413: 组合 后续页n=40 P95=9.152537ms",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 无命中 首页n=40 P95=7.274635ms（非并发负载验收）",
+    "admin_users_integration_test.go:410: 8000+合成账号/4000有效处罚，单HTTP客户端 精确ID 首页n=40 P95=2.685385ms（非并发负载验收）"
+  ],
+  "attempts_and_corrections": [
+    "Sandbox blocked existing TLS listener; final make check rerun outside sandbox passed.",
+    "Default Python lacked jsonschema; used existing isolated environment with pinned validator; passed.",
+    "Initial integration network replacement interrupted targeted test; Broker DNS then failed. Recreated only this isolated project without deleting volumes; final make integration passed.",
+    "Initial cross-domain session returned 401 due RLS; added narrow boolean function and validated student rows remain hidden.",
+    "Initial fixture/schema and audit assertions corrected; final real integration passed."
+  ]
+}

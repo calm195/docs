@@ -6,6 +6,13 @@
 
 ## 实施与接入说明
 
+- [管理端用户查询测试数据：32账号与40条合成处罚](milestones/2026-10-29-admin-users-test-data-r1.md)；在用户管理搜索“联调测试”使用。
+
+- [后台用户查询精确提交与本地启动](milestones/2026-10-29-admin-users-commit-start-r1.md)；源码 `develop` / `ca9f68ac51285dafee88431d7610d9856e394985`，本地 API 与配套 worker 已启动供管理端调试；[原始日志提交检查补证](validation/2026-10-29-admin-users-commit-check-r1.md)。
+- [后台用户查询实现、0027迁移与验证](milestones/2026-10-29-admin-users-implementation-r1.md)；对应 admin-users/1.0.0，保留实现时未提交的历史快照，提交关联见上述补充记录。
+
+- [用户管理独立开发工作包（含昵称搜索）](milestones/2026-10-29-admin-users-development-r1.md)、[共享契约 admin-users/1.0.0](../../contracts/admin-users-v1/README.md)、[两端交付与联调矩阵](../../design/admin-users-delivery-v1.md)；设计产物，不代表接口已实现。
+
 - [三端真实联调操作手册：前置条件、阻塞、启动与WI逐项标准](milestones/2026-10-28-real-integration-runbook-r1.md)；配套[管理端页面步骤](../admin/milestones/2026-10-28-real-integration-runbook-r1.md)、[小程序登录与真机步骤](../miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md)。
 - 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
 

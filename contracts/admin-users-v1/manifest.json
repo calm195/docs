@@ -1,0 +1,39 @@
+{
+  "contract_id": "admin-users/1.0.0",
+  "date": "2026-10-29",
+  "status": "design-delivery-not-implemented",
+  "docs_base": "075e52d57a74cb520668c8ddbbb29ae7fc813ea8",
+  "authorization": "用户采纳推荐方案及昵称搜索，要求形成两端独立开发产物；非G3或运行通过",
+  "source_snapshots": {
+    "backend": {
+      "branch": "develop",
+      "head": "5d6fcd614edb8e048677d8bc9813a790b632f0ac",
+      "status": "clean-read-only"
+    },
+    "admin": {
+      "branch": "develop",
+      "head": "69f07a2af4c84b4da8026c636c7a06463491f548",
+      "status": "clean-read-only"
+    }
+  },
+  "inputs": {
+    "requirements/admin-users-v1.1.md": "4c42bd65d27a6ad6dd328850b6dadddd4d09e3f0a9df4fdfdc89b42cb39fe506",
+    "design/admin-users-v1.1.md": "eebd8ffc4232d3485a52c1b1a6f1807cda7930d0832b6c1cb86dadb8f4a1e361",
+    "contracts/openapi.v0.2.1.json": "9161119936e897133e3de1a9d1b28b0b338ee347672fdb568db246477c785bbc",
+    "contracts/actions.v0.2.1.json": "aef2546129f523955bf57ad6887bf0232ffca449d02b1e3130d3b8acf24f0c73",
+    "contracts/whispers-v1/openapi.json": "f4cc52d540dcc761a3d63a1ea47f8e371f3bd2ea87bb9caddf812153ee1101a0",
+    "contracts/whispers-v1/actions.json": "d28f5a8088e321081d2280ca5e8a80b44ea215ffb1e8f605b181d6a3f50d708b"
+  },
+  "files": {
+    "contracts/admin-users-v1/README.md": "06e0ab45df9fe4a3f0b73d846ea1c65230c818314e7c6af70a523c3703a13dae",
+    "contracts/admin-users-v1/actions.json": "c6c30a08121b2a2b087c06990ae7d1aa4e8f6ffa0cdad2d3d099d712a7a965f1",
+    "contracts/admin-users-v1/build.py": "4bb333b7473c2caf50d8c11bc327c6f579539690ebfa41f3c6968173f42ec653",
+    "contracts/admin-users-v1/examples.json": "16e45107af9ae0a33f1b1ea0c72fcc3d9005b51dd9f46d5c9a6eb2f9c3d55aea",
+    "contracts/admin-users-v1/openapi.json": "7f1b573c4adfc0f87079e9c5bba0568fe95f2a2b27f9b448026ed19161299ea4",
+    "contracts/admin-users-v1/semantics.md": "0d0e80e33ab200dd61b9d305d1aeb586c13a82b0a49f8c0266893b195e4609c9",
+    "contracts/admin-users-v1/validate.py": "6fca3a077ad6d3d331d2980d234200d73b07be772bf214c3879f98563ad8d33d",
+    "design/admin-users-delivery-v1.md": "ce62944f1a17dbbb35afafdf65500a6f2d03ecef17c8ce8cd03defbfa7f86521",
+    "development/backend/milestones/2026-10-29-admin-users-development-r1.md": "9bf345dfbac3a12f5a20b1134dbb90fd79968931fdb9bbe5de7cb0240bea432a",
+    "development/admin/milestones/2026-10-29-admin-users-development-r1.md": "92da0cb196459813da37f3f7844ac7a2037e2c652de95a2aa98f9cfc3e07121c"
+  }
+}
