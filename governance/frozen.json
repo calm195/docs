@@ -529,6 +529,16 @@
     "design/admin-users-delivery-v1.md": "ce62944f1a17dbbb35afafdf65500a6f2d03ecef17c8ce8cd03defbfa7f86521",
     "development/backend/milestones/2026-10-29-admin-users-development-r1.md": "9bf345dfbac3a12f5a20b1134dbb90fd79968931fdb9bbe5de7cb0240bea432a",
     "development/admin/milestones/2026-10-29-admin-users-development-r1.md": "92da0cb196459813da37f3f7844ac7a2037e2c652de95a2aa98f9cfc3e07121c",
-    "contracts/admin-users-v1/manifest.json": "c0ea73add47bedc8b934ccdc23500bbc4c63c704ecc974b4f5e75e864478b48f"
+    "contracts/admin-users-v1/manifest.json": "c0ea73add47bedc8b934ccdc23500bbc4c63c704ecc974b4f5e75e864478b48f",
+    "development/backend/milestones/2026-10-29-admin-users-implementation-r1.md": "ae8240ec9651b312cec8225b6c6f0e43e3f0da9c8088f364353c64db2363dc48",
+    "development/backend/validation/2026-10-29-admin-users-build-r1.txt": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+    "development/backend/validation/2026-10-29-admin-users-check-r1.txt": "4b11e1d438230f66a2aa87dd43439545dae57b9bb905c40f46cdaf9ea29c710d",
+    "development/backend/validation/2026-10-29-admin-users-implementation-r1.json": "3e09b2acad3d062d42daba88f9b014b11ec9a38ff407f4875bca3506a8eca5d9",
+    "development/backend/validation/2026-10-29-admin-users-integration-r1.txt": "477460748ac5054f82188b02571c8fc22dac2350b91aff738228cd7ddebe3a82",
+    "development/backend/validation/2026-10-29-admin-users-query-plan-r1.json": "a3a5a835a3ac5ab513d08d8e5962a0104f4c30d406a04c02195608ffc99eb66d",
+    "development/backend/validation/2026-10-29-admin-users-scripts-r1.txt": "05baa4124e510ae693f96f948c8e8fb88179270b30c10f9bb1e2c46d8985080d",
+    "development/backend/milestones/2026-10-29-admin-users-commit-start-r1.md": "fa1612a7e19b4f05b72af1b85fefba633324aba862d54204dba88b079fce3999",
+    "development/backend/validation/2026-10-29-admin-users-commit-start-r1.json": "477cb694af5dbc390d203caf8457b4d85448270b098acad5ae800f23718ad0ea",
+    "development/backend/validation/2026-10-29-admin-users-commit-check-r1.md": "7849d3ce9a4da08e5936b6df8bb0891e92bff3996f5d98617500ca4750751cde"
   }
 }

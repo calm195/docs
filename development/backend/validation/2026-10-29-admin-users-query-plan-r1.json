@@ -1,0 +1,79 @@
+{
+  "boundary": "隔离合成测试库；代表性昵称+认证+正常限制查询，结构与usersRows相同；非并发负载验收",
+  "accounts": 8006,
+  "penalties": 4005,
+  "role": "liyuanci_admin_api",
+  "planning_ms": 0.66,
+  "execution_ms": 4.826,
+  "plan": {
+    "Node Type": "Limit",
+    "Actual Rows": 21.0,
+    "Actual Loops": 1,
+    "Actual Total Time": 4.77,
+    "Shared Hit Blocks": 191,
+    "Shared Read Blocks": 0,
+    "Plans": [
+      {
+        "Node Type": "Sort",
+        "Actual Rows": 21.0,
+        "Actual Loops": 1,
+        "Actual Total Time": 4.766,
+        "Shared Hit Blocks": 191,
+        "Shared Read Blocks": 0,
+        "Sort Method": "top-N heapsort",
+        "Plans": [
+          {
+            "Node Type": "Hash Join",
+            "Actual Rows": 2000.0,
+            "Actual Loops": 1,
+            "Actual Total Time": 4.633,
+            "Shared Hit Blocks": 185,
+            "Shared Read Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Aggregate",
+                "Actual Rows": 4000.0,
+                "Actual Loops": 1,
+                "Actual Total Time": 1.023,
+                "Shared Hit Blocks": 73,
+                "Shared Read Blocks": 0,
+                "Peak Memory Usage": 409,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "penalties",
+                    "Actual Rows": 4000.0,
+                    "Actual Loops": 1,
+                    "Actual Total Time": 0.425,
+                    "Shared Hit Blocks": 73,
+                    "Shared Read Blocks": 0
+                  }
+                ]
+              },
+              {
+                "Node Type": "Hash",
+                "Actual Rows": 4000.0,
+                "Actual Loops": 1,
+                "Actual Total Time": 3.228,
+                "Shared Hit Blocks": 112,
+                "Shared Read Blocks": 0,
+                "Peak Memory Usage": 407,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "accounts",
+                    "Actual Rows": 4000.0,
+                    "Actual Loops": 1,
+                    "Actual Total Time": 2.956,
+                    "Shared Hit Blocks": 112,
+                    "Shared Read Blocks": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
