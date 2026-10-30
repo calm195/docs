@@ -1,9 +1,0 @@
-go test ./internal/whisper/... ./internal/moderation/... ./internal/safety/... ./internal/privacy/... ./internal/httpapi/... ./internal/migration/... ./internal/chat/... ./internal/platform/whisperrate/...
-ok  	github.com/calm195/liyuanci-backend-go/internal/whisper	(cached)
-ok  	github.com/calm195/liyuanci-backend-go/internal/moderation	(cached)
-ok  	github.com/calm195/liyuanci-backend-go/internal/safety	(cached)
-ok  	github.com/calm195/liyuanci-backend-go/internal/privacy	(cached)
-ok  	github.com/calm195/liyuanci-backend-go/internal/httpapi	(cached)
-ok  	github.com/calm195/liyuanci-backend-go/internal/migration	(cached)
-ok  	github.com/calm195/liyuanci-backend-go/internal/chat	(cached)
-ok  	github.com/calm195/liyuanci-backend-go/internal/platform/whisperrate	0.337s

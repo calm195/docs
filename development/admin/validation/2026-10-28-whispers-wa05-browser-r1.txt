@@ -1,5 +1,0 @@
-
-> vue3-template@0.1.0 test:browser /Users/kurous/code/liyuanci/liyuanci-admin-vue
-> node scripts/whispers-browser.spec.js
-
-浏览器回归通过：4页面×2主题，桌面/窄屏与抽屉，三角色菜单、实际适配器提交、退出/刷新清理及仅主题持久化。证据目录：/private/tmp/wa05-browser

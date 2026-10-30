@@ -1,0 +1,3067 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "source_commit": "781d177221efdb9e955956343c4f2ceda8494eff",
+  "authorization": "用户明确要求整理docs、删除冗余过时文档，三端只保留现状、缺陷、后续计划。",
+  "replaced": [
+    "contracts/README.md"
+  ],
+  "files": {
+    ".DS_Store": {
+      "sha256": "7cc8f4cb3a6162f866e18fc0018525873b6e15748cab4586e403f69b802b6ef8",
+      "replacement": "governance/README.md"
+    },
+    ".gitattributes": {
+      "sha256": "14cdc68bf9c7a6946fa2e0b06d451216c8bcc54577c486fe04335241f7e67e65",
+      "replacement": "governance/README.md"
+    },
+    "contracts/README.md": {
+      "sha256": "bbda06160c1d3db4fa49c1717c34a0fcd8a7bff391f8c54ef638bc113bd9a53b",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/acceptance.md": {
+      "sha256": "5262424b54444d723a5c34ecdd93a54bd6bf6e3e1fd8d3bfa2e12ab02a63a7b8",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/actions-review.v0.2.0-r1.json": {
+      "sha256": "0d377b65bf7a6f353ecf620f1db403d3117debbb239084e4fd5791c61a0680ba",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/actions-review.v0.2.0-r2.json": {
+      "sha256": "886bb2ce11650689e61272c8a092b88f9d78d9604a14fa8d5e5b81e6417c1568",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/actions-review.v0.2.0-r3.json": {
+      "sha256": "3e72750f25fe2dfc6e719d12ed023067d27190c8b5b4d416328e97fdd3a9748e",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/actions-review.v0.2.0-r4.json": {
+      "sha256": "18719ddcf8faaf1521bf585870b78b37b43e9ccb3fd2af5d26912cbf30ab25a5",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/clarifications.v0.1.0.md": {
+      "sha256": "5cb782eb0270d3b33d54292ad3751fa6a1673a17314ea6d088595ac97e204d74",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/examples.v0.1.0.json": {
+      "sha256": "7865265b6e7b1ae7f381137b86092e341aad7ec74dcac8dbf2f01ba54377a8fc",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/moderation-extension.draft.json": {
+      "sha256": "1bdda358942abf6392efeac2975d636334a60bf448e4ca5d7a31846656d4eb12",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/navigation.md": {
+      "sha256": "7100a88e6943921c5383475cc3dd53d62baddb745dbc5c6fbac2f5b5544639fe",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/openapi.v0.1.0.json": {
+      "sha256": "d2d01a0478ccc33839f14d6c648c16784883ccdb146764d20beba59323bab26c",
+      "replacement": "contracts/README.md"
+    },
+    "contracts/operations.md": {
+      "sha256": "1db38deae43b09331f2aea54a5638711719074b333b0092e359ab75ca0b83945",
+      "replacement": "contracts/README.md"
+    },
+    "design/admin-users-delivery-v1.md": {
+      "sha256": "ce62944f1a17dbbb35afafdf65500a6f2d03ecef17c8ce8cd03defbfa7f86521",
+      "replacement": "modules.md"
+    },
+    "design/admin-users-v1.md": {
+      "sha256": "07d47ae2e65169974a4acb281bd6e95b9e9366fc81106cddb69930d1829639e2",
+      "replacement": "design/admin-users-v1.1.md"
+    },
+    "design/resource-plaza-contract-delivery-v1.md": {
+      "sha256": "ad7e2f197e1e967029e16f5f778586d90b192487cabd4c9f10808f9fb6f43a1c",
+      "replacement": "modules.md"
+    },
+    "development/admin/T012-integration.md": {
+      "sha256": "33e9805f7066cc736f4d0bd32f54f0ab0e7ecda7acf4168366e6675de6cc6e75",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/contract-questions.md": {
+      "sha256": "cd0a350ee2e8b8d3955bffc4e0761d904d53245f14c9b9634b36920a9175a6b4",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/delivery-T004-T010.md": {
+      "sha256": "b44f990c2ef75dfb0bbc005a09026f569b59cdc96abb4f4e0e854018f64d52a2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-22-docs-governance-r1.md": {
+      "sha256": "d5bee9646fa1116b93bed7cbe5ea8ab864a916b5aa0dda80b321e8d9181b5a0d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-accounts-editor-r1.md": {
+      "sha256": "70b800f479b56cda4f120f2ca1960d9532be24a3c798e91550a848c0d7143042",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-content-api-only-r1.md": {
+      "sha256": "af3d98d2fb11bcd447ef50ae06c52814aa7c3071d48ee0d0040d1f64e94a75cd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-crisis-separation-r1.md": {
+      "sha256": "47814be7ca193ba79e5ca01fede618d8fba25113f1eaeb0d5058c8b8cb361a03",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-crisis-workspace-r1.md": {
+      "sha256": "6fbdbeea25c5a6886b5b5adc06bb62194c2aaf87c387925a35fae62d1738d01b",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-evidence-deletion-r1.md": {
+      "sha256": "ff3949cdd0e1575eff36f42d4f58446f506d86631e2485f02031ac1116f9fb9d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-evidence-deletion-r2.md": {
+      "sha256": "9188baf2cb05f28e12cf27ec441b2a21d545c700441eb3e16d75e7e6408e5558",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-identity-integration-r1.md": {
+      "sha256": "c41c03e514484d74e8213d0c4e5ab13be2758d48e5f7576063fff705d1b95646",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-identity-separation-r1.md": {
+      "sha256": "663183627ac7cdc4b7b9e4e233c0e2bc0e13cd8db314815a4808679606cc3a43",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-moderation-outcome-gap-r1.md": {
+      "sha256": "f8544376c3311b332db446f54b057b960299f2ee38d904dafc04404993f58bc1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-moderation-separation-r1.md": {
+      "sha256": "3631a70af192b5425dfd928b14690b3791c25df95ce7ceef8a1927123886badf",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-module-commits-r1.md": {
+      "sha256": "55cf0ca78c077b23a35be42a7d61cc4b85099ec67b134895dabb03ae167ee97e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-navigation-theme-r1.md": {
+      "sha256": "87e592d7f857e83efc79b7bc2315cea7a3bb0e5f1c746404f49d172b83886700",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-privacy-pages-r1.md": {
+      "sha256": "eda2cdd29a6efdbaa674d088806d59128773a8fd5a8b7b49d00954d86b15605f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-safety-management-r1.md": {
+      "sha256": "7cb94ce66181e8513238ce1c957f1f58ea2c0b29cb37e1e0ac75c54aee6daaf9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-safety-pages-r1.md": {
+      "sha256": "960383f62c2cc13dc9d6232b7cb6cb5b4a92b21dd135fd476f918811c68c408c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-site-regression-r1.md": {
+      "sha256": "e841ecda587cb58c976e37a63f9b728612fbf175f1187117e22a66fcc789b720",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-23-wordlists-pages-r1.md": {
+      "sha256": "1713ffcd2acdea8f03bc7fbfed00b10491c6e57d3a9ad643c9b45885d83ee0db",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-27-whispers-wa01-commit-r1.md": {
+      "sha256": "7e72c83372d5511582fb53160defb413ebf91242dbb5ac7c68246eebff76cf24",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-27-whispers-wa01-errata-r1.md": {
+      "sha256": "4e18c6044d0e0239ad3ae381bbf39a01d1b69883e521fdb3bc7480ba453de01e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-27-whispers-wa01-r1.md": {
+      "sha256": "74240a3c15ae8a9a16d2095e1070d67e54deeb608393cf82e27b29ee8920ef3d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-27-whispers-wa02-r1.md": {
+      "sha256": "bd80f4b0f8ce3ebda23f7586d6703a39643b745900dbaa267a612b4015029e30",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-27-whispers-wa03-r1.md": {
+      "sha256": "f4e5f7a9f0118d5f0f43307b99f1d71abaa82392f1d938ac1cd860db23a2e837",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-27-whispers-wa04-r1.md": {
+      "sha256": "d3cb512f33e90f48b273724517151a68145e60731531d67750284e7594ba2548",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-28-real-integration-runbook-r1.md": {
+      "sha256": "bd19fbcf2de573a210193f25943e12efa6780357f6eff547950b513e8d7fd292",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-28-whispers-wa05-r1.md": {
+      "sha256": "14c3738f1c7036ce4a4805e6e0f8b084ce3ccdc8f0ff447448b9cfcdf5d32537",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-28-whispers-wa05-r2.md": {
+      "sha256": "4e6523d42096ca5a0611741abf88e5edf27f6f6f41752d00b063227017f1ed69",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-admin-users-commit-r1.md": {
+      "sha256": "7c9d8eacd46dc2214e745d5fd9128a1b1b76c22325802eec36fc6f5e948b304c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-admin-users-development-r1.md": {
+      "sha256": "92da0cb196459813da37f3f7844ac7a2037e2c652de95a2aa98f9cfc3e07121c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-admin-users-implementation-r1.md": {
+      "sha256": "26e20b967f090e1986e71c3718d6895b5b7b72a1688a846c21d6c00536742b67",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-resource-plaza-commit-stop-r1.md": {
+      "sha256": "fe4b851b43b42ac6461a88dd3dceaf16df37d8d0ee0ea17805cfcc7d24a518c9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-resource-plaza-development-r1.md": {
+      "sha256": "d7806b24046a7affe874379aedc82dfe0bbae88377f9e18126809c7970f5b4fa",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-resource-plaza-implementation-r1.md": {
+      "sha256": "b8e9270f4c1aaf810f38524648372dba57edf7c975825a37185a87f14c751e5a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-resource-plaza-implementation-r2.md": {
+      "sha256": "e268d184a5f823a5ef731c04ef54c826d6baa592e63ae05a026314024bff4e09",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-resource-plaza-live-r1.md": {
+      "sha256": "26c89a2e8732577274fafd1b6e1576cc173e71549c5d1b1f7f7f3b56826a3cf7",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-user-restrictions-live-r1.md": {
+      "sha256": "188e2c7f433b47b4a39f324f93322175b686131c7b028e904c95eef794e83c0c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-29-user-restrictions-r1.md": {
+      "sha256": "7a48567e5d0d094677914cbefaafb17e1944d3c0e1853852c0d8200367908c16",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/2026-10-30-branch-consolidation-r1.md": {
+      "sha256": "ed6c30220d1ba39122bece8147ba22d6740dae2009ae83e958623bbfe7efd61e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/T004.md": {
+      "sha256": "321a1d91419a32cfa7d8287e6f1d10648fbcacdb871acca80da29e9b55f254d3",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/T010.md": {
+      "sha256": "4da2c9877689bac5419159a71960ed258a243e678a1e7d616135d6ad0afbcc86",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/T012.md": {
+      "sha256": "dbef3624d6412bdfceea0ffb07fa585849a1127df9d75e48e368eed9c54e4cf8",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/T017-wordlists-v0.2.0.md": {
+      "sha256": "b4bea939c0a4348e70ecc88554e7f43555640ba076a1b9d02889290eb4ad7cd8",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/T017.md": {
+      "sha256": "b7f0794dbecaa71ef44f702b1addce7303577c221c8ba599060c80f006bd054e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/admin-accounts.md": {
+      "sha256": "ff7446886fc92ad0ab047895760502890ee36d30fe7612d2ddce032d2d553e31",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/admin-actions-r1.md": {
+      "sha256": "9a8cd78789d0aa85a28364295e8a9fb24827ec71a442786dd267a5fda6ff00c1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/admin-contract-v0.2.0.md": {
+      "sha256": "19b4a4c1fff3356cc37f86f8599f96a5a82bcbbdb9c1bf008e35e34e43d4bdb5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/admin-int003.md": {
+      "sha256": "4b8699f9e4f92132dd3eb964b19b5b8af41006c060c570cc9a1da461ed24b8e9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/api-audit-r5.md": {
+      "sha256": "735671d5d578ba996849900e408bf07f7206b1849ea117d8aea8095ad244972b",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/development-standards.md": {
+      "sha256": "377c51367b27f7f1371508cf9bc6406b856e36dd4818c8cc048c457a6112936b",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/milestones/real-admin-api.md": {
+      "sha256": "47874658dc0ac65d19bb46a69f3298c5d94649e1fd1035ff0624243f656fd9e9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-accounts-editor-quality-r1.txt": {
+      "sha256": "99c2ddcde46c7dc0f51ff478f8814687d5138bb2601a92e36fe6cfb772897638",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-accounts-editor-r1.json": {
+      "sha256": "de1c84b33a2f1a28c386a376b3d9b80cc5c259e2eeb6e48a961b6d63dcde2770",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-business-split-accounts-r1.png": {
+      "sha256": "ee3a63dd1c9825c3cd44b57781143360e9774e0ead1d636a8c14ecd43ae456b3",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-business-split-detail-r1.png": {
+      "sha256": "e6dd0bb2b074715935578cef4917f427eb64b0140576b47cd6efb6de3b57e30a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-business-split-draft-dark-r1.png": {
+      "sha256": "9c3fd9d4a2b5b2f082e3ab9f04ddeefaf343b2c1e91d4ae7d0a12ef53fdc9f3d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-business-split-list-r1.png": {
+      "sha256": "d0f52a59a41e1e320821940e97ada41b4c2f82e9b73377d9730a42b1d9363e7f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-content-api-only-source-r1.json": {
+      "sha256": "0e71e58ad39a342127eee394a1a31c07be00b8a5ddbbba6641af1783c355efcb",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-enabled-browser-r1.png": {
+      "sha256": "58c2098ae37f79e13ffd7ae07a69c0892be27d0dbef1267f523d30461a2cc482",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-separation-dark-r1.png": {
+      "sha256": "cb5cda763ab3f892f4bf506f9f3b28875b53e6026739f6f81e121ef00d7da173",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-separation-light-r1.png": {
+      "sha256": "a04522ea70742a89a9e3fd42744d2ca3244957f1a6450ab7ee9d6ff81fea66b5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-separation-quality-r1.txt": {
+      "sha256": "747a91f55279826fecf0df3ff795afb9b5d01dcd24f44b0063900e7920df8725",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-separation-r1.json": {
+      "sha256": "ed76687f9a41877160414d936cf3b5373c1e61635fc1f78a097f71a69d173d50",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-workspace-browser-r1.png": {
+      "sha256": "1ec84daccdf6feb61066a9e7ade3ce308adc2a163e33552150fe2adcf8ca1523",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-workspace-quality-r1.txt": {
+      "sha256": "8d215e4f01904f8444802e9678fe9e0ea1d4476c28285403f006f730d12bf15a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-crisis-workspace-r1.json": {
+      "sha256": "d5dcd472dfde6ec16460bf97a7ae4cafcc020a3cbc408c89cadf7df7b1a4a3f2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-evidence-deletion-browser-r1.png": {
+      "sha256": "bcf7086b6ea4136b38b900d228bebf6d7481806a22368bcec84e840fca580880",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-evidence-deletion-browser-r2.png": {
+      "sha256": "7fd9d584f481bebca7b2878d627c2edeb8a59a51c6643b03d1d119f895574f64",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-evidence-deletion-quality-r1.txt": {
+      "sha256": "3a70236f9af1390310bdf5b53a6c4d00037f1eba64120da47c7b818f326c3ece",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-evidence-deletion-quality-r2.txt": {
+      "sha256": "28c6930198f7c21f420c54fabba00711a0919147a0d38f919a535df9f34250c2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-evidence-deletion-r1.json": {
+      "sha256": "f3488222f0a02d25fbdb224a980f663d50dfb28203c40fcc0313e0112eb360bf",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-evidence-deletion-r2.json": {
+      "sha256": "5a7c677eafe616d9eb76b1d8d9347068a9f5c75d201f2990b9f22c736acf6664",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-evidence-deletion-receipt-validation-r2.png": {
+      "sha256": "3f4746ded017bf46bf77a91ee23ab1d278f8a510579b7ea2d91ba3405cef1828",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-identity-integration-r1.json": {
+      "sha256": "9dd3429c80516ffd552f71d9c3def2fc9104e02da11179bbea3fe49f79f4434a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-identity-separation-dark-r1.png": {
+      "sha256": "65f301d170e2d884aa998a3f1a36d94ae4d3d5469d6869840df98b6d10369fde",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-identity-separation-light-r1.png": {
+      "sha256": "a04c9c2b83cbd3bfd2676b0f4802eddd869cc3cb6c7ec59ef3b668bac743006e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-identity-separation-quality-r1.txt": {
+      "sha256": "d13cd805f6165e44f2022606c90d041dfef7e50fc54a8119348d0f8d0d1d54d9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-identity-separation-r1.json": {
+      "sha256": "3aba9a570c59ffa5c3fc35f19255f83f00ba51ceac6f252bee1a43163524cd6d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-moderation-separation-dark-r1.png": {
+      "sha256": "c15a47153a672651b2aa7ed7f6a4a034f692a17d1d6558282e1005fcabb66026",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-moderation-separation-light-r1.png": {
+      "sha256": "11c0e851f453798fea5a4a6c52e606bd1a4bca4f28ab86f8dd0a43639a234302",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-moderation-separation-quality-r1.txt": {
+      "sha256": "3020b7a3707868c9e904b11279ef42336df659ac95b242eae575489fee17f7b9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-moderation-separation-r1.json": {
+      "sha256": "8e1325f3d426c5e2d7b8a9084893639a1e906feae76cb8e47510f1f742f0d346",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-navigation-theme-dark-r1.png": {
+      "sha256": "a65cc1539023b959861bed416fff879c0dc2e81c5dbb0c8d3f44001bb377076f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-navigation-theme-light-r1.png": {
+      "sha256": "d6c3f13109dc54071fa19a8b7316dfda766acb0015029197a2a798f74c07b594",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-navigation-theme-quality-r1.txt": {
+      "sha256": "28adc52c1c48c026d0e5a1dc3b84a39bd48a6bfcc8162b73e18bb11b6a42be16",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-navigation-theme-r1.json": {
+      "sha256": "e0c5be644abb3895f0586fd19d0afe912c8f855049114f67851df4a0ccb15385",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-privacy-pages-evidence-dark-r1.png": {
+      "sha256": "ae5b53df66e88ad66e2bc3b7f622052266dfb6869af894f3d3236a1619b11af9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-privacy-pages-evidence-light-r1.png": {
+      "sha256": "a62758df47209ae9064f31fb96bf0038da75ed9c9bb8529cd5c14427ffcedeb0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-privacy-pages-quality-r1.txt": {
+      "sha256": "0f670e4356a0ac630f0e98547f305f4cda3687dfee949d7036f24af87fce242f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-privacy-pages-r1.json": {
+      "sha256": "a3602474064ffe1841643b0573f2d1e477e8399206d9851f809c994039368602",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-privacy-pages-receipts-dark-r1.png": {
+      "sha256": "f20e022da1b223270732ff284774bf5f2704d4313cae57e8edf0f0d241a8bed7",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-privacy-pages-receipts-light-r1.png": {
+      "sha256": "8342a16be062e025feb21b4556c4b264a75c94eba9d646eaf8b532224a836ed2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-safety-management-source-r1.json": {
+      "sha256": "21dc896e80a70669e520ce8ec8e6422ed703b18e662eb499ec5a21ca54c8e8e1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-safety-pages-appeals-dark-r1.png": {
+      "sha256": "cb8bc845bb4eecda28c71f4490f063f3bc372eb7e6139906a9f926909334442f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-safety-pages-penalties-light-r1.png": {
+      "sha256": "2f5591d949eb5f1893ceaa8c6ed0d23903f32f3ab99d46b95d65f476f035d652",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-safety-pages-quality-r1.txt": {
+      "sha256": "fa901f7600615e7dd700b248956495a8d7860f1482328b4e4222d6771f5c3c41",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-safety-pages-r1.json": {
+      "sha256": "1ac820c94356c46d357f5ee10e99d971dd59a5240736a5522728f64493708783",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-safety-pages-reports-light-r1.png": {
+      "sha256": "62c6dfa4da7f6ada48b53f64e3d3cbb12d01e883264885cede0a7b6e0b3934dd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-site-regression-drawer-dark-r1.png": {
+      "sha256": "abe3b210aa7dd830aeefc9f71d658fb9471a3372008bf8b9c78aeb533d0b9174",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-site-regression-drawer-light-r1.png": {
+      "sha256": "8a76f4a2d1e1fa8cd7c6a44c7569a0eb50db57e92926b72f7253b284b0f0d5a7",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-site-regression-quality-r1.txt": {
+      "sha256": "a019ef2fd3cdf6847c78ac0cc366ea2d09bdb8c6f8424f9964f4eb9148ac862e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-site-regression-r1.json": {
+      "sha256": "035c65540c8a1475c922ddab95fafc9aafc78e82f6f9fe74a473fae82668f978",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-wordlists-pages-quality-r1.txt": {
+      "sha256": "836780f5064a4fd3062eed7014d3d3cd0cdf0e39d3401363d05af8d6666c3dd6",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-23-wordlists-pages-r1.json": {
+      "sha256": "ee2a345291a428737a84f469d6096c2f598d34aff2601f83f8a87a8527007089",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa01-r1.json": {
+      "sha256": "985fd8085f4dbc31502e8eab5cac73ddd6b42883fc577da0e317b04b300ae77a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa02-build-r1.txt": {
+      "sha256": "7158795a5c6712dd030667c041910ea5e1d25729c66928ee7291a4056c8d32a7",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa02-check-r1.txt": {
+      "sha256": "25cc0075e75d239a1216f5671bdb8efe23e8e27717baf7422d7378ee2de2927f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa02-r1.json": {
+      "sha256": "ba3628a9bb6c5c484100e09481bceef68e14967187d17f8bfae6875b2145d5f9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa03-build-r1.txt": {
+      "sha256": "8bb11e799bd75674db255a9a7bcb864d16e29e3c84a1f9affc7bc5b534b709e6",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa03-check-r1.txt": {
+      "sha256": "56ec4c23fa161c1491a57c96b769061e4b781f1a4d00856a5a81e1f182a16d8f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa03-r1.json": {
+      "sha256": "7c40913240c7de9ee3896cc55963fba504331df7fbaf9441d04e0a2a50452705",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa04-build-r1.txt": {
+      "sha256": "d6f9df81e694d88ccd245338b901993dcafe0031bdaeb063a254f6bd30f2df9b",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa04-check-r1.txt": {
+      "sha256": "c1b77a39182da6fa2ac5e3e7cb41413aa97d36f60e959bc2167de27b3d604c0b",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-27-whispers-wa04-r1.json": {
+      "sha256": "d08afad93e77b436b9b33119c9978bf4073ac36efc65992d7b90d3ca0e526651",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-browser-r1.txt": {
+      "sha256": "5eaf994e13d489508ef0c4963cea43af0c01281d9a9d8d7a24de361d05092ee2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-build-r1.txt": {
+      "sha256": "a95f2620663fbd55b09ba0f8889c4e5b0b3f837cb02fb88b5fa5ea69c7643f1c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-check-r1.txt": {
+      "sha256": "0542607c3e8415898cce795e26390f501172182f9c43bf0ccd63010461d66d30",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1.json": {
+      "sha256": "7fdda66d30d4ef6697ed2e0bdb298ed7bee380c0feae5abeee2deeba633dfdb7",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/browser-results.json": {
+      "sha256": "7e440d67eca302088ae2980facc363ab95cd0504cc10993771164cf8324a2331",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-dark-desktop.png": {
+      "sha256": "f0154dbf2df0cbd2c757e4449fd8e6b791f929b76af0efdcdd6eb81490ea3d55",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-dark-drawer.png": {
+      "sha256": "98382a1f374d8c9948d1f08edd2c90a9fcdd8792c1a87301bdb7b45bd7f926c4",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-dark-mobile.png": {
+      "sha256": "83d4bb48d6138e62880d26490a5ea7a46d0f391025fee728ffcf34bf6e4191f0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-light-desktop.png": {
+      "sha256": "dfdc3a15ea21c3759f7ff46ffc72a9120cefaa4fa759e65201a954d97bc9f908",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-light-drawer.png": {
+      "sha256": "667f2f376474d00f5388a7016fd24aba7e35958ca586442b8154a0574b978612",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/crises-light-mobile.png": {
+      "sha256": "fc17a1e8401f8e00c60d9c36ffcbe95ec384b93e1c03e91a10179b7268ab646e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-dark-desktop.png": {
+      "sha256": "de2dedffa2d1639477e96725e255e9f5379af5546529dc146a6bbae4784bf3b1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-dark-drawer.png": {
+      "sha256": "23ae0d9e20a015ecb58ff7bfdb1ce7b992510c409e2067f64d5eae0a372ef160",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-dark-mobile.png": {
+      "sha256": "3411d1362e3e122e76a75fe9d1befcc928921966861bd957760da36f719df02f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-light-desktop.png": {
+      "sha256": "3413f8617b4451c92e0107766b7c0d552a6c70b1230bc1e8a36c6c9b92a84b3e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-light-drawer.png": {
+      "sha256": "f8a1ddce3f81223229e95d45db09f42834d19e9d9f841201c7b7167187fadd20",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/evidence-light-mobile.png": {
+      "sha256": "07771f718c20e6c10d52f470c0c6a5d1084ba8d5bf1f40bcb67313bf95bd5589",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-dark-desktop.png": {
+      "sha256": "871017fb02f09ea757688febac59ea8a31a6c1695f581be8394aa65fd6b80327",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-dark-drawer.png": {
+      "sha256": "4e3083075dfd862ea81ef2ed731577168a76aeadde2382efa4693a81240a1c1f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-dark-mobile.png": {
+      "sha256": "bbd4cfef9816fc7cc8c689871857f6c6bf6a7cad6c3921008fff3770fe229adf",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-light-desktop.png": {
+      "sha256": "9e030ad1dd4fc8e69a36b30dbe39aaeb9a331eaee7e0f0395d8326338f21dad0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-light-drawer.png": {
+      "sha256": "9d455d361a463d592c2e42a60a3e1e679680920a821be86c5e7ce5c24e9ffe4d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reports-light-mobile.png": {
+      "sha256": "3447ffd027a398b5dd838fbee1cbbc11c21c6c4037648410ffddbd13c82ef74c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-dark-desktop.png": {
+      "sha256": "691a320352367a6c9bf6e76b67ad6d157785b37bb1314543a399bd98e5c26dc9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-dark-drawer.png": {
+      "sha256": "ef4d298e1353b7809e56baef44b7302fe45abd4147461aa48335bc84b99c6033",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-dark-mobile.png": {
+      "sha256": "5a0ef79f16061e3f2463dfb3a4b0f4b6c6aea0ee52b9cdf04bce5ce4464af7c4",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-light-desktop.png": {
+      "sha256": "be66c7185262754a12c3354d642226770f584dbec99e9609dc8e8f79e45acd10",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-light-drawer.png": {
+      "sha256": "108a595aeddff4d558ce973c6a487fedf6261c4b78b7efc10a66d98441da5c55",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r1/reviews-light-mobile.png": {
+      "sha256": "5f42db2274c07a9844d7fee4cc7e2316caf7d9ed2095999b1fd301dacd1c1e35",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r2-build.txt": {
+      "sha256": "12de88637e4c8f56406acc9cb82ea1e2f6e211fabf982b16560358f8b4c6dcca",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-28-whispers-wa05-r2-check.txt": {
+      "sha256": "fb57d5ad91d6928eb2ab31e24782a54622fad03421aa6be94bd543495a7bf35a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-local-catalog-r1.json": {
+      "sha256": "c71a6c024168b77dfe98f9d898dc79ac315e92b9a7d62bc6e294eeb391a651ee",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-postrestart-read-r1.json": {
+      "sha256": "bbf7a44648a6d8c3e82fb619c101d5f7a28a0d04264c86c3feb2e84d3eff9c28",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-application-r1.json": {
+      "sha256": "1977f2ad6e642bfb479697f34698361ac463129267081f7087f57922381b4bde",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-chat-bidirectional-r1.json": {
+      "sha256": "53035e6e2848076e68bb3572957a515dfca887b0e11467e7b3f4792ed878d9a9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-chat-r1.json": {
+      "sha256": "e133d3942dedb1260ad84d1e9ea217f553d22c59c15bfdd467022ddb06d064ba",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-crisis-r1.json": {
+      "sha256": "8fab7189e5e378d58d29b8477981db70aaae65772a7751ae6fcef0602eebec3f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-ordinary-rejected-r1.json": {
+      "sha256": "7e2c61d30b28461979be8f7ed5d0cc10b1fcb9896fcf99afc80745ecf9466efe",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-school-approved-r1.json": {
+      "sha256": "009dfb21955acbc5ff185b15d23db7e3e934d6aa765cb58b33a9abd9fef5f30b",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-school-r1.json": {
+      "sha256": "2f6d9af30bf8424a64c05abe5a549a5a18ce75dcf2ffe1e0ee522ee463aa464f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-semi-r1.json": {
+      "sha256": "0e9a9629867b15757cdc2db124cbcba4cda3ff8ce30a40710bf2b3b1b5cfe243",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-regression-wish-report-r1.json": {
+      "sha256": "e9db3454f505b11eceabeaa6b7ae65602c30b33394fdac5bd8ec181997efd7ca",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-dark-1440-detail.png": {
+      "sha256": "8e48543ee368a48d2397257d6753208cfb0682f2701fd8c6a79c4622787c3788",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-dark-1440-list.png": {
+      "sha256": "86847426a35a2c249f7fa2fdff33164dfe4dff16f19fb722bed1d9ddfc44134e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-dark-390-detail.png": {
+      "sha256": "37737b2927988e475fe14acf833734a371c565e85f54441141eb5067cde34f5c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-dark-390-list.png": {
+      "sha256": "2163e7438cdaaac3005c345f2c3b2b1bdbcbe287dc57050b8b2b94a80fa4d382",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-light-1440-detail.png": {
+      "sha256": "cedd3642a059d8507fdb450eefb78f204eb5e1c00661ab3927bdce7ab22a01ad",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-light-1440-list.png": {
+      "sha256": "8686013b6d1bbcb44d0035123ccf6c35d9f45530825907f3a81f61ae39915ce5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-light-390-detail.png": {
+      "sha256": "31441bd21d91ee2a3b0c522494d06102f9a1c09c8114f3ba9473bab636c7c7dd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/crisis_operator-light-390-list.png": {
+      "sha256": "7a6ed160933e1c7b25824a07c95598e45be711691c18b6f2241357bda43a7911",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/result.json": {
+      "sha256": "1fc6996a428f50ca96bcbfb01deab21dc90e1ceced842f00bf76d8517a9e5bce",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-dark-1440-detail.png": {
+      "sha256": "e4971711bf4d654f161433b6e9b6004fb91378436138d52ffad3e3d16c7ca894",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-dark-1440-list.png": {
+      "sha256": "15b99899f58576886509ec047f175d581363aab1f58caf2dfde79e59d3610ff2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-dark-390-detail.png": {
+      "sha256": "37737b2927988e475fe14acf833734a371c565e85f54441141eb5067cde34f5c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-dark-390-list.png": {
+      "sha256": "7e5a7f4ecc34545c5316bd3cde60ba811443403803796212b52004dc0a1d76a0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-light-1440-detail.png": {
+      "sha256": "c50796fedba9e084269d015ea4b9e95794151370ef410a99fec4de9bfce2812c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-light-1440-list.png": {
+      "sha256": "57e4cacc1c53cea0a46eb719c7064f43cfc42cb09b9487ba5a13a29a8c27dd7c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-light-390-detail.png": {
+      "sha256": "31441bd21d91ee2a3b0c522494d06102f9a1c09c8114f3ba9473bab636c7c7dd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/review_operator-light-390-list.png": {
+      "sha256": "462538a49728ee145750389d8daf6c07c3ad816172155f2367eaab959df973a1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-dark-1440-detail.png": {
+      "sha256": "d76bdde45161116ea3b6dbbf8e5ae865a0c3cd58f5f65c5180626c6abbbdbba3",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-dark-1440-list.png": {
+      "sha256": "ac389096f1ca717287274847eb5d187417bcb1473117fb4f7c6df20340211739",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-dark-390-detail.png": {
+      "sha256": "37737b2927988e475fe14acf833734a371c565e85f54441141eb5067cde34f5c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-dark-390-list.png": {
+      "sha256": "7e5a7f4ecc34545c5316bd3cde60ba811443403803796212b52004dc0a1d76a0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-light-1440-detail.png": {
+      "sha256": "921cd5f70c7dc895c5c4692918c401d8146526f911d4c432aa5e2448cf43e93e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-light-1440-list.png": {
+      "sha256": "90894e22c562e0b9c553d6072464ce0d5f66242ad9271857afb3c39af49abc01",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-light-390-detail.png": {
+      "sha256": "31441bd21d91ee2a3b0c522494d06102f9a1c09c8114f3ba9473bab636c7c7dd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-browser-r1/super_admin-light-390-list.png": {
+      "sha256": "462538a49728ee145750389d8daf6c07c3ad816172155f2367eaab959df973a1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-build-r1.txt": {
+      "sha256": "255f906b66b1a6d73c377f21861f9a19848135d728c897a0a4a6bed2fa0e5dcc",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-check-r1.txt": {
+      "sha256": "668fd322aeb891318d74c07e0064efb9f983606fc0f62103082f8ffb4790c80d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-format-r1.txt": {
+      "sha256": "5b4a7fc2a0b36a7a278efec2511278c0c75eae24a44fbaaadc06781715dce01a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/browser-results.json": {
+      "sha256": "7e440d67eca302088ae2980facc363ab95cd0504cc10993771164cf8324a2331",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/crises-dark-desktop.png": {
+      "sha256": "fd5384990459b050d5cb3ed005a985b827fd6df7e3f14079d7b90ed42e1f0263",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/crises-dark-drawer.png": {
+      "sha256": "b242d591e5000a7c4ae0c99e43a30c55a42d07f1badcd08fa695b4bd929ce4e5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/crises-dark-mobile.png": {
+      "sha256": "83d4bb48d6138e62880d26490a5ea7a46d0f391025fee728ffcf34bf6e4191f0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/crises-light-desktop.png": {
+      "sha256": "0f4b580a74df819fa43703449b53d5c93a7f763f32b0c5cc21ff588a95ffbc7e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/crises-light-drawer.png": {
+      "sha256": "cf3f245bcd28e35578568f65780f686f069f87cbd31b4bc498124fd4f14fa908",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/crises-light-mobile.png": {
+      "sha256": "fc17a1e8401f8e00c60d9c36ffcbe95ec384b93e1c03e91a10179b7268ab646e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/evidence-dark-desktop.png": {
+      "sha256": "b0af1e34ff64282e25967407e2c33cc28eaa1cad9cc74ee085a798cce7db5ef8",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/evidence-dark-drawer.png": {
+      "sha256": "4a05ea41bd7ce54f230190445609da717c16f0fec75af76d96b004ed5771c018",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/evidence-dark-mobile.png": {
+      "sha256": "3411d1362e3e122e76a75fe9d1befcc928921966861bd957760da36f719df02f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/evidence-light-desktop.png": {
+      "sha256": "a4f0ec0e0d16224be5a95a6a5a983789566bfa80099bb13706f2641b90a85ec6",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/evidence-light-drawer.png": {
+      "sha256": "b04f7d7ba6dc5a499230e68219f189a531562bbb297f8cb674e39fefb7aa40b4",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/evidence-light-mobile.png": {
+      "sha256": "07771f718c20e6c10d52f470c0c6a5d1084ba8d5bf1f40bcb67313bf95bd5589",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reports-dark-desktop.png": {
+      "sha256": "bfdcc4e2c1ded3c3c08ec375e24cec85cd1a3dca5bdeebca96d562e6ca62e0b4",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reports-dark-drawer.png": {
+      "sha256": "a633ae3a992c068dc2dcc112cf7ea9b60e8ec37a9506e40e8fedd33c5b96f35c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reports-dark-mobile.png": {
+      "sha256": "bbd4cfef9816fc7cc8c689871857f6c6bf6a7cad6c3921008fff3770fe229adf",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reports-light-desktop.png": {
+      "sha256": "416f8ba4f5a1cc5df181935f579a400bc9d092110ddc945643d095d66f746266",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reports-light-drawer.png": {
+      "sha256": "6d648d9dd8927cc63b8477a2d589633589551e44bc0f00647683b1a780aef530",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reports-light-mobile.png": {
+      "sha256": "3447ffd027a398b5dd838fbee1cbbc11c21c6c4037648410ffddbd13c82ef74c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reviews-dark-desktop.png": {
+      "sha256": "35194bdedd3707123add0ba6091c6946e0a917c4d8180550ad08036d5ce3ceee",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reviews-dark-drawer.png": {
+      "sha256": "cc6a90504285593db99bb4b7e70afc822050ce797538f9565aa6c9e6886e101a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reviews-dark-mobile.png": {
+      "sha256": "5a0ef79f16061e3f2463dfb3a4b0f4b6c6aea0ee52b9cdf04bce5ce4464af7c4",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reviews-light-desktop.png": {
+      "sha256": "347e91093a519d89076130a0a0057ff9a36a2fde0d0d38aeb33f0704118ea108",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reviews-light-drawer.png": {
+      "sha256": "413172159d0b3ff1ecad08ad4b1553900930e5faf25f52d7fc29df91b4447f13",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-whispers-regression-r1/reviews-light-mobile.png": {
+      "sha256": "5f42db2274c07a9844d7fee4cc7e2316caf7d9ed2095999b1fd301dacd1c1e35",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-admin-users-workspace-r1.json": {
+      "sha256": "0afb4057f71777a8c8f336580772a20167a7ff96b6705927929cacc0c04b7d4d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-application-b-r1.json": {
+      "sha256": "8ca52f26edbc3910d495f6c4456555677f583aadc7b4fde63cf7e26a5f12d098",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-capsule-b-r1.json": {
+      "sha256": "055b7594d60a2c77bf2c837d53582621e5840639733329100f5cd621815111bc",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-category-live-r1.json": {
+      "sha256": "0f2edaea00dccf2f5856880874d253f42ba26550ae980c0ef315fc966eec848f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-chat-a-r1.json": {
+      "sha256": "77b67655cf5b3f2a41a1f1155d7c5b953c0fed751d21a44ebe503c84960c37f9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-chat-b-r1.json": {
+      "sha256": "b7869062c314353bdc39b61dbcb9dc5d5f80157a1dd66dfe225ba239197a99d9",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-comment-b-r1.json": {
+      "sha256": "477f190201f0e68365d2677ccc139ae5cd996606f5e6b2dfaeb6b86dd9bffb8f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-identity-b-r1.json": {
+      "sha256": "1c7f2f584524d93c2d30e92fb52b527c5011aa237c0a20574aad775f06628496",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-live-r1.json": {
+      "sha256": "9aba78572602df93c1f8db988b7a08d887369cf5f9edd328d9e0d66083327e76",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-nickname-b-r1.json": {
+      "sha256": "5b2badfeee47c88b3a09d9d34b5017c424f4e55c1097621ce5689490362e53af",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-resource-live-r1.json": {
+      "sha256": "edec505a4117e82e64ef6b09f113c4759697445650e7066b2c2ecbd500020b3f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-resource-offline-r1.json": {
+      "sha256": "099928c8ac6847272b18c3c23f65d035221dc1b4c5160b3ac5c4cb87f9239ea3",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-resource-publish-r1.json": {
+      "sha256": "533c42534d75f4778a41fa14c2d83554952fe23248c537fbc44a52af76b91971",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-review-queues-r1.json": {
+      "sha256": "0ca84e9318fad20532cd20591a09d3d9c2b4fccb555f60acae45cc7eb0ec4851",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-roles-r1.json": {
+      "sha256": "a44231bca02a9fc3eea7b224c706fb2176703518f665df15c99dee460fa69ef7",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-story-a-r1.json": {
+      "sha256": "6ea096bc6c2b5f6bf79463e8bc151c12a78f68a5858fd945e70bbf856b0a0000",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-whisper-a-r1.json": {
+      "sha256": "db3db3b72362db1e4ce0e7e1b020983e055a3ec695632b56f6d3a03ca3d095f5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-whisper-nickname-b-r1.json": {
+      "sha256": "491a0f35f3f64c4dde0b16fbb364248d86b99afb303aad57b6ab93cc9258ffb2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-local-three-client-wish-a-r1.json": {
+      "sha256": "5ef569515c8c03b95a9ff825c2fa2dceb0d292c1845f5614c2ebe91a3a53c744",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/result.json": {
+      "sha256": "59b5990114235f6801b54916aed32816f2aa0cb622bd24d0721800e53f64819c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/review_operator-category-conflict.png": {
+      "sha256": "d4b3a3886b7ca9fb0953eab819f3375a770db38463589a7b868f7ab326f6fcff",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/review_operator-dark-1440-list.png": {
+      "sha256": "4db4c9878e87ef57bd240b8ce7afd665673a68627577026171bfcf7bdcbe072e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/review_operator-dark-390-list.png": {
+      "sha256": "3945e8e3b9e03683e8d6b558c6940d269355d58758192791c6bc8eb9cb40db7a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/review_operator-light-1440-list.png": {
+      "sha256": "f92e8bf0e0ffdf58d01608e7b5f00dadb37235694eb2cc74c3972013781d2d74",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/review_operator-light-390-list.png": {
+      "sha256": "94bac413735ff2e962bcd128edeab1e8a758b35bc312fdc6291ea49c4052fe0d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/super_admin-category-conflict.png": {
+      "sha256": "482cb925aeafa72967a01eb1ad74447cfa8345b47b7781f20cefe592c224021f",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/super_admin-dark-1440-list.png": {
+      "sha256": "a30d0fa782ae8ba1d96fc71bd0e70397ad07960718ba97765e74f5f0a1660931",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/super_admin-dark-390-list.png": {
+      "sha256": "3945e8e3b9e03683e8d6b558c6940d269355d58758192791c6bc8eb9cb40db7a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/super_admin-light-1440-list.png": {
+      "sha256": "6ef56deaa993282f589851df01ab953901a15bd8812ff3c095950e55c26a42af",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/browser/super_admin-light-390-list.png": {
+      "sha256": "94bac413735ff2e962bcd128edeab1e8a758b35bc312fdc6291ea49c4052fe0d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/build.log": {
+      "sha256": "201d2dfeca912597c3b3d58dec233125994e42de7fcbae6f4a8c095b9a6ab440",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/check.log": {
+      "sha256": "298cb49064bb6ce689371f440f578a62936ea78f59210588450aa46e6e1e5a19",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r1/result.json": {
+      "sha256": "528aabf1576e25b7f2794b138298ce8c5e719112a25d4dfb911c31016b3d4e6a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/result.json": {
+      "sha256": "59b5990114235f6801b54916aed32816f2aa0cb622bd24d0721800e53f64819c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/review_operator-category-conflict.png": {
+      "sha256": "b85e257003ac1b4c7521a38ea943f41dcc643c2193160ed26f0fb0e03f176bf0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/review_operator-dark-1440-list.png": {
+      "sha256": "65564811ec8d75cc4bc0e553315ce3f17e9be2f5eb66c09f7c44e5e8db4c52ac",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/review_operator-dark-390-list.png": {
+      "sha256": "3945e8e3b9e03683e8d6b558c6940d269355d58758192791c6bc8eb9cb40db7a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/review_operator-light-1440-list.png": {
+      "sha256": "7a369e8bbdf386ebd8b4cbb98722a64d96de39b9349b44c8de582e8df7eced1d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/review_operator-light-390-list.png": {
+      "sha256": "94bac413735ff2e962bcd128edeab1e8a758b35bc312fdc6291ea49c4052fe0d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/super_admin-category-conflict.png": {
+      "sha256": "324d1a80001239fc0e06af49226e9b3e3b055ce819cd528f4be0eb34992d92cd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/super_admin-dark-1440-list.png": {
+      "sha256": "f31d6708e5b02d7bce9ebc4ce5c20bab7ad28760fcbbdf726f7c2cfdd7fb66da",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/super_admin-dark-390-list.png": {
+      "sha256": "3945e8e3b9e03683e8d6b558c6940d269355d58758192791c6bc8eb9cb40db7a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/super_admin-light-1440-list.png": {
+      "sha256": "6ef56deaa993282f589851df01ab953901a15bd8812ff3c095950e55c26a42af",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/browser/super_admin-light-390-list.png": {
+      "sha256": "94bac413735ff2e962bcd128edeab1e8a758b35bc312fdc6291ea49c4052fe0d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/build.log": {
+      "sha256": "be207dce299fab214b82e5972934bc514cd6d48d9d6d4c749f2e6a465d008a0c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/check.log": {
+      "sha256": "7ec0d4051e5ebd672a9bd65bd8aef7d6d22f2cb4d5b4a53ea65f26747190fb49",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-admin-r2/result.json": {
+      "sha256": "3272cabacc5e0141a22964822e5f4055b7bb010220fbdda4d736885389c677ba",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-contract-r1.json": {
+      "sha256": "91ee5b46b68e67f3bccedc22d9edbfe95ef252a9baf9f26f94f89509d9e9d4f8",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/browser.json": {
+      "sha256": "4fe2a12eef7a9ca710885d432d6fdc05422991053a68d03797bc97e616ce617d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/category-create.json": {
+      "sha256": "bd82c08cd6304cdcfd7176a05169555b6acd92dbd73bc992e527af1821d4dc29",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/category-in-use.png": {
+      "sha256": "4eabd85774b322f9f11b93154dece8ac069e90081e1e1c53defa2c0ebc850057",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/feedback-summary.png": {
+      "sha256": "b8bc376ed9667f5b0612f29c8f530658a971eb9fc7da23a0a9c55432d757aff3",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/feedback.json": {
+      "sha256": "05e5793c524ef3d12695f7d6ebf8c6ad2fafbadc7d505c5d5093af870ae38bac",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/list.png": {
+      "sha256": "f76c1eadc09848904d566c82a0d8d0599ca3b7566aae8d5e2bf8847515915922",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/published.png": {
+      "sha256": "6f8bd7144bca82a9b24882f710992e6258ba5264f66fca0dfbdfcb6204fdc4f6",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-resource-plaza-live-r1/result.json": {
+      "sha256": "66aaa92d7ce0a6e8a8d0c7c67165eb99b3100d75722bc44cb34fca4505ec17a3",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1.txt": {
+      "sha256": "c60aadaa62fc9e0c3d20a1f20aed07cce6bb774b8a8de0a76fb8b6c666e4a8c5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-dark-1440-detail.png": {
+      "sha256": "8e48543ee368a48d2397257d6753208cfb0682f2701fd8c6a79c4622787c3788",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-dark-1440-list.png": {
+      "sha256": "86847426a35a2c249f7fa2fdff33164dfe4dff16f19fb722bed1d9ddfc44134e",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-dark-390-detail.png": {
+      "sha256": "37737b2927988e475fe14acf833734a371c565e85f54441141eb5067cde34f5c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-dark-390-list.png": {
+      "sha256": "7e5a7f4ecc34545c5316bd3cde60ba811443403803796212b52004dc0a1d76a0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-light-1440-detail.png": {
+      "sha256": "cedd3642a059d8507fdb450eefb78f204eb5e1c00661ab3927bdce7ab22a01ad",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-light-1440-list.png": {
+      "sha256": "8686013b6d1bbcb44d0035123ccf6c35d9f45530825907f3a81f61ae39915ce5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-light-390-detail.png": {
+      "sha256": "31441bd21d91ee2a3b0c522494d06102f9a1c09c8114f3ba9473bab636c7c7dd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/crisis_operator-light-390-list.png": {
+      "sha256": "462538a49728ee145750389d8daf6c07c3ad816172155f2367eaab959df973a1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/direct-actions.png": {
+      "sha256": "b43995b6f9dcfb11a1aef29127f5474d073d6cd13e48bd99b2a56fc19573ccbb",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/result.json": {
+      "sha256": "9acce502c7b5c4dab8b010a2e8205b2ec07e2620711a5d5982530c67a0946d40",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-dark-1440-detail.png": {
+      "sha256": "e4971711bf4d654f161433b6e9b6004fb91378436138d52ffad3e3d16c7ca894",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-dark-1440-list.png": {
+      "sha256": "15b99899f58576886509ec047f175d581363aab1f58caf2dfde79e59d3610ff2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-dark-390-detail.png": {
+      "sha256": "37737b2927988e475fe14acf833734a371c565e85f54441141eb5067cde34f5c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-dark-390-list.png": {
+      "sha256": "7e5a7f4ecc34545c5316bd3cde60ba811443403803796212b52004dc0a1d76a0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-light-1440-detail.png": {
+      "sha256": "82c26d86eb98dc8a3454abbbb0f65c24a62ca8d2f6d79329bd8cb67553345316",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-light-1440-list.png": {
+      "sha256": "57e4cacc1c53cea0a46eb719c7064f43cfc42cb09b9487ba5a13a29a8c27dd7c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-light-390-detail.png": {
+      "sha256": "31441bd21d91ee2a3b0c522494d06102f9a1c09c8114f3ba9473bab636c7c7dd",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/review_operator-light-390-list.png": {
+      "sha256": "462538a49728ee145750389d8daf6c07c3ad816172155f2367eaab959df973a1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-dark-1440-detail.png": {
+      "sha256": "2a6b66869e461dab8ee4d85daeccd4466daf9276d15e010e3468fcd7f3d18ed6",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-dark-1440-list.png": {
+      "sha256": "ac389096f1ca717287274847eb5d187417bcb1473117fb4f7c6df20340211739",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-dark-390-detail.png": {
+      "sha256": "5eae7c6234efad2dac3b6c51b522ec7e52e17a3ec130ad3dca8c2d7dde2808b2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-dark-390-list.png": {
+      "sha256": "7e5a7f4ecc34545c5316bd3cde60ba811443403803796212b52004dc0a1d76a0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-light-1440-detail.png": {
+      "sha256": "10e5c72537d9a2ea69a5c8e8a953731e1e52c364496a78b385f90b53dc73c668",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-light-1440-list.png": {
+      "sha256": "49ba5ce438c92131883c347ad63ff88bd87981d91486ec46d4d6690c684c645d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-light-390-detail.png": {
+      "sha256": "96fc9394ebb96f20a7a2c1f90d22ba139a0df1edef1b6e67bc1538abe3ec7848",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-browser-r1/super_admin-light-390-list.png": {
+      "sha256": "462538a49728ee145750389d8daf6c07c3ad816172155f2367eaab959df973a1",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-build-r1.txt": {
+      "sha256": "23a25f462afd8747cf14d88fade3aa411dcb6d9065935c063b7fbbb80ae55b6d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-check-r1.txt": {
+      "sha256": "60c8a5f92fe7bbc10cba71822eee5e59e6dee55de1f7ccda23292b486c544263",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-format-r1.txt": {
+      "sha256": "8f324bb3bb0de5b398988c68f978b0b3938db573d91ab462d39ca842affc3cfa",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/01-normal.png": {
+      "sha256": "831c3f04c44ef575aab40df04008564c37f46544b5a30661c87a3c9feac6f94b",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/02-ban-confirm.png": {
+      "sha256": "97f864a01cb8bb7aa4c43192b05c4760b40e8f7b0501d0d32cee6f87454eac60",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/3-ban.png": {
+      "sha256": "70ab1dea102022ce8fee7395312ea9b649c2b392ded698e760a08f4f77e9e46d",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/4-mute.png": {
+      "sha256": "c71959d1a685f53c2cdd5e0954c19659746beb7056a1892610082b31ac1e1a77",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/5-unban.png": {
+      "sha256": "f9acad7ef5a95ad00687505f1b19e27b3bcc16330a45b9dece37f735fe049e1a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/6-unmute.png": {
+      "sha256": "ad7c0c844f9f3c54e2b142414e14f54f0ae4c643ce5084f6c52530072f9a7902",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/browser-result.json": {
+      "sha256": "9e49556e34bcef20c8878f6bc55fd8e998cca7bc57cca21550991ceb366c9401",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/crisis_operator-readonly.png": {
+      "sha256": "41be45859bc1a082e440fc8d2c4e206c048fb57ca4ed6d813e8089801ca21fb5",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-live-r1/review_operator-readonly.png": {
+      "sha256": "74cd40586ebe068442ffa782d047aba115cf848f91ccf5884efa285ee150c60c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/2026-10-29-user-restrictions-workspace-r1.json": {
+      "sha256": "a11677b02389f50bb0e06a6a292417ead1e9c90a2492aac1aa37a55a06c65f4c",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/T017-2026-10-21.md": {
+      "sha256": "91b21f48e0820cc4a323eb088955de2c55e230fc107c49fd2b29e9c97ad2fbcb",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/T017-wordlists-v0.2.0.md": {
+      "sha256": "0682d68c317d7068081d34595788ec5617111f4d9c5f4cf2cc89ae810964a62a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/admin-contract-v0.2.0.md": {
+      "sha256": "43c5f35560a06be64eb7d9d0c6798dc619cd9fbd7febf8515978a08e348b76b2",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/validation/admin-int003.md": {
+      "sha256": "de3dc2ec0080d9bde566432f65ea4c97d47d00a261c59de8f0126522ea477b6a",
+      "replacement": "development/admin/README.md"
+    },
+    "development/admin/whispers-development-plan.md": {
+      "sha256": "7134ca12c1e11eaee9a16bceb45e1ab16c8a0e4e23735a9f7f0ae779aed1ccf0",
+      "replacement": "development/admin/README.md"
+    },
+    "development/backend/admin-auth.md": {
+      "sha256": "0713f75b7a07a635a69cb456e81f9e52e60b2af5d1f592e8e2b4acbee2b1d958",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/application-assembly.md": {
+      "sha256": "cbe4cf665a962ee7dc937e814f7b4f2a96bb08394c4bb05afddcf46e76ef4c9c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/business-schema.md": {
+      "sha256": "53646c21840713165ceaba839f6464258b3c15b45840ccd3e02be578a05fd325",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/change-files.md": {
+      "sha256": "4763774d7827e29fa2e4f8312a611e14a6d8691abbb82624027ba37b2adcdb98",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/command-framework.md": {
+      "sha256": "9ab59f510897bfdb8578eae6436a870046a7eee774115094f581f1bb350f168c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/contract-coordination-2026-10-21.md": {
+      "sha256": "61988b2dbb5500a5d2add26b589ce67ada962bcd54e11fefd5cee23c574b2551",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/contract-int003-handoff-2026-10-21.md": {
+      "sha256": "df977c45a183a3245bb3e66548bb2710e5130f37cffe2234e5d4020489ff4a92",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/data-foundation.md": {
+      "sha256": "bb5aa415b9a90728d971b4beb2f80c5057683e469e6eb7e78d38f2425bbbffe6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/dependency-deliverables.md": {
+      "sha256": "a1cb8bc457bff752c1a199260ec2caa083c4363668540f73cbe2468d07124da2",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/development-business.md": {
+      "sha256": "8e64fcb2ac21a55d4b2c6cb7746e5455ad1001330998fe000d834087d3399971",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/docker-middleware.md": {
+      "sha256": "e9cb08af3eb6c07a1cd023f7cab6a998bf96775022168e4c475a06a7ffdb3914",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/environment.md": {
+      "sha256": "1c46a2e048b34858e706dceacd8ce17716d66a5cd843c2a0b2a80875798b39f8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/foundation-manifest.json": {
+      "sha256": "90293438a19b7e27ff47b7a88fe728213080546623d1b953cb29389db927b1e3",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/host-development.md": {
+      "sha256": "461ff155ac13d26372396c5adde45e4a0eda8df63cb455f275650a3c8c996048",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/implementation.md": {
+      "sha256": "c6361ca0432d197bc831ba5b4a0a9a76f22cc5a79a7e810e97133f998d2b4d7c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/input-verification.json": {
+      "sha256": "d832ee207b375857bd4dd9dac6ce0a2e9e39a72ee6b9a9e4a4bde3e6778023d6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/int003-r2-readiness.md": {
+      "sha256": "c4dbdf7bb74f3b7d9c2e1d6318753d3afbb5e6deba2be80682777058edfc6d85",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/middleware-decision.md": {
+      "sha256": "00c9bdd75f2d76c59c3a2f95e93c4794df2c53194359c482b4b607a1c77013a1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-application-matching-r1.md": {
+      "sha256": "c5883f3462a990bc5d6b5e927f58f74b37034ef2b438847335c31329a767d276",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-business-message-chain-commit-r1.md": {
+      "sha256": "46976ed9b598068560d6dd50e0ea973ef219b945105013f4d452a23284d175c8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-business-message-chain-r1.md": {
+      "sha256": "3398a25b3f14bcbc1b24a44909c3f035882344ebaafd55f0568a78bfa30cf9f2",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-chat-delivery-r1.md": {
+      "sha256": "07f29c39d9a45436b8a435b222d65fd42ba1f635403f52179e923da2d1c1fa87",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-content-moderation-commit-r1.md": {
+      "sha256": "ce51262f817aa1218567e3784deb7a089ba8ed373a1e002f0fa312665e52526a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-content-moderation-r1.md": {
+      "sha256": "69bcf2aa811745fa5925719300bdd92225749198d4d8f9bd0bb8115670d4476f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-content-worker-r1.md": {
+      "sha256": "4539d1ab61e5272c9b17636386a4651a587b942cb0a88b626e96dba88c1b5d10",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-dev-layout-r1.md": {
+      "sha256": "3099345bbb9631eafc1ea9b2dfd09d7943090b206657f5e6861633b35292facb",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-docs-governance-r1.md": {
+      "sha256": "33548f726784f1f72f159f16b11704e227574d5165600ad0c5d3e8e3946d452d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-host-development-commit-r1.md": {
+      "sha256": "bf0d9657fb848c99fa4a33a9e2be2e88f3897e7ff020a1448af8b0ab6c192b08",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-host-development-r1.md": {
+      "sha256": "52e01ed20fb6f902f3ac4802c2d78d88e435e0f56f3ddb3b120b283f1d322e54",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-native-middleware-r1.md": {
+      "sha256": "0cd37b6fa5cc5f79b3d6220bdd99aa82a36ab1f6f401f5815d6a1d29a80f05b5",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-safety-governance-r1.md": {
+      "sha256": "1397392dc5e5d9bb45223f8c579a9a9374e418cabdaba5fe259ca8c098ee437d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-22-story-sharing-r1.md": {
+      "sha256": "01009e667a6c69ef6f7782376fb8dfac639a9fb12da22497026ce7dfb9ab6476",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-crisis-care-r1.md": {
+      "sha256": "b2a30f6f5eec5c06b82a2a67c1b55b441fb6d24fee3f76646f4411d86129916d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-local-crisis-api-r1.md": {
+      "sha256": "d5680952e6bb6345f8d311b220a37d972bca48167020e0011cc114f8521e5cdc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-local-crisis-commit-r1.md": {
+      "sha256": "9e3fce45c4c4a74d368fec69ba3690b24d41e87566a14b41c8ed1176368774f9",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-local-privacy-commit-r1.md": {
+      "sha256": "9b32c32e9573d05c15f42ede528e2ad69a26fa7a42f796a1a85a81493fc3c614",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-local-privacy-startup-r1.md": {
+      "sha256": "f9d43684204adacfd00b5e6178d2cd6648b236fffd98d31187c6a204a42c2fb5",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-main-merge-r1.md": {
+      "sha256": "c8fefc0b1d12a0c21b2e92bd31cf58b7d0ba113820cea2e5dbeb0f8d7d13da8a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-manual-review-commit-r1.md": {
+      "sha256": "8b9f5eacddf4ebf05663b21daa6ef5e2317d5d4527b6757f3f6298ccf330a24a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-manual-review-startup-r1.md": {
+      "sha256": "fb965ce270c525da6bb4c37be2247c6866b51e56c59a556d80650aa7f0cf2e04",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-23-privacy-deletion-r1.md": {
+      "sha256": "bd22511e1567eec214acdd0ffed8946e17b294e905aade108f269c239c1a9e64",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-blocks-commit-r1.md": {
+      "sha256": "2f664c44251af5ba1791799180455a3447e0384d47b5ca7d5b5e3f47d5608902",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-blocks-contract-r1.md": {
+      "sha256": "6052c0f7745a09dd18ecaaca89b2804d1cb6ce9adef0cc995c893a50bb8ab672",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-main-merge-r1.md": {
+      "sha256": "7b651cbe2a080673e61a3479a94ceff3831cbcb55e18367056b2b78e79f570ca",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-public-profile-commit-r1.md": {
+      "sha256": "7b1af9cd44bba9f69c05dc7b6930df2cd42b8e1d94c5907a12ac3aea3d4eaff8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-public-profile-commit-r2.md": {
+      "sha256": "b4c40a00ca005f107271eae48f90d091d2a68eda8ddd348bcab8abe80a4447fc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-public-profile-p0-r1.md": {
+      "sha256": "b1fa365b3f6a9d02476ca2a082cd1b8a00e7641962b66d48589293be1d38af3b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-whispers-backend-plan-r1.md": {
+      "sha256": "9747da9604454af5e1bb828a741e16fa7afaf499efe60cfbe112425327a82eec",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-whispers-foundation-commit-r1.md": {
+      "sha256": "0458d51fce532cbfbb7f7949f715537d70281e8fab6030f91ebd62964a293182",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-27-whispers-foundation-r1.md": {
+      "sha256": "c5b7bd23ef8d6fb6ce38622d2a2133286a3a1c53522c173f64fa499bf84f2229",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-real-integration-runbook-r1.md": {
+      "sha256": "21b78d39599a7f9c4ae110559c5d2cbf263dd3b646be174f7afb6a904789317e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-whispers-b09-integration-r1.md": {
+      "sha256": "843a324a01a72918dbe0fb525b24d2e49b62c31c3f41fcc0cd30747d44385ff4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-whispers-capsules-r1.md": {
+      "sha256": "327022cd328e1d4807a4636ee0fdd7befdcd0b76f60196d4d650b9546bcadac4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-whispers-governance-r1.md": {
+      "sha256": "08bac3f133d1f36ac8d57bf76e3dd3f8907f12cfd5f237a8268a9591c86d3c00",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-whispers-interactions-r1.md": {
+      "sha256": "1674a74366d0fab58ad2056b07bc0121f40c56d11d750372b1a269f059124f95",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-whispers-privacy-r1.md": {
+      "sha256": "23715e5065b0039dd11147499d8396b4d83e165af50cfb00cc5f9ae63b2affd4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-whispers-runtime-r1.md": {
+      "sha256": "5932471a9be7badd0fdfa708b0c379ae7873b6f67727df90f6f1663c544603e8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-28-whispers-text-r1.md": {
+      "sha256": "beeba3880b0ff05ddd300c8f1bdbff75f8d96b3f9e26d57f744b6d57809b77bc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-admin-users-commit-start-r1.md": {
+      "sha256": "fa1612a7e19b4f05b72af1b85fefba633324aba862d54204dba88b079fce3999",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-admin-users-development-r1.md": {
+      "sha256": "9bf345dfbac3a12f5a20b1134dbb90fd79968931fdb9bbe5de7cb0240bea432a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-admin-users-implementation-r1.md": {
+      "sha256": "ae8240ec9651b312cec8225b6c6f0e43e3f0da9c8088f364353c64db2363dc48",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-admin-users-test-data-r1.md": {
+      "sha256": "5db5fc3ea07d65d189f47ab7477ede3de7063cf2ef0c103d970635f8141af699",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-local-three-client-integration-r1.md": {
+      "sha256": "a898a99990fe0b014bec713b37ad341ca173895ff2f220828067eb7c5baa3946",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-resource-plaza-commit-stop-r1.md": {
+      "sha256": "98a97d09f143fa70e5479410621d850c3de6ca4567b8d138287e2f39bd5589e1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-resource-plaza-development-r1.md": {
+      "sha256": "ec7944df63543daf92f9ab7e921029a22e9811846dad6ab80e6cf5f17520d6ab",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-resource-plaza-implementation-r1.md": {
+      "sha256": "7e263a3ceb07d3b861d691c794e4de88cca0941477c67c4d882df9f6c1ac1042",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-resource-plaza-local-start-r1.md": {
+      "sha256": "7ad7d866a2dd1d855103c037aba65669b60e259c339c2ed30d6744c5eb51f867",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-user-restrictions-commit-r1.md": {
+      "sha256": "2c5084c355c19aac9f85d3a9df25807af2a1798a49b0b73645698050f9bf9cb8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-user-restrictions-commit-r2.md": {
+      "sha256": "9d4eede06c7ea03920f93c3e961c9ccf64f0035379b2272a0084e87fd26dd290",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-user-restrictions-live-r1.md": {
+      "sha256": "e20898b97f39b03b99bd7a917eb4d0251c56130240ca4db60d5b71d8e095e73c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-29-user-restrictions-r1.md": {
+      "sha256": "e999f9746afcbffc79b009baca398ae4c4d60d4757aee121717dde822145fed9",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/2026-10-30-branch-consolidation-r1.md": {
+      "sha256": "41863651e5eda11657bdc280afb1fc9f2052859338f23f17f36ba7dc4921dadc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/README.md": {
+      "sha256": "2c0aa39c7a151c074a41cc8e7148ee0f8d3707e785335d900f532eebc4b8b5cd",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/orm-refactor-2026-10-21.md": {
+      "sha256": "29fb010f6c8148c9460948100fbed408e178e3253cc0018958c379498141bc12",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-01.md": {
+      "sha256": "ba77aa95fb9d959c1255677f850a324949d91112bb6592a1acd38650444b5838",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-02.md": {
+      "sha256": "1986d0d2acd57b26c595407ab78765f4b292051630ff846efcc635e0f1593c4f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-03.md": {
+      "sha256": "61289916e8cc2b9265366afac0ed9a9778d7856228172dfbc09b78ddc6e03ec1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-04.md": {
+      "sha256": "bab02d5f91445d9c4a098ec0f2edda700583282d5506626ab82287e836dbcdf1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-05.md": {
+      "sha256": "1fa7944d6faed6be8759e7416c51488ef0693e70df02892571d6c10de54587f0",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-06.md": {
+      "sha256": "ec966611180da591c3b2ff042c1b8dda25702817870c58222e55057021ad8322",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-07.md": {
+      "sha256": "d206e18ba7c6e1d3fddf0b805ec382183b37162c65a5b8230ed4508cd7ab275f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-08.md": {
+      "sha256": "9c1b4dd22e839c4d0d20d3ea5bfe0f20908bc4f6d96474689cf9a579667aa9e7",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-09.md": {
+      "sha256": "acbf3c94d890cfb6afdd8968f21c9b6731abc7aaab137b0c777c2f52395659ca",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/phase-10.md": {
+      "sha256": "50f365d81168e98df4b42fd7d07e1ee60bf0f73bc9a134e3344a7a8c1d1a0708",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/milestones/t007-mq-validation-2026-10-21.md": {
+      "sha256": "8c6b579ed1d1052880d6e4c50b91394e1cf5543d219b0a28ef44ad0572a9ff41",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/observability.md": {
+      "sha256": "d5aaf0273695cab9d22d242ccbb7cf29ace59c073ae9beafea42976a3b045a9f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/operations.md": {
+      "sha256": "9cd5ff861531dfd6fe37538a2579a3814f3ecbbcdaeade0c8dcd2030cebd2a95",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/student-auth.md": {
+      "sha256": "3d57244016a843a8c154a640e1ad6c8c0af78cbf7c530303d8a1237c9298bcdb",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/student-card.md": {
+      "sha256": "7b31882ecef611068428dbae6691ea676d3674b88fc47235d020d5e4c35e2d81",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/t004-followup.md": {
+      "sha256": "7501beae5658d0a9c21759a22ff916969056c1919ac6d4c6f7c02f6f619f0072",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/t004-integration-evidence.json": {
+      "sha256": "f770b3237e3184bdd041be1d76918d99e6b212c2fac7ee6257b3d8df94fa0aa8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation.md": {
+      "sha256": "db97ea6ed2d39d164bf51a72e1a0058e4cfe4191430c343a03fd96ac7e636377",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/.gitattributes": {
+      "sha256": "d49663e8927aac646b34fd7e59e31a955de324fc1bd94709723623b0faacb5cb",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-application-matching-integration.txt": {
+      "sha256": "9eb6a9dacba50f1be0f2824659692db19f14913fa2eff5527f301d20eefbd5d4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-application-matching-r1.json": {
+      "sha256": "0683c74d07009d320732b6d86580ed4b1fbc17cce18b3273023310f5dd1fe7f8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-business-message-chain-commit-r1.json": {
+      "sha256": "3cbffecb3e19f650e125df944048da9ae0f6f6b9d47cdb2067f06b51a479761c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-business-message-chain-integration.txt": {
+      "sha256": "1de2130b676e02d6a75ecb32949909c8c7ad8b4df339ecdde53f4c03cbe15535",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-business-message-chain-r1.json": {
+      "sha256": "b46d6facb90f0f457a74c2194f7f995c16cadfaa79da1620b176952169aedd30",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-chat-delivery-integration.txt": {
+      "sha256": "5b6d9ee12ff64c7084f3ec738800f83b0ac63f755b3a480b97dff110459ac2ab",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-chat-delivery-quality.txt": {
+      "sha256": "33001fdfd82fd3a5e2705f69ac54f604a1ca2c3248be0ef0ff9d0fec66fa4323",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-chat-delivery-r1.json": {
+      "sha256": "fb5bda4681a54f1bf236b5691391dba8d648cc97483e10d9926ea19257486321",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-content-moderation-commit-r1.json": {
+      "sha256": "54e4994bb365cd44fa1fc42923823dc19d8c03d609768b6c45a799336f5b0bbe",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-content-moderation-integration.txt": {
+      "sha256": "968a799f4585ced6f228150ae3f3595955aafecff27f1037cbd05067e173b33b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-content-moderation-r1.json": {
+      "sha256": "54b86d9f937495b004078d1e8394fd83fbaad4f32dd6ef0c12eb7236acb4e711",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-content-worker-integration.txt": {
+      "sha256": "1bbe617640aa356033fcc758444e9dfbacab0b309dcf1e3d17c820b922e67cc8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-content-worker-r1.json": {
+      "sha256": "2c8c488c7bdd814d81cd1529f2d0a8a4082d8e261f2d86fe3d5c878c221ce563",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-dev-layout-r1.json": {
+      "sha256": "aeb78fa66a1f6ae8389e643cf2e1af61514ea4e50fc7cc44b0fb1758aa1e6f0a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-host-development-commit-r1.json": {
+      "sha256": "17a64b5a2a1933236ec17b0451ee7348e52c68e4793eaf4906fa6f0c38d5a1eb",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-host-development-r1.json": {
+      "sha256": "e8026112473efff3b1f5137efd6b85f9623706130289995db5dc1ba7439f83c1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-native-middleware-r1.json": {
+      "sha256": "bfb51bb88dd16bd1d082608bbfe53658594d4c416c094fe15656d9a081d6232c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-safety-governance-integration.txt": {
+      "sha256": "4539956d9a0db36f2f63af0eb16ed0c4877e7a4a746196c855a00ea9eb997282",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-safety-governance-quality.txt": {
+      "sha256": "ffc2cd989edcd6edf59c68b82f2ea0659be7a61d3c1b5800efc519ae8b8fc317",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-safety-governance-r1.json": {
+      "sha256": "a930c076e3b4a3ab1d7d59f21b03ec35e34f6afa9fecf5b332987aa0b477f742",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-story-sharing-integration.txt": {
+      "sha256": "6d5e228e564131aba7e3e190fdee5df74a5368d4fe19861af1d836dde85f8ec0",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-story-sharing-quality.txt": {
+      "sha256": "f891781737f53ef27735e459c27f00c0453fd0d3f9be43a279bee3461680d937",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-22-story-sharing-r1.json": {
+      "sha256": "0077a7990b606dc893ed33038b32ef62cdd7954f0cb1da61fe0c95b665fdb0c7",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-crisis-care-cleanup.json": {
+      "sha256": "362851d8d98cd2849667e512c2312e94c8502a3c1af70177a99ad46b15c3aa44",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-crisis-care-integration.txt": {
+      "sha256": "1ff55efbc49a18c60fa02fbb9d748ca34d1ac1a3ee96bb6c3643e23626deaff5",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-crisis-care-quality.txt": {
+      "sha256": "f685bdba1e0a05428afd410ba51bbdeb5e1ae8c61aed39be34038050b4b362c3",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-crisis-care-r1.json": {
+      "sha256": "9156f63e71eb1b09d8bf5edf8e56710e83f2c8a587941d242e74f7158fff4ee9",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-local-crisis-api-r1.json": {
+      "sha256": "e1cd23faa42e11032b8e536a80d12519cf88e408ebd8ed07502be52ef582eb32",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-local-crisis-pg-r1.txt": {
+      "sha256": "fc3cd7fcf30e73153de8279256f34e54ac7442e7063904f34eba5fd4b10de0ca",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-local-privacy-startup-r1.json": {
+      "sha256": "e47ec1c9a60d586c91cc8107cc6524cfe45514adaea4a7f4e9936647c4fa7b4a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-local-privacy-startup-r1.txt": {
+      "sha256": "1a8b2e044079624279868fa4655b252c85d979bf69a3b273ba3f09a7eab21e38",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-manual-review-pg-r1.txt": {
+      "sha256": "b6cf1d1cbd35a94ea463c96603d0e9e36eec44a322f5120c2b0f984350969ad4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-manual-review-startup-r1.json": {
+      "sha256": "c3e2dde9611a56e463fe573e6069a2c993edc5d899209f22e3e309c7f4ec4673",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-privacy-deletion-cleanup.json": {
+      "sha256": "9e03810bc27d88caad257a80ef52549044c9b82a712a05e4d26c84daf91f9b3a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-privacy-deletion-integration.txt": {
+      "sha256": "f3b8d3ea22cb84686054a5f6d341f0aea83293ef2579002ac536fd18f082e520",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-privacy-deletion-migration.txt": {
+      "sha256": "451ea70b892bccaeb8c7dd07bf73e777d7a5ea558c140cc242805c041f74bafc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-privacy-deletion-quality.txt": {
+      "sha256": "77de724ff263d0beeffd12f6d779b6f325cabfed2bc841e3df90dc3abd1811af",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-23-privacy-deletion-r1.json": {
+      "sha256": "55fb041606aa83ab16c1e56874aae8e7b65a9b097d6ea63557033c1062444a8c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-blocks-build-r1.txt": {
+      "sha256": "abd8fa7ec1642f5845426ca651584f44976173b247082fd98649d5529dacb161",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-blocks-check-r1.txt": {
+      "sha256": "b66f83742d043dc4cdd1a8537f1d7d8b38d72470c45b43bc64c9068491fe19b7",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-blocks-contract-legacy-r1.txt": {
+      "sha256": "e3058606f5f83e011f2183a6f7655b50a199790fcfe39f4edbd60ae918369eec",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-blocks-contract-r1.json": {
+      "sha256": "f7ed0be8ded4e57669ef71b81a1c4e357d6445429da99618994635d7d1e549d3",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-blocks-contract-r1.txt": {
+      "sha256": "eefd795e042050861942c69b5b99a61b1080bcd9e8e6b317b1c1c1dc318f118e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-blocks-integration-r1.txt": {
+      "sha256": "3100e72ed55ad4df934e743a6c3ab181aa80687fe3ec8b954263d73c75637fb4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-blocks-postgres-r1.txt": {
+      "sha256": "8fc814270407d87006e8d41b868ed37bddd4f62451a6b3e0bb99af23d1b5bee8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-public-profile-build-r1.txt": {
+      "sha256": "fea0d4623dd6ef2dbb0838b7fdd59f92bf0323668944062e0956f6cbbbf646dc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-public-profile-check-r1.txt": {
+      "sha256": "29b9e945d321216578b23537f7286305d09fa34b8ba3a17207c155c92e712dcf",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-public-profile-integration-r1.txt": {
+      "sha256": "4c687904e5913682f05209f05f97cbabf8bc6e10182249d497ff474d00b3959c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-public-profile-migration-r1.txt": {
+      "sha256": "705b2399103f1f8e8ec6abcb269ff6a048b78df90c5a5bc891a209730c36d470",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-public-profile-postgres-r1.txt": {
+      "sha256": "00b902a481255a8455920365fb929e7c4cb7787ca3ec1a0ce5e72408bcccc429",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-public-profile-r1.json": {
+      "sha256": "0caa9aab84ed207ab70749fd5a3b37f83862a57895307118775d2846833a389a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-public-profile-scripts-r1.txt": {
+      "sha256": "e3c079be33318742a9721f3793bf3b40c6c7d55c696845aecfebe376d90e3a8c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-backend-plan-r1.json": {
+      "sha256": "1e4b39818f19fd224355d23f8d136922f107139397e1bd75ccd64c79552a5992",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-check-fast-r1.txt": {
+      "sha256": "d9341f3dc1e8e40ff811d91ddc0deea63e664564f80d030a32643c60be61f255",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-check-r1.txt": {
+      "sha256": "282efbaec86b5f85aba0dfc91a47227aef07cd91133d5fb070c3fdead5a714b4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-contract-r1.json": {
+      "sha256": "bb8846eaa05cf5929276087831ebce1df77f5cd0d8932e4def0e4185738fe83a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-entry-tests-r1.txt": {
+      "sha256": "ef2f60b694d3fcfd365e2c884d92205a08a9300e5862de71cf57e65dc7070652",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-fmt-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-integration-r1.txt": {
+      "sha256": "2dcaa7a34164b2ce22c602957fb2c3d45db620786647f791009740041d5d0c9e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-migration-regression-r1.txt": {
+      "sha256": "3a7a5896263bd733cf307f1d2daf18dc758eec4c74f6140964a2c15982b50eab",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-postgres-r1.txt": {
+      "sha256": "846e12ebf29c13654a31975c6e250376876c1515f599eeef41cf15d971ed7882",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-27-whispers-foundation-r1.json": {
+      "sha256": "11897fa2916b399229957263e447c73176ae6ca751046a6dca395eea12bd9e80",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-real-integration-preflight-r1.json": {
+      "sha256": "ad630fb21fcaf229e1762e5ddc5b831ee20831d859681412694fadfe69b25bba",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-build-r1.txt": {
+      "sha256": "bc9f309d432aa5a5b7b0ea41f4344d95934273a95dce6085cd1df402fc8cc7c6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-check-r1.txt": {
+      "sha256": "711300b11a13501f18122955606844aa713f37b142baa8f200eb75bb444a30b8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-cleanup-r1.json": {
+      "sha256": "70f6a9516ce99b366b44d6bcf7415f32686cfdfe1ba3eb2a8709e8817c902777",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-client-r1.json": {
+      "sha256": "350359dfe359932ec6bcd7735d019f4197dc37f17c286ef57889d799a3d943f8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-close-r1.txt": {
+      "sha256": "a620472342edcac14c4176e5ff6db12f43342f8fc88fb0d16828927ebfb2886d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-contract-r1.txt": {
+      "sha256": "2ee3ad25363aa4ff5bcf2cc2fdebca856d7e54b114bd4abc03e78627675cc20b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-entry-r1.txt": {
+      "sha256": "ce3313d4ac2f39cfed863c1dc04e9cf0d74a4a070d6f0402d4607ca77f81a0b4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-overlay-r1.txt": {
+      "sha256": "6ada62d65bf7c2a982f5b8c08f75d290337c602d11235ebc0b04a00f614db8a4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-postgres-r1.txt": {
+      "sha256": "886a24f94701028be945ea376127223a65cb51531789c7a3b278eb5a00f7df37",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-probe-r1.mjs": {
+      "sha256": "eaf263e8d42c922808264a0a0f8418e88d06d8a551f761ce33b2f00cfc01ecc0",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-readiness-r1.json": {
+      "sha256": "58f1d91d97740a8138c042e62b2fdcae5c848ecb1fb9258a19d5f08e0cb6528f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-runner-r1.py": {
+      "sha256": "b63cabb69408ce80d830f04a9910363a58f50a87c2146e6d9e1625c7f335f43b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-b09-runtime-r1.txt": {
+      "sha256": "5e33d31e33b06e99a22efa61a0a67f9b70d011d57337b449e8e173dd7b6a7d6b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-check-fast-r1.txt": {
+      "sha256": "ba4d3970e9eb44479c3abf31e676517b1f90eb3f29d2435a1502dbc5e8b092cd",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-check-r1.txt": {
+      "sha256": "7edc814bea1dc35bda10d4914f7f1cce08fd45122ca7ad39e5dca093158846a1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-contract-r1.txt": {
+      "sha256": "d25b97034640b60e90df9043239ecf2361b570d29fac87df3f3e60177a4bf1a2",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-doc-check-r1.txt": {
+      "sha256": "fbb3adcfa045d431f9c286cc9f6ede4c50f764e2e6a6209844670de77fdbb294",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-entry-tests-r1.txt": {
+      "sha256": "a30df3020be4947f1d26f8e60815cbc2c565a2946dee6a081f127a7593d2acd6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-fmt-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-integration-r1.txt": {
+      "sha256": "95a1a733066b5aa44fce3eb20111fa0e3fb69cb61c991f9644e22869631fe504",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-migration-regression-r1.txt": {
+      "sha256": "547f7f957a2acb371a94bdb5b2e4d4d14aff5593eb4202cac36d1faea5913f0a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-operations-r1.json": {
+      "sha256": "42dd7595beb8edc10c42e4ad4f4d03d8aa7f40e2e8a33be4e134c20309a2bab3",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-postgres-r1.txt": {
+      "sha256": "7c4f7a7df3253deb40283e1dba555acf0fbce5697fc22c59f6ef861f1b1aae51",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-r1.json": {
+      "sha256": "b74083c6fb5a823e450740ae3a166037e29270cc50fad61995f59933f97697a0",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-capsules-wire-r1.json": {
+      "sha256": "b1172479d2af824a2b12103b704e1505a1513625d4f3149c5001021613f8d3f1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-check-fast-r1.txt": {
+      "sha256": "7a7c98de1ae18182bb74f8199d114d043f04b1d763f17f67117165260bac769a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-check-r1.txt": {
+      "sha256": "d523cee7faeebecfd3b3694ea456402a589c8dd1f8c531c2db37e0c9d8ef7239",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-contract-r1.txt": {
+      "sha256": "7d8ca4953a65c4a1c9868f7a5d6e9920dfd18decae033420e0bc61052206d585",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-doc-check-r1.txt": {
+      "sha256": "c3cfc641cce17628dad7f7b9a913a85f04fdc05069d751a101b85a2ad00c83ac",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-entry-tests-r1.txt": {
+      "sha256": "1ce5fe9e2e0628a3cd7d186adb3c2e175574d9a883f317db4e9cc337849695b0",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-fmt-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-integration-r1.txt": {
+      "sha256": "29f9f820525049bc4baddc39173964c180deae699459cce49640bc62d6d15e84",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-migration-regression-r1.txt": {
+      "sha256": "ef28da4814f42aec1d8b79adc681ac0e466047b147437492a07552a2216c8876",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-operations-r1.json": {
+      "sha256": "9fcd01ff7b910068db536b31bf50ba94ef61b7a84756a69ed9501eaffc54b4c4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-postgres-r1.txt": {
+      "sha256": "ab9ee94316c83b883bbd2b61b63229f6a6db1fba8bb349b96e1b27de8ab7a555",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-r1.json": {
+      "sha256": "66def3ba041340b2ba6f5774caafa655c040964d277f3438fbc38e3809ca401a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-governance-wire-r1.json": {
+      "sha256": "42207607fbb8d1a911be5d8eeac225419f309d9766c63bcdcaa6e38143c59d11",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-check-fast-r1.txt": {
+      "sha256": "0491a2f31dface3bbf88d4306467e7c9a69818019f6fb36c165daa2523f4d8e6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-check-r1.txt": {
+      "sha256": "93c8f54e162e05393d8a77676c6f33a4e804b20dc74d3864d8fe32199cf5b0bf",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-contract-r1.txt": {
+      "sha256": "31b0ab11605e8faaf684e2dfee2abb8175baaab37c9022803c2e7f0decd20416",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-doc-check-r1.txt": {
+      "sha256": "676adc1d338e1329895616263d6ace10967fa1a2fb40aa57c2b75b5e519d81c0",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-entry-tests-r1.txt": {
+      "sha256": "6336dec1b95d2b371f74a9edfa77ecebfb45e0d2c4e4348fc2cb237271258526",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-fmt-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-integration-r1.txt": {
+      "sha256": "70e63dd639b509cdd83b65492bcfc6fe3c2b5bf8f7808d5a9a0c5b31d86f506a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-migration-regression-r1.txt": {
+      "sha256": "724c23ff4403f5d56d40f51564c8e8b0619e2639be049ea24ff3c955534a793c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-operations-r1.json": {
+      "sha256": "68810d78c9bcc8c3695894fe94ac5133c1bd25c2b04ae286f1a4ef9f017a0e72",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-postgres-r1.txt": {
+      "sha256": "2c19587576c7b2d073f5250dd6f518586fa57f87914042ffb989c63e47a9356a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-r1.json": {
+      "sha256": "93030311bb9502027bde1faedc42eca33f7b9b6d8abdbe101c676d49e3e7348a",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-interactions-wire-r1.json": {
+      "sha256": "806412b954fe1f98f68482121bed3330fae7bd40b6283e6f661d342d6f90e9f5",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-check-fast-r1.txt": {
+      "sha256": "093107d48a8d2c4865bb1ddf60fae7053fc788e409662583a3cdcb22bcf6675e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-check-r1.txt": {
+      "sha256": "8a340fb24ac4878207be12a86db5bb588784f270112dd9fde91ea56a85355ccd",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-contract-r1.txt": {
+      "sha256": "fb5ec74a9144122bfd511ba5ad488cfd85b184c01ab8717f783e5d227801b1a6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-doc-check-r1.txt": {
+      "sha256": "1b918cdb275181446a40f1e3588561fb2c8c32ba1d724e0abe68d0596f8c45a1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-entry-tests-r1.txt": {
+      "sha256": "b8ee8d7091a854fa0aa23861cb79e2cb8eed6e96a8f903e34d90860266eb8b09",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-fmt-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-integration-r1.txt": {
+      "sha256": "96ddec7e1310a08c594bb2d4e00b5bb10be804dc80a359a02bb9fad6e00ed627",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-migration-regression-r1.txt": {
+      "sha256": "cb982ab6c1449a5ca05e192586be7bd616bef2ed68d81ea07b977c7a1d24a2f7",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-operations-r1.json": {
+      "sha256": "3edf218f0160502fffdfb612c8e352b4d1169473a35202b3a3ddd521d01cde0e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-postgres-r1.txt": {
+      "sha256": "33ffe620624dfcdbbbe664040b352874a98bdef94c5cca34dda75dff585e4f52",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-r1.json": {
+      "sha256": "957c2f059ebe2d3c0be89a9cfbf87a042a33969c3189b3d907f9bd7d7b2457be",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-privacy-wire-r1.json": {
+      "sha256": "e88a9893f01027f074caf5cb58096577e45403471e1480c494ce51d2907f1069",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-check-fast-r1.txt": {
+      "sha256": "6264e98ee372fddd73dad159aad85dc4dd121ec2dee0daa623f080c32da7c704",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-check-r1.txt": {
+      "sha256": "f5dd7ea873209be935c1fe9bd031b408615e52688a00fb286e52d80c77059be2",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-contract-r1.txt": {
+      "sha256": "5738944c0d8e75b56629385485a80716c56ca407a9ea8c0a848ccfb0db0d5509",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-doc-check-r1.txt": {
+      "sha256": "7b95eda0e758ea0c1db160572bc310d9362a6ddbd5f626e87111d39120cd4830",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-entry-tests-r1.txt": {
+      "sha256": "b8ee8d7091a854fa0aa23861cb79e2cb8eed6e96a8f903e34d90860266eb8b09",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-final-related-check-r1.txt": {
+      "sha256": "a7854bf04e31743eb3078d6f1b80cc813cae40b5e51ff0c504edcb0e3d430084",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-fmt-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-foundation-r1.txt": {
+      "sha256": "68315df9e340205165029a57ba0b89df2ed545c9fa133968efa1e79c1d6eae56",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-integration-r1.txt": {
+      "sha256": "6f2cf93035ff66bc20b5a1c6ccf67e5545a7424452c41af61210151f5e74738e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-mq-final-r1.txt": {
+      "sha256": "b298723c49954e5b4a0449339ab78cb874f430518d86d827195f272ed3201be4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-operations-r1.json": {
+      "sha256": "1650e55ed936e92c1d27f4492c6c312fb484d3e2dfc30af9f176f26c031118da",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-postgres-processes-r1.txt": {
+      "sha256": "d673cc244c124c1af5f7a949c6fa0b46228e54d3d7083347b2e83239a1d3386b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-runtime-r1.json": {
+      "sha256": "76baf2998d07373f49ce38ca01ba263dad147c426a0d0e3a80540b2a64913998",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-check-fast-r1.txt": {
+      "sha256": "1120522249aa04f4e698b87e78be9e8ddc6268dee8399e7d92e314a022327f3d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-check-r1.txt": {
+      "sha256": "71063f9ab4ce4f84f43430dec74534ceeba1542e93ff88d9857655b29f961a15",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-contract-r1.txt": {
+      "sha256": "fc72c32ab9389b3bc36447bdd4991a1b5da62d1111dcb3e5886cab7acd2837f5",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-doc-check-r1.txt": {
+      "sha256": "f5cc7d56f560d2406962cef5a2c8041d196643da80361d088002a62c0c798dc4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-entry-tests-r1.txt": {
+      "sha256": "7698ea9a5fdb1b9cbb46a468bfb5743a5646f9eca7a433af77be88225cada1f4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-fmt-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-integration-r1.txt": {
+      "sha256": "5c5fbd0d66763c07fc4286b3efb47e3a37c2c0e0179090c008dd256ed2564554",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-migration-regression-r1.txt": {
+      "sha256": "021a31471579a5b442ada1067f50a99f04cbe933fcc043433bfac7e691448585",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-operations-r1.json": {
+      "sha256": "e17fef486b5138311ca3984edb50aea1bbaabedf1035bceb3c644c8b987dc0d7",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-postgres-r1.txt": {
+      "sha256": "f1846019737ee85c4beae3dbde43a5b5091788a8108bd5a422965012edbc5e6f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-r1.json": {
+      "sha256": "37d4194d35dc4c21706f7608eaf4f4240bba75a817c949738ad5aadbaff64090",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-28-whispers-text-wire-r1.json": {
+      "sha256": "f8a60f114c7b29c226b3d3adbff95a0a9d1aedcb7ff491ed139ab5d1d24d91f8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-check-r1.txt": {
+      "sha256": "4b11e1d438230f66a2aa87dd43439545dae57b9bb905c40f46cdaf9ea29c710d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-commit-check-r1.md": {
+      "sha256": "7849d3ce9a4da08e5936b6df8bb0891e92bff3996f5d98617500ca4750751cde",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-commit-start-r1.json": {
+      "sha256": "477cb694af5dbc390d203caf8457b4d85448270b098acad5ae800f23718ad0ea",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-implementation-r1.json": {
+      "sha256": "3e09b2acad3d062d42daba88f9b014b11ec9a38ff407f4875bca3506a8eca5d9",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-integration-r1.txt": {
+      "sha256": "477460748ac5054f82188b02571c8fc22dac2350b91aff738228cd7ddebe3a82",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-query-plan-r1.json": {
+      "sha256": "a3a5a835a3ac5ab513d08d8e5962a0104f4c30d406a04c02195608ffc99eb66d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-scripts-r1.txt": {
+      "sha256": "05baa4124e510ae693f96f948c8e8fb88179270b30c10f9bb1e2c46d8985080d",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-admin-users-test-data-r1.json": {
+      "sha256": "8074e97c9c9361a9e9e1f8e4b12928690abaf985c10b4e3878f5d55bdd0615f8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-block-current-round-r1.json": {
+      "sha256": "fbd74cd7d625e0b50a841bfed6735fd782c0b2e933aeae0600a47740a686358f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-catalog-missing-r1.json": {
+      "sha256": "003f24135c3489bbba798cc298ee004445484e86bc677f1d03553bef6d5e4ce6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-closeout-r1.md": {
+      "sha256": "2f5062b829de6d07ddbd999eae964690b4970ddb8828cfecc3d0409cab95776c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-coverage-r1.md": {
+      "sha256": "0dd17cd190820d0b96d71309a4df7d5e02c5d13912bf2e94943d279e2038e6dc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-http-r1.json": {
+      "sha256": "63c6cf9fedce6b652b64f239c9b21679e00e009363669a07e849407fa3257851",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-privacy-worker-r1.json": {
+      "sha256": "6f55093d7d311487f6644333a6d9f8a74850fa04f4d87c65a4a377d04ce176d6",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-processes-r1.json": {
+      "sha256": "004e7dc78d1e9a348b1caec762a15d18e6daa58d6605b280a189c2e68f8fe6ac",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-queue-status-r1.json": {
+      "sha256": "c409444b69f379eeb79a6b49fd65857ce445897c71d3f453e4a30ed085e931fb",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-share-withdrawal-r1.json": {
+      "sha256": "387ec10297cd3d01755620e11954ae1ab75cacda2b8f106bc81c4849555a488e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-story-map-r1.json": {
+      "sha256": "e8938c8bd823a590c6fad57ce3dd8cec4e634f374383e4db0b463a110516f2f4",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-local-three-client-wish-visibility-r1.json": {
+      "sha256": "ac17011da4e97b7f81cdd7436b26bc98ad15f238f34e7db9d78d0cf668228f05",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-contract-r1.json": {
+      "sha256": "d96c636d64ef67881525c8967ae74268a04d2e6b3658d1869daf8f6195d4ea7b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/build.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/check.txt": {
+      "sha256": "33f6379ea84bfaf0220de47cf8a0ecf98b583b41e9dd76c1f1a47dff00ae1312",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/http-responses.json": {
+      "sha256": "b641cfe23e1b016f6be067ac11f74dec4743bc0d8e4ebd70c209e89e19a56de7",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/integration.txt": {
+      "sha256": "1f391f32bad5804f0c829b4840c02c0b90d71d64a522788ee53c020c475254be",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/privacy.txt": {
+      "sha256": "38504455e90fd262e041fc718bfca6d2b1de13bd2baea683ffed0c25b8528ae8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/result.json": {
+      "sha256": "89f7082562dacc4b2c24a7cc2bad40d85ce9d09c57b508b76f6622f29b07d6d7",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/validate_http.py": {
+      "sha256": "9979822ffb0c987c5b7c39f3e53f146ae02a3ca0f4bca3dda86f50fc76a5b038",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-resource-plaza-local-start-r1.json": {
+      "sha256": "ec8ba2ccc832f8529d19852610b1dde48525fe8f1b49524a91ccb212e83357b8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-build-r1.txt": {
+      "sha256": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-check-r1.txt": {
+      "sha256": "c614a65679ba196ccb806949a61b62d285c07444a08e1c2a2387d380190a69f0",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-commit-check-r2.json": {
+      "sha256": "5b2f4d7d8f6dc7bf801e9f6956a24ed4781eba87c5dcf5074c3d3b016259a9d9",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-commit-r1.json": {
+      "sha256": "a503d9ac5e0151cfe4dec78ebc74cd5326a77e8f2c010044ce50578dabacbd7b",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-contract-r1.txt": {
+      "sha256": "95ab0796290f5c16741f1a2332125f3fb1847f9fd731ae2fb296f42bf9ed6f8e",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-direct-race-r1.txt": {
+      "sha256": "7e6ac4575ce736651bdb4558cd57771ceb33c5dee3342de5fddc9145adbfc2b9",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-format-r1.txt": {
+      "sha256": "9ba9a3ce39410b82cffdcafff24a52faa1612e3a34b2a29885a7007b1bbfbc33",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-integration-r1.txt": {
+      "sha256": "5db8e7d2df9cd14a5f3ab589b00f5a3140aa220c21b20851533cb360cc49328c",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-live-r1/backup-summary.json": {
+      "sha256": "f62b3b7863f7d2aaded7811edf36c67c8c6fbc22798ca741b9023a57dc28c270",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-live-r1/database-result.json": {
+      "sha256": "4e5dd7a664876ae243f6f6a7b5613ba174c1f2cb63fece2edee31b6be0f6bc41",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-live-r1/doctor.log": {
+      "sha256": "f91a32ed32667f02646ca856339db438e1a5202e4d07e1c308789badc38d3d6f",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-live-r1/http-requests.json": {
+      "sha256": "cbdf0f79f279a48ba9e21c4b2194534706ec36dc0071543de2e1af1fd6b7b526",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-live-r1/migration.json": {
+      "sha256": "fe48e82e0a74833f99ff62b35325a6c0375808335070f8d76f5320423b73e1f1",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-live-r1/migration.log": {
+      "sha256": "2e8572b2aa17a34239ff6c7225dde0605a2c1d4bd8ef0a42f76c07c882c8e5fd",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-live-r1/source-verification.json": {
+      "sha256": "b2e3e6a424f1756fcf5d4a3e4e0fd55641e862bfd3f0b9ba7562598fd6aaf595",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-user-restrictions-workspace-r1.json": {
+      "sha256": "3470910345a40c90226c49815959d98d289adcdda890922bc7d56d1e395f1386",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-wordlist-first-backend-handoff-r1.json": {
+      "sha256": "38d245a72710da41ef6996d57f3cf52c8009cdeb0c413e11b1e6111625e14ab8",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/validation/2026-10-29-workspace-block-action-handoff-r1.json": {
+      "sha256": "7a25ae8dbe678a97829f4579726df20851283b46a62c01d752c2a466a53c0f85",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/verification.md": {
+      "sha256": "ca873bc4cf0da562b4efe09f9c99429a3f5bcdda87e8278c7954d4f7ead889dc",
+      "replacement": "development/backend/README.md"
+    },
+    "development/backend/wish.md": {
+      "sha256": "75933bb4b1398c7a617535817c0592379bdd9de97367a3b0dd5b26d897142655",
+      "replacement": "development/backend/README.md"
+    },
+    "development/miniprogram/api-call-audit.md": {
+      "sha256": "16de811e47721598d8c9638b596c3612859138bca6e6ab2c3d41591b5713a566",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/development-plan.md": {
+      "sha256": "6ac9ef4dee726198edf9d0c2d9aba4c92283d3b26e138733ef69357f71aa95a1",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/integration-readiness.md": {
+      "sha256": "26278f08fe5d5926df72bed916752f906373fbd7e105883c3dc9dcf8c020f6bd",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/01-T004-T009-foundation-session.md": {
+      "sha256": "bc48fc682ed010ae7f067dd82d2aee7065caf3df71d2a7239a975b85bcffab49",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/02-T013-verification.md": {
+      "sha256": "ac7621326f988570638b9e38ad21ec877ab8a77bfb89c4d0424f197b57b5fae5",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/03-T015-wishes.md": {
+      "sha256": "6528184571992f53c3d6572d1f723ad9848c345bbf9ecbea3d5f78763a8bd7a7",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-22-docs-governance-r1.md": {
+      "sha256": "702b3f814f835056a25e12c4d8b417cd5568a9eaabfaf35c4089baa144bdfa3b",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-23-applications-matching-r1.md": {
+      "sha256": "20a21cfeceb63125c75f6c47e5ec51e49984f08933e689bdfbaeb4cba4d676e2",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-23-chat-notifications-r1.md": {
+      "sha256": "e84ff56fcf11424c91f0864e04b0f1e0bd298b7174df6e5b438312bdcb52ee63",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-23-profile-privacy-r1.md": {
+      "sha256": "75b7ff795427e26f5fd5b9c6ac357d4180b83909e83645efd4a526ee3b1faeff",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-23-reports-warnings-appeals-r1.md": {
+      "sha256": "5d8778d562a0e9338aa3d85dd8ce8feaaefc2fa75394057b2d12da8f290a7fcd",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-23-stories-sharing-r1.md": {
+      "sha256": "07f9a6edfa7ccf8edc579fe26c6505eb17098c985dfcd2837f2174975839e0d5",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-23-wish-detail-lifecycle-r1.md": {
+      "sha256": "50c099378c7f9ac4d5bf51e05119a4cc5247f1b9ad47d9dffddca1d515e89d3a",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-23-wish-detail-lifecycle-r2.md": {
+      "sha256": "30c5a5805112bbb5f878317e80d1fb1afca61b43affa9c8e2cebe115d5cf4156",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-26-account-deletion-r1.md": {
+      "sha256": "9681dbf4875abe8b774e3e6f9172861996ec977aeaf7bdec833f8a4740747dec",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-26-crisis-care-r1.md": {
+      "sha256": "b63605c99643dbc46b0bd4de89b267c23b41cee4f6bc1c57ecb2a5b4263702f4",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-26-page-logic-evidence-r1.md": {
+      "sha256": "7e60d5fa3dd6fb55d65295f7549597d829779a622817d20f27d6c630d70ff162",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-26-page-logic-theme-r1.md": {
+      "sha256": "65fed8503826c097d5dfc2dbbfb62efc74940037d0184bee2a622a8df40f5aac",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-26-tailwind-theme-r1.md": {
+      "sha256": "77ccb476468665ac00c521f84aa07ae00666778fd794d7c6a1a2e432450a6bae",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-27-backend-coordination-r1.md": {
+      "sha256": "af327eec9841990a26e1c4de4d6012e1bca9045db1b5440afc31522f585006d7",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-27-frontend-independent-commit-r1.md": {
+      "sha256": "b319b0acbf1ba7a4ffdf391f3dda0f0d3c570cb31a2e9ca6f78f0ae4909cba82",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-27-frontend-independent-r1.md": {
+      "sha256": "f8f1f7c97fd45c577cd0bb301d484a69af1285b9f8ec6f0d8ee0b9a263054839",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-27-whispers-development-plan-r1.md": {
+      "sha256": "f53b7689ff93899b1077bfb66a2730731fb302449b35403374309f63e05e9824",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-27-whispers-foundation-r1.md": {
+      "sha256": "e01ada6253c704a076459d8d6ffa517b3083b3606871839cf987fee231a22720",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md": {
+      "sha256": "158519deb99929c59ba932496970c31c1b1a75e817543829f2c93e793a7c76d1",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-28-whispers-capsules-r1.md": {
+      "sha256": "cc5dedda41a9c7caff8db7f3cb74ba0395186ff17a650c26591913ec05e174b2",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-28-whispers-e-integration-r1.md": {
+      "sha256": "f57bb1581adaba1af143c5da98750aba747808c2a468ca099459dfdd12d0bf56",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-28-whispers-interactions-r1.md": {
+      "sha256": "adc4ac66cd87a4d48239e99ddd0cdc73e567a7179d515d183c7162862ed6de51",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-28-whispers-text-r1.md": {
+      "sha256": "7a805490e1fc19b118b28ee3bae199d04804a9e45d8607d96489cc2309087e1b",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-29-prototype-refresh-commit-r1.md": {
+      "sha256": "6ee36bd3376d0aaa210555780e92311064a6502a20e3f72cbdbcfaa173e71c5a",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-29-prototype-refresh-r1.md": {
+      "sha256": "60b9d2ccf7aee17f7e726fe156fed1a2094a00b336c831065ce4dabdc262615e",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-29-resource-plaza-commit-stop-r1.md": {
+      "sha256": "9a751ddaa8e39d7d5b737a4f6f5274b36d170efa3e38a2ed17d3f23ebf4485fa",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-29-resource-plaza-development-r1.md": {
+      "sha256": "0ccd93245c983dfa07a42280cbaa66bc5cf659fba4d7ebd0faa7ac020af263fa",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-29-resource-plaza-implementation-r1.md": {
+      "sha256": "44833c6530f9d02d19d892038eda43cda169d846755893f7514aabba83b8e078",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-29-resource-plaza-local-integration-r2.md": {
+      "sha256": "10182f9d05cfddaf8deda834cddf0d25ad846fe38aa9502004164633796e0d4b",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-29-resource-plaza-local-start-r1.md": {
+      "sha256": "ad048851dd843d38ab0d1ee46a73a2e1398a53d5e5ac9ce81af3d04fd61d7c9f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/milestones/2026-10-30-branch-consolidation-r1.md": {
+      "sha256": "1e2ba48d20957983772b38589495e6f1cace6a8e6a50fe4391126b8f126a30d9",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-applications-build-r1.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-applications-check-r1.txt": {
+      "sha256": "6f227fef745c08cf23e50a86a2aebf5f5e0825e9691e2e8993efe73e80f012a5",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-applications-r1.json": {
+      "sha256": "db69c60ee3531654cbf2fd646c591378c64a2f63acc4acb5b3db25e68f68bdd0",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-chat-notifications-build-r1.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-chat-notifications-check-r1.txt": {
+      "sha256": "4ed073bd0b2204398924db5be6564058a654931e1bfc4ca93cdc91704e9f8dff",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-chat-notifications-r1.json": {
+      "sha256": "0f0afdf5c4451e928465f0852a4c5cfc3bce3b9aa2b7a9fb95e54f3b6129621f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-profile-privacy-build-r1.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-profile-privacy-check-r1.txt": {
+      "sha256": "2b388e1bf01ecc521b15e4431e597f03090bad900150e62c2abe8804be12a9e1",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-profile-privacy-r1.json": {
+      "sha256": "45948428d7a2364f16a82dbd476022a4f011d60ede36a1014e2e9e21284074f2",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-reports-warnings-appeals-build-r1.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-reports-warnings-appeals-check-r1.txt": {
+      "sha256": "517f79a895a75c1fc6d5bfc8f0bebd375f8f116b9fd0524401dd9dab2e122f4e",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-reports-warnings-appeals-r1.json": {
+      "sha256": "770f7b0ee9ed55b8850684fef95c9302adece18b5ebf1a30c9d21610fb2afabb",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-stories-sharing-build-r1.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-stories-sharing-check-r1.txt": {
+      "sha256": "90811d05f7a3eb0e1f451fe83ed16679def45c67263c7e6ea1c19071c5b53e70",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-stories-sharing-r1.json": {
+      "sha256": "34fdcfa42bf26afc2c8ac87fa901f99c24f7d95d5f100825e50d8f5e240b718d",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-wish-detail-build-r2.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-wish-detail-check-r2.txt": {
+      "sha256": "cbe49f9958c32aee369208d16b6544c180dd5e31d6c8e62cf97272ab8fd752db",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-23-wish-detail-lifecycle-r1.json": {
+      "sha256": "d59a7c7342282ce22cd407012b1858e9d396c7555ddc0f2394db6458fd2ccff2",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-account-deletion-build-r1.txt": {
+      "sha256": "a0970c9f23be0a8471d1348ff4654b9ab7febf51ab01a92693d239c48dfd6ac4",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-account-deletion-check-r1.txt": {
+      "sha256": "18e2ff924c0b351941d96fe26a2ccc28634d1446ff7b929c13a30c78297a892b",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-account-deletion-r1.json": {
+      "sha256": "8fc9691b0f45fd59946fe947625f091a7d15edd11623468659053b6699621b31",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-crisis-care-build-r1.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-crisis-care-check-r1.txt": {
+      "sha256": "8ededa8697ace9a714d0c08b68a0b0eed54722f79581780e3c0ebf6204695e9c",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-crisis-care-r1.json": {
+      "sha256": "9c19c573cdcff94dcd19c10e1001e3f3d39d78bf1e132d949572000ce170350c",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-page-logic-before-r1.txt": {
+      "sha256": "63dd750f8b52ff855a3901f4deb67f3a7fe4385d019bf3977af9cfe3438f9eb1",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-page-logic-build-r1.txt": {
+      "sha256": "a0970c9f23be0a8471d1348ff4654b9ab7febf51ab01a92693d239c48dfd6ac4",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-page-logic-check-r1.txt": {
+      "sha256": "e8462fba4a9162c0755fe301831c64d5284d990ffe829c1d419136c24a7579d5",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-page-logic-session-before-r1.txt": {
+      "sha256": "d4fa5f438923e76bd6deee278e18852243e0feecd148121c4aa527af7dda6211",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-tailwind-theme-build-r1.txt": {
+      "sha256": "a0970c9f23be0a8471d1348ff4654b9ab7febf51ab01a92693d239c48dfd6ac4",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-tailwind-theme-check-r1.txt": {
+      "sha256": "bf7b4aa735443edcae2df6b6d86c48e5ccc80badd1465c000b3b0e87078731c9",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-tailwind-theme-r1.json": {
+      "sha256": "b387bc25b2367e00328ffd5004cf140c5e02fc4fca632caf141ff8f5f4aa3450",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-26-tailwind-theme-r1.png": {
+      "sha256": "e266d4f35a579ab490e8e81adaf4cf15268d5ee3aff16acfed333ac3d2e0b619",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-backend-coordination-r1.json": {
+      "sha256": "93f77bc7a1f6557d7e16d563ac25b9f6fe3e079217bb9e8a48a917293c3609dd",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-frontend-independent-r1-build.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-frontend-independent-r1-check.txt": {
+      "sha256": "eb86d36e04a32977ff99aeb3e30447f2b77879f7c808e1c96a5759a18e11299f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-frontend-independent-r1.json": {
+      "sha256": "88351f665fa7433604f165f182b0193729c7b5d43018fdc45751c88e721cc63e",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-whispers-development-plan-r1.txt": {
+      "sha256": "db618e4ab9490cb0696bc145847cf27d7087c8f797bd694e5aa0a04c9683e8e9",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-build.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-check.txt": {
+      "sha256": "3ac39b68b69bd755fd43290d5d4e6ec3aebb00111bdd4ce412cdb2da684b05fe",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-contract.txt": {
+      "sha256": "82e42b6a77677548df53c8149fec59c93d5752fc68ea7f1f15cce52b5b6049a9",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1-docs.txt": {
+      "sha256": "143b60e20a9195c03ef26317006cca640c94b7614d987d0e80423bccbaca14ed",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-27-whispers-foundation-r1.json": {
+      "sha256": "22b10fb405185f164cfd4efdf4358393f320355f5bc5c20694bedf3ff5633cf7",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1-build.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1-check.txt": {
+      "sha256": "84f57452229aca158b18032a038d457a701a70351eb1dc45d3502e717b543c95",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1-docs.txt": {
+      "sha256": "c2d215c543604cb2712478b79e9d7e925f5d8c175542bef4cdab7b9551ac6f13",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-capsules-r1.json": {
+      "sha256": "caccceeecdf33c5ae9e1001636749e62a573c93be32d9adc674231b37d74fa4c",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-e-r1-build.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-e-r1-check.txt": {
+      "sha256": "fce935879caac2fa73103f1b14404a10fa5d16c56b06e4687ef1147571aadca1",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-build.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-check.txt": {
+      "sha256": "538e9bb4e974639362c4cc357e9f82bd26fb91fd6e350ac382eefc366cec8329",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1-docs.txt": {
+      "sha256": "e7affec6e664b6f4639df051ed1efcf0ab1c87af323990b5eb824bc35af87aec",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-interactions-r1.json": {
+      "sha256": "25dce11ceb6e415fda53106cf684aac64be711b77c03450cfdd6953c79d33446",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-text-r1-build.txt": {
+      "sha256": "7f4d6d39813e3057dd72b2d3431c4fa7a4c865a43ea9c0cdd993af9ca7ccb64f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-text-r1-check.txt": {
+      "sha256": "cd3f6681015b094a64704dda59abde8c9ffb20ac4465b3a4c7007f09186b1258",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-text-r1-docs.txt": {
+      "sha256": "65ddb80cde6cad3540e6e8a6641024a89a70680a0dd75494681b07768a7ef91f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-28-whispers-text-r1.json": {
+      "sha256": "542c40472ea5c5559b1213c14251b434e5cff70745d66385209c9640b9a73495",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-local-fixes-handoff-r1.json": {
+      "sha256": "5c2e01d31dd3257af1f531f8ef217084d5e9afcd92b710450946b5155c4e4c16",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-local-three-client-build-r1.txt": {
+      "sha256": "cc12574c42a9e38aebaa536fa2e1ef87d99ffcbab04e1aba2d794446860e21a7",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-local-three-client-dual-account-r1.json": {
+      "sha256": "789176100bcf8a2c22e0e6d48ded4fa1bb87373526847da9c00eae3e5b280376",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-local-three-client-live-r1.json": {
+      "sha256": "82fba72c3c49f19cb61b8e3474b824c38c60087f2aef0ec5a06c03f12826bf90",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-commit-r1.json": {
+      "sha256": "8c219d791794b5218b619da383a4896bd3425e79ce2e13df7a4666190614717e",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/assets.json": {
+      "sha256": "3654730dfb81ec8e6ecef1095566147741a383f6b47449cf6ce020d7e767e60f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/build-mp-weixin.log": {
+      "sha256": "cc12574c42a9e38aebaa536fa2e1ef87d99ffcbab04e1aba2d794446860e21a7",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/check.log": {
+      "sha256": "ce9da6c9184ff8777edf5fae469e0179db6ea953a4c1e1c89beff3a948482ce2",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/home-320.jpg": {
+      "sha256": "ed5471d955d7c67b28452848806e382e6b31399460292fd802d3ee557e9b2afd",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/home-dark.jpg": {
+      "sha256": "9901a96b94f1ae6fa767f37fa2b5f7b8be81f10f58a4c90e98a9098f71d1b3c1",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/home.jpg": {
+      "sha256": "86717645718f30826a172769d2aaded34d856e6abe946863439d6f5d9c467423",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/pond.jpg": {
+      "sha256": "0594b261fb5e1003632d8aadbd18e4165c4770dc2db470af82366820bba25cbd",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/profile.jpg": {
+      "sha256": "d74a6642dcf21bd49c52836ff024d5469b5aa4aa01bb3603e7def7c3246663ba",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/resources-guest.jpg": {
+      "sha256": "a8c93f284c3619a257d7168454fd71c1fe2880a71ae0282a7f56eca5424f65be",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/results.json": {
+      "sha256": "b03dce07d6c625ce2cddfb3fb1b440486875586571cbe958b62e6bb1199816f5",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/source-files.json": {
+      "sha256": "9f77699412452373de793d4836e2b53db707f9de5f88eee2a7e8edfeed78c8d4",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-prototype-refresh-r1/whispers.jpg": {
+      "sha256": "3a27d9cfc2ee6249b7e19b40fdef8f30ea19e138f1959ecf9892fc3868be08c2",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-resource-plaza-contract-r1.json": {
+      "sha256": "c7a6c8a11e28914f9f599525ec39651838a5ee1b1959ddc4f020541ccc8055af",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-resource-plaza-implementation-r1.json": {
+      "sha256": "88a0deeb1025f1e652cb3a2b045deffb0495b1cab57c9e20e2f9cb22d543ab4f",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-resource-plaza-local-integration-r2.json": {
+      "sha256": "91035885d220c4b867215b82c5f3b944b59767873c21a6516fda6edbdcf1438e",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "development/miniprogram/validation/2026-10-29-resource-plaza-local-start-r1.json": {
+      "sha256": "a329d43864d98105ca675f7fe0f40ebd10d794b8f4eb1ae54a2458cb9883c619",
+      "replacement": "development/miniprogram/README.md"
+    },
+    "plans/blockers.md": {
+      "sha256": "15eb7bf399250991299a6a1484e85fdff0cdbc6c3c0a0ccbe6940af4165e7fbc",
+      "replacement": "plans/README.md"
+    },
+    "plans/collaboration-instructions.md": {
+      "sha256": "7e549b6179ecf76a50257ac5ee5f3c4b3beb3073c2d500e4db30d4d60014acf3",
+      "replacement": "plans/README.md"
+    },
+    "plans/full-feature-schedule.md": {
+      "sha256": "6fc7565bab34b727619bbc8ad4ea117d0304c78c7bd23e5bcbb545a2bdc8a089",
+      "replacement": "plans/README.md"
+    },
+    "plans/implementation-plan.md": {
+      "sha256": "87cee9e9bff764707f4b50735cde275ca2e8f7500c2ce76cdac39ab2debf8436",
+      "replacement": "plans/README.md"
+    },
+    "plans/int001-readiness-2026-10-21.md": {
+      "sha256": "04cfa195cc77643f6499d78bc71ef853257c835fdab130cb356048bd10e927b0",
+      "replacement": "plans/README.md"
+    },
+    "plans/int003-agent-execution-2026-10-21.json": {
+      "sha256": "ab1334ee27bfd36d43ae4f5a21ca7689f7b7f825270486025c8cfea804451ba3",
+      "replacement": "plans/README.md"
+    },
+    "plans/int003-result-2026-10-21.md": {
+      "sha256": "e5a48c3a099f203886ea94ead5f100511fbf784ea3bba52aa370ad6b1e94762a",
+      "replacement": "plans/README.md"
+    },
+    "plans/integration-log.md": {
+      "sha256": "074b74de97504e8fafd54168f3c8638bdf137558569f9dfca2ae4de071d34b85",
+      "replacement": "plans/README.md"
+    },
+    "plans/next-development-integration-plan.md": {
+      "sha256": "bcbd628d61c068aa2c21a830e8d8bf6975a1ac991216581afa40926e9c372aae",
+      "replacement": "plans/README.md"
+    },
+    "plans/progress.md": {
+      "sha256": "a32a4e0e6890f31f158816ab90961d3575e3f8e18bb7c62db52903acf0241a14",
+      "replacement": "plans/README.md"
+    },
+    "plans/single-person-schedule.md": {
+      "sha256": "668de8b63f5f214060a371ba4411f3e15cda44205bf120700305af506c8d927d",
+      "replacement": "plans/README.md"
+    },
+    "plans/whispers-development-plan-v0.1.md": {
+      "sha256": "9448356593f04fc0133b333dea1ca3d8185bfa53aa80520194bf3fbf8f0aeec5",
+      "replacement": "plans/README.md"
+    },
+    "plans/whispers-development-plan.md": {
+      "sha256": "61f6b07469383f02f983c5abd320e7025b28549bf7865bef88798c53e8ed582b",
+      "replacement": "plans/README.md"
+    },
+    "product.md": {
+      "sha256": "06ee703ec1843cea0c8e8763a0079e74bf868b56936c3157df6ac84acb0963e8",
+      "replacement": "requirements/original.md"
+    },
+    "prompts/01-audit.md": {
+      "sha256": "019f78a3468e4a71da15ad885a0d1c3d97e355c91f667522d79569be5163ae2b",
+      "replacement": "governance/README.md"
+    },
+    "prompts/02-baseline.md": {
+      "sha256": "56acabd6c61c5addd0e69593a939837db6774066211ef290a5c16f9a848c2d5a",
+      "replacement": "governance/README.md"
+    },
+    "prompts/03-design.md": {
+      "sha256": "ac3d82a43b5b369bb6e4a093e6bc582135316cfc8b62c018cf8e24ace1d993cf",
+      "replacement": "governance/README.md"
+    },
+    "prompts/04-requirements-review.md": {
+      "sha256": "b5e0dbb079b859fb388d6d4fd81eef62c65be2ab3e636f46327ac68ecb918040",
+      "replacement": "governance/README.md"
+    },
+    "prompts/05-architecture-review.md": {
+      "sha256": "fb0ff841498b00ef6a4819a528648c130db5e88999bf0c1f09b2bbfdf086442d",
+      "replacement": "governance/README.md"
+    },
+    "prompts/06-plan.md": {
+      "sha256": "d1ce729fb4bb5b1bff5c0976f0a5c07530536a15a22c1e700402c9be8890de51",
+      "replacement": "governance/README.md"
+    },
+    "requirements/admin-users-v1.md": {
+      "sha256": "05f0f5b89c1251d410ec1e83969bcc1f09013cfbacb5fe75996201443c0c4dc3",
+      "replacement": "requirements/admin-users-v1.1.md"
+    },
+    "requirements/audit.md": {
+      "sha256": "ef57af2ac6452c415cc4289d88da558bbcb7686df1f82663a7ae2e8ee77e6068",
+      "replacement": "requirements/baseline.md"
+    },
+    "requirements/questions.md": {
+      "sha256": "972c2c9599aa519e799a918955d23ad04c5931f26c52d5472bf848ea8ac62c85",
+      "replacement": "requirements/baseline.md"
+    }
+  }
+}

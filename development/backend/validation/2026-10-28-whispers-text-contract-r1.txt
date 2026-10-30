@@ -1,5 +1,0 @@
-固定契约 whispers/1.0.0；未修改 contracts/。
-使用既有隔离 Python 环境 /private/tmp/liyuanci-contract-021-venv/bin/python。
-contracts/whispers-v1/validate.py 通过：50操作，98schema，75请求/响应样例，104正例/12负例，26写动作。
-以 Draft202012Validator 和 FormatChecker 对本阶段真实 HTTP 的13份成功响应按固定 OpenAPI components.schemas 逐项校验，通过：必填字段、nullable、码点长度、UUID、UTC秒精度、枚举及 additionalProperties。
-范围：静态契约与隔离 HTTP 文字接口；不代表审核消费者、三端联调或生产启用。

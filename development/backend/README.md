@@ -1,163 +1,28 @@
-# 后端文档索引
+# 后端现状
 
-对应工程：`liyuanci-backend-go`。关联 T001–T004、REQ-001、REQ-018、REQ-020；具体业务 REQ 及验收映射以各记录为准。
+更新：2026-10-30。源码核对基点 `968248fcd2e9aa0fe620d572dd69f3f7fb00084a`；本轮只整理文档。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
 
-本目录迁入文件是 2026-10-22 整理时的固定快照，保留历史状态及测试结论；不因归档宣称当前功能验收通过。后续按日期/主题/revision 新增记录，补充与勘误引用原文；只更新本索引入口。参见[统一规范](../../governance/README.md)。
+## 模块实现
 
-## 实施与接入说明
+| 模块 | 当前能力 | 实现边界 |
+| --- | --- | --- |
+| 认证与账号 | 微信换会话、本人资料、学生卡扫描状态、人工认证；后台本地账号、角色、改密与会话 | 正式学校身份、扫描与存储供应商仍需验收；后台与学生身份隔离 |
+| 心愿与应愿 | 草稿、审核、主动上架、公开分页、申请、唯一匹配、撤销、重招募、实现与回退 | 资格、额度、版本和屏障在服务端复核；审核通过不等于自动上架 |
+| 聊天、故事与分享 | 匹配会话、审核送达、增量读取、站内通知、还愿故事、分享引用与公开主页 | 消息提供 `viewer_is_sender`；会话结束后只读；撤回后重新检查可见性；外部微信通知未接入 |
+| 悄悄鲤 | 文字树洞、三档身份、已审昵称、暖评、评论开关、抱抱、通知、本人胶囊 | 匿名标识不关联账号；胶囊到期前不返回正文；语音与媒体不在当前实现范围 |
+| 审核与安全 | 词库版本、普通/涉校人工复核、危机隔离、举报、处罚、申诉、opaque 屏蔽 | 已补词库优先筛选和 Workspace 屏蔽动作；正式词库质量、危机关怀与外发仍有缺口 |
+| 平台用户 | 列表、昵称搜索、详情、处罚历史；超管直接封禁/解封、禁言7天/取消禁言 | 必填理由、版本与幂等校验、加密审计；解封不解除仍有效禁言，不恢复已隔离内容 |
+| 资料广场 | 15个操作：认证用户查询/复制/四类反馈，后台资料和分类维护 | `resource-plaza/1.0.1`；链接与提取码加密；服务端不访问外部网盘 |
+| 隐私与恢复 | 注销屏障、匿名回执、账号/证据分域清理、恢复前重删 | 外部全版本清理、独立故障域与90天恢复未验收，失败保持 processing |
+| 工程与运行 | Go模块化单体、独立worker；PG权威、Redis限流、可选MQ与数据库补偿 | 开发入口与生产装配分离；普通启动不迁移、不重置账号、不替换历史密钥 |
 
-- [资料广场本地环境启动与联调](milestones/2026-10-29-resource-plaza-local-start-r1.md)：迁移29、API与配套进程已启动，管理端真实HTTP流程通过；微信结果见小程序开发分支独立记录。
+源码边界可从 [studentapi](../../../liyuanci-backend-go/internal/studentapi)、[whisper/whisperapp](../../../liyuanci-backend-go/internal/whisperapp)、[resourceplaza](../../../liyuanci-backend-go/internal/resourceplaza)、[privacy](../../../liyuanci-backend-go/internal/privacy) 核对。日常启动、环境与配置以[源码 README](../../../liyuanci-backend-go/README.md)和[功能链路说明](../../../liyuanci-backend-go/FUNCTIONALITY.md)为入口。
 
-- [资料广场后端实现与独立验证](milestones/2026-10-29-resource-plaza-implementation-r1.md)：15操作、真实PG/HTTP及隐私恢复重删通过，消费[1.0.1](../../contracts/resource-plaza-v1-r2/README.md)，源码未提交；三端真实联调未执行。
+## 已有验证与限制
 
-- [2026-10-29 三端本地真实联调过程（进行中、未固定/未提交）](milestones/2026-10-29-local-three-client-integration-r1.md)：已启动本地环境并完成局部HTTP/管理端页面检查，真实多账号及完整业务链待补。
+- 2026-10-30 同一业务源码版本的 `make fmt`、`make check`（vet、race、coverage）通过；本次文档整理不将旧结果冒充新业务测试。
+- 2026-10-29 已有真实PG/HTTP与微信开发者工具A/B局部链路：认证、心愿、匹配、双向聊天、屏蔽、审核分流；资料、故事、胶囊另有局部证据，不能合并宣称新版本全模块重测通过。
+- 学生资料/卡片、扫描、KMS等仍含本地适配；外部通知、全副本清理、独立恢复、手机真机与容量验收未完成。
+- 最近一次已记录的运行收尾是2026-10-29停止API、worker及所选本地中间件，保留数据和配置。本轮没有探测或变更服务状态，不能据历史记录判断当前进程是否运行。
 
-- [资料广场后端独立工作包](milestones/2026-10-29-resource-plaza-development-r1.md)、[正式契约 resource-plaza/1.0.0](../../contracts/resource-plaza-v1/README.md)、[总交接](../../design/resource-plaza-contract-delivery-v1.md)；15接口、认证读取、资料/分类维护、四类反馈及隐私清理，正式输入已固定，尚未实现。
-
-- [管理端用户查询测试数据：32账号与40条合成处罚](milestones/2026-10-29-admin-users-test-data-r1.md)；在用户管理搜索“联调测试”使用。
-
-- [后台用户查询精确提交与本地启动](milestones/2026-10-29-admin-users-commit-start-r1.md)；源码 `develop` / `ca9f68ac51285dafee88431d7610d9856e394985`，本地 API 与配套 worker 已启动供管理端调试；[原始日志提交检查补证](validation/2026-10-29-admin-users-commit-check-r1.md)。
-- [后台用户查询实现、0027迁移与验证](milestones/2026-10-29-admin-users-implementation-r1.md)；对应 admin-users/1.0.0，保留实现时未提交的历史快照，提交关联见上述补充记录。
-
-- [用户管理独立开发工作包（含昵称搜索）](milestones/2026-10-29-admin-users-development-r1.md)、[共享契约 admin-users/1.0.0](../../contracts/admin-users-v1/README.md)、[两端交付与联调矩阵](../../design/admin-users-delivery-v1.md)；设计产物，不代表接口已实现。
-
-- [三端真实联调操作手册：前置条件、阻塞、启动与WI逐项标准](milestones/2026-10-28-real-integration-runbook-r1.md)；配套[管理端页面步骤](../admin/milestones/2026-10-28-real-integration-runbook-r1.md)、[小程序登录与真机步骤](../miniprogram/milestones/2026-10-28-real-integration-runbook-r1.md)。
-- 共享输入：[需求基线](../../requirements/baseline.md)、[树洞需求](../../requirements/whispers-v1.md)、[契约导航](../../contracts/navigation.md)、[树洞契约](../../contracts/whispers-v1/README.md)、[进度](../../plans/progress.md)、[阻塞](../../plans/blockers.md)、[联调台账](../../plans/integration-log.md)。
-
-- [宿主API/业务worker、原生或Docker中间件及诊断（当前入口）](host-development.md)
-
-- [后台账号与会话操作](admin-auth.md)
-- [学生应用与学生卡 worker 显式装配](application-assembly.md)
-- [业务结构、迁移与权限边界](business-schema.md)
-- [T001–T004 实施新增文件（含T004续验）](change-files.md)
-- [数据库事务与授权命令入口](command-framework.md)
-- [B02–B07 契约缺口协调提案](contract-coordination-2026-10-21.md)
-- [契约收口及后台隔离联调交接](contract-int003-handoff-2026-10-21.md)
-- [数据迁移与加密基础](data-foundation.md)
-- [外部依赖交付清单与剩余范围](dependency-deliverables.md)
-- [开发业务启动与边界](development-business.md)
-- [Docker 中间件与官方管理工具](docker-middleware.md)
-- [T003 环境与D01–D06清单](environment.md)
-- [foundation-manifest.json](foundation-manifest.json)
-- [第一批实施状态与交接](implementation.md)
-- [input-verification.json](input-verification.json)
-- [R2 后台身份局部联调准入包](int003-r2-readiness.md)
-- [中间件版本决定：采用 RocketMQ 5.3.2](middleware-decision.md)
-- [统一可观测性实施（T004/REQ-018、020）](observability.md)
-- [启动与停止脚本（T004/REQ-018、020）](operations.md)
-- [学生微信身份与会话](student-auth.md)
-- [学生卡上传和扫描模块](student-card.md)
-- [T004 后端续验（2026-10-17）](t004-followup.md)
-- [t004-integration-evidence.json](t004-integration-evidence.json)
-- [第一批实际验证记录](validation.md)
-- [人工认证模块](verification.md)
-- [心愿领域、生命周期与查询](wish.md)
-
-## 固定阶段记录
-
-- [ORM 实体与自动迁移重构（2026-10-21）](milestones/orm-refactor-2026-10-21.md)
-- [第一阶段：工程基础与开发运维](milestones/phase-01.md)
-- [第二阶段：数据与安全基础](milestones/phase-02.md)
-- [第三阶段：事务与授权命令框架](milestones/phase-03.md)
-- [第四阶段：持久工作与消息链路](milestones/phase-04.md)
-- [第五阶段：后台本地账号与会话](milestones/phase-05.md)
-- [第六阶段：学生卡上传与扫描](milestones/phase-06.md)
-- [第七阶段：人工认证申请、重提与后台审核](milestones/phase-07.md)
-- [第八阶段：学生应用与领域 worker 装配](milestones/phase-08.md)
-- [第九阶段：心愿领域规则](milestones/phase-09.md)
-- [第十阶段：开发业务启动接线](milestones/phase-10.md)
-- [消息运输适配验证快照](milestones/t007-mq-validation-2026-10-21.md)
-
-## 后续记录
-
-- [2026-10-22 文档归属与规则治理](milestones/2026-10-22-docs-governance-r1.md)
-
-- [2026-10-22 宿主开发体验优化](milestones/2026-10-22-host-development-r1.md)
-
-- [2026-10-22 原生PostgreSQL与Redis开发方式](milestones/2026-10-22-native-middleware-r1.md)
-
-- [2026-10-22 开发目录、配置与资源清理](milestones/2026-10-22-dev-layout-r1.md)
-
-- [2026-10-22 宿主开发与配置整理精确源码提交补充](milestones/2026-10-22-host-development-commit-r1.md)
-
-- [2026-10-22 业务消息链路收口与真实领域验证](milestones/2026-10-22-business-message-chain-r1.md)
-
-- [2026-10-22 业务消息链路精确源码提交补充](milestones/2026-10-22-business-message-chain-commit-r1.md)
-
-- [2026-10-22 内容扫描、词库与人工复核核心](milestones/2026-10-22-content-moderation-r1.md)
-
-- [2026-10-22 内容扫描与人工复核核心精确源码提交补充](milestones/2026-10-22-content-moderation-commit-r1.md)
-
-- [2026-10-22 内容常驻工作进程、生命周期与补偿预算修复](milestones/2026-10-22-content-worker-r1.md)
-
-- [2026-10-22 应愿申请、唯一匹配与普通回退](milestones/2026-10-22-application-matching-r1.md)
-
-- [2026-10-22 聊天、站内通知及最终送达序号](milestones/2026-10-22-chat-delivery-r1.md)
-
-- [2026-10-22 确认实现、还愿故事与分享重验](milestones/2026-10-22-story-sharing-r1.md)
-
-- [2026-10-22 拉黑、举报、处罚、警告与申诉服务](milestones/2026-10-22-safety-governance-r1.md)
-
-- [2026-10-23 危机案件、限定证据与关怀服务](milestones/2026-10-23-crisis-care-r1.md)
-
-- [2026-10-23 注销、隐私屏障、普通清理与证据删除](milestones/2026-10-23-privacy-deletion-r1.md)
-
-- [2026-10-23 原文人工审核与本地开发服务启动](milestones/2026-10-23-manual-review-startup-r1.md)
-
-- [2026-10-23 原文人工审核精确源码提交补充](milestones/2026-10-23-manual-review-commit-r1.md)
-
-- [2026-10-23 本地危机后台身份与管理端联调接入](milestones/2026-10-23-local-crisis-api-r1.md)
-
-- [2026-10-23 本地危机后台精确源码提交补充](milestones/2026-10-23-local-crisis-commit-r1.md)
-
-- [2026-10-23 本地隐私后台与全模块联调启动](milestones/2026-10-23-local-privacy-startup-r1.md)
-
-- [2026-10-23 本地隐私删除与联调启动精确源码提交补充](milestones/2026-10-23-local-privacy-commit-r1.md)
-
-- [2026-10-23 后端联调启动交付合入 main](milestones/2026-10-23-main-merge-r1.md)
-
-- [2026-10-27 小程序公开主页实现与认证发布准入回报](milestones/2026-10-27-public-profile-p0-r1.md)
-
-- [2026-10-27 公开主页精确源码提交补充](milestones/2026-10-27-public-profile-commit-r1.md)
-
-- [2026-10-27 公开主页提交检查补充说明](milestones/2026-10-27-public-profile-commit-r2.md)
-
-- [2026-10-27 黑名单契约与正式解除动作统一](milestones/2026-10-27-blocks-contract-r1.md)
-
-- [2026-10-27 黑名单契约精确提交与合流交接](milestones/2026-10-27-blocks-commit-r1.md)
-
-- [2026-10-27 公开主页与黑名单交付合入main](milestones/2026-10-27-main-merge-r1.md)
-
-- [2026-10-27 悄悄鲤后端开发计划](milestones/2026-10-27-whispers-backend-plan-r1.md)
-
-- [2026-10-27 悄悄鲤输入对照与数据命令基础](milestones/2026-10-27-whispers-foundation-r1.md)
-
-- [2026-10-27 树洞基础源码提交补证](milestones/2026-10-27-whispers-foundation-commit-r1.md)
-
-- [2026-10-28 悄悄鲤文字、身份与昵称领域](milestones/2026-10-28-whispers-text-r1.md)（[文档检查补证](validation/2026-10-28-whispers-text-doc-check-r1.txt)）
-
-- [2026-10-28 悄悄鲤审核、危机与治理](milestones/2026-10-28-whispers-governance-r1.md)（[验证清单](validation/2026-10-28-whispers-governance-r1.json)）
-
-- [2026-10-28 悄悄鲤暖评、抱抱与通知](milestones/2026-10-28-whispers-interactions-r1.md)（[验证清单](validation/2026-10-28-whispers-interactions-r1.json)）
-
-- [2026-10-28 本人时空胶囊](milestones/2026-10-28-whispers-capsules-r1.md)（[验证清单](validation/2026-10-28-whispers-capsules-r1.json)）
-
-- [2026-10-28 匿名兼容与隐私恢复](milestones/2026-10-28-whispers-privacy-r1.md)（[验证清单](validation/2026-10-28-whispers-privacy-r1.json)）
-
-- [2026-10-28 正式进程与依赖装配](milestones/2026-10-28-whispers-runtime-r1.md)（[验证清单](validation/2026-10-28-whispers-runtime-r1.json)）
-
-- [2026-10-28 B09本地环境与客户端联合验证（部分完成）](milestones/2026-10-28-whispers-b09-integration-r1.md)
-
-- [2026-10-29 用户页直接封禁/解封、禁言/取消禁言（未提交工作区，运行环境待升级）](milestones/2026-10-29-user-restrictions-r1.md)
-
-- [用户直接处置0028迁移、后端重启与真实数据核对](milestones/2026-10-29-user-restrictions-live-r1.md)：本地四操作、权限及审计验证完成；合成用户已解除限制，非生产/真机验收。
-
-- [用户直接处置精确源码提交与停机补充](milestones/2026-10-29-user-restrictions-commit-r1.md)：关联两端完整提交与已固定验证证据；本地管理端、API和worker已关闭。
-
-- [提交检查补充：保留固定原始日志尾空格](milestones/2026-10-29-user-restrictions-commit-r2.md)：全量暂存差异检查唯一例外，其余文件检查通过。
-
-- [资料广场精确提交与服务关闭](milestones/2026-10-29-resource-plaza-commit-stop-r1.md)。
-
-- [2026-10-29 本轮测试收尾、缺陷与待优化事项](validation/2026-10-29-local-three-client-closeout-r1.md)
-
-- [2026-10-30 分支统一与文档汇总](milestones/2026-10-30-branch-consolidation-r1.md)：仅保留 develop、main，关联本端精确提交及实际检查。
+历史依据：[联调收尾](https://github.com/calm195/docs/blob/781d177221efdb9e955956343c4f2ceda8494eff/development/backend/validation/2026-10-29-local-three-client-closeout-r1.md)、[覆盖矩阵（以末尾修复后增量为准）](https://github.com/calm195/docs/blob/781d177221efdb9e955956343c4f2ceda8494eff/development/backend/validation/2026-10-29-local-three-client-coverage-r1.md)。

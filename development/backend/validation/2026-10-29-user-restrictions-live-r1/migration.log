@@ -1,3 +1,0 @@
-{"level":"info","ts":1793254931.154613,"caller":"migration/migration.go:33","msg":"数据库迁移完成","direction":"up","result":"success","duration":0.937290583}
-{"level":"info","ts":1793254931.1552022,"caller":"migrate/main.go:70","msg":"迁移连接关闭完成","result":"success"}
-{"level":"info","ts":1793254931.1552808,"caller":"migrate/main.go:32","msg":"迁移命令完成","result":"success","duration":0.939836125}

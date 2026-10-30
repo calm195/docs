@@ -1,8 +1,0 @@
-B03 文档交付检查补证
-日期：2026-10-28，Asia/Shanghai。
-阶段记录：development/backend/milestones/2026-10-28-whispers-text-r1.md
-阶段记录 SHA256：beeba3880b0ff05ddd300c8f1bdbff75f8d96b3f9e26d57f744b6d57809b77bc
-源码：develop / 0fa7d8cf03ebe0e2365b58aa72ede6781ea403cc
-在 docs backend-develop 工作树执行 python3 scripts/check_documents.py：退出0，349个固定文件、75个来源映射，当前本地链接可解析，6个固定契约旧链接按映射定位。
-两仓库 git diff --check：均退出0。
-本补证只追加，不修改已固定阶段及验证内容；登记后再复核完整固定清单。
