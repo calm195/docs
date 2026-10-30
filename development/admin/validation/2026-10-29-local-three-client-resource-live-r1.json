@@ -1,0 +1,132 @@
+{
+  "login": true,
+  "results": [
+    {
+      "action": "create-publish",
+      "ok": true
+    },
+    {
+      "action": "offline-edit-republish",
+      "ok": true
+    },
+    {
+      "action": "final-offline",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "logout": "/login",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resource-categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24/publish",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24/offline",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24/content",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24/publish",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24/offline",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/7d60d51b-1ae8-4521-a7a6-37fd812e3c24",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/admin/session",
+      "status": 204
+    }
+  ],
+  "redaction": "仅包含本轮专属测试对象ID、动作结果与HTTP路径/状态；不含凭据、用户正文或个人资料。"
+}

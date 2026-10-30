@@ -1,0 +1,350 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "state": "本轮局部联调收尾，整体未全量通过；记录未固定/未提交",
+  "source": "主执行者真实微信开发者工具页面/诊断操作交接，后台结果已只读核对独立JSON",
+  "redaction": "只用A/B标签与本轮不透明测试资源ID，不保存微信名、身份字段、正文、code、openid或token",
+  "accounts": {
+    "A": {
+      "real_wechat_login": "passed",
+      "verification": "existing verified"
+    },
+    "B": {
+      "real_wechat_login": "passed after replacing initial B and adding developer permission",
+      "before_verification": {
+        "resources_access": "rejected as expected",
+        "whisper_post_submit": "rejected as expected"
+      },
+      "identity_chain": {
+        "card_input": "合成PNG",
+        "scanner": "开发扫描适配",
+        "identity_input": "虚构测试姓名/学号，不归档值",
+        "case_id": "6e60ddba-a199-4812-9e94-f6e0f897af1b",
+        "admin_decision": "approved",
+        "current_me": "verified"
+      },
+      "owner_isolation": {
+        "own_wishes_initially": "empty, did not show A wishes",
+        "own_capsules_initially": "empty, did not show A capsules"
+      }
+    }
+  },
+  "chains": {
+    "wish_application_match": {
+      "wish_id": "84fc4c57-c95a-4f1e-a81b-4352ff1545a0",
+      "A_draft": "created",
+      "A_submit": "WeChat console diagnostic invocation of existing page tap handler; not pure click acceptance",
+      "admin_review": "approved, business_outcome ready",
+      "A_publish": "existing tap handler diagnostic, not pure click acceptance",
+      "public_list": "backend GET contains target; frontend schema/filter defect hides public lists",
+      "B_entry": "wx.navigateTo diagnostic direct navigation to wish detail, not normal square navigation",
+      "B_application": "real page submit",
+      "application_admin_review": "approved, active",
+      "A_accept": "real page unique matching succeeded"
+    },
+    "chat": {
+      "A_send": "real page",
+      "A_review": "approved, delivered",
+      "B_send": "real page",
+      "B_review": "approved, delivered",
+      "dual_account_delivery": "reported visible in real A/B conversation",
+      "A_received_B_reply": "真实页面同时显示A/B两条已送达",
+      "post_completion_readonly": {
+        "B_inbox": "匿名会话显示只读",
+        "B_chat": "只读提示，发送disabled"
+      }
+    },
+    "whisper": {
+      "post_id": "5b5a525d-e6f1-42af-9713-afbe52597cc8",
+      "A_save_submit": "pure real page clicks after scrolling into viewport",
+      "admin_review": "approved, published",
+      "B_read": "real page success",
+      "B_hug_count_sequence": [
+        0,
+        1,
+        0
+      ],
+      "comment_id": "c339ca86-1da4-4f83-88a1-25ebb9e37fbf",
+      "B_comment": "real page submit",
+      "comment_admin_review": "approved, published",
+      "A_close_comments": "页面关闭后按钮变恢复",
+      "A_notification_read": {
+        "unread_before": 2,
+        "unread_after": 1,
+        "target_revalidation": "回流详情暖评1/抱抱0，公开B暖评仍可读，提示评论已关闭"
+      },
+      "report_attempt": {
+        "source_read": "current published source readable",
+        "submit": "blocked, report_types unavailable",
+        "catalog_diagnostic": "liyuanci-catalog-missing-diagnostic-20261029.json"
+      },
+      "final_withdrawal": {
+        "restore_comments": "A真实页面恢复，按钮回关闭评论",
+        "withdraw": "A真实页面撤回，状态已撤回并需显式提交",
+        "public_detail": {
+          "method": "GET",
+          "path": "/api/v1/whispers/posts/5b5a525d-e6f1-42af-9713-afbe52597cc8",
+          "status": 404,
+          "body_leak": false
+        },
+        "old_read_notification_revalidation": {
+          "operation": "A重开树洞通知并点本轮已读暖评通知",
+          "status": 404,
+          "page": "内容不存在",
+          "old_body_echo": false
+        }
+      }
+    },
+    "notifications": {
+      "B_unread_before": 2,
+      "B_unread_after": 1,
+      "meaning": "real page read transition observed; not full notification deduplication/expiry test"
+    },
+    "capsule": {
+      "capsule_id": "245babb4-2bae-45b6-810a-64d253a96539",
+      "B_seal": "real page submit; input cleared after sealing",
+      "admin_review": "approved, capsule_locked",
+      "unlock_at": "2026-10-29T21:19:35+08:00",
+      "pre_unlock_observation": {
+        "server_time": "2026-10-29T21:18:56+08:00",
+        "body_visible": false
+      },
+      "at_or_after_unlock": {
+        "observed_at": "2026-10-29T21:19:39+08:00",
+        "unlock_at": "2026-10-29T21:19:35+08:00",
+        "detail": "已解锁且正文可读",
+        "list": "仅状态与预约时间，未回显正文",
+        "scope": "页面约分钟级冒烟，不代替59/60秒与365天精确边界"
+      },
+      "cross_account_negative": {
+        "actor": "A",
+        "target_capsule": "245babb4-2bae-45b6-810a-64d253a96539",
+        "navigation": "wx.navigateTo diagnostic navigation only",
+        "http_method": "GET",
+        "http_path": "/api/v1/me/whispers/capsules/245babb4-2bae-45b6-810a-64d253a96539",
+        "http_status": 404,
+        "page": "内容不存在或当前不可访问",
+        "body_leak": false
+      }
+    },
+    "resources": {
+      "search": "专属测试资料唯一命中",
+      "detail": "real page readable",
+      "copy_download_info": "UI显示已复制；不归档下载信息",
+      "feedback_sequence": [
+        "valid",
+        "link_invalid",
+        "outdated",
+        "incomplete"
+      ],
+      "ui_result": "依次已保存",
+      "final_kind": "incomplete",
+      "admin_summary": {
+        "total": 1,
+        "incomplete": 1,
+        "valid": 0,
+        "link_invalid": 0,
+        "outdated": 0
+      },
+      "final_resource_status": "offline, admin http200 v7->v8",
+      "scope": "同一B反馈替换而非累加，本轮未删除资料",
+      "B_after_offline_search": "专属资料标记搜索为空"
+    },
+    "completion_story": {
+      "resource_id": "84fc4c57-c95a-4f1e-a81b-4352ff1545a0",
+      "A_completion": "real page confirm -> realized",
+      "A_story_submit": "real page confirmation -> fulfilled/pending review, input cleared",
+      "admin_task": "737ef429-5037-4c76-8ac3-be6d585930fc",
+      "admin_outcome": "approved, published, version2->3",
+      "public_student_read": "A真实页面读取公开故事成功",
+      "evidence": "../../admin/validation/2026-10-29-local-three-client-story-a-r1.json"
+    },
+    "story_share": {
+      "A_public_story_read": "passed",
+      "share_reference_create": "passed",
+      "reference_resolve_body": "passed",
+      "send_to_contacts": "not performed",
+      "scope": "不记微信好友分享投递通过",
+      "B_story_wall": "从还愿墙真实页面进入并读取本轮A故事，非诊断直达",
+      "A_withdrawal": "真实页面撤回，提示已受理；心愿仍fulfilled",
+      "after_withdraw_public_detail": {
+        "method": "GET",
+        "path": "/api/v1/stories/84fc4c57-c95a-4f1e-a81b-4352ff1545a0",
+        "status": 404,
+        "body_leak": false,
+        "page": "不可公开查看"
+      },
+      "after_withdraw_share_reference": {
+        "readonly_lookup_count": 1,
+        "resolve_statuses": [
+          404
+        ],
+        "error_code": "NOT_FOUND",
+        "body_leak": false,
+        "evidence": "../../backend/validation/2026-10-29-local-three-client-share-withdrawal-r1.json",
+        "reference_values_saved": false
+      }
+    },
+    "profile_theme": {
+      "B_identity_tags": "hide保存→原show恢复保存，均有真实API及确认框",
+      "theme": "dark切换→light恢复",
+      "block_list": "empty; does not prove create/delete"
+    },
+    "nickname": {
+      "initial_state": "B无已审昵称",
+      "candidate_submit": "real page",
+      "admin_outcome": "nickname_activated",
+      "new_post_id": "0efd5075-f42c-49bc-9e5f-67519f43a1dc",
+      "new_post": "已选昵称预览→草稿→显式送审→后台published→B广场显示昵称",
+      "old_comment_id": "c339ca86-1da4-4f83-88a1-25ebb9e37fbf",
+      "old_comment": "仍随机匿名，不因新昵称变更；评论已关闭无写入口",
+      "label": "不归档昵称文字",
+      "limits": "未执行昵称违规撤销/慢清理、半匿名因字典缺失阻塞"
+    }
+  },
+  "admin_evidence": [
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-identity-b-r1.json",
+      "sha256": "1c7f2f584524d93c2d30e92fb52b527c5011aa237c0a20574aad775f06628496",
+      "review": {
+        "case_id": "6e60ddba-a199-4812-9e94-f6e0f897af1b",
+        "before_version": 1,
+        "after_version": 2,
+        "status": "approved",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-wish-a-r1.json",
+      "sha256": "5ef569515c8c03b95a9ff825c2fa2dceb0d292c1845f5614c2ebe91a3a53c744",
+      "review": {
+        "case_id": "23d9ff69-f3b5-4a10-97b3-0117aa14f795",
+        "resource_id": "84fc4c57-c95a-4f1e-a81b-4352ff1545a0",
+        "before_version": 2,
+        "after_version": 3,
+        "status": "approved",
+        "business_outcome": "ready",
+        "student_submit_boundary": "diagnostic handler invocation in WeChat console, not pure click acceptance",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-application-b-r1.json",
+      "sha256": "8ca52f26edbc3910d495f6c4456555677f583aadc7b4fde63cf7e26a5f12d098",
+      "review": {
+        "case_id": "db9ac1ad-2715-4aa5-a27a-e2a62a81c2f8",
+        "before_version": 2,
+        "after_version": 3,
+        "status": "approved",
+        "business_outcome": "active",
+        "student_submit_boundary": "real WeChat page application submit after diagnostic navigation to wish detail",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-whisper-a-r1.json",
+      "sha256": "db3db3b72362db1e4ce0e7e1b020983e055a3ec695632b56f6d3a03ca3d095f5",
+      "review": {
+        "case_id": "927985b9-7c71-4cb3-ac64-c1f19effd4d8",
+        "resource_id": "5b5a525d-e6f1-42af-9713-afbe52597cc8",
+        "before_version": 2,
+        "after_version": 3,
+        "status": "approved",
+        "business_outcome": "published",
+        "student_submit_boundary": "real WeChat page click save and explicit submit after scrolling into viewport",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-comment-b-r1.json",
+      "sha256": "477f190201f0e68365d2677ccc139ae5cd996606f5e6b2dfaeb6b86dd9bffb8f",
+      "review": {
+        "case_id": "b220dc4f-10bc-4026-8ddd-709a5727be71",
+        "resource_id": "c339ca86-1da4-4f83-88a1-25ebb9e37fbf",
+        "before_version": 2,
+        "after_version": 3,
+        "status": "approved",
+        "business_outcome": "published",
+        "student_submit_boundary": "real WeChat page comment submit",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-chat-a-r1.json",
+      "sha256": "77b67655cf5b3f2a41a1f1155d7c5b953c0fed751d21a44ebe503c84960c37f9",
+      "review": {
+        "case_id": "aac8a0b8-2ff5-4900-9f2b-b5fa87ca7855",
+        "before_version": 2,
+        "after_version": 3,
+        "status": "approved",
+        "business_outcome": "delivered",
+        "student_submit_boundary": "real WeChat page chat message send",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-chat-b-r1.json",
+      "sha256": "b7869062c314353bdc39b61dbcb9dc5d5f80157a1dd66dfe225ba239197a99d9",
+      "review": {
+        "case_id": "c4102d37-d1bf-48cb-b22a-65aba145f4db",
+        "before_version": 2,
+        "after_version": 3,
+        "status": "approved",
+        "business_outcome": "delivered",
+        "student_submit_boundary": "real WeChat page chat message send",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-capsule-b-r1.json",
+      "sha256": "055b7594d60a2c77bf2c837d53582621e5840639733329100f5cd621815111bc",
+      "review": {
+        "case_id": "2b6cba31-8a3b-4480-adaa-2491c5d49167",
+        "resource_id": "245babb4-2bae-45b6-810a-64d253a96539",
+        "before_version": 2,
+        "after_version": 3,
+        "status": "approved",
+        "business_outcome": "capsule_locked",
+        "student_submit_boundary": "real WeChat page private capsule seal",
+        "decision_http_status": 200
+      }
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-nickname-b-r1.json",
+      "sha256": "5b2badfeee47c88b3a09d9d34b5017c424f4e55c1097621ce5689490362e53af"
+    },
+    {
+      "path": "../../admin/validation/2026-10-29-local-three-client-whisper-nickname-b-r1.json",
+      "sha256": "491a0f35f3f64c4dde0b16fbb364248d86b99afb303aad57b6ab93cc9258ffb2"
+    }
+  ],
+  "other_evidence": [
+    {
+      "path": "../../backend/validation/2026-10-29-local-three-client-wish-visibility-r1.json",
+      "purpose": "公共心愿扁平投影与前端过滤错配"
+    },
+    {
+      "path": "../../backend/validation/2026-10-29-local-three-client-catalog-missing-r1.json",
+      "purpose": "举报/年级/援助资料缺失和动作投影疑点，只读诊断未修复"
+    }
+  ],
+  "limits": [
+    "真实微信A/B会话与归属子项已实际测试，不等于全部双账号隔离/越权负例通过",
+    "认证材料和学校规则为合成输入/开发适配，不是学校权威身份验收",
+    "人工审核、本地KMS/日志及外部通知/清理替代边界保留",
+    "未完成全部WI、双设备、精确时间边界、容量及独立灾备验收",
+    "心愿提交/上架和B详情入口含控制台诊断，不能写纯点击全链通过",
+    "半匿名年级/援助/举报类型资料配置阻塞",
+    "公共心愿列表schema过滤缺陷已定位未修",
+    "opaque屏蔽动作投影接入疑点未修",
+    "无真机、性能、独立灾备或本轮新账号注销完成证据"
+  ],
+  "final_test_resource_states": {
+    "A_whisper_5b5a525d": "withdrawn",
+    "B_named_whisper_0efd5075": "published",
+    "B_capsule_245babb4": "unlocked",
+    "A_story_84fc4c57": "withdrawn",
+    "A_wish_84fc4c57": "fulfilled",
+    "test_resource_7d60d51b": "offline"
+  }
+}

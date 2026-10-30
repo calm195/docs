@@ -1,5 +1,8 @@
 # 小程序文档索引
 
+
+- [2026-10-29 三端本地真实联调（进行中、未固定/未提交）](../backend/milestones/2026-10-29-local-three-client-integration-r1.md)：本端脱敏证据归档于validation，完整覆盖及未完成项见同轮记录。
+
 对应工程：`liyuanci-miniprogram-uniapp`。关联 T001–T004、REQ-001、REQ-018、REQ-020；具体业务 REQ 及验收映射以各记录为准。
 
 本目录迁入文件是 2026-10-22 整理时的固定快照，保留历史状态及测试结论；不因归档宣称当前功能验收通过。后续按日期/主题/revision 新增记录，补充与勘误引用原文；只更新本索引入口。参见[统一规范](../../governance/README.md)。
@@ -7,6 +10,12 @@
 后续源码使用 `develop`，文档使用 `mini-deveop`（用户于2026-10-23指定）。
 
 ## 实施与接入说明
+
+- [资料广场真实本地联调补充 r2](milestones/2026-10-29-resource-plaza-local-integration-r2.md)：用户明确授权后真实微信登录、分类/模糊搜索、详情、两类复制回调、四类反馈及投稿缺图提示通过；模拟器和真实HTTP，真机及正式二维码待完成。
+
+- [资料广场本地启动与模拟器门禁验证](milestones/2026-10-29-resource-plaza-local-start-r1.md)：开发watch和正确微信项目已启动，未登录门禁通过；记录授权前的审批阻塞，后续已授权联调见r2。
+
+- [资料广场小程序实现与独立验证](milestones/2026-10-29-resource-plaza-implementation-r1.md)：5学生接口、认证搜索/详情/复制、四类反馈与固定图投稿弹窗；工作区实现，194项测试和微信构建通过，真实HTTP/真机及正式二维码待完成。
 
 - [资料广场小程序独立工作包](milestones/2026-10-29-resource-plaza-development-r1.md)、[正式契约 resource-plaza/1.0.0](../../contracts/resource-plaza-v1/README.md)、[总交接](../../design/resource-plaza-contract-delivery-v1.md)；5个学生操作、认证查看/搜索/复制、四类反馈及固定二维码投稿，正式输入已固定，尚未实现，正式图待提供。
 
@@ -72,3 +81,5 @@
 - [2026-10-29 原型风格重构与完整导航（新分支工作区交付）](milestones/2026-10-29-prototype-refresh-r1.md)
 
 - [2026-10-29 原型重构精确提交与 main 合并补充](milestones/2026-10-29-prototype-refresh-commit-r1.md)
+
+- [资料广场精确提交与服务关闭](milestones/2026-10-29-resource-plaza-commit-stop-r1.md)。

@@ -1,0 +1,40 @@
+{
+  "source": "read-only DB technical state; no manual decision",
+  "messages": [
+    {
+      "task_id": "7e5504c7-342f-4c8b-aa0d-9b26d5781401",
+      "version": 2,
+      "crisis_hit": false,
+      "message_id": "2e01f89c-720e-47df-b661-8958cd371e5a",
+      "task_status": "approved",
+      "delivered_at": "2026-10-29T14:10:24.602233+00:00",
+      "delivery_seq": 1,
+      "ordinary_hit": false,
+      "message_status": "delivered",
+      "school_related": false,
+      "content_version": 1,
+      "conversation_id": "3c113760-c459-4ede-a31c-2eafe198f001",
+      "detector_version": "wordlist-first-v1",
+      "no_human_reviewer": true,
+      "sender_is_wish_owner": true
+    },
+    {
+      "task_id": "a22a0d36-300e-469f-b4b3-ecd0a22d94f7",
+      "version": 2,
+      "crisis_hit": false,
+      "message_id": "04c9ca7d-db9c-4217-981d-1834bd9aa4e2",
+      "task_status": "approved",
+      "delivered_at": "2026-10-29T14:15:12.90564+00:00",
+      "delivery_seq": 2,
+      "ordinary_hit": false,
+      "message_status": "delivered",
+      "school_related": false,
+      "content_version": 1,
+      "conversation_id": "3c113760-c459-4ede-a31c-2eafe198f001",
+      "detector_version": "wordlist-first-v1",
+      "no_human_reviewer": true,
+      "sender_is_wish_owner": false
+    }
+  ],
+  "assertion": "two participants, monotonic seq1/2, both automatic delivered"
+}

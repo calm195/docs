@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "source": {
+    "branch": "develop",
+    "head": "c95feabb49041a6b0b456eeb0b9663fb0b86f6c5"
+  },
+  "evidence_source": "主执行者实际工具操作交接；构建日志由记录者复核",
+  "unit_tests": {
+    "passed": 200,
+    "original_log": "待补"
+  },
+  "development_build": "passed, per main executor",
+  "production_build": {
+    "result": "passed",
+    "log": "2026-10-29-local-three-client-build-r1.txt",
+    "sha256": "cc12574c42a9e38aebaa536fa2e1ef87d99ffcbab04e1aba2d794446860e21a7",
+    "marker": "DONE  Build complete."
+  },
+  "account_a": {
+    "window": "s0",
+    "identity": "开发工具当前登录的真实微信，账号名不归档",
+    "page_wechat_login": "success",
+    "personal_center": "已认证",
+    "capsule_list": "readable",
+    "unlocked_capsule_detail": "readable",
+    "additional_readonly_pages": [
+      {
+        "path": "pages/care/index",
+        "result": "无关怀卡片空态正常"
+      },
+      {
+        "path": "pages/safety/index",
+        "tab": "本人警告",
+        "result": "暂无未确认空态正常"
+      },
+      {
+        "path": "pages/safety/index",
+        "tab": "本人申诉",
+        "result": "暂无记录空态正常"
+      }
+    ],
+    "additional_limit": "仅空态导航读取，不含处置。"
+  },
+  "limits": {
+    "dual_real_account_isolation": "本人心愿/胶囊空态不混A已观察；其余越权负例未全覆盖",
+    "two_devices": "not performed",
+    "full_business_acceptance": "not passed"
+  },
+  "redaction": "不保存code、openid、token、AppSecret、账号名或正文。",
+  "initial_account_b_history": {
+    "identity": "用户添加的真实测试微信B，账号名不归档",
+    "attempts": 2,
+    "result": "blocked before backend request",
+    "stage": "wx.login fail",
+    "diagnostic": "Raise窗口并加载debugger；仅打印fail.errMsg",
+    "err_msg": "login:fail 登录用户不是该小程序的开发者, [20261029 20:41:45]",
+    "required_action": "用户在公众平台为B添加该小程序开发者权限"
+  },
+  "current_account_b": {
+    "real_wechat_page_login": "success",
+    "developer_permission": "user added for replacement test account",
+    "verification": "approved using synthetic card and fictional identity inputs",
+    "dual_account_details": "2026-10-29-local-three-client-dual-account-r1.json"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "b220dc4f-10bc-4026-8ddd-709a5727be71",
+  "before_version": 2,
+  "resource_id": "c339ca86-1da4-4f83-88a1-25ebb9e37fbf",
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "published",
+  "student_submit_boundary": "real WeChat page comment submit",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews/b220dc4f-10bc-4026-8ddd-709a5727be71",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reviews/b220dc4f-10bc-4026-8ddd-709a5727be71/decision",
+      "status": 200
+    }
+  ]
+}

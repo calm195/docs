@@ -1,0 +1,12 @@
+{
+  "catalog_version": "local-integration-catalog-20261029-v1",
+  "grade_version": 2026102901,
+  "grade_count": 2,
+  "report_code": "integration_test_20261029",
+  "report_published": true,
+  "inserted": 1,
+  "initialization": "explicit local migrator DML INSERT ON CONFLICT DO NOTHING; no DDL",
+  "help_status": "unavailable",
+  "care": null,
+  "restart_performed": false
+}

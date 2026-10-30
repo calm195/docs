@@ -1,0 +1,37 @@
+{
+  "case_id": "aac8a0b8-2ff5-4900-9f2b-b5fa87ca7855",
+  "before_version": 2,
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "delivered",
+  "student_submit_boundary": "real WeChat page chat message send",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks/aac8a0b8-2ff5-4900-9f2b-b5fa87ca7855",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/moderation-tasks/aac8a0b8-2ff5-4900-9f2b-b5fa87ca7855/decision",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    }
+  ]
+}

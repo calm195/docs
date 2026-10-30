@@ -1,0 +1,38 @@
+{
+  "case_id": "db9ac1ad-2715-4aa5-a27a-e2a62a81c2f8",
+  "before_version": 2,
+  "wish_id": "84fc4c57-c95a-4f1e-a81b-4352ff1545a0",
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "active",
+  "student_submit_boundary": "real WeChat page application submit after diagnostic navigation to wish detail",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks/db9ac1ad-2715-4aa5-a27a-e2a62a81c2f8",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/moderation-tasks/db9ac1ad-2715-4aa5-a27a-e2a62a81c2f8/decision",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/moderation-tasks",
+      "status": 200
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "source": "real HTTP read, not UI",
+  "heads": [
+    {
+      "kind": "crisis",
+      "version": 5,
+      "effective_id": "ed43fdd0-bc36-4d29-8501-a76095b13275",
+      "entry_count": 8,
+      "status": "published"
+    },
+    {
+      "kind": "ordinary_violation",
+      "version": 5,
+      "effective_id": "53e10519-8db6-4ef4-b1df-4269a1f7cef3",
+      "entry_count": 12,
+      "status": "published"
+    },
+    {
+      "kind": "school",
+      "version": 7,
+      "effective_id": "95ee1082-748e-4410-9d3c-8ce19ce38d56",
+      "entry_count": 9,
+      "status": "published"
+    }
+  ],
+  "config": {
+    "contract_version": "whispers/1.0.0",
+    "enabled": true,
+    "server_now": "2026-10-29T13:59:33Z",
+    "semi_available": true,
+    "grade_dictionary": {
+      "version": 2026102901,
+      "items": [
+        {
+          "code": "integration_grade1",
+          "label": "本地测试一年级"
+        },
+        {
+          "code": "integration_grade2",
+          "label": "本地测试二年级"
+        }
+      ]
+    },
+    "limits": {
+      "text_codepoints": 500,
+      "nickname_min": 2,
+      "nickname_max": 20,
+      "capsule_min_delay_seconds": 60,
+      "capsule_max_delay_seconds": 31536000,
+      "capsule_active_limit": 20
+    },
+    "report_types": [
+      {
+        "code": "integration_test_20261029",
+        "label": "本地联调测试举报（非正式规则）"
+      }
+    ],
+    "block_api": "opaque-v1"
+  },
+  "queues": [
+    {
+      "path": "moderation-tasks",
+      "http_status": 200,
+      "items": [
+        {
+          "id": "0ba3fa25-557e-4780-9e79-c3753a54bd24",
+          "status": "approved",
+          "version": 2,
+          "kind": "wish"
+        },
+        {
+          "id": "23d9ff69-f3b5-4a10-97b3-0117aa14f795",
+          "status": "approved",
+          "version": 3,
+          "kind": "wish"
+        },
+        {
+          "id": "a1589aec-e5b4-49eb-bca8-734f53b1950e",
+          "status": "approved",
+          "version": 3,
+          "kind": "wish"
+        },
+        {
+          "id": "aac8a0b8-2ff5-4900-9f2b-b5fa87ca7855",
+          "status": "approved",
+          "version": 3,
+          "kind": "message"
+        },
+        {
+          "id": "c4102d37-d1bf-48cb-b22a-65aba145f4db",
+          "status": "approved",
+          "version": 3,
+          "kind": "message"
+        },
+        {
+          "id": "db9ac1ad-2715-4aa5-a27a-e2a62a81c2f8",
+          "status": "approved",
+          "version": 3,
+          "kind": "application"
+        }
+      ],
+      "has_more": false
+    },
+    {
+      "path": "whispers/reviews",
+      "http_status": 200,
+      "items": [
+        {
+          "id": "04d0ce5f-1c54-4561-959c-0a2e8195199f",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_comment",
+          "content_id": "2ee8556c-9f20-453a-b589-0e3a449a013f"
+        },
+        {
+          "id": "2b6cba31-8a3b-4480-adaa-2491c5d49167",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_capsule",
+          "content_id": "245babb4-2bae-45b6-810a-64d253a96539"
+        },
+        {
+          "id": "44f75c7d-8456-4b11-a310-cb26794ae2ac",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_post",
+          "content_id": "0efd5075-f42c-49bc-9e5f-67519f43a1dc"
+        },
+        {
+          "id": "6d132b5e-9f01-49d5-91f8-da007fc9a7f6",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_nickname",
+          "content_id": "2c153bc1-8d89-4ea7-b9c6-f168b6c711d0"
+        },
+        {
+          "id": "aaeda890-7ba4-4c97-992f-3e5bcfd15f0f",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_post",
+          "content_id": "6e3a5519-5ce9-40ec-b9f3-5f20cc5e3853"
+        },
+        {
+          "id": "b220dc4f-10bc-4026-8ddd-709a5727be71",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_comment",
+          "content_id": "c339ca86-1da4-4f83-88a1-25ebb9e37fbf"
+        },
+        {
+          "id": "d5bdfbf8-a29e-40fc-8cdb-9ebae858ce7f",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_nickname",
+          "content_id": "a6ebbccf-3ff4-4afa-abf1-a699c1b53f5d"
+        },
+        {
+          "id": "e92bb7fa-69aa-4628-b69a-45bb2588d5a0",
+          "status": "approved",
+          "version": 3,
+          "kind": "whisper_capsule",
+          "content_id": "3ea1ad0c-d583-4961-b21c-e850716952c6"
+        }
+      ],
+      "has_more": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "d5bdfbf8-a29e-40fc-8cdb-9ebae858ce7f",
+  "before_version": 2,
+  "resource_id": "a6ebbccf-3ff4-4afa-abf1-a699c1b53f5d",
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "nickname_activated",
+  "student_submit_boundary": "real WeChat page independent nickname candidate submit",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews/d5bdfbf8-a29e-40fc-8cdb-9ebae858ce7f",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reviews/d5bdfbf8-a29e-40fc-8cdb-9ebae858ce7f/decision",
+      "status": 200
+    }
+  ]
+}

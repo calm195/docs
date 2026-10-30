@@ -1,0 +1,33 @@
+{
+  "case_id": "927985b9-7c71-4cb3-ac64-c1f19effd4d8",
+  "before_version": 2,
+  "resource_id": "5b5a525d-e6f1-42af-9713-afbe52597cc8",
+  "content_version": 1,
+  "after_version": 3,
+  "status": "approved",
+  "business_outcome": "published",
+  "student_submit_boundary": "real WeChat page click save and explicit submit after scrolling into viewport",
+  "decision_http_status": 200,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/whispers/reviews/927985b9-7c71-4cb3-ac64-c1f19effd4d8",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/whispers/reviews/927985b9-7c71-4cb3-ac64-c1f19effd4d8/decision",
+      "status": 200
+    }
+  ]
+}
