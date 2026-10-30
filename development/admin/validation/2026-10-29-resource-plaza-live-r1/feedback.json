@@ -1,0 +1,37 @@
+{
+  "realBackend": true,
+  "interceptedResponses": false,
+  "resourceId": "624595a5-aab4-4349-90fe-d3f2e2000a90",
+  "contentVersion": 2,
+  "feedbackSummary": {
+    "content_version": 2,
+    "incomplete": 1,
+    "link_invalid": 0,
+    "outdated": 0,
+    "total": 1,
+    "valid": 0
+  },
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resource-categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90",
+      "status": 200
+    }
+  ],
+  "pageErrors": []
+}

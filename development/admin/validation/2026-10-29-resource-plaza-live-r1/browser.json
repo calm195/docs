@@ -1,0 +1,143 @@
+{
+  "realBackend": true,
+  "interceptedResponses": false,
+  "base": "http://127.0.0.1:5173",
+  "category": {
+    "created_at": "2026-10-29T11:37:55.834428Z",
+    "enabled": true,
+    "id": "5bfdc302-e926-4312-b2c0-d88b072d9afd",
+    "name": "本地联调20261029113754",
+    "sort_order": 10,
+    "updated_at": "2026-10-29T11:37:55.834428Z",
+    "version": 1
+  },
+  "resource": {
+    "id": "624595a5-aab4-4349-90fe-d3f2e2000a90",
+    "title": "本地联调资料 20261029113754",
+    "version": 5,
+    "content_version": 2,
+    "status": "published"
+  },
+  "results": [
+    "真实管理员登录",
+    "复用首次真实UI创建分类",
+    "保存草稿仍未发布",
+    "显式发布成功",
+    "下架后编辑保存仍下架且内容版本递增",
+    "模糊搜索返回已发布资料",
+    "已引用分类停用真实409且界面正确解释"
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/sessions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resource-categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90/publish",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90/offline",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90/content",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90/publish",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources/624595a5-aab4-4349-90fe-d3f2e2000a90",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resources",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resource-categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/resource-categories/5bfdc302-e926-4312-b2c0-d88b072d9afd",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/resource-categories/5bfdc302-e926-4312-b2c0-d88b072d9afd",
+      "status": 409
+    }
+  ],
+  "pageErrors": []
+}
