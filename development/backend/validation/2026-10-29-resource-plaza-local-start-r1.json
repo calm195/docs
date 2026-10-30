@@ -1,0 +1,134 @@
+{
+  "verified_at": "2026-10-29",
+  "migration": {
+    "before": 28,
+    "after": 29,
+    "up": 0,
+    "permissions": 0,
+    "config_unchanged": true
+  },
+  "existing_config_unchanged": {
+    "operations.env": true,
+    "business.json": true,
+    "business.simple.json": true,
+    "business-migration.json": true,
+    "whispers-local.json": true,
+    "admin-login.txt": true
+  },
+  "processes": {
+    "server": {
+      "pid": 85806,
+      "alive": true,
+      "path": "/Users/kurous/code/liyuanci/liyuanci-backend-go/.local/local/bin/server"
+    },
+    "card-worker": {
+      "pid": 85804,
+      "alive": true,
+      "path": "/Users/kurous/code/liyuanci/liyuanci-backend-go/.local/local/bin/card-worker"
+    },
+    "content-worker": {
+      "pid": 85803,
+      "alive": true,
+      "path": "/Users/kurous/code/liyuanci/liyuanci-backend-go/.local/local/bin/content-worker"
+    },
+    "whisper-content-worker": {
+      "pid": 85805,
+      "alive": true,
+      "path": "/Users/kurous/code/liyuanci/liyuanci-backend-go/.local/local/bin/content-worker"
+    },
+    "privacy-account-worker": {
+      "pid": 85802,
+      "alive": true,
+      "path": "/Users/kurous/code/liyuanci/liyuanci-backend-go/.local/local/bin/privacy-worker"
+    },
+    "privacy-evidence-worker": {
+      "pid": 85801,
+      "alive": true,
+      "path": "/Users/kurous/code/liyuanci/liyuanci-backend-go/.local/local/bin/privacy-worker"
+    }
+  },
+  "http": [
+    {
+      "path": "/healthz",
+      "status": 200,
+      "cache_control": null,
+      "request_id_present": true
+    },
+    {
+      "path": "/readyz",
+      "status": 200,
+      "cache_control": null,
+      "request_id_present": true
+    },
+    {
+      "path": "/api/v1/resources",
+      "status": 401,
+      "cache_control": "no-store",
+      "request_id_present": true,
+      "code": 401
+    },
+    {
+      "path": "/api/v1/resource-categories",
+      "status": 401,
+      "cache_control": "no-store",
+      "request_id_present": true,
+      "code": 401
+    },
+    {
+      "path": "/api/v1/admin/resources",
+      "status": 401,
+      "cache_control": "no-store",
+      "request_id_present": true,
+      "code": 401
+    },
+    {
+      "path": "/api/v1/admin/resource-categories",
+      "status": 401,
+      "cache_control": "no-store",
+      "request_id_present": true,
+      "code": 401
+    }
+  ],
+  "source_head": "96f3754e02aa2c0c563ea2aa4385f0917e535ac4",
+  "source_branch": "develop",
+  "final_ready_status": 200,
+  "final_admin_status": 200,
+  "contract_id": "resource-plaza/1.0.1",
+  "docs_branch": "backend-develop",
+  "docs_base": "83945210cb5f9882f4ab3d142a6c004cfacf5fd9",
+  "source_changed_this_round": false,
+  "source_implementation_fingerprints_verified": 28,
+  "real_external_providers_accepted": false,
+  "production_accepted": false,
+  "cross_client": {
+    "admin_real_http": true,
+    "mini_wechat_devtools_real_login": true,
+    "user_explicit_login_authorization": true,
+    "response_interception": false,
+    "resource_id": "624595a5-aab4-4349-90fe-d3f2e2000a90",
+    "resource_version": 5,
+    "content_version": 2,
+    "resource_status": "published",
+    "mini_search_and_detail": true,
+    "download_info_requests": 2,
+    "download_info_status": 200,
+    "clipboard_success_callback": true,
+    "clipboard_contents_read": false,
+    "feedback_switches": [
+      "valid",
+      "link_invalid",
+      "outdated",
+      "incomplete"
+    ],
+    "admin_refreshed_feedback_summary": {
+      "total": 1,
+      "valid": 0,
+      "link_invalid": 0,
+      "outdated": 0,
+      "incomplete": 1
+    },
+    "qr_missing_state_verified": true,
+    "physical_phone_test": false,
+    "real_cloud_download_test": false
+  }
+}

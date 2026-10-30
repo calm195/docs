@@ -749,6 +749,17 @@
     "development/admin/validation/2026-10-29-resource-plaza-live-r1/list.png": "f76c1eadc09848904d566c82a0d8d0599ca3b7566aae8d5e2bf8847515915922",
     "development/admin/validation/2026-10-29-resource-plaza-live-r1/published.png": "6f8bd7144bca82a9b24882f710992e6258ba5264f66fca0dfbdfcb6204fdc4f6",
     "development/admin/validation/2026-10-29-resource-plaza-live-r1/result.json": "66aaa92d7ce0a6e8a8d0c7c67165eb99b3100d75722bc44cb34fca4505ec17a3",
-    "development/admin/milestones/2026-10-29-resource-plaza-commit-stop-r1.md": "fe4b851b43b42ac6461a88dd3dceaf16df37d8d0ee0ea17805cfcc7d24a518c9"
+    "development/admin/milestones/2026-10-29-resource-plaza-commit-stop-r1.md": "fe4b851b43b42ac6461a88dd3dceaf16df37d8d0ee0ea17805cfcc7d24a518c9",
+    "development/backend/milestones/2026-10-29-resource-plaza-implementation-r1.md": "7e263a3ceb07d3b861d691c794e4de88cca0941477c67c4d882df9f6c1ac1042",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/build.txt": "cdc5d1a038588db15a62c6e7134c8bec43f399fbba594614255d056a2d79c9ed",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/check.txt": "33f6379ea84bfaf0220de47cf8a0ecf98b583b41e9dd76c1f1a47dff00ae1312",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/http-responses.json": "b641cfe23e1b016f6be067ac11f74dec4743bc0d8e4ebd70c209e89e19a56de7",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/integration.txt": "1f391f32bad5804f0c829b4840c02c0b90d71d64a522788ee53c020c475254be",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/privacy.txt": "38504455e90fd262e041fc718bfca6d2b1de13bd2baea683ffed0c25b8528ae8",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/result.json": "89f7082562dacc4b2c24a7cc2bad40d85ce9d09c57b508b76f6622f29b07d6d7",
+    "development/backend/validation/2026-10-29-resource-plaza-implementation-r1/validate_http.py": "9979822ffb0c987c5b7c39f3e53f146ae02a3ca0f4bca3dda86f50fc76a5b038",
+    "development/backend/milestones/2026-10-29-resource-plaza-local-start-r1.md": "7ad7d866a2dd1d855103c037aba65669b60e259c339c2ed30d6744c5eb51f867",
+    "development/backend/validation/2026-10-29-resource-plaza-local-start-r1.json": "ec8ba2ccc832f8529d19852610b1dde48525fe8f1b49524a91ccb212e83357b8",
+    "development/backend/milestones/2026-10-29-resource-plaza-commit-stop-r1.md": "98a97d09f143fa70e5479410621d850c3de6ca4567b8d138287e2f39bd5589e1"
   }
 }
