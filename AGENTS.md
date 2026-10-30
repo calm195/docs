@@ -14,7 +14,7 @@
 ## 文档与分支
 
 - 遵循 [文档规范](governance/README.md)，三端过程产物只写 development/backend、admin、miniprogram 对应目录；开发工程不保留阶段 docs/。各端索引统一链接共享需求、契约和台账。
-- 开发工程变动前核对分支/完整 HEAD/status，保护已有改动，不重置。按用户2026-10-23明确要求，后端任务使用源码 `develop` 与本工程 `backend-develop`；管理端按用户2026-10-23明确要求使用源码 `develop` 与本工程 `admin-develop`；小程序按用户2026-10-23明确要求使用源码 `develop` 与本工程 `mini-deveop`（保留用户指定拼写），后续小程序开发与对应文档变更直接落于这两个分支。无法安全准备目标 docs 分支时停止受影响交付；并行任务用独立工作树。
+- 开发工程变动前核对分支/完整 HEAD/status，保护已有改动，不重置。按用户 2026-10-30 明确要求，主仓库、docs 与三端源码仓库的本地和远程仅保留 `develop`、`main`；日常源码与对应文档统一在各自 `develop` 开发，经授权合入 `main` 并推送。此规则替代此前按端命名的 docs 分支约定。无法安全准备 docs `develop` 时停止受影响交付；并行任务协调写入范围，必要时使用 detached 工作树，汇总后清理，不保留额外分支。
 - 固定文件由 governance/frozen.json 登记，禁止改写、追加、格式化、移动或删除；清单只追加新条目，禁止修改/删除旧条目或重算旧指纹。勘误、新阶段、新版本另建文件，引用原记录/指纹并更新索引。
 - 阶段新记录使用 development/<端>/milestones/YYYY-MM-DD-<主题>-rN.md；注明任务/REQ、源码分支/完整提交、docs 基点、契约版本、实现与未完成项、设计取舍、真实/模拟边界、验证与依赖；对应证据放同端 validation/。记录随交付登记后固定，不把新证据堆在 README。
 - requirements、approvals、design、reviews 中已固定文件保持原样。原始输入只读；需求/设计变更另发版本并重新走适用人工审批。contracts 的固定版本另发新版本或 revision，草案不能冒充正式契约。

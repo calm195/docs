@@ -7,7 +7,7 @@
 
 本目录迁入文件是 2026-10-22 整理时的固定快照，保留历史状态及测试结论；不因归档宣称当前功能验收通过。后续按日期/主题/revision 新增记录，补充与勘误引用原文；只更新本索引入口。参见[统一规范](../../governance/README.md)。
 
-当前开发：管理端源码使用 `develop`，本端文档使用 `admin-develop`；后端在途工作保留于其独立工作区。
+当前开发：管理端源码与 docs 均使用 `develop`；本地和远程仅保留 `develop`、`main`，遵循 2026-10-30 更新的[分支规则](../../governance/README.md)。
 
 ## 实施与接入说明
 
@@ -120,3 +120,5 @@
 - [提交检查补充：保留固定原始日志尾空格](../backend/milestones/2026-10-29-user-restrictions-commit-r2.md)：全量暂存差异检查唯一例外，其余文件检查通过。
 
 - [资料广场精确提交与服务关闭](milestones/2026-10-29-resource-plaza-commit-stop-r1.md)。
+
+- [2026-10-30 分支统一与文档汇总](milestones/2026-10-30-branch-consolidation-r1.md)：仅保留 develop、main，关联本端精确提交及实际检查。

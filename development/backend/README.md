@@ -159,3 +159,5 @@
 - [资料广场精确提交与服务关闭](milestones/2026-10-29-resource-plaza-commit-stop-r1.md)。
 
 - [2026-10-29 本轮测试收尾、缺陷与待优化事项](validation/2026-10-29-local-three-client-closeout-r1.md)
+
+- [2026-10-30 分支统一与文档汇总](milestones/2026-10-30-branch-consolidation-r1.md)：仅保留 develop、main，关联本端精确提交及实际检查。

@@ -218,7 +218,7 @@ QQ-A编号为**建议用例**，确认后写入新需求版本；不覆盖旧基
 
 ## 8. 交付、分支与本计划检查
 
-本次仅维护docs共享计划及根索引；后续源码与过程材料按[治理规范](../governance/README.md)执行：后端`develop`／docs `backend-develop`，管理端`develop`／docs `admin-develop`，小程序`develop`／docs `mini-deveop`。实施前重核完整HEAD和已有改动；并行任务使用独立工作树，协调者维护共享计划及台账。
+本次仅维护docs共享计划及根索引；后续源码与过程材料按[治理规范](../governance/README.md)执行：三端源码与 docs 均在各自 `develop` 开发，本地和远程仅保留 `develop`、`main`（2026-10-30 更新）。实施前重核完整HEAD和已有改动；并行任务协调写入范围，必要时使用 detached 工作树并在汇总后清理，协调者维护共享计划及台账。
 
 每阶段在对应端`development/<端>/milestones/YYYY-MM-DD-<主题>-rN.md`新增交付记录，证据放同端`validation/`，记录任务／REQ、源码完整提交、docs基点、契约版本、真实／模拟范围、验证及未完成项，交付后登记固定清单。被评审材料的意见写入`reviews/`；需求／设计与契约变更另发版本，人工批准依据具体对象记录。未授权提交、推送、合并、部署或上线不作为本计划执行动作。
 
