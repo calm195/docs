@@ -1,6 +1,6 @@
 # 后端现状
 
-更新：2026-10-30。源码核对基点 `968248fcd2e9aa0fe620d572dd69f3f7fb00084a`；本轮只整理文档。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
+更新：2026-11-01。源码版本 `6854914d9a5dc14203a39d0dc1f42a28248db380`；生产装配、持久数据库任务和原生运维已按依赖完成本地提交。服务器未部署、未修改；正式验收边界见下文。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
 
 ## 模块实现
 
@@ -14,15 +14,77 @@
 | 平台用户 | 列表、昵称搜索、详情、处罚历史；超管直接封禁/解封、禁言7天/取消禁言 | 必填理由、版本与幂等校验、加密审计；解封不解除仍有效禁言，不恢复已隔离内容 |
 | 资料广场 | 15个操作：认证用户查询/复制/四类反馈，后台资料和分类维护 | `resource-plaza/1.0.1`；链接与提取码加密；服务端不访问外部网盘 |
 | 隐私与恢复 | 注销屏障、匿名回执、账号/证据分域清理、恢复前重删 | 外部全版本清理、独立故障域与90天恢复未验收，失败保持 processing |
-| 工程与运行 | Go模块化单体、独立worker；PG权威、Redis限流、可选MQ与数据库补偿 | 开发入口与生产装配分离；普通启动不迁移、不重置账号、不替换历史密钥 |
+| 工程与运行 | 完整生产API、学生卡/普通内容/悄悄鲤/账号清理/证据清理五类worker、显式初始化与离线检查、原生systemd及既有Compose兼容 | 本次生产使用鉴权Redis、持久数据库任务、角色隔离和HTTPS供应商；普通启动不迁移、不重置、不替换历史密钥 |
 
 源码边界可从 [studentapi](../../../liyuanci-backend-go/internal/studentapi)、[whisper/whisperapp](../../../liyuanci-backend-go/internal/whisperapp)、[resourceplaza](../../../liyuanci-backend-go/internal/resourceplaza)、[privacy](../../../liyuanci-backend-go/internal/privacy) 核对。日常启动、环境与配置以[源码 README](../../../liyuanci-backend-go/README.md)和[功能链路说明](../../../liyuanci-backend-go/FUNCTIONALITY.md)为入口。
 
+## 本轮生产装配
+
+按用户2026-10-31要求，悄悄鲤与现有业务共同纳入生产发布范围。`APP_BUSINESSFILE` 完整宿主允许 `Runtime.Enabled=true`，覆盖帖子、昵称、暖评、抱抱、评论开关、通知、胶囊和后台治理；旧独立树洞入口的生产门禁保留。模板缺少真实凭据时拒绝启动，未实际部署。
+
+- 新增学校校验、身份摘要、加密对象版本读写、图片扫描、普通内容处理的HTTPS适配；与既有KMS、树洞、通知、删除能力共同装配。网关是私有协议边界，正式云供应商接入仍依赖交付。
+- API检查三类词库、正式年级/举报/援助/关怀、字典一致性、受限角色及恢复门禁；独立运行五类worker，不复用开发模式。初始化可显式建立首个超管与身份引用，词库通过授权服务发布并保留审计，重跑不重置历史配置。
+- 修复分角色运行发现的最小权限缺口：身份维护角色只增授匿名黑名单全局状态表SELECT，使本人状态和认证上传可用；需显式重放permissions，未新增或改写已应用迁移。
+- 生产模板提供独立私有目录、只读非root容器、loopback API、外部恢复日志、鉴权MQ分域；release.py只核对制品/配置，离线容器无网络且不执行初始化写入。
+
+## 候选宿主只读评估
+
+2026-11-01检查两台候选宿主。第一台经用户授权固定首次信任的SSH主机指纹；第二台通过用户指定的Termius已保存会话检查，实际登录用户为liyuanci，未导出密钥。用户说明第二台可重置，本次仍仅评估。两台均未安装软件、拉取镜像、写入服务器配置、调整防火墙、重置、重启或启停服务；未运行压测或磁盘写入测试。SSH接入信息和私钥路径不写入本文。
+
+第一台（保留现有业务）：
+
+| 项目 | 实测状态 | 对本项目的影响 |
+| --- | --- | --- |
+| 系统与CPU | Ubuntu 22.04.5 LTS、x86_64、KVM、1 vCPU；cgroup v2有memory/cpu/io控制器 | 系统具备Docker基础条件；采样时CPU空闲不代表满足并发目标 |
+| 内存 | 总量约1.9GiB，可用约522MiB，无swap；MySQL RSS约498MiB、Java约418MiB，另有多项既有业务 | 仅生产模板NameServer/Broker的最大Java堆合计768MiB，尚不含JVM额外内存、PG、Redis、API及五类worker；现有余量不足 |
+| 磁盘 | 根分区20G、可用6.3G；/data分区20G、可用8.2G；inode余量充足 | 两个挂载点分别受容量限制；镜像、PG/WAL、MQ与日志增长空间不足以直接作为完整生产方案；未测IOPS和吞吐 |
+| 容器与端口 | 未找到Docker/Compose，无活动Docker/containerd服务；Nginx占用80/443/8080；ldns占用18081；已有MySQL/Redis | 需另行授权安装运行时；API默认18081存在冲突；HTTPS应规划现有Nginx接入，不能直接覆盖已有服务 |
+| 系统维护 | 运行内核5.15.0-43，已安装5.15.0-126，存在reboot-required；certbot.service失败；UFW未启用 | 上线前安排补丁/重启窗口、核实证书续期并审核云侧与主机侧入口规则；未据此认定证书已过期或云防火墙缺失 |
+| 镜像分发网络 | 本次HTTPS HEAD访问Docker Hub registry和auth端点连接超时；Docker官方Ubuntu软件源返回200 | 软件源可达不能证明镜像可拉取；需验证可达镜像仓库或离线制品导入及digest，不将单次超时解释为永久不可达 |
+
+第二台（用户说明可重装）：
+
+| 项目 | 实测状态 | 对本项目的影响 |
+| --- | --- | --- |
+| 系统与CPU | Ubuntu 22.04.5 LTS、x86_64、KVM、2个可用CPU，cgroup v2；内核5.15.0-186，存在reboot-required | CPU条件比第一台好；本次短采样约98%～99%空闲，不代表容量验收 |
+| 内存 | MemTotal=1647512KiB（约1.57GiB），可用约750MiB；6GiB swap已用约59MiB；crashkernel实际预留256MiB | 重装可释放既有软件占用，不会提升实例物理内存；即使调整保留量，也不能据此推断全栈生产满足容量；swap不是同等速度内存 |
+| 磁盘 | 单块40G，根分区可用18G、inode已用10% | 比第一台剩余空间大；重装只能释放已用空间，仍需为数据库、WAL、MQ、日志及制品留增长余量；未测IOPS |
+| Docker与服务 | Docker客户端29.9.2、Compose v5.6.1；Docker/containerd/Nginx服务active；dockerd RSS约32MiB、containerd约16MiB，另有Node/memos等进程 | 已具备运行容器的基础；当前用户无Docker socket权限，sudo需要密码，未读取容器清单、镜像/卷容量或容器统计，未改变权限 |
+| 端口与网络 | 80/443已有监听；采样未见18081监听；Docker Hub registry/auth的HTTPS连接本次超时，Docker Ubuntu软件源返回200 | 原生或容器方式均要规划现有HTTPS入口；镜像可达性仍需解决，原生包分发也要单独验证 |
+
+结论：第二台更适合作为轻量试运行候选，但两台现有规格均不能据只读检查认定满足包含悄悄鲤的完整生产需求。单机升级的初步规划可从4 vCPU、8GiB内存、80～100GB SSD总容量起评估；若保留既有业务并常驻完整监控，优先评估16GiB内存并为数据卷留出增长空间。这是工程规划估计，不是正式测试的复现资源，也不能代替REQ-021的300在线、约87请求/秒、普通列表P95≤100ms验收；[固定性能方案](../../design/performance.md)还有数据规模、后台负载和独立测试资源，环境变化须记录差异和可比性。
+
+当前Compose未声明逐容器CPU/内存上限，Redis未声明maxmemory；单机部署前还需按实测负载设置资源预算、缓存/日志保留和告警。只有一台宿主时，独立恢复日志、异地备份、KMS及对象存储仍需外部资源；同机不同容器/分区不能满足独立故障域，也不构成高可用。Ubuntu支持范围和容器资源约束参照[Docker Ubuntu安装要求](https://docs.docker.com/engine/install/ubuntu/)与[资源限制说明](https://docs.docker.com/engine/containers/resource_constraints/)。
+
+### 原生中间件与Go进程的可行性
+
+按用户追加问题核对：生产server、business-worker及business-init都是可独立执行的Go二进制，正式装配不要求运行在容器内。原生生产应使用编译制品，由systemd管理API及五类worker，并补齐独立运行用户、私有配置权限、启动依赖、重启/停止、日志轮转、资源限制、备份及回滚；现已交付原生制品入口与生产systemd单元，目标机实际启停与开机恢复尚待验收。已有dev-native入口属于开发模式，不能当生产入口。本次中间件使用本机专用端口，保留专用数据库身份、Redis鉴权、TLS供应商和恢复门禁；不再要求MQ。
+
+去掉Docker主要节省运行时及镜像层开销；第二台dockerd/containerd的RSS快照合计约48MiB，仅表示这两个进程，不是全部容器开销或精确可回收量。[Linux容器共享宿主内核](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)，原生运行不会消除中间件和业务进程本身的内存需求。现有RocketMQ模板NameServer/Broker固定堆合计768MiB，还需额外JVM内存、PostgreSQL、Redis、API和五类worker。旧DatabasePolling开关仍仅限集成；用户已选择无MQ方案，完整业务宿主新增显式TaskTransport=postgres，复用持久任务、租约、重试、版本和幂等回执，不切开发模式。
+
+因此原生方式可以作为低负载试运行方案评估，不能据此确认第二台满足全模块正式容量；本次未安装原生服务或验证其性能。用户最终选择kurous.cn单机小规模原生试运行：PG/Redis与Go进程，不常驻MQ和完整监控栈。资源限制只是初始预算，需验证内存、积压与恢复后再确定试运行人数；备份、KMS、供应商及独立恢复日志仍需外部交付。系统重装与容器选择均不能替代外部资料、供应商和独立恢复日志交付。
+
+## 当前无MQ原生装配
+
+2026-11-01用户再次确认精简方案，未采纳两机拆分保留MQ。`scripts/native.py`构建Linux amd64/arm64静态制品、记录源码/dirty状态及文件摘要，生成七份互不重叠的私有配置；模板不生成凭据、不覆盖历史密钥。原生PG18/Redis7.2使用专用目录与loopback端口，API及五类worker由独立OS身份运行；systemd包括启动依赖、优雅停止、异常重启限速、内存/连接预算与独立日志命名空间。业务停保留中间件，全停也保留数据。建库、迁移、首个账号/词库、opaque和两域recover均单独显式执行。
+
+数据库任务模式覆盖学生卡、普通内容、悄悄鲤审核/胶囊，账号及证据清理继续使用各自持久待办。到期扫描沿用取消、租约、重试/attention及消费回执；无MQ不伪造outbox.sent_at，也不按未发送outbox总数报警。health.timer和聚合SQL检查进程、readyz、内存、磁盘、到期积压及隐私待办；正式告警渠道仍待交付。默认1秒扫描、池2/1及总slice1100MiB上限仅作试运行限制，不是容量已达标。
+
+本地Linux amd64制品已构建并校验，48项运维单测及Go fmt/check（vet、race、coverage）/build通过。隔离真实PG18.6、鉴权Redis7.2.12、生产API/worker二进制在没有MQ服务的项目中通过：图片供应商故障持久重试与重启续跑、停止期间任务保留、树洞过期租约与双进程幂等、暖评/抱抱/胶囊解锁、供应商readyz失败关闭及注销恢复重删。补充真实PG的持久消费/租约恢复与悄悄鲤审核边界通过；外部身份、KMS、对象、内容与通知均为TLS合成，真实微信、正式外部资源、目标机原生/systemd启动、资源负载、开机恢复及告警投递未验收。
+
+另外完成PG18.6原生配置解析、Redis7.2.12原生配置空数据启动/SIGTERM关闭、积压SQL只读执行及13份systemd文件基础格式解析；修复Redis ACL文件不能含普通注释行的问题。本机systemd-analyze原生校验未完成：临时Linux软件源返回缺少Release，Ubuntu校验镜像拉取未完成后已取消；不能把基础解析称为systemd启动验收。目标机须先运行流程中的systemd-analyze verify，再验证实际启停/重启。隔离PG/Redis均已停止，卷和测试数据保留。
+
+操作命令、资源预算、回滚与验收矩阵统一维护在[源码无MQ原生流程](../../../liyuanci-backend-go/README.md#6-无mq原生生产装配)。源码已按权限、连接池、生产运行、集成验收、原生部署顺序提交。提交前的本地制品仍保留原基点和dirty元数据，不能直接改写为当前提交产物；发布时应从当前提交重新构建并校验。本次提交整理复跑48项运维测试、shell语法与文档检查，未重跑业务集成；既有业务验证结果与上文边界保持不变。服务器未连接、重装、安装或启停。
+
 ## 已有验证与限制
 
-- 2026-10-30 同一业务源码版本的 `make fmt`、`make check`（vet、race、coverage）通过；本次文档整理不将旧结果冒充新业务测试。
-- 2026-10-29 已有真实PG/HTTP与微信开发者工具A/B局部链路：认证、心愿、匹配、双向聊天、屏蔽、审核分流；资料、故事、胶囊另有局部证据，不能合并宣称新版本全模块重测通过。
-- 学生资料/卡片、扫描、KMS等仍含本地适配；外部通知、全副本清理、独立恢复、手机真机与容量验收未完成。
-- 最近一次已记录的运行收尾是2026-10-29停止API、worker及所选本地中间件，保留数据和配置。本轮没有探测或变更服务状态，不能据历史记录判断当前进程是否运行。
+- 2026-10-31本轮 `make fmt`、`make check`（vet、race、coverage）及 `make build` 均通过。运维入口离线单测42项通过。
+- 完整 `make integration` 通过，覆盖22个顶层专项测试（真实PG/Redis/MQ及业务链）。新宿主覆盖初始化等值重跑、学生卡上传/扫描/人工认证、普通心愿审核、悄悄鲤/暖评/抱抱与取消/胶囊、供应商故障readyz拒绝、注销撤会话、清理失败保留待办、模拟恢复后重删。
+- 另用既有生产Broker配置和随机隔离ACL运行新宿主：API及worker均为production，Redis与MQ均鉴权，四类消息发送回执及消费完成通过；未鉴权Broker管理查询被拒。此处是本机ACL/装配验收，未证明正式云资源、故障域或容量。
+- 外部学校身份、图片、内容/KMS、对象、关怀/通知均为TLS合成；学生会话为隔离fixture，没有冒充真实微信登录。旧全套集成夹具按当前词库优先策略修正，不改变产品策略。
+- 2026-10-29微信开发者工具A/B局部链路仅作历史证据；本轮前端构建与自动测试不能替代当前版本全模块页面、手机真机、双设备和正式供应商验收。
+- 目标环境的独立故障域、全副本/90天恢复、真实告警和容量仍未验收。本任务隔离Docker项目的API、worker及中间件已全部停止，保留卷与私有配置，未部署生产。
+
+启动、具体命令与回滚见[源码生产流程](../../../liyuanci-backend-go/README.md#5-完整生产装配与上线流程)；外部材料按[交付清单](defects.md#需要用户提供或协调开通的清单)准备。
 
 历史依据：[联调收尾](https://github.com/calm195/docs/blob/781d177221efdb9e955956343c4f2ceda8494eff/development/backend/validation/2026-10-29-local-three-client-closeout-r1.md)、[覆盖矩阵（以末尾修复后增量为准）](https://github.com/calm195/docs/blob/781d177221efdb9e955956343c4f2ceda8494eff/development/backend/validation/2026-10-29-local-three-client-coverage-r1.md)。
