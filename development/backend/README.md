@@ -1,6 +1,6 @@
 # 后端现状
 
-更新：2026-11-02。源码提交 `8a87f5f3d1e86c921b03543bcbe3b019da093b24`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。本轮改动已按存储基础→Viper读取→运行配置与业务装配→原生工具→源码文档顺序提交；包含单主密钥、数据库分项字段与MQ/Docker删除。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
+更新：2026-11-02。源码提交 `76e80e546c399eacfc096727b730edc585229dcc`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。本轮改动已按存储基础→Viper读取→运行配置与业务装配→原生工具→源码文档顺序提交；包含单主密钥、数据库分项字段与MQ/Docker删除。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
 
 ## 模块实现
 
@@ -16,7 +16,7 @@
 | 隐私与恢复 | 注销屏障、匿名回执、账号/证据分域清理、恢复前重删 | 外部全版本清理、独立故障域与90天恢复未验收，失败保持 processing |
 | 工程与运行 | 完整生产API、学生卡/普通内容/悄悄鲤/账号清理/证据清理五类worker、显式初始化与离线检查、原生二进制与统一启动入口 | 本次生产使用鉴权Redis、持久数据库任务、账号岗位授权和HTTPS供应商；普通启动不迁移、不重置、不替换历史密钥 |
 
-源码边界可从 [studentapi](../../../liyuanci-backend-go/internal/studentapi)、[whisper/whisperapp](../../../liyuanci-backend-go/internal/whisperapp)、[resourceplaza](../../../liyuanci-backend-go/internal/resourceplaza)、[privacy](../../../liyuanci-backend-go/internal/privacy) 核对。日常启动、环境与配置以[源码 README](../../../liyuanci-backend-go/README.md)和[功能链路说明](../../../liyuanci-backend-go/FUNCTIONALITY.md)为入口。
+源码边界可从 [应用服务装配](../../../liyuanci-backend-go/internal/app/services.go)、[whisper](../../../liyuanci-backend-go/internal/whisper)与[app](../../../liyuanci-backend-go/internal/app)、[resourceplaza](../../../liyuanci-backend-go/internal/resourceplaza)、[privacy](../../../liyuanci-backend-go/internal/privacy) 核对。日常启动、环境与配置以[源码 README](../../../liyuanci-backend-go/README.md)和[功能链路说明](../../../liyuanci-backend-go/FUNCTIONALITY.md)为入口。
 
 ## 配置与启动
 
@@ -62,3 +62,5 @@ MQ客户端、传输层、独立消息worker、Dockerfile、Compose、旧systemd
 P0已固定目录优化范围与兼容边界，见[源码组织说明](../../../liyuanci-backend-go/README.md#7-代码组织与重构边界)。本阶段仅修改说明，HTTP实现、配置模板、迁移SQL及运行代码未改变；未重跑Go或集成测试，既有运行验证仍属前述历史记录。后续按适配器分离、装配集中、配置解耦逐阶段验证与提交。
 
 P1-A已将正式HTTPS网关及本地身份、对象、扫描、人工/合成审核、恢复密钥适配迁入`internal/adapters/gateway`和`internal/adapters/local`。适配器不导入config或应用装配包；业务/恢复KMS用途、对象版本与删除写屏障保持原协议，已补齐资源归属和导出方法注释。2026-11-02本阶段通过完整Go格式、vet、race/coverage、8个命令构建、6项Python测试及三组原生PG/Redis真实进程集成；供应商仍为TLS合成夹具，未进行目标机、正式供应商或真机验收。116份配置模板、HTTP实现和迁移基线文件未变，临时实例已清理。
+
+P1-B已将devapp/studentapi/whisperapp合并为internal/app，8个cmd入口只保留参数、信号和退出状态，app负责API、worker、初始化与显式迁移生命周期。新增导入边界检查，补齐借用/拥有资源、逆序清理和恢复门禁注释；脚本已改从internal/app运行集成。2026-11-02本阶段完整Go检查、构建、6项Python测试、三组原生PG/Redis真实进程集成通过；8个命令的参数名称/类型/默认值及116份配置、HTTP、迁移基线未变。初始化失败现在返回错误后正常释放日志资源；临时实例已清理，正式供应商与目标环境仍未验收。
