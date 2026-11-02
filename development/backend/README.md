@@ -1,6 +1,6 @@
 # 后端现状
 
-更新：2026-11-02。源码提交 `cd98f99d6de6e7a9f84d08cfcc2e64441bed3e0a`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。本轮改动已按存储基础→Viper读取→运行配置与业务装配→原生工具→源码文档顺序提交；包含单主密钥、数据库分项字段与MQ/Docker删除。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
+更新：2026-11-02。源码提交 `8a87f5f3d1e86c921b03543bcbe3b019da093b24`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。本轮改动已按存储基础→Viper读取→运行配置与业务装配→原生工具→源码文档顺序提交；包含单主密钥、数据库分项字段与MQ/Docker删除。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
 
 ## 模块实现
 
@@ -60,3 +60,5 @@ MQ客户端、传输层、独立消息worker、Dockerfile、Compose、旧systemd
 ## 目录结构优化
 
 P0已固定目录优化范围与兼容边界，见[源码组织说明](../../../liyuanci-backend-go/README.md#7-代码组织与重构边界)。本阶段仅修改说明，HTTP实现、配置模板、迁移SQL及运行代码未改变；未重跑Go或集成测试，既有运行验证仍属前述历史记录。后续按适配器分离、装配集中、配置解耦逐阶段验证与提交。
+
+P1-A已将正式HTTPS网关及本地身份、对象、扫描、人工/合成审核、恢复密钥适配迁入`internal/adapters/gateway`和`internal/adapters/local`。适配器不导入config或应用装配包；业务/恢复KMS用途、对象版本与删除写屏障保持原协议，已补齐资源归属和导出方法注释。2026-11-02本阶段通过完整Go格式、vet、race/coverage、8个命令构建、6项Python测试及三组原生PG/Redis真实进程集成；供应商仍为TLS合成夹具，未进行目标机、正式供应商或真机验收。116份配置模板、HTTP实现和迁移基线文件未变，临时实例已清理。
