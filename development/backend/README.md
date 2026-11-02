@@ -1,6 +1,6 @@
 # 后端现状
 
-更新：2026-11-02。源码提交 `006fa9eaea270683df24a4cea0229bb5f269ebc3`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。当前版本包含单主密钥、数据库分项字段与MQ/Docker删除，并已完成目录优化P0/P1/P2：适配器分离、应用装配集中、配置解耦、业务职责分文件和实体注册归属迁移，按阶段提交。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
+更新：2026-11-03。源码提交 `739012c21b683f1918e891e6b93549baf73a4ec4`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。当前版本包含单主密钥、数据库分项字段与MQ/Docker删除，并已完成internal十类目录归组和完整路径依赖约束，后续装配与协作收敛状态见下文。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
 
 ## 模块实现
 
@@ -16,7 +16,7 @@
 | 隐私与恢复 | 注销屏障、匿名回执、账号/证据分域清理、恢复前重删 | 外部全版本清理、独立故障域与90天恢复未验收，失败保持 processing |
 | 工程与运行 | 完整生产API、学生卡/普通内容/悄悄鲤/账号清理/证据清理五类worker、显式初始化与离线检查、原生二进制与统一启动入口 | 本次生产使用鉴权Redis、持久数据库任务、账号岗位授权和HTTPS供应商；普通启动不迁移、不重置、不替换历史密钥 |
 
-源码边界可从 [应用服务装配](../../../liyuanci-backend-go/internal/app/services.go)、[whisper](../../../liyuanci-backend-go/internal/whisper)与[app](../../../liyuanci-backend-go/internal/app)、[resourceplaza](../../../liyuanci-backend-go/internal/resourceplaza)、[privacy](../../../liyuanci-backend-go/internal/privacy) 核对。日常启动、环境与配置以[源码 README](../../../liyuanci-backend-go/README.md)和[功能链路说明](../../../liyuanci-backend-go/FUNCTIONALITY.md)为入口。
+源码边界可从 [应用服务装配](../../../liyuanci-backend-go/internal/app/services.go)、[whisper](../../../liyuanci-backend-go/internal/modules/whisper)与[app](../../../liyuanci-backend-go/internal/app)、[resourceplaza](../../../liyuanci-backend-go/internal/modules/resourceplaza)、[privacy](../../../liyuanci-backend-go/internal/modules/privacy) 核对。日常启动、环境与配置以[源码 README](../../../liyuanci-backend-go/README.md)和[功能链路说明](../../../liyuanci-backend-go/FUNCTIONALITY.md)为入口。
 
 ## 配置与启动
 
@@ -53,41 +53,14 @@ MQ客户端、传输层、独立消息worker、Dockerfile、Compose、旧systemd
 
 2026-11-02已通过原生临时PG/Redis上的三组真实进程集成：完整业务API及五类worker、本地组合业务、独立树洞。覆盖单DSN岗位权限、任务重试、删除恢复门禁和重启；身份、KMS、对象、扫描、内容及通知供应商使用TLS合成夹具。测试实例已停止，本轮临时测试数据已删除。
 
-本轮最终Go格式、vet、race/coverage、构建通过；6项Python入口测试、6项文档工具测试、文档链接/固定指纹检查和差异检查通过。单主密钥改造后已重跑完整Go检查/构建、Python及文档检查；主密钥长度/旧字段拒绝、固定派生向量、用途/环境隔离、跨进程一致性及本地共享领域密钥均有回归。新私有开发覆盖离线检查通过，三组真实进程集成均通过，外部供应商仍为合成夹具。没有MQ兼容或Docker验收项；目标Linux启停/开机恢复、真实供应商、真机、容量、灾备和正式告警未验收。源码历史集成结果不视为当前简化分支全场景验收。
+2026-11-02前轮最终Go格式、vet、race/coverage、构建通过；6项Python入口测试、6项文档工具测试、文档链接/固定指纹检查和差异检查通过。单主密钥改造后已重跑完整Go检查/构建、Python及文档检查；主密钥长度/旧字段拒绝、固定派生向量、用途/环境隔离、跨进程一致性及本地共享领域密钥均有回归。新私有开发覆盖离线检查通过，三组真实进程集成均通过，外部供应商仍为合成夹具。没有MQ兼容或Docker验收项；目标Linux启停/开机恢复、真实供应商、真机、容量、灾备和正式告警未验收。源码历史集成结果不视为当前简化分支全场景验收。
 
 数据库分项改造后已重新通过完整Go检查/构建、6项Python入口测试、本机私有配置离线诊断和三组临时原生PG/Redis集成。回归覆盖特殊字符口令、IPv6、字段/时长校验、旧DSN字段拒绝，以及UTC/Asia/Shanghai时区的真实业务装配；测试实例与临时数据已清理。私有YAML仍被Git忽略，提交未包含真实凭据。
 
 ## 目录结构优化
 
-P0/P1/P2已完成，当前结构见[源码组织说明](../../../liyuanci-backend-go/README.md#7-代码组织与重构边界)。正式网关在`internal/adapters/gateway`，本地身份、对象、扫描、人工/合成分析和恢复密钥适配在`internal/adapters/local`；适配器不导入config或app。原devapp/studentapi/whisperapp已合并为`internal/app`，按服务构造、API、worker、正式/开发装配、初始化和显式迁移分文件。8个cmd入口为21～29行，只保留参数、信号和退出状态。
+2026-11-03按用户授权依赖顺序本地提交。internal从26个一级目录归为app、config、httpapi、modules、execution、platform、adapters、entity、migration、testconfig十类。13个业务包补充职责与协作说明；YAML/加密叶子能力、命令/任务执行、Redis限流适配分别归位。架构测试按完整包路径登记依赖，禁止父目录规则扩大叶子权限；命令仍只依赖app。
 
-config使用独立预算与资料结构，内部仅依赖yamlconfig和securedata，由app显式转换领域参数。资源转换保留可选值与nil/空数组语义，并复制指针、切片；隐私回执/安全用途派生移入securedata共享，固定公开向量和原有主密钥向量保证历史协议兼容。业务包与叶子能力的导入边界纳入Go测试。
+第一批238份原有生产源码声明在忽略导入、注释和格式后相同，70份配置/SQL基线指纹一致。相关检查、完整Go格式/vet/race/coverage、8个命令构建和16项Python入口测试通过。四类临时原生PG/Redis专项全部通过：runtime/resourceplaza/moderation/migration分别实际完成3/1/1/5个必需顶层用例，临时实例及本轮数据已清理。正式供应商仍为合成夹具，未执行目标Linux服务管理、真机、正式供应商、容量或独立灾备验收。
 
-重要中文注释已覆盖包职责、导出符号、资源借用/拥有、先排空后关闭、逆序释放、开发模拟限制、供应商响应与写屏障、恢复前门禁、密钥标签兼容。显式初始化失败返回后正常释放日志资源。普通启动不执行DDL，岗位和主体授权继续由领域服务复核。
-
-| 阶段 | 后端提交 | 结果 |
-| --- | --- | --- |
-| P0 | `cd98f99d6de6e7a9f84d08cfcc2e64441bed3e0a` | 固定结构基线和兼容边界 |
-| P1-A | `8a87f5f3d1e86c921b03543bcbe3b019da093b24` | 独立正式网关与本地适配器 |
-| P1-B | `76e80e546c399eacfc096727b730edc585229dcc` | 集中应用装配、命令生命周期及集成测试 |
-| P1-C | `36316a05dca09501fe4e74930da7fdbd65ef2198` | 配置解耦、资源转换及兼容密钥派生 |
-| P2-A | `a46cef3b51bc0c1d3c89189cb0a08cfedb44fbd1` | 资料广场与审核按职责分文件、补充专项原生集成入口 |
-| P2-B | `754e2cbf3d7f7196f80dfc21cf0123bf6a338dbc` | 实体注册归属迁移包、依赖边界及真实迁移回归 |
-
-2026-11-02本轮各代码阶段均通过完整Go格式、vet、race/coverage、8个命令构建、6项Python入口测试及三组原生PG/Redis真实进程集成。最终回归增加资源字段/空值/拷贝隔离、固定密钥向量与包依赖约束；8个命令参数名称/类型/默认值和116份配置模板、HTTP实现、迁移基线文件未变。临时测试进程与数据已清理；真实供应商仍由TLS合成夹具替代，未进行目标Linux服务管理、正式供应商、真机或容量验收。工作已本地提交，未推送或部署。实体注册归属已在下述P2-B阶段完成。
-
-P2-A将资料广场的授权事务、游标、加密、查询、写入、投影、存取和治理屏障分文件；审核抽出授权和游标，保留原业务包及现有功能文件。补齐会话重验、锁顺序、内容版本加密、幂等回执、资源借用等中文注释。229个业务声明的代码token指纹一致；109份HTTP、公开配置与SQL基线未变。HTTP总路由职责集中，保留现有组织，不为行数继续拆分。
-
-P2-A通过相关包检查、完整Go格式/vet/race/coverage、8个命令构建和6项Python入口测试。原生集成扩为默认顺序执行runtime、resourceplaza、moderation：三组进程、资料广场15操作及审核核心17子场景均通过；`INTEGRATION_SUITE`可单独选择专项。测试使用本轮临时PG/Redis及合成供应商，结束后清理；历史权限夹具不替代当前单连接runtime验证，串行查询采样不代表容量验收。
-
-P2-B将65项业务模型清单移至`internal/migration/models.go`，实体/SQL目录映射测试随之迁移；entity保持共享纯模型叶子包，不把跨域锁依赖拆入业务服务。65项注册顺序、32份模型文件和109份HTTP/公开配置/SQL基线保持不变。包依赖检查新增业务/HTTP/适配器不得导入migration、migration仅依赖entity的约束；中文注释明确普通启动不执行DDL、恢复库与探针不混入业务注册。
-
-P2-B通过相关包检查、完整Go格式/vet/race/coverage、8个命令构建和6项Python入口测试。最终`make integration`的runtime、resourceplaza、moderation、migration四个专项全部通过：含三组进程、15个资料操作、17个审核子场景，以及并发迁移/字段补齐、业务上下行、历史恢复库隔离、故事发布升级、树洞历史结构升级五组迁移用例。原生临时实例和本轮数据均已清理；历史恢复库测试仅证明兼容性，当前文件账本由runtime覆盖。文档工具6项测试、链接/固定指纹及差异检查通过。目录优化已按阶段本地提交，未推送或部署；正式供应商、目标Linux、真机、容量及独立灾备仍未验收。
-
-## 工程收尾复查
-
-用户选择继续工程收尾。阶段一源码`2473c688fa5b71cde08b6358c1a42223eacb39b2`新增cmd仅依赖标准库与app的架构检查，补充httpapi/platform包职责和资源排空说明；修正三处HTTP接口仍声称独立权限连接池的注释、树洞运行测试的旧MQ描述与网关文件链接标签。263个受检生产声明代码指纹不变，命令、HTTP、配置和SQL行为未改。相关包、完整Go格式/vet/race/coverage及8个命令构建通过；本阶段没有重跑原生集成，不沿用前轮结果作为本轮重测。
-
-阶段二源码`006fa9eaea270683df24a4cea0229bb5f269ebc3`修正原生集成只看退出码的误报风险。脚本按Go结构化事件核对目标包及固定必需用例：须有实际运行、用例通过和包完成结果；顶层或子用例跳过、缺失、未完成、失败及无效事件均拒绝报成功。普通单元检查仍允许未提供隔离依赖的集成用例跳过，不等同原生验收。
-
-新增10项结果校验测试，连同既有入口测试共16项Python测试通过。本轮四类原生专项全部通过，runtime/resourceplaza/moderation/migration分别确认3/1/1/5个必需顶层用例，临时实例及数据已清理。额外使用真实Go输出验证无配置导致Skip和测试名零匹配，两种情况Go退出码均为0，新脚本均正确拒绝。Go业务实现、协议、配置与SQL未变化；完整Go检查和构建已在阶段一通过，阶段二仅修改集成脚本、其测试和说明。文档工具6项测试、链接/固定指纹和差异检查通过，两个阶段均已本地提交，未推送或部署。供应商仍为合成夹具，未扩展真机、目标环境或生产验收范围。
+本轮仅本地提交，未推送或部署。文档工具测试、当前链接/固定输入指纹和差异检查随本次文档提交执行；外部验收缺口保持开放。
