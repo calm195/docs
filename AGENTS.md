@@ -17,7 +17,7 @@
 
 ## 分支与交付
 
-- 主仓库、docs及三端源码的本地/远程仅保留develop/main。修改前核对分支、完整HEAD和status，保护已有改动；日常源码与docs使用各自develop。并行写入协调范围，必要时使用detached工作树并在汇总后清理。
+- 日常分支使用develop/main；用户2026-11-02明确要求新增简化分支，本轮主仓库、后端和docs使用codex/simplify-backend，保留develop/main。修改前核对分支、完整HEAD和status，保护已有改动。并行写入协调范围，必要时使用detached工作树并在汇总后清理。
 - 三端源码仓库只保留运行/开发必要说明；本次因文档整理需要同步其AGENTS/README和失效链接，不编写业务实现。共享文档由协调者维护。
 - 已授权提交时先提交源码仓库的相关变动，再更新docs所引用的精确版本；提交、合并、推送和部署按当次授权执行，不重复索取已获得授权。
 - 交付前执行`python3 scripts/check_documents.py`、适用的文档工具测试及`git diff --check`；契约输入/位置受影响时运行`python3 scripts/check_contracts.py`。纯文档整理不重跑与变动无关的应用测试，不沿用历史结果冒充本次重测。
