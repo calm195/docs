@@ -1,6 +1,6 @@
 # 后端现状
 
-更新：2026-11-02。源码提交 `a46cef3b51bc0c1d3c89189cb0a08cfedb44fbd1`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。当前版本包含单主密钥、数据库分项字段与MQ/Docker删除，并已完成目录优化P0/P1及P2-A：适配器分离、应用装配集中、配置解耦和业务职责分文件，按阶段提交。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
+更新：2026-11-02。源码提交 `754e2cbf3d7f7196f80dfc21cf0123bf6a338dbc`；主仓库、后端与docs当前分支为 `codex/simplify-backend`。当前版本包含单主密钥、数据库分项字段与MQ/Docker删除，并已完成目录优化P0/P1/P2：适配器分离、应用装配集中、配置解耦、业务职责分文件和实体注册归属迁移，按阶段提交。服务器未部署或修改。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
 
 ## 模块实现
 
@@ -59,7 +59,7 @@ MQ客户端、传输层、独立消息worker、Dockerfile、Compose、旧systemd
 
 ## 目录结构优化
 
-P0/P1及P2-A已完成，当前结构见[源码组织说明](../../../liyuanci-backend-go/README.md#7-代码组织与重构边界)。正式网关在`internal/adapters/gateway`，本地身份、对象、扫描、人工/合成分析和恢复密钥适配在`internal/adapters/local`；适配器不导入config或app。原devapp/studentapi/whisperapp已合并为`internal/app`，按服务构造、API、worker、正式/开发装配、初始化和显式迁移分文件。8个cmd入口为21～29行，只保留参数、信号和退出状态。
+P0/P1/P2已完成，当前结构见[源码组织说明](../../../liyuanci-backend-go/README.md#7-代码组织与重构边界)。正式网关在`internal/adapters/gateway`，本地身份、对象、扫描、人工/合成分析和恢复密钥适配在`internal/adapters/local`；适配器不导入config或app。原devapp/studentapi/whisperapp已合并为`internal/app`，按服务构造、API、worker、正式/开发装配、初始化和显式迁移分文件。8个cmd入口为21～29行，只保留参数、信号和退出状态。
 
 config使用独立预算与资料结构，内部仅依赖yamlconfig和securedata，由app显式转换领域参数。资源转换保留可选值与nil/空数组语义，并复制指针、切片；隐私回执/安全用途派生移入securedata共享，固定公开向量和原有主密钥向量保证历史协议兼容。业务包与叶子能力的导入边界纳入Go测试。
 
@@ -72,9 +72,14 @@ config使用独立预算与资料结构，内部仅依赖yamlconfig和securedata
 | P1-B | `76e80e546c399eacfc096727b730edc585229dcc` | 集中应用装配、命令生命周期及集成测试 |
 | P1-C | `36316a05dca09501fe4e74930da7fdbd65ef2198` | 配置解耦、资源转换及兼容密钥派生 |
 | P2-A | `a46cef3b51bc0c1d3c89189cb0a08cfedb44fbd1` | 资料广场与审核按职责分文件、补充专项原生集成入口 |
+| P2-B | `754e2cbf3d7f7196f80dfc21cf0123bf6a338dbc` | 实体注册归属迁移包、依赖边界及真实迁移回归 |
 
-2026-11-02本轮各代码阶段均通过完整Go格式、vet、race/coverage、8个命令构建、6项Python入口测试及三组原生PG/Redis真实进程集成。最终回归增加资源字段/空值/拷贝隔离、固定密钥向量与包依赖约束；8个命令参数名称/类型/默认值和116份配置模板、HTTP实现、迁移基线文件未变。临时测试进程与数据已清理；真实供应商仍由TLS合成夹具替代，未进行目标Linux服务管理、正式供应商、真机或容量验收。工作已本地提交，未推送或部署。实体注册归属仍待P2-B完成。
+2026-11-02本轮各代码阶段均通过完整Go格式、vet、race/coverage、8个命令构建、6项Python入口测试及三组原生PG/Redis真实进程集成。最终回归增加资源字段/空值/拷贝隔离、固定密钥向量与包依赖约束；8个命令参数名称/类型/默认值和116份配置模板、HTTP实现、迁移基线文件未变。临时测试进程与数据已清理；真实供应商仍由TLS合成夹具替代，未进行目标Linux服务管理、正式供应商、真机或容量验收。工作已本地提交，未推送或部署。实体注册归属已在下述P2-B阶段完成。
 
 P2-A将资料广场的授权事务、游标、加密、查询、写入、投影、存取和治理屏障分文件；审核抽出授权和游标，保留原业务包及现有功能文件。补齐会话重验、锁顺序、内容版本加密、幂等回执、资源借用等中文注释。229个业务声明的代码token指纹一致；109份HTTP、公开配置与SQL基线未变。HTTP总路由职责集中，保留现有组织，不为行数继续拆分。
 
 P2-A通过相关包检查、完整Go格式/vet/race/coverage、8个命令构建和6项Python入口测试。原生集成扩为默认顺序执行runtime、resourceplaza、moderation：三组进程、资料广场15操作及审核核心17子场景均通过；`INTEGRATION_SUITE`可单独选择专项。测试使用本轮临时PG/Redis及合成供应商，结束后清理；历史权限夹具不替代当前单连接runtime验证，串行查询采样不代表容量验收。
+
+P2-B将65项业务模型清单移至`internal/migration/models.go`，实体/SQL目录映射测试随之迁移；entity保持共享纯模型叶子包，不把跨域锁依赖拆入业务服务。65项注册顺序、32份模型文件和109份HTTP/公开配置/SQL基线保持不变。包依赖检查新增业务/HTTP/适配器不得导入migration、migration仅依赖entity的约束；中文注释明确普通启动不执行DDL、恢复库与探针不混入业务注册。
+
+P2-B通过相关包检查、完整Go格式/vet/race/coverage、8个命令构建和6项Python入口测试。最终`make integration`的runtime、resourceplaza、moderation、migration四个专项全部通过：含三组进程、15个资料操作、17个审核子场景，以及并发迁移/字段补齐、业务上下行、历史恢复库隔离、故事发布升级、树洞历史结构升级五组迁移用例。原生临时实例和本轮数据均已清理；历史恢复库测试仅证明兼容性，当前文件账本由runtime覆盖。文档工具6项测试、链接/固定指纹及差异检查通过。目录优化已按阶段本地提交，未推送或部署；正式供应商、目标Linux、真机、容量及独立灾备仍未验收。
