@@ -142,3 +142,17 @@ CI通过HTTPS同步提交worker解密后的规范化JPEG/PNG Base64，不向COS�
 四个命令使用相同默认配置路径和SIGINT/SIGTERM取消边界；拒绝额外位置参数，migrate保留必需操作参数。server/worker的离线检查与依赖检查互斥，worker删除恢复也与检查互斥；init离线检查覆盖所需配置及完整业务的可选词库。开发隐私路径不再忽略recover，统一复用账本重放与任务排空，尚有延迟重试任务时失败退出。脚本支持对应检查/恢复参数，离线和依赖诊断不预先创建状态目录；make build仅构建当前四个入口，已有构建目录中的六个退役入口二进制需手动清理。
 
 本轮make fmt、make check（只读格式、vet、race/coverage）、四个命令构建及17项Python工具测试通过。临时原生PG/Redis的runtime专项实际执行4个必需顶层用例且无跳过，覆盖完整业务实际进程、五类worker检查、初始化幂等、参数拒绝、树洞进程与恢复门禁，以及新增开发入口检查/两域恢复/延迟任务不得误报成功；首次新增夹具遗漏对象目录，补齐后复跑通过。临时实例与数据已清理。Go日常测试中依赖外部配置的用例仍按各自条件跳过，不能将其视为全部真实集成；本轮未执行其他原生专项、真实云端、微信、Linux服务管理、真机、容量或独立灾备验收。
+
+## 配置入口统一
+
+2026-11-04，配置入口统一已本地提交，源码版本为 `d9506f7fda66ee85472314959d4476de11bd3558`；尚未推送或部署。删除 `internal/config/development.go`、独立 `development:` 配置块及按模式保存的重复配置路径；开发与正式环境共用 `business` / `business.runtime` 字段。API、worker和初始化先调用 `config.Load` 获取配置快照，再投影和校验，不重复读取环境文件。`mode: development` 仍选择开发适配器，既有开发与正式密钥派生标签、授权和恢复语义保持。模板、Python初始化/词库入口及本机Git忽略的私有开发配置已同步迁移，未更换主密钥或清空数据；原有公共配置本地改动保留。字段映射见[配置说明](../../../liyuanci-backend-go/CONFIGURATION.md#字段分组)。
+
+本轮相关包、`make fmt`、完整 `make check`（格式、vet、race/coverage）、`make build` 和18项Python测试通过。`make integration INTEGRATION_SUITE=runtime` 在临时原生PostgreSQL/Redis中执行4项必需用例，覆盖开发及正式装配、初始化幂等、worker检查与恢复门禁，临时实例及数据已清理。Go检查的本地TLS测试与原生实例启动在允许回环端口的执行环境复跑通过；供应商协议使用隔离夹具，未做真实微信/COS/CI、目标Linux、真机、容量或生产验收。
+
+## 配置字段清理与层级
+
+2026-11-04，配置审查已本地提交，源码版本为 `d9506f7fda66ee85472314959d4476de11bd3558`；尚未推送或部署。共享运行结构由 `config.Whispers` 改为 `config.Runtime`，app使用 `RuntimeSettings`；公共资料使用 `config.Resources` / `LoadResources`，路径字段改为 `resourcesfile`。持久任务参数集中到 `runtime.tasks`，包含 `scaninterval`、`operationtimeout`、`consumer` 和 `analysistimeout`。删除旧对象网关四项配置及无运行调用方的专属协议适配器；正式对象与图片检测保留腾讯云COS/CI。删除 `contact` / 内联 `care` 和 `worker.contentanalyzer`，关怀资料统一来自版本化资源文件，内容策略保持词库筛选及命中/重审时交人工。旧字段在Go和Python入口均拒绝，不设兼容别名。映射见[配置说明](../../../liyuanci-backend-go/CONFIGURATION.md#配置项清理与层级)。
+
+`runtime.enabled` 的说明已明确为树洞/胶囊模块开关；开发和生产模板补齐 `redis.enabled: true`，避免继承公共关闭值。保留用户已有公共数据库驱动、生产时区和供应商启用设置；当前公共数据库驱动为postgres且凭据留空，纯健康入口须先核对并明确关闭数据库或补齐连接字段，说明已同步。本机私有开发覆盖已迁移字段，主密钥、连接凭据、用途派生协议与数据未变更。
+
+本轮完整 `make check`（格式、vet、race/coverage）、`make build`、20项Python测试、模板结构与旧字段拒绝回归通过；现有私有开发配置的离线诊断通过。临时原生PostgreSQL/Redis的runtime专项4项必需用例全部通过，覆盖开发及完整业务API、worker、初始化与恢复门禁，实例及临时数据已回收。腾讯云与微信仍为本地协议/身份夹具或离线检查，未开展真实供应商、Linux、真机、容量及生产验收。
