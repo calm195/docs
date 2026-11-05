@@ -1,6 +1,12 @@
 # 管理端现状
 
-更新：2026-10-31。源码核对基点 `2086457c6324fda5d2a6e114c4e90ab4b8325ab8`；本轮源码未改动，复跑检查与构建并同步生产发布边界。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
+## kurous.cn生产部署
+
+2026-11-04按用户确认发布至 `https://kurous.cn`，静态制品存放 `/home/liyuanci/admin/dist`，Nginx读取副本 `/var/www/liyuanci-admin`。同源`/api/v1`代理到127.0.0.1:8080，API禁止缓存；history回退、HTTPS首页和/login直接访问、HTTP跳转验证通过。现有Let’s Encrypt证书与Snap续期任务保留。备案链接为“粤ICP备2025460136号-1”，指向工信部备案网站，Chrome已确认登录页与该链接存在。
+
+本轮pnpm check通过758个业务测试和58个规范测试，生产构建完成。生产HTTPS接口真实验证后台登录、受保护账号读取、退出和未登录401，测试会话已注销；浏览器只核验登录页渲染，未操作后台全站业务。后端二进制基点为 `386a1d145253191755b2345f918803e7c4fdf1b3`，后端资源工作区更新及部署边界见[后端现状](../backend/README.md#kurouscn生产部署)。
+
+更新：2026-11-05。备案链接已随管理端提交 `c4df789` 提交并推送，本次将 develop 合入 main 后同步 develop。本轮构建已部署至kurous.cn。入口：[缺陷与缺口](defects.md) · [后续计划](plan.md) · [模块与契约](../../modules.md)。
 
 ## 页面与模块
 
