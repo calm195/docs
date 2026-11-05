@@ -5,6 +5,7 @@
 | 能力 | 有效输入 | 消费边界 |
 | --- | --- | --- |
 | 全站基础 | [OpenAPI0.2.1](openapi.v0.2.1.json)、[动作revision6](actions.v0.2.1.json)、[示例](examples.v0.2.1.json)、[指纹](actions-review.v0.2.1-r6.json) | 基于0.2.0；[屏蔽协议](blocks.v0.2.1.md)与已启用[树洞opaque协议](whispers-v1/README.md)按当前装配消费 |
+| 词库管理 | [词条状态增量](wordlist-entry-status.v0.2.1-r1.md) | 完整快照可携带停用词条，随发布影响后续扫描 |
 | 聊天 | [读取者方向增量](chat-viewer.v0.2.1-r1.md) | `viewer_is_sender`按当前读取者返回，不泄露发送者账号标识 |
 | 悄悄鲤 | [whispers/1.0.0](whispers-v1/README.md) | 文字、身份、暖评/抱抱、通知、胶囊及隐私兼容 |
 | 用户查询 | [admin-users/1.0.0](admin-users-v1/README.md) | 三个只读GET；昵称搜索与脱敏投影 |
