@@ -4,10 +4,10 @@
 
 | 能力 | 有效输入 | 消费边界 |
 | --- | --- | --- |
-| 全站基础 | [OpenAPI0.2.1](openapi.v0.2.1.json)、[动作revision6](actions.v0.2.1.json)、[示例](examples.v0.2.1.json)、[指纹](actions-review.v0.2.1-r6.json) | 基于0.2.0；[屏蔽协议](blocks.v0.2.1.md)与已启用[树洞opaque协议](whispers-v1/README.md)按当前装配消费 |
+| 全站基础 | [OpenAPI0.2.1](openapi.v0.2.1.json)、[动作revision6](actions.v0.2.1.json)、[示例](examples.v0.2.1.json)、[指纹](actions-review.v0.2.1-r6.json) | 基于0.2.0；[屏蔽协议](blocks.v0.2.1.md)与已启用[树洞opaque协议](whispers-v1-r2/README.md)按当前装配消费 |
 | 词库管理 | [词条状态增量](wordlist-entry-status.v0.2.1-r1.md) | 完整快照可携带停用词条，随发布影响后续扫描 |
 | 聊天 | [读取者方向增量](chat-viewer.v0.2.1-r1.md) | `viewer_is_sender`按当前读取者返回，不泄露发送者账号标识 |
-| 悄悄鲤 | [whispers/1.0.0](whispers-v1/README.md) | 文字、身份、暖评/抱抱、通知、胶囊及隐私兼容 |
+| 悄悄鲤 | [whispers/1.0.0](whispers-v1-r2/README.md) | 文字、身份、暖评/抱抱、通知、胶囊及隐私兼容 |
 | 用户查询 | [admin-users/1.0.0](admin-users-v1/README.md) | 三个只读GET；昵称搜索与脱敏投影 |
 | 用户直接处置 | [user-restrictions/1.0.0](user-restrictions-v1/README.md) | 独立状态读取与四个POST，超管、必填理由、版本/幂等与加密审计 |
 | 资料广场 | [resource-plaza/1.0.1](resource-plaza-v1-r2/README.md)、[完整OpenAPI](resource-plaza-v1-r2/openapi.json) | 仅补创建隐私重放404；[1.0.0语义/动作](resource-plaza-v1/README.md)与学生接口不变 |
@@ -29,3 +29,7 @@ python3 scripts/check_contracts.py
 ```
 
 从docs根目录执行。该入口复制当前契约、需求/设计等输入到临时目录，仅补回校验仍引用的已退役历史材料，然后运行既有静态校验；结束删除临时目录，不向工作区恢复旧文件、不重新生成固定契约。缺依赖应明确报错，不能跳过后宣称通过。
+
+体验版交互使用[0.2.1-r1增量](trial-experience.v0.2.1-r1.md)，覆盖心愿标题和自由报答、统一通知、个人资料，以及模块说明配置发布与确认。
+
+头像文件使用[头像上传增量](avatar.v0.2.1-r2.md)，涵盖上传、短效展示地址和恢复默认。

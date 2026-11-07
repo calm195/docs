@@ -1,0 +1,187 @@
+{
+  "contract_id": "whispers/1.0.0",
+  "writes": [
+    {
+      "operation_id": "whisperPostCreate",
+      "projection": "Workspace.allowed_actions",
+      "target": "/me/whispers/posts",
+      "version_source": "不适用",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperPostUpdate",
+      "projection": "OwnerPost.allowed_actions",
+      "target": "/me/whispers/posts/{post_id}",
+      "version_source": "OwnerPost.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperPostSubmit",
+      "projection": "OwnerPost.allowed_actions",
+      "target": "/me/whispers/posts/{post_id}/submit",
+      "version_source": "OwnerPost.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperPostWithdraw",
+      "projection": "OwnerPost.allowed_actions",
+      "target": "/me/whispers/posts/{post_id}/withdraw",
+      "version_source": "OwnerPost.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperCommentsSetting",
+      "projection": "OwnerPost.allowed_actions",
+      "target": "/me/whispers/posts/{post_id}/comments-setting",
+      "version_source": "OwnerPost.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperCommentCreate",
+      "projection": "PublicPost.allowed_actions",
+      "target": "/whispers/posts/{post_id}/comments",
+      "version_source": "PublicPost.version + comments_epoch",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperCommentUpdate",
+      "projection": "OwnerComment.allowed_actions",
+      "target": "/me/whispers/comments/{comment_id}",
+      "version_source": "OwnerComment.version + 当前PublicPost.version/comments_epoch",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperCommentWithdraw",
+      "projection": "OwnerComment.allowed_actions",
+      "target": "/me/whispers/comments/{comment_id}/withdraw",
+      "version_source": "OwnerComment.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperHugSet",
+      "projection": "PublicPost.allowed_actions",
+      "target": "/whispers/posts/{post_id}/hugs",
+      "version_source": "PublicPost.version + my_hug.version，首次为0",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperNicknameSet",
+      "projection": "NicknameState.allowed_actions",
+      "target": "/me/whispers/nickname",
+      "version_source": "NicknameState.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperCapsuleCreate",
+      "projection": "Workspace.allowed_actions",
+      "target": "/me/whispers/capsules",
+      "version_source": "不适用",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperCapsuleCancel",
+      "projection": "Capsule/CapsuleSummary.allowed_actions",
+      "target": "/me/whispers/capsules/{capsule_id}/cancel",
+      "version_source": "Capsule.version 或 CapsuleSummary.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperCapsuleDelete",
+      "projection": "Capsule/CapsuleSummary.allowed_actions",
+      "target": "/me/whispers/capsules/{capsule_id}/delete",
+      "version_source": "Capsule.version 或 CapsuleSummary.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "interactionBlockCreate",
+      "projection": "PublicPost/PublicComment/Workspace.allowed_actions",
+      "target": "/me/interaction-blocks",
+      "version_source": "不适用",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "interactionBlockDelete",
+      "projection": "BlockEntry.allowed_actions",
+      "target": "/me/interaction-blocks/{block_id}",
+      "version_source": "BlockEntry.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperReportCreate",
+      "projection": "PublicPost/PublicComment.allowed_actions",
+      "target": "/whispers/reports",
+      "version_source": "不适用",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperNotificationRead",
+      "projection": "Notification.allowed_actions",
+      "target": "/me/whispers/notifications/{notification_id}/read",
+      "version_source": "Notification.version",
+      "auth_scope": "student"
+    },
+    {
+      "operation_id": "whisperAdminReviewDecide",
+      "projection": "ReviewDetail.allowed_actions",
+      "target": "/admin/whispers/reviews/{review_id}/decision",
+      "version_source": "ReviewDetail.version + source.content_version",
+      "auth_scope": "admin-review"
+    },
+    {
+      "operation_id": "whisperAdminReviewEscalate",
+      "projection": "ReviewDetail.allowed_actions",
+      "target": "/admin/whispers/reviews/{review_id}/escalate",
+      "version_source": "ReviewDetail.version",
+      "auth_scope": "admin-review-and-crisis"
+    },
+    {
+      "operation_id": "whisperAdminRestrictionSet",
+      "projection": "ContentControl.allowed_actions",
+      "target": "/admin/whispers/contents/{kind}/{content_id}/restriction",
+      "version_source": "ContentControl.version",
+      "auth_scope": "admin-safety"
+    },
+    {
+      "operation_id": "whisperAdminPenaltyCreate",
+      "projection": "ContentControl.allowed_actions",
+      "target": "/admin/whispers/contents/{kind}/{content_id}/penalties",
+      "version_source": "ContentControl.version + ReportDetail.version",
+      "auth_scope": "admin-safety"
+    },
+    {
+      "operation_id": "whisperAdminReportDecide",
+      "projection": "ReportDetail.allowed_actions",
+      "target": "/admin/whispers/reports/{report_id}/decision",
+      "version_source": "ReportDetail.version",
+      "auth_scope": "admin-safety"
+    },
+    {
+      "operation_id": "whisperAdminReportEscalate",
+      "projection": "ReportDetail.allowed_actions",
+      "target": "/admin/whispers/reports/{report_id}/escalate",
+      "version_source": "ReportDetail.version",
+      "auth_scope": "admin-crisis"
+    },
+    {
+      "operation_id": "whisperAdminCrisisAct",
+      "projection": "CrisisDetail.allowed_actions",
+      "target": "/admin/whispers/crises/{crisis_id}/actions",
+      "version_source": "CrisisDetail.version",
+      "auth_scope": "admin-crisis"
+    },
+    {
+      "operation_id": "whisperAdminCrisisFalsePositive",
+      "projection": "CrisisDetail.allowed_actions",
+      "target": "/admin/whispers/crises/{crisis_id}/false-positive",
+      "version_source": "CrisisDetail.version",
+      "auth_scope": "admin-crisis"
+    },
+    {
+      "operation_id": "whisperAdminEvidenceDelete",
+      "projection": "EvidenceScope.allowed_actions",
+      "target": "/admin/whispers/evidence/{evidence_id}/deletion-requests",
+      "version_source": "EvidenceScope.version",
+      "auth_scope": "admin-super"
+    }
+  ]
+}

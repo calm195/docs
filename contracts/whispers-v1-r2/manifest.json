@@ -1,0 +1,12 @@
+{
+  "contract_id": "whispers/1.0.0",
+  "revision": 2,
+  "date": "2026-11-07",
+  "files": {
+    "contracts/whispers-v1-r2/openapi.json": "71af0a58aa398f5aacbd193f8f586724302d065ba6d9d4ac06f4b60720a9a1f6",
+    "contracts/whispers-v1-r2/actions.json": "d28f5a8088e321081d2280ca5e8a80b44ea215ffb1e8f605b181d6a3f50d708b",
+    "contracts/whispers-v1-r2/examples.json": "caa4ef8a8620d7f9d7ffdb3caba270c86ee98ab41e3b57c77b381801732a270a",
+    "contracts/whispers-v1-r2/README.md": "9deef546e3ec52c73905d0180b3f4775eaaf19b5a78d601102c27edd2e71e443",
+    "contracts/whispers-v1-r2/validate.py": "82f4b08ce884684b2d52402570a9b34f3067d789ed4011cb4e33a2017625b8d8"
+  }
+}

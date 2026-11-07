@@ -51,7 +51,7 @@ def main():
             if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
                 raise ValueError(f"契约manifest指纹不一致：{path.relative_to(stage)}")
         environment = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1"}
-        validators = ["contracts/validate.py", "contracts/blocks_v0_2_1.py", "contracts/whispers-v1/validate.py",
+        validators = ["contracts/validate.py", "contracts/blocks_v0_2_1.py", "contracts/whispers-v1/validate.py", "contracts/whispers-v1-r2/validate.py",
                       "contracts/admin-users-v1/validate.py", "contracts/resource-plaza-v1-r2/validate.py"]
         for validator in validators:
             subprocess.run([sys.executable, str(stage / validator)], cwd=stage, env=environment, check=True)
