@@ -4,6 +4,7 @@
 
 | 能力 | 有效输入 | 消费边界 |
 | --- | --- | --- |
+| 内容发现与管理 | [0.2.1-r1 增量](content-discovery.v0.2.1-r1.md) | 公开搜索、排序和周榜，后台查询与草稿导出 |
 | 体验版改进 | [学号、会话、文件、反馈与首页统计](trial-improvements.v0.2.1-r2.md) | 覆盖本次增量；OCR已取消，保留人工认证 |
 | 全站基础 | [OpenAPI0.2.1](openapi.v0.2.1.json)、[动作revision6](actions.v0.2.1.json)、[示例](examples.v0.2.1.json)、[指纹](actions-review.v0.2.1-r6.json) | 基于0.2.0；[屏蔽协议](blocks.v0.2.1.md)与已启用[树洞opaque协议](whispers-v1-r2/README.md)按当前装配消费 |
 | 词库管理 | [词条状态增量](wordlist-entry-status.v0.2.1-r1.md) · [双词库审核增量](wordlist-dual.v0.2.1-r2.md) | 管理内置与自定义快照，支持试跑、审核命中详情和归档恢复 |
