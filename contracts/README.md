@@ -5,6 +5,7 @@
 | 能力 | 有效输入 | 消费边界 |
 | --- | --- | --- |
 | 统一展示字典 | [展示字典增量](display-dictionaries.v0.2.1-r1.md) | 数据库权威快照、后台维护、固定代码与版本控制 |
+| 心愿和还愿故事分享 | [分享增量](content-share.v0.2.1-r1.md) | 原业务页分享、扫码公开回流与小程序码 |
 | 内容发现与管理 | [0.2.1-r1 增量](content-discovery.v0.2.1-r1.md) | 公开搜索、排序和周榜，后台查询与草稿导出 |
 | 体验版改进 | [学号、会话、文件、反馈与首页统计](trial-improvements.v0.2.1-r2.md) | 覆盖本次增量；OCR已取消，保留人工认证 |
 | 全站基础 | [OpenAPI0.2.1](openapi.v0.2.1.json)、[动作revision6](actions.v0.2.1.json)、[示例](examples.v0.2.1.json)、[指纹](actions-review.v0.2.1-r6.json) | 基于0.2.0；[屏蔽协议](blocks.v0.2.1.md)与已启用[树洞opaque协议](whispers-v1-r2/README.md)按当前装配消费 |
