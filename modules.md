@@ -4,7 +4,7 @@
 
 | 模块 | 当前范围 | 需求/设计 | 协议入口 |
 | --- | --- | --- | --- |
-| 包分配活动 | 活动报名、审核、候选评分、人工配对、结果发布和每日任务 | [需求v1](requirements/matchmaking-v1.md)、[设计v1](design/matchmaking-v1.md)、[自动配对方案对比](design/matchmaking-auto-pairing-v2.md) | [活动协议v1](contracts/matchmaking.v1.md)、[活动协议v2](contracts/matchmaking.v2.md) |
+| 包分配活动 | 活动报名、审核、候选评分、人工配对、结果发布和每日任务 | [需求v1](requirements/matchmaking-v1.md)、[设计v1](design/matchmaking-v1.md)、[自动配对方案对比](design/matchmaking-auto-pairing-v2.md) | [活动协议v1](contracts/matchmaking.v1.md)、[活动协议v2](contracts/matchmaking.v2.md)、[活动协议v3](contracts/matchmaking.v3.md) |
 | 展示字典 | 两端共用名称与排序、后台维护与版本审计 | 三端维护优化 | [展示字典增量](contracts/display-dictionaries.v0.2.1-r1.md) |
 | 身份、学生认证与后台账号 | 微信会话、学生卡、人工审核、后台本地账号及角色 | [基础需求](requirements/baseline.md)、[身份与接口设计](design/api.md) | [学生会话](contracts/student-auth.v0.2.0.md)、[学生卡](contracts/student-card.v0.2.0.md)、[人工认证](contracts/verification.v0.2.0.md)、[后台账号](contracts/admin-accounts.v0.2.0.md)、[头像](contracts/avatar.v0.2.1-r2.md)、[会话恢复与统计增量](contracts/trial-improvements.v0.2.1-r2.md) |
 | 心愿、应愿与匹配 | 文字许愿、审核、主动上架、唯一匹配与生命周期 | [基础需求](requirements/baseline.md)、[领域/API设计](design/api.md) | [全站0.2.1](contracts/openapi.v0.2.1.json)、[基础语义](contracts/semantics.md)、[体验版增量](contracts/trial-experience.v0.2.1-r1.md) |
