@@ -1,6 +1,6 @@
 # 鲤源池文档
 
-这里维护当前模块依据、三端现状、开放问题和后续安排。更新日期：2026-11-12。
+这里维护当前模块依据、三端现状、开放问题和后续安排。更新日期：2026-11-13。
 
 ## 三端工作入口
 
@@ -23,11 +23,9 @@
 
 ## 当前结论
 
-心愿与内容互动增量已完成三端实现、代码审查修复及本地开发库回归，源码按后端→管理端/小程序的顺序提交推送develop。见[审查结果](reviews/content-interactions-v1-review.md)及三端现状的精确SHA；生产仍以各端部署记录为准。
+本轮完成全仓审核、边界修复、安全依赖更新和三端滚动文档收敛，范围与实际验证见[全仓审核](reviews/full-code-review-2026-11-13.md)。三端源码改动已提交并推送至 develop；完整提交 SHA 与已有部署/上传记录分别保存在三端现状中，本轮未部署或上传。
 
-本轮维护优化包含统一操作通知、数据库展示字典和举报类型管理，版本及验证边界见三端现状，新增接口见[展示字典增量](contracts/display-dictionaries.v0.2.1-r1.md)。未将年级身份版本、权限及状态转换规则改造成可任意编辑的展示字典。
-
-认证、心愿/匹配/聊天、还愿、悄悄鲤、用户管理、资料广场与后台治理已有实现和不同范围验证。完整API/五类worker、初始化、数据库持久任务、内容发现和文件资料已有实现及部署记录。2026-11-08全仓库审核修复、各端功能与本地回归结果已更新至三端现状；真实供应商全场景、手机全模块、独立恢复及容量仍需单独验收；详细差距以三端缺陷表为准。现有接口或构建通过不等于生产可用。
+认证、心愿互动/图片、聊天还愿、悄悄鲤/胶囊、包分配、用户/资料和后台治理已有实现。固定设计与契约描述协议依据；真实供应商全场景、手机全模块、正式岗位、独立恢复与目标容量依照各端缺口单独验收。
 
 ## 历史与检查
 
@@ -39,8 +37,10 @@ python3 -m unittest discover -s scripts -p 'test_*.py'
 python3 scripts/check_gate.py G1
 python3 scripts/check_gate.py G2
 python3 scripts/check_gate.py G3
-# 在安装了契约依赖的独立Python环境中执行
-python3 scripts/check_contracts.py
+# 首次准备契约检查环境
+python3 -m venv .venv
+.venv/bin/python -m pip install -r scripts/requirements.txt
+.venv/bin/python scripts/check_contracts.py
 ```
 
 检查不签发审批或业务验收。仓库只保留develop/main，日常修改在develop；提交、合并和推送遵循当次授权。

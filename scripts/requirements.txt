@@ -1,0 +1,3 @@
+# 当前契约检查工具的可复现依赖；固定历史契约输入保持原样。
+openapi-spec-validator==0.7.2
+jsonschema==4.25.1
