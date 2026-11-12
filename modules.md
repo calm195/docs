@@ -2,7 +2,7 @@
 
 更新：2026-11-11。本页集中模块范围与有效输入；实现、缺陷、计划只在[三端入口](README.md)维护。固定设计和契约中的历史 `not-implemented` 不作为当前进度。
 
-增量协议：[内容治理查询](contracts/moderation-query.v1.md)、[特质驳回移除 v5](contracts/matchmaking.v5.md)。
+增量协议：[图片展示](contracts/image-display.v1.md)、[内容治理查询](contracts/moderation-query.v1.md)、[特质驳回移除 v5](contracts/matchmaking.v5.md)。
 
 本轮设计：[心愿与内容互动改进v1](design/content-interactions-v1.md)，覆盖心愿发布与图片、解除活跃数量限制、匿名展示、评论楼中楼、收藏/浏览统计、未读角标及词库体验；增量协议见[内容互动v1](contracts/content-interactions.v1.md)，本地实现与验证边界见三端现状。
 

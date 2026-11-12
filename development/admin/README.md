@@ -1,5 +1,11 @@
 # 管理端现状
 
+## 内容图片加载加速审查与部署（2026-11-12）
+
+源码 `5b688eab04ab8ccc3d21551c9a701887b10c288f` 已提交并推送origin/develop，生产已部署。心愿审核与内容详情默认读取最长边1600px的展示图，点击“查看原图”才重新读取原图；切换图片来源或账号后恢复展示图模式。现有案件/心愿来源授权、401/403统一撤权、404清空整组和Blob释放保持有效。协议见[图片展示增量](../../contracts/image-display.v1.md)。
+
+pnpm format/check/build通过；内容图片4项行为回归覆盖规格参数、查看原图、会话退出、第二张撤权及来源失效清理。审查未发现新增阻断项；发布重新构建并核对公网首页、ContentImages和ContentManagementView脚本与制品逐字节一致，配套后端已部署，后台图片无会话访问返回401。旧站点备份位于 `/var/backups/liyuanci-images-20261112.PtjjIB`。真实岗位账号的展示图/原图切换、文字细节和弱网视觉验收未执行；后端公开图片读取不替代岗位链路验收。
+
 ## 内容互动生产部署（2026-11-12）
 
 生产已部署源码 `2542a86773192b158fde7f37ea0d34e5e13d5bdf`，本轮重新执行pnpm build生成发布制品。公网首页及ContentManagementView、WordlistDraftView、ContentImages脚本与发布制品逐字节一致；配套后端和五类worker已更新，数据库为0030。静态文件先同步资源再原子切换首页，旧资源保留；旧站点及数据库等备份位于生产 `/var/backups/liyuanci-content-0030.EGzRVX`。
