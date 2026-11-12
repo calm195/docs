@@ -4,6 +4,8 @@
 
 增量协议：[内容治理查询](contracts/moderation-query.v1.md)、[特质驳回移除 v5](contracts/matchmaking.v5.md)。
 
+本轮设计：[心愿与内容互动改进v1](design/content-interactions-v1.md)，覆盖心愿发布与图片、解除活跃数量限制、匿名展示、评论楼中楼、收藏/浏览统计、未读角标及词库体验；增量协议见[内容互动v1](contracts/content-interactions.v1.md)，本地实现与验证边界见三端现状。
+
 | 模块 | 当前范围 | 需求/设计 | 协议入口 |
 | --- | --- | --- | --- |
 | 包分配活动 | 活动报名、审核、个人与理想型标签、候选评分、全员自动分配、人工配对、结果发布和每日任务 | [需求v1](requirements/matchmaking-v1.md)、[设计v1](design/matchmaking-v1.md)、[自动分配设计v3](design/matchmaking-auto-pairing-v3.md) | [活动协议v1](contracts/matchmaking.v1.md)、[活动协议v2](contracts/matchmaking.v2.md)、[活动协议v3](contracts/matchmaking.v3.md)、[理想型特质v4](contracts/matchmaking.v4.md)、[个人特质与自动分配v6](contracts/matchmaking.v6.md)、[偏好与年级v7](contracts/matchmaking.v7.md) |
