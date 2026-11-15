@@ -15,7 +15,7 @@
 | 体验版改进 | [学号、会话、文件、反馈与首页统计](trial-improvements.v0.2.1-r2.md) | 覆盖本次增量；OCR已取消，保留人工认证 |
 | 全站基础 | [OpenAPI0.2.1](openapi.v0.2.1.json)、[动作revision6](actions.v0.2.1.json)、[示例](examples.v0.2.1.json)、[指纹](actions-review.v0.2.1-r6.json) | 基于0.2.0；[屏蔽协议](blocks.v0.2.1.md)与已启用[树洞opaque协议](whispers-v1-r2/README.md)按当前装配消费 |
 | 词库管理 | [词条状态增量](wordlist-entry-status.v0.2.1-r1.md) · [双词库审核增量](wordlist-dual.v0.2.1-r2.md) | 管理内置与自定义快照，支持试跑、审核命中详情和归档恢复 |
-| 聊天 | [读取者方向增量](chat-viewer.v0.2.1-r1.md) | `viewer_is_sender`按当前读取者返回，不泄露发送者账号标识 |
+| 聊天 | [读取者方向增量](chat-viewer.v0.2.1-r1.md)、[摘要与本人阅读位置 v1](chat-read.v1.md) | `viewer_is_sender`、安全消息摘要和本人阅读位置；不泄露发送者账号或对方阅读状态 |
 | 悄悄鲤 | [whispers/1.0.0](whispers-v1-r2/README.md) | 文字、身份、暖评/抱抱、通知、胶囊及隐私兼容 |
 | 用户查询 | [admin-users/1.0.0](admin-users-v1/README.md) | 三个只读GET；昵称搜索与脱敏投影 |
 | 用户直接处置 | [user-restrictions/1.0.0](user-restrictions-v1/README.md) | 独立状态读取与四个POST，超管、必填理由、版本/幂等与加密审计 |
