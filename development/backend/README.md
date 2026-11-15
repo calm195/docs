@@ -1,6 +1,6 @@
 # 后端现状
 
-更新：2026-11-13。当前源码 `eae3c405e60493e661a181568c38fd045e463159`，已提交并推送至 develop。最后已有部署记录的源码基线为 `ed6a06ef970cb582102fb21005e72325f1fc3a7c`；本轮代码与依赖更新尚未部署。审核范围、修复和本轮验证见[全仓审核](../../reviews/full-code-review-2026-11-13.md)。
+更新：2026-11-15。当前源码 `33dfada68d9e6da4998979148f884be987118934`（develop）；0031阅读位置迁移提交为 `60784d864649f8205eb7d9519f44d5d00f705b67`，其后提交聊天摘要和本人阅读确认接口。2026-11-15 已部署对应工作区的 Linux 制品并完成0031迁移；本轮按模块与依赖顺序归档提交，提交内容与已验证工作区逐文件一致。原部署基线 `ed6a06ef970cb582102fb21005e72325f1fc3a7c` 作为历史追溯。基线审核记录见[全仓审核](../../reviews/full-code-review-2026-11-13.md)。
 
 ## 架构与运行
 
@@ -8,9 +8,15 @@
 
 本轮将 HTTP 监听、排空和资源关闭结果处理独立到 `app/http_server.go`。资源仍逆序释放；某项关闭失败不会阻止其余清理，宿主返回失败并保留原始运行失败。完成日志记录固定操作名、结果及耗时，客户端原始错误不进入日志或退出错误。持久任务的固定标识/路由正则只编译一次。
 
-PostgreSQL 是业务权威，Redis 提供共享限流和公开候选缓存。普通 API/worker 不执行 DDL。配置统一读取公共 YAML 与私有环境覆盖；单主密钥、用途派生标签、删除意图账本和已应用迁移保持原有协议。源码版本 SQL 连续至 `0030`。
+PostgreSQL 是业务权威，Redis 提供共享限流和公开候选缓存。普通 API/worker 不执行 DDL。配置统一读取公共 YAML 与私有环境覆盖；单主密钥、用途派生标签、删除意图账本和已应用迁移保持原有协议。源码版本 SQL 连续至 `0031`；新增阅读位置迁移已于2026-11-15应用生产。
 
 运行与配置的唯一入口：[源码 README](../../../liyuanci-backend-go/README.md)、[配置说明](../../../liyuanci-backend-go/CONFIGURATION.md)、[开发者指南](../../../liyuanci-backend-go/DEVELOPER_GUIDE.md)。安全更新后的构建下限为 Go 1.27.4。
+
+## 聊天摘要与本人阅读位置
+
+2026-11-15 核实旧列表只有标题/写入权限，没有最新消息或阅读位置。本轮增加当前参与者可读的最新消息摘要、本人未读状态及显式阅读确认；摘要与消息详情共用审核/可见性过滤，正文最多120码点并追加省略号。只确认本人可见已送达序号，旧请求不能倒退位置，非参与者和注销屏障仍拒绝读取；不向对方暴露阅读记录。新增0031表随会话/账号删除级联清理，通知已读语义保持独立。[接口增量](../../contracts/chat-read.v1.md)单独版本化，未修改历史固定输入。
+
+本轮 `make fmt`、定向 `make check-fast`、完整 `make check`（gofmt/vet/race/cover）及 `make build` 通过。隔离原生 `make integration INTEGRATION_SUITE=moderation`（8项必需用例）与 `INTEGRATION_SUITE=migration`（6项必需用例）通过，覆盖新阅读位置、安全摘要、HTTP输入、授权、单调/幂等、迁移上下行及受限数据库角色；临时PG/Redis及测试数据已清理。身份、密钥、分析器仍为合成，该轮实现检查不代表微信设备验收；后续生产部署与实际核验见下文。上述实现现已归档至 `33dfada68d9e6da4998979148f884be987118934`；本次提交整理未改业务代码，未将历史测试计为重新执行。
 
 ## 模块能力
 
@@ -31,9 +37,15 @@ PostgreSQL 是业务权威，Redis 提供共享限流和公开候选缓存。普
 
 ## 已记录的生产状态
 
-以下是本轮开始前已有记录，本轮未连接生产重新核验。2026-11-12 已部署基线源码，API 与 card/content/whispers/account/evidence 五类 worker 的运行制品核对及 readyz 通过，数据库为 `0030`。两个公开图片样本的原图/缩略图/展示图读取及响应头检查通过；样本体积不能推导全部图片性能。
+2026-11-15 北京时间13:51完成本轮部署。操作前只读确认生产数据库0030、API和card/content/whispers/account/evidence五类worker均active、磁盘空间充足；现已显式应用0031，`conversation_reads`归业务账号所有，四个字段及两条级联外键已核对。迁移前后账号、心愿、消息和会话数量一致，现有公共/私有配置指纹不变。
 
-最新图片部署备份：`/var/backups/liyuanci-images-20261112.PtjjIB`。0030迁移前数据库、旧二进制、配置及管理端备份：`/var/backups/liyuanci-content-0030.EGzRVX`。备份目录曾完成读取校验，尚无目标环境完整恢复演练结论。恢复须同时处理删除账本门禁及新旧协议兼容性。
+构建时使用源码基线 `eae3c405e60493e661a181568c38fd045e463159` 加聊天工作区修改，现对应提交 `33dfada68d9e6da4998979148f884be987118934`；Go 1.27.4、Linux amd64、CGO关闭。构建输入指纹（排序的cmd、internal、go.mod/go.sum、Makefile和common.yaml路径及内容）为 `c1ff6dae489aad465811d058e65d7db11eebb45752b3fe316d51cfc159732f37`。发布包SHA-256为 `c6d87c46fd593377eceaf01db652f4fdf2d0ec6e592240526733b68e7cd416f0`；server制品为 `2774e325d959f906dd11a6434c3007d1241e6d6f8c45b2574a8177e3b7a38e21`，worker制品为 `9643ae3d2a3ecafbf3df86b38a31e1b5337d8a629a372198a077b3aa28cdeefb`。运行进程与发布制品逐字节核对通过。
+
+本次回退备份为 `/var/backups/liyuanci-chat-0031-20261115.RNxe1c`，保留数据库自定义归档、旧四类二进制、公共/私有配置和删除账本；`pg_restore --list`及完整归档读取通过，未进行生产恢复演练。部署回执保存在服务器 `/root/liyuanci-chat-deploy-20261115.log`，发布阶段目录见 `/root/liyuanci-chat-stage-path-20261115.txt`。恢复数据库仍须遵循删除账本及两域重删门禁，不可仅恢复数据库文件。
+
+部署后API及五类worker均active/running、短时核验NRestarts=0；`readyz`、当前配置检查及依赖诊断通过。公网公开心愿列表200/code=0，聊天列表和新增阅读确认接口无鉴权均401，响应为no-store。一次批量journalctl日志查询超时中止，未将其记作“错误日志清零”；运行状态及上述接口结果为独立实测证据。真实双账号、双设备和微信真机阅读状态仍待验收。配套微信开发版现为 `1.0.33-profile.20261115`；后续微信模拟器已验证真实会话最新消息与本人未读→已读，通知布局/真实跳转及合成自动已读的边界见[小程序现状](../miniprogram/README.md)。
+
+历史图片部署备份 `/var/backups/liyuanci-images-20261112.PtjjIB`、0030迁移前备份 `/var/backups/liyuanci-content-0030.EGzRVX` 保留，仅作追溯。
 
 ## 验证与开放边界
 
