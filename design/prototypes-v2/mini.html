@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>鲤愿池 · 小程序原型</title>
+    <link rel="icon" href="assets/illustrations/brand-koi.png" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="mini.css" />
+  </head>
+  <body>
+    <header class="studio-header">
+      <a class="studio-brand" href="index.html"
+        ><img src="assets/illustrations/brand-koi.png" alt="" />鲤愿池
+        <span>小程序原型</span></a
+      >
+      <div class="row">
+        <span class="studio-caption">提交版素材 · 本地合成数据</span
+        ><a href="admin.html" class="studio-link">管理端 ↗</a
+        ><button class="icon-btn" data-action="theme" aria-label="选择外观">
+          <img class="icon" src="assets/icons/sun.svg" alt="" />
+        </button>
+      </div>
+    </header>
+    <div class="studio">
+      <aside class="page-rail">
+        <p class="eyebrow">PAGE EXPLORER</p>
+        <h2>页面导航</h2>
+        <input
+          class="input"
+          id="page-search"
+          placeholder="搜索页面…"
+          aria-label="搜索原型页面"
+        />
+        <nav id="page-nav" aria-label="小程序原型页面"></nav>
+        <a class="rail-bottom" href="README.md">查看开发参考说明 ↗</a>
+      </aside>
+      <main class="stage">
+        <div class="stage-toolbar">
+          <div class="row">
+            <button
+              class="text-btn"
+              data-action="back"
+              aria-label="返回上一原型页"
+            >
+              ‹ 返回</button
+            ><span class="small muted">小程序内容区</span>
+          </div>
+          <div class="segmented" aria-label="预览宽度">
+            <button data-width="320">320</button
+            ><button class="active" data-width="375">375</button
+            ><button data-width="430">430</button>
+          </div>
+        </div>
+        <div class="device" id="device">
+          <div class="phone-scroll" id="phone-scroll">
+            <div class="phone-content" id="screen"></div>
+          </div>
+          <nav
+            class="mini-tabbar"
+            id="tabbar"
+            aria-label="小程序底部导航"
+          ></nav>
+          <div class="safe-area"></div>
+        </div>
+        <p class="stage-foot">
+          原型仅模拟内容区，微信导航与安全区以实际容器为准。
+        </p>
+      </main>
+      <aside class="inspector">
+        <div class="eyebrow">DESIGN NOTES</div>
+        <h2 id="note-title">首页</h2>
+        <p id="note-copy"></p>
+        <div class="divider"></div>
+        <label class="field"
+          >页面状态<select id="view-state">
+            <option value="default">正常内容</option>
+            <option value="loading">加载中</option>
+            <option value="empty">空状态</option>
+            <option value="error">加载失败</option>
+            <option value="restricted">无访问权限</option>
+          </select></label
+        ><label class="field"
+          >表单提交结果<select id="write-state">
+            <option value="success">受理成功</option>
+            <option value="unknown">结果未知 · 保留原请求</option>
+            <option value="conflict">版本冲突 · 重新核对</option>
+          </select></label
+        >
+        <label class="field"
+          >登录状态<select id="auth-state">
+            <option value="signed-in">已登录</option>
+            <option value="guest">游客</option>
+          </select></label
+        >
+        <button class="btn full" data-action="login-prompt">
+          查看登录弹窗
+        </button>
+        <div id="context-controls"></div>
+        <div class="divider"></div>
+        <h3>沿用的视觉基因</h3>
+        <div class="token-row">
+          <i style="background: #ff4c3e"></i>
+          <div>朱红<code>#FF4C3E</code></div>
+        </div>
+        <div class="token-row">
+          <i style="background: #e1f7f4"></i>
+          <div>薄荷绿<code>#E1F7F4</code></div>
+        </div>
+        <div class="token-row">
+          <i style="background: #fcfaf7"></i>
+          <div>暖白<code>#FCFAF7</code></div>
+        </div>
+        <p class="small muted">
+          原版水彩插画、线性图标与五栏导航。表单错误留在字段附近，长内容可滚动。
+        </p>
+        <div class="divider"></div>
+        <code id="route-note"></code>
+        <p class="small muted" style="margin-top: 12px">
+          原型中的操作只改变本地演示状态。刷新页面恢复示例。
+        </p>
+      </aside>
+    </div>
+    <script src="shared.js"></script>
+    <script src="mini.js"></script>
+  </body>
+</html>

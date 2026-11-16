@@ -1,0 +1,299 @@
+[
+  {
+    "id": "dashboard",
+    "title": "数据总览",
+    "route": "/",
+    "group": "总览",
+    "role": "all",
+    "family": "dashboard",
+    "ic": "home"
+  },
+  {
+    "id": "users",
+    "title": "平台用户",
+    "route": "/users",
+    "group": "用户管理",
+    "role": "all",
+    "family": "users",
+    "ic": "user"
+  },
+  {
+    "id": "identity",
+    "title": "身份审核",
+    "route": "/identity",
+    "group": "用户管理",
+    "role": "review",
+    "family": "review",
+    "ic": "shield"
+  },
+  {
+    "id": "identity-history",
+    "title": "身份审核历史",
+    "route": "/identity/history",
+    "group": "用户管理",
+    "role": "review",
+    "family": "review",
+    "ic": "clock"
+  },
+  {
+    "id": "matchmaking",
+    "title": "活动维护",
+    "route": "/matchmaking",
+    "group": "包分配",
+    "role": "review",
+    "family": "activities",
+    "ic": "heart"
+  },
+  {
+    "id": "traits",
+    "title": "特质标签",
+    "route": "/matchmaking/traits",
+    "group": "包分配",
+    "role": "review",
+    "family": "traits",
+    "ic": "star"
+  },
+  {
+    "id": "tasks",
+    "title": "每日任务库",
+    "route": "/matchmaking/task-library",
+    "group": "包分配",
+    "role": "review",
+    "family": "tasks",
+    "ic": "check"
+  },
+  {
+    "id": "resources",
+    "title": "资料列表",
+    "route": "/resources",
+    "group": "资料管理",
+    "role": "review",
+    "family": "resources",
+    "ic": "book"
+  },
+  {
+    "id": "categories",
+    "title": "资料分类",
+    "route": "/resource-categories",
+    "group": "资料管理",
+    "role": "review",
+    "family": "settings",
+    "ic": "book"
+  },
+  {
+    "id": "wishes",
+    "title": "心愿管理",
+    "route": "/content/wishes",
+    "group": "内容管理",
+    "role": "review",
+    "family": "content",
+    "ic": "fish"
+  },
+  {
+    "id": "whispers",
+    "title": "悄悄话管理",
+    "route": "/content/whispers",
+    "group": "内容管理",
+    "role": "review",
+    "family": "content",
+    "ic": "chat"
+  },
+  {
+    "id": "moderation",
+    "title": "内容审核",
+    "route": "/moderation",
+    "group": "内容治理",
+    "role": "review",
+    "family": "review",
+    "ic": "check"
+  },
+  {
+    "id": "whisper-reviews",
+    "title": "树洞审核",
+    "route": "/whispers/reviews",
+    "group": "内容治理",
+    "role": "review",
+    "family": "review",
+    "ic": "chat"
+  },
+  {
+    "id": "wordlists",
+    "title": "词库管理",
+    "route": "/wordlists",
+    "group": "内容治理",
+    "role": "review",
+    "family": "words",
+    "ic": "book"
+  },
+  {
+    "id": "builtin",
+    "title": "内置词库",
+    "route": "/wordlists/builtin",
+    "group": "内容治理",
+    "role": "review",
+    "family": "words",
+    "ic": "book"
+  },
+  {
+    "id": "word-history",
+    "title": "发布记录",
+    "route": "/wordlists/history",
+    "group": "内容治理",
+    "role": "review",
+    "family": "words",
+    "ic": "clock"
+  },
+  {
+    "id": "reports",
+    "title": "举报管理",
+    "route": "/safety/reports",
+    "group": "安全治理",
+    "role": "all",
+    "family": "safety",
+    "ic": "shield"
+  },
+  {
+    "id": "penalties",
+    "title": "处罚管理",
+    "route": "/safety/penalties",
+    "group": "安全治理",
+    "role": "all",
+    "family": "safety",
+    "ic": "notice"
+  },
+  {
+    "id": "appeals",
+    "title": "申诉管理",
+    "route": "/safety/appeals",
+    "group": "安全治理",
+    "role": "all",
+    "family": "safety",
+    "ic": "chat"
+  },
+  {
+    "id": "whisper-reports",
+    "title": "树洞举报",
+    "route": "/whispers/reports",
+    "group": "安全治理",
+    "role": "all",
+    "family": "safety",
+    "ic": "chat"
+  },
+  {
+    "id": "crisis",
+    "title": "危机工作台",
+    "route": "/crisis",
+    "group": "安全治理",
+    "role": "crisis",
+    "family": "crisis",
+    "ic": "heart"
+  },
+  {
+    "id": "whisper-crises",
+    "title": "树洞危机",
+    "route": "/whispers/crises",
+    "group": "安全治理",
+    "role": "crisis",
+    "family": "crisis",
+    "ic": "leaf"
+  },
+  {
+    "id": "whisper-evidence",
+    "title": "树洞证据",
+    "route": "/whispers/evidence",
+    "group": "隐私管理",
+    "role": "super",
+    "family": "query",
+    "ic": "lock"
+  },
+  {
+    "id": "evidence",
+    "title": "证据删除",
+    "route": "/evidence-deletion",
+    "group": "隐私管理",
+    "role": "super",
+    "family": "query",
+    "ic": "shield"
+  },
+  {
+    "id": "receipts",
+    "title": "回执查询",
+    "route": "/deletion-receipts",
+    "group": "隐私管理",
+    "role": "super",
+    "family": "query",
+    "ic": "search"
+  },
+  {
+    "id": "accounts",
+    "title": "后台账号",
+    "route": "/accounts",
+    "group": "系统管理",
+    "role": "super",
+    "family": "accounts",
+    "ic": "user"
+  },
+  {
+    "id": "report-types",
+    "title": "举报类型",
+    "route": "/report-types",
+    "group": "系统管理",
+    "role": "super",
+    "family": "settings",
+    "ic": "notice"
+  },
+  {
+    "id": "dictionaries",
+    "title": "展示字典",
+    "route": "/dictionaries",
+    "group": "系统管理",
+    "role": "super",
+    "family": "settings",
+    "ic": "book"
+  },
+  {
+    "id": "guide",
+    "title": "模块使用说明",
+    "route": "/module-guide",
+    "group": "系统管理",
+    "role": "super",
+    "family": "editor",
+    "ic": "book"
+  },
+  {
+    "id": "password",
+    "title": "本人改密",
+    "route": "/password",
+    "group": "系统管理",
+    "role": "all",
+    "family": "password",
+    "ic": "lock"
+  },
+  {
+    "id": "login",
+    "title": "后台登录",
+    "route": "/login",
+    "group": "公共页面",
+    "role": "all",
+    "family": "login",
+    "ic": "user"
+  },
+  {
+    "id": "forbidden",
+    "title": "无访问权限",
+    "route": "/403",
+    "group": "公共页面",
+    "role": "all",
+    "family": "forbidden",
+    "ic": "lock"
+  },
+  {
+    "id": "not-found",
+    "title": "页面不存在",
+    "route": "/:pathMatch(.*)*",
+    "group": "公共页面",
+    "role": "all",
+    "family": "not-found",
+    "ic": "search"
+  }
+]

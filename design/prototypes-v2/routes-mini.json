@@ -1,0 +1,201 @@
+[
+  {
+    "route": "pages/index/index",
+    "title": "鲤愿池",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/hot-content/index",
+    "title": "本周热点",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/login/index",
+    "title": "登录提示弹窗",
+    "presentation": "modal",
+    "prototype": "mini.html#home",
+    "note": "原登录路由仅作开发映射，不再提供独立原型页面；拦截操作时在当前页弹出。"
+  },
+  {
+    "route": "pages/verification/index",
+    "title": "学生认证",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/wish-detail/index",
+    "title": "心愿详情",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/wishes/index",
+    "title": "心愿池",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/wishes/shortcut",
+    "title": "心愿池",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/applications/index",
+    "title": "应愿申请",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/public-profile/index",
+    "title": "公开主页",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/inbox/index",
+    "title": "通知中心",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/chat/index",
+    "title": "匿名聊天",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/stories/index",
+    "title": "还愿故事",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/story-editor/index",
+    "title": "我的还愿故事",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/settings/index",
+    "title": "个人资料与隐私",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/blacklist/index",
+    "title": "黑名单",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/report/index",
+    "title": "举报内容",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/safety/index",
+    "title": "警告与申诉",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/care/index",
+    "title": "关怀与援助",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/deletion/index",
+    "title": "账号注销",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/index",
+    "title": "悄悄话",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/detail",
+    "title": "树洞详情",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/editor",
+    "title": "我的树洞",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/mine",
+    "title": "我的树洞记录",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/nickname",
+    "title": "树洞昵称",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/help",
+    "title": "解忧与公共援助",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/report",
+    "title": "举报树洞内容",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/comment-editor",
+    "title": "原地暖评 / 回复",
+    "presentation": "inline-composer",
+    "prototype": "mini.html#whisper",
+    "note": "在心愿或悄悄话详情内展开编辑框，不跳转独立页面。"
+  },
+  {
+    "route": "pages/whispers/notifications",
+    "title": "悄悄鲤通知",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/capsules/index",
+    "title": "时光胶囊",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/capsules/create",
+    "title": "写给未来的自己",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/capsules/detail",
+    "title": "本人胶囊详情",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/resources/index",
+    "title": "资料广场",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/resources/detail",
+    "title": "资料详情",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/profile/index",
+    "title": "我的",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/whispers/settings",
+    "title": "悄悄话设置",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/matchmaking/index",
+    "title": "包分配",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/matchmaking/profile",
+    "title": "包分配资料",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/matchmaking/detail",
+    "title": "包分配活动",
+    "presentation": "page"
+  },
+  {
+    "route": "pages/favorites/index",
+    "title": "我的收藏",
+    "presentation": "page"
+  }
+]

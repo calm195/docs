@@ -1,0 +1,286 @@
+{
+  "date": "2026-11-16",
+  "source": "各源码仓库本轮开始时的已提交 HEAD；未使用工作区样式覆盖",
+  "repositories": {
+    "miniprogram": {
+      "commit": "32d7d7500a770a220f35cc9281bb3dfb0e59fa3c"
+    },
+    "admin": {
+      "commit": "97896837eb6ec7d7ceb75925e11b5aa0c9b7cba9"
+    }
+  },
+  "assets": [
+    {
+      "source": "src/static/icons/arrow.svg",
+      "file": "assets/icons/arrow.svg",
+      "sha256": "82690342ee58dd6c896830500616af66a6d281b5241e0aca7922f74a3450c0ed"
+    },
+    {
+      "source": "src/static/icons/bell.svg",
+      "file": "assets/icons/bell.svg",
+      "sha256": "28b7b5b148d0eb69076c35c00064f9fdc5151c4c0b8220649ac9109a9ecf70db"
+    },
+    {
+      "source": "src/static/icons/book-active.svg",
+      "file": "assets/icons/book-active.svg",
+      "sha256": "22ede19a7749c78ef872f77dc0cbc69847e64bde6714b8fca656c4e92472a776"
+    },
+    {
+      "source": "src/static/icons/book.svg",
+      "file": "assets/icons/book.svg",
+      "sha256": "c411d063ecdce5703c9b6a3c53153f2945328a3a99588b84b40e19ebb895e987"
+    },
+    {
+      "source": "src/static/icons/chat-active.svg",
+      "file": "assets/icons/chat-active.svg",
+      "sha256": "9f39b9b9dff8b0085969fc726f4a33c1809aa9356776aa7643ceca999e57a545"
+    },
+    {
+      "source": "src/static/icons/chat.svg",
+      "file": "assets/icons/chat.svg",
+      "sha256": "2f6bf334c611073cce771270e6c5db6e32e0502c7dd3cd04a7295ffa6894d165"
+    },
+    {
+      "source": "src/static/icons/check.svg",
+      "file": "assets/icons/check.svg",
+      "sha256": "98897f3c1c5143bff67431640d583d7710d6715a7513f5cfcb0c4f9820a08e35"
+    },
+    {
+      "source": "src/static/icons/chevron.svg",
+      "file": "assets/icons/chevron.svg",
+      "sha256": "85014b0a820dac057ed65edfeecadfe934f89f247b1955d5d30b97bc69a92ca0"
+    },
+    {
+      "source": "src/static/icons/clock.svg",
+      "file": "assets/icons/clock.svg",
+      "sha256": "7f0f836681e0f0fef8fccbb6901a0abbb6e7a6e36f84bbc71e07244a2da0825a"
+    },
+    {
+      "source": "src/static/icons/eye.svg",
+      "file": "assets/icons/eye.svg",
+      "sha256": "655f1eaaa826086655b38ac3aa075068ac3443be450573597e63981bf8c0c6c5"
+    },
+    {
+      "source": "src/static/icons/fish-active.svg",
+      "file": "assets/icons/fish-active.svg",
+      "sha256": "34463db30b1a462a8a61e5b40a4ee7d0b4e7103257588dc77ec7f588a2a2b2ae"
+    },
+    {
+      "source": "src/static/icons/fish.svg",
+      "file": "assets/icons/fish.svg",
+      "sha256": "3c5664711db98e72afbc463e309f0d96142b5dcceaea1e3748f7b4253a8378e0"
+    },
+    {
+      "source": "src/static/icons/gift.svg",
+      "file": "assets/icons/gift.svg",
+      "sha256": "5ece6013383281915c4f630dbd12f6c0ff3a2742874a58d9d05af1ee47484d7b"
+    },
+    {
+      "source": "src/static/icons/heart-active.svg",
+      "file": "assets/icons/heart-active.svg",
+      "sha256": "201bf82cadd49b0d324f5f6fbd09e2ff780c885ca800e2de29ac76b2e317c7ca"
+    },
+    {
+      "source": "src/static/icons/heart.svg",
+      "file": "assets/icons/heart.svg",
+      "sha256": "a73d86056b58c25925ae2a6ae57753be3aa20d3da4ac9760a0df9308a618091c"
+    },
+    {
+      "source": "src/static/icons/home-active.svg",
+      "file": "assets/icons/home-active.svg",
+      "sha256": "2a0ab940a95a11b6a40a394eb94e435f56ff42068a8aa191580a030e1b330826"
+    },
+    {
+      "source": "src/static/icons/home.svg",
+      "file": "assets/icons/home.svg",
+      "sha256": "516869e76add8c413463425256392bcacf1ad16bd58da28710f0cfa588f16876"
+    },
+    {
+      "source": "src/static/icons/leaf.svg",
+      "file": "assets/icons/leaf.svg",
+      "sha256": "2fa7456e421d57031b1edfd66a0a79e79e132fe024f85b2cb4e5e2133727a55e"
+    },
+    {
+      "source": "src/static/icons/lock.svg",
+      "file": "assets/icons/lock.svg",
+      "sha256": "b7bb1ef01ea7e78b7bd5a6b34163661406ae774a71197c3df85b2a908b9cb5c8"
+    },
+    {
+      "source": "src/static/icons/more.svg",
+      "file": "assets/icons/more.svg",
+      "sha256": "ec4aa56410f267daec1a1d991476f8fed006b96318121cde18d113893bcdb432"
+    },
+    {
+      "source": "src/static/icons/notice.svg",
+      "file": "assets/icons/notice.svg",
+      "sha256": "1d095685306ac99202da5b47526fcba13b1bd25b5dee1fe6cea67fae19b1ae59"
+    },
+    {
+      "source": "src/static/icons/pin.svg",
+      "file": "assets/icons/pin.svg",
+      "sha256": "5e8b2ef2728be6115079cc67ea107bc9653d40c61f63602f29289145911a103a"
+    },
+    {
+      "source": "src/static/icons/plus.svg",
+      "file": "assets/icons/plus.svg",
+      "sha256": "1cd9de2d2e843bade2323569df8bf865fbdfd6c42cacd85673b9287a3f173ea1"
+    },
+    {
+      "source": "src/static/icons/search.svg",
+      "file": "assets/icons/search.svg",
+      "sha256": "15b338399e564b0c91fb0765da7607ac1506306642a78112d70ecd45c7bd1ed8"
+    },
+    {
+      "source": "src/static/icons/send.svg",
+      "file": "assets/icons/send.svg",
+      "sha256": "5291e781f452937b3c74d57c672dddec59f16164cf790cec44ca28db48fdba83"
+    },
+    {
+      "source": "src/static/icons/settings.svg",
+      "file": "assets/icons/settings.svg",
+      "sha256": "52c496fe86796b5d24082e655b6b78389b34e92c33d3ba90a3b8894f7d0e0a35"
+    },
+    {
+      "source": "src/static/icons/shield.svg",
+      "file": "assets/icons/shield.svg",
+      "sha256": "8a92b08aa14554e049fa2da4c942382ea7f33a49b5a9756fb200e274801f611c"
+    },
+    {
+      "source": "src/static/icons/star-active.svg",
+      "file": "assets/icons/star-active.svg",
+      "sha256": "7be5da5c03f7d83baf427d8cb471194c5d6c64004786a1a5469c1b908b5d4a23"
+    },
+    {
+      "source": "src/static/icons/star.svg",
+      "file": "assets/icons/star.svg",
+      "sha256": "94e1b9e1f8118863475e6c54ef2668ce9a635a06846c1e7eba34e16a676f1a14"
+    },
+    {
+      "source": "src/static/icons/sun.svg",
+      "file": "assets/icons/sun.svg",
+      "sha256": "076e9b73b43dcb94105c39299a80f7f8c46373b9aac2cce8829cb2db2c723d1d"
+    },
+    {
+      "source": "src/static/icons/thumb-down-active.svg",
+      "file": "assets/icons/thumb-down-active.svg",
+      "sha256": "3df1c420f10204c813d93034ffb35adad93eb15ca0944ad021d760d977b66cf9"
+    },
+    {
+      "source": "src/static/icons/thumb-down.svg",
+      "file": "assets/icons/thumb-down.svg",
+      "sha256": "f8fd1daba2f48d98e1b910e5887b528c4f0335708096fa7df80438ac5790b942"
+    },
+    {
+      "source": "src/static/icons/thumb-up-active.svg",
+      "file": "assets/icons/thumb-up-active.svg",
+      "sha256": "b464c21aed03c92d7a473b5d155fa3cbdb8c89c9436c09971c7ebe5916a8829f"
+    },
+    {
+      "source": "src/static/icons/thumb-up.svg",
+      "file": "assets/icons/thumb-up.svg",
+      "sha256": "c39e13ccc0a8883ff60ca95d1773a23b9c8ce0f831782f2e72fbb70cda203b1d"
+    },
+    {
+      "source": "src/static/icons/user-active.svg",
+      "file": "assets/icons/user-active.svg",
+      "sha256": "795536673f4f861d6bb45da6dbe3f62f03fbdfcdfc30de1e664b649f381659c9"
+    },
+    {
+      "source": "src/static/icons/user.svg",
+      "file": "assets/icons/user.svg",
+      "sha256": "4aaf035da03b0c8bd80edf82602490d3f9258e3124884b63b3b4df053b4b2dc3"
+    },
+    {
+      "source": "src/static/illustrations/brand-koi.png",
+      "file": "assets/illustrations/brand-koi.png",
+      "sha256": "ea2d8c5dfdbc0ba9a273c801779294f27c13585f911ff3b9416119dcfd0b3861"
+    },
+    {
+      "source": "src/static/illustrations/entry-buddy.png",
+      "file": "assets/illustrations/entry-buddy.png",
+      "sha256": "7a54801b313cbe850bc449dc19ed925907d335e7e072a8c0d7b853af15496e51"
+    },
+    {
+      "source": "src/static/illustrations/entry-whisper.png",
+      "file": "assets/illustrations/entry-whisper.png",
+      "sha256": "3117a2f91df90355e58ca8b8d36102a3383aaaadb88ac4b744a7f1ece51e2cf6"
+    },
+    {
+      "source": "src/static/illustrations/entry-wish.png",
+      "file": "assets/illustrations/entry-wish.png",
+      "sha256": "4e9de99cfeb5f2e926cf9e6ba9bc0303d1897bbf8e04397338d46868b697ae33"
+    },
+    {
+      "source": "src/static/illustrations/pavilion.png",
+      "file": "assets/illustrations/pavilion.png",
+      "sha256": "57ef16bc663ba30d2c4afdc7d61ef1a4135442c269f224b850cf463db25becc8"
+    },
+    {
+      "source": "src/static/illustrations/pond.jpg",
+      "file": "assets/illustrations/pond.jpg",
+      "sha256": "c48ea5940e651e10811e2a6419e332c8530cebcf0cc9239c652984561d5e98c4"
+    },
+    {
+      "source": "src/static/illustrations/profile-koi.png",
+      "file": "assets/illustrations/profile-koi.png",
+      "sha256": "bd2ff3991a8bd4ad674bc6683e00107bf384bb85a74880ec37aa8f92d6b4f542"
+    },
+    {
+      "source": "src/static/share-cover.png",
+      "file": "assets/share-cover.png",
+      "sha256": "746d19d16f26435916e62d4803227fffe9a2dc21bae60ed1137d833eced9f4d3"
+    },
+    {
+      "source": "liyuanci-admin-vue/public/favicon.svg",
+      "file": "assets/admin-favicon.svg",
+      "sha256": "d45257b58fb39f6a40ea43ad072c6e225a10784ed048144b5a78189b47aa24a6"
+    }
+  ],
+  "style_sources": [
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source": "src/stores/theme.ts",
+      "sha256": "4e9e88d4fe0e0ce70efbb8e65d5e0655d75355e271e9a9a43f04a3d69c8c415c"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source": "src/uni.scss",
+      "sha256": "b90419d52a38220a870ca044b37c905240b60a54fdb4827891f966e05f965155"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source": "src/styles/prototype.scss",
+      "sha256": "9841b6f6176c37544a21a587ba49add8db160747a405593c173d7b91757f1e9c"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source": "src/pages/index/index.vue",
+      "sha256": "9002379a201d47a0b59b505bb3857be886c92c0dc9cf252d24eae8e4ac331303"
+    },
+    {
+      "repository": "liyuanci-miniprogram-uniapp",
+      "source": "src/pages.json",
+      "sha256": "07ddf3bcf57f3813dfb0728059028aed39895168752edd529fe444af38a2e079"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source": "src/assets/styles/main.css",
+      "sha256": "422c227af79d08040a23171bffb38b394c9e7413cb6a63b38ed1d9490993cc34"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source": "src/assets/styles/layout.css",
+      "sha256": "e3b97911eefe11ca9130c0aed491faefac57f265e4af5b06c4570fdee59008d1"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source": "src/components/AdminLayout.vue",
+      "sha256": "aeb827e05ae8c33b54b0282ebf7ec401fa4c327e47a52b495906e5ed985be346"
+    },
+    {
+      "repository": "liyuanci-admin-vue",
+      "source": "src/router/index.ts",
+      "sha256": "b3346012652b37d8f8f235e994551ce0f3ee1622980569ae79dd1020ac2b18cc"
+    }
+  ]
+}

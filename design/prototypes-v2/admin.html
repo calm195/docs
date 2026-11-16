@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>鲤源池 · 管理端原型</title>
+    <link rel="icon" href="assets/admin-favicon.svg" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="prototype-bar">
+      <a href="index.html">← 设计原型</a
+      ><span>管理端 / 提交版紫色工作台 · 合成数据</span>
+      <div class="row">
+        <label
+          >角色<select id="role">
+            <option value="super">超级管理员</option>
+            <option value="review">审核岗位</option>
+            <option value="crisis">危机岗位</option>
+          </select></label
+        ><label
+          >页面状态<select id="page-state">
+            <option value="default">正常</option>
+            <option value="loading">加载中</option>
+            <option value="empty">空状态</option>
+            <option value="error">加载失败</option>
+            <option value="restricted">无权限</option>
+          </select></label
+        ><label
+          >提交结果<select id="write-state">
+            <option value="success">成功</option>
+            <option value="unknown">未知</option>
+            <option value="conflict">冲突</option>
+          </select></label
+        ><a href="mini.html">小程序 ↗</a>
+      </div>
+    </div>
+    <div class="admin-shell">
+      <aside class="sidebar" id="sidebar">
+        <a href="#dashboard" class="admin-brand"
+          ><span class="brand-mark">鲤</span
+          ><span>鲤源池<small>校园运营管理平台</small></span></a
+        >
+        <nav id="navigation" aria-label="后台管理菜单"></nav>
+        <div class="sidebar-foot">
+          <span class="status-dot"></span><span>本地原型 · V2</span
+          ><a href="README.md" aria-label="开发参考说明">↗</a>
+        </div>
+      </aside>
+      <div class="workspace">
+        <header class="workspace-header">
+          <div class="row">
+            <button
+              class="mobile-menu icon-btn"
+              data-action="menu"
+              aria-label="展开菜单"
+            >
+              ☰</button
+            ><span class="breadcrumb" id="breadcrumb">工作台 / 数据总览</span>
+          </div>
+          <div class="row">
+            <button
+              class="icon-btn"
+              data-action="theme"
+              aria-label="切换深浅主题"
+            >
+              <img class="icon" src="assets/icons/sun.svg" alt="" />
+            </button>
+            <div class="header-separator"></div>
+            <span class="admin-avatar">管</span>
+            <div class="account-copy">
+              <strong>校园运营</strong
+              ><small id="account-role">超级管理员</small>
+            </div>
+            <button class="text-btn" data-go="login">退出</button>
+          </div>
+        </header>
+        <main id="content" class="workspace-content"></main>
+        <footer class="workspace-footer">
+          <span>鲤源池 · 让每一份善意有回响</span><span id="route-note"></span>
+        </footer>
+      </div>
+    </div>
+    <dialog id="drawer" class="drawer" aria-labelledby="drawer-title"></dialog>
+    <script src="shared.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>鲤愿池 · 产品原型设计</title>
+    <link rel="icon" href="assets/illustrations/brand-koi.png" />
+    <link rel="stylesheet" href="tokens.css" />
+    <style>
+      body {
+        background: var(--canvas);
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 48px;
+      }
+      header {
+        height: 100px;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        width: 32px;
+        height: 32px;
+      }
+      .hero {
+        padding: 68px 0 46px;
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 60px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 44px;
+        line-height: 1.35;
+        letter-spacing: -1px;
+        margin: 16px 0;
+      }
+      .hero p {
+        max-width: 540px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .hero-art {
+        width: 220px;
+        height: 180px;
+        object-fit: contain;
+        justify-self: end;
+      }
+      .version {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+      }
+      .version:before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--teal);
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+      }
+      .cover {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--surface);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .cover:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+      .cover-top {
+        height: 242px;
+        position: relative;
+        overflow: hidden;
+        background: #f7eee3;
+        padding: 30px;
+      }
+      .cover-top > img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cover-top .poster-title {
+        position: relative;
+        font-size: 26px;
+        line-height: 1.6;
+        color: #091d3d;
+      }
+      .cover-bottom {
+        padding: 26px 30px;
+      }
+      .cover-bottom h2 {
+        font-size: 21px;
+        margin-bottom: 8px;
+      }
+      .cover-bottom p {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+      .cover-bottom .num {
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+      }
+      .admin-cover {
+        background: #f0e8ff;
+        display: flex;
+        gap: 14px;
+        padding: 28px 28px 0;
+      }
+      .mock-side {
+        width: 68px;
+        border-radius: 8px 8px 0 0;
+        background: #fff;
+        padding: 16px 10px;
+      }
+      .mock-side b {
+        display: block;
+        background: #6d28d9;
+        color: white;
+        border-radius: 6px;
+        width: 25px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .mock-side i {
+        height: 5px;
+        display: block;
+        margin: 12px 0;
+        background: #edeaf4;
+      }
+      .mock-main {
+        flex: 1;
+        background: #fff;
+        border-radius: 8px 8px 0 0;
+        padding: 20px;
+      }
+      .mock-main strong {
+        color: #111827;
+        font-size: 16px;
+      }
+      .mock-metrics {
+        display: flex;
+        gap: 8px;
+        margin: 15px 0;
+      }
+      .mock-metrics div {
+        flex: 1;
+        background: #f6f7fb;
+        padding: 10px;
+        color: #6d28d9;
+        font-size: 20px;
+        border-radius: 6px;
+      }
+      .mock-lines {
+        display: grid;
+        gap: 12px;
+      }
+      .mock-lines i {
+        display: block;
+        height: 7px;
+        background: #eceef3;
+      }
+      .notes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        padding: 38px 0;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 28px;
+      }
+      .notes h3 {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      .notes p {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .swatches {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .swatches i {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #091d3d10;
+      }
+      footer {
+        padding-bottom: 35px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+      .doc-link {
+        color: var(--teal);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      @media (max-width: 700px) {
+        .wrap {
+          padding: 0 22px;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 38px 0;
+          gap: 0;
+        }
+        .hero-art {
+          display: none;
+        }
+        .hero h1 {
+          font-size: 32px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .notes {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .cover-top {
+          height: 210px;
+        }
+        header {
+          height: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="between">
+        <a class="brand" href="index.html"
+          ><img src="assets/illustrations/brand-koi.png" alt="锦鲤标志" />鲤愿池
+          <span class="muted small">设计原型</span></a
+        ><button class="icon-btn" id="theme" aria-label="切换深浅主题">
+          <img class="icon" src="assets/icons/sun.svg" alt="" />
+        </button>
+      </header>
+      <main>
+        <section class="hero">
+          <div>
+            <div class="version">DESIGN REFERENCE / 2026.11</div>
+            <h1>让每一份期待，<br />都有温柔的回响。</h1>
+            <p>
+              延续熟悉的锦鲤、水彩与色彩，让内容更清晰，让每一次许愿、倾听和管理都更从容。
+            </p>
+          </div>
+          <img
+            class="hero-art"
+            src="assets/illustrations/pavilion.png"
+            alt="保留的水彩亭台插画"
+          />
+        </section>
+        <section class="cards">
+          <a class="cover" href="mini.html"
+            ><div class="cover-top">
+              <img src="assets/illustrations/pond.jpg" alt="原版水彩锦鲤池塘" />
+              <div class="poster-title">许愿有人应<br />心事有人听</div>
+            </div>
+            <div class="cover-bottom">
+              <div class="between">
+                <h2>小程序原型</h2>
+                <span>↗</span>
+              </div>
+              <p>从一个小小心愿出发，遇见校园里的善意。</p>
+              <span class="num"
+                >01 / 37 个页面 · 登录弹窗与原地回复 · 可交互流程</span
+              >
+            </div></a
+          ><a class="cover" href="admin.html"
+            ><div class="cover-top admin-cover">
+              <div class="mock-side">
+                <b>鲤</b><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="mock-main">
+                <strong>把善意，照顾得更好。</strong>
+                <div class="mock-metrics">
+                  <div>2,486</div>
+                  <div>128</div>
+                  <div>36</div>
+                </div>
+                <div class="mock-lines"><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="cover-bottom">
+              <div class="between">
+                <h2>管理端原型</h2>
+                <span>↗</span>
+              </div>
+              <p>清晰的工作台，让审核有依据、操作有反馈。</p>
+              <span class="num"
+                >02 / 33 个页面入口 · 业务分组 · 详情与审核</span
+              >
+            </div></a
+          >
+        </section>
+        <section class="notes">
+          <article>
+            <div class="swatches">
+              <i style="background: #ff4c3e"></i
+              ><i style="background: #e1f7f4"></i
+              ><i style="background: #fcfaf7"></i
+              ><i style="background: #6d28d9"></i>
+            </div>
+            <h3>保留原始素材与风格</h3>
+            <p>插画、图标与配色取自上次代码提交，保留两端各自的视觉语言。</p>
+          </article>
+          <article>
+            <h3>可浏览，也可对照开发</h3>
+            <p>
+              支持页面切换、表单、抽屉、状态演示与深色模式。所有数据均为本地合成示例。
+            </p>
+          </article>
+          <article>
+            <h3>设计说明与素材溯源</h3>
+            <p>
+              <a class="doc-link" href="README.md">开发参考说明</a> ·
+              <a class="doc-link" href="assets-manifest.json">素材及提交记录</a
+              ><br />独立静态文件，无需安装依赖。
+            </p>
+          </article>
+        </section>
+      </main>
+      <footer class="between">
+        <span>鲤愿池 / 鲤源池管理端 · DESIGN PROTOTYPE V2</span
+        ><span>2026-11-16 · 本地设计参考</span>
+      </footer>
+    </div>
+    <script src="shared.js"></script>
+    <script>
+      document.getElementById("theme").onclick = toggleTheme;
+    </script>
+  </body>
+</html>

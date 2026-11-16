@@ -14,6 +14,7 @@
 
 ## 共享依据
 
+- [两端交互原型 v2](design/prototypes-v2/index.html)：按上次已提交代码的素材与风格重新设计；包含小程序、管理端和[开发参考说明](design/prototypes-v2/README.md)，可离线查看。
 - [模块总览](modules.md)：按认证、心愿、聊天、树洞、用户、资料、安全和隐私定位有效需求、设计与契约。
 - [跨端后续安排](plans/README.md)：依赖顺序、协作方、完成标准；具体事项只在所属端维护。
 - [有效契约入口](contracts/README.md)：当前版本、增量关系与校验命令。
