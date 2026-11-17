@@ -1,16 +1,18 @@
 # 模块文档总览
 
-更新：2026-11-11。本页集中模块范围与有效输入；实现、缺陷、计划只在[三端入口](README.md)维护。固定设计和契约中的历史 `not-implemented` 不作为当前进度。
+更新：2026-11-16。本页集中模块范围与有效输入；实现、缺陷、计划只在[三端入口](README.md)维护。固定设计和契约中的历史 `not-implemented` 不作为当前进度。
 
 增量协议：[图片展示](contracts/image-display.v1.md)、[内容治理查询](contracts/moderation-query.v1.md)、[特质驳回移除 v5](contracts/matchmaking.v5.md)。
 
 本轮设计：[心愿与内容互动改进v1](design/content-interactions-v1.md)，覆盖心愿发布与图片、解除活跃数量限制、匿名展示、评论楼中楼、收藏/浏览统计、未读角标及词库体验；增量协议见[内容互动v1](contracts/content-interactions.v1.md)，本地实现与验证边界见三端现状。
 
+当前两端视觉与交互依据：[原型 v2 与开发参考](design/prototypes-v2/README.md)、[小程序路由映射](design/prototypes-v2/routes-mini.json)、[管理端路由映射](design/prototypes-v2/routes-admin.json)，实施顺序见[跨端计划](plans/README.md)。已有实现与字段追溯继续使用[页面与组件设计](design/client-experience-v1.md)、[全路由结构设计](design/client-page-families-v1.md)、[小程序全路由清单](design/client-pages-miniprogram-v1.md)、[管理端全路由清单](design/client-pages-admin-v1.md)、[样板接口边界](design/client-sample-api-v1.md)和[管理内容统计](contracts/admin-content-stats.v1.md)。原型合成数据不变更下列业务协议。
+
 | 模块 | 当前范围 | 需求/设计 | 协议入口 |
 | --- | --- | --- | --- |
-| 包分配活动 | 活动报名、审核、个人与理想型标签、候选评分、全员自动分配、人工配对、结果发布和每日任务 | [需求v1](requirements/matchmaking-v1.md)、[设计v1](design/matchmaking-v1.md)、[自动分配设计v3](design/matchmaking-auto-pairing-v3.md) | [活动协议v1](contracts/matchmaking.v1.md)、[活动协议v2](contracts/matchmaking.v2.md)、[活动协议v3](contracts/matchmaking.v3.md)、[理想型特质v4](contracts/matchmaking.v4.md)、[个人特质与自动分配v6](contracts/matchmaking.v6.md)、[偏好与年级v7](contracts/matchmaking.v7.md) |
+| 包分配活动 | 活动报名、审核、个人与理想型标签、候选评分、全员自动分配、人工配对、结果发布和每日任务 | [需求v1](requirements/matchmaking-v1.md)、[设计v1](design/matchmaking-v1.md)、[自动分配设计v3](design/matchmaking-auto-pairing-v3.md) | [活动协议v1](contracts/matchmaking.v1.md)、[活动协议v2](contracts/matchmaking.v2.md)、[活动协议v3](contracts/matchmaking.v3.md)、[理想型特质v4](contracts/matchmaking.v4.md)、[个人特质与自动分配v6](contracts/matchmaking.v6.md)、[偏好与年级v7](contracts/matchmaking.v7.md)、[分类与结果状态v8](contracts/matchmaking.v8.md) |
 | 展示字典 | 两端共用名称与排序、后台维护与版本审计 | 三端维护优化 | [展示字典增量](contracts/display-dictionaries.v0.2.1-r1.md) |
-| 身份、学生认证与后台账号 | 微信会话、学生卡、人工审核、后台本地账号及角色 | [基础需求](requirements/baseline.md)、[身份与接口设计](design/api.md) | [学生会话](contracts/student-auth.v0.2.0.md)、[学生卡](contracts/student-card.v0.2.0.md)、[人工认证](contracts/verification.v0.2.0.md)、[后台账号](contracts/admin-accounts.v0.2.0.md)、[头像](contracts/avatar.v0.2.1-r2.md)、[会话恢复与统计增量](contracts/trial-improvements.v0.2.1-r2.md) |
+| 身份、学生认证与后台账号 | 微信会话、学生卡、人工审核、后台本地账号及角色 | [基础需求](requirements/baseline.md)、[身份与接口设计](design/api.md) | [学生会话](contracts/student-auth.v0.2.0.md)、[学生卡](contracts/student-card.v0.2.0.md)、[人工认证](contracts/verification.v0.2.0.md)、[审核历史增量](contracts/verification-history.v1.md)、[后台账号](contracts/admin-accounts.v0.2.0.md)、[头像](contracts/avatar.v0.2.1-r2.md)、[会话恢复与统计增量](contracts/trial-improvements.v0.2.1-r2.md) |
 | 心愿、应愿与匹配 | 文字许愿、审核、主动上架、唯一匹配与生命周期 | [基础需求](requirements/baseline.md)、[领域/API设计](design/api.md) | [全站0.2.1](contracts/openapi.v0.2.1.json)、[基础语义](contracts/semantics.md)、[体验版增量](contracts/trial-experience.v0.2.1-r1.md)、[支持与热点](contracts/wish-support-hot.v1.md) |
 | 聊天、通知、还愿与分享 | 匹配会话、站内通知、故事、分享引用、公开主页 | [基础需求](requirements/baseline.md)、[架构](design/architecture.md) | [全站0.2.1](contracts/openapi.v0.2.1.json)、[聊天读取者增量](contracts/chat-viewer.v0.2.1-r1.md)、[本人阅读位置](contracts/chat-read.v1.md)、[通知与引导增量](contracts/trial-experience.v0.2.1-r1.md)、[分享增量](contracts/content-share.v0.2.1-r1.md) |
 | 悄悄鲤与本人胶囊 | 文字、三档身份、昵称、暖评、抱抱、评论开关、本人胶囊与解忧入口 | [范围授权](approvals/2026-10-27-whispers-scope.md)、[需求](requirements/whispers-v1.md)、[详细方案](design/whispers-v1/README.md)、[验收边界](design/whispers-v1/delivery.md) | [whispers/1.0.0](contracts/whispers-v1-r2/README.md) |
