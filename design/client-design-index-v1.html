@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>鲤愿池 · 新版设计与组件样板</title>
+<style>
+:root{font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#1d2939;background:#f5f7fa}*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:auto;padding:56px 24px 72px}small{color:#667085}h1{font-size:32px;line-height:1.3;margin:12px 0}p{margin:12px 0 28px;color:#667085}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}article{background:#fff;border:1px solid #e4e7ec;border-radius:16px;padding:24px}h2{font-size:20px;line-height:1.4;margin:0 0 12px}article p{font-size:14px;margin:0 0 20px}a{color:#254e70;text-underline-offset:4px}.links{display:flex;gap:12px 20px;flex-wrap:wrap}footer{border-top:1px solid #e4e7ec;margin-top:32px;padding-top:24px;font-size:14px;color:#667085}footer a{margin-right:16px}@media(prefers-color-scheme:dark){:root{color:#edf1f7;background:#151c25}article{background:#202b38;border-color:#3d4b5d}p,small,footer{color:#b0bdcc}a{color:#a5cbe8}footer{border-color:#3d4b5d}}
+</style>
+</head>
+<body><main>
+<small>鲤愿池 · 2026-11-16 · 设计参考 v1</small>
+<h1>新版设计与实际组件样板</h1>
+<p>先核对完整功能，再以同一份合成数据对照独立设计和实际组件。这里的 HTML 是独立设计参考；真实操作在本地小程序和管理端执行。</p>
+<section class="grid">
+<article><h2>首批六个组件样板</h2><p>三步配对资料、活动六态、心愿详情，以及管理端活动、特质词库和公开内容。支持状态、主题和设备宽度切换。</p><div class="links"><a href="client-experience-v1.html">打开交互参考</a><a href="client-experience-v1.md">设计规则与验收标准</a></div></article>
+<article><h2>小程序主流程</h2><p>活动列表、心愿池、完整个人资料、热点榜单四类代表。保留查询、资料分组与真实列表信息。</p><div class="links"><a href="client-page-families-mini-v1.html">打开页面族参考</a></div></article>
+<article><h2>心事、胶囊与资料</h2><p>匿名阅读、服务端解锁状态和资料分类搜索分别设计；完整功能仍以路由清单与实际组件为准。</p><div class="links"><a href="client-page-families-whispers-v1.html">悄悄话</a><a href="client-page-families-capsules-v1.html">时光胶囊</a><a href="client-page-families-resources-v1.html">资料共享</a></div></article>
+<article><h2>管理端页面族</h2><p>资料分类、资料管理、复杂词库工作区三张完整代表；其他审核、危机和隐私工作区遵循逐路由结构设计。</p><div class="links"><a href="client-page-families-admin-v1.html?family=simple">资料分类</a><a href="client-page-families-admin-v1.html?family=resources">资料管理</a><a href="client-page-families-admin-v1.html?family=words">词库管理</a></div></article>
+</section>
+<footer><div class="links"><a href="client-pages-miniprogram-v1.md">小程序39路由功能清单</a><a href="client-pages-admin-v1.md">管理端35路由功能清单</a><a href="client-page-families-v1.md">全路由结构与落地顺序</a></div><p>本机合成数据、浏览器、微信开发者工具、物理设备及生产验收分别记录。最新实现、实际检查和待验项见三端滚动文档；本轮没有提交、推送或发布。</p><div class="links"><a href="../development/miniprogram/README.md">小程序现状</a><a href="../development/admin/README.md">管理端现状</a><a href="../development/backend/README.md">后端现状</a></div></footer>
+</main></body></html>
