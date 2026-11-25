@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>悄悄话 · 鲤愿池交互原型</title>
+    <link rel="stylesheet" href="../prototypes-v2/tokens.css" />
+    <link rel="stylesheet" href="whispers.css" />
+    <script defer src="whispers.js"></script>
+  </head>
+  <body>
+    <main class="studio">
+      <aside class="review">
+        <a class="backlink" href="index.html">← 原型总览</a>
+        <a class="brand" href="#feed"
+          ><img
+            src="../prototypes-v2/assets/illustrations/brand-koi.png"
+            alt=""
+          />鲤愿池</a
+        >
+        <h1>悄悄话</h1>
+        <p class="intro">
+          在列表回应一份心事，在编辑时选择要让别人看见的身份。
+        </p>
+        <nav class="views" aria-label="原型场景">
+          <a href="#feed" data-view="feed">悄悄话列表 <span>›</span></a>
+          <a href="#mine" data-view="mine">我的心事 <span>›</span></a>
+          <a href="#new" data-view="new">写心事 <span>›</span></a>
+          <a href="#edit" data-view="edit">编辑原帖 <span>›</span></a>
+          <a href="#detail" data-view="detail">详情与收藏 <span>›</span></a>
+          <a href="#preferences" data-view="preferences"
+            >暖评身份 <span>›</span></a
+          >
+          <a href="#comment-unverified/library" data-view="comment-unverified"
+            >未认证账号写暖评 <span>›</span></a
+          >
+        </nav>
+        <div class="review-setting">
+          <label class="toggle"
+            ><input type="checkbox" id="hide-tags" />体验全局隐藏身份标签</label
+          >
+          <p>仅改变公开预览，保留本帖的选择。</p>
+        </div>
+      </aside>
+      <section class="device" aria-label="小程序交互原型">
+        <div class="systembar" aria-hidden="true">
+          <span>09:41</span><span>▮▮▮　●　▰</span>
+        </div>
+        <header class="appbar">
+          <button id="back" aria-label="返回">‹</button
+          ><a href="#feed"
+            ><img
+              src="../prototypes-v2/assets/illustrations/brand-koi.png"
+              alt=""
+            />鲤愿池</a
+          ><span class="capsule" aria-hidden="true">•••　│　◉</span>
+        </header>
+        <section id="screen" tabindex="-1"></section>
+        <div id="message" role="status" aria-live="polite" hidden></div>
+      </section>
+    </main>
+    <dialog id="dialog">
+      <div id="dialog-inner"></div>
+      <button id="dismiss" class="btn full">关闭</button>
+    </dialog>
+  </body>
+</html>

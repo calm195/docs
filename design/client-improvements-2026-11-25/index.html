@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>两端体验改进 · 鲤愿池设计评审</title>
+    <link rel="icon" href="../prototypes-v2/assets/illustrations/brand-koi.png" />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #142d36;
+        --muted: #526968;
+        --line: #d7dfd8;
+        --green: #1c6154;
+        --paper: #f7f8f3;
+        --accent: #ad4032;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 24px;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font:
+          16px/1.6 'PingFang SC',
+          'Microsoft YaHei',
+          sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+      .wrap {
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 0 clamp(18px, 5vw, 72px);
+      }
+      header {
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+      header .wrap {
+        min-height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 18px;
+        text-decoration: none;
+      }
+      .brand img {
+        width: 31px;
+        height: 31px;
+      }
+      .brand small {
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 500;
+        border-left: 1px solid var(--line);
+        padding-left: 11px;
+        margin-left: 2px;
+      }
+      nav {
+        display: flex;
+        gap: 24px;
+        font-size: 14px;
+      }
+      nav a {
+        text-decoration: none;
+        color: var(--green);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      :focus-visible {
+        outline: 3px solid #0d796d;
+        outline-offset: 4px;
+      }
+      .hero {
+        margin-top: 29px;
+        border: 1px solid #d8e1d8;
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+        background: #e6efe7;
+        isolation: isolate;
+      }
+      .hero img {
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 71%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -2;
+      }
+      .hero:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+          90deg,
+          #f2f5eb 12%,
+          #f2f5ebf8 35%,
+          #f2f5ebaf 53%,
+          transparent 72%
+        );
+      }
+      .hero-inner {
+        padding: clamp(30px, 5.5vw, 62px) clamp(20px, 5vw, 56px);
+        max-width: 720px;
+      }
+      .date {
+        color: var(--green);
+        font-size: 13px;
+        letter-spacing: 0.07em;
+      }
+      h1 {
+        font:
+          600 clamp(34px, 5.2vw, 58px)/1.23 'Songti SC',
+          'STSong',
+          serif;
+        letter-spacing: -0.045em;
+        margin: 12px 0 14px;
+      }
+      .hero p {
+        max-width: 33em;
+        font-size: 15px;
+        color: #354f4a;
+      }
+      section {
+        margin-top: 37px;
+      }
+      h2 {
+        font-size: 22px;
+        letter-spacing: -0.03em;
+        font-weight: 650;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .card {
+        position: relative;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 21px 19px 17px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        text-decoration: none;
+        box-shadow: 0 3px 12px #273b2c05;
+        transition:
+          transform 0.15s,
+          border-color 0.15s;
+      }
+      .card:hover {
+        text-decoration: none;
+        transform: translateY(-2px);
+        border-color: var(--green);
+      }
+      .card:hover .cta {
+        text-decoration: underline;
+      }
+      .card small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .card h3 {
+        font-size: 20px;
+        font-weight: 640;
+      }
+      .card img,
+      .card .admin-mark {
+        width: 37px;
+        height: 37px;
+        object-fit: contain;
+        margin-bottom: 9px;
+      }
+      .card .admin-mark {
+        display: grid;
+        place-items: center;
+        border-radius: 9px;
+        background: #eeeafa;
+        color: #5a4c92;
+        font-weight: 700;
+        font-size: 21px;
+      }
+      .card p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--muted);
+        margin-bottom: 13px;
+      }
+      .cta {
+        margin-top: auto;
+        font-size: 14px;
+        color: var(--green);
+        font-weight: 650;
+      }
+      .folio {
+        padding-bottom: 38px;
+      }
+      .section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .tabs {
+        display: inline-flex;
+        padding: 3px;
+        border: 1px solid var(--line);
+        background: #edf1ea;
+        border-radius: 8px;
+      }
+      .tabs button {
+        border: 0;
+        background: none;
+        font: inherit;
+        font-size: 14px;
+        color: var(--muted);
+        padding: 6px 14px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .tabs button[aria-pressed='true'] {
+        background: white;
+        color: var(--green);
+        box-shadow: 0 1px 4px #293d3022;
+        font-weight: 650;
+      }
+      .compare {
+        margin: 0;
+        border: 1px solid var(--line);
+        background: white;
+        border-radius: 13px;
+        overflow: hidden;
+      }
+      .compare-row {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+      }
+      .compare-row > * {
+        padding: 12px 22px;
+        overflow-wrap: anywhere;
+        margin: 0;
+        font-size: 14px;
+      }
+      .compare-row:not(:first-child) {
+        border-top: 1px solid #e8ebe4;
+      }
+      .compare-row > :last-child {
+        background: #f2f8f3;
+        color: #184c43;
+      }
+      .compare-row.heading > * {
+        padding: 9px 22px;
+        font-size: 12px;
+        font-weight: 650;
+        color: var(--muted);
+      }
+      .copy-label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 12px;
+        font-weight: 650;
+        color: var(--muted);
+      }
+      footer {
+        padding: 17px 0 34px;
+        font-size: 13px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+      [hidden] {
+        display: none;
+      }
+      @media (max-width: 750px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .card {
+          padding: 15px 16px 15px 77px;
+          min-height: 95px;
+          gap: 2px;
+        }
+        .card img,
+        .card .admin-mark {
+          position: absolute;
+          left: 19px;
+          top: 21px;
+        }
+        .card h3 {
+          font-size: 18px;
+        }
+        .card p {
+          margin: 2px 0 5px;
+        }
+        .card .cta {
+          position: absolute;
+          right: 16px;
+          top: 17px;
+          font-size: 12px;
+        }
+        .brand small {
+          display: none;
+        }
+        .hero img {
+          width: 85%;
+          opacity: 0.68;
+        }
+        .hero:after {
+          background: linear-gradient(90deg, #f2f5eb 8%, #f2f5ebf0 39%, #f2f5eb9c 66%, #f2f5eb22);
+        }
+        .hero p {
+          max-width: 17em;
+        }
+        .compare-row > * {
+          padding: 10px 12px;
+        }
+        .compare-row.heading > * {
+          padding: 8px 12px;
+        }
+      }
+      @media (max-width: 420px) {
+        nav {
+          gap: 12px;
+        }
+        .card {
+          padding-left: 66px;
+        }
+        .card img,
+        .card .admin-mark {
+          width: 31px;
+          left: 15px;
+        }
+        .section-head {
+          gap: 4px;
+        }
+        .tabs button {
+          padding: 6px 9px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .card {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="#main"
+          ><img src="../prototypes-v2/assets/illustrations/brand-koi.png" alt="" />鲤愿池<small
+            >产品设计</small
+          ></a
+        >
+        <nav aria-label="本页目录">
+          <a href="#prototypes">交互原型</a><a href="#copy">文案对照</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap" id="main">
+      <div class="hero">
+        <img alt="" src="../prototypes-v2/assets/illustrations/pond.jpg" />
+        <div class="hero-inner">
+          <div class="date"><time datetime="2026-11-25">2026 年 11 月 25 日</time></div>
+          <h1>两端体验改进</h1>
+          <p>预览学生办理认证、分享心事，以及运营人员查找记录的过程。</p>
+        </div>
+      </div>
+      <section id="prototypes" aria-labelledby="prototype-title">
+        <h2 id="prototype-title">交互原型</h2>
+        <div class="cards">
+          <a class="card" href="account.html"
+            ><img src="../prototypes-v2/assets/illustrations/profile-koi.png" alt="" /><small
+              >小程序</small
+            >
+            <h3>资料与认证</h3>
+            <p>选用头像和昵称，离开后继续办理认证，查看操作反馈。</p>
+            <span class="cta">打开原型 →</span></a
+          >
+          <a class="card" href="whispers.html"
+            ><img src="../prototypes-v2/assets/illustrations/entry-whisper.png" alt="" /><small
+              >小程序</small
+            >
+            <h3>悄悄话</h3>
+            <p>从列表送出抱抱或分享，查看我的心事，编辑原帖和身份标签。</p>
+            <span class="cta">打开原型 →</span></a
+          >
+          <a class="card" href="admin.html"
+            ><span class="admin-mark" aria-hidden="true">鲤</span><small>管理端</small>
+            <h3>导航与列表</h3>
+            <p>切换分组，直接筛选记录，查看总页数并跳到指定页。</p>
+            <span class="cta">打开原型 →</span></a
+          >
+        </div>
+      </section>
+      <section class="folio" id="copy" aria-labelledby="copy-title">
+        <div class="section-head">
+          <h2 id="copy-title">文案对照</h2>
+          <div class="tabs" role="group" aria-label="选择对照的平台">
+            <button
+              aria-pressed="true"
+              aria-controls="mini-copy"
+              type="button"
+              data-view="mini-copy"
+            >
+              小程序
+            </button>
+            <button
+              aria-pressed="false"
+              aria-controls="admin-copy"
+              type="button"
+              data-view="admin-copy"
+            >
+              管理端
+            </button>
+          </div>
+        </div>
+        <div class="compare" id="mini-copy">
+          <div class="compare-row heading"><span>现有界面</span><span>拟上线界面</span></div>
+          <div class="compare-row">
+            <div><span class="copy-label">认证姓名 · 占位提示</span>姓名（演示时填写虚构姓名）</div>
+            <div><span class="copy-label">填写提示</span>请输入学生卡上的姓名</div>
+          </div>
+          <div class="compare-row">
+            <div>
+              <span class="copy-label">举报 · 结果未知</span
+              >结果尚未确认，重试将复用原内容和幂等键，请勿重复新建举报。
+            </div>
+            <div>
+              <span class="copy-label">反馈与操作</span
+              >尚未确认是否受理，可重试这次举报。<br /><strong>重试同一次举报</strong>
+            </div>
+          </div>
+          <div class="compare-row">
+            <div>
+              <span class="copy-label">举报 · 页头与正文重复</span
+              >请说明具体情况，平台受理后会按规则核查。<br />举报受理后由平台核查，请选择类型并说明情况。
+            </div>
+            <div><span class="copy-label">合并为一处</span>请选择举报类型，可补充具体情况。</div>
+          </div>
+        </div>
+        <div class="compare" id="admin-copy" hidden>
+          <div class="compare-row heading"><span>现有界面</span><span>拟上线界面</span></div>
+          <div class="compare-row">
+            <div>
+              <span class="copy-label">账号创建 · 初始口令</span
+              >初始口令由服务端仓库外策略提供，此页面不设置或显示口令。
+            </div>
+            <div><span class="copy-label">保留交付方式</span>初始口令通过既有渠道另行提供。</div>
+          </div>
+          <div class="compare-row">
+            <div>
+              <span class="copy-label">账号列表 · 分页下方</span
+              >列表随账号变化更新；新建后从首页重新读取。
+            </div>
+            <div>
+              <span class="copy-label">删除说明行</span>分页下方留空。创建成功后，列表自动回到第 1
+              页。
+            </div>
+          </div>
+          <div class="compare-row">
+            <div><span class="copy-label">左侧导航 · 页尾重复名称</span>鲤源池 · WEB 管理端</div>
+            <div><span class="copy-label">保留顶部品牌</span>侧栏尾部留给导航项。</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">原型使用示例数据。微信授权、转发和服务端审核须在联调环境验收。</div>
+    </footer>
+    <script>
+      const switches = Array.from(document.querySelectorAll('[data-view]'))
+      for (const control of switches) {
+        control.addEventListener('click', () => {
+          for (const item of switches) {
+            const selected = item === control
+            item.setAttribute('aria-pressed', String(selected))
+            document.getElementById(item.dataset.view).hidden = !selected
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

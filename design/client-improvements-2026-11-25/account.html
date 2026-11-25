@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>账号与认证 · 鲤愿池交互原型</title>
+    <link rel="stylesheet" href="../prototypes-v2/tokens.css" />
+    <link rel="stylesheet" href="account.css" />
+    <script src="account.js" defer></script>
+  </head>
+  <body>
+    <main class="deck">
+      <aside class="rail">
+        <a class="overview" href="index.html">← 原型总览</a>
+        <div class="brand">
+          <img
+            src="../prototypes-v2/assets/illustrations/brand-koi.png"
+            alt=""
+          />鲤愿池
+        </div>
+        <p class="caption">小程序交互原型</p>
+        <h1>账号与认证</h1>
+        <nav aria-label="原型页面">
+          <a href="#profile"><span>个人资料</span><small>头像与昵称</small></a>
+          <a href="#verification"
+            ><span>身份认证</span><small>学生卡与扫描记录</small></a
+          >
+          <a href="#notices"><span>操作反馈</span><small>通知浮窗</small></a>
+        </nav>
+        <section class="demo-tools" id="scan-tools" hidden>
+          <h2>扫描情景</h2>
+          <label
+            ><input type="radio" name="scan-result" value="approved" checked />
+            通过</label
+          >
+          <label
+            ><input type="radio" name="scan-result" value="rejected" />
+            未通过</label
+          >
+          <p>选择下一张样图的扫描结果。可以切换页面后再回来查看。</p>
+          <button type="button" data-action="reset-example" class="secondary">
+            重新体验认证
+          </button>
+        </section>
+        <section class="demo-tools" id="notice-tools" hidden>
+          <h2>预览反馈类型</h2>
+          <div id="notice-kinds"></div>
+          <p>关闭浮窗后，仍可在页面查看错误或继续确认结果。</p>
+        </section>
+        <p class="footnote">
+          评审用样例 ·
+          微信选择器与扫描回执由本页模拟。姓名、学号仅用于当前表单，请使用虚构信息。
+        </p>
+      </aside>
+      <section class="phone" aria-label="小程序预览">
+        <div class="topline">
+          <b>9:41</b><span aria-hidden="true">▮▮▮ &nbsp; ▰</span>
+        </div>
+        <div class="appnav">
+          <span>鲤愿池</span
+          ><span class="capsule" aria-hidden="true">•••　│　◉</span>
+        </div>
+        <div id="surface"></div>
+        <div id="floating" aria-live="polite"></div>
+        <dialog id="dialog" aria-labelledby="sheet-title">
+          <div class="sheet-head">
+            <h2 id="sheet-title"></h2>
+            <button type="button" data-action="close" aria-label="关闭">
+              ×
+            </button>
+          </div>
+          <div id="sheet-body"></div>
+        </dialog>
+      </section>
+    </main>
+  </body>
+</html>

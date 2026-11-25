@@ -14,6 +14,7 @@
 
 ## 共享依据
 
+- [2026-11-25 两端体验改进方案](design/client-improvements-2026-11-25/README.md)及[可点击原型](design/client-improvements-2026-11-25/index.html)，涵盖小程序资料、认证续办、通知、悄悄话，以及管理端导航、搜索、分页和两端文案。
 - [两端交互原型 v2](design/prototypes-v2/index.html)：按上次已提交代码的素材与风格重新设计；包含小程序、管理端和[开发参考说明](design/prototypes-v2/README.md)，可离线查看。
 - [新版设计查看入口](design/client-design-index-v1.html)：首批六样板、小程序页面族和管理端完整代表的独立HTML参考。
 - [新版两端页面设计](design/client-experience-v1.md)：页面功能清单、实际组件样板及平台对照标准。

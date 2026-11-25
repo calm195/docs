@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>资料列表 · 鲤源池管理端</title>
+    <link rel="stylesheet" href="admin.css" />
+    <script src="admin.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">跳至内容</a>
+    <div class="shell">
+      <aside id="side" aria-label="工作区侧栏">
+        <div class="brand">
+          <span class="seal">鲤</span>
+          <div><strong>鲤源池</strong><small>管理端</small></div>
+          <button type="button" id="close-menu" aria-label="关闭导航">×</button>
+        </div>
+        <nav id="menu" aria-label="管理菜单"></nav>
+      </aside>
+      <button id="backdrop" type="button" aria-label="关闭菜单"></button>
+      <div class="workspace">
+        <header>
+          <button type="button" id="open-menu" aria-controls="side" aria-expanded="false">
+            菜单
+          </button>
+          <div class="breadcrumb" aria-label="当前位置">
+            <span id="trail">资料管理</span><span aria-hidden="true">/</span
+            ><b id="leaf">资料列表</b>
+          </div>
+          <a class="plan-link" href="index.html">原型总览</a>
+          <span class="profile"><i aria-hidden="true">林</i>林遥</span>
+        </header>
+        <main id="content" tabindex="-1">
+          <div class="title">
+            <h1 id="heading">资料列表</h1>
+            <button class="quiet" type="button" id="refresh">刷新列表</button>
+          </div>
+          <section class="panel" aria-label="列表与筛选">
+            <form id="filters" aria-label="筛选条件">
+              <div id="conditions"></div>
+              <button class="reset" type="button" id="reset">重置</button>
+            </form>
+            <div class="table-wrap" tabindex="0" aria-label="结果列表">
+              <table>
+                <thead id="columns"></thead>
+                <tbody id="rows"></tbody>
+              </table>
+            </div>
+            <div id="empty" hidden>
+              <strong>没有符合条件的记录</strong>
+              <p>可以清除筛选后再次查看。</p>
+              <button type="button" class="quiet" id="clear-empty">清除筛选</button>
+            </div>
+            <div class="pagination">
+              <div class="total" id="total" role="status" aria-live="polite"></div>
+              <nav aria-label="列表分页">
+                <label
+                  >每页<select id="size">
+                    <option value="10">10 条</option>
+                    <option value="20">20 条</option>
+                    <option value="50">50 条</option>
+                  </select></label
+                >
+                <div class="turn">
+                  <button id="prev" type="button" aria-label="上一页">‹</button
+                  ><span id="position"></span
+                  ><button id="next" type="button" aria-label="下一页">›</button>
+                </div>
+                <form id="jump-form">
+                  <label for="jump">跳至</label
+                  ><input
+                    id="jump"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    aria-describedby="jump-error"
+                  /><span>页</span><button type="submit" id="go">跳转</button>
+                </form>
+              </nav>
+            </div>
+            <p id="jump-error" role="alert"></p>
+          </section>
+        </main>
+      </div>
+    </div>
+    <dialog id="detail">
+      <button type="button" id="close-detail" aria-label="关闭详情">×</button>
+      <h2 id="detail-title"></h2>
+      <dl id="detail-body"></dl>
+    </dialog>
+  </body>
+</html>
