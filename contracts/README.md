@@ -1,5 +1,11 @@
 # 当前契约入口
 
+暖评署名审核与学生卡回收见[三端评审修复增量 v1](review-remediation.v1.md)。
+
+个人资料的运营配置与抽取见[随机头像和昵称增量 v1](random-profiles.v1.md)。
+
+本轮体验改进见[认证草稿、悄悄话本人读取与管理端分页 v1](client-improvements.v1.md)。
+
 原型 v2 配套：[身份审核工作区只读历史增量 v1](verification-history.v1.md)，显式首次申请时间投影与独立历史详情，保留既有材料接口和审核规则。
 
 页面样板新增：[包分配分类与结果状态 v8](matchmaking.v8.md)、[管理端公开内容统计 v1](admin-content-stats.v1.md)。
@@ -12,7 +18,7 @@
 
 | 能力 | 有效输入 | 消费边界 |
 | --- | --- | --- |
-| 包分配活动 | [活动协议v1](matchmaking.v1.md)、[活动协议v2](matchmaking.v2.md)、[偏好与年级v7](matchmaking.v7.md)、[分类与结果状态v8](matchmaking.v8.md) | 活动、账号教育信息、偏好计分、资料报名、自动分配弹窗、人工配对、会话与任务库 |
+| 包分配活动 | [活动协议v1](matchmaking.v1.md)、[活动协议v2](matchmaking.v2.md)、[偏好与年级v7](matchmaking.v7.md)、[分类与结果状态v8](matchmaking.v8.md)、[公开活动v9](matchmaking.v9.md) | 活动、账号教育信息、偏好计分、资料报名、自动分配弹窗、人工配对、会话与任务库 |
 | 统一展示字典 | [展示字典增量](display-dictionaries.v0.2.1-r1.md) | 数据库权威快照、后台维护、固定代码与版本控制 |
 | 心愿和还愿故事分享 | [分享增量](content-share.v0.2.1-r1.md) | 原业务页分享、扫码公开回流与小程序码 |
 | 内容发现与管理 | [0.2.1-r1 增量](content-discovery.v0.2.1-r1.md) | 公开搜索、排序和周榜，后台查询与草稿导出 |
