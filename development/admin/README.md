@@ -22,7 +22,9 @@
 
 ## 已部署版本
 
-2026-11-25 管理端部署的源码版本为 `421bdf4b1daaa43090cbefc8779b9e829abeed2d`，完整功能依赖配套后端的分页、署名审核和随机资料接口。
+2026-11-28 北京时间 14:14，通过 Termius 部署 `06d750ff7ce753325dc7bbb3772fa5eb57dfc0c6`。116 个静态文件在生产机及公网 HTTPS 上的 SHA-256 均与制品一致。公网首页及 `/identity/history`、`/safety/penalties`、`/deletion-receipts` 均返回新版入口。旧版静态文件保留在 `/var/www/liyuanci-admin.prev-governance-20261128`。正式岗位登录和生产案件处理仍待验收。[配套 API 与回退记录](../backend/README.md#证据删除任务与举报对象版本)
+
+前一版管理端源码为 `421bdf4b1daaa43090cbefc8779b9e829abeed2d`，完整功能依赖配套后端的分页、署名审核和随机资料接口。
 
 2026-11-25 北京时间 20:49 已部署上述版本及配套 `0036` API。管理端 118 个文件通过服务器及公网 HTTPS 的 SHA-256 校验，`/identity` 和 `/random-profiles` 深链返回新版入口。未登录的身份审核分页与随机资料接口均返回 401。上述检查覆盖制品与匿名 HTTP 边界，正式岗位登录后流程见[验收缺口](defects.md)。
 
