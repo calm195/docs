@@ -1,5 +1,7 @@
 # 当前契约入口
 
+管理端证据删除任务与普通举报处置前版本读取见[管理端治理工作台增量 v1](admin-governance-workspaces.v1.md)。
+
 暖评署名审核与学生卡回收见[三端评审修复增量 v1](review-remediation.v1.md)。
 
 个人资料的运营配置与抽取见[随机头像和昵称增量 v1](random-profiles.v1.md)。
